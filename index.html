@@ -393,11 +393,69 @@
     text-transform: none;
   }
 
+  /* FILTER BAR */
+  .filter-bar {
+    border-bottom: 1px solid var(--rule);
+    background: var(--rule);
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+  }
+
+  .flt-btn {
+    background: var(--card-bg);
+    border: none;
+    padding: 14px 22px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .flt-btn:hover, .flt-btn.active { background: #0d0000; color: var(--red); }
+
+  .search-wrap {
+    flex: 1;
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    min-width: 160px;
+  }
+  .search-wrap input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    width: 100%;
+  }
+  .search-wrap input::placeholder { color: #333; }
+
+  .no-results {
+    display: none;
+    padding: 80px 60px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--light-gray);
+  }
+
   @media (max-width: 900px) {
-    .topbar, .masthead, .intro, .grid-section, .quote-strip, .footer { padding-left: 30px; padding-right: 30px; }
+    .topbar, .masthead, .intro, .grid-section, .quote-strip, .footer { padding-left: 24px; padding-right: 24px; }
     .cards { grid-template-columns: 1fr; }
     .quote-strip { grid-template-columns: 1fr; gap: 32px; }
     .strip-divider { display: none; }
+    .nav-pages { flex-direction: column; gap: 2px; }
+    .flt-btn { padding: 12px 16px; }
+    .topbar { flex-wrap: wrap; gap: 4px; font-size: 9px; }
   }
 </style>
 </head>
@@ -506,6 +564,25 @@
     <span class="npl-desc">Зачем создан архив, кому предназначен и как устроен</span>
     <span class="npl-arrow">↗</span>
   </a>
+  <a class="nav-page-link" href="compare.html">
+    <span class="npl-label">Инструмент</span>
+    <span class="npl-title">Сравнение</span>
+    <span class="npl-desc">Выберите двух персонажей и сравните досье бок о бок</span>
+    <span class="npl-arrow">↗</span>
+  </a>
+</div>
+
+<!-- FILTER + SEARCH -->
+<div class="filter-bar">
+  <button class="flt-btn active" data-filter="all">Все</button>
+  <button class="flt-btn" data-filter="rossiya1">Россия-1</button>
+  <button class="flt-btn" data-filter="perviy">Первый канал</button>
+  <button class="flt-btn" data-filter="rt">RT</button>
+  <button class="flt-btn" data-filter="ntv">НТВ</button>
+  <button class="flt-btn" data-filter="vlast">Власть / Политика</button>
+  <div class="search-wrap">
+    <input type="text" id="search-input" placeholder="Поиск по имени...">
+  </div>
 </div>
 
 <!-- CARDS -->
@@ -525,7 +602,7 @@
   <div class="cards">
 
     <!-- SOLOVYOV -->
-    <a class="card" href="solovyov.html">
+    <a class="card" data-channel="rossiya1" href="solovyov.html">
       <div class="card-monogram">ВС</div>
       <div class="card-top">
         <div class="card-num">Досье № 01</div>
@@ -549,7 +626,7 @@
     </a>
 
     <!-- SKABEEVA -->
-    <a class="card" href="skabeeva.html">
+    <a class="card" data-channel="rossiya1" href="skabeeva.html">
       <div class="card-monogram">ОС</div>
       <div class="card-top">
         <div class="card-num">Досье № 02</div>
@@ -573,7 +650,7 @@
     </a>
 
     <!-- KISELYOV -->
-    <a class="card" href="kiselyov.html">
+    <a class="card" data-channel="rt" href="kiselyov.html">
       <div class="card-monogram">ДК</div>
       <div class="card-top">
         <div class="card-num">Досье № 03</div>
@@ -597,7 +674,7 @@
     </a>
 
     <!-- SIMONYAN -->
-    <a class="card" href="simonyan.html">
+    <a class="card" data-channel="rt" href="simonyan.html">
       <div class="card-monogram">МС</div>
       <div class="card-top">
         <div class="card-num">Досье № 04</div>
@@ -621,7 +698,7 @@
     </a>
 
     <!-- POPOV -->
-    <a class="card" href="popov.html">
+    <a class="card" data-channel="rossiya1" href="popov.html">
       <div class="card-monogram">ЕП</div>
       <div class="card-top">
         <div class="card-num">Досье № 05</div>
@@ -645,7 +722,7 @@
     </a>
 
     <!-- SHEYNIN -->
-    <a class="card" href="sheynin.html">
+    <a class="card" data-channel="perviy" href="sheynin.html">
       <div class="card-monogram">АШ</div>
       <div class="card-top">
         <div class="card-num">Досье № 06</div>
@@ -669,7 +746,7 @@
     </a>
 
     <!-- TOLSTOY -->
-    <a class="card" href="tolstoy.html">
+    <a class="card" data-channel="vlast" href="tolstoy.html">
       <div class="card-monogram">ПТ</div>
       <div class="card-top">
         <div class="card-num">Досье № 07</div>
@@ -694,7 +771,7 @@
 
 
     <!-- NORKIN -->
-    <a class="card" href="norkin.html">
+    <a class="card" data-channel="ntv" href="norkin.html">
       <div class="card-monogram">АН</div>
       <div class="card-top">
         <div class="card-num">Досье № 08</div>
@@ -718,7 +795,7 @@
     </a>
 
     <!-- KEOSAYAN -->
-    <a class="card" href="keosayan.html">
+    <a class="card" data-channel="rt" href="keosayan.html">
       <div class="card-monogram">ТК</div>
       <div class="card-top">
         <div class="card-num">Досье № 09</div>
@@ -742,7 +819,7 @@
     </a>
 
     <!-- ANDREYEVA -->
-    <a class="card" href="andreyeva.html">
+    <a class="card" data-channel="perviy" href="andreyeva.html">
       <div class="card-monogram">ЕА</div>
       <div class="card-top">
         <div class="card-num">Досье № 10</div>
@@ -766,7 +843,7 @@
     </a>
 
     <!-- MAMONTOV -->
-    <a class="card" href="mamontov.html">
+    <a class="card" data-channel="rossiya1" href="mamontov.html">
       <div class="card-monogram">АМ</div>
       <div class="card-top">
         <div class="card-num">Досье № 11</div>
@@ -790,7 +867,7 @@
     </a>
 
     <!-- PRILEPIN -->
-    <a class="card" href="prilepin.html">
+    <a class="card" data-channel="vlast" href="prilepin.html">
       <div class="card-monogram">ЗП</div>
       <div class="card-top">
         <div class="card-num">Досье № 12</div>
@@ -814,7 +891,7 @@
     </a>
 
     <!-- LEONTYEV -->
-    <a class="card" href="leontyev.html">
+    <a class="card" data-channel="perviy" href="leontyev.html">
       <div class="card-monogram">МЛ</div>
       <div class="card-top">
         <div class="card-num">Досье № 13</div>
@@ -838,7 +915,7 @@
     </a>
 
     <!-- KORCHEVNIKOV -->
-    <a class="card" href="korchevnikov.html">
+    <a class="card" data-channel="rossiya1" href="korchevnikov.html">
       <div class="card-monogram">БК</div>
       <div class="card-top">
         <div class="card-num">Досье № 14</div>
@@ -862,7 +939,7 @@
     </a>
 
     <!-- MEDINSKY -->
-    <a class="card" href="medinsky.html">
+    <a class="card" data-channel="vlast" href="medinsky.html">
       <div class="card-monogram">ВМ</div>
       <div class="card-top">
         <div class="card-num">Досье № 15</div>
@@ -905,6 +982,42 @@
     <cite>— Официальный журнал ЕС — о Скабеевой</cite>
   </div>
 </div>
+
+<div class="no-results" id="no-results">Ничего не найдено</div>
+
+<script>
+(function(){
+  var cards = Array.from(document.querySelectorAll('.card'));
+  var activeFilter = 'all';
+
+  document.querySelectorAll('.flt-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.flt-btn').forEach(function(b){ b.classList.remove('active'); });
+      this.classList.add('active');
+      activeFilter = this.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  document.getElementById('search-input').addEventListener('input', applyFilters);
+
+  function applyFilters() {
+    var q = document.getElementById('search-input').value.toLowerCase().trim();
+    var visible = 0;
+    cards.forEach(function(card) {
+      var ch = card.dataset.channel || '';
+      var nameEl = card.querySelector('.card-name');
+      var name = nameEl ? nameEl.textContent.toLowerCase() : '';
+      var channelOk = activeFilter === 'all' || ch === activeFilter;
+      var searchOk = !q || name.includes(q);
+      var show = channelOk && searchOk;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  }
+})();
+</script>
 
 <!-- FOOTER -->
 <div class="footer">

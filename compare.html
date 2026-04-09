@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сравнение досье · Голоса Кремля</title>
+<meta name="description" content="Сравните двух пропагандистов по биографии, санкциям, методам и цитатам.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Сравнение · Голоса Кремля">
+<meta property="og:description" content="Выберите двух пропагандистов и сравните их досье бок о бок.">
+<meta property="og:site_name" content="Голоса Кремля">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+    --card-bg: #0e0e0e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
+
+  /* SELECTOR */
+  .selector-wrap {
+    padding: 60px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 32px;
+    align-items: center;
+    background: #050505;
+  }
+
+  .selector-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  select {
+    width: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    color: var(--paper);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 18px 24px;
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  select:focus { border-color: var(--red-dim); }
+  select option { background: var(--card-bg); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 300; }
+
+  .vs-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1c1c1c;
+    text-align: center;
+  }
+
+  .compare-btn {
+    display: block;
+    margin: 32px auto 0;
+    background: var(--red-dim);
+    border: none;
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 16px 48px;
+    cursor: pointer;
+    grid-column: 1 / -1;
+    transition: background 0.2s;
+  }
+  .compare-btn:hover { background: var(--red); }
+
+  /* COMPARISON TABLE */
+  .compare-section { padding: 80px 60px; border-bottom: 1px solid var(--rule); }
+  .compare-section-title {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .compare-section-title::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr;
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .cg-label {
+    background: #0d0d0d;
+    padding: 20px 24px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    display: flex;
+    align-items: center;
+  }
+
+  .cg-head {
+    background: #0d0d0d;
+    padding: 20px 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--paper);
+    border-top: 3px solid var(--red);
+  }
+
+  .cg-cell {
+    background: var(--card-bg);
+    padding: 20px 24px;
+    font-size: 13px;
+    color: var(--light-gray);
+    line-height: 1.75;
+  }
+
+  .cg-cell.highlight { color: var(--paper); }
+
+  .sanction-tag {
+    display: inline-block;
+    background: #1a0000;
+    border: 1px solid var(--red-dim);
+    color: var(--red);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    margin: 2px;
+    white-space: nowrap;
+  }
+
+  .quote-cell {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--paper);
+    line-height: 1.6;
+    border-left: 2px solid var(--red-dim);
+    padding-left: 16px;
+  }
+
+  .empty-state {
+    padding: 120px 60px;
+    text-align: center;
+  }
+  .empty-state-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--light-gray);
+    margin-bottom: 16px;
+  }
+  .empty-state-sub { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; }
+
+  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
+
+  @media (max-width: 900px) {
+    .masthead, .nav-back, .compare-section, .footer { padding-left: 24px; padding-right: 24px; }
+    .selector-wrap { padding: 32px 24px; grid-template-columns: 1fr; }
+    .vs-label { display: none; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .cg-head, .cg-label { display: none; }
+    .cg-head:first-of-type { display: block; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Аналитика · Сравнение</div>
+  <h1 class="masthead-title">Сравнение досье</h1>
+  <p class="masthead-sub">Выберите двух персонажей и сравните их биографии, санкции, методы и цитаты бок о бок.</p>
+</div>
+
+<div class="selector-wrap">
+  <div>
+    <div class="selector-label">Персонаж А</div>
+    <select id="person-a">
+      <option value="">— Выберите —</option>
+      <option value="solovyov">Владимир Соловьёв</option>
+      <option value="skabeeva">Ольга Скабеева</option>
+      <option value="kiselyov">Дмитрий Киселёв</option>
+      <option value="simonyan">Маргарита Симоньян</option>
+      <option value="popov">Евгений Попов</option>
+      <option value="sheynin">Артём Шейнин</option>
+      <option value="tolstoy">Пётр Толстой</option>
+      <option value="norkin">Андрей Норкин</option>
+      <option value="keosayan">Тигран Кеосаян</option>
+      <option value="andreyeva">Екатерина Андреева</option>
+      <option value="mamontov">Аркадий Мамонтов</option>
+      <option value="prilepin">Захар Прилепин</option>
+      <option value="leontyev">Михаил Леонтьев</option>
+      <option value="korchevnikov">Борис Корчевников</option>
+      <option value="medinsky">Владимир Мединский</option>
+    </select>
+  </div>
+  <div class="vs-label">vs</div>
+  <div>
+    <div class="selector-label">Персонаж Б</div>
+    <select id="person-b">
+      <option value="">— Выберите —</option>
+      <option value="solovyov">Владимир Соловьёв</option>
+      <option value="skabeeva">Ольга Скабеева</option>
+      <option value="kiselyov">Дмитрий Киселёв</option>
+      <option value="simonyan">Маргарита Симоньян</option>
+      <option value="popov">Евгений Попов</option>
+      <option value="sheynin">Артём Шейнин</option>
+      <option value="tolstoy">Пётр Толстой</option>
+      <option value="norkin">Андрей Норкин</option>
+      <option value="keosayan">Тигран Кеосаян</option>
+      <option value="andreyeva">Екатерина Андреева</option>
+      <option value="mamontov">Аркадий Мамонтов</option>
+      <option value="prilepin">Захар Прилепин</option>
+      <option value="leontyev">Михаил Леонтьев</option>
+      <option value="korchevnikov">Борис Корчевников</option>
+      <option value="medinsky">Владимир Мединский</option>
+    </select>
+  </div>
+  <button class="compare-btn" onclick="compare()" style="grid-column:1/-1">Сравнить →</button>
+</div>
+
+<div id="empty-state" class="empty-state">
+  <div class="empty-state-title">Выберите двух персонажей выше</div>
+  <div class="empty-state-sub">Сравнение появится здесь</div>
+</div>
+
+<div id="result" style="display:none"></div>
+
+<div class="footer">
+  <div class="footer-logo">Голоса Кремля</div>
+  <span>Данные из открытых источников</span>
+  <span>2024</span>
+</div>
+
+<script>
+var data = {
+  solovyov: {
+    name: 'Владимир Соловьёв',
+    born: '20 октября 1963, Москва',
+    channel: 'Россия-1',
+    show: '«Вечер с Соловьёвым», «Москва. Кремль. Путин»',
+    sanctions: ['ЕС', 'США', 'UK', 'Канада', 'Австралия', 'Япония'],
+    method: 'Агрессивный митинговый стиль, личные нападки, истерический темп. Создаёт атмосферу осаждённой крепости.',
+    quote: '«Когда я слышу слово "мир", я хватаюсь за автомат. Этот мир будет только с нашей победой.»',
+    year: '2022',
+    property: 'Арест имущества в Италии на €8 млн. Виллы на озере Комо. Яхта.',
+    dosye: 'solovyov.html'
+  },
+  skabeeva: {
+    name: 'Ольга Скабеева',
+    born: '11 декабря 1984, Волжский',
+    channel: 'Россия-1',
+    show: '«60 минут» (с мужем Поповым)',
+    sanctions: ['ЕС', 'США', 'UK', 'Канада', 'Австралия', 'Япония'],
+    method: 'Циничный напор, инструктаж гостей, демонстративное презрение. Соведущий — муж Попов.',
+    quote: '«Мы открыто воюем с НАТО. Назовём вещи своими именами: началась Третья мировая война.»',
+    year: '2022',
+    property: '—',
+    dosye: 'skabeeva.html'
+  },
+  kiselyov: {
+    name: 'Дмитрий Киселёв',
+    born: '26 апреля 1954, Москва',
+    channel: 'МИА «Россия сегодня»',
+    show: '«Вести недели», гендиректор «России сегодня»',
+    sanctions: ['ЕС (2014)', 'Канада', 'Швейцария'],
+    method: 'Постановочная монументальность, ядерная риторика, образ «голоса нации». Первый персонально санкционированный.',
+    quote: '«Россия — единственная в мире страна, которая реально способна превратить США в радиоактивный пепел.»',
+    year: '2014',
+    property: 'Счета заморожены в Швейцарии. Персона нон грата в Молдове.',
+    dosye: 'kiselyov.html'
+  },
+  simonyan: {
+    name: 'Маргарита Симоньян',
+    born: '6 апреля 1980, Краснодар',
+    channel: 'RT / МИА «Россия сегодня»',
+    show: 'Главный редактор RT и МИА «Россия сегодня»',
+    sanctions: ['ЕС', 'США', 'UK', 'Канада', 'Австралия', 'Япония'],
+    method: 'Глобальная дезинформация под видом «альтернативной точки зрения». Управляет медиаимперией на 100+ стран.',
+    quote: '«Либо мы победим — либо ядерная война. Третьего не дано. Ядерная война лучше, чем капитуляция.»',
+    year: '2022',
+    property: 'RT заблокирован в ЕС. Офисы закрыты в Лондоне и Берлине.',
+    dosye: 'simonyan.html'
+  },
+  popov: {
+    name: 'Евгений Попов',
+    born: '25 июля 1971, Москва',
+    channel: 'Россия-1',
+    show: '«60 минут» (с женой Скабеевой), депутат Госдумы',
+    sanctions: ['ЕС', 'США', 'UK', 'Канада', 'Австралия', 'Япония'],
+    method: 'Сочетание думского мандата и ежедневного эфира. Семейный медиа-бизнес на государственные деньги.',
+    quote: '«Англосаксы хотят воевать с Россией до последнего украинца.»',
+    year: '2022',
+    property: '—',
+    dosye: 'popov.html'
+  },
+  sheynin: {
+    name: 'Артём Шейнин',
+    born: '28 сентября 1966, Ленинград',
+    channel: 'Первый канал',
+    show: '«Время покажет»',
+    sanctions: ['ЕС', 'США', 'UK'],
+    method: 'Афганский ветеран как моральный щит. Выключение микрофонов несогласным. Агрессия под видом народного гнева.',
+    quote: '«Я был на войне. Настоящей войне. Это другой разговор.»',
+    year: '2019',
+    property: '—',
+    dosye: 'sheynin.html'
+  },
+  tolstoy: {
+    name: 'Пётр Толстой',
+    born: '20 августа 1969, Москва',
+    channel: 'Первый канал / Госдума',
+    show: 'Вице-спикер Госдумы, экс-Первый канал',
+    sanctions: ['ЕС', 'США', 'UK', 'Канада'],
+    method: 'Аристократическое имя как легитимизация. Праправнук Льва Толстого — апологет войны.',
+    quote: '«Бандеровцы — это внуки и правнуки тех, кто резал наших дедов.»',
+    year: '2018',
+    property: 'Персона нон грата в Латвии и Эстонии.',
+    dosye: 'tolstoy.html'
+  },
+  norkin: {
+    name: 'Андрей Норкин',
+    born: '11 ноября 1966, Москва',
+    channel: 'НТВ',
+    show: '«Место встречи»',
+    sanctions: ['ЕС', 'UK'],
+    method: 'Трибунальный формат. Гость — всегда обвиняемый. Начинал как либеральный журналист на РБК.',
+    quote: '«Украина — это не государство в классическом смысле. Это проект, который создали против России.»',
+    year: '2023',
+    property: '—',
+    dosye: 'norkin.html'
+  },
+  keosayan: {
+    name: 'Тигран Кеосаян',
+    born: '3 декабря 1966, Москва',
+    channel: 'RT',
+    show: 'Режиссёр-документалист RT',
+    sanctions: ['ЕС', 'США', 'UK'],
+    method: 'Голливудские приёмы на службе государственной пропаганды. Кино как оружие. Муж Симоньян.',
+    quote: '«Европа умирает. Она захлёбывается мигрантами и толерантностью. Это агония.»',
+    year: '2021',
+    property: '—',
+    dosye: 'keosayan.html'
+  },
+  andreyeva: {
+    name: 'Екатерина Андреева',
+    born: '14 марта 1965, Москва',
+    channel: 'Первый канал',
+    show: 'Диктор новостей с 1991 года',
+    sanctions: ['ЕС', 'UK'],
+    method: 'Нейтральный голос как инструмент легитимизации лжи. 30+ лет в эфире — при трёх президентах.',
+    quote: '«Диктор, читающий ложь нейтральным голосом, опаснее того, кто кричит.» — о методе Андреевой',
+    year: '2022',
+    property: '—',
+    dosye: 'andreyeva.html'
+  },
+  mamontov: {
+    name: 'Аркадий Мамонтов',
+    born: '3 ноября 1962, Омск',
+    channel: 'Россия-1',
+    show: '«Специальный корреспондент»',
+    sanctions: ['ЕС', 'UK'],
+    method: 'Псевдодокументальный формат. Фильмы о «содомии» и «нацистах» выходят перед репрессивными законами.',
+    quote: '«Гомосексуализм — это болезнь. Страшная, социально опасная.»',
+    year: '2014',
+    property: '—',
+    dosye: 'mamontov.html'
+  },
+  prilepin: {
+    name: 'Захар Прилепин',
+    born: '7 июля 1975, Рязанская область',
+    channel: 'Донбасс / Политика',
+    show: 'Писатель, командир ДНР, сопредседатель «СР»',
+    sanctions: ['ЕС', 'США', 'UK'],
+    method: 'Писатель с автоматом. Легитимизация войны перед образованной аудиторией. Интеллектуальный национализм.',
+    quote: '«Я написал о войне. Потом пошёл на войну. Потому что одно без другого — либо трусость, либо ложь.»',
+    year: '2017',
+    property: 'Пережил покушение — взрыв автомобиля в 2023.',
+    dosye: 'prilepin.html'
+  },
+  leontyev: {
+    name: 'Михаил Леонтьев',
+    born: '6 октября 1958, Москва',
+    channel: 'Первый канал',
+    show: '«Однако» с 1999, пресс-секретарь «Роснефти»',
+    sanctions: ['ЕС', 'UK'],
+    method: 'Интеллектуальный комментарий, а не крик. 5000+ выпусков «Однако». Слияние медиа и корпорации.',
+    quote: '«Запад — это не демократия, это клептократия. Они воруют у своих народов будущее.»',
+    year: '2020',
+    property: '—',
+    dosye: 'leontyev.html'
+  },
+  korchevnikov: {
+    name: 'Борис Корчевников',
+    born: '3 декабря 1981, Москва',
+    channel: 'Россия-1 / Спас',
+    show: '«Судьба человека», гендиректор «Спас»',
+    sanctions: ['ЕС'],
+    method: 'Православие как государственная идеология. Религиозная легитимизация войны. Личный путь через онкологию.',
+    quote: '«Эта война — священная. Мы воюем против сатанинского начала в современном мире.»',
+    year: '2022',
+    property: '—',
+    dosye: 'korchevnikov.html'
+  },
+  medinsky: {
+    name: 'Владимир Мединский',
+    born: '18 июля 1970, Смела, Украина',
+    channel: 'Власть / Кремль',
+    show: 'Советник Путина, экс-министр культуры 2012–2020',
+    sanctions: ['ЕС', 'США', 'UK', 'Канада'],
+    method: 'Переписывание истории как государственный проект. Культура — оружие. Диссертация признана фальсификацией.',
+    quote: '«История — это не то, что было, а то, что нужно народу.»',
+    year: '2016',
+    property: 'Родился на Украине. Вёл «мирные» переговоры с заведомо неприемлемыми условиями.',
+    dosye: 'medinsky.html'
+  }
+};
+
+function compare() {
+  var aKey = document.getElementById('person-a').value;
+  var bKey = document.getElementById('person-b').value;
+
+  if (!aKey || !bKey) {
+    alert('Выберите обоих персонажей');
+    return;
+  }
+  if (aKey === bKey) {
+    alert('Выберите разных персонажей');
+    return;
+  }
+
+  var a = data[aKey];
+  var b = data[bKey];
+
+  var html = '';
+
+  function row(label, va, vb, cls) {
+    cls = cls || '';
+    return '<div class="cg-label">' + label + '</div>' +
+           '<div class="cg-cell ' + cls + '">' + va + '</div>' +
+           '<div class="cg-cell ' + cls + '">' + vb + '</div>';
+  }
+
+  function sanctions(arr) {
+    return arr.map(function(s){ return '<span class="sanction-tag">' + s + '</span>'; }).join(' ');
+  }
+
+  html += '<div class="compare-section"><div class="compare-section-title">Основные данные</div>';
+  html += '<div class="compare-grid">';
+  html += '<div class="cg-label"></div><a class="cg-head" href="' + a.dosye + '" style="text-decoration:none;color:var(--paper)">' + a.name + ' ↗</a><a class="cg-head" href="' + b.dosye + '" style="text-decoration:none;color:var(--paper)">' + b.name + ' ↗</a>';
+  html += row('Родился/лась', a.born, b.born, 'highlight');
+  html += row('Канал / платформа', a.channel, b.channel);
+  html += row('Программа / роль', a.show, b.show);
+  html += '</div></div>';
+
+  html += '<div class="compare-section"><div class="compare-section-title">Санкции</div>';
+  html += '<div class="compare-grid">';
+  html += '<div class="cg-label"></div><div class="cg-head">' + a.name + '</div><div class="cg-head">' + b.name + '</div>';
+  html += row('Введены', sanctions(a.sanctions), sanctions(b.sanctions));
+  html += row('Особые ограничения', a.property, b.property);
+  html += '</div></div>';
+
+  html += '<div class="compare-section"><div class="compare-section-title">Метод и стиль</div>';
+  html += '<div class="compare-grid">';
+  html += '<div class="cg-label"></div><div class="cg-head">' + a.name + '</div><div class="cg-head">' + b.name + '</div>';
+  html += row('Метод', a.method, b.method);
+  html += '</div></div>';
+
+  html += '<div class="compare-section"><div class="compare-section-title">Характерные цитаты</div>';
+  html += '<div class="compare-grid">';
+  html += '<div class="cg-label"></div><div class="cg-head">' + a.name + '</div><div class="cg-head">' + b.name + '</div>';
+  html += '<div class="cg-label">' + a.year + ' / ' + b.year + '</div>';
+  html += '<div class="cg-cell"><div class="quote-cell">' + a.quote + '</div></div>';
+  html += '<div class="cg-cell"><div class="quote-cell">' + b.quote + '</div></div>';
+  html += '</div></div>';
+
+  document.getElementById('result').innerHTML = html;
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('empty-state').style.display = 'none';
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

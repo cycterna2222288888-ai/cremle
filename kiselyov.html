@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дмитрий Киселёв — досье</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --orange: #a0400a;
+    --gray: #4a4a4a;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-left {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--rule);
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 32px;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 5.5vw, 76px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(14px, 1.7vw, 20px);
+    color: var(--light-gray);
+    margin-bottom: 48px;
+    line-height: 1.4;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    border-top: 1px solid var(--rule);
+    padding-top: 40px;
+  }
+
+  .meta-item label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .meta-item span {
+    font-size: 13px;
+    color: var(--light-gray);
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: #080808;
+  }
+
+  .hero-stamp {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    border: 2px solid var(--red);
+    color: var(--red);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    opacity: 0.85;
+    transform: rotate(2deg);
+  }
+
+  /* SECTIONS */
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--paper);
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 12px;
+    flex: 1;
+  }
+
+  /* TIMELINE */
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+
+  .timeline-year {
+    padding: 0 24px 48px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--red);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-right: 1px solid var(--rule);
+    text-align: right;
+    position: relative;
+  }
+
+  .timeline-year::after {
+    content: '';
+    position: absolute;
+    right: -5px; top: 6px;
+    width: 9px; height: 9px;
+    background: var(--red);
+    border-radius: 50%;
+  }
+
+  .timeline-body { padding: 0 0 48px 32px; }
+
+  .timeline-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--paper);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+
+  /* FOUR GRID */
+  .four-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .grid-card { background: var(--ink); padding: 40px; }
+
+  .grid-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--paper);
+    margin-bottom: 14px;
+  }
+
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+
+  /* PULL QUOTE */
+  .quote-pull {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(17px, 2.2vw, 26px);
+    color: var(--paper);
+    border-left: 3px solid var(--red);
+    padding: 24px 0 24px 32px;
+    margin: 48px 0;
+    line-height: 1.5;
+  }
+
+  .quote-pull cite {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-style: normal;
+    margin-top: 16px;
+  }
+
+  /* MEME QUOTES — special full-bleed treatment */
+  .meme-quotes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--rule);
+    margin-bottom: 2px;
+  }
+
+  .meme-card {
+    background: #0c0000;
+    padding: 48px 40px;
+    position: relative;
+  }
+
+  .meme-card::before {
+    content: '«';
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: var(--red);
+    opacity: 0.1;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    line-height: 1;
+  }
+
+  .meme-card .meme-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(16px, 2vw, 22px);
+    color: var(--paper);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .meme-card .meme-src {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  /* PEOPLE QUOTES */
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .person-quote { background: #0d0d0d; padding: 36px; }
+
+  .person-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--paper);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .person-quote .attribution {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  /* INTERVIEW */
+  .interview-list { display: grid; gap: 0; }
+
+  .interview-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 2fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .interview-row:first-child { border-top: 1px solid var(--rule); }
+
+  .interview-num { font-size: 11px; color: var(--red); letter-spacing: 0.15em; }
+
+  .interview-topic {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--paper);
+    font-weight: 700;
+  }
+
+  .interview-desc { font-size: 13px; color: var(--light-gray); line-height: 1.8; }
+
+  /* STATS */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--rule);
+    margin-top: 48px;
+  }
+
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+
+  .stat-card .stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  .stat-card .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 8px;
+  }
+
+  .intro-text {
+    font-size: 15px;
+    color: var(--light-gray);
+    line-height: 1.9;
+    max-width: 720px;
+    margin-bottom: 48px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    border: 1px solid var(--red-dim);
+    padding: 3px 8px;
+    margin-bottom: 10px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 280px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .interview-row { grid-template-columns: 40px 1fr; }
+    .interview-desc { display: none; }
+  }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Дмитрий<br>Киселёв</h1>
+    <p class="hero-subtitle">«Россия — единственная страна,<br>способная превратить США в радиоактивный пепел»</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>26 апреля 1954, Москва</span>
+      </div>
+      <div class="meta-item">
+        <label>Образование</label>
+        <span>Филфак ЛГУ, скандинавская филология</span>
+      </div>
+      <div class="meta-item">
+        <label>Должности</label>
+        <span>Гендиректор МИА «Россия сегодня», зам. гендиректора ВГТРК</span>
+      </div>
+      <div class="meta-item">
+        <label>Браки</label>
+        <span>Семь официальных браков</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>ЕС (с 2014), Швейцария, Канада; персона нон грата в Молдове</span>
+      </div>
+      <div class="meta-item">
+        <label>Мемы</label>
+        <span>«Радиоактивный пепел», «Сердца геев», «Совпадение? Не думаю!»</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <radialGradient id="rg3" cx="50%" cy="40%" r="65%">
+          <stop offset="0%" stop-color="#200000" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#050505" stop-opacity="1"/>
+        </radialGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#rg3)"/>
+
+      <!-- Nuclear symbol -->
+      <g transform="translate(50%,42%)" opacity="0.12" stroke="#8b1a1a" fill="none">
+        <circle r="100" stroke-width="1"/>
+        <circle r="18"  stroke-width="1.5" fill="#8b1a1a"/>
+        <!-- Blades -->
+        <path d="M0,-18 L-86,-49 A100,100 0 0,1 86,-49 Z" fill="#8b1a1a" stroke="none"/>
+        <path d="M16,8 L86,49 A100,100 0 0,1 0,100 L-17,8 Z" fill="#8b1a1a" stroke="none" transform="rotate(0)"/>
+        <path d="M-16,8 L-86,49 A100,100 0 0,1 0,-100 L17,-8 Z" fill="#8b1a1a" stroke="none" transform="rotate(180)"/>
+      </g>
+
+      <!-- Scan lines -->
+      <g opacity="0.04" stroke="#c8c0b0" stroke-width="1">
+        <line x1="0" y1="9%"  x2="100%" y2="9%"/>
+        <line x1="0" y1="18%" x2="100%" y2="18%"/>
+        <line x1="0" y1="27%" x2="100%" y2="27%"/>
+        <line x1="0" y1="36%" x2="100%" y2="36%"/>
+        <line x1="0" y1="45%" x2="100%" y2="45%"/>
+        <line x1="0" y1="54%" x2="100%" y2="54%"/>
+        <line x1="0" y1="63%" x2="100%" y2="63%"/>
+        <line x1="0" y1="72%" x2="100%" y2="72%"/>
+        <line x1="0" y1="81%" x2="100%" y2="81%"/>
+        <line x1="0" y1="90%" x2="100%" y2="90%"/>
+      </g>
+
+      <!-- Outer rings -->
+      <circle cx="50%" cy="42%" r="140" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.18"/>
+      <circle cx="50%" cy="42%" r="180" fill="none" stroke="#8b1a1a" stroke-width="0.3" opacity="0.10"/>
+
+      <!-- Monogram -->
+      <text x="50%" y="46%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia,serif" font-size="130" fill="#8b1a1a" opacity="0.10" font-weight="700">ДК</text>
+
+      <!-- Bottom label -->
+      <text x="50%" y="80%" text-anchor="middle"
+        font-family="'Inter',sans-serif" font-size="10" fill="#8b1a1a" opacity="0.5"
+        letter-spacing="5">ВЕСТИ НЕДЕЛИ · РОССИЯ СЕГОДНЯ</text>
+    </svg>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Opening_of_Sputnik_hub_in_Ethiopia_06_%28cropped%29.jpg" alt="Дмитрий Киселёв" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.45;mix-blend-mode:luminosity;">
+    <div class="hero-stamp">Центральная фигура пропаганды · ЕС</div>
+  </div>
+</div>
+
+<!-- BIOGRAPHY -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+
+    <p class="intro-text">
+      Дмитрий Константинович Киселёв — ведущий «Вестей недели», генеральный директор МИА «Россия сегодня», заместитель гендиректора ВГТРК. В молодости получал гранты Еврокомиссии и работал на украинском телевидении. В зрелости — пообещал превратить США в радиоактивный пепел. Семь браков, дача в Крыму, символ новой эпохи российской пропаганды.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-year">1954</div>
+      <div class="timeline-body">
+        <h3>Рождение в Москве</h3>
+        <p>Родился 26 апреля 1954 года в Москве. Мать — Ариадна Николаевна, бригадир секции зрителей во МХАТе. Отец — Константин, тамбовские крестьянские корни, служил в кавалерии. Дед по матери — Несмачный, родом с Западной Украины. Рос в творческой среде: французская спецшкола, музыкальная школа по классу гитары.</p>
+      </div>
+
+      <div class="timeline-year">1970-е</div>
+      <div class="timeline-body">
+        <h3>Медбрат. Филфак ЛГУ</h3>
+        <p>До поступления в университет работал медбратом. Окончил филологический факультет Ленинградского государственного университета по редкой специальности — скандинавская филология. Один из первых браков — с однокурсницей Алёной, официальный, распался меньше чем за год. Всего в студенчестве — три официальных брака.</p>
+      </div>
+
+      <div class="timeline-year">1980-е</div>
+      <div class="timeline-body">
+        <h3>Гостелерадио СССР</h3>
+        <p>Начал карьеру в Центральном радиовещании на зарубежные страны Гостелерадио СССР — норвежская и польская редакции. Высокая ответственность, жёсткий контроль над каждым словом. С 1988 — ведущий политических обозрений программы «Время». В 1991 году отказался зачитать официальное заявление правительства о событиях в Прибалтике и был уволен.</p>
+      </div>
+
+      <div class="timeline-year">1991</div>
+      <div class="timeline-body">
+        <h3>«Вести». Новый формат</h3>
+        <p>После увольнения с Гостелерадио приглашён в программу «Вести» — стал одним из создателей нового формата отечественного телевидения. Активное сотрудничество с зарубежными журналистами. В 1995-м — ведущий «Часа пик». Параллельно получал гранты Еврокомиссии на развитие журналистики.</p>
+      </div>
+
+      <div class="timeline-year">2000</div>
+      <div class="timeline-body">
+        <h3>Украина. Киев. ICTV</h3>
+        <p>С 2000 по 2004 год — главный редактор информационной службы украинского телеканала ICTV, ведущий программы «Факты» и ежедневного шоу «Подробно с Дмитрием Киселёвым». Работал в стране, которую позже назовёт «виртуальным понятием». В 2005-м вернулся в Россию на «Россию».</p>
+      </div>
+
+      <div class="timeline-year">2012</div>
+      <div class="timeline-body">
+        <h3>«Вести недели». Возвращение в эфир</h3>
+        <p>В сентябре 2012 года, через несколько месяцев после избрания Путина на третий срок, громко вернулся в регулярный прайм-тайм. В день 60-летия президента посвятил ему 12-минутную хвалебную речь в эфире. Началась новая фаза — программный, системный пропагандист.</p>
+      </div>
+
+      <div class="timeline-year">2013</div>
+      <div class="timeline-body">
+        <h3>«Сердца геев». Гендиректор «России сегодня»</h3>
+        <p>В апреле 2012-го (волна поднялась в 2013-м) призвал «зарывать в землю или сжигать» сердца геев. Группа блогеров обратилась в Следственный комитет по ст. 282 УК (экстремизм). В декабре 2013-го Путин назначил его генеральным директором МИА «Россия сегодня» — новой структуры на базе РИА Новости.</p>
+      </div>
+
+      <div class="timeline-year">2014</div>
+      <div class="timeline-body">
+        <h3>«Радиоактивный пепел». Санкции ЕС</h3>
+        <p>16 марта 2014 года в «Вестях недели» заявил: «Россия — единственная страна в мире, способная превратить США в радиоактивный пепел». Фраза стала мировым мемом. 21 марта ЕС внёс Киселёва в санкционный список как «центральную фигуру государственной пропаганды». Литва лишила его государственной награды — медали Памяти.</p>
+      </div>
+
+      <div class="timeline-year">2015</div>
+      <div class="timeline-body">
+        <h3>Санкции Швейцарии и Канады. Иск в суд ЕС</h3>
+        <p>Вошёл в санкционные списки Швейцарии и Канады как «центральная фигура государственной пропаганды». Объявлен персоной нон грата в Молдове. Подал иск в Европейский суд общей юрисдикции (Люксембург), пытаясь оспорить санкции. Суд в его пользу не вынес решения.</p>
+      </div>
+
+      <div class="timeline-year">2022—</div>
+      <div class="timeline-body">
+        <h3>Снова «радиоактивный пепел»</h3>
+        <p>После начала вторжения в Украину регулярно возвращался к ядерной риторике. В интервью Би-би-си в 2021-м предупреждал Запад о «новом Карибском кризисе». В 2024-м снова пообещал США «радиоактивный пепел» — в ответ на принятие пакета помощи Украине. Его брат Андрей эмигрировал в США ещё в 1980-е; братья не общаются.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEGENDARY QUOTES -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Фразы, ставшие мемами</h2>
+    </div>
+
+    <p class="intro-text">
+      Киселёв — единственный российский пропагандист, чьи слова буквально разошлись по всему миру в виде мемов. Три цитаты, которые невозможно забыть.
+    </p>
+
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="tag">Ядерная угроза · 2014</div>
+        <p class="meme-text">«Россия — единственная в мире страна, которая реально способна превратить США в радиоактивный пепел.»</p>
+        <div class="meme-src">«Вести недели», 16 марта 2014 — сразу после аннексии Крыма</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">Гомофобия · 2012</div>
+        <p class="meme-text">«Сердца геев в случае автомобильной катастрофы зарывать в землю или сжигать как непригодные для продолжения чьей-либо жизни.»</p>
+        <div class="meme-src">«Исторический процесс», апрель 2012 — ставшее мировым скандалом</div>
+      </div>
+    </div>
+    <div class="meme-quotes" style="margin-top:2px">
+      <div class="meme-card">
+        <div class="tag">Отрицание Украины · позиция</div>
+        <p class="meme-text">«Украины нет. Теперь это виртуальное понятие, виртуальная страна.»</p>
+        <div class="meme-src">Из публичных высказываний разных лет</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">Самооправдание · 2014</div>
+        <p class="meme-text">«Моя фраза о сжигании сердец — сознательная провокация для затравки полемической программы. Конфликт мнений с элементами шоу был заложен драматургически.»</p>
+        <div class="meme-src">Киселёв объясняет Киселёва — апрель 2014</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTRADICTIONS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Парадоксы биографии</h2>
+    </div>
+
+    <p class="intro-text">
+      Биография Киселёва — коллекция противоречий. Скандинавский филолог, ненавидящий Запад. Работавший на украинском ТВ националист. Получавший гранты ЕС будущий объект санкций ЕС.
+    </p>
+
+    <div class="four-grid">
+      <div class="grid-card">
+        <div class="tag">Парадокс 1</div>
+        <h3>Гранты ЕС → Санкции ЕС</h3>
+        <p>В 90-е годы активно получал гранты Еврокомиссии на развитие журналистики и сотрудничал с западными коллегами. В 2014-м стал одним из первых российских журналистов, попавших под персональные санкции того же Евросоюза. Путь от получателя грантов до «центральной фигуры государственной пропаганды» — меньше 20 лет.</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Парадокс 2</div>
+        <h3>Украинское ТВ → «Украины нет»</h3>
+        <p>С 2000 по 2006 год работал главным редактором информационной службы украинского ICTV, вёл ежедневные программы на украинскую аудиторию. Позже публично заявил, что Украина — «виртуальное понятие», «виртуальная страна». Украина внесла его в список персон нон грата.</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Парадокс 3</div>
+        <h3>«Не гомофоб» → сжигать сердца</h3>
+        <p>После скандала с призывом сжигать сердца геев многократно заявлял, что «гомофобом не является». После легализации однополых браков в США поддержал гражданские союзы для ЛГБТ — но «браком это называть нельзя». Логика, понятная только самому Киселёву.</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Парадокс 4</div>
+        <h3>Брат в США, племянник воевал за ДНР</h3>
+        <p>Старший брат Андрей эмигрировал в США ещё в 1980-е — братья не общаются по «личным причинам». При этом племянник Сергей (сын брата), гражданин Германии, принял участие в вооружённом конфликте на востоке Украины на стороне пророссийских формирований, дослужившись до замкомвзвода.</p>
+      </div>
+    </div>
+
+    <div class="quote-pull">
+      «Новый стиль пропаганды, представленный в лице Киселёва, направлен на возбуждение и мобилизацию аудитории, разжигание ненависти и страха.»
+      <cite>— The Economist</cite>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT PEOPLE SAY -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Что о нём говорят</h2>
+    </div>
+
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«Центральная фигура государственной пропаганды, поддерживающая развёртывание российских войск на Украине.»</blockquote>
+        <div class="attribution">Официальный журнал ЕС — обоснование санкций, март 2014</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Он просто повторяет какие-то тезисы. Это не делают журналисты. Наверное, он хороший пропагандист.»</blockquote>
+        <div class="attribution">Ясен Засурский — президент факультета журналистики МГУ, 2015</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Прокремлёвский телеведущий-гомофоб назначен главой государственного информационного агентства.»</blockquote>
+        <div class="attribution">The Guardian — заголовок после назначения главой «России сегодня», 2013</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Консолидация государственных СМИ в период возросшей онлайн-критики 13-летнего правления Путина.»</blockquote>
+        <div class="attribution">Agence France-Presse — о смысле назначения Киселёва</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Откровенное проявление ксенофобии. Недопустимо использование национальности как аргумента для критики.»</blockquote>
+        <div class="attribution">Российский еврейский конгресс — после эфира, где Киселёв педалировал происхождение оппонентов</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«В молодости учил не прогибаться, а сам не просто прогнулся — сложился, как перочинный ножик.»</blockquote>
+        <div class="attribution">Дмитрий Губин — радиоведущий, колумнист, о трансформации Киселёва</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Превратить США в ядерный пепел даже в Холодную войну избегали говорить!»</blockquote>
+        <div class="attribution">Геннадий Гудков — депутат ГД, реакция в Twitter, 2014</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Если сердце гея сжечь — получится радиоактивный пепел.»</blockquote>
+        <div class="attribution">Иван Давыдов — журналист, вирусный твит, объединивший оба скандала</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Лояльный сторонник Путина, время от времени выступающий с провокационными заявлениями.»</blockquote>
+        <div class="attribution">The Guardian — характеристика в материале о назначении</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTERVIEW TOPICS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Что спрашивали в интервью</h2>
+    </div>
+
+    <p class="intro-text">
+      В отличие от Скабеевой, Киселёв интервью давал охотно — особенно западным изданиям. Темы возвращались к одним и тем же болевым точкам.
+    </p>
+
+    <div class="interview-list">
+      <div class="interview-row">
+        <span class="interview-num">01</span>
+        <div class="interview-topic">«Радиоактивный пепел» — вы это серьёзно?</div>
+        <div class="interview-desc">Стандартный вопрос западных журналистов. Киселёв объяснял: «Из антивоенного высказывания оно превратилось в агрессивное». Настаивал, что имел в виду «не надо ни на кого нападать». В интервью Би-би-си (2021) снова вернулся к ядерной риторике, сравнив ситуацию с Карибским кризисом.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">02</span>
+        <div class="interview-topic">Вы гомофоб?</div>
+        <div class="interview-desc">Категорически отрицал. Объяснял фразу про сердца контекстом американского законодательства о донорстве. Говорил, что это была «сознательная провокация» и «литературное заострение». После легализации однополых браков в США частично смягчил позицию, поддержав гражданские союзы.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">03</span>
+        <div class="interview-topic">Что такое пропаганда</div>
+        <div class="interview-desc">В давнем интервью дал собственное определение: «Распространение идей, информации, мировоззренческой позиции. "Вести недели" пропагандируют здоровые ценности, здоровый патриотизм». Указывал, что Reuters и AP делают то же самое. В интервью «КП» говорил, что «никогда не жалел» о ярких формулировках.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">04</span>
+        <div class="interview-topic">Санкции ЕС — будете оспаривать?</div>
+        <div class="interview-desc">Подтверждал, что подал иск в Европейский суд общей юрисдикции в Люксембурге. Говорил: «Даже интересно, чем они будут доказывать то, что я не говорил». Оспорить санкции не удалось. В список ЕС он попал в 2014-м, Швейцарии и Канады — в 2015-м.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">05</span>
+        <div class="interview-topic">Почему работали на украинском ТВ</div>
+        <div class="interview-desc">В интервью Юрию Дудю (признан иноагентом) подробно рассказывал о периоде работы на ICTV в Киеве. О своей позиции по Украине того периода — уклончиво. Факт работы на украинскую аудиторию в 2000-2006 годах остаётся наиболее ярким противоречием в его биографии.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">06</span>
+        <div class="interview-topic">Брат в США</div>
+        <div class="interview-desc">В интервью Дудю подтвердил существование старшего брата Андрея, эмигрировавшего в США в 1980-е. Сообщил, что «не общаются по личным причинам». Отдельно рассказал о племяннике — сыне брата с гражданством Германии, воевавшем на востоке Украины за пророссийские формирования.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">07</span>
+        <div class="interview-topic">Хобби: мотоциклы, лошади, травмы</div>
+        <div class="interview-desc">Одна из немногих «мирных» тем. Рассказывал о четырёх лошадях, которых держал; о падении с мотоцикла с моста в воду и компрессионном переломе позвоночника; о трёх операциях на колене из-за мотокросса. После травм продал и раздал лошадей. Год ходил на костылях.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NUMBERS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Цифры</h2>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">7</div>
+        <div class="stat-label">официальных браков</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2014</div>
+        <div class="stat-label">год первых санкций ЕС</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">12</div>
+        <div class="stat-label">минут хвалебной речи Путину в день его 60-летия</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">3</div>
+        <div class="stat-label">операции на колене после мотокросса</div>
+      </div>
+    </div>
+
+    <div class="quote-pull" style="margin-top:56px">
+      «Пропаганда — это распространение идей, информации, мировоззренческой позиции. "Вести недели" пропагандируют здоровые ценности, здоровый патриотизм.»
+      <cite>— Дмитрий Киселёв — о себе</cite>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Досье составлено на основе открытых источников</span>
+  <div class="footer-rule"></div>
+  <span>Дмитрий Киселёв · 1954—</span>
+  <div class="footer-rule"></div>
+  <span>Все факты верифицированы публикациями СМИ</span>
+</div>
+
+</body>
+</html>

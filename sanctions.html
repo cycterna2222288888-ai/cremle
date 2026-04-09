@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Санкции — сводная таблица · Голоса Кремля</title>
+<meta name="description" content="Сводная таблица санкций против российских пропагандистов: ЕС, США, Великобритания, Канада, Австралия, Япония.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Санкции · Голоса Кремля">
+<meta property="og:description" content="Кто под какими санкциями, с датами введения и официальными обоснованиями.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --green: #1a4a1a;
+    --gray: #4a4a4a;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+  .section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; flex: 1; }
+
+  /* MAIN TABLE */
+  .sanctions-table { width: 100%; border-collapse: collapse; background: var(--rule); gap: 2px; }
+
+  .sanctions-table th {
+    background: #0d0d0d;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 400;
+    border-bottom: 2px solid var(--red-dim);
+  }
+
+  .sanctions-table td {
+    background: var(--ink);
+    padding: 20px;
+    border-bottom: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  .sanctions-table tr:last-child td { border-bottom: none; }
+
+  .person-cell { display: flex; align-items: flex-start; gap: 16px; }
+  .person-num { font-size: 10px; color: var(--red); letter-spacing: 0.2em; flex-shrink: 0; margin-top: 3px; }
+  .person-name-link { text-decoration: none; }
+  .person-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--paper); line-height: 1.1; }
+  .person-role { font-size: 11px; color: var(--light-gray); margin-top: 4px; }
+
+  .sanction-yes {
+    display: inline-block;
+    background: #1a0000;
+    border: 1px solid var(--red-dim);
+    color: var(--red);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+
+  .sanction-no {
+    display: inline-block;
+    color: #333;
+    font-size: 11px;
+  }
+
+  .sanction-date { display: block; font-size: 9px; color: var(--light-gray); margin-top: 4px; letter-spacing: 0.1em; }
+
+  .basis-text { font-size: 12px; color: var(--light-gray); line-height: 1.7; font-style: italic; }
+
+  /* SUMMARY STATS */
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+  .stat-val { font-family: 'Playfair Display', serif; font-size: 40px; color: var(--red); font-weight: 700; }
+  .stat-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
+
+  .legend { display: flex; gap: 32px; margin-bottom: 32px; align-items: center; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 10px; font-size: 11px; color: var(--light-gray); }
+
+  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
+
+  @media (max-width: 900px) {
+    .masthead, .container, .nav-back, .footer { padding-left: 24px; padding-right: 24px; }
+    .sanctions-table { font-size: 12px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Аналитика · Открытые источники</div>
+  <h1 class="masthead-title">Санкции</h1>
+  <p class="masthead-sub">Сводная таблица персональных ограничительных мер против российских государственных пропагандистов. Данные из официальных журналов ЕС, реестров OFAC (США), санкционных списков Великобритании, Канады, Австралии и Японии.</p>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Персональные санкции по странам</h2>
+    </div>
+
+    <div class="stats-grid" style="margin-top:0;margin-bottom:48px">
+      <div class="stat-card">
+        <div class="stat-val">15</div>
+        <div class="stat-label">персон в архиве</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">6</div>
+        <div class="stat-label">государств ввели санкции</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2014</div>
+        <div class="stat-label">год первых санкций (ЕС — Киселёв)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2022</div>
+        <div class="stat-label">массовые санкции после вторжения</div>
+      </div>
+    </div>
+
+    <table class="sanctions-table">
+      <thead>
+        <tr>
+          <th style="min-width:200px">Персона</th>
+          <th>ЕС</th>
+          <th>США</th>
+          <th>Великобритания</th>
+          <th>Канада</th>
+          <th>Австралия</th>
+          <th>Япония</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">01</span>
+              <div>
+                <a href="solovyov.html" class="person-name-link"><div class="person-name">Владимир Соловьёв</div></a>
+                <div class="person-role">«Вечер с Соловьёвым», Россия-1</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">Февраль 2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">Февраль 2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">02</span>
+              <div>
+                <a href="skabeeva.html" class="person-name-link"><div class="person-name">Ольга Скабеева</div></a>
+                <div class="person-role">«60 минут», Россия-1</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">03</span>
+              <div>
+                <a href="kiselyov.html" class="person-name-link"><div class="person-name">Дмитрий Киселёв</div></a>
+                <div class="person-role">«Вести недели», МИА «Россия сегодня»</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">Март 2014 — первый</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2015</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">04</span>
+              <div>
+                <a href="simonyan.html" class="person-name-link"><div class="person-name">Маргарита Симоньян</div></a>
+                <div class="person-role">Главред RT, МИА «Россия сегодня»</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">05</span>
+              <div>
+                <a href="popov.html" class="person-name-link"><div class="person-name">Евгений Попов</div></a>
+                <div class="person-role">«60 минут», депутат Госдумы</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">06</span>
+              <div>
+                <a href="sheynin.html" class="person-name-link"><div class="person-name">Артём Шейнин</div></a>
+                <div class="person-role">«Время покажет», Первый канал</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">07</span>
+              <div>
+                <a href="tolstoy.html" class="person-name-link"><div class="person-name">Пётр Толстой</div></a>
+                <div class="person-role">Вице-спикер Госдумы, Первый канал</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">08</span>
+              <div>
+                <a href="norkin.html" class="person-name-link"><div class="person-name">Андрей Норкин</div></a>
+                <div class="person-role">«Место встречи», НТВ</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">09</span>
+              <div>
+                <a href="keosayan.html" class="person-name-link"><div class="person-name">Тигран Кеосаян</div></a>
+                <div class="person-role">Режиссёр-документалист, RT</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">10</span>
+              <div>
+                <a href="andreyeva.html" class="person-name-link"><div class="person-name">Екатерина Андреева</div></a>
+                <div class="person-role">Диктор новостей, Первый канал</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">11</span>
+              <div>
+                <a href="mamontov.html" class="person-name-link"><div class="person-name">Аркадий Мамонтов</div></a>
+                <div class="person-role">Документалист, Россия-1</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">12</span>
+              <div>
+                <a href="prilepin.html" class="person-name-link"><div class="person-name">Захар Прилепин</div></a>
+                <div class="person-role">Писатель, командир ДНР</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">13</span>
+              <div>
+                <a href="leontyev.html" class="person-name-link"><div class="person-name">Михаил Леонтьев</div></a>
+                <div class="person-role">«Однако», Первый канал · Роснефть</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">14</span>
+              <div>
+                <a href="korchevnikov.html" class="person-name-link"><div class="person-name">Борис Корчевников</div></a>
+                <div class="person-role">«Судьба человека», Россия-1 · Спас</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="person-cell">
+              <span class="person-num">15</span>
+              <div>
+                <a href="medinsky.html" class="person-name-link"><div class="person-name">Владимир Мединский</div></a>
+                <div class="person-role">Советник Путина, экс-министр культуры</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-yes">Санкции</span><span class="sanction-date">2022</span></td>
+          <td><span class="sanction-no">—</span></td>
+          <td><span class="sanction-no">—</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Официальные обоснования</h2>
+    </div>
+
+    <table class="sanctions-table">
+      <thead>
+        <tr>
+          <th>Персона</th>
+          <th>Орган</th>
+          <th>Официальная формулировка</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="kiselyov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Киселёв</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, март 2014</td>
+          <td><p class="basis-text">«Центральная фигура государственной пропаганды, поддерживающей развёртывание российских войск на Украине и дестабилизацию страны.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="solovyov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Соловьёв</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">Госдеп США, 2022</td>
+          <td><p class="basis-text">«Самый энергичный кремлёвский пропагандист, систематически распространяющий ложные нарративы об Украине и Западе.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="skabeeva.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Скабеева</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, 2022</td>
+          <td><p class="basis-text">«Осознаёт свою циничную роль в российской пропагандистской машине совместно со своим супругом; активно поддерживает действия против Украины.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="popov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Попов</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, 2022</td>
+          <td><p class="basis-text">«Активно поддерживает действия, подрывающие территориальную целостность, суверенитет и независимость Украины; распространяет ложь и пропаганду.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="simonyan.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Симоньян</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">МИД Великобритании, 2022</td>
+          <td><p class="basis-text">«RT является инструментом информационной войны российского правительства. Симоньян — её главный архитектор и исполнитель.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="tolstoy.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Толстой</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, 2022</td>
+          <td><p class="basis-text">«Ответственен за систематическое распространение государственной пропаганды и поддержку действий, подрывающих суверенитет и территориальную целостность Украины.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="sheynin.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Шейнин</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, 2022</td>
+          <td><p class="basis-text">«Систематически продвигает государственную пропаганду и дезинформацию, оправдывающую и поддерживающую вооружённую агрессию против Украины.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="norkin.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Норкин</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, UK — 2022</td>
+          <td><p class="basis-text">«Систематически распространяет дезинформацию и государственную пропаганду, обосновывая незаконную военную агрессию России против Украины через формат "Места встречи" на НТВ.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="keosayan.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Кеосаян</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, США, UK — 2022</td>
+          <td><p class="basis-text">«Использует художественные кинематографические приёмы для создания и распространения российской государственной пропаганды, направленной против западных демократий и оправдывающей агрессию против Украины.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="andreyeva.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Андреева</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, UK — 2022</td>
+          <td><p class="basis-text">«Является лицом государственного телевидения, читающим государственную пропаганду в эфире Первого канала, в том числе оправдывающую незаконное вторжение России в Украину.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="mamontov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Мамонтов</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, UK — 2022</td>
+          <td><p class="basis-text">«Создаёт псевдодокументальные фильмы, систематически распространяющие дезинформацию и пропаганду, направленную против ЛГБТ-сообщества, украинских граждан и западных демократий.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="prilepin.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Прилепин</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, США, UK — 2022</td>
+          <td><p class="basis-text">«Командовал батальоном в составе сепаратистских сил ДНР на востоке Украины; активно поддерживает и продвигает действия, подрывающие суверенитет и территориальную целостность Украины.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="leontyev.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Леонтьев</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, UK — 2022</td>
+          <td><p class="basis-text">«Систематически распространяет через «Однако» на Первом канале антизападную пропаганду и дезинформацию, оправдывающую агрессию России против Украины.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="korchevnikov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Корчевников</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС — 2022</td>
+          <td><p class="basis-text">«Пропагандирует российскую агрессию против Украины через программу «Судьба человека» и управляемый им православный телеканал «Спас», используя религиозную риторику для легитимизации войны.»</p></td>
+        </tr>
+        <tr>
+          <td><a href="medinsky.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Мединский</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">ЕС, США, UK, Канада — 2022</td>
+          <td><p class="basis-text">«Как советник Путина и глава делегации на мирных переговорах ответственен за поддержание условий, несовместимых с суверенитетом Украины; систематически переписывает историю для оправдания агрессии.»</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Особые ограничения</h2>
+    </div>
+
+    <table class="sanctions-table">
+      <thead>
+        <tr>
+          <th>Персона</th>
+          <th>Тип ограничения</th>
+          <th>Детали</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="kiselyov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Киселёв</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">Персона нон грата</td>
+          <td><p class="basis-text">Объявлен персоной нон грата в Молдове. Лишён государственной награды Литвы — медали Памяти. Банковские счета заморожены в Швейцарии.</p></td>
+        </tr>
+        <tr>
+          <td><a href="solovyov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Соловьёв</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">Арест имущества</td>
+          <td><p class="basis-text">Арестовано имущество в Италии на сумму около €8 млн: 5+ объектов недвижимости на озере Комо, яхта. В 2022 году часть имущества сожжена неизвестными.</p></td>
+        </tr>
+        <tr>
+          <td><a href="tolstoy.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Толстой</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">Персона нон грата</td>
+          <td><p class="basis-text">Объявлен персоной нон грата в Латвии и Эстонии. Исключён из делегации ПАСЕ после исключения России из Совета Европы в марте 2022 года.</p></td>
+        </tr>
+        <tr>
+          <td><a href="simonyan.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Симоньян / RT</a></td>
+          <td style="font-size:12px;color:var(--light-gray)">Блокировка СМИ</td>
+          <td><p class="basis-text">RT заблокирован в большинстве стран ЕС, закрыты офисы в Лондоне и Берлине. RT America зарегистрирован как иностранный агент в США. Банковские счета RT заморожены в Европе.</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-logo">Голоса Кремля</div>
+  <span>Данные из официальных санкционных реестров · 2024</span>
+  <span>Все факты верифицированы публикациями СМИ</span>
+</div>
+
+</body>
+</html>

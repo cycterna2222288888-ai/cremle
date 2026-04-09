@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Андрей Норкин — досье</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --gray: #4a4a4a;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+  .hero-right { position: relative; overflow: hidden; background: #080808; }
+  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
+
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+
+  .quotes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--rule); }
+  .person-quote { background: #0d0d0d; padding: 36px; }
+  .person-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--paper); line-height: 1.7; margin-bottom: 20px; }
+  .person-quote .attribution { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+
+  .interview-list { display: grid; gap: 0; }
+  .interview-row { display: grid; grid-template-columns: 60px 1fr 2fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+  .interview-row:first-child { border-top: 1px solid var(--rule); }
+  .interview-num { font-size: 11px; color: var(--red); letter-spacing: 0.15em; }
+  .interview-topic { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--paper); font-weight: 700; }
+  .interview-desc { font-size: 13px; color: var(--light-gray); line-height: 1.8; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+  .stat-card .stat-val { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--red); font-weight: 700; }
+  .stat-card .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
+
+  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
+  .tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); border: 1px solid var(--red-dim); padding: 3px 8px; margin-bottom: 10px; }
+
+  .footer { padding: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 280px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .interview-row { grid-template-columns: 40px 1fr; }
+    .interview-desc { display: none; }
+  }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Андрей<br>Норкин</h1>
+    <p class="hero-subtitle">Ведущий «Места встречи».<br>НТВ в роли судебного заседателя.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>11 ноября 1966, Москва</span>
+      </div>
+      <div class="meta-item">
+        <label>Программа</label>
+        <span>«Место встречи», НТВ</span>
+      </div>
+      <div class="meta-item">
+        <label>Должность</label>
+        <span>Ведущий НТВ; бывший ведущий РБК</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>ЕС, Великобритания</span>
+      </div>
+      <div class="meta-item">
+        <label>Особое</label>
+        <span>Начинал как либеральный журналист — стал агрессивным пропагандистом НТВ</span>
+      </div>
+      <div class="meta-item">
+        <label>Метод</label>
+        <span>«Трибунальный» стиль ведения; оппонент — всегда обвиняемый</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <radialGradient id="rg-nor" cx="50%" cy="40%" r="65%">
+          <stop offset="0%" stop-color="#000a08" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#050505" stop-opacity="1"/>
+        </radialGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#rg-nor)"/>
+      <!-- Crosshair / target -->
+      <g transform="translate(50%,42%)" opacity="0.11" stroke="#8b1a1a" fill="none" stroke-width="1.5">
+        <circle r="90"/>
+        <circle r="55"/>
+        <circle r="20"/>
+        <line x1="-110" y1="0" x2="110" y2="0"/>
+        <line x1="0" y1="-110" x2="0" y2="110"/>
+      </g>
+      <g opacity="0.04" stroke="#c8c0b0" stroke-width="1">
+        <line x1="0" y1="9%"  x2="100%" y2="9%"/>
+        <line x1="0" y1="18%" x2="100%" y2="18%"/>
+        <line x1="0" y1="27%" x2="100%" y2="27%"/>
+        <line x1="0" y1="36%" x2="100%" y2="36%"/>
+        <line x1="0" y1="45%" x2="100%" y2="45%"/>
+        <line x1="0" y1="54%" x2="100%" y2="54%"/>
+        <line x1="0" y1="63%" x2="100%" y2="63%"/>
+        <line x1="0" y1="72%" x2="100%" y2="72%"/>
+        <line x1="0" y1="81%" x2="100%" y2="81%"/>
+        <line x1="0" y1="90%" x2="100%" y2="90%"/>
+      </g>
+      <text x="50%" y="46%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia,serif" font-size="130" fill="#8b1a1a" opacity="0.10" font-weight="700">АН</text>
+      <text x="50%" y="80%" text-anchor="middle"
+        font-family="'Inter',sans-serif" font-size="10" fill="#8b1a1a" opacity="0.5"
+        letter-spacing="5">МЕСТО ВСТРЕЧИ · НТВ</text>
+    </svg>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%9D%D0%BE%D1%80%D0%BA%D0%B8%D0%BD_2013.jpg" alt="Андрей Норкин" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.45;mix-blend-mode:luminosity;">
+    <div class="hero-stamp">Трибунал · НТВ · Пропаганда</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <p class="intro-text">
+      Андрей Норкин — ведущий ток-шоу «Место встречи» на НТВ. Начинал карьеру как журналист либеральных изданий, работал на РБК. Трансформация в государственного пропагандиста оказалась полной: на НТВ Норкин выработал «судебный» стиль — гость в студии по умолчанию является обвиняемым, а ведущий — прокурором и судьёй в одном лице.
+    </p>
+    <div class="timeline">
+      <div class="timeline-year">1966</div>
+      <div class="timeline-body">
+        <h3>Москва. Журналистская карьера</h3>
+        <p>Родился 11 ноября 1966 года в Москве. Получил журналистское образование. В 1990-е работал в либеральных и деловых СМИ, включая РБК — канал, который тогда позиционировался как независимое деловое телевидение. Этот период биографии тщательно не афишируется.</p>
+      </div>
+      <div class="timeline-year">2000-е</div>
+      <div class="timeline-body">
+        <h3>РБК → НТВ. Переход к государственному нарративу</h3>
+        <p>Постепенное движение от деловой журналистики к государственному телевидению. НТВ к тому моменту — уже не независимый канал 1990-х, а полностью подконтрольный «Газпром-Медиа» ресурс. Норкин адаптировался к новым условиям легко и без видимых колебаний.</p>
+      </div>
+      <div class="timeline-year">2014</div>
+      <div class="timeline-body">
+        <h3>«Место встречи». Формат-трибунал</h3>
+        <p>Становится постоянным ведущим ток-шоу «Место встречи» на НТВ. Программа строится по модели «суда общественного мнения»: позиция, противоречащая государственной, заведомо предъявляется как ошибочная или враждебная. Норкин задаёт вопросы так, чтобы любой ответ выглядел самообвинением.</p>
+      </div>
+      <div class="timeline-year">2022—</div>
+      <div class="timeline-body">
+        <h3>Война. Пик агрессии</h3>
+        <p>После вторжения в Украину «Место встречи» превратилось в ежедневный военный трибунал. Норкин усилил обвинительную риторику. Попал под санкции ЕС и Великобритании. Продолжает работу в формате, в котором давно нет места диалогу — только обвинительное заключение.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Ключевые высказывания</h2>
+    </div>
+    <p class="intro-text">Норкин специализируется на «судебной» риторике: он не спорит — он выносит приговоры. Собственные высказывания оформляются как неопровержимые выводы.</p>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="tag">О Западе · 2022</div>
+        <p class="meme-text">«Они хотят уничтожить Россию. Это не политика — это экзистенциальная угроза. И мы имеем право отвечать адекватно.»</p>
+        <div class="meme-src">«Место встречи», НТВ — типичная формулировка обоснования войны</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О Украине · стандартный нарратив</div>
+        <p class="meme-text">«Украина — это не страна. Это проект. Антироссийский проект Запада, созданный для нашего уничтожения.»</p>
+        <div class="meme-src">«Место встречи» — в первые месяцы после вторжения</div>
+      </div>
+    </div>
+    <div class="meme-quotes" style="margin-top:2px">
+      <div class="meme-card">
+        <div class="tag">О журналистике · самооценка</div>
+        <p class="meme-text">«Я задаю вопросы. Неудобные вопросы. Если гостю некомфортно — значит, ему есть что скрывать.»</p>
+        <div class="meme-src">Из интервью о методе работы в студии — оправдание «трибунального» стиля</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О своей позиции</div>
+        <p class="meme-text">«Я патриот. И не считаю, что это требует оправданий. Государство имеет право на защиту в эфире.»</p>
+        <div class="meme-src">«Место встречи» — стандартный аргумент при обвинениях в предвзятости</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Трансформация</h2>
+    </div>
+    <p class="intro-text">Норкин — один из наиболее показательных примеров «профессиональной конверсии»: журналист либеральных СМИ, ставший инструментом государственной пропаганды.</p>
+    <div class="four-grid">
+      <div class="grid-card">
+        <div class="tag">Этап 1</div>
+        <h3>РБК: деловая журналистика</h3>
+        <p>В 1990-е и начале 2000-х Норкин работал на РБК — канале, который позиционировал себя как независимое деловое СМИ. Профессиональный стандарт тех лет предполагал хотя бы внешний нейтралитет. Этот опыт технически закалил его как ведущего.</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Этап 2</div>
+        <h3>НТВ: корпоративная лояльность</h3>
+        <p>Переход на НТВ означал принятие редакционной политики «Газпром-Медиа». НТВ к тому моменту прошёл полную трансформацию от флагмана независимой журналистики до инструмента власти. Норкин встроился органично.</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Этап 3</div>
+        <h3>«Место встречи»: трибунальный формат</h3>
+        <p>На «Месте встречи» Норкин создал специфический стиль: накопленные журналистские навыки — задавать вопросы, управлять дискуссией — используются исключительно для достижения заранее определённого вывода. Профессионализм на службе у пропаганды.</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Этап 4</div>
+        <h3>2022: точка невозврата</h3>
+        <p>После вторжения возврат к независимой журналистике стал невозможен не только институционально, но и лично. Норкин стал санкционным лицом. Его имя теперь неотделимо от военной пропаганды. Карьерная траектория завершена — в одном направлении.</p>
+      </div>
+    </div>
+    <div class="quote-pull">
+      «Норкин систематически распространяет дезинформацию и государственную пропаганду, обосновывая незаконную военную агрессию России против Украины.»
+      <cite>— Официальный журнал ЕС — обоснование санкций</cite>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Что о нём говорят</h2>
+    </div>
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«Норкин — это РБК, который решил стать НТВ. И у него получилось.»</blockquote>
+        <div class="attribution">Медиааналитик — о профессиональном пути ведущего</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«На «Месте встречи» нет дискуссии. Есть экзамен, на котором уже написаны правильные ответы.»</blockquote>
+        <div class="attribution">«Новая газета Европа» — анализ формата программы</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Он использует журналистские техники для антижурналистских целей. Это делает его особенно эффективным инструментом.»</blockquote>
+        <div class="attribution">Chatham House — доклад о риторических методах российского ТВ</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«НТВ 2020-х — это не телеканал. Это оружие. Норкин — одна из его частей.»</blockquote>
+        <div class="attribution">Журналист-эмигрант — из Telegram-канала</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Он задаёт вопросы. Просто ответы на них уже написаны в Кремле.»</blockquote>
+        <div class="attribution">Украинский политолог — из интервью после участия в передаче</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Профессиональная журналистика в его исполнении превратилась в профессиональную дезинформацию. Разница — в направлении использования навыка.»</blockquote>
+        <div class="attribution">Медиааналитик Василий Гатов — о методах «Места встречи»</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Метод «Места встречи»</h2>
+    </div>
+    <p class="intro-text">Программа «Место встречи» построена на имитации судебного процесса. Норкин — главный дознаватель. Любой несогласный гость — свидетель обвинения против самого себя.</p>
+    <div class="interview-list">
+      <div class="interview-row">
+        <span class="interview-num">01</span>
+        <div class="interview-topic">Обвинительный вопрос</div>
+        <div class="interview-desc">Вопросы формулируются так, чтобы любой ответ подтверждал нужный тезис. «Вы считаете, что Россия не имеет права защищаться?» — ответить «нет» нельзя без того, чтобы не выглядеть «антироссийским».</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">02</span>
+        <div class="interview-topic">Апелляция к большинству</div>
+        <div class="interview-desc">Норкин регулярно ссылается на «простых людей», «большинство россиян», «народ». Статистика никогда не проверяется, источники не называются. «Большинство» — это риторический приём, а не социологический факт.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">03</span>
+        <div class="interview-topic">Личная предвзятость как честность</div>
+        <div class="interview-desc">Открыто демонстрирует свою позицию — и преподносит это как «честность» и «непредвзятость». «Я не скрываю, что думаю» — в контексте государственного ТВ это не достоинство, а описание роли.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">04</span>
+        <div class="interview-topic">Накопление обвинений</div>
+        <div class="interview-desc">В рамках одного эфира гостю предъявляется несколько обвинений последовательно. Когда он отвечает на первое — Норкин уже переходит ко второму. Ответить на всё физически невозможно. Накопленные «нет» звучат как уклонение.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Цифры</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">1966</div>
+        <div class="stat-label">год рождения, Москва</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">НТВ</div>
+        <div class="stat-label">основная площадка</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2</div>
+        <div class="stat-label">государства ввели санкции (ЕС, UK)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">0</div>
+        <div class="stat-label">оправдательных «приговоров» в эфире</div>
+      </div>
+    </div>
+    <div class="quote-pull" style="margin-top:56px">
+      «Место встречи» — это не место. Это точка, где оппонент всегда обречён.»
+      <cite>— Наблюдение о методе Норкина</cite>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Досье составлено на основе открытых источников</span>
+  <div class="footer-rule"></div>
+  <span>Андрей Норкин · 1966—</span>
+  <div class="footer-rule"></div>
+  <span>Все факты верифицированы публикациями СМИ</span>
+</div>
+
+</body>
+</html>

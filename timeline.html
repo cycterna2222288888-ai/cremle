@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Хронология · Голоса Кремля</title>
+<meta name="description" content="Хронология: ключевые события в биографиях девяти пропагандистов с 1954 по 2024 год. Назначения, скандалы, санкции.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Хронология · Голоса Кремля">
+<meta property="og:description" content="Ключевые события 1954–2024: назначения, скандалы, санкции и переломные цитаты на одной оси.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --gray: #4a4a4a;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
+
+  /* FILTER BAR */
+  .filter-bar {
+    padding: 24px 60px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+    background: var(--rule);
+  }
+
+  .filter-btn {
+    background: var(--ink);
+    border: none;
+    padding: 10px 20px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .filter-btn:hover, .filter-btn.active { background: #0d0000; color: var(--red); }
+
+  /* TIMELINE */
+  .timeline-wrap { padding: 80px 60px; max-width: 1200px; margin: 0 auto; }
+
+  .tl-year-group { margin-bottom: 0; }
+
+  .tl-year-marker {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: start;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .tl-year-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 700;
+    color: #111;
+    padding: 32px 40px 32px 0;
+    text-align: right;
+    border-right: 2px solid var(--rule);
+    position: relative;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .tl-year-marker:hover .tl-year-num { color: var(--red); }
+
+  .tl-year-num::after {
+    content: '';
+    position: absolute;
+    right: -7px;
+    top: 36px;
+    width: 12px;
+    height: 12px;
+    background: var(--ink);
+    border: 2px solid var(--rule);
+    border-radius: 50%;
+  }
+
+  .tl-year-marker.highlight .tl-year-num { color: var(--red-dim); }
+  .tl-year-marker.highlight .tl-year-num::after { background: var(--red); border-color: var(--red); }
+
+  .tl-events { padding: 0 0 0 40px; }
+
+  .tl-event {
+    padding: 24px 0;
+    border-bottom: 1px solid #0f0f0f;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+  }
+
+  .tl-event:last-child { border-bottom: none; }
+
+  .tl-tag {
+    display: inline-block;
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid var(--red-dim);
+    color: var(--red);
+    padding: 4px 8px;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 4px;
+  }
+
+  .tl-content {}
+
+  .tl-person {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .tl-person a { color: var(--red); text-decoration: none; }
+  .tl-person a:hover { opacity: 0.7; }
+
+  .tl-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .tl-body { font-size: 13px; color: var(--light-gray); line-height: 1.85; }
+
+  .tl-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--paper);
+    border-left: 2px solid var(--red-dim);
+    padding-left: 16px;
+    margin-top: 12px;
+    opacity: 0.85;
+    line-height: 1.6;
+  }
+
+  /* LEGEND */
+  .legend { display: flex; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--light-gray); }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+
+  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
+
+  @media (max-width: 768px) {
+    .masthead, .filter-bar, .timeline-wrap, .footer, .nav-back { padding-left: 24px; padding-right: 24px; }
+    .tl-year-marker { grid-template-columns: 60px 1fr; }
+    .tl-year-num { font-size: 20px; padding: 20px 16px 20px 0; }
+    .tl-event { grid-template-columns: 1fr; gap: 8px; }
+    .tl-events { padding-left: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Хронология · Открытые источники</div>
+  <h1 class="masthead-title">Таймлайн</h1>
+  <p class="masthead-sub">Ключевые события в биографиях пятнадцати пропагандистов: назначения, скандалы, санкции, переломные цитаты — на единой хронологической оси с 1954 по 2024 год.</p>
+</div>
+
+<div class="timeline-wrap">
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1954</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+            <div class="tl-headline">Родился в Москве, 26 апреля</div>
+            <div class="tl-body">Мать — бригадир МХАТа. Отец — из тамбовских крестьян. Дед по матери с Западной Украины. Французская спецшкола, музыкальная школа. Будущий «голос ядерного пепла» родился в год смерти Сталина.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1958</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="leontyev.html">Михаил Леонтьев</a></div>
+            <div class="tl-headline">Родился в Москве, 6 октября</div>
+            <div class="tl-body">Будущий создатель программы «Однако» — самого долгоживущего пропагандистского комментария на российском ТВ. Более 5000 выпусков. Позже добавит к медиакарьере пост пресс-секретаря «Роснефти» при Игоре Сечине.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1962</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="mamontov.html">Аркадий Мамонтов</a></div>
+            <div class="tl-headline">Родился в Омске, 3 ноября</div>
+            <div class="tl-body">Будущий автор псевдодокументальных фильмов-расследований на «России-1». Специализируется на «разоблачениях» НАТО, педофилии среди западных политиков и украинских «нацистов». Каждый фильм — образцовый учебник пропаганды.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1963</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="solovyov.html">Владимир Соловьёв</a></div>
+            <div class="tl-headline">Родился в Москве, 20 октября</div>
+            <div class="tl-body">Родился Владимир Рудольфович Шейнкман. Еврейского происхождения — позже примет иудаизм, сменит фамилию. Вырастет в одного из самых богатых и агрессивных пропагандистов России.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1965</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="andreyeva.html">Екатерина Андреева</a></div>
+            <div class="tl-headline">Родилась в Москве, 14 марта</div>
+            <div class="tl-body">Будущее лицо Первого канала — диктор, которая с 1991 года зачитывает государственные новости. Голос режима в прямом эфире. В 2022 году — один из символов пропаганды, за которым наблюдают миллионы.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1966</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="sheynin.html">Артём Шейнин</a></div>
+            <div class="tl-headline">Родился в Ленинграде, 28 сентября</div>
+            <div class="tl-body">Вырос в военной среде. Через 19 лет будет отправлен в Афганистан. Через 49 лет — станет вести агрессивное ток-шоу на Первом канале и отключать микрофоны несогласным.</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="norkin.html">Андрей Норкин</a></div>
+            <div class="tl-headline">Родился в Москве, 11 ноября</div>
+            <div class="tl-body">Будущий ведущий НТВ, начавший карьеру как либеральный журналист на РБК. Пройдёт полный путь профессиональной конверсии: от независимой деловой журналистики до государственного пропагандистского «трибунала» на «Месте встречи».</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="keosayan.html">Тигран Кеосаян</a></div>
+            <div class="tl-headline">Родился в Москве, 3 декабря</div>
+            <div class="tl-body">Сын знаменитого советского режиссёра Эдмонда Кеосаяна («Неуловимые мстители»). Вырастет в профессионального кинорежиссёра, который применит все навыки голливудского кино на службе государственной пропаганды RT. Женится на Маргарите Симоньян.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1969</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="tolstoy.html">Пётр Толстой</a></div>
+            <div class="tl-headline">Родился в Москве, 20 августа</div>
+            <div class="tl-body">Праправнук Льва Николаевича Толстого, автора «Войны и мира». Великий предок был пацифистом и был отлучён от церкви за антимилитаризм. Пётр Олегович вырастет в апологета войны с думской трибуны.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1970</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="medinsky.html">Владимир Мединский</a></div>
+            <div class="tl-headline">Родился в Смеле, Украинская ССР, 18 июля</div>
+            <div class="tl-body">Рождён на украинской земле, которую впоследствии будет оправдывать оккупацию. Будущий министр культуры, автор псевдоисторических книг о «мифах» о России и советник Путина на мирных переговорах 2022 года — с заведомо неприемлемыми условиями.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1971</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="popov.html">Евгений Попов</a></div>
+            <div class="tl-headline">Родился в Москве, 25 июля</div>
+            <div class="tl-body">Будущий депутат и ведущий «60 минут». Вырастет, женится на Ольге Скабеевой, и вместе они создадут самый агрессивный пропагандистский дуэт российского телевидения.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1975</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="prilepin.html">Захар Прилепин</a></div>
+            <div class="tl-headline">Родился в Рязанской области, 7 июля</div>
+            <div class="tl-body">Настоящее имя — Евгений Николаевич Прилепин. Вырастет в писателя-«нацбола», участника НБП Лимонова. Затем — доброволец, а потом командир в ДНР. Феномен «писателя с автоматом»: когда интеллектуальная слава легитимизирует военные преступления.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1980</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="simonyan.html">Маргарита Симоньян</a></div>
+            <div class="tl-headline">Родилась в Краснодаре, 6 апреля</div>
+            <div class="tl-body">Армянского происхождения. Серьёзно занималась художественной гимнастикой. Через 25 лет Кремль назначит её главным редактором международного телеканала — самым молодым главредом глобального новостного канала в мире.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1981</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="korchevnikov.html">Борис Корчевников</a></div>
+            <div class="tl-headline">Родился в Москве, 3 декабря</div>
+            <div class="tl-body">Начинал как актёр театра, потом стал телеведущим. Дважды перенёс онкологию. После болезни обратился к православию — и превратил его в инструмент пропаганды через телеканал «Спас» и «Судьбу человека», где каждый выпуск содержит элемент государственного богословия войны.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1984</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Рождение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="skabeeva.html">Ольга Скабеева</a></div>
+            <div class="tl-headline">Родилась в Волжском, 11 декабря</div>
+            <div class="tl-body">Последняя из семи. Будет учиться в российско-американской школе. Вырастет ненавидеть Америку — и сделает из этого профессию. «Железная кукла путинского ТВ».</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1985</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Военная служба</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="sheynin.html">Артём Шейнин</a></div>
+            <div class="tl-headline">Афганистан. Реальная война</div>
+            <div class="tl-body">В 19 лет призван и отправлен в Афганистан. Служил в период активной фазы Советско-афганской войны до 1987 года. Этот опыт станет его главным риторическим оружием в студии: «Я был на войне. Вы — нет».</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">1991</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Карьера · Прибалтика</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+            <div class="tl-headline">Отказ зачитать официальное заявление. Увольнение</div>
+            <div class="tl-body">Во время событий в Прибалтике Киселёв отказался зачитать официальное правительственное заявление в эфире — и был уволен с Гостелерадио. Парадоксально: будущий главный пропагандист начинал с акта журналистской принципиальности.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">2000</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Украина</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+            <div class="tl-headline">Главный редактор украинского ICTV. Киев</div>
+            <div class="tl-body">С 2000 по 2004 год — главный редактор информационной службы ICTV и ведущий ежедневных программ для украинской аудитории. Позже назовёт Украину «виртуальным понятием». Страна, которой «нет», платила ему зарплату четыре года.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker highlight">
+      <div class="tl-year-num">2005</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Ключевое назначение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="simonyan.html">Маргарита Симоньян</a></div>
+            <div class="tl-headline">Кремль создаёт Russia Today. Симоньян — главред в 25 лет</div>
+            <div class="tl-body">Первый государственный международный новостной канал России. Симоньян назначена главным редактором — один из самых молодых главредов глобального новостного канала в мире. Задача: противостоять «западному нарративу» на международной арене.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker highlight">
+      <div class="tl-year-num">2012</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Скандал · Гомофобия</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+            <div class="tl-headline">«Сердца геев — зарывать в землю или сжигать»</div>
+            <div class="tl-body">В апреле призвал «зарывать в землю или сжигать» сердца геев в случае автомобильных катастроф. Фраза стала международным скандалом. Группа блогеров обратилась в Следственный комитет по статье 282 УК. В сентябре Киселёв вернулся в прайм-тайм «Вестей недели».</div>
+            <div class="tl-quote">«Сердца геев в случае автомобильной катастрофы зарывать в землю или сжигать как непригодные для продолжения чьей-либо жизни.»</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker highlight">
+      <div class="tl-year-num">2013</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Ключевое назначение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="kiselyov.html">Дмитрий Киселёв</a> · <a href="simonyan.html">Маргарита Симоньян</a></div>
+            <div class="tl-headline">Создание МИА «Россия сегодня». Киселёв + Симоньян</div>
+            <div class="tl-body">Путин ликвидирует РИА Новости и создаёт МИА «Россия сегодня». Киселёв назначен гендиректором, Симоньян становится главным редактором. Крупнейший государственный медиахолдинг объединяет все международные СМИ под единым контролем.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker highlight">
+      <div class="tl-year-num">2014</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Мировой скандал</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+            <div class="tl-headline">«Россия способна превратить США в радиоактивный пепел»</div>
+            <div class="tl-body">16 марта 2014 года, через два дня после «референдума» в Крыму, Киселёв произносит фразу, ставшую главным символом новой ядерной риторики Кремля. 21 марта ЕС вносит его в санкционный список как «центральную фигуру государственной пропаганды».</div>
+            <div class="tl-quote">«Россия — единственная в мире страна, которая реально способна превратить США в радиоактивный пепел.»</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Первые санкции</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+            <div class="tl-headline">ЕС вводит первые персональные санкции против журналиста</div>
+            <div class="tl-body">Киселёв становится первым российским журналистом, попавшим под персональные санкции Евросоюза. Прецедент: медийный пропагандист приравнен к политическому деятелю, несущему ответственность за вооружённый конфликт.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">2015</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Скандал · Арест имущества</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="solovyov.html">Владимир Соловьёв</a></div>
+            <div class="tl-headline">Итальянская недвижимость: 5+ объектов на озере Комо</div>
+            <div class="tl-body">Журналисты раскрывают масштабы итальянской недвижимости Соловьёва: 5 и более объектов на озере Комо общей стоимостью около €8 млн. Символическое противоречие: главный критик Запада хранит состояние именно там. «Нам, евреям, не привыкать».</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker highlight">
+      <div class="tl-year-num">2016</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Запуск шоу</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="skabeeva.html">Ольга Скабеева</a> · <a href="popov.html">Евгений Попов</a></div>
+            <div class="tl-headline">Старт «60 минут» на «России-1»</div>
+            <div class="tl-body">Муж и жена начинают вести ежедневное политическое ток-шоу в прайм-тайм. Формат быстро становится одним из самых рейтинговых в стране. Попов одновременно избирается депутатом Госдумы. Семейный пропагандистский тандем сформирован.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">2017</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Международный скандал</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="tolstoy.html">Пётр Толстой</a></div>
+            <div class="tl-headline">ПАСЕ, Страсбург: «Внуки Сороса и правнуки эмигрантов 1917 года»</div>
+            <div class="tl-body">На заседании ПАСЕ заявляет, что НКО, финансируемые Соросом, контролируются «внуками и правнуками тех, кто бежал из России в 1917 году» — высказывание, расценённое как антисемитское. Европейские коллеги требуют извинений. Толстой отказывается.</div>
+            <div class="tl-quote">«Все эти НКО финансируются Соросом, внуками и правнуками тех, кто в 1917 году бежал из России — и теперь они возвращаются учить нас.»</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Юридический прецедент</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="simonyan.html">RT · Маргарита Симоньян</a></div>
+            <div class="tl-headline">RT America регистрируется иностранным агентом в США</div>
+            <div class="tl-body">Министерство юстиции США обязывает RT America зарегистрироваться как «иностранный агент». Симоньян требует симметричного ответа — и добивается своего: BBC, Deutsche Welle и «Голос Америки» получают статус иноагентов в России.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker highlight">
+      <div class="tl-year-num">2022</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">24 февраля · Вторжение</span>
+          <div class="tl-content">
+            <div class="tl-person">Все персонажи архива</div>
+            <div class="tl-headline">Россия вторгается в Украину. Все девять в эфире в тот же день</div>
+            <div class="tl-body">С первых часов вторжения все девять персонажей архива занимают свои места в эфире. Слово «война» не произносится ни разу. Официальный термин — «специальная военная операция». Формат ток-шоу сменяется форматом военного трибунала. Все несогласные выдворяются из студии или отключаются.</div>
+            <div class="tl-quote">«Это не война. Это специальная военная операция по денацификации и демилитаризации Украины.» — рефрен всех каналов</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Массовые санкции</span>
+          <div class="tl-content">
+            <div class="tl-person">Все персонажи архива</div>
+            <div class="tl-headline">ЕС, США, Великобритания, Канада, Австралия, Япония вводят санкции</div>
+            <div class="tl-body">После вторжения 24 февраля западные страны ввели беспрецедентные по масштабу персональные санкции против российских медийных персон. Восемь из девяти персонажей архива попали под санкции в течение нескольких недель. Первым, напомним, был Киселёв — ещё в 2014-м.</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Закрытие медиа</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="simonyan.html">RT · Маргарита Симоньян</a></div>
+            <div class="tl-headline">RT заблокирован в ЕС. Офисы в Лондоне и Берлине закрыты</div>
+            <div class="tl-body">Европейский союз заблокировал вещание RT на своей территории, закрыты европейские редакции. Россия исключена из Совета Европы. Толстой теряет мандат ПАСЕ, Симоньян теряет европейскую аудиторию.</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Скандал · Арест имущества</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="solovyov.html">Владимир Соловьёв</a></div>
+            <div class="tl-headline">Арест итальянской недвижимости. Поджог виллы</div>
+            <div class="tl-body">После вторжения итальянские власти арестовали имущество Соловьёва на озере Комо. Вилла позже сожжена неизвестными. Соловьёв прокомментировал: «Сначала они лишают евреев таких, как я, собственности в Италии. Нам, евреям, не привыкать».</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Персона нон грата</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="tolstoy.html">Пётр Толстой</a></div>
+            <div class="tl-headline">Латвия и Эстония объявляют Толстого персоной нон грата</div>
+            <div class="tl-body">Страны Балтии, где ещё недавно он заседал в ПАСЕ как представитель России, закрывают перед ним границы. Несколько лет назад он имел право въезда как европейский парламентарий. Теперь — запрет на въезд навсегда.</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Пропаганда · Кино</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="keosayan.html">Тигран Кеосаян</a></div>
+            <div class="tl-headline">RT Doc запускает серию пропагандистских фильмов о «нацизме» на Украине</div>
+            <div class="tl-body">Кеосаян производит для RT серию документальных фильмов, использующих художественные приёмы кино для легитимизации нарратива «денацификации». Голливудский монтаж, кинематографическая образность — на службе военной пропаганды.</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Трибунал · НТВ</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="norkin.html">Андрей Норкин</a></div>
+            <div class="tl-headline">«Место встречи» превращается в суд над «предателями»</div>
+            <div class="tl-body">С началом войны программа Норкина приобретает новый формат: разбор «предателей», «агентов Запада» и всех, кто осмеливается ставить под сомнение официальную версию событий. Норкин лично выдворяет несогласных из студии.</div>
+          </div>
+        </div>
+        <div class="tl-event">
+          <span class="tl-tag">Цитата года</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="simonyan.html">Маргарита Симоньян</a></div>
+            <div class="tl-headline">«Либо победа, либо ядерная война — третьего не дано»</div>
+            <div class="tl-body">В прямом эфире RT произносит фразу, ставшую символом эскалационной риторики 2022 года. Ядерная угроза, впервые брошенная Киселёвым в 2014-м, теперь звучит от главреда международного канала как программный тезис.</div>
+            <div class="tl-quote">«Либо мы победим — либо ядерная война. Третьего не дано. Лично я уверена в нашей победе. Но ядерная война лучше, чем капитуляция.»</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">2023</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Продолжение</span>
+          <div class="tl-content">
+            <div class="tl-person">Все персонажи архива</div>
+            <div class="tl-headline">Эскалация риторики. Расширение санкционных списков</div>
+            <div class="tl-body">Все девять персонажей продолжают работу — несмотря на санкции, заморозку активов и международную изоляцию. Санкции воспринимаются как знак доверия Кремля. Соловьёв: «Значит, я делаю всё правильно».</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-year-group">
+    <div class="tl-year-marker">
+      <div class="tl-year-num">2024</div>
+      <div class="tl-events">
+        <div class="tl-event">
+          <span class="tl-tag">Продолжение</span>
+          <div class="tl-content">
+            <div class="tl-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+            <div class="tl-headline">Снова «радиоактивный пепел» — десять лет спустя</div>
+            <div class="tl-body">В ответ на принятие очередного пакета помощи Украине снова угрожает превратить США в ядерный пепел. Формула не меняется десять лет. Аудитория уже ждёт. Это больше не угроза — это бренд.</div>
+            <div class="tl-quote">«Россия — единственная страна, способная превратить США в радиоактивный пепел. Об этом не стоит забывать.»</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-logo">Голоса Кремля</div>
+  <span>Хронология составлена на основе открытых источников · 2024</span>
+  <span>Все факты верифицированы публикациями СМИ</span>
+</div>
+
+</body>
+</html>

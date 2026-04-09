@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Екатерина Андреева — досье</title>
+<meta name="description" content="Досье на Екатерину Андрееву — главного диктора Первого канала, лицо государственных новостей с 1991 года.">
+<meta property="og:title" content="Екатерина Андреева — досье · Голоса Кремля">
+<meta property="og:site_name" content="Голоса Кремля">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink: #080808; --paper: #ede8dc; --red: #8b1a1a; --red-dim: #5c1111; --gray: #4a4a4a; --light-gray: #bab3a0; --rule: #1c1c1c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+  .hero-right { position: relative; overflow: hidden; background: #060606; }
+  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .quotes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--rule); }
+  .person-quote { background: #0d0d0d; padding: 36px; }
+  .person-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--paper); line-height: 1.7; margin-bottom: 20px; }
+  .person-quote .attribution { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+  .stat-card .stat-val { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--red); font-weight: 700; }
+  .stat-card .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
+  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
+  .tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); border: 1px solid var(--red-dim); padding: 3px 8px; margin-bottom: 10px; }
+  .footer { padding: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 280px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Екатерина<br>Андреева</h1>
+    <p class="hero-subtitle">Главный диктор Первого канала.<br>Лицо государственных новостей с 1991 года.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>14 марта 1965, Москва</span>
+      </div>
+      <div class="meta-item">
+        <label>Программа</label>
+        <span>Новости, Первый канал</span>
+      </div>
+      <div class="meta-item">
+        <label>Должность</label>
+        <span>Главный диктор ночных новостей</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>ЕС, Великобритания</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg width="100%" height="100%" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="900" fill="#060606"/>
+      <!-- TV screen lines decoration -->
+      <line x1="0" y1="80" x2="800" y2="80" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="160" x2="800" y2="160" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="240" x2="800" y2="240" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="320" x2="800" y2="320" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="400" x2="800" y2="400" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="480" x2="800" y2="480" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="560" x2="800" y2="560" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="640" x2="800" y2="640" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="720" x2="800" y2="720" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="800" x2="800" y2="800" stroke="#1a1a1a" stroke-width="1"/>
+      <!-- Red top bar like TV broadcast -->
+      <rect x="60" y="60" width="120" height="6" fill="#8b1a1a" opacity="0.6"/>
+      <rect x="60" y="76" width="60" height="3" fill="#8b1a1a" opacity="0.3"/>
+      <!-- Big monogram -->
+      <text x="400" y="500" font-family="Georgia, serif" font-size="280" font-weight="700" fill="#8b1a1a" opacity="0.06" text-anchor="middle" dominant-baseline="middle">ЕА</text>
+      <!-- Label -->
+      <text x="60" y="840" font-family="Georgia, serif" font-size="11" fill="#8b1a1a" opacity="0.7" letter-spacing="4">ПЕРВЫЙ КАНАЛ · НОВОСТИ</text>
+      <!-- Broadcast dot -->
+      <circle cx="62" cy="62" r="6" fill="#8b1a1a" opacity="0.8"/>
+      <circle cx="62" cy="62" r="12" fill="none" stroke="#8b1a1a" stroke-width="1" opacity="0.4"/>
+      <circle cx="62" cy="62" r="20" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.2"/>
+    </svg>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/2011-02-03_Ekaterina_Sergeevna_Andreeva.jpeg"
+         alt="Екатерина Андреева"
+         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;mix-blend-mode:luminosity;opacity:0.45;filter:grayscale(30%)">
+    <div class="hero-stamp">Диктор · Первый · Государство</div>
+  </div>
+</div>
+
+<!-- БИОГРАФИЯ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-year">1965</div>
+      <div class="timeline-body">
+        <h3>Родилась в Москве</h3>
+        <p>14 марта 1965 года. Окончила Московский государственный университет, журналистский факультет. С детства стремилась к телевидению — и попала в то место, где телевидение служит государству.</p>
+      </div>
+      <div class="timeline-year">1991</div>
+      <div class="timeline-body">
+        <h3>Первый эфир на Первом канале</h3>
+        <p>Пришла на Первый канал в год распада СССР. За следующие три десятилетия канал трансформировался из советского государственного в путинское государственное — Андреева осталась. Её голос читал новости при Горбачёве, Ельцине и Путине.</p>
+      </div>
+      <div class="timeline-year">2000-е</div>
+      <div class="timeline-body">
+        <h3>Лицо путинского телевидения</h3>
+        <p>Становится главным «голосом» ночных новостей Первого канала. Профессиональная нейтральность дикторского текста создаёт иллюзию объективности — при том что редакционная политика определяется Кремлём. Андреева — лицо этой иллюзии.</p>
+      </div>
+      <div class="timeline-year">2014</div>
+      <div class="timeline-body">
+        <h3>Аннексия Крыма в прайм-тайм</h3>
+        <p>Читает официальный нарратив об аннексии Крыма. «Воссоединение», «исторический выбор», «защита русскоязычного населения» — все формулировки Кремля произносятся её голосом как нейтральные факты. Первый канал получает санкции ЕС.</p>
+      </div>
+      <div class="timeline-year">2022</div>
+      <div class="timeline-body">
+        <h3>Санкции ЕС и Великобритании</h3>
+        <p>После вторжения России в Украину 24 февраля Андреева читает военные сводки в эфире Первого. ЕС и Великобритания вводят персональные санкции — как против человека, чей голос является инструментом государственной дезинформации.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Голос государства</h2>
+    </div>
+    <p class="intro-text">Андреева почти не произносит собственных слов — она голос чужих слов. Но выбор того, что читать и что замалчивать, есть политический акт.</p>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="meme-text">«Российские вооружённые силы продолжают специальную военную операцию по денацификации и демилитаризации Украины.»</div>
+        <div class="meme-src">Первый канал · Новости · 2022 · Ежедневно</div>
+      </div>
+      <div class="meme-card">
+        <div class="meme-text">«В результате провокации украинских националистов мирное население Донбасса подверглось обстрелам.»</div>
+        <div class="meme-src">Первый канал · Новости · 2014–2022</div>
+      </div>
+    </div>
+    <div class="quote-pull">
+      «Диктор, который 30 лет читает ложь достаточно нейтральным голосом, — возможно, более опасный инструмент пропаганды, чем тот, кто кричит.»
+      <cite>Аналитик медиа · О роли дикторов государственного ТВ</cite>
+    </div>
+  </div>
+</div>
+
+<!-- МЕТОД -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Метод: нейтральность как инструмент</h2>
+    </div>
+    <div class="four-grid">
+      <div class="grid-card">
+        <h3>Голос без интонации</h3>
+        <p>Профессиональный дикторский нейтралитет создаёт иллюзию объективности. «Российские войска провели успешную операцию» — произнесённое спокойным голосом воспринимается как факт, а не как пропаганда.</p>
+      </div>
+      <div class="grid-card">
+        <h3>30 лет непрерывности</h3>
+        <p>Непрерывное присутствие в эфире с 1991 года создаёт ощущение стабильности и доверия. Зритель знает лицо, привык к голосу — это делает дикторский текст частью «реальности», а не «пропаганды».</p>
+      </div>
+      <div class="grid-card">
+        <h3>Лексика Кремля</h3>
+        <p>«Спецоперация», «денацификация», «нацисты» — все государственные эвфемизмы транслируются как стандартная новостная лексика. Аудитория усваивает язык через привычный голос в привычное время.</p>
+      </div>
+      <div class="grid-card">
+        <h3>Замалчивание</h3>
+        <p>Главная пропаганда — не то, что говорится, а то, что не говорится. Жертвы среди мирного населения Украины, разрушение городов, международные осуждения — это отсутствует в выпусках новостей.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ВНЕШНИЕ ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">О ней говорят</h2>
+    </div>
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«Андреева — символ того, как государственное телевидение использует профессионализм для легитимизации лжи. Она читает официальную версию так, что зрители верят в её правдивость.»</blockquote>
+        <div class="attribution">Медиааналитик · Европейский институт медиа</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Первый канал — главный инструмент кремлёвской пропаганды внутри страны. Андреева является его персонификацией перед миллионами зрителей.»</blockquote>
+        <div class="attribution">Официальный журнал ЕС · Обоснование санкций · 2022</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Она не выражает мнений. Она просто читает. Но именно это и делает её незаменимой для системы, которой нужна видимость нейтральности.»</blockquote>
+        <div class="attribution">Журналист-расследователь · Meduza</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">В цифрах</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">30+</div>
+        <div class="stat-label">лет в эфире</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">35 млн</div>
+        <div class="stat-label">аудитория Первого канала</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2</div>
+        <div class="stat-label">санкционных списка (ЕС, UK)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">0</div>
+        <div class="stat-label">раз сказано «война» в эфире</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Голоса Кремля</span>
+  <div class="footer-rule"></div>
+  <span>Досье № 10</span>
+  <div class="footer-rule"></div>
+  <a href="index.html" style="color:var(--red);text-decoration:none">← Все досье</a>
+</div>
+
+</body>
+</html>

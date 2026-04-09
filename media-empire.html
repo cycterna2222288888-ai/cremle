@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Медиаимперия · Голоса Кремля</title>
+<meta name="description" content="Российские государственные СМИ: структура, финансирование, охват. Кто чем управляет и откуда деньги.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Медиаимперия · Голоса Кремля">
+<meta property="og:description" content="Структура российских государственных СМИ: RT, ВГТРК, НТВ. Финансирование, охват, иерархия.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Медиаимперия · Голоса Кремля">
+<meta name="twitter:description" content="Структура российских государственных СМИ: RT, ВГТРК, НТВ. Финансирование, охват, иерархия.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+    --card-bg: #0e0e0e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
+
+  /* SECTION LABEL */
+  .section-wrap { padding: 60px; border-bottom: 1px solid var(--rule); }
+  .section-wrap:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+  /* EMPIRE DIAGRAM */
+  .empire-diagram {
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr 3px 1fr;
+    gap: 0;
+    background: var(--rule);
+    margin-bottom: 2px;
+  }
+
+  .empire-col { background: var(--card-bg); padding: 0; }
+  .empire-divider { background: var(--rule); }
+
+  .empire-col-header {
+    padding: 28px 32px;
+    border-bottom: 3px solid var(--red);
+    background: #050505;
+  }
+
+  .empire-col-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 4px;
+  }
+
+  .empire-col-sub {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .empire-channels { padding: 0; }
+
+  .channel-row {
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .channel-row:last-child { border-bottom: none; }
+
+  .channel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 4px;
+  }
+
+  .channel-desc {
+    font-size: 11px;
+    color: var(--light-gray);
+    line-height: 1.5;
+  }
+
+  .channel-person {
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  .channel-person a { color: var(--red); text-decoration: none; }
+  .channel-person a:hover { opacity: 0.7; }
+
+  /* FUNDING FLOW */
+  .funding-flow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--rule);
+    margin-bottom: 2px;
+  }
+
+  .flow-card {
+    background: var(--card-bg);
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .flow-card::after {
+    content: attr(data-arrow);
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--red);
+    opacity: 0.4;
+  }
+
+  .flow-card:last-child::after { display: none; }
+
+  .flow-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  .flow-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .flow-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .flow-desc {
+    font-size: 11px;
+    color: var(--light-gray);
+    line-height: 1.5;
+  }
+
+  /* REACH TABLE */
+  .reach-table { width: 100%; border-collapse: collapse; }
+
+  .reach-table th {
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--rule);
+    background: #050505;
+  }
+
+  .reach-table td {
+    padding: 16px 20px;
+    font-size: 12px;
+    color: var(--light-gray);
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  .reach-table tr:last-child td { border-bottom: none; }
+
+  .reach-table td:first-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--paper);
+  }
+
+  .reach-tag {
+    display: inline-block;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid var(--red-dim);
+    color: var(--red);
+    padding: 3px 7px;
+    margin: 2px;
+  }
+
+  /* HIERARCHY */
+  .hierarchy {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    padding: 48px;
+  }
+
+  .hier-node {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .hier-box {
+    display: inline-block;
+    border: 1px solid var(--red-dim);
+    padding: 16px 32px;
+    background: #050505;
+  }
+
+  .hier-box-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--paper);
+  }
+
+  .hier-box-sub {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-top: 4px;
+  }
+
+  .hier-line {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hier-line::before {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: var(--rule);
+  }
+
+  .hier-row {
+    display: grid;
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .hier-row-3 { grid-template-columns: repeat(3, 1fr); }
+  .hier-row-2 { grid-template-columns: repeat(2, 1fr); }
+
+  .hier-cell {
+    background: var(--card-bg);
+    padding: 24px;
+    text-align: center;
+  }
+
+  .hier-cell-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 6px;
+  }
+
+  .hier-cell-sub {
+    font-size: 10px;
+    color: var(--light-gray);
+    line-height: 1.4;
+  }
+
+  .hier-cell-person {
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-top: 8px;
+  }
+
+  .hier-cell-person a { color: var(--red); text-decoration: none; }
+
+  /* STATS */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    background: var(--rule);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .stat-cell { background: var(--card-bg); padding: 32px 24px; text-align: center; }
+  .stat-cell + .stat-cell { border-left: 1px solid var(--rule); }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: var(--red); line-height: 1; }
+  .stat-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 10px; }
+
+  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
+
+  @media (max-width: 900px) {
+    .masthead, .section-wrap, .footer, .nav-back { padding-left: 24px; padding-right: 24px; }
+    .empire-diagram { grid-template-columns: 1fr; }
+    .empire-divider { display: none; }
+    .funding-flow { grid-template-columns: 1fr 1fr; }
+    .stats-bar { grid-template-columns: repeat(3, 1fr); }
+    .hier-row-3, .hier-row-2 { grid-template-columns: 1fr; }
+    .hierarchy { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Структура · Финансирование · Охват</div>
+  <h1 class="masthead-title">Медиаимперия</h1>
+  <p class="masthead-sub">Российские государственные СМИ: кто чем управляет, откуда деньги, сколько людей смотрят. Одна система — девять лиц.</p>
+</div>
+
+<!-- ИЕРАРХИЯ -->
+<div class="section-wrap">
+  <div class="section-label">01 · Вертикаль власти</div>
+
+  <div class="hierarchy">
+    <div class="hier-node">
+      <div class="hier-box">
+        <div class="hier-box-title">Кремль · Администрация президента</div>
+        <div class="hier-box-sub">Медиаполитика · Редакционные линии · Финансирование</div>
+      </div>
+    </div>
+    <div class="hier-line"></div>
+    <div class="hier-row hier-row-3">
+      <div class="hier-cell">
+        <div class="hier-cell-title">ВГТРК</div>
+        <div class="hier-cell-sub">Россия-1, Россия-24, Вести</div>
+        <div class="hier-cell-person">
+          <a href="solovyov.html">Соловьёв</a> ·
+          <a href="skabeeva.html">Скабеева</a> ·
+          <a href="popov.html">Попов</a>
+        </div>
+      </div>
+      <div class="hier-cell">
+        <div class="hier-cell-title">МИА «Россия сегодня»</div>
+        <div class="hier-cell-sub">RT, Sputnik, РИА Новости</div>
+        <div class="hier-cell-person">
+          <a href="kiselyov.html">Киселёв</a> ·
+          <a href="simonyan.html">Симоньян</a> ·
+          <a href="keosayan.html">Кеосаян</a>
+        </div>
+      </div>
+      <div class="hier-cell">
+        <div class="hier-cell-title">ПАО «Первый канал»</div>
+        <div class="hier-cell-sub">Первый канал, 51% гос.</div>
+        <div class="hier-cell-person">
+          <a href="sheynin.html">Шейнин</a>
+        </div>
+      </div>
+    </div>
+    <div class="hier-line"></div>
+    <div class="hier-row hier-row-2">
+      <div class="hier-cell">
+        <div class="hier-cell-title">ГД РФ · Фракция «Единая Россия»</div>
+        <div class="hier-cell-sub">Медиадепутаты с официальным иммунитетом</div>
+        <div class="hier-cell-person">
+          <a href="tolstoy.html">Толстой</a> ·
+          <a href="popov.html">Попов</a>
+        </div>
+      </div>
+      <div class="hier-cell">
+        <div class="hier-cell-title">НТВ (Газпром-Медиа)</div>
+        <div class="hier-cell-sub">Холдинг под контролем Газпрома</div>
+        <div class="hier-cell-person">
+          <a href="norkin.html">Норкин</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- КАНАЛЫ -->
+<div class="section-wrap">
+  <div class="section-label">02 · Каналы и программы</div>
+
+  <div class="empire-diagram">
+    <div class="empire-col">
+      <div class="empire-col-header">
+        <div class="empire-col-title">Внутренний рынок</div>
+        <div class="empire-col-sub">Россия · Для своих</div>
+      </div>
+      <div class="empire-channels">
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">«Вечер с Соловьёвым»</div>
+            <div class="channel-desc">Россия-1 · Ежедневно · Прайм-тайм. Главное пропагандистское ток-шоу страны.</div>
+          </div>
+          <div class="channel-person"><a href="solovyov.html">Соловьёв</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">«60 минут»</div>
+            <div class="channel-desc">Россия-1 · Ежедневно · 2 часа. Семейный дуэт агрессивной пропаганды.</div>
+          </div>
+          <div class="channel-person"><a href="skabeeva.html">Скабеева</a> · <a href="popov.html">Попов</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">«Вести недели»</div>
+            <div class="channel-desc">Россия-1 · Воскресенье · Флагман ВГТРК. Зам.гендиректора — автор «радиоактивного пепла».</div>
+          </div>
+          <div class="channel-person"><a href="kiselyov.html">Киселёв</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">«Время покажет»</div>
+            <div class="channel-desc">Первый канал · Ежедневно. Шейнин управляет залом с помощью кнопки отключения микрофонов.</div>
+          </div>
+          <div class="channel-person"><a href="sheynin.html">Шейнин</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">«Место встречи»</div>
+            <div class="channel-desc">НТВ · Ежедневно. Норкин ведёт в формате жёсткого судилища над «предателями».</div>
+          </div>
+          <div class="channel-person"><a href="norkin.html">Норкин</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="empire-divider"></div>
+    <div class="empire-col">
+      <div class="empire-col-header">
+        <div class="empire-col-title">Международный рынок</div>
+        <div class="empire-col-sub">RT · Sputnik · Для внешней аудитории</div>
+      </div>
+      <div class="empire-channels">
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">RT (Russia Today)</div>
+            <div class="channel-desc">100+ стран · EN, AR, ES, DE, FR. Заблокирован в ЕС в 2022. Иноагент в США с 2017.</div>
+          </div>
+          <div class="channel-person"><a href="simonyan.html">Симоньян</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">Sputnik</div>
+            <div class="channel-desc">Международное агентство. Сайты, радио, соцсети. Признан дезинформационным в десятках стран.</div>
+          </div>
+          <div class="channel-person"><a href="simonyan.html">Симоньян</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">RT Doc · Кино RT</div>
+            <div class="channel-desc">Документальные фильмы для международной аудитории. Пропаганда в формате художественного кино.</div>
+          </div>
+          <div class="channel-person"><a href="keosayan.html">Кеосаян</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">RT Arabic</div>
+            <div class="channel-desc">Арабоязычная аудитория · Ближний Восток, Северная Африка. 75+ млн просмотров в месяц.</div>
+          </div>
+          <div class="channel-person"><a href="simonyan.html">Симоньян</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">Ruptly</div>
+            <div class="channel-desc">Видеоагентство. Продаёт контент мировым СМИ. Дозированная «нейтральная» картинка событий.</div>
+          </div>
+          <div class="channel-person"><a href="simonyan.html">Симоньян</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="empire-divider"></div>
+    <div class="empire-col">
+      <div class="empire-col-header">
+        <div class="empire-col-title">Политическая трибуна</div>
+        <div class="empire-col-sub">Госдума · ПАСЕ · Официальные позиции</div>
+      </div>
+      <div class="empire-channels">
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">Госдума, фракция «ЕР»</div>
+            <div class="channel-desc">Депутатский мандат обеспечивает неприкосновенность и официальный статус для пропагандистских тезисов.</div>
+          </div>
+          <div class="channel-person"><a href="tolstoy.html">Толстой</a> · <a href="popov.html">Попов</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">ПАСЕ (до 2022)</div>
+            <div class="channel-desc">Парламентская ассамблея Совета Европы. Трибуна для трансляции российских нарративов на европейскую аудиторию.</div>
+          </div>
+          <div class="channel-person"><a href="tolstoy.html">Толстой</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">Комитет по культуре ГД</div>
+            <div class="channel-desc">Контроль над культурной политикой: кино, медиа, книгоиздание. Законодательная «крыша» для пропаганды.</div>
+          </div>
+          <div class="channel-person"><a href="tolstoy.html">Толстой</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">«Москва. Кремль. Путин»</div>
+            <div class="channel-desc">Россия-1 · Воскресенье. Официальный нарратив о Путине. Де-факто государственная биография.</div>
+          </div>
+          <div class="channel-person"><a href="solovyov.html">Соловьёв</a></div>
+        </div>
+        <div class="channel-row">
+          <div>
+            <div class="channel-name">РИА Новости</div>
+            <div class="channel-desc">Крупнейшее российское информационное агентство. Первичный источник официальных нарративов.</div>
+          </div>
+          <div class="channel-person"><a href="kiselyov.html">Киселёв</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ФИНАНСИРОВАНИЕ -->
+<div class="section-wrap">
+  <div class="section-label">03 · Финансирование</div>
+
+  <div class="funding-flow">
+    <div class="flow-card" data-arrow="→">
+      <div class="flow-label">Источник</div>
+      <div class="flow-name">Федеральный бюджет РФ</div>
+      <div class="flow-amount">~$400 млн</div>
+      <div class="flow-desc">Ежегодное финансирование RT и МИА «Россия сегодня» из государственного бюджета. Цифры — из официальных отчётов Госдумы.</div>
+    </div>
+    <div class="flow-card" data-arrow="→">
+      <div class="flow-label">Получатель 1</div>
+      <div class="flow-name">МИА «Россия сегодня»</div>
+      <div class="flow-amount">~$280 млн</div>
+      <div class="flow-desc">Крупнейший государственный медиахолдинг. Включает RT, Sputnik, РИА Новости, Ruptly. Генеральный директор — Киселёв.</div>
+    </div>
+    <div class="flow-card" data-arrow="→">
+      <div class="flow-label">Получатель 2</div>
+      <div class="flow-name">ВГТРК</div>
+      <div class="flow-amount">~$120 млн</div>
+      <div class="flow-desc">Всероссийская государственная телевизионная и радиовещательная компания. Россия-1, Россия-24, Культура. 100% государственное.</div>
+    </div>
+    <div class="flow-card">
+      <div class="flow-label">Скрытое финансирование</div>
+      <div class="flow-name">Газпром-Медиа</div>
+      <div class="flow-amount">Н/Д</div>
+      <div class="flow-desc">НТВ, ТНТ и другие. Газпром — государственная монополия. Формально — корпоративное финансирование, фактически — государственное.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ОХВАТ -->
+<div class="section-wrap">
+  <div class="section-label">04 · Охват и аудитория</div>
+
+  <table class="reach-table">
+    <thead>
+      <tr>
+        <th>СМИ</th>
+        <th>Аудитория</th>
+        <th>Охват</th>
+        <th>Статус за рубежом</th>
+        <th>Связь с архивом</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RT (все языки)</td>
+        <td>700+ млн / мес</td>
+        <td>100+ стран</td>
+        <td><span class="reach-tag">Иноагент в США</span><span class="reach-tag">Заблокирован в ЕС</span></td>
+        <td><a href="simonyan.html" style="color:var(--red);text-decoration:none">Симоньян</a>, <a href="kiselyov.html" style="color:var(--red);text-decoration:none">Киселёв</a>, <a href="keosayan.html" style="color:var(--red);text-decoration:none">Кеосаян</a></td>
+      </tr>
+      <tr>
+        <td>Россия-1</td>
+        <td>~40 млн / день</td>
+        <td>РФ + СНГ</td>
+        <td><span class="reach-tag">Санкции ЕС</span></td>
+        <td><a href="solovyov.html" style="color:var(--red);text-decoration:none">Соловьёв</a>, <a href="skabeeva.html" style="color:var(--red);text-decoration:none">Скабеева</a>, <a href="popov.html" style="color:var(--red);text-decoration:none">Попов</a>, <a href="kiselyov.html" style="color:var(--red);text-decoration:none">Киселёв</a></td>
+      </tr>
+      <tr>
+        <td>Первый канал</td>
+        <td>~35 млн / день</td>
+        <td>РФ + СНГ</td>
+        <td><span class="reach-tag">Санкции ЕС</span><span class="reach-tag">Санкции США</span></td>
+        <td><a href="sheynin.html" style="color:var(--red);text-decoration:none">Шейнин</a></td>
+      </tr>
+      <tr>
+        <td>НТВ (Газпром)</td>
+        <td>~25 млн / день</td>
+        <td>РФ + СНГ</td>
+        <td><span class="reach-tag">Санкции ЕС</span></td>
+        <td><a href="norkin.html" style="color:var(--red);text-decoration:none">Норкин</a></td>
+      </tr>
+      <tr>
+        <td>Sputnik</td>
+        <td>~150 млн / мес</td>
+        <td>30+ языков</td>
+        <td><span class="reach-tag">Иноагент в США</span><span class="reach-tag">Заблокирован в ЕС</span><span class="reach-tag">Запрещён в 15 странах</span></td>
+        <td><a href="simonyan.html" style="color:var(--red);text-decoration:none">Симоньян</a>, <a href="kiselyov.html" style="color:var(--red);text-decoration:none">Киселёв</a></td>
+      </tr>
+      <tr>
+        <td>Госдума (заявления)</td>
+        <td>Н/Д</td>
+        <td>Официальные каналы</td>
+        <td><span class="reach-tag">Персоны нон грата в 15+ странах</span></td>
+        <td><a href="tolstoy.html" style="color:var(--red);text-decoration:none">Толстой</a>, <a href="popov.html" style="color:var(--red);text-decoration:none">Попов</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-cell">
+    <div class="stat-num">$400<span style="font-size:20px">млн</span></div>
+    <div class="stat-label">господдержка RT/год</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">100+</div>
+    <div class="stat-label">стран охвата RT</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">5</div>
+    <div class="stat-label">языков RT</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">2022</div>
+    <div class="stat-label">блокировка в ЕС</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">9</div>
+    <div class="stat-label">лиц в этом архиве</div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-logo">Голоса Кремля</div>
+  <span>Данные — из открытых отчётов и официальных источников</span>
+  <span>2024</span>
+</div>
+
+</body>
+</html>

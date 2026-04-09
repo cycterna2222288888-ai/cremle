@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ольга Скабеева — досье</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #09090b;
+    --paper: #f0ebe0;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --gold: #b8960c;
+    --gray: #4a4a4a;
+    --light-gray: #bfb8a8;
+    --rule: #1e1e1e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-left {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--rule);
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 32px;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 5.5vw, 76px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(15px, 1.8vw, 21px);
+    color: var(--light-gray);
+    margin-bottom: 48px;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    border-top: 1px solid var(--rule);
+    padding-top: 40px;
+  }
+
+  .meta-item label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .meta-item span {
+    font-size: 13px;
+    color: var(--light-gray);
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: #0c0c0c;
+  }
+
+  .hero-stamp {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    border: 2px solid var(--red);
+    color: var(--red);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    opacity: 0.8;
+    transform: rotate(-3deg);
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .section-num {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--red);
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--paper);
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 12px;
+    flex: 1;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+  }
+
+  .timeline-year {
+    padding: 0 24px 48px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--red);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-right: 1px solid var(--rule);
+    text-align: right;
+    position: relative;
+  }
+
+  .timeline-year::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    background: var(--red);
+    border-radius: 50%;
+  }
+
+  .timeline-body {
+    padding: 0 0 48px 32px;
+  }
+
+  .timeline-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--paper);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .timeline-body p {
+    font-size: 14px;
+    color: var(--light-gray);
+    line-height: 1.85;
+  }
+
+  /* GRIDS */
+  .four-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .grid-card {
+    background: var(--ink);
+    padding: 40px;
+  }
+
+  .grid-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--paper);
+    margin-bottom: 14px;
+  }
+
+  .grid-card p {
+    font-size: 14px;
+    color: var(--light-gray);
+    line-height: 1.85;
+  }
+
+  /* PULL QUOTE */
+  .quote-pull {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(17px, 2.2vw, 24px);
+    color: var(--paper);
+    border-left: 3px solid var(--red);
+    padding: 24px 0 24px 32px;
+    margin: 48px 0;
+    line-height: 1.5;
+  }
+
+  .quote-pull cite {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-style: normal;
+    margin-top: 16px;
+  }
+
+  /* PEOPLE QUOTES */
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .person-quote {
+    background: #0e0e0e;
+    padding: 36px;
+  }
+
+  .person-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--paper);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .person-quote .attribution {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  /* INTERVIEW */
+  .interview-list { display: grid; gap: 0; }
+
+  .interview-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 2fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .interview-row:first-child { border-top: 1px solid var(--rule); }
+
+  .interview-num { font-size: 11px; color: var(--red); letter-spacing: 0.15em; }
+
+  .interview-topic {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--paper);
+    font-weight: 700;
+  }
+
+  .interview-desc {
+    font-size: 13px;
+    color: var(--light-gray);
+    line-height: 1.8;
+  }
+
+  /* STATS ROW */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--rule);
+    margin-top: 48px;
+  }
+
+  .stat-card {
+    background: var(--ink);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .stat-card .stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  .stat-card .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 8px;
+  }
+
+  /* INTRO TEXT */
+  .intro-text {
+    font-size: 15px;
+    color: var(--light-gray);
+    line-height: 1.9;
+    max-width: 720px;
+    margin-bottom: 48px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
+
+  /* SCANDALE badge */
+  .scandal-label {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    border: 1px solid var(--red-dim);
+    padding: 3px 8px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 280px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .four-grid, .quotes-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .interview-row { grid-template-columns: 40px 1fr; }
+    .interview-desc { display: none; }
+  }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Ольга<br>Скабеева</h1>
+    <p class="hero-subtitle">«Железная кукла путинского ТВ»</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>11 декабря 1984, Волжский</span>
+      </div>
+      <div class="meta-item">
+        <label>Образование</label>
+        <span>Журфак СПбГУ, красный диплом (2008)</span>
+      </div>
+      <div class="meta-item">
+        <label>Программа</label>
+        <span>«60 минут», Россия-1 (с 2016)</span>
+      </div>
+      <div class="meta-item">
+        <label>Муж</label>
+        <span>Евгений Попов, депутат ГД / соведущий</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>ЕС, США, Великобритания, Канада, Австралия, Япония</span>
+      </div>
+      <div class="meta-item">
+        <label>Прозвища</label>
+        <span>Железная кукла, Кремлёвская марионетка</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <radialGradient id="rg2" cx="55%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#1a0000" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#000" stop-opacity="1"/>
+        </radialGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#rg2)"/>
+
+      <!-- Scan lines -->
+      <g opacity="0.05">
+        <line x1="0" y1="8%"  x2="100%" y2="8%"  stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="16%" x2="100%" y2="16%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="24%" x2="100%" y2="24%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="32%" x2="100%" y2="32%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="40%" x2="100%" y2="40%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="48%" x2="100%" y2="48%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="56%" x2="100%" y2="56%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="64%" x2="100%" y2="64%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="72%" x2="100%" y2="72%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="80%" x2="100%" y2="80%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="88%" x2="100%" y2="88%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="96%" x2="100%" y2="96%" stroke="#c8c0b0" stroke-width="1"/>
+      </g>
+
+      <!-- Clock face — 60 minutes motif -->
+      <circle cx="50%" cy="42%" r="110" fill="none" stroke="#8b1a1a" stroke-width="0.8" opacity="0.25"/>
+      <circle cx="50%" cy="42%" r="90"  fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="50%" cy="42%" r="4"   fill="#8b1a1a" opacity="0.5"/>
+      <!-- Clock hands -->
+      <line x1="50%" y1="42%" x2="50%" y2="20%" stroke="#8b1a1a" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+      <line x1="50%" y1="42%" x2="70%" y2="46%" stroke="#8b1a1a" stroke-width="1"   opacity="0.3" stroke-linecap="round"/>
+      <!-- Tick marks -->
+      <g opacity="0.2" stroke="#8b1a1a" stroke-width="0.8">
+        <line x1="50%" y1="21%" x2="50%" y2="24%"/>
+        <line x1="65%" y1="26%" x2="63%" y2="29%"/>
+        <line x1="72%" y1="40%" x2="69%" y2="40%"/>
+        <line x1="65%" y1="56%" x2="63%" y2="53%"/>
+        <line x1="50%" y1="63%" x2="50%" y2="60%"/>
+        <line x1="35%" y1="56%" x2="37%" y2="53%"/>
+        <line x1="28%" y1="40%" x2="31%" y2="40%"/>
+        <line x1="35%" y1="26%" x2="37%" y2="29%"/>
+      </g>
+
+      <!-- Large monogram -->
+      <text x="50%" y="46%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia,serif" font-size="130" fill="#8b1a1a" opacity="0.12" font-weight="700">ОС</text>
+
+      <!-- 60 МИНУТ label -->
+      <text x="50%" y="75%" text-anchor="middle"
+        font-family="'Inter',sans-serif" font-size="11" fill="#8b1a1a" opacity="0.4"
+        letter-spacing="6">60 МИНУТ</text>
+    </svg>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/%D0%9E%D0%BB%D1%8C%D0%B3%D0%B0_%D0%A1%D0%BA%D0%B0%D0%B1%D0%B5%D0%B5%D0%B2%D0%B0_%282019%29_%28cropped%29.jpg" alt="Ольга Скабеева" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.45;mix-blend-mode:luminosity;">
+    <div class="hero-stamp">Государственная пропаганда</div>
+  </div>
+</div>
+
+<!-- BIOGRAPHY -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+
+    <p class="intro-text">
+      Ольга Владимировна Скабеева — телеведущая, журналистка, лицо государственного канала «Россия-1». Выросла в провинциальном Волжском, дошла до главного прайм-тайма страны. Красный диплом журфака СПбГУ, стипендия Фонда Потанина, «Золотое перо» — и в итоге прозвище «железная кукла путинского ТВ». История стремительного карьерного взлёта и репутационного обвала.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-year">1984</div>
+      <div class="timeline-body">
+        <h3>Рождение в Волжском</h3>
+        <p>Родилась 11 декабря 1984 года в небольшом городе Волжский Волгоградской области. Отец — инженер-строитель, мать — архитектор. С детства жёсткий распорядок: 6:30 подъём, 9 уроков в частной российско-американской школе с религиозным уклоном, рисование, гимнастика.</p>
+      </div>
+
+      <div class="timeline-year">2003</div>
+      <div class="timeline-body">
+        <h3>Школа с отличием. Журналистика</h3>
+        <p>Окончила школу с золотой медалью. Ещё в 9-м классе объявила родителям — инженеру и архитектору — что станет журналисткой. Первый опыт получила в местной бесплатной газете «Неделя города» и «Волжской правде», брала интервью у гастролирующих звёзд. Поступила на журфак СПбГУ.</p>
+      </div>
+
+      <div class="timeline-year">2006</div>
+      <div class="timeline-body">
+        <h3>Первые награды. ВГТРК</h3>
+        <p>Ещё студенткой стала стипендиатом Фонда Потанина. Получила «Золотое перо России» в номинации «Перспектива года» и премию правительства Санкт-Петербурга. Параллельно начала работу на ВГТРК — к 2006 году создала более 200 репортажей и аналитических материалов.</p>
+      </div>
+
+      <div class="timeline-year">2008</div>
+      <div class="timeline-body">
+        <h3>Красный диплом. Федеральное ТВ</h3>
+        <p>Окончила СПбГУ с отличием. Перешла в федеральную редакцию ВГТРК — программы «Вести» и «Вести недели». Получила награду конкурса «Профессия — репортёр» в номинации «Журналистское расследование». Начала формировать фирменный «прокурорско-обличительный» стиль с металлическим голосом.</p>
+      </div>
+
+      <div class="timeline-year">2013</div>
+      <div class="timeline-body">
+        <h3>Прозвище «Железная кукла»</h3>
+        <p>На репортаже с «Марша против подлецов» в январе 2013-го с «металлом в глазах и железом в голосе» разоблачала «убогость» протестующих. Это видео разошлось по Рунету, прозвище прилипло навсегда. В апреле того же года вышла замуж за телеведущего ВГТРК Евгения Попова — брак второй для обоих.</p>
+      </div>
+
+      <div class="timeline-year">2014</div>
+      <div class="timeline-body">
+        <h3>Рождение сына Захара</h3>
+        <p>14 января 2014 года у Скабеевой и Попова родился сын Захар. В том же году активно освещала события на Украине, занимая жёсткую провластную позицию. Вела авторскую программу «Вести.doc» на «России-1», специализируясь на разоблачениях оппозиции.</p>
+      </div>
+
+      <div class="timeline-year">2016</div>
+      <div class="timeline-body">
+        <h3>«60 минут». Скандал с Зеппельтом</h3>
+        <p>С 12 сентября 2016 года совместно с Поповым запустила ток-шоу «60 минут» на «России-1». В том же году пыталась взять интервью у немецкого журналиста ARD Хайо Зеппельта — тот выставил её силой из гостиничного номера. Снимала его личные вещи для «превью», игнорировала запрет.</p>
+      </div>
+
+      <div class="timeline-year">2017</div>
+      <div class="timeline-body">
+        <h3>ТЭФИ. Охранник Порошенко</h3>
+        <p>«60 минут» победило на ТЭФИ-2017 в номинации «Ведущий общественно-политического ток-шоу прайм-тайма». Также получила «Золотое перо России». В 2015-м (годом ранее) охранник физически нейтрализовал её, когда она с микрофоном бросилась к Петру Порошенко — несмотря на прямой запрет. Украинская делегация в ПАСЕ в ответ на её присутствие исполнила гимн Украины.</p>
+      </div>
+
+      <div class="timeline-year">2021</div>
+      <div class="timeline-body">
+        <h3>Слитые инструктажи</h3>
+        <p>В Сеть попало видео, ставшее вирусным: Скабеева перед эфиром «60 минут» инструктирует приглашённых экспертов — что говорить, как именно, какие нарративы держать. Документальное свидетельство технологии «управляемой дискуссии».</p>
+      </div>
+
+      <div class="timeline-year">2022</div>
+      <div class="timeline-body">
+        <h3>Санкции шести стран. Без выходных</h3>
+        <p>После начала вторжения в Украину попала под санкции ЕС, Великобритании, США, Канады, Австралии, Японии. «Россия-1» отменила развлекательные шоу — «60 минут» выходило по три раза в день, включая выходные. В эфире Скабеева говорила, что армия РФ должна идти дальше Украины — «на Варшаву».</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STYLE AND METHOD -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Метод и стиль</h2>
+    </div>
+
+    <p class="intro-text">
+      «60 минут» — не дискуссия. Это управляемое шоу с заранее расписанными ролями. Скабеева выработала узнаваемую технику, которую телекритики называют «прокурорско-обличительной», а зрители — просто агрессией.
+    </p>
+
+    <div class="four-grid">
+      <div class="grid-card">
+        <div class="scandal-label">Техника</div>
+        <h3>Металлический голос</h3>
+        <p>Телекритики Ирина Петровская и Слава Тарощина отдельно фиксировали её «металлический голос» и «прокурорские интонации». Скабеева сообщает новости в строгой, слегка агрессивной манере — не информирует, а обвиняет. Этот приём стал её визитной карточкой задолго до «60 минут».</p>
+      </div>
+      <div class="grid-card">
+        <div class="scandal-label">Инструктаж</div>
+        <h3>Режиссура «дискуссии»</h3>
+        <p>Утечка 2021 года показала: перед эфиром Скабеева лично проводила с экспертами инструктаж — что говорить, каких тезисов держаться, как реагировать. «Свободная дискуссия» оказалась постановочным спектаклем с прописанными репликами.</p>
+      </div>
+      <div class="grid-card">
+        <div class="scandal-label">Провокация</div>
+        <h3>Атака на нежелательных</h3>
+        <p>Гостей, не вписывавшихся в нарративы «русского мира», выгоняли из студии. Зеппельту пришлось применить физическую силу, чтобы вывести Скабееву из номера. Охранник Порошенко закрыл ей рот буквально — рукой. Она продолжала задавать вопросы.</p>
+      </div>
+      <div class="grid-card">
+        <div class="scandal-label">Риторика</div>
+        <h3>Варшава и белки</h3>
+        <p>В 2022-м поддержала одобрительным смехом предложение депутата Морозова похищать западных политиков, приезжающих в Киев. Говорила, что армия РФ должна идти «на Варшаву». Утверждала, что британцы голодают и «вынуждены есть белок» — британские СМИ ответили волной мемов.</p>
+      </div>
+    </div>
+
+    <div class="quote-pull">
+      «Она — монстр. Шовинистическая, патриотическая, проправительственная, некритическая, явно скандальная фигура.»
+      <cite>— Василий Гатов, исследователь СМИ, Университет Южной Калифорнии</cite>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT PEOPLE SAY -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Что о ней говорят</h2>
+    </div>
+
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«Она осознаёт свою циничную роль в российской пропагандистской машине вместе со своим мужем.»</blockquote>
+        <div class="attribution">Официальный журнал Европейского союза, Брюссель, 28 февраля 2022</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Ответственна за создание условий и поддержку неспровоцированного вторжения России в Украину.»</blockquote>
+        <div class="attribution">Правительство Канады — обоснование санкций, июль 2022</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Распространяет дезинформацию в попытках узаконить незаконное вторжение на Украину.»</blockquote>
+        <div class="attribution">Правительство Австралии — обоснование санкций, март 2022</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Характерный прокурорско-обличительный стиль и металлический голос.»</blockquote>
+        <div class="attribution">Ирина Петровская и Слава Тарощина — телекритики</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Как журналист не блещет. Как ведущая программы — просто отвратительна.»</blockquote>
+        <div class="attribution">Зритель на «Узнай всё» — бывший поклонник</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Тараторит, словно заведённая, и не слышит ни единого контраргумента. Железная кукла.»</blockquote>
+        <div class="attribution">Rambler/Кино — разбор феномена Скабеевой</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Депутаты КПРФ обвиняют ведущую в излишне агрессивной антиукраинской риторике.»</blockquote>
+        <div class="attribution">Wikipedia.org — даже системная оппозиция не выдержала</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Профессиональная ненавистница Украины, Европы и Америки, воспитанная в российско-американской школе.»</blockquote>
+        <div class="attribution">TSN.ua — украинское издание, 2022</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Непрофессиональное поведение ведущей — в эфире обозвала собеседника.»</blockquote>
+        <div class="attribution">Кирилл Бенедиктов — писатель и публицист</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTERVIEW TOPICS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Что спрашивали в интервью</h2>
+    </div>
+
+    <p class="intro-text">
+      Скабеева крайне редко даёт интервью — предпочитает задавать вопросы сама. Но когда журналисты всё же добирались до неё, темы были одними и теми же.
+    </p>
+
+    <div class="interview-list">
+      <div class="interview-row">
+        <span class="interview-num">01</span>
+        <div class="interview-topic">Откуда такая агрессия</div>
+        <div class="interview-desc">Скабеева отвечала, что «привыкла относиться ко всему с долей иронии» и считает это главным качеством хорошего журналиста. На слова об агрессивном стиле реагировала иронией — никогда прямо не признавала жёсткость осознанной стратегией.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">02</span>
+        <div class="interview-topic">Как вы с мужем работаете вместе</div>
+        <div class="interview-desc">Один из самых частых вопросов. Скабеева отвечала, что многие зрители не догадываются, что ведущие «60 минут» — супруги, «настолько профессионально они работают в эфире». Про личные конфликты не распространялась.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">03</span>
+        <div class="interview-topic">Скандал с Зеппельтом</div>
+        <div class="interview-desc">Когда немецкий журналист выгнал её из номера в 2016 году, Скабеева продолжала задавать вопросы даже когда её физически выставляли за дверь. В интервью эту ситуацию трактовала как проявление его «нервозности» и нежелания отвечать на законные вопросы.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">04</span>
+        <div class="interview-topic">Частная российско-американская школа</div>
+        <div class="interview-desc">Парадокс биографии: «профессиональная ненавистница Америки» училась в школе с американским компонентом. На прямые вопросы об этом никогда не давала развёрнутых ответов.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">05</span>
+        <div class="interview-topic">Санкции и запрет на въезд в ЕС</div>
+        <div class="interview-desc">После февраля 2022 года и введения санкций Скабеева продолжала работать без выходных — канал перешёл в режим круглосуточного вещания о войне. Публично санкции не обсуждала — в отличие от Соловьёва, не делала из этого тему в эфире.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">06</span>
+        <div class="interview-topic">Утечка с инструктажем экспертов</div>
+        <div class="interview-desc">Вирусное видео 2021 года, где она говорит экспертам что и как отвечать, стало главным компроматом. Официального ответа на этот скандал от Скабеевой или канала так и не последовало.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">07</span>
+        <div class="interview-topic">«На Варшаву» и другие заявления</div>
+        <div class="interview-desc">Призывы армии идти дальше Украины, одобрение идеи похищать западных политиков, заявление о голодающих британцах, которые едят белок. Критики спрашивали, понимает ли она меру ответственности за слова. Скабеева считала вопросы проявлением «западного давления».</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NUMBERS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Цифры</h2>
+    </div>
+
+    <p class="intro-text">
+      Карьера Скабеевой в числах — от провинциальной газеты до шести пакетов международных санкций.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">6</div>
+        <div class="stat-label">стран ввели персональные санкции</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">200+</div>
+        <div class="stat-label">репортажей ещё в годы учёбы</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">3×</div>
+        <div class="stat-label">в день выходила программа в феврале 2022</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2013</div>
+        <div class="stat-label">год появления прозвища «железная кукла»</div>
+      </div>
+    </div>
+
+    <div class="quote-pull" style="margin-top:56px">
+      «Г-жа Скабеева, похоже, осознаёт свою циничную роль в российской пропагандистской машине.»
+      <cite>— Официальный журнал Европейского союза, февраль 2022</cite>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Досье составлено на основе открытых источников</span>
+  <div class="footer-rule"></div>
+  <span>Ольга Скабеева · 1984—</span>
+  <div class="footer-rule"></div>
+  <span>Все факты верифицированы публикациями СМИ</span>
+</div>
+
+</body>
+</html>

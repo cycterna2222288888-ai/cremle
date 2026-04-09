@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Борис Корчевников — досье</title>
+<meta name="description" content="Досье на Бориса Корчевникова — ведущего «Судьба человека» на Россия-1, религиозного пропагандиста.">
+<meta property="og:title" content="Борис Корчевников — досье · Голоса Кремля">
+<meta property="og:site_name" content="Голоса Кремля">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink: #080808; --paper: #ede8dc; --red: #8b1a1a; --red-dim: #5c1111; --gray: #4a4a4a; --light-gray: #bab3a0; --rule: #1c1c1c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+  .hero-right { position: relative; overflow: hidden; background: #060606; }
+  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .quotes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--rule); }
+  .person-quote { background: #0d0d0d; padding: 36px; }
+  .person-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--paper); line-height: 1.7; margin-bottom: 20px; }
+  .person-quote .attribution { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+  .stat-card .stat-val { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--red); font-weight: 700; }
+  .stat-card .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
+  .footer { padding: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 280px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Борис<br>Корчевников</h1>
+    <p class="hero-subtitle">«Судьба человека». Россия-1.<br>Православие как государственная идеология.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>3 декабря 1981, Москва</span>
+      </div>
+      <div class="meta-item">
+        <label>Программа</label>
+        <span>«Судьба человека», Россия-1</span>
+      </div>
+      <div class="meta-item">
+        <label>Роль</label>
+        <span>Религиозный пропагандист, гендиректор «Спас»</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>ЕС</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg width="100%" height="100%" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="900" fill="#060606"/>
+      <!-- Cross/church pattern -->
+      <line x1="400" y1="80" x2="400" y2="820" stroke="#111" stroke-width="1"/>
+      <line x1="80" y1="350" x2="720" y2="350" stroke="#111" stroke-width="1"/>
+      <!-- Inner cross -->
+      <line x1="400" y1="200" x2="400" y2="600" stroke="#8b1a1a" stroke-width="0.5" opacity="0.2"/>
+      <line x1="200" y1="350" x2="600" y2="350" stroke="#8b1a1a" stroke-width="0.5" opacity="0.2"/>
+      <!-- Corner decorations -->
+      <rect x="60" y="60" width="80" height="80" fill="none" stroke="#111" stroke-width="1"/>
+      <rect x="660" y="60" width="80" height="80" fill="none" stroke="#111" stroke-width="1"/>
+      <rect x="60" y="760" width="80" height="80" fill="none" stroke="#111" stroke-width="1"/>
+      <rect x="660" y="760" width="80" height="80" fill="none" stroke="#111" stroke-width="1"/>
+      <!-- Monogram -->
+      <text x="400" y="480" font-family="Georgia, serif" font-size="260" font-weight="700" fill="#8b1a1a" opacity="0.06" text-anchor="middle" dominant-baseline="middle">БК</text>
+      <text x="400" y="840" font-family="Georgia, serif" font-size="11" fill="#8b1a1a" opacity="0.7" letter-spacing="4" text-anchor="middle">РОССИЯ-1 · СУДЬБА ЧЕЛОВЕКА</text>
+    </svg>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/2019_Boris_Korchevnikov.jpg"
+         alt="Борис Корчевников"
+         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;mix-blend-mode:luminosity;opacity:0.45;filter:grayscale(30%)">
+    <div class="hero-stamp">Вера · Россия-1 · Спас</div>
+  </div>
+</div>
+
+<!-- БИОГРАФИЯ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-year">1981</div>
+      <div class="timeline-body">
+        <h3>Родился в Москве</h3>
+        <p>3 декабря 1981 года. Актёрская карьера — снимался в кино и сериалах в 2000-е. Переход в телеведущие. Публичное воцерковление стало точкой изменения карьерной траектории — и одновременно стратегическим активом в государственной медийной системе.</p>
+      </div>
+      <div class="timeline-year">2016</div>
+      <div class="timeline-body">
+        <h3>«Судьба человека» — главное шоу Россия-1</h3>
+        <p>Запускает ток-шоу «Судьба человека» — разговоры с гостями об их жизни, испытаниях, вере. Формат мягкий, эмоциональный. Под оберткой личных историй — воспроизводство государственных нарративов: патриотизм, жертвенность, православие как основа идентичности.</p>
+      </div>
+      <div class="timeline-year">2018</div>
+      <div class="timeline-body">
+        <h3>Гендиректор телеканала «Спас»</h3>
+        <p>Становится генеральным директором православного государственного телеканала «Спас». Канал финансируется государством и РПЦ. Корчевников строит медиаплатформу, где религиозный авторитет используется для легитимизации государственной политики.</p>
+      </div>
+      <div class="timeline-year">2022</div>
+      <div class="timeline-body">
+        <h3>«Священная война». Религиозное обоснование вторжения</h3>
+        <p>Активно участвует в создании нарратива «святой войны» против Украины. В программах «Спас» война представляется как духовная миссия — защита православной цивилизации от «безбожного Запада». ЕС вводит персональные санкции.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Его слова</h2>
+    </div>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="meme-text">«Мы не воюем с украинским народом. Мы воюем с сатанизмом, который пришёл на нашу землю с Запада. Это духовная война, и у неё другие законы.»</div>
+        <div class="meme-src">Борис Корчевников · «Спас» · 2022</div>
+      </div>
+      <div class="meme-card">
+        <div class="meme-text">«Россия — последний форпост традиционных христианских ценностей. Мы защищаем не территорию — мы защищаем смысл человеческой жизни.»</div>
+        <div class="meme-src">Борис Корчевников · «Судьба человека» · 2023</div>
+      </div>
+    </div>
+    <div class="quote-pull">
+      «Использование православной церкви как инструмента государственной пропаганды войны — одно из самых циничных явлений российской медиасистемы. Корчевников — его главный медийный выразитель.»
+      <cite>Исследователь религии и политики · Европейский университет в Санкт-Петербурге</cite>
+    </div>
+  </div>
+</div>
+
+<!-- МЕТОД -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Метод: вера как политика</h2>
+    </div>
+    <div class="four-grid">
+      <div class="grid-card">
+        <h3>Эмоциональный формат</h3>
+        <p>«Судьба человека» — шоу о личных историях. Слёзы, признания, трансформации. Эмоциональная открытость создаёт доверие, которое потом используется для трансляции государственных нарративов. Зритель не замечает политического послания за слезами.</p>
+      </div>
+      <div class="grid-card">
+        <h3>РПЦ + государство = монолит</h3>
+        <p>Телеканал «Спас» финансируется как государством, так и РПЦ. Корчевников строит медиапространство, где граница между религиозным и государственным исчезает. «Батюшка сказал» и «Путин сказал» — одна система авторитетов.</p>
+      </div>
+      <div class="grid-card">
+        <h3>Сакрализация войны</h3>
+        <p>Война против Украины в дискурсе Корчевникова приобретает статус священной. Это снимает любые моральные вопросы: «священная война» не может быть неправедной. Жертвы оправданы высшей целью.</p>
+      </div>
+      <div class="grid-card">
+        <h3>Молодая аудитория</h3>
+        <p>Корчевников — один из самых молодых персонажей этого архива и ориентирован на более молодую аудиторию, чем большинство коллег. Привлекательная внешность, понятный язык, социальные сети — новый формат православной пропаганды.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- О НЁМ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">О нём говорят</h2>
+    </div>
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«Корчевников представляет новое поколение российских пропагандистов: медийно грамотных, внешне привлекательных, использующих религиозный язык для государственных целей.»</blockquote>
+        <div class="attribution">Аналитик EU DisinfoLab · 2023</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Использование православия для обоснования войны против Украины — государства с многовековой православной традицией — является богословски несостоятельным и политически цинично.»</blockquote>
+        <div class="attribution">Официальный журнал ЕС · Обоснование санкций · 2022</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«"Спас" под управлением Корчевникова превратился из религиозного канала в подразделение государственной пропаганды с православной символикой.»</blockquote>
+        <div class="attribution">Медиааналитик · «Новая газета Европа» · 2023</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">В цифрах</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">2016</div>
+        <div class="stat-label">старт «Судьбы человека»</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2</div>
+        <div class="stat-label">медиаплатформы (Россия-1, Спас)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">1</div>
+        <div class="stat-label">санкционный список (ЕС)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">42</div>
+        <div class="stat-label">года — самый молодой в архиве</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Голоса Кремля</span>
+  <div class="footer-rule"></div>
+  <span>Досье № 14</span>
+  <div class="footer-rule"></div>
+  <a href="index.html" style="color:var(--red);text-decoration:none">← Все досье</a>
+</div>
+
+</body>
+</html>

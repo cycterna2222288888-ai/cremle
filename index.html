@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Голоса Кремля — Архив пропаганды</title>
+<meta name="description" content="Документальный архив досье на девятерых ключевых пропагандистов российского государственного телевидения. Биографии, цитаты, санкции.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Голоса Кремля — Архив пропаганды">
+<meta property="og:description" content="Документальный архив досье на девятерых ключевых пропагандистов российского государственного телевидения. Биографии, цитаты, санкции.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Голоса Кремля — Архив пропаганды">
+<meta name="twitter:description" content="Документальный архив досье на девятерых ключевых пропагандистов российского государственного телевидения.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #070707;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --light-gray: #b8b0a0;
+    --rule: #1a1a1a;
+    --card-bg: #0e0e0e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 80px 60px 64px;
+    text-align: center;
+    position: relative;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 60px; right: 60px;
+    height: 3px;
+    background: var(--red);
+    opacity: 0.6;
+  }
+
+  .masthead-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 28px;
+  }
+
+  .masthead-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 96px);
+    font-weight: 700;
+    line-height: 1.0;
+    color: var(--paper);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .masthead-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(16px, 2vw, 24px);
+    color: var(--light-gray);
+    margin-bottom: 48px;
+  }
+
+  .masthead-rule {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .masthead-rule::before,
+  .masthead-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .masthead-rule span {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    flex-shrink: 0;
+  }
+
+  /* INTRO */
+  .intro {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .intro p {
+    font-size: 16px;
+    color: var(--light-gray);
+    line-height: 1.9;
+  }
+
+  .intro p + p { margin-top: 16px; }
+
+  /* GRID */
+  .grid-section {
+    padding: 80px 60px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .grid-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .grid-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .card {
+    background: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card:hover { background: #141414; }
+  .card:hover .card-arrow { transform: translate(4px, -4px); }
+  .card:hover .card-monogram { opacity: 0.18; }
+
+  .card-monogram {
+    position: absolute;
+    bottom: -10px;
+    right: -5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    font-weight: 700;
+    color: var(--red);
+    opacity: 0.07;
+    line-height: 1;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    user-select: none;
+  }
+
+  .card-top {
+    padding: 40px 40px 0;
+    border-top: 3px solid var(--red);
+  }
+
+  .card-num {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
+
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 700;
+    color: var(--paper);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--light-gray);
+    margin-bottom: 32px;
+  }
+
+  .card-facts {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+
+  .card-facts li {
+    font-size: 12px;
+    color: var(--light-gray);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+  }
+
+  .card-facts li:first-child { border-top: 1px solid var(--rule); }
+
+  .card-facts li span:first-child {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding-top: 1px;
+  }
+
+  .card-quote {
+    padding: 0 40px;
+    margin-bottom: 32px;
+  }
+
+  .card-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--paper);
+    line-height: 1.6;
+    border-left: 2px solid var(--red-dim);
+    padding-left: 16px;
+    opacity: 0.85;
+  }
+
+  .card-bottom {
+    margin-top: auto;
+    padding: 24px 40px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-cta {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .card-arrow {
+    font-size: 18px;
+    color: var(--red);
+    transition: transform 0.2s;
+  }
+
+  .card-photo {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: grayscale(40%);
+    opacity: 0.6;
+    mix-blend-mode: luminosity;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .card:hover .card-photo img { opacity: 0.75; transform: scale(1.03); }
+
+  /* NAV PAGES */
+  .nav-pages {
+    padding: 48px 60px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .nav-page-link {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 32px 40px;
+    text-decoration: none;
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: background 0.2s;
+  }
+
+  .nav-page-link:hover { background: #141414; }
+
+  .nav-page-link .npl-label { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); }
+
+  .nav-page-link .npl-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--paper); }
+
+  .nav-page-link .npl-desc { font-size: 12px; color: var(--light-gray); line-height: 1.6; }
+
+  .nav-page-link .npl-arrow { font-size: 16px; color: var(--red); margin-top: auto; }
+
+  /* QUOTE STRIP */
+  .quote-strip {
+    padding: 80px 60px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr 3px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .strip-divider { background: var(--rule); height: 100%; min-height: 80px; }
+
+  .strip-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--light-gray);
+    line-height: 1.7;
+  }
+
+  .strip-quote cite {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-style: normal;
+    margin-top: 14px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 48px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #333;
+    border-top: 1px solid var(--rule);
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--red);
+    opacity: 0.5;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+
+  @media (max-width: 900px) {
+    .topbar, .masthead, .intro, .grid-section, .quote-strip, .footer { padding-left: 30px; padding-right: 30px; }
+    .cards { grid-template-columns: 1fr; }
+    .quote-strip { grid-template-columns: 1fr; gap: 32px; }
+    .strip-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>Досье · Открытые источники</span>
+  <span>Архив российской пропаганды</span>
+  <span>15 досье</span>
+</div>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-eyebrow">Документальный архив</div>
+  <h1 class="masthead-title">Голоса<br>Кремля</h1>
+  <p class="masthead-sub">Досье на лица государственной пропаганды России</p>
+  <div class="masthead-rule">
+    <span>Пятнадцать персонажей · Одна система</span>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--rule);border-bottom:1px solid var(--rule)">
+  <div style="background:var(--ink);padding:28px 32px;text-align:center;border-right:1px solid var(--rule)">
+    <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--red);line-height:1">15</div>
+    <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--light-gray);margin-top:8px">досье</div>
+  </div>
+  <div style="background:var(--ink);padding:28px 32px;text-align:center;border-right:1px solid var(--rule)">
+    <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--red);line-height:1">6</div>
+    <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--light-gray);margin-top:8px">государств ввели санкции</div>
+  </div>
+  <div style="background:var(--ink);padding:28px 32px;text-align:center;border-right:1px solid var(--rule)">
+    <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--red);line-height:1">2014</div>
+    <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--light-gray);margin-top:8px">первые санкции (Киселёв)</div>
+  </div>
+  <div style="background:var(--ink);padding:28px 32px;text-align:center;border-right:1px solid var(--rule)">
+    <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--red);line-height:1">100+</div>
+    <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--light-gray);margin-top:8px">стран охвата RT</div>
+  </div>
+  <div style="background:var(--ink);padding:28px 32px;text-align:center">
+    <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--red);line-height:1">8</div>
+    <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--light-gray);margin-top:8px">разделов архива</div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <p>
+    Перед вами архив досье на ключевых пропагандистов российского государственного телевидения. Каждое досье составлено на основе открытых источников: биография, ключевые скандалы, цитаты о них их же коллег, руководителей, западных правительств.
+  </p>
+  <p>
+    Разные биографии, разные таланты, разные пути к экрану и к власти. Но один результат: война, поданная как необходимость, насилие — как добродетель, ложь — как государственный язык.
+  </p>
+</div>
+
+<!-- NAV PAGES -->
+<div class="nav-pages">
+  <a class="nav-page-link" href="connections.html">
+    <span class="npl-label">Аналитика</span>
+    <span class="npl-title">Связи</span>
+    <span class="npl-desc">Кто с кем работает, семейные и деловые связи между персонажами</span>
+    <span class="npl-arrow">↗</span>
+  </a>
+  <a class="nav-page-link" href="timeline.html">
+    <span class="npl-label">Хронология</span>
+    <span class="npl-title">Таймлайн</span>
+    <span class="npl-desc">Ключевые события 1954–2024: назначения, скандалы, санкции, цитаты</span>
+    <span class="npl-arrow">↗</span>
+  </a>
+  <a class="nav-page-link" href="sanctions.html">
+    <span class="npl-label">Досье</span>
+    <span class="npl-title">Санкции</span>
+    <span class="npl-desc">Кто под какими санкциями, с датами и официальными обоснованиями</span>
+    <span class="npl-arrow">↗</span>
+  </a>
+  <a class="nav-page-link" href="glossary.html">
+    <span class="npl-label">Медиаграмотность</span>
+    <span class="npl-title">Словарь</span>
+    <span class="npl-desc">Эвфемизмы пропаганды: что говорят и что это означает на деле</span>
+    <span class="npl-arrow">↗</span>
+  </a>
+</div>
+<div class="nav-pages" style="border-top:none">
+  <a class="nav-page-link" href="quotes.html">
+    <span class="npl-label">Цитатник</span>
+    <span class="npl-title">Говорят сами</span>
+    <span class="npl-desc">Дословные цитаты о войне, Западе, ядерных угрозах и лицемерии</span>
+    <span class="npl-arrow">↗</span>
+  </a>
+  <a class="nav-page-link" href="media-empire.html">
+    <span class="npl-label">Структура</span>
+    <span class="npl-title">Медиаимперия</span>
+    <span class="npl-desc">Кто чем управляет, откуда деньги, сколько людей смотрят</span>
+    <span class="npl-arrow">↗</span>
+  </a>
+  <a class="nav-page-link" href="sources.html">
+    <span class="npl-label">Методология</span>
+    <span class="npl-title">Источники</span>
+    <span class="npl-desc">Принципы работы, библиография и верификация всех фактов</span>
+    <span class="npl-arrow">↗</span>
+  </a>
+  <a class="nav-page-link" href="about.html">
+    <span class="npl-label">Проект</span>
+    <span class="npl-title">О проекте</span>
+    <span class="npl-desc">Зачем создан архив, кому предназначен и как устроен</span>
+    <span class="npl-arrow">↗</span>
+  </a>
+</div>
+
+<!-- CARDS -->
+<div class="grid-section">
+  <div class="grid-label" style="justify-content:space-between">
+    <span>Персонажи архива</span>
+    <a id="random-btn" href="solovyov.html" style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);text-decoration:none;cursor:pointer;border:1px solid var(--red-dim);padding:6px 14px;transition:background 0.2s" onmouseover="this.style.background='#0d0000'" onmouseout="this.style.background='transparent'">⇄ Случайное досье</a>
+  </div>
+  <script>
+    (function(){
+      var pages = ['solovyov.html','skabeeva.html','kiselyov.html','simonyan.html','popov.html','sheynin.html','tolstoy.html','norkin.html','keosayan.html','andreyeva.html','mamontov.html','prilepin.html','leontyev.html','korchevnikov.html','medinsky.html'];
+      var btn = document.getElementById('random-btn');
+      btn.addEventListener('click', function(e){ e.preventDefault(); window.location.href = pages[Math.floor(Math.random()*pages.length)]; });
+    })();
+  </script>
+
+  <div class="cards">
+
+    <!-- SOLOVYOV -->
+    <a class="card" href="solovyov.html">
+      <div class="card-monogram">ВС</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 01</div>
+        <div class="card-name">Владимир<br>Соловьёв</div>
+        <div class="card-title">«Самый энергичный кремлёвский пропагандист»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>20 октября 1963, Москва</span></li>
+          <li><span>Программы</span><span>«Вечер с Владимиром Соловьёвым», «Москва. Кремль. Путин»</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания и ещё 6 стран</span></li>
+          <li><span>Виллы в Италии</span><span>5+ объектов на озере Комо, арест €8 млн, поджог</span></li>
+          <li><span>Особое</span><span>Еврейские корни, иудаизм, «нам евреям не привыкать»</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Сначала они лишают евреев таких, как я, собственности в Италии. Нам, евреям, не привыкать.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- SKABEEVA -->
+    <a class="card" href="skabeeva.html">
+      <div class="card-monogram">ОС</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 02</div>
+        <div class="card-name">Ольга<br>Скабеева</div>
+        <div class="card-title">«Железная кукла путинского ТВ»</div>
+        <ul class="card-facts">
+          <li><span>Родилась</span><span>11 декабря 1984, Волжский</span></li>
+          <li><span>Программа</span><span>«60 минут», Россия-1 (с 2016, с мужем Поповым)</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания, Канада, Австралия, Япония</span></li>
+          <li><span>Скандалы</span><span>Инструктаж экспертов, изгнана из номера Зеппельтом</span></li>
+          <li><span>Особое</span><span>Училась в российско-американской школе. Ненавидит Америку.</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Она осознаёт свою циничную роль в российской пропагандистской машине.» — Официальный журнал ЕС</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- KISELYOV -->
+    <a class="card" href="kiselyov.html">
+      <div class="card-monogram">ДК</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 03</div>
+        <div class="card-name">Дмитрий<br>Киселёв</div>
+        <div class="card-title">«Центральная фигура государственной пропаганды»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>26 апреля 1954, Москва</span></li>
+          <li><span>Должности</span><span>Гендиректор «России сегодня», зам. гендиректора ВГТРК</span></li>
+          <li><span>Санкции</span><span>ЕС (2014), Швейцария, Канада; персона нон грата в Молдове</span></li>
+          <li><span>Мемы</span><span>«Радиоактивный пепел», «Сердца геев», 7 браков</span></li>
+          <li><span>Особое</span><span>Работал на украинском ТВ. Брат живёт в США. Получал гранты ЕС.</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Россия — единственная страна в мире, способная превратить США в радиоактивный пепел.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- SIMONYAN -->
+    <a class="card" href="simonyan.html">
+      <div class="card-monogram">МС</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 04</div>
+        <div class="card-name">Маргарита<br>Симоньян</div>
+        <div class="card-title">«Главный редактор международной дезинформации»</div>
+        <ul class="card-facts">
+          <li><span>Родилась</span><span>6 апреля 1980, Краснодар</span></li>
+          <li><span>Должности</span><span>Главред RT (с 2005), главред МИА «Россия сегодня»</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания, Канада, Австралия, Япония</span></li>
+          <li><span>Особое</span><span>Назначена на RT в 25 лет по решению Кремля</span></li>
+          <li><span>Нарратив</span><span>Внешняя пропаганда под видом «альтернативной журналистики»</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«RT — инструмент информационной войны. Симоньян — её главнокомандующий.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- POPOV -->
+    <a class="card" href="popov.html">
+      <div class="card-monogram">ЕП</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 05</div>
+        <div class="card-name">Евгений<br>Попов</div>
+        <div class="card-title">«Телеведущий и депутат в одном мегафоне»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>25 июля 1971, Москва</span></li>
+          <li><span>Позиции</span><span>Соведущий «60 минут», депутат Госдумы</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания, Канада, Австралия, Япония</span></li>
+          <li><span>Семья</span><span>Супруг Ольги Скабеевой, совместный медиа-дуэт</span></li>
+          <li><span>Особое</span><span>Телестудия и парламентская трибуна как единый канал агитации</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«60 минут» — это не ток-шоу. Это ежедневный митинг с микрофонами.</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- SHEYNIN -->
+    <a class="card" href="sheynin.html">
+      <div class="card-monogram">АШ</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 06</div>
+        <div class="card-name">Артём<br>Шейнин</div>
+        <div class="card-title">«Ведущий, который выключает чужой голос»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>28 сентября 1966, Ленинград</span></li>
+          <li><span>Программа</span><span>«Время покажет», Первый канал</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания</span></li>
+          <li><span>Скандалы</span><span>Отключения микрофонов, конфликтные инциденты в эфире</span></li>
+          <li><span>Особое</span><span>Ветеранский статус используется как риторический щит</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Ему не нужны аргументы. У него есть микрофон — и кнопка выключения чужого.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- TOLSTOY -->
+    <a class="card" href="tolstoy.html">
+      <div class="card-monogram">ПТ</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 07</div>
+        <div class="card-name">Пётр<br>Толстой</div>
+        <div class="card-title">«Историческая фамилия в роли политического оружия»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>20 августа 1969, Москва</span></li>
+          <li><span>Должности</span><span>Вице-спикер Госдумы, экс-топ менеджер Первого канала</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания, Канада</span></li>
+          <li><span>Скандалы</span><span>Резонансные ксенофобные и антисемитские высказывания</span></li>
+          <li><span>Особое</span><span>Праправнук Л. Н. Толстого при противоположной риторике</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Пётр Толстой — пример того, как историческое имя превращается в инструмент легитимизации авторитаризма.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+
+    <!-- NORKIN -->
+    <a class="card" href="norkin.html">
+      <div class="card-monogram">АН</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 08</div>
+        <div class="card-name">Андрей<br>Норкин</div>
+        <div class="card-title">«Трибунал с микрофоном вместо молотка»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>11 ноября 1966, Москва</span></li>
+          <li><span>Программа</span><span>«Место встречи», НТВ</span></li>
+          <li><span>Санкции</span><span>ЕС, Великобритания</span></li>
+          <li><span>История</span><span>Начинал как либеральный журналист на РБК</span></li>
+          <li><span>Метод</span><span>«Судебный» стиль: гость всегда в роли обвиняемого</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Он задаёт вопросы. Просто ответы на них уже написаны в Кремле.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- KEOSAYAN -->
+    <a class="card" href="keosayan.html">
+      <div class="card-monogram">ТК</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 09</div>
+        <div class="card-name">Тигран<br>Кеосаян</div>
+        <div class="card-title">«Голливудские техники — советские цели»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>3 декабря 1966, Москва</span></li>
+          <li><span>Деятельность</span><span>Режиссёр-документалист RT</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания</span></li>
+          <li><span>Семья</span><span>Муж Маргариты Симоньян (главред RT)</span></li>
+          <li><span>Особое</span><span>Сын советского режиссёра; кино как оружие пропаганды</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Он режиссёр. Поэтому его пропаганда выглядит как кино. Именно это её делает опасной.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- ANDREYEVA -->
+    <a class="card" href="andreyeva.html">
+      <div class="card-monogram">ЕА</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 10</div>
+        <div class="card-name">Екатерина<br>Андреева</div>
+        <div class="card-title">«Голос государственных новостей с 1991 года»</div>
+        <ul class="card-facts">
+          <li><span>Родилась</span><span>14 марта 1965, Москва</span></li>
+          <li><span>Программа</span><span>Новости, Первый канал</span></li>
+          <li><span>Санкции</span><span>ЕС, Великобритания</span></li>
+          <li><span>Стаж</span><span>30+ лет в эфире — при трёх президентах</span></li>
+          <li><span>Метод</span><span>Нейтральный голос как инструмент легитимизации лжи</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Диктор, читающий ложь нейтральным голосом, опаснее того, кто кричит.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- MAMONTOV -->
+    <a class="card" href="mamontov.html">
+      <div class="card-monogram">АМ</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 11</div>
+        <div class="card-name">Аркадий<br>Мамонтов</div>
+        <div class="card-title">«Документальная ложь в киноформате»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>3 ноября 1962, Омск</span></li>
+          <li><span>Программа</span><span>«Специальный корреспондент», Россия-1</span></li>
+          <li><span>Санкции</span><span>ЕС, Великобритания</span></li>
+          <li><span>Фильмы</span><span>«Содом» (2014), «Провокаторы» (2004) и 20+ других</span></li>
+          <li><span>Метод</span><span>Заказные документалки предшествуют репрессивным законам</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«"Специальный корреспондент" — оперативная работа КГБ, упакованная в телеформат.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- PRILEPIN -->
+    <a class="card" href="prilepin.html">
+      <div class="card-monogram">ЗП</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 12</div>
+        <div class="card-name">Захар<br>Прилепин</div>
+        <div class="card-title">«Писатель с автоматом»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>7 июля 1975, Рязанская область</span></li>
+          <li><span>Роли</span><span>Писатель, боец ДНР, сопредседатель «СР»</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания</span></li>
+          <li><span>Особое</span><span>Настоящее имя — Евгений. Воевал с 2014 года.</span></li>
+          <li><span>2023</span><span>Пережил покушение (взрыв автомобиля)</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Прилепин легитимизирует войну перед образованной аудиторией — инструмент, недоступный телеведущим.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- LEONTYEV -->
+    <a class="card" href="leontyev.html">
+      <div class="card-monogram">МЛ</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 13</div>
+        <div class="card-name">Михаил<br>Леонтьев</div>
+        <div class="card-title">«Умная пропаганда. "Однако."»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>6 октября 1958, Москва</span></li>
+          <li><span>Программа</span><span>«Однако», Первый канал (с 1999)</span></li>
+          <li><span>Санкции</span><span>ЕС, Великобритания</span></li>
+          <li><span>Также</span><span>Пресс-секретарь «Роснефти» с 2013</span></li>
+          <li><span>Стаж</span><span>5000+ выпусков «Однако» за 25 лет</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Самый интеллектуальный из путинских пропагандистов. Он не орёт — он объясняет. И именно поэтому опаснее.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- KORCHEVNIKOV -->
+    <a class="card" href="korchevnikov.html">
+      <div class="card-monogram">БК</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 14</div>
+        <div class="card-name">Борис<br>Корчевников</div>
+        <div class="card-title">«Православие как государственная идеология»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>3 декабря 1981, Москва</span></li>
+          <li><span>Программа</span><span>«Судьба человека», Россия-1</span></li>
+          <li><span>Санкции</span><span>ЕС</span></li>
+          <li><span>Также</span><span>Гендиректор православного канала «Спас»</span></li>
+          <li><span>Метод</span><span>Сакрализация войны. «Священная война» с Западом.</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«"Спас" под Корчевниковым — подразделение государственной пропаганды с православной символикой.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- MEDINSKY -->
+    <a class="card" href="medinsky.html">
+      <div class="card-monogram">ВМ</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 15</div>
+        <div class="card-name">Владимир<br>Мединский</div>
+        <div class="card-title">«Архитектор исторической лжи»</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>18 июля 1970, Смела, Украина</span></li>
+          <li><span>Должности</span><span>Министр культуры 2012–20, советник Путина</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания, Канада</span></li>
+          <li><span>Особое</span><span>Родился на Украине. Отрицает существование Украины.</span></li>
+          <li><span>2022</span><span>Возглавлял переговорную делегацию с Украиной</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Вторжение 2022-го имеет готовую историческую упаковку — её строил Мединский 8 лет.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- QUOTE STRIP -->
+<div class="quote-strip">
+  <div class="strip-quote">
+    «Самый энергичный кремлёвский пропагандист.»
+    <cite>— Государственный департамент США — о Соловьёве</cite>
+  </div>
+  <div class="strip-divider"></div>
+  <div class="strip-quote">
+    «Новый стиль пропаганды направлен на возбуждение и мобилизацию аудитории, разжигание ненависти и страха.»
+    <cite>— The Economist — о Киселёве</cite>
+  </div>
+  <div class="strip-divider"></div>
+  <div class="strip-quote">
+    «Она осознаёт свою циничную роль в российской пропагандистской машине вместе со своим мужем.»
+    <cite>— Официальный журнал ЕС — о Скабеевой</cite>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">Голоса Кремля</div>
+  <span>Все материалы составлены на основе открытых источников · 2024</span>
+  <span>Факты верифицированы публикациями СМИ</span>
+</div>
+
+</body>
+</html>

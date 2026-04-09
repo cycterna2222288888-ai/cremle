@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Связи между персонажами · Голоса Кремля</title>
+<meta name="description" content="Семейные, профессиональные и институциональные связи между девятью пропагандистами. Матрица связей и иерархия.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Связи · Голоса Кремля">
+<meta property="og:description" content="Кто с кем работает, кто кому подчиняется, семейные связи между персонажами российской пропаганды.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --gray: #4a4a4a;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+  .section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; flex: 1; }
+
+  /* NETWORK DIAGRAM */
+  .network-wrap { position: relative; width: 100%; aspect-ratio: 16/9; max-height: 560px; background: #040404; border: 1px solid var(--rule); overflow: hidden; }
+
+  .network-wrap svg { width: 100%; height: 100%; }
+
+  /* MATRIX */
+  .matrix-wrap { overflow-x: auto; }
+  .matrix { border-collapse: collapse; width: 100%; background: var(--rule); }
+  .matrix th, .matrix td { padding: 0; border: 1px solid var(--rule); }
+  .matrix th { background: #0d0d0d; }
+  .matrix-head { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); padding: 14px 12px; text-align: center; writing-mode: vertical-rl; transform: rotate(180deg); min-width: 50px; }
+  .matrix-row-head { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--paper); padding: 16px 20px; background: #0d0d0d; white-space: nowrap; font-weight: 700; min-width: 180px; }
+  .matrix-row-head a { color: var(--paper); text-decoration: none; }
+  .matrix-row-head a:hover { color: var(--red); }
+  .matrix-cell { background: var(--ink); padding: 12px 8px; text-align: center; font-size: 11px; }
+  .conn-yes { color: var(--red); font-weight: 500; }
+  .conn-label { font-size: 9px; color: var(--light-gray); display: block; margin-top: 2px; letter-spacing: 0.05em; }
+  .conn-self { background: #0c0000; }
+
+  /* CONNECTIONS LIST */
+  .conn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .conn-card { background: var(--ink); padding: 36px 40px; }
+  .conn-pair { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .conn-person { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--paper); text-decoration: none; }
+  .conn-person:hover { color: var(--red); }
+  .conn-divider { color: var(--red); opacity: 0.5; font-size: 20px; }
+  .conn-type { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); border: 1px solid var(--red-dim); padding: 3px 8px; display: inline-block; margin-bottom: 12px; }
+  .conn-desc { font-size: 13px; color: var(--light-gray); line-height: 1.8; }
+
+  /* HIERARCHY */
+  .hierarchy { position: relative; padding: 40px 0; }
+  .hier-row { display: flex; align-items: flex-start; gap: 0; margin-bottom: 2px; }
+  .hier-node { background: var(--ink); border: 1px solid var(--rule); border-top: 3px solid var(--red); padding: 20px 24px; flex: 1; }
+  .hier-node.top { border-top-color: var(--red); background: #0d0000; }
+  .hier-sep { width: 2px; background: var(--rule); }
+  .hier-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .hier-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--paper); }
+  .hier-name a { color: var(--paper); text-decoration: none; }
+  .hier-name a:hover { color: var(--red); }
+  .hier-role { font-size: 11px; color: var(--light-gray); margin-top: 4px; }
+  .hier-arrow { text-align: center; padding: 8px; color: var(--red); opacity: 0.4; font-size: 20px; }
+
+  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
+
+  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
+
+  @media (max-width: 900px) {
+    .masthead, .container, .nav-back, .footer { padding-left: 24px; padding-right: 24px; }
+    .conn-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Аналитика · Открытые источники</div>
+  <h1 class="masthead-title">Связи</h1>
+  <p class="masthead-sub">Семейные, профессиональные и институциональные связи между персонажами архива. Кто с кем работает, кто кому подчиняется, кто состоит в родстве.</p>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Институциональная иерархия</h2>
+    </div>
+    <p class="intro-text">Все девять персонажей входят в единую пирамиду государственных медиа. На вершине — Кремль. Далее — структуры и каналы, связывающие персонажей между собой.</p>
+
+    <div class="hierarchy">
+      <div class="hier-row">
+        <div class="hier-node top" style="text-align:center;max-width:100%">
+          <div class="hier-label">Источник власти</div>
+          <div class="hier-name" style="font-size:22px">Кремль · Администрация президента</div>
+          <div class="hier-role">Контроль над государственными медиа через назначения и финансирование</div>
+        </div>
+      </div>
+      <div class="hier-arrow">↓</div>
+      <div class="hier-row">
+        <div class="hier-node" style="margin-right:2px">
+          <div class="hier-label">ВГТРК / Россия-1</div>
+          <div class="hier-name"><a href="solovyov.html">Соловьёв</a> · <a href="skabeeva.html">Скабеева</a> · <a href="popov.html">Попов</a></div>
+          <div class="hier-role">«Вечер с Соловьёвым» и «60 минут» — флагманские пропагандистские шоу</div>
+        </div>
+        <div class="hier-sep"></div>
+        <div class="hier-node" style="margin-left:2px">
+          <div class="hier-label">МИА «Россия сегодня» / RT</div>
+          <div class="hier-name"><a href="simonyan.html">Симоньян</a> (главред) · <a href="kiselyov.html">Киселёв</a> (гендиректор)</div>
+          <div class="hier-role">Международная пропаганда на 100+ стран; RT как глобальный инструмент</div>
+        </div>
+      </div>
+      <div class="hier-arrow">↓</div>
+      <div class="hier-row">
+        <div class="hier-node" style="margin-right:2px">
+          <div class="hier-label">Первый канал</div>
+          <div class="hier-name"><a href="sheynin.html">Шейнин</a> · <a href="tolstoy.html">Толстой</a></div>
+          <div class="hier-role">«Время покажет» и политические ток-шоу; Толстой — экс-зам. гендиректора</div>
+        </div>
+        <div class="hier-sep"></div>
+        <div class="hier-node" style="margin-left:2px">
+          <div class="hier-label">Государственная дума</div>
+          <div class="hier-name"><a href="popov.html">Попов</a> (депутат) · <a href="tolstoy.html">Толстой</a> (вице-спикер)</div>
+          <div class="hier-role">Законодательная + медийная власть в одних руках; «Единая Россия»</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Ключевые связи между персонажами</h2>
+    </div>
+
+    <div class="conn-grid">
+      <div class="conn-card">
+        <div class="conn-pair">
+          <a href="skabeeva.html" class="conn-person">Скабеева</a>
+          <span class="conn-divider">+</span>
+          <a href="popov.html" class="conn-person">Попов</a>
+        </div>
+        <span class="conn-type">Семья · Рабочий тандем</span>
+        <p class="conn-desc">Муж и жена. Совместно ведут «60 минут» с 2016 года. Единственная супружеская пара, одновременно попавшая в санкционные списки шести государств. Семейный пропагандистский бизнес при полной государственной поддержке.</p>
+      </div>
+
+      <div class="conn-card">
+        <div class="conn-pair">
+          <a href="simonyan.html" class="conn-person">Симоньян</a>
+          <span class="conn-divider">+</span>
+          <a href="kiselyov.html" class="conn-person">Киселёв</a>
+        </div>
+        <span class="conn-type">Профессиональная связь · МИА «Россия сегодня»</span>
+        <p class="conn-desc">Симоньян — главный редактор МИА «Россия сегодня»; Киселёв — генеральный директор той же структуры. Оба назначены Путиным в 2013–2014 годах. Тандем контролирует крупнейший государственный медиахолдинг России.</p>
+      </div>
+
+      <div class="conn-card">
+        <div class="conn-pair">
+          <a href="tolstoy.html" class="conn-person">Толстой</a>
+          <span class="conn-divider">+</span>
+          <a href="popov.html" class="conn-person">Попов</a>
+        </div>
+        <span class="conn-type">Институциональная связь · Госдума</span>
+        <p class="conn-desc">Оба — депутаты Государственной думы от «Единой России». Толстой — вице-спикер, Попов — депутат. Оба совмещают думский мандат с телевизионным эфиром. Взаимно усиливают пропагандистскую и законодательную повестку.</p>
+      </div>
+
+      <div class="conn-card">
+        <div class="conn-pair">
+          <a href="sheynin.html" class="conn-person">Шейнин</a>
+          <span class="conn-divider">+</span>
+          <a href="tolstoy.html" class="conn-person">Толстой</a>
+        </div>
+        <span class="conn-type">Профессиональная связь · Первый канал</span>
+        <p class="conn-desc">Оба связаны с Первым каналом. Толстой — бывший заместитель генерального директора, Шейнин — ведущий «Время покажет». Общая платформа, общая риторика, единая редакционная линия.</p>
+      </div>
+
+      <div class="conn-card">
+        <div class="conn-pair">
+          <a href="solovyov.html" class="conn-person">Соловьёв</a>
+          <span class="conn-divider">↔</span>
+          <a href="kiselyov.html" class="conn-person">Киселёв</a>
+        </div>
+        <span class="conn-type">Идеологическая связь · Конкуренция</span>
+        <p class="conn-desc">Оба претендуют на роль главного «голоса Кремля». Соловьёв — на ВГТРК, Киселёв — на «России сегодня». Негласная конкуренция за близость к власти. Обе фигуры периодически усиливают риторику вслед за другой.</p>
+      </div>
+
+      <div class="conn-card">
+        <div class="conn-pair">
+          <a href="skabeeva.html" class="conn-person">Скабеева</a>
+          <span class="conn-divider">↔</span>
+          <a href="solovyov.html" class="conn-person">Соловьёв</a>
+        </div>
+        <span class="conn-type">Профессиональная связь · ВГТРК / Россия-1</span>
+        <p class="conn-desc">Оба работают на канале «Россия-1» в прайм-тайм. «Вечер с Соловьёвым» и «60 минут» — флагманские шоу одного канала. Взаимно усиливающий нарратив, единая сетка вещания.</p>
+      </div>
+
+      <div class="conn-card">
+        <div class="conn-pair">
+          <a href="simonyan.html" class="conn-person">Симоньян</a>
+          <span class="conn-divider">+</span>
+          <a href="keosayan.html" class="conn-person">Кеосаян</a>
+        </div>
+        <span class="conn-type">Семья · RT · Кинопропаганда</span>
+        <p class="conn-desc">Муж и жена. Симоньян — главред RT, Кеосаян — режиссёр пропагандистских документальных фильмов для RT. Образуют наиболее мощный медиа-тандем в российской пропагандистской экосистеме: она создаёт телевизионную повестку, он — кинематографическое обоснование. Оба под санкциями ЕС, США и Великобритании.</p>
+      </div>
+
+      <div class="conn-card">
+        <div class="conn-pair">
+          <a href="norkin.html" class="conn-person">Норкин</a>
+          <span class="conn-divider">↔</span>
+          <a href="solovyov.html" class="conn-person">Соловьёв</a>
+        </div>
+        <span class="conn-type">Идеологическая связь · Параллельные трибуналы</span>
+        <p class="conn-desc">Соловьёв на «России-1» и Норкин на НТВ ведут параллельные программы в схожем «трибунальном» формате. НТВ и «Россия-1» — конкурирующие государственные каналы, но с идентичной редакционной политикой. Оба под санкциями ЕС.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Матрица связей</h2>
+    </div>
+    <p class="intro-text">Пересечения каналов, институций и ролей между всеми девятью персонажами архива.</p>
+
+    <div style="display:flex;gap:32px;flex-wrap:wrap;margin-bottom:32px;padding:20px 24px;background:#050505;border:1px solid var(--rule)">
+      <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray);align-self:center">Обозначения:</div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:var(--red);font-size:16px">★</span> Семейная / личная связь</div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:var(--red);font-size:16px">●</span> Профессиональная / идеологическая связь</div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:var(--red);font-size:16px">◆</span> Институциональная / иерархическая связь</div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:#222;font-size:16px">—</span> Нет прямой связи</div>
+    </div>
+
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th style="background:#0d0d0d;padding:12px;min-width:180px"></th>
+            <th><div class="matrix-head">Соловьёв</div></th>
+            <th><div class="matrix-head">Скабеева</div></th>
+            <th><div class="matrix-head">Киселёв</div></th>
+            <th><div class="matrix-head">Симоньян</div></th>
+            <th><div class="matrix-head">Попов</div></th>
+            <th><div class="matrix-head">Шейнин</div></th>
+            <th><div class="matrix-head">Толстой</div></th>
+            <th><div class="matrix-head">Норкин</div></th>
+            <th><div class="matrix-head">Кеосаян</div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="matrix-row-head"><a href="solovyov.html">Соловьёв</a></td>
+            <td class="matrix-cell conn-self">—</td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Россия-1</span></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Идеология</span></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Россия-1</span></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Идеология</span></td>
+            <td class="matrix-cell"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-head"><a href="skabeeva.html">Скабеева</a></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Россия-1</span></td>
+            <td class="matrix-cell conn-self">—</td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"><span class="conn-yes">★</span><span class="conn-label">Супруги</span></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-head"><a href="kiselyov.html">Киселёв</a></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Идеология</span></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell conn-self">—</td>
+            <td class="matrix-cell"><span class="conn-yes">★</span><span class="conn-label">Рос. Сегодня</span></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">RT</span></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-head"><a href="simonyan.html">Симоньян</a></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"><span class="conn-yes">★</span><span class="conn-label">Рос. Сегодня</span></td>
+            <td class="matrix-cell conn-self">—</td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"><span class="conn-yes">★</span><span class="conn-label">Супруги·RT</span></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-head"><a href="popov.html">Попов</a></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Россия-1</span></td>
+            <td class="matrix-cell"><span class="conn-yes">★</span><span class="conn-label">Супруги</span></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell conn-self">—</td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Госдума</span></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-head"><a href="sheynin.html">Шейнин</a></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell conn-self">—</td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Первый</span></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-head"><a href="tolstoy.html">Толстой</a></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Госдума</span></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Первый</span></td>
+            <td class="matrix-cell conn-self">—</td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-head"><a href="norkin.html">Норкин</a></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">Идеология</span></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell conn-self">—</td>
+            <td class="matrix-cell"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-head"><a href="keosayan.html">Кеосаян</a></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"><span class="conn-yes">●</span><span class="conn-label">RT</span></td>
+            <td class="matrix-cell"><span class="conn-yes">★</span><span class="conn-label">Супруги·RT</span></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell"></td>
+            <td class="matrix-cell conn-self">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11px;color:var(--light-gray);margin-top:16px">★ — прямая институциональная или семейная связь &nbsp;·&nbsp; ● — косвенная связь через общий канал или структуру</p>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-logo">Голоса Кремля</div>
+  <span>Аналитика на основе открытых источников · 2024</span>
+  <span>Все факты верифицированы публикациями СМИ</span>
+</div>
+
+</body>
+</html>

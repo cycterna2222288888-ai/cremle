@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Словарь пропаганды · Голоса Кремля</title>
+<meta name="description" content="Словарь российской пропаганды: 25+ терминов с расшифровкой. Спецоперация, денацификация, коллективный Запад и другие эвфемизмы.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Словарь пропаганды · Голоса Кремля">
+<meta property="og:description" content="25+ пропагандистских терминов: что говорят официально и что это означает на деле.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --gray: #4a4a4a;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; flex: 1; }
+
+  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
+
+  /* ALPHABET NAV */
+  .alpha-nav { display: flex; gap: 2px; flex-wrap: wrap; margin-bottom: 48px; background: var(--rule); }
+  .alpha-btn { background: var(--ink); padding: 10px 16px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--light-gray); text-decoration: none; transition: background 0.15s, color 0.15s; }
+  .alpha-btn:hover { background: #0d0000; color: var(--red); }
+
+  /* TERM ENTRIES */
+  .term-list { display: grid; gap: 0; }
+
+  .term-entry {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .term-entry:first-child { border-top: 1px solid var(--rule); }
+
+  .term-left {}
+
+  .term-word {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 700;
+    color: var(--paper);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .term-transliteration {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  .term-official {
+    font-size: 11px;
+    color: #333;
+    font-style: italic;
+    line-height: 1.6;
+    border-left: 2px solid #1c1c1c;
+    padding-left: 12px;
+  }
+
+  .term-right {}
+
+  .term-real {
+    font-size: 14px;
+    color: var(--light-gray);
+    line-height: 1.85;
+    margin-bottom: 16px;
+  }
+
+  .term-example {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--paper);
+    border-left: 2px solid var(--red-dim);
+    padding-left: 16px;
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+
+  .term-example cite {
+    display: block;
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-top: 8px;
+  }
+
+  .term-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+  .term-tag { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); border: 1px solid var(--red-dim); padding: 3px 7px; }
+
+  /* LETTER DIVIDER */
+  .letter-divider {
+    padding: 32px 0 16px;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1;
+    border-top: 2px solid var(--rule);
+    margin-top: 8px;
+  }
+
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 24px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 14px; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-bottom: 64px; }
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+  .stat-val { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--red); font-weight: 700; }
+  .stat-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
+
+  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
+
+  @media (max-width: 900px) {
+    .masthead, .container, .nav-back, .footer { padding-left: 24px; padding-right: 24px; }
+    .term-entry { grid-template-columns: 1fr; gap: 20px; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Аналитика · Медиаграмотность</div>
+  <h1 class="masthead-title">Словарь<br>пропаганды</h1>
+  <p class="masthead-sub">Официальные формулировки российских государственных медиа — и что они означают на самом деле. Эвфемизмы, нарративы, риторические конструкции.</p>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Язык власти: как работают эвфемизмы</h2>
+    </div>
+
+    <p class="intro-text">Пропаганда начинается с языка. Переименование реальности — первый шаг к её переопределению. Слова «война» и «спецоперация» описывают одни и те же события, но предполагают принципиально разные правовые, моральные и эмоциональные рамки. Ниже — словарь ключевых конструкций, которые регулярно используют персонажи этого архива.</p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">25+</div>
+        <div class="stat-label">терминов в словаре</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2014</div>
+        <div class="stat-label">год активного распространения большинства нарративов</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">100+</div>
+        <div class="stat-label">стран, где RT транслировал эти нарративы</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">0</div>
+        <div class="stat-label">раз слово «война» употреблено в государственных СМИ о событиях с 2022</div>
+      </div>
+    </div>
+
+    <div class="quote-pull">
+      «Самый эффективный способ лгать — это выбирать слова, которые технически не ложь, но создают принципиально ложное впечатление о реальности.»
+      <cite>— Принцип пропагандистского языка</cite>
+    </div>
+
+    <div class="letter-divider">А</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Англосаксы</div>
+          <div class="term-transliteration">Anglo-Saxons</div>
+          <div class="term-official">«Коалиция англосаксонских стран, направленная против России»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">США и Великобритания, реже — весь Запад. Этнический термин используется вместо политического («западные союзники») для придания конфликту расово-цивилизационного характера. Позволяет говорить о якобы вековой «войне цивилизаций» вместо конкретного политического конфликта.</div>
+          <div class="term-example">«Это англосаксонская игра против России — как всегда, руками других народов.»<cite>— Соловьёв, типичная формулировка</cite></div>
+          <div class="term-tags"><span class="term-tag">Соловьёв</span><span class="term-tag">Киселёв</span><span class="term-tag">Нарратив враг</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">Б</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Биолаборатории</div>
+          <div class="term-transliteration">Bio-labs / Pentagon biolabs</div>
+          <div class="term-official">«Американские военные биологические лаборатории на Украине»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Конспирологический нарратив об американских лабораториях по разработке биологического оружия на территории Украины. Опровергнут международными экспертами и организациями по контролю над биологическим оружием. Запущен в 2022 году одновременно с вторжением как одно из его «обоснований».</div>
+          <div class="term-example">«Мы нашли доказательства существования американских биолабораторий — это объясняет многое в происходящем.»<cite>— Государственное ТВ, февраль-март 2022</cite></div>
+          <div class="term-tags"><span class="term-tag">Дезинформация</span><span class="term-tag">2022</span><span class="term-tag">Обоснование войны</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">В</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Вынужденные меры</div>
+          <div class="term-transliteration">Forced measures</div>
+          <div class="term-official">«Россия прибегает к вынужденным мерам в ответ на действия НАТО»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Любая военная или репрессивная акция России, представленная как ответ на внешнюю угрозу. Снимает с России субъектность и ответственность: «мы не хотели, но вынудили». Применяется для описания вторжения, ядерных угроз, репрессий внутри страны.</div>
+          <div class="term-example">«Россия никогда не хотела этого конфликта. Это вынужденный ответ на угрозы у наших границ.»<cite>— Норкин, «Место встречи»</cite></div>
+          <div class="term-tags"><span class="term-tag">Норкин</span><span class="term-tag">Риторика жертвы</span><span class="term-tag">Обоснование агрессии</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">Д</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Денацификация</div>
+          <div class="term-transliteration">Denazification</div>
+          <div class="term-official">«Денацификация Украины — одна из целей специальной военной операции»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Официальное обоснование вторжения. Предполагает, что Украина управляется нацистским режимом, требующим ликвидации. В реальности: уничтожение украинской государственности, военных структур и политического руководства. Украинский президент Зеленский — еврей, победивший на демократических выборах с 73% голосов. Термин намеренно отсылает к победе над нацизмом во Второй мировой войне, встраивая вторжение в советско-российский нарратив «освободительной войны».</div>
+          <div class="term-example">«Денацификация — это не метафора. Это конкретная военная задача, которую Россия выполняет.»<cite>— Соловьёв, февраль 2022</cite></div>
+          <div class="term-tags"><span class="term-tag">Соловьёв</span><span class="term-tag">Симоньян</span><span class="term-tag">Официальная риторика</span><span class="term-tag">2022</span></div>
+        </div>
+      </div>
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Демилитаризация</div>
+          <div class="term-transliteration">Demilitarization</div>
+          <div class="term-official">«Демилитаризация Украины — одна из целей специальной военной операции»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Вторая официальная цель вторжения наряду с «денацификацией». Означает уничтожение военного потенциала Украины: армии, техники, инфраструктуры. На практике также включает удары по гражданской инфраструктуре (электростанции, мосты, жилые кварталы), квалифицируемые пропагандой как «удары по военной инфраструктуре».</div>
+          <div class="term-example">«Задача демилитаризации выполняется последовательно. Военный потенциал нацистского режима уничтожается.»<cite>— Государственное ТВ, 2022–2024</cite></div>
+          <div class="term-tags"><span class="term-tag">Официальная риторика</span><span class="term-tag">2022</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">И</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Иностранный агент</div>
+          <div class="term-transliteration">Foreign agent</div>
+          <div class="term-official">«Организации и лица, получающие финансирование из-за рубежа»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Юридический статус, применяемый к НКО, журналистам, активистам и гражданам, получающим любое финансирование из иностранных источников (или признанным «связанными» с ними). В советской риторике «иностранный агент» = «шпион». Закон применяется избирательно и преимущественно против критиков власти. Статус обязывает маркировать все публикации как «иностранный агент», делая их социально токсичными.</div>
+          <div class="term-example">«Эти СМИ — иностранные агенты. Они работают в интересах враждебных России государств.»<cite>— Толстой, Госдума; типичная формулировка</cite></div>
+          <div class="term-tags"><span class="term-tag">Толстой</span><span class="term-tag">Симоньян</span><span class="term-tag">Репрессии</span><span class="term-tag">Инструмент давления</span></div>
+        </div>
+      </div>
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Информационная война</div>
+          <div class="term-transliteration">Information warfare</div>
+          <div class="term-official">«Запад ведёт информационную войну против России»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Любой западный репортаж о России, противоречащий кремлёвскому нарративу. Термин позволяет обесценить любые факты: «это не правда, это информационная атака». Парадоксально применяется каналами, которые сами являются инструментами информационной войны — RT, «Россия сегодня» и пр. Термин также используется для оправдания цензуры внутри России.</div>
+          <div class="term-example">«RT не пропаганда — это контрмера против западной информационной войны.»<cite>— Симоньян, стандартная самохарактеристика RT</cite></div>
+          <div class="term-tags"><span class="term-tag">Симоньян</span><span class="term-tag">Самолегитимация</span><span class="term-tag">RT</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">К</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Коллективный Запад</div>
+          <div class="term-transliteration">Collective West</div>
+          <div class="term-official">«Коллективный Запад ведёт гибридную войну против России»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Обобщающий термин для всех государств и структур, не поддерживающих российскую агрессию. Уравнивает США, ЕС, Австралию, Японию в единую монолитную враждебную сущность. Снимает необходимость дифференциации позиций разных стран. «Коллективный» подчёркивает скоординированность и конспиративность — они все против нас, как единый блок.</div>
+          <div class="term-example">«Коллективный Запад принял решение уничтожить Россию. Украина — только инструмент.»<cite>— Киселёв, «Вести недели»</cite></div>
+          <div class="term-tags"><span class="term-tag">Киселёв</span><span class="term-tag">Соловьёв</span><span class="term-tag">Нарратив осады</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">М</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Многополярный мир</div>
+          <div class="term-transliteration">Multipolar world</div>
+          <div class="term-official">«Россия выступает за построение многополярного мира»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Мир без доминирования США и западного миропорядка. На практике — мир, в котором авторитарные режимы (Россия, Китай, Иран) имеют зоны влияния без международного надзора над правами человека. «Многополярность» используется как антоним «однополярному диктату Запада», но реально означает отсутствие международных механизмов защиты от агрессии.</div>
+          <div class="term-example">«Россия борется за многополярный мир — за право народов самим определять свой путь.»<cite>— RT, стандартный нарратив</cite></div>
+          <div class="term-tags"><span class="term-tag">Симоньян</span><span class="term-tag">RT</span><span class="term-tag">Геополитика</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">Н</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Нацисты / нацистский режим</div>
+          <div class="term-transliteration">Nazis / Nazi regime</div>
+          <div class="term-official">«Нацистский режим в Киеве»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Обозначение украинского правительства и вооружённых сил. Применяется системно для дегуманизации противника и встраивания войны в нарратив «борьбы с фашизмом». Позволяет уйти от необходимости объяснять политические цели войны: «с нацистами не договариваются». Зеленский — демократически избранный президент, еврей. Украина — страна с парламентской демократией. Термин не имеет фактического основания.</div>
+          <div class="term-example">«Мы воюем с нацистами — как наши деды. Это та же война, только другое поколение.»<cite>— Шейнин, «Время покажет»</cite></div>
+          <div class="term-tags"><span class="term-tag">Шейнин</span><span class="term-tag">Соловьёв</span><span class="term-tag">Дегуманизация</span><span class="term-tag">Историческая манипуляция</span></div>
+        </div>
+      </div>
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Наши</div>
+          <div class="term-transliteration">Ours / Our guys</div>
+          <div class="term-official">«Наши бойцы успешно продвигаются»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Российские военные. Термин создаёт эмоциональную идентификацию зрителя с армией и деперсонализирует врага. «Наши» — всегда герои, «их» сторона — всегда агрессоры. Журналистский стандарт предполагает нейтральные обозначения сторон конфликта; «наши» — признак пропаганды.</div>
+          <div class="term-example">«Наши взяли позиции. Потери минимальные. Противник отступает.»<cite>— Стандартная военная сводка на российском ТВ</cite></div>
+          <div class="term-tags"><span class="term-tag">Общий нарратив</span><span class="term-tag">Идентификация</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">П</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Провокация</div>
+          <div class="term-transliteration">Provocation</div>
+          <div class="term-official">«Украинские провокации вынуждают Россию реагировать»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Любые действия Украины или Запада, квалифицируемые как причина российских действий. Термин снимает с России ответственность и делает её жертвой «провокаций». Удары по украинским городам объясняются «провокациями»; поставки оружия Украине — «провокацией войны»; любая военная помощь — «эскалацией со стороны Запада». Россия при этом всегда «реагирует», никогда не «инициирует».</div>
+          <div class="term-example">«Это не атака — это ответ на провокацию. Украина сама спровоцировала последствия.»<cite>— Скабеева, «60 минут»</cite></div>
+          <div class="term-tags"><span class="term-tag">Скабеева</span><span class="term-tag">Попов</span><span class="term-tag">Риторика жертвы</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">Р</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Русский мир</div>
+          <div class="term-transliteration">Russian World / Russkiy Mir</div>
+          <div class="term-official">«Защита русского мира и русскоязычного населения»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Идеологическая концепция, объединяющая всех русскоязычных и «духовно связанных с Россией» людей в единую экстерриториальную общность под покровительством Москвы. Используется для обоснования вмешательства России во внутренние дела других государств (Украина, Грузия, Молдова, страны Балтии) под предлогом «защиты» этой общности. Концепция отрицает суверенитет других государств над их собственными гражданами.</div>
+          <div class="term-example">«Россия не может оставаться в стороне, когда русский мир под угрозой уничтожения.»<cite>— Симоньян, обоснование RT-нарратива</cite></div>
+          <div class="term-tags"><span class="term-tag">Симоньян</span><span class="term-tag">Киселёв</span><span class="term-tag">Экспансионизм</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">С</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Специальная военная операция</div>
+          <div class="term-transliteration">Special military operation (SMO)</div>
+          <div class="term-official">«Специальная военная операция по денацификации и демилитаризации Украины»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Полномасштабное вторжение в суверенное государство, начатое 24 февраля 2022 года. «Специальная операция» — военный термин, обозначающий ограниченную тактическую акцию с конкретными целями. Его употребление вместо слова «война» имеет юридическое и политическое значение: в России введена уголовная ответственность за «дискредитацию» армии и «распространение заведомо ложной информации» — то есть за называние войны войной.</div>
+          <div class="term-example">«Мы не воюем. Мы проводим специальную операцию. Слово "война" — это западная пропаганда.»<cite>— Скабеева, «60 минут», март 2022</cite></div>
+          <div class="term-tags"><span class="term-tag">Все персонажи</span><span class="term-tag">Официальная риторика</span><span class="term-tag">Под угрозой уголовного преследования</span></div>
+        </div>
+      </div>
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Суверенитет и невмешательство</div>
+          <div class="term-transliteration">Sovereignty / Non-interference</div>
+          <div class="term-official">«Россия отстаивает принципы суверенитета и невмешательства во внутренние дела государств»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Принцип, на который Россия ссылается, когда речь идёт о критике её внутренней политики (права человека, репрессии, выборы). Тот же принцип игнорируется, когда Россия вмешивается во внутренние дела Украины, Грузии, Молдовы, Беларуси. Двойной стандарт является осознанным риторическим инструментом.</div>
+          <div class="term-example">«Запад не имеет права учить нас демократии. Суверенитет — это святое.»<cite>— Толстой, ПАСЕ; типичная позиция</cite></div>
+          <div class="term-tags"><span class="term-tag">Толстой</span><span class="term-tag">Двойной стандарт</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">Т</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Традиционные ценности</div>
+          <div class="term-transliteration">Traditional values</div>
+          <div class="term-official">«Россия защищает традиционные ценности от западной культурной экспансии»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Противопоставление российских «традиций» (включая ограничение прав ЛГБТ, гендерное неравенство, государственный контроль над религией) «западному декадансу». Термин используется для формирования идеологической альтернативы западным либеральным ценностям и мобилизации консервативного электората внутри страны и за рубежом.</div>
+          <div class="term-example">«Мы защищаем семью, веру и Отечество. Запад хочет навязать нам то, что противно самой природе.»<cite>— Киселёв, после скандала с высказыванием о геях</cite></div>
+          <div class="term-tags"><span class="term-tag">Киселёв</span><span class="term-tag">Толстой</span><span class="term-tag">Нарратив культурной войны</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">Х</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Хунта</div>
+          <div class="term-transliteration">Junta</div>
+          <div class="term-official">«Киевская хунта, пришедшая к власти в результате государственного переворота»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Обозначение украинского правительства, пришедшего к власти после Майдана 2014 года. «Хунта» — военная диктатура, пришедшая к власти незаконным путём. Слово намеренно отсылает к латиноамериканским диктатурам. Цель — делегитимизировать украинское правительство, отрицая его демократический мандат. Термин игнорирует то, что в 2019 году Зеленский победил на президентских выборах с 73% голосов.</div>
+          <div class="term-example">«Законно избранный Янукович был свергнут. С тех пор Украиной правит нелегитимная хунта.»<cite>— Соловьёв, после 2014 года; стандартная формулировка</cite></div>
+          <div class="term-tags"><span class="term-tag">Соловьёв</span><span class="term-tag">Скабеева</span><span class="term-tag">Делегитимизация</span><span class="term-tag">2014</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="letter-divider">Э</div>
+    <div class="term-list">
+
+      <div class="term-entry">
+        <div class="term-left">
+          <div class="term-word">Эскалация</div>
+          <div class="term-transliteration">Escalation</div>
+          <div class="term-official">«Запад провоцирует эскалацию, поставляя оружие Украине»</div>
+        </div>
+        <div class="term-right">
+          <div class="term-real">Любые действия Украины или её союзников по защите от агрессии объявляются «эскалацией», а не оборонительными мерами. Термин инвертирует логику: агрессор угрожает «эскалацией» в ответ на сопротивление жертвы. Используется для шантажа и давления с целью ограничить военную помощь Украине.</div>
+          <div class="term-example">«Поставки ракет — это эскалация. Если Запад не остановится, последствия будут непредсказуемы.»<cite>— Соловьёв; ядерный шантаж как риторический приём</cite></div>
+          <div class="term-tags"><span class="term-tag">Соловьёв</span><span class="term-tag">Киселёв</span><span class="term-tag">Ядерный шантаж</span></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Как распознать пропагандистский нарратив</h2>
+    </div>
+    <p class="intro-text">Несколько признаков, по которым можно идентифицировать пропагандистский текст или высказывание — вне зависимости от источника.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule)">
+      <div style="background:var(--ink);padding:40px">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 1</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Обезличивание противника</div>
+        <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Противник обозначается через групповые ярлыки («нацисты», «хунта», «Запад»), а не конкретные имена и должности. Это лишает его человеческих черт и облегчает его демонизацию.</p>
+      </div>
+      <div style="background:var(--ink);padding:40px">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 2</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Риторика жертвы</div>
+        <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Агрессор представляет себя жертвой («вынужденные меры», «ответ на провокацию»). Это снимает с него моральную ответственность и представляет агрессию как самозащиту.</p>
+      </div>
+      <div style="background:var(--ink);padding:40px">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 3</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Замещение языка</div>
+        <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Война → «специальная операция». Оккупация → «освобождение». Убийство мирных жителей → «удар по военной инфраструктуре». Переименование меняет восприятие реальности, не меняя самой реальности.</p>
+      </div>
+      <div style="background:var(--ink);padding:40px">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 4</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Ложная альтернатива</div>
+        <p style="font-size:13px;color:var(--light-gray);line-height:1.8">«Или с нами, или против нас». Сложные политические ситуации сводятся к бинарному выбору. Нейтральная позиция объявляется невозможной или предательской. Любая критика — это поддержка врага.</p>
+      </div>
+      <div style="background:var(--ink);padding:40px">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 5</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Апелляция к истории</div>
+        <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Текущие события встраиваются в исторический нарратив («как в 1941-м», «вековая война против России»). Исторические аналогии дают моральный авторитет без необходимости доказывать его применимость к текущей ситуации.</p>
+      </div>
+      <div style="background:var(--ink);padding:40px">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 6</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Эмоция вместо аргумента</div>
+        <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Высокая эмоциональность, крик, личные нападки — заменяют фактическую аргументацию. Аудитория воспринимает интенсивность как убедительность. Шейнин и Соловьёв — мастера этой техники.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-logo">Голоса Кремля</div>
+  <span>Медиаграмотность · Открытые источники · 2024</span>
+  <span>Словарь составлен на основе анализа публичных высказываний</span>
+</div>
+
+</body>
+</html>

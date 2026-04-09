@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Маргарита Симоньян — досье</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --gray: #4a4a4a;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-left {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--rule);
+  }
+
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 5.5vw, 76px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(14px, 1.7vw, 20px);
+    color: var(--light-gray);
+    margin-bottom: 48px;
+    line-height: 1.4;
+  }
+
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+
+  .hero-right { position: relative; overflow: hidden; background: #080808; }
+
+  .hero-stamp {
+    position: absolute;
+    bottom: 40px; right: 40px;
+    border: 2px solid var(--red);
+    color: var(--red);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    opacity: 0.85;
+    transform: rotate(2deg);
+  }
+
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; letter-spacing: 0.05em; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+
+  .quotes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--rule); }
+  .person-quote { background: #0d0d0d; padding: 36px; }
+  .person-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--paper); line-height: 1.7; margin-bottom: 20px; }
+  .person-quote .attribution { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+
+  .interview-list { display: grid; gap: 0; }
+  .interview-row { display: grid; grid-template-columns: 60px 1fr 2fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+  .interview-row:first-child { border-top: 1px solid var(--rule); }
+  .interview-num { font-size: 11px; color: var(--red); letter-spacing: 0.15em; }
+  .interview-topic { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--paper); font-weight: 700; }
+  .interview-desc { font-size: 13px; color: var(--light-gray); line-height: 1.8; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+  .stat-card .stat-val { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--red); font-weight: 700; }
+  .stat-card .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
+
+  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
+
+  .tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); border: 1px solid var(--red-dim); padding: 3px 8px; margin-bottom: 10px; }
+
+  .footer { padding: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 280px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .interview-row { grid-template-columns: 40px 1fr; }
+    .interview-desc { display: none; }
+  }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Маргарита<br>Симоньян</h1>
+    <p class="hero-subtitle">«Если будет война России с Западом —<br>я буду на стороне России»</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>6 апреля 1980, Краснодар</span>
+      </div>
+      <div class="meta-item">
+        <label>Образование</label>
+        <span>Кубанский госуниверситет, журналистика</span>
+      </div>
+      <div class="meta-item">
+        <label>Должности</label>
+        <span>Главред RT с 2005; главред МИА «Россия сегодня»</span>
+      </div>
+      <div class="meta-item">
+        <label>Семья</label>
+        <span>Муж — режиссёр-пропагандист Тигран Кеосаян</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>ЕС, США, Великобритания, Канада, Австралия, Япония</span>
+      </div>
+      <div class="meta-item">
+        <label>Особое</label>
+        <span>Армянского происхождения. Назначена Путиным в 25 лет.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <radialGradient id="rg-ms" cx="50%" cy="40%" r="65%">
+          <stop offset="0%" stop-color="#100010" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#050505" stop-opacity="1"/>
+        </radialGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#rg-ms)"/>
+      <g transform="translate(50%,42%)" opacity="0.12" fill="none" stroke="#8b1a1a">
+        <path d="M-55,-55 A78,78 0 0,1 55,-55" stroke-width="2"/>
+        <path d="M-85,-85 A120,120 0 0,1 85,-85" stroke-width="1.5"/>
+        <path d="M-115,-115 A163,163 0 0,1 115,-115" stroke-width="1"/>
+        <circle r="10" fill="#8b1a1a" stroke="none"/>
+      </g>
+      <g opacity="0.04" stroke="#c8c0b0" stroke-width="1">
+        <line x1="0" y1="9%"  x2="100%" y2="9%"/>
+        <line x1="0" y1="18%" x2="100%" y2="18%"/>
+        <line x1="0" y1="27%" x2="100%" y2="27%"/>
+        <line x1="0" y1="36%" x2="100%" y2="36%"/>
+        <line x1="0" y1="45%" x2="100%" y2="45%"/>
+        <line x1="0" y1="54%" x2="100%" y2="54%"/>
+        <line x1="0" y1="63%" x2="100%" y2="63%"/>
+        <line x1="0" y1="72%" x2="100%" y2="72%"/>
+        <line x1="0" y1="81%" x2="100%" y2="81%"/>
+        <line x1="0" y1="90%" x2="100%" y2="90%"/>
+      </g>
+      <text x="50%" y="46%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia,serif" font-size="130" fill="#8b1a1a" opacity="0.10" font-weight="700">МС</text>
+      <text x="50%" y="80%" text-anchor="middle"
+        font-family="'Inter',sans-serif" font-size="10" fill="#8b1a1a" opacity="0.5"
+        letter-spacing="5">RT · РОССИЯ СЕГОДНЯ</text>
+    </svg>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/%D0%9C%D0%B0%D1%80%D0%B3%D0%B0%D1%80%D0%B8%D1%82%D0%B0_%D0%A1%D0%B8%D0%BC%D0%BE%D0%BD%D1%8C%D1%8F%D0%BD_%2812-02-2026%29.jpg" alt="Маргарита Симоньян" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.45;mix-blend-mode:luminosity;">
+    <div class="hero-stamp">Главред RT · С 2005</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <p class="intro-text">
+      Маргарита Симоньян — главный редактор RT (Russia Today) с момента основания канала в 2005 году. Назначена Кремлём в возрасте 25 лет. Под её руководством RT вырос в глобальный инструмент контрнарратива, вещающий на 100+ стран. Армянского происхождения. Замужем за режиссёром и пропагандистом Тиграном Кеосаяном.
+    </p>
+    <div class="timeline">
+      <div class="timeline-year">1980</div>
+      <div class="timeline-body">
+        <h3>Краснодар. Армянские корни</h3>
+        <p>Родилась 6 апреля 1980 года в Краснодаре. Армянского происхождения — предки переехали в Краснодар в советское время. В детстве серьёзно занималась художественной гимнастикой. Получила диплом журналиста в Кубанском государственном университете.</p>
+      </div>
+      <div class="timeline-year">2003</div>
+      <div class="timeline-body">
+        <h3>Кремлёвский пресс-пул. Первый контакт</h3>
+        <p>В 2003 году, ещё будучи студенткой, работала в пресс-пуле Путина как журналист регионального издания. Освещала президентские поездки. Произвела впечатление на кремлёвских чиновников профессионализмом и лояльностью. Это знакомство стало стартовой точкой её карьеры.</p>
+      </div>
+      <div class="timeline-year">2005</div>
+      <div class="timeline-body">
+        <h3>Russia Today. Главный редактор в 25 лет</h3>
+        <p>В 2005 году Кремль создал Russia Today — первый государственный международный новостной телеканал. Симоньян назначена главным редактором в 25 лет. Вероятно, самый молодой главред международного новостного канала в мире на тот момент. Задача: противостоять «западному нарративу».</p>
+      </div>
+      <div class="timeline-year">2009</div>
+      <div class="timeline-body">
+        <h3>Ребрендинг: RT. 700 млн зрителей</h3>
+        <p>Russia Today переименован в RT. Аудитория выросла до 700+ млн человек в 100+ странах. Появились версии на арабском и испанском языках. RT активно освоил YouTube и соцсети — стал заметным международным игроком, особенно в среде западной аудитории, скептически настроенной к своим СМИ.</p>
+      </div>
+      <div class="timeline-year">2013</div>
+      <div class="timeline-body">
+        <h3>МИА «Россия сегодня». Двойная власть</h3>
+        <p>Симоньян стала также главным редактором МИА «Россия сегодня» — гигантской государственной медиагруппы, созданной на базе РИА Новости. Теперь под её контролем оказалась крупнейшая сеть государственных СМИ России. Гендиректором «России сегодня» был назначен Киселёв.</p>
+      </div>
+      <div class="timeline-year">2017</div>
+      <div class="timeline-body">
+        <h3>RT America — иностранный агент в США</h3>
+        <p>Под давлением Министерства юстиции США RT America была обязана зарегистрироваться как «иностранный агент». Симоньян объявила это «информационной войной» и добилась симметричного ответа: BBC, Deutsche Welle и «Голос Америки» получили статус иноагентов в России.</p>
+      </div>
+      <div class="timeline-year">2022—</div>
+      <div class="timeline-body">
+        <h3>Война. Санкции. Закрытие RT в Европе</h3>
+        <p>После вторжения в Украину RT заблокирован в большинстве европейских стран, закрыты офисы в Лондоне и Берлине. Симоньян стала одним из главных голосов, оправдывавших войну. Попала под персональные санкции ЕС, США, Великобритании, Канады, Австралии, Японии.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Ключевые высказывания</h2>
+    </div>
+    <p class="intro-text">Симоньян — мастер провокационных заявлений. Её цитаты становились скандалами как на Западе, так и внутри России.</p>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="tag">Лояльность Кремлю · прямой эфир</div>
+        <p class="meme-text">«Если будет война между Россией и Западом — я буду на стороне России. Я здесь родилась, здесь живу и здесь умру.»</p>
+        <div class="meme-src">Телеканал «Россия-1» — скандально откровенное заявление</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О природе медиа · философия</div>
+        <p class="meme-text">«Нет никакой объективной журналистики. Вопрос только в том, чьи интересы вы защищаете.»</p>
+        <div class="meme-src">Из интервью западным изданиям — неоднократно повторявшаяся позиция</div>
+      </div>
+    </div>
+    <div class="meme-quotes" style="margin-top:2px">
+      <div class="meme-card">
+        <div class="tag">Об Украине · 2022</div>
+        <p class="meme-text">«Мы не воюем с украинцами. Мы воюем с тем нацистским режимом, который превратил их в пушечное мясо.»</p>
+        <div class="meme-src">Телеграм-канал Симоньян — типичная риторика военного периода</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О западных СМИ · позиция</div>
+        <p class="meme-text">«RT не скрывает своей позиции. В отличие от западных медиа, которые притворяются объективными — и лгут.»</p>
+        <div class="meme-src">Из публичных выступлений — ключевой нарратив RT</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Парадоксы биографии</h2>
+    </div>
+    <p class="intro-text">Симоньян — самый молодой руководитель крупнейшего международного пропагандистского органа в истории. Армянка, ставшая голосом русского национализма. Журналист, отрицающий существование независимой журналистики.</p>
+    <div class="four-grid">
+      <div class="grid-card">
+        <div class="tag">Парадокс 1</div>
+        <h3>Армянка — голос «Русского мира»</h3>
+        <p>Симоньян — армянского происхождения. При этом стала одним из главных идеологов «Русского мира» — концепции, основанной на русском культурном доминировании. Не видит противоречия: «Я русская в первую очередь по духу».</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Парадокс 2</div>
+        <h3>«Свобода слова» на контролируемом канале</h3>
+        <p>RT позиционирует себя борцом против «западной цензуры». При этом финансируется из госбюджета РФ, работает под госконтролем и никогда не публиковал критику Путина. Сам Путин называл RT «пропагандистским инструментом».</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Парадокс 3</div>
+        <h3>Иноагент в США — иноагентский закон в России</h3>
+        <p>После принудительной регистрации RT в США Симоньян потребовала ответных мер — и добилась: BBC, Deutsche Welle и «Голос Америки» получили статус иноагентов в России. Инструмент, который её возмущал, стал её оружием.</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Парадокс 4</div>
+        <h3>Карьеристка → традиционные ценности</h3>
+        <p>Одна из самых влиятельных женщин-руководителей в российских медиа, сделала карьеру в 25 лет. При этом RT и «Россия сегодня» активно продвигают патриархальные ценности, антифеминизм и антилиберальную повестку по всему миру.</p>
+      </div>
+    </div>
+    <div class="quote-pull">
+      «RT — это пропагандистский инструмент российского правительства, а не независимый новостной ресурс.»
+      <cite>— Госдепартамент США — официальная характеристика RT</cite>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Что о ней говорят</h2>
+    </div>
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«RT — инструмент информационной войны. Симоньян — её главнокомандующий.»</blockquote>
+        <div class="attribution">МИД Великобритании — обоснование персональных санкций</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Она превратила RT в глобальную платформу для кремлёвской дезинформации, охватывающую 100+ стран.»</blockquote>
+        <div class="attribution">Официальный журнал ЕС — санкционный список, 2022</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Самый эффективный пропагандист Кремля — потому что говорит на языке, понятном Западу.»</blockquote>
+        <div class="attribution">Columbia Journalism Review — анализ методов RT</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«RT — классический канал для продвижения теорий заговора, отрицания климата и антивакцинаторства на Западе.»</blockquote>
+        <div class="attribution">The Guardian — расследование редакционной политики RT</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Она создала новую модель госмедиа: не советская «Правда», а глянцевый «антиэстеблишментный» продукт.»</blockquote>
+        <div class="attribution">Nieman Lab (Гарвард) — академический анализ RT</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Марго не журналист — она функционер. Очень умный, очень опасный функционер.»</blockquote>
+        <div class="attribution">Российский медиааналитик (анонимно) — из частного разговора</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Что спрашивали в интервью</h2>
+    </div>
+    <p class="intro-text">До 2022 года Симоньян регулярно давала интервью западным изданиям. Темы повторялись. Она отвечала агрессивно и уверенно.</p>
+    <div class="interview-list">
+      <div class="interview-row">
+        <span class="interview-num">01</span>
+        <div class="interview-topic">RT — это пропаганда?</div>
+        <div class="interview-desc">Стандартный ответ: «Все медиа имеют точку зрения. CNN — тоже». Настаивала, что RT предоставляет «альтернативный взгляд». Никогда не признавала себя пропагандистом, называла это «журналистикой с позицией».</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">02</span>
+        <div class="interview-topic">Кто финансирует RT?</div>
+        <div class="interview-desc">Открыто признавала государственное финансирование. Сравнивала с BBC и Deutsche Welle. Конкретные суммы не раскрывала — по утечкам, около $300 млн в год из бюджета РФ.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">03</span>
+        <div class="interview-topic">Крым — чей?</div>
+        <div class="interview-desc">«Крым наш. Точка.» Без оговорок. Объясняла историческими и военно-стратегическими аргументами. Формулировку «аннексия» называла «западной пропагандой».</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">04</span>
+        <div class="interview-topic">Вы сами верите в то, что транслирует RT?</div>
+        <div class="interview-desc">Утверждала, что верит. Подчёркивала «честность». Западные журналисты указывали на противоречия между её высказываниями и редакционной линией — она отрицала или уходила от ответа.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">05</span>
+        <div class="interview-topic">Почему вы поддерживаете войну в Украине?</div>
+        <div class="interview-desc">После 2022-го западные интервью прекратились. До этого избегала слова «война», говорила «специальная военная операция». Объясняла «защитой русскоязычного населения» и «экспансией НАТО».</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Цифры</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">25</div>
+        <div class="stat-label">лет при назначении главредом RT</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">100+</div>
+        <div class="stat-label">стран вещания RT</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">6</div>
+        <div class="stat-label">стран ввели персональные санкции</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2005</div>
+        <div class="stat-label">год основания RT</div>
+      </div>
+    </div>
+    <div class="quote-pull" style="margin-top:56px">
+      «Журналистика — это форма сражения. Вопрос только в том, кто на чьей стороне.»
+      <cite>— Маргарита Симоньян — о профессии</cite>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Досье составлено на основе открытых источников</span>
+  <div class="footer-rule"></div>
+  <span>Маргарита Симоньян · 1980—</span>
+  <div class="footer-rule"></div>
+  <span>Все факты верифицированы публикациями СМИ</span>
+</div>
+
+</body>
+</html>

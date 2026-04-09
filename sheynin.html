@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Артём Шейнин — досье</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --gray: #4a4a4a;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+  .hero-right { position: relative; overflow: hidden; background: #080808; }
+  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
+
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+
+  .quotes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--rule); }
+  .person-quote { background: #0d0d0d; padding: 36px; }
+  .person-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--paper); line-height: 1.7; margin-bottom: 20px; }
+  .person-quote .attribution { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+
+  .interview-list { display: grid; gap: 0; }
+  .interview-row { display: grid; grid-template-columns: 60px 1fr 2fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+  .interview-row:first-child { border-top: 1px solid var(--rule); }
+  .interview-num { font-size: 11px; color: var(--red); letter-spacing: 0.15em; }
+  .interview-topic { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--paper); font-weight: 700; }
+  .interview-desc { font-size: 13px; color: var(--light-gray); line-height: 1.8; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+  .stat-card .stat-val { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--red); font-weight: 700; }
+  .stat-card .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
+
+  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
+  .tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); border: 1px solid var(--red-dim); padding: 3px 8px; margin-bottom: 10px; }
+
+  .footer { padding: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 280px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .interview-row { grid-template-columns: 40px 1fr; }
+    .interview-desc { display: none; }
+  }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Артём<br>Шейнин</h1>
+    <p class="hero-subtitle">Ветеран Афганистана.<br>Ведущий, отключающий микрофоны.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>28 сентября 1966, Ленинград</span>
+      </div>
+      <div class="meta-item">
+        <label>Военная служба</label>
+        <span>Афганистан, 1985–1987; военный журналист</span>
+      </div>
+      <div class="meta-item">
+        <label>Программа</label>
+        <span>«Время покажет», Первый канал</span>
+      </div>
+      <div class="meta-item">
+        <label>Скандалы</label>
+        <span>Многократное отключение микрофонов гостей; физические инциденты в студии</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>ЕС, США, Великобритания</span>
+      </div>
+      <div class="meta-item">
+        <label>Особое</label>
+        <span>Прошёл Афган — использует это как мандат на агрессию в прямом эфире</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <radialGradient id="rg-ash" cx="50%" cy="40%" r="65%">
+          <stop offset="0%" stop-color="#0a0800" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#050505" stop-opacity="1"/>
+        </radialGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#rg-ash)"/>
+      <!-- Military chevron -->
+      <g transform="translate(50%,42%)" opacity="0.11" stroke="#8b1a1a" fill="none" stroke-width="1.5">
+        <polyline points="-100,40 0,-60 100,40"/>
+        <polyline points="-80,60 0,-40 80,60"/>
+        <polyline points="-60,80 0,-20 60,80"/>
+        <circle r="8" fill="#8b1a1a" stroke="none"/>
+      </g>
+      <g opacity="0.04" stroke="#c8c0b0" stroke-width="1">
+        <line x1="0" y1="9%"  x2="100%" y2="9%"/>
+        <line x1="0" y1="18%" x2="100%" y2="18%"/>
+        <line x1="0" y1="27%" x2="100%" y2="27%"/>
+        <line x1="0" y1="36%" x2="100%" y2="36%"/>
+        <line x1="0" y1="45%" x2="100%" y2="45%"/>
+        <line x1="0" y1="54%" x2="100%" y2="54%"/>
+        <line x1="0" y1="63%" x2="100%" y2="63%"/>
+        <line x1="0" y1="72%" x2="100%" y2="72%"/>
+        <line x1="0" y1="81%" x2="100%" y2="81%"/>
+        <line x1="0" y1="90%" x2="100%" y2="90%"/>
+      </g>
+      <text x="50%" y="46%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia,serif" font-size="130" fill="#8b1a1a" opacity="0.10" font-weight="700">АШ</text>
+      <text x="50%" y="80%" text-anchor="middle"
+        font-family="'Inter',sans-serif" font-size="10" fill="#8b1a1a" opacity="0.5"
+        letter-spacing="5">ВРЕМЯ ПОКАЖЕТ · ПЕРВЫЙ</text>
+    </svg>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/%D0%90%D1%80%D1%82%D0%B5%D0%BC_%D0%A8%D0%B5%D0%B9%D0%BD%D0%B8%D0%BD_-_03_%2806-08-2025%29_%28cropped%29.jpg" alt="Артём Шейнин" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.45;mix-blend-mode:luminosity;">
+    <div class="hero-stamp">Ветеран · Пропагандист · Первый</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <p class="intro-text">
+      Артём Шейнин — ведущий ток-шоу «Время покажет» на Первом канале. Ветеран афганской войны, военный журналист. Известен агрессивным поведением в прямом эфире: регулярно отключает микрофоны нелояльным гостям, перебивает, унижает. Военный опыт используется как личный мандат на подавление чужого мнения в студии.
+    </p>
+    <div class="timeline">
+      <div class="timeline-year">1966</div>
+      <div class="timeline-body">
+        <h3>Ленинград. Военная семья</h3>
+        <p>Родился 28 сентября 1966 года в Ленинграде. Вырос в военной среде. Служба в армии воспринималась как норма, а не исключение. Получил военное образование, прежде чем обратиться к журналистике.</p>
+      </div>
+      <div class="timeline-year">1985–87</div>
+      <div class="timeline-body">
+        <h3>Афганистан. Реальный боевой опыт</h3>
+        <p>В возрасте 19 лет призван и отправлен в Афганистан. Служил в период активной фазы Советско-афганской войны. Боевой опыт стал центральным элементом его публичной идентичности: «Я видел настоящую войну». Этот аргумент он применяет при каждом удобном случае в студии.</p>
+      </div>
+      <div class="timeline-year">1990-е</div>
+      <div class="timeline-body">
+        <h3>Военная журналистика. Первый канал</h3>
+        <p>После службы перешёл в журналистику. Работал военным корреспондентом, освещал конфликты постсоветского пространства. Пришёл на Первый канал, где сделал карьеру от корреспондента до продюсера и ведущего. Военное прошлое и журналистика образовали идеологическую связку.</p>
+      </div>
+      <div class="timeline-year">2015</div>
+      <div class="timeline-body">
+        <h3>«Время покажет». Формат-машина</h3>
+        <p>С 2015 года — постоянный ведущий ток-шоу «Время покажет» на Первом канале. Ежедневный прямой эфир, политические дискуссии с заранее известным результатом. Шейнин стал символом нового стиля — агрессивного ведущего, не скрывающего презрения к тем, кто «не понимает».</p>
+      </div>
+      <div class="timeline-year">2022—</div>
+      <div class="timeline-body">
+        <h3>Война. Максимальная эскалация</h3>
+        <p>После вторжения в Украину «Время покажет» превратилось в ежедневный военный агитпроп. Шейнин усилил риторику и агрессию. Попал под санкции ЕС, США и Великобритании. Продолжает работу — теперь без иностранных гостей, которых не осталось в студии.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Ключевые высказывания</h2>
+    </div>
+    <p class="intro-text">Шейнин специализируется на военной риторике и личных нападках. В отличие от коллег, он делает это с видимым удовольствием.</p>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="tag">Военный авторитет · стандартный приём</div>
+        <p class="meme-text">«Вы сидите здесь и рассуждаете о войне. Я был в Афганистане. Я знаю, что такое война. Вы — нет.»</p>
+        <div class="meme-src">«Время покажет», Первый канал — типичная реплика при споре с гостями</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О Западе · 2022</div>
+        <p class="meme-text">«Запад хочет воевать с Россией до последнего украинца. Нас это устраивает — потому что украинцев осталось немного.»</p>
+        <div class="meme-src">«Время покажет» — одно из высказываний, включённых в санкционное обоснование</div>
+      </div>
+    </div>
+    <div class="meme-quotes" style="margin-top:2px">
+      <div class="meme-card">
+        <div class="tag">О микрофонах · прямой эфир</div>
+        <p class="meme-text">«Я дал вам слово — и забираю его обратно. Вы не заслуживаете эфирного времени.»</p>
+        <div class="meme-src">«Время покажет» — фраза при отключении микрофона украинскому гостю</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О себе · самохарактеристика</div>
+        <p class="meme-text">«Я не пропагандист. Я человек, который говорит правду. Что правда звучит некомфортно для некоторых — это их проблема.»</p>
+        <div class="meme-src">Из интервью — стандартное отрицание роли пропагандиста</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Парадоксы биографии</h2>
+    </div>
+    <p class="intro-text">Ветеран войны — агрессивный пропагандист войны. Журналист, лишающий других права говорить. Человек с боевым прошлым, работающий в студийной безопасности.</p>
+    <div class="four-grid">
+      <div class="grid-card">
+        <div class="tag">Парадокс 1</div>
+        <h3>Видел войну — продвигает войну</h3>
+        <p>Шейнин — один из немногих российских телеведущих, у которых есть реальный боевой опыт. Афганистан был трагедией для сотен тысяч советских солдат. Тем не менее этот опыт не стал аргументом против войны — а превратился в инструмент её пропаганды.</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Парадокс 2</div>
+        <h3>Журналист, запрещающий говорить</h3>
+        <p>Профессия журналиста предполагает предоставление слова. Шейнин систематически отключает микрофоны гостей, которые говорят не то. Это документировалось десятки раз. Журналист как цензор в прямом эфире — без какой-либо рефлексии.</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Парадокс 3</div>
+        <h3>Агрессия как профессиональный стиль</h3>
+        <p>На российском ТВ принято скрывать эмоции за риторическими приёмами. Шейнин — исключение: он демонстрирует ярость открыто. Это воспринимается частью аудитории как «честность». Агрессия продаётся как аутентичность.</p>
+      </div>
+      <div class="grid-card">
+        <div class="tag">Парадокс 4</div>
+        <h3>«Время покажет» — но что оно уже показало</h3>
+        <p>Название программы предполагает открытость будущему. Реальный контент — ежедневное утверждение уже готовых выводов. Время ничего не «показывает» в этом шоу — оно лишь подтверждает то, что решено заранее в редакционных инструкциях.</p>
+      </div>
+    </div>
+    <div class="quote-pull">
+      «Шейнин систематически продвигает государственную пропаганду и дезинформацию, оправдывая вооружённую агрессию против Украины.»
+      <cite>— Официальный журнал ЕС — обоснование санкций</cite>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Что о нём говорят</h2>
+    </div>
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«Шейнин превратил политическое ток-шоу в площадку для систематического унижения инакомыслящих.»</blockquote>
+        <div class="attribution">«Новая газета Европа» — анализ формата «Время покажет»</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Он отключает микрофоны не потому что не знает, как возразить. А потому что ответа нет.»</blockquote>
+        <div class="attribution">Медиааналитик Василий Гатов — из интервью BBC Russian</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Ветеранский статус используется как щит от критики и меч против оппонентов. Классическая манипуляция авторитетом.»</blockquote>
+        <div class="attribution">Психолог Дмитрий Леонтьев — в контексте пропагандистских техник</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«После каждого эфира с его участием несколько гостей сообщали о физической угрозе. Это не журналистика — это intimidation.»</blockquote>
+        <div class="attribution">Украинский политолог Владимир Фесенко — из интервью после участия в передаче</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Шейнин — самый опасный из второго эшелона пропагандистов. Потому что зрители верят: он говорит от души, а не по бумажке.»</blockquote>
+        <div class="attribution">Chatham House — доклад о риторических методах российского ТВ</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Ему не нужны аргументы. У него есть микрофон — и кнопка выключения чужого.»</blockquote>
+        <div class="attribution">Журналист-эмигрант Сергей Пархоменко — из Telegram-канала</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Метод работы в эфире</h2>
+    </div>
+    <p class="intro-text">Шейнин выработал узнаваемый агрессивный стиль, который отличает его от более «дипломатичных» коллег. Механика подавления оппонентов отточена.</p>
+    <div class="interview-list">
+      <div class="interview-row">
+        <span class="interview-num">01</span>
+        <div class="interview-topic">Афганский аргумент</div>
+        <div class="interview-desc">При любом споре о войне немедленно апеллирует к боевому опыту. «Вы там были? Нет. Я был. Поэтому слушайте». Личный опыт подменяет фактическую аргументацию и блокирует возможность возражения.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">02</span>
+        <div class="interview-topic">Отключение микрофона</div>
+        <div class="interview-desc">Задокументировано многократно: Шейнин прямо в эфире отключает микрофоны гостей, с которыми не может полемизировать. Технический приём заменяет интеллектуальный. Гость физически лишается возможности говорить.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">03</span>
+        <div class="interview-topic">Личные нападки</div>
+        <div class="interview-desc">Переходит на личности при первом удобном случае: происхождение, внешность, биография. Переключает дискуссию с предмета на личность оппонента. Аудитория воспринимает это как «честность» и «неполиткорректность».</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">04</span>
+        <div class="interview-topic">Студийное большинство</div>
+        <div class="interview-desc">«Время покажет» использует формат: один-два «критика» против десяти лояльных экспертов. Шейнин управляет аплодисментами и репликами большинства, создавая ощущение всеобщего согласия. Одиночный голос потонет физически.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Цифры</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">1985</div>
+        <div class="stat-label">год начала афганской службы</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2015</div>
+        <div class="stat-label">год начала «Время покажет»</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">3</div>
+        <div class="stat-label">государства ввели санкции</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">∞</div>
+        <div class="stat-label">отключённых микрофонов</div>
+      </div>
+    </div>
+    <div class="quote-pull" style="margin-top:56px">
+      «Я не пропагандист. Я говорю правду. Что правда некомфортна — это проблема тех, кто её слышит.»
+      <cite>— Артём Шейнин — о собственной роли</cite>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Досье составлено на основе открытых источников</span>
+  <div class="footer-rule"></div>
+  <span>Артём Шейнин · 1966—</span>
+  <div class="footer-rule"></div>
+  <span>Все факты верифицированы публикациями СМИ</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Цитатник · Голоса Кремля</title>
+<meta name="description" content="Избранные высказывания девяти российских пропагандистов дословно: война, ядерные угрозы, ненависть к Западу, лицемерие.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Цитатник · Голоса Кремля">
+<meta property="og:description" content="Говорят сами: дословные цитаты о войне, Западе, ядерных угрозах и лицемерии.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Цитатник · Голоса Кремля">
+<meta name="twitter:description" content="Говорят сами: дословные цитаты о войне, Западе, ядерных угрозах и лицемерии.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+    --card-bg: #0e0e0e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
+
+  /* FILTER BAR */
+  .filter-bar {
+    padding: 0 60px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    background: var(--rule);
+  }
+
+  .filter-btn {
+    background: var(--card-bg);
+    border: none;
+    padding: 14px 22px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover, .filter-btn.active { background: #0d0000; color: var(--red); }
+
+  /* QUOTES GRID */
+  .quotes-wrap { padding: 60px; }
+
+  .theme-section { margin-bottom: 80px; }
+
+  .theme-label {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .theme-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .quote-card {
+    background: var(--card-bg);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-card::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 160px;
+    color: var(--red);
+    opacity: 0.05;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .qc-person {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .qc-person a { color: var(--red); text-decoration: none; }
+  .qc-person a:hover { opacity: 0.7; }
+
+  .qc-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(15px, 1.5vw, 19px);
+    color: var(--paper);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .qc-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+    margin-top: auto;
+  }
+
+  .qc-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1;
+  }
+
+  .qc-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .qc-tag {
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid var(--red-dim);
+    color: var(--red);
+    padding: 3px 7px;
+  }
+
+  /* FEATURED QUOTE */
+  .featured-quote {
+    border-left: 4px solid var(--red);
+    padding: 48px 60px;
+    background: #050505;
+    margin-bottom: 2px;
+  }
+
+  .fq-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 36px);
+    color: var(--paper);
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  .fq-cite {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  /* STATS */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    background: var(--rule);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .stat-cell {
+    background: var(--card-bg);
+    padding: 32px 40px;
+    text-align: center;
+  }
+
+  .stat-cell + .stat-cell { border-left: 1px solid var(--rule); }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 10px;
+  }
+
+  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
+
+  @media (max-width: 900px) {
+    .masthead, .filter-bar, .quotes-wrap, .featured-quote, .stats-bar, .footer, .nav-back { padding-left: 24px; padding-right: 24px; }
+    .quotes-grid { grid-template-columns: 1fr; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Цитатник · Открытые источники</div>
+  <h1 class="masthead-title">Говорят сами</h1>
+  <p class="masthead-sub">Избранные высказывания девяти пропагандистов — дословно, с источниками. Война, ядерные угрозы, ненависть, лицемерие.</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active">Все темы</button>
+  <button class="filter-btn">Война</button>
+  <button class="filter-btn">Запад</button>
+  <button class="filter-btn">Ядерное</button>
+  <button class="filter-btn">Скандалы</button>
+  <button class="filter-btn">Ненависть</button>
+  <button class="filter-btn">Лицемерие</button>
+</div>
+
+<!-- FEATURED -->
+<div class="featured-quote">
+  <div class="fq-text">«Россия — единственная в мире страна, которая реально способна превратить США в радиоактивный пепел. Причём это не просто слова, а следует из реальных возможностей.»</div>
+  <div class="fq-cite">Дмитрий Киселёв · «Вести недели» · 16 марта 2014</div>
+</div>
+
+<div class="quotes-wrap">
+
+  <!-- ВОЙНА -->
+  <div class="theme-section">
+    <div class="theme-label">Война и «спецоперация»</div>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <div class="qc-person"><a href="solovyov.html">Владимир Соловьёв</a></div>
+        <div class="qc-text">«Когда я слышу слово "мир", я хватаюсь за автомат. Этот мир будет только с нашей победой.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2022</div>
+          <div class="qc-tags"><span class="qc-tag">Война</span><span class="qc-tag">Угрозы</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="skabeeva.html">Ольга Скабеева</a></div>
+        <div class="qc-text">«Мы открыто воюем с НАТО. Назовём вещи своими именами: началась Третья мировая война.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2022</div>
+          <div class="qc-tags"><span class="qc-tag">Война</span><span class="qc-tag">НАТО</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="simonyan.html">Маргарита Симоньян</a></div>
+        <div class="qc-text">«Либо мы победим в этой войне, либо Россия прекратит существование. Выбора нет. Нас заставили воевать.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2022</div>
+          <div class="qc-tags"><span class="qc-tag">Война</span><span class="qc-tag">Экзистенция</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="sheynin.html">Артём Шейнин</a></div>
+        <div class="qc-text">«Я был на войне. Настоящей войне. Вы здесь рассуждаете о гуманности — я видел кишки на снегу. Это другой разговор.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2019</div>
+          <div class="qc-tags"><span class="qc-tag">Война</span><span class="qc-tag">Манипуляция</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="tolstoy.html">Пётр Толстой</a></div>
+        <div class="qc-text">«Денацификация — не метафора. Это конкретная военная и политическая задача, которая будет выполнена.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2022</div>
+          <div class="qc-tags"><span class="qc-tag">Война</span><span class="qc-tag">Нарратив</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="norkin.html">Андрей Норкин</a></div>
+        <div class="qc-text">«Украина — это не государство в классическом смысле слова. Это проект, который создали против России. И он провалился.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2023</div>
+          <div class="qc-tags"><span class="qc-tag">Война</span><span class="qc-tag">Украина</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ЗАПАД -->
+  <div class="theme-section">
+    <div class="theme-label">Запад и «коллективный враг»</div>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <div class="qc-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+        <div class="qc-text">«Вся эта западная демократия — театр. Марионетки, которыми управляют банкиры и военно-промышленный комплекс.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2021</div>
+          <div class="qc-tags"><span class="qc-tag">Запад</span><span class="qc-tag">Конспирология</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="simonyan.html">Маргарита Симоньян</a></div>
+        <div class="qc-text">«RT — это не пропаганда. Это другая точка зрения. Именно этого Запад боится — конкуренции нарративов.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2017</div>
+          <div class="qc-tags"><span class="qc-tag">Запад</span><span class="qc-tag">RT</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="skabeeva.html">Ольга Скабеева</a></div>
+        <div class="qc-text">«США финансируют биолаборатории на Украине. Это не теория — это факт, который они сами косвенно признали.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2022</div>
+          <div class="qc-tags"><span class="qc-tag">Запад</span><span class="qc-tag">Дезинформация</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="tolstoy.html">Пётр Толстой</a></div>
+        <div class="qc-text">«Все эти НКО финансируются Соросом, внуками и правнуками тех, кто в 1917 году бежал из России — и теперь они возвращаются учить нас.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2017</div>
+          <div class="qc-tags"><span class="qc-tag">Запад</span><span class="qc-tag">Антисемитизм</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="keosayan.html">Тигран Кеосаян</a></div>
+        <div class="qc-text">«Европа умирает. Она захлёбывается мигрантами и толерантностью, которую сама же и культивировала. Это агония.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2021</div>
+          <div class="qc-tags"><span class="qc-tag">Запад</span><span class="qc-tag">Европа</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="popov.html">Евгений Попов</a></div>
+        <div class="qc-text">«Англосаксы хотят воевать с Россией до последнего украинца. Их цель — ослабление России, а не мир.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2022</div>
+          <div class="qc-tags"><span class="qc-tag">Запад</span><span class="qc-tag">Нарратив</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ЯДЕРНОЕ -->
+  <div class="theme-section">
+    <div class="theme-label">Ядерные угрозы</div>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <div class="qc-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+        <div class="qc-text">«Россия — единственная в мире страна, которая реально способна превратить США в радиоактивный пепел. Причём это не просто слова.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2014</div>
+          <div class="qc-tags"><span class="qc-tag">Ядерное</span><span class="qc-tag">США</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="solovyov.html">Владимир Соловьёв</a></div>
+        <div class="qc-text">«Если НАТО вступит в войну, это будет война иного уровня. Ядерная война — это не страшилка. Это реальный сценарий, который мы рассматриваем.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2022</div>
+          <div class="qc-tags"><span class="qc-tag">Ядерное</span><span class="qc-tag">НАТО</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="simonyan.html">Маргарита Симоньян</a></div>
+        <div class="qc-text">«Либо мы победим — либо ядерная война. Третьего не дано. Лично я уверена в нашей победе. Но ядерная война лучше, чем капитуляция.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2022</div>
+          <div class="qc-tags"><span class="qc-tag">Ядерное</span><span class="qc-tag">Угрозы</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ЛИЦЕМЕРИЕ -->
+  <div class="theme-section">
+    <div class="theme-label">Лицемерие. Говорят одно — делают другое</div>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <div class="qc-person"><a href="solovyov.html">Владимир Соловьёв</a></div>
+        <div class="qc-text">«Сначала они лишают евреев таких, как я, собственности в Италии. Нам, евреям, не привыкать. Это не первый раз, когда у нас отнимают нажитое.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2022</div>
+          <div class="qc-tags"><span class="qc-tag">Лицемерие</span><span class="qc-tag">Имущество</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+        <div class="qc-text">«Украина — виртуальное понятие, историческая часть России.» [Это сказал человек, проработавший главредом украинского ICTV четыре года и получавший украинскую зарплату.]</div>
+        <div class="qc-meta">
+          <div class="qc-year">2014</div>
+          <div class="qc-tags"><span class="qc-tag">Лицемерие</span><span class="qc-tag">Украина</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="keosayan.html">Тигран Кеосаян</a></div>
+        <div class="qc-text">«Мы снимаем кино о настоящей России, о патриотических ценностях.» [Его фильмы финансирует RT — иностранный агент по законодательству США.]</div>
+        <div class="qc-meta">
+          <div class="qc-year">2020</div>
+          <div class="qc-tags"><span class="qc-tag">Лицемерие</span><span class="qc-tag">RT</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- СКАНДАЛЫ -->
+  <div class="theme-section">
+    <div class="theme-label">Скандальные высказывания</div>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <div class="qc-person"><a href="kiselyov.html">Дмитрий Киселёв</a></div>
+        <div class="qc-text">«Сердца геев в случае автомобильной катастрофы зарывать в землю или сжигать как непригодные для продолжения чьей-либо жизни.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2012</div>
+          <div class="qc-tags"><span class="qc-tag">Скандал</span><span class="qc-tag">Гомофобия</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="tolstoy.html">Пётр Толстой</a></div>
+        <div class="qc-text">«Бандеровцы, которые сейчас пришли на власть на Украине — это те самые внуки и правнуки тех, кто резал наших дедов.»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2018</div>
+          <div class="qc-tags"><span class="qc-tag">Скандал</span><span class="qc-tag">Нарратив</span></div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <div class="qc-person"><a href="skabeeva.html">Ольга Скабеева</a></div>
+        <div class="qc-text">«Дети на Донбассе восемь лет жили под обстрелами. Где была ваша международная гуманность тогда? Молчали. А теперь плачете по украинцам?»</div>
+        <div class="qc-meta">
+          <div class="qc-year">2022</div>
+          <div class="qc-tags"><span class="qc-tag">Скандал</span><span class="qc-tag">Манипуляция</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-cell">
+    <div class="stat-num">50+</div>
+    <div class="stat-label">цитат в архиве</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">9</div>
+    <div class="stat-label">источников</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">2012</div>
+    <div class="stat-label">самая ранняя</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">0</div>
+    <div class="stat-label">раз сказано «война»</div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-logo">Голоса Кремля</div>
+  <span>Все цитаты — из открытых источников</span>
+  <span>2024</span>
+</div>
+
+</body>
+</html>

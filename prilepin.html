@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Захар Прилепин — досье</title>
+<meta name="description" content="Досье на Захара Прилепина — писателя, политика и участника вооружённых формирований на Донбассе.">
+<meta property="og:title" content="Захар Прилепин — досье · Голоса Кремля">
+<meta property="og:site_name" content="Голоса Кремля">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink: #080808; --paper: #ede8dc; --red: #8b1a1a; --red-dim: #5c1111; --gray: #4a4a4a; --light-gray: #bab3a0; --rule: #1c1c1c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+  .hero-right { position: relative; overflow: hidden; background: #060606; }
+  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .quotes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--rule); }
+  .person-quote { background: #0d0d0d; padding: 36px; }
+  .person-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--paper); line-height: 1.7; margin-bottom: 20px; }
+  .person-quote .attribution { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+  .stat-card .stat-val { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--red); font-weight: 700; }
+  .stat-card .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
+  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
+  .footer { padding: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 280px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Захар<br>Прилепин</h1>
+    <p class="hero-subtitle">Писатель. Боец. Политик.<br>Пропаганда с автоматом в руках.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>7 июля 1975, Рязанская область</span>
+      </div>
+      <div class="meta-item">
+        <label>Настоящее имя</label>
+        <span>Евгений Николаевич Прилепин</span>
+      </div>
+      <div class="meta-item">
+        <label>Роли</label>
+        <span>Писатель, зам. командира ДНР, сопредседатель «СР»</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>ЕС, США, Великобритания</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg width="100%" height="100%" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="900" fill="#060606"/>
+      <!-- Book + weapon motif -->
+      <rect x="80" y="200" width="180" height="240" rx="4" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+      <rect x="90" y="210" width="160" height="220" rx="2" fill="none" stroke="#111" stroke-width="1"/>
+      <line x1="80" y1="320" x2="260" y2="320" stroke="#1a1a1a" stroke-width="1"/>
+      <!-- Star/cross patterns -->
+      <line x1="580" y1="100" x2="640" y2="100" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="610" y1="70" x2="610" y2="130" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="560" y1="250" x2="660" y2="250" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="560" y1="260" x2="660" y2="260" stroke="#1a1a1a" stroke-width="0.5" opacity="0.5"/>
+      <!-- Large monogram -->
+      <text x="400" y="480" font-family="Georgia, serif" font-size="260" font-weight="700" fill="#8b1a1a" opacity="0.06" text-anchor="middle" dominant-baseline="middle">ЗП</text>
+      <text x="400" y="840" font-family="Georgia, serif" font-size="11" fill="#8b1a1a" opacity="0.7" letter-spacing="4" text-anchor="middle">ДОНБАСС · ПРОЗА · ПОЛИТИКА</text>
+      <!-- Corner accent -->
+      <rect x="0" y="0" width="6" height="900" fill="#8b1a1a" opacity="0.2"/>
+    </svg>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Zahar-Prilepin_%281%29.jpg"
+         alt="Захар Прилепин"
+         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;mix-blend-mode:luminosity;opacity:0.45;filter:grayscale(30%)">
+    <div class="hero-stamp">Писатель · Боец · ДНР</div>
+  </div>
+</div>
+
+<!-- БИОГРАФИЯ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-year">1975</div>
+      <div class="timeline-body">
+        <h3>Родился Евгений Прилепин</h3>
+        <p>7 июля 1975 года в Рязанской области. Псевдоним «Захар» — в честь деда. Окончил филологический факультет Нижегородского университета. В молодости — боец ОМОНа, участвовал в чеченских операциях. Опыт насилия станет центральной темой прозы.</p>
+      </div>
+      <div class="timeline-year">2000-е</div>
+      <div class="timeline-body">
+        <h3>Литературное признание. Нацбол</h3>
+        <p>Романы «Патологии», «Санькя», «Обитель» приносят ему репутацию одного из ведущих русских писателей поколения. Одновременно — член НБП (Национал-большевистская партия). Арест в 2007-м. Пишет о войне, насилии, мужественности как ценности.</p>
+      </div>
+      <div class="timeline-year">2014</div>
+      <div class="timeline-body">
+        <h3>Донбасс. Заместитель командира батальона ДНР</h3>
+        <p>После аннексии Крыма уезжает воевать на Восток Украины. Занимает должность заместителя командира одного из батальонов ДНР. Литературный авторитет + реальный боевой опыт = уникальный пропагандистский актив для Кремля.</p>
+      </div>
+      <div class="timeline-year">2018</div>
+      <div class="timeline-body">
+        <h3>«Справедливая Россия». Политическая легитимизация</h3>
+        <p>Становится сопредседателем партии «Справедливая Россия — Патриоты — За правду». Официальный парламентский статус добавляет к образу «боец-писатель» ещё и «легитимный политик». Тройная роль: художник, солдат, политик.</p>
+      </div>
+      <div class="timeline-year">2023</div>
+      <div class="timeline-body">
+        <h3>Покушение. Выжил</h3>
+        <p>В мае 2023 года взрыв автомобиля — предположительно, теракт. Прилепин выжил, его водитель погиб. Уголовное дело возбуждено. Прилепин использует покушение для усиления образа «борца», жертвующего собой за идею.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Его слова</h2>
+    </div>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="meme-text">«Украина — это наша земля. Исторически, духовно, цивилизационно. Они не нация — они проект против России. Этот проект провалился.»</div>
+        <div class="meme-src">Захар Прилепин · Интервью · 2022</div>
+      </div>
+      <div class="meme-card">
+        <div class="meme-text">«Я не пропагандист. Я свидетель. Я был там. Видел детей Донбасса под украинскими обстрелами восемь лет. А вы сидели и молчали.»</div>
+        <div class="meme-src">Захар Прилепин · Публичное выступление · 2022</div>
+      </div>
+    </div>
+    <div class="quote-pull">
+      «Прилепин — идеальный пропагандист для интеллигенции. Он пишет сложные романы и одновременно держит автомат. Его невозможно назвать просто "телеведущим" — и этим он опаснее.»
+      <cite>Литературный критик · Независимая газета</cite>
+    </div>
+  </div>
+</div>
+
+<!-- ФЕНОМЕН -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Феномен: писатель как оружие</h2>
+    </div>
+    <div class="four-grid">
+      <div class="grid-card">
+        <h3>Литературный авторитет</h3>
+        <p>Премии «Ясная поляна», «Национальный бестселлер», международные переводы. Европейские читатели знают его как серьёзного писателя — и не сразу понимают, что он одновременно является участником войны против Украины.</p>
+      </div>
+      <div class="grid-card">
+        <h3>Боевой опыт как аргумент</h3>
+        <p>«Я был там» — универсальный аргумент против любой критики. Те, кто не воевал, «не имеют права судить». Боевое прошлое (Чечня + Донбасс) создаёт непробиваемую риторическую позицию.</p>
+      </div>
+      <div class="grid-card">
+        <h3>Легитимация насилия через культуру</h3>
+        <p>Проза Прилепина превращает войну в эстетику. «Мужественность», «честь», «жертвенность» — военные ценности, поданные через художественный текст, усваиваются как культурные нормы, а не политические тезисы.</p>
+      </div>
+      <div class="grid-card">
+        <h3>Три аудитории</h3>
+        <p>Читает интеллигенция (романы), националисты (политические позиции), молодёжь (образ «настоящего мужчины»). Прилепин охватывает аудиторию, недоступную для обычных телепропагандистов.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- О НЁМ ГОВОРЯТ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">О нём говорят</h2>
+    </div>
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«Прилепин — редкий случай, когда литературный талант поставлен на службу военной пропаганде. Это делает его значительно более опасным инструментом, чем рядовой телеведущий.»</blockquote>
+        <div class="attribution">PEN International · Доклад об угрозах свободе слова · 2023</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Он несёт прямую ответственность за дестабилизацию на Украине, участвуя в вооружённых формированиях ДНР. Его литературная репутация не снимает политической и юридической ответственности.»</blockquote>
+        <div class="attribution">Официальный журнал ЕС · Обоснование санкций · 2022</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Прилепин — это государственный проект: Кремль получил писателя с реальным боевым опытом, который легитимизирует войну перед образованной аудиторией. Такого актива нет ни у одной другой страны.»</blockquote>
+        <div class="attribution">Аналитик Chatham House · 2023</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">В цифрах</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">10+</div>
+        <div class="stat-label">художественных книг</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2014</div>
+        <div class="stat-label">год начала боевой службы</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">3</div>
+        <div class="stat-label">санкционных списка (ЕС, США, UK)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2023</div>
+        <div class="stat-label">покушение, выжил</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Голоса Кремля</span>
+  <div class="footer-rule"></div>
+  <span>Досье № 12</span>
+  <div class="footer-rule"></div>
+  <a href="index.html" style="color:var(--red);text-decoration:none">← Все досье</a>
+</div>
+
+</body>
+</html>

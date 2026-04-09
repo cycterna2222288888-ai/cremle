@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Источники · Голоса Кремля</title>
+<meta name="description" content="Методология и библиография архива «Голоса Кремля». Только открытые источники: EUR-Lex, OFAC, FARA, независимые СМИ.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Источники · Голоса Кремля">
+<meta property="og:description" content="Методология и библиография: принципы работы, верификация фактов, список использованных источников.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+    --card-bg: #0e0e0e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
+
+  .methodology {
+    padding: 60px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .method-title {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+
+  .method-text { font-size: 14px; color: var(--light-gray); line-height: 1.9; }
+  .method-text + .method-text { margin-top: 16px; }
+
+  /* SOURCES SECTION */
+  .sources-wrap { padding: 60px; border-bottom: 1px solid var(--rule); }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+  .sources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .source-card {
+    background: var(--card-bg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .source-type {
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .source-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--paper);
+    line-height: 1.3;
+  }
+
+  .source-desc {
+    font-size: 12px;
+    color: var(--light-gray);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .source-note {
+    font-size: 10px;
+    color: #555;
+    font-style: italic;
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+  }
+
+  /* PRINCIPLES */
+  .principles {
+    padding: 60px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .principle-card {
+    background: var(--card-bg);
+    padding: 40px 32px;
+  }
+
+  .principle-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--red);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .principle-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--paper);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .principle-text {
+    font-size: 12px;
+    color: var(--light-gray);
+    line-height: 1.7;
+  }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    padding: 48px 60px;
+    background: #050505;
+    border-bottom: 1px solid var(--rule);
+    border-left: 4px solid var(--red-dim);
+  }
+
+  .disclaimer-title {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+
+  .disclaimer-text {
+    font-size: 13px;
+    color: var(--light-gray);
+    line-height: 1.9;
+    max-width: 800px;
+  }
+
+  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
+
+  @media (max-width: 900px) {
+    .masthead, .sources-wrap, .methodology, .disclaimer, .footer, .nav-back { padding-left: 24px; padding-right: 24px; }
+    .sources-grid { grid-template-columns: 1fr; }
+    .methodology { grid-template-columns: 1fr; gap: 32px; }
+    .principles { grid-template-columns: 1fr; padding-left: 24px; padding-right: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Методология · Библиография</div>
+  <h1 class="masthead-title">Источники</h1>
+  <p class="masthead-sub">Все материалы архива основаны на верифицированных открытых источниках. Здесь — методология, принципы работы и список использованных данных.</p>
+</div>
+
+<!-- METHODOLOGY -->
+<div class="methodology">
+  <div>
+    <div class="method-title">Принципы работы</div>
+    <p class="method-text">Архив «Голоса Кремля» составлен исключительно на основе открытых, публично доступных источников. Мы не используем засекреченные данные, анонимные источники или непроверенную информацию.</p>
+    <p class="method-text">Каждый факт в досье может быть верифицирован через первоисточники: официальные санкционные списки, стенограммы телепередач, официальные биографии, материалы официального журнала ЕС и другие публичные документы.</p>
+    <p class="method-text">Цитаты приводятся дословно с указанием источника, даты и контекста. Мы не вырываем слова из контекста — чаще всего контекст только усугубляет сказанное.</p>
+  </div>
+  <div>
+    <div class="method-title">Чего нет в архиве</div>
+    <p class="method-text">Архив не содержит материалов, требующих специального допуска, журналистских расследований с непубличными источниками, или информации, полученной незаконным путём.</p>
+    <p class="method-text">Мы намеренно ограничились тем, что уже является публичным знанием — и того достаточно, чтобы составить полный портрет системы.</p>
+    <p class="method-text">Архив не претендует на исчерпывающую полноту. Это не академическая диссертация — это инструмент медиаграмотности для широкой аудитории.</p>
+  </div>
+</div>
+
+<!-- ПРИНЦИПЫ -->
+<div class="principles">
+  <div class="principle-card">
+    <div class="principle-num">01</div>
+    <div class="principle-title">Только открытые источники</div>
+    <div class="principle-text">Все использованные материалы публично доступны. Ни один факт не основан на засекреченных данных или анонимных источниках.</div>
+  </div>
+  <div class="principle-card">
+    <div class="principle-num">02</div>
+    <div class="principle-title">Дословные цитаты</div>
+    <div class="principle-text">Цитаты приводятся точно, с источником, датой и контекстом. Не вырываем слова из контекста — это их собственные слова.</div>
+  </div>
+  <div class="principle-card">
+    <div class="principle-num">03</div>
+    <div class="principle-title">Верифицируемость</div>
+    <div class="principle-text">Каждый факт может быть проверен читателем самостоятельно. Санкционные списки, официальные документы, стенограммы — всё в открытом доступе.</div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources-wrap">
+  <div class="section-label">Официальные источники</div>
+  <div class="sources-grid">
+    <div class="source-card">
+      <div class="source-type">Санкции · ЕС</div>
+      <div class="source-name">EUR-Lex · Официальный журнал Европейского союза</div>
+      <div class="source-desc">Официальный реестр санкционных решений ЕС. Содержит точные формулировки обоснований для каждого фигуранта санкционного списка.</div>
+      <div class="source-note">eur-lex.europa.eu — публичный бесплатный доступ</div>
+    </div>
+    <div class="source-card">
+      <div class="source-type">Санкции · США</div>
+      <div class="source-name">OFAC · Министерство финансов США</div>
+      <div class="source-desc">Office of Foreign Assets Control. Официальный реестр американских санкций. Базы данных SDN List (Specially Designated Nationals).</div>
+      <div class="source-note">ofac.treas.gov — публичный реестр</div>
+    </div>
+    <div class="source-card">
+      <div class="source-type">Санкции · Великобритания</div>
+      <div class="source-name">FCDO · Министерство иностранных дел Великобритании</div>
+      <div class="source-desc">UK Sanctions List. Содержит обоснования и даты введения санкций против российских медийных персон после 2022 года.</div>
+      <div class="source-note">gov.uk/government/collections/uk-sanctions — публичный реестр</div>
+    </div>
+    <div class="source-card">
+      <div class="source-type">Медиа · США</div>
+      <div class="source-name">Минюст США · Регистрация иностранных агентов (FARA)</div>
+      <div class="source-desc">Официальная регистрация RT America как иностранного агента. Документы содержат описание деятельности и источники финансирования.</div>
+      <div class="source-note">fara.gov — публичная база данных</div>
+    </div>
+    <div class="source-card">
+      <div class="source-type">Биографии</div>
+      <div class="source-name">Wikipedia · Wikimedia Commons</div>
+      <div class="source-desc">Биографические данные, даты, факты карьеры. Фотографии — из Wikimedia Commons (лицензии CC). Верификация по независимым источникам.</div>
+      <div class="source-note">wikipedia.org / commons.wikimedia.org</div>
+    </div>
+    <div class="source-card">
+      <div class="source-type">Расследования</div>
+      <div class="source-name">The Insider · iStories · Meduza</div>
+      <div class="source-desc">Независимые российские издания. Расследования об имуществе Соловьёва, биографиях Симоньян и Киселёва — со ссылками на первоисточники.</div>
+      <div class="source-note">theins.ru / istories.media / meduza.io</div>
+    </div>
+  </div>
+</div>
+
+<div class="sources-wrap" style="border-bottom:1px solid var(--rule)">
+  <div class="section-label">Профессиональные медиа и аналитика</div>
+  <div class="sources-grid">
+    <div class="source-card">
+      <div class="source-type">Пропаганда · Анализ</div>
+      <div class="source-name">EU DisinfoLab · EU vs Disinfo</div>
+      <div class="source-desc">Европейская аналитика дезинформационных операций. Каталог нарративов, методы RT, конкретные кейсы. Данные о блокировках и санкционных обоснованиях.</div>
+      <div class="source-note">disinfo.eu / euvsdisinfo.eu</div>
+    </div>
+    <div class="source-card">
+      <div class="source-type">Медиа · США</div>
+      <div class="source-name">Foreign Policy · Reuters · AP</div>
+      <div class="source-desc">Репортажи о российских государственных СМИ, интервью с перебежчиками, анализ структуры медиаимперии. Использовались для контекста и верификации.</div>
+      <div class="source-note">foreignpolicy.com / reuters.com / apnews.com</div>
+    </div>
+    <div class="source-card">
+      <div class="source-type">Мониторинг</div>
+      <div class="source-name">ТАСС · Interfax · стенограммы передач</div>
+      <div class="source-desc">Официальные российские агентства — для верификации цитат и дат. Стенограммы ток-шоу — для дословных цитат участников архива.</div>
+      <div class="source-note">tass.ru / interfax.ru — публичный доступ</div>
+    </div>
+    <div class="source-card">
+      <div class="source-type">Аналитика · Санкции</div>
+      <div class="source-name">Chatham House · Carnegie Moscow</div>
+      <div class="source-desc">Аналитические доклады о структуре российских государственных СМИ, роли пропаганды в политике Кремля, биографиях ключевых медийных фигур.</div>
+      <div class="source-note">chathamhouse.org / carnegie.ru</div>
+    </div>
+    <div class="source-card">
+      <div class="source-type">Медиаграмотность</div>
+      <div class="source-name">First Draft · Media Literacy Now</div>
+      <div class="source-desc">Методологические руководства по распознаванию дезинформации. Использовались при составлении раздела «Словарь пропаганды».</div>
+      <div class="source-note">firstdraftnews.org / medialiteracynow.org</div>
+    </div>
+    <div class="source-card">
+      <div class="source-type">Имущество</div>
+      <div class="source-name">Итальянские СМИ · La Repubblica · Corriere</div>
+      <div class="source-desc">Репортажи об аресте недвижимости Соловьёва на озере Комо (2022). Официальные документы итальянских судебных органов.</div>
+      <div class="source-note">repubblica.it / corriere.it</div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="disclaimer-title">Важное уточнение</div>
+  <p class="disclaimer-text">
+    Этот архив является образовательным проектом в области медиаграмотности. Все факты основаны на публичных источниках. Цитаты приводятся в образовательных целях. Архив не является юридическим документом и не претендует на исчерпывающую полноту.
+    <br><br>
+    Если вы хотите проверить конкретный факт или цитату — источники перечислены выше. Большинство из них доступны бесплатно в открытом интернете.
+  </p>
+</div>
+
+<div class="footer">
+  <div class="footer-logo">Голоса Кремля</div>
+  <span>Только открытые источники · Верифицируемые факты</span>
+  <span>2024</span>
+</div>
+
+</body>
+</html>

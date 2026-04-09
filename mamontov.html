@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Аркадий Мамонтов — досье</title>
+<meta name="description" content="Досье на Аркадия Мамонтова — автора пропагандистских документальных фильмов России-1.">
+<meta property="og:title" content="Аркадий Мамонтов — досье · Голоса Кремля">
+<meta property="og:site_name" content="Голоса Кремля">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink: #080808; --paper: #ede8dc; --red: #8b1a1a; --red-dim: #5c1111; --gray: #4a4a4a; --light-gray: #bab3a0; --rule: #1c1c1c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+  .hero-right { position: relative; overflow: hidden; background: #060606; }
+  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .quotes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--rule); }
+  .person-quote { background: #0d0d0d; padding: 36px; }
+  .person-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--paper); line-height: 1.7; margin-bottom: 20px; }
+  .person-quote .attribution { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .films-list { display: grid; gap: 0; }
+  .film-row { display: grid; grid-template-columns: 80px 200px 1fr; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+  .film-row:first-child { border-top: 1px solid var(--rule); }
+  .film-year { font-size: 11px; color: var(--red); letter-spacing: 0.15em; font-family: 'Playfair Display', serif; font-weight: 700; }
+  .film-title { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--paper); font-weight: 700; }
+  .film-desc { font-size: 13px; color: var(--light-gray); line-height: 1.8; }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+  .stat-card .stat-val { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--red); font-weight: 700; }
+  .stat-card .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
+  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
+  .footer { padding: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 280px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .film-row { grid-template-columns: 60px 1fr; }
+    .film-desc { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Аркадий<br>Мамонтов</h1>
+    <p class="hero-subtitle">Документалист-пропагандист.<br>Россия-1. «Содом» и враги отечества.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>3 ноября 1962, Омск</span>
+      </div>
+      <div class="meta-item">
+        <label>Программа</label>
+        <span>«Специальный корреспондент», Россия-1</span>
+      </div>
+      <div class="meta-item">
+        <label>Специализация</label>
+        <span>Пропагандистские документальные фильмы</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>ЕС, Великобритания</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg width="100%" height="100%" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="900" fill="#060606"/>
+      <!-- Film strip perforations -->
+      <rect x="30" y="0" width="40" height="900" fill="#0a0a0a"/>
+      <rect x="730" y="0" width="40" height="900" fill="#0a0a0a"/>
+      <rect x="32" y="20" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="60" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="100" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="140" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="180" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="220" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="260" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="300" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="340" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="380" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="420" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="460" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="500" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="540" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="580" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="620" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="660" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="700" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="740" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="780" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="820" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="32" y="860" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="20" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="60" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="100" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="140" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="180" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="220" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="260" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="300" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="340" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="380" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="420" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="460" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="500" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="540" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="580" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="620" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="660" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="700" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="740" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="780" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="820" width="36" height="24" rx="3" fill="#060606"/>
+      <rect x="732" y="860" width="36" height="24" rx="3" fill="#060606"/>
+      <!-- Monogram -->
+      <text x="400" y="480" font-family="Georgia, serif" font-size="260" font-weight="700" fill="#8b1a1a" opacity="0.06" text-anchor="middle" dominant-baseline="middle">АМ</text>
+      <text x="400" y="840" font-family="Georgia, serif" font-size="11" fill="#8b1a1a" opacity="0.7" letter-spacing="4" text-anchor="middle">РОССИЯ-1 · ДОКУМЕНТАЛИСТ</text>
+    </svg>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Arkady_Mamontov_%28cropped%29.jpg"
+         alt="Аркадий Мамонтов"
+         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;mix-blend-mode:luminosity;opacity:0.45;filter:grayscale(30%)">
+    <div class="hero-stamp">Документалист · Россия-1 · Пропаганда</div>
+  </div>
+</div>
+
+<!-- БИОГРАФИЯ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-year">1962</div>
+      <div class="timeline-body">
+        <h3>Родился в Омске</h3>
+        <p>3 ноября 1962 года. Окончил факультет журналистики. Начинал как репортёр-документалист с профессиональной репутацией. Афганистан, горячие точки СССР — реальный журналистский опыт, который позже был поставлен на службу государственной повестке.</p>
+      </div>
+      <div class="timeline-year">1990-е</div>
+      <div class="timeline-body">
+        <h3>Репортажи из горячих точек</h3>
+        <p>Работает военным корреспондентом. Первая и Вторая чеченские войны. Формирует образ «честного репортёра с передовой» — который позже станет прикрытием для сугубо государственного взгляда на конфликты.</p>
+      </div>
+      <div class="timeline-year">2003</div>
+      <div class="timeline-body">
+        <h3>«Специальный корреспондент» на Россия-1</h3>
+        <p>Начинает вести авторскую программу расследований на государственном канале. Жанр — документальное «журналистское расследование». Реальность — заказные фильмы, дискредитирующие неугодных власти людей и организации.</p>
+      </div>
+      <div class="timeline-year">2014</div>
+      <div class="timeline-body">
+        <h3>«Содом» — кино как орудие ненависти</h3>
+        <p>Выпускает документальный фильм «Содом» — масштабную атаку на западные «ценности», ЛГБТ-права и «разврат». Фильм транслируется в прайм-тайм Россия-1. Отдельная серия посвящена Украине и «нацизму» — за несколько недель до аннексии Крыма.</p>
+      </div>
+      <div class="timeline-year">2022</div>
+      <div class="timeline-body">
+        <h3>Санкции. Документальная пропаганда войны</h3>
+        <p>ЕС и Великобритания вводят персональные санкции за «распространение государственной пропаганды». Мамонтов продолжает выпускать фильмы, обосновывающие вторжение в Украину нарративами «денацификации» и «защиты русского мира».</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Его слова</h2>
+    </div>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="meme-text">«Запад ведёт против нас войну — духовную, ценностную. Они хотят уничтожить традиционную Россию изнутри. "Содом" — это не моральная паника, это документальный факт.»</div>
+        <div class="meme-src">Аркадий Мамонтов · Россия-1 · 2014</div>
+      </div>
+      <div class="meme-card">
+        <div class="meme-text">«Я показываю то, что скрывают западные СМИ. На Украине реально действуют нацистские батальоны — это задокументировано. Я был там.»</div>
+        <div class="meme-src">Аркадий Мамонтов · 2022</div>
+      </div>
+    </div>
+    <div class="quote-pull">
+      «Документальный жанр — самый опасный для пропаганды, потому что он притворяется реальностью. Мамонтов использует монтаж, архивы и закадровый голос, чтобы сконструировать картину мира, не имеющую отношения к действительности.»
+      <cite>Медиааналитик · First Draft</cite>
+    </div>
+  </div>
+</div>
+
+<!-- ФИЛЬМЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Фильмография: пропаганда в жанре документалистики</h2>
+    </div>
+    <div class="films-list">
+      <div class="film-row">
+        <div class="film-year">2004</div>
+        <div class="film-title">«Провокаторы»</div>
+        <div class="film-desc">Фильм против оппозиции и НКО. Представляет гражданское общество как «иностранных агентов», финансируемых Западом. Задолго до принятия закона об «иноагентах» сформировал нарратив, который потом стал официальным.</div>
+      </div>
+      <div class="film-row">
+        <div class="film-year">2007</div>
+        <div class="film-title">«Шпионский камень»</div>
+        <div class="film-desc">Фильм о якобы британских шпионах в России. Основан на операции ФСБ против НКО. Использовался Кремлём для закрытия иностранных организаций. Britanski Sovet (British Council) покинул Россию после этого фильма.</div>
+      </div>
+      <div class="film-row">
+        <div class="film-year">2014</div>
+        <div class="film-title">«Содом»</div>
+        <div class="film-desc">Масштабный антизападный и гомофобный фильм. Транслировался в прайм-тайм. Формировал образ Запада как «рассадника разврата» — прямое обоснование для «традиционных ценностей» как государственного проекта.</div>
+      </div>
+      <div class="film-row">
+        <div class="film-year">2022</div>
+        <div class="film-title">«Донбасс. Дорога домой»</div>
+        <div class="film-desc">Обоснование войны в жанре репортажа. «Нацизм» на Украине, «геноцид» на Донбассе, «денацификация» как освобождение — все нарративы Кремля поданы как выводы независимого журналиста.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ВНЕШНИЕ ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">О нём говорят</h2>
+    </div>
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«Мамонтов — мастер изготовления заказных политических документалок. Его фильмы предшествуют или сопровождают репрессивные законодательные инициативы как их информационная подготовка.»</blockquote>
+        <div class="attribution">Комитет защиты журналистов CPJ</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«"Специальный корреспондент" функционирует как механизм дискредитации — от диссидентов до иностранных НКО. Это не журналистика: это оперативная работа в стиле КГБ, упакованная в телевизионный формат.»</blockquote>
+        <div class="attribution">Официальный журнал ЕС · Обоснование санкций · 2022</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Фильм "Содом" — это наглядный пример того, как государственный телеканал использует документальный жанр для разжигания ненависти под видом "журналистского расследования".»</blockquote>
+        <div class="attribution">ILGA-Europe · Доклад о гомофобии в СМИ · 2015</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">В цифрах</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">20+</div>
+        <div class="stat-label">пропагандистских фильмов</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2004</div>
+        <div class="stat-label">первый заказной фильм</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2</div>
+        <div class="stat-label">санкционных списка (ЕС, UK)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">0</div>
+        <div class="stat-label">НКО выжило после «Провокаторов»</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Голоса Кремля</span>
+  <div class="footer-rule"></div>
+  <span>Досье № 11</span>
+  <div class="footer-rule"></div>
+  <a href="index.html" style="color:var(--red);text-decoration:none">← Все досье</a>
+</div>
+
+</body>
+</html>

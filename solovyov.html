@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Владимир Соловьёв — досье</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #0a0a0a;
+    --paper: #f5f0e8;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --gold: #b8960c;
+    --gray: #4a4a4a;
+    --light-gray: #c8c0b0;
+    --rule: #2a2a2a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-left {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--rule);
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 32px;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(16px, 2vw, 22px);
+    color: var(--light-gray);
+    margin-bottom: 48px;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    border-top: 1px solid var(--rule);
+    padding-top: 40px;
+  }
+
+  .meta-item label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .meta-item span {
+    font-size: 13px;
+    color: var(--light-gray);
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+  }
+
+  .hero-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    filter: grayscale(100%) contrast(1.2);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,10,10,0.7) 0%, transparent 60%);
+  }
+
+  .hero-stamp {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    border: 2px solid var(--red);
+    color: var(--red);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    opacity: 0.8;
+    transform: rotate(3deg);
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .section-num {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--red);
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--paper);
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 12px;
+    flex: 1;
+  }
+
+  /* BIO TIMELINE */
+  .timeline {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0;
+  }
+
+  .timeline-entry {
+    display: contents;
+  }
+
+  .timeline-year {
+    padding: 0 24px 48px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--red);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-right: 1px solid var(--rule);
+    text-align: right;
+    position: relative;
+  }
+
+  .timeline-year::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    background: var(--red);
+    border-radius: 50%;
+  }
+
+  .timeline-body {
+    padding: 0 0 48px 32px;
+  }
+
+  .timeline-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--paper);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .timeline-body p {
+    font-size: 14px;
+    color: var(--light-gray);
+    line-height: 1.8;
+  }
+
+  /* JEWISH ROOTS */
+  .roots-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .roots-card {
+    background: var(--ink);
+    padding: 40px;
+  }
+
+  .roots-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--paper);
+    margin-bottom: 16px;
+  }
+
+  .roots-card p {
+    font-size: 14px;
+    color: var(--light-gray);
+    line-height: 1.85;
+  }
+
+  .quote-pull {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(18px, 2.5vw, 26px);
+    color: var(--paper);
+    border-left: 3px solid var(--red);
+    padding: 24px 0 24px 32px;
+    margin: 48px 0;
+    line-height: 1.5;
+  }
+
+  .quote-pull cite {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-style: normal;
+    margin-top: 16px;
+  }
+
+  /* PEOPLE QUOTES */
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    background: var(--rule);
+  }
+
+  .person-quote {
+    background: #0e0e0e;
+    padding: 36px;
+  }
+
+  .person-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--paper);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .person-quote .attribution {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  /* INTERVIEW TABLE */
+  .interview-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .interview-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 2fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .interview-row:first-child {
+    border-top: 1px solid var(--rule);
+  }
+
+  .interview-num {
+    font-size: 11px;
+    color: var(--red);
+    letter-spacing: 0.15em;
+  }
+
+  .interview-topic {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--paper);
+    font-weight: 700;
+  }
+
+  .interview-desc {
+    font-size: 13px;
+    color: var(--light-gray);
+    line-height: 1.8;
+  }
+
+  /* PROPERTY SCANDAL */
+  .properties-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--rule);
+    margin-top: 48px;
+  }
+
+  .property-card {
+    background: var(--ink);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .property-card .prop-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  .property-card .prop-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 8px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .footer-rule {
+    width: 1px;
+    height: 40px;
+    background: var(--rule);
+  }
+
+  /* DECOR */
+  .red-bar {
+    height: 3px;
+    background: var(--red);
+    width: 48px;
+    margin-bottom: 16px;
+  }
+
+  .intro-text {
+    font-size: 15px;
+    color: var(--light-gray);
+    line-height: 1.9;
+    max-width: 720px;
+    margin-bottom: 48px;
+  }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 300px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .roots-grid, .quotes-grid { grid-template-columns: 1fr; }
+    .properties-row { grid-template-columns: 1fr 1fr; }
+    .interview-row { grid-template-columns: 40px 1fr; }
+    .interview-desc { display: none; }
+  }
+
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<div class="nav-back"><a href="index.html">← Все досье</a></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Владимир<br>Соловьёв</h1>
+    <p class="hero-subtitle">Журналист. Пропагандист. Голос Кремля.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>20 октября 1963, Москва</span>
+      </div>
+      <div class="meta-item">
+        <label>Настоящая фамилия отца</label>
+        <span>Виницковский</span>
+      </div>
+      <div class="meta-item">
+        <label>Каналы</label>
+        <span>Россия-1, Соловьёв Live</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>ЕС, США, Великобритания и ещё 6 стран</span>
+      </div>
+      <div class="meta-item">
+        <label>Вероисповедание</label>
+        <span>Иудаизм (по собственным словам)</span>
+      </div>
+      <div class="meta-item">
+        <label>Степень</label>
+        <span>Кандидат экономических наук (1989)</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- Portrait placeholder — a stark geometric fill -->
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <radialGradient id="rg" cx="50%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#1a0000" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#000" stop-opacity="1"/>
+        </radialGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#rg)"/>
+      <!-- Abstract silhouette lines -->
+      <line x1="50%" y1="20%" x2="50%" y2="80%" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="20%" y1="50%" x2="80%" y2="50%" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="50%" cy="38%" r="80" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="50%" cy="38%" r="120" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.15"/>
+      <!-- TV static texture via lines -->
+      <g opacity="0.06">
+        <line x1="0" y1="10%" x2="100%" y2="10%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="20%" x2="100%" y2="20%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="40%" x2="100%" y2="40%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="60%" x2="100%" y2="60%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="80%" x2="100%" y2="80%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="90%" x2="100%" y2="90%" stroke="#c8c0b0" stroke-width="1"/>
+      </g>
+      <!-- Large monogram -->
+      <text x="50%" y="42%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia,serif" font-size="140" fill="#8b1a1a" opacity="0.15" font-weight="700">ВС</text>
+    </svg>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A1%D0%BE%D0%BB%D0%BE%D0%B2%D1%8C%D0%B5%D0%B2_%28cropped%29.jpg" alt="Владимир Соловьёв" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.45;mix-blend-mode:luminosity;">
+    <div class="hero-stamp">Государственная пропаганда</div>
+  </div>
+</div>
+
+<!-- BIOGRAPHY -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+
+    <p class="intro-text">
+      Владимир Рудольфович Соловьёв — один из самых узнаваемых и спорных медийных лиц России. Прошёл путь от инженера-металлурга и преподавателя до главного телевизионного лица государственной пропаганды. Его имя стало синонимом агрессивной риторики, многомиллионных гонораров и вилл на озере Комо.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-entry">
+        <div class="timeline-year">1963</div>
+        <div class="timeline-body">
+          <h3>Рождение в Москве</h3>
+          <p>Родился в еврейской семье. Отец — Рудольф Наумович Виницковский, преподаватель политэкономии, взявший фамилию Соловьёв ещё до рождения сына. Мать — Инна Соломоновна Шапиро, искусствовед. Дед по матери — Соломон Львович Шапиро.</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">1980</div>
+        <div class="timeline-body">
+          <h3>Отказы при поступлении</h3>
+          <p>После окончания элитной спецшколы № 27 с углублённым изучением английского языка попытался поступить в МИФИ и на физфак МГУ — документы не приняли из-за еврейского происхождения. В итоге поступил в Московский институт стали и сплавов (МИСиС).</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">1986</div>
+        <div class="timeline-body">
+          <h3>Красный диплом и наука</h3>
+          <p>Окончил МИСиС с отличием по специальности «инженер-металлург». Защитил диссертацию в Институте мировой экономики и международных отношений АН СССР, стал кандидатом экономических наук. Преподавал физику, математику и астрономию.</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">1990</div>
+        <div class="timeline-body">
+          <h3>США. Бизнес. Возвращение</h3>
+          <p>Уехал в США преподавать экономику в Алабамском университете. Вернувшись в Россию, занялся бизнесом — открыл производство дискотечного оборудования, кадровое агентство. По собственным словам, продал бизнес в 90-е, став, по его же признанию, «богатым человеком».</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">1999</div>
+        <div class="timeline-body">
+          <h3>Рождение телезвезды</h3>
+          <p>Россияне узнали о Соловьёве через программу «Процесс» на ОРТ вместе с Александром Гордоном. Следом — «Страсти по Соловьёву» (ТНТ), «К барьеру!», «Соловьиная ночь» (ТВ-6), «Воскресный вечер с Владимиром Соловьёвым». Вес достигал 140 кг — потом похудел на 80.</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">2017</div>
+        <div class="timeline-body">
+          <h3>Расследование Навального</h3>
+          <p>ФБК опубликовал видеорасследование о недвижимости телеведущего: квартира в центре Москвы по заниженной цене, вилла на озере Комо. Соловьёв ответил: «Я богатый человек, об этом кто-то не знал?»</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-body">
+          <h3>Санкции. Арест вилл. Поджог</h3>
+          <p>После начала войны в Украине попал под санкции ЕС, США, Великобритании и других стран. Италия арестовала две его виллы на озере Комо (общая стоимость — около €8 млн). Неизвестные подожгли одну из вилл, залили бассейн красной краской. Соловьёв был объявлен в розыск на Украине.</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-body">
+          <h3>Герой ДНР</h3>
+          <p>Удостоен звания «Герой Донецкой Народной Республики». Продолжает вести программы «Вечер с Владимиром Соловьёвым» и «Москва. Кремль. Путин». По оценке Госдепа США — «самый энергичный кремлёвский пропагандист».</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JEWISH ROOTS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Еврейские корни</h2>
+    </div>
+
+    <p class="intro-text">
+      Соловьёв никогда не скрывал своего происхождения. Сам называет себя евреем и исповедует иудаизм — тема, которую он поднимал в публичных высказываниях, порой весьма неожиданным образом.
+    </p>
+
+    <div class="roots-grid">
+      <div class="roots-card">
+        <h3>Семейное древо</h3>
+        <p>Отец — Рудольф Наумович Виницковский, сменивший фамилию. Мать — Инна Соломоновна Шапиро. Дед по материнской линии — Соломон Львович Шапиро. Все трое работали на режимных предприятиях советской эпохи. Семья была светской, интеллигентной.</p>
+      </div>
+      <div class="roots-card">
+        <h3>Отказ в поступлении</h3>
+        <p>В 1980 году после школы Соловьёву отказали в приёме документов в МИФИ и на физический факультет МГУ — официальная причина по свидетельству его матери заключалась именно в еврейском происхождении. Это была распространённая советская практика «пятого пункта» в анкете.</p>
+      </div>
+      <div class="roots-card">
+        <h3>Иудаизм и самоидентификация</h3>
+        <p>По собственному признанию исповедует иудаизм. В публичных выступлениях неоднократно подчёркивал свою еврейскую идентичность — особенно когда это было выгодно риторически. Тема происхождения появлялась в его высказываниях резко и неожиданно.</p>
+      </div>
+      <div class="roots-card">
+        <h3>«Нам, евреям, не привыкать»</h3>
+        <p>После ареста вилл в Италии в 2022 году Соловьёв заявил в эфире: «Сначала они лишают евреев таких, как я, собственности в Италии. Нам, евреям, не привыкать, как европейские нацисты нас лишают собственности». Критики указывали на цинизм этого сравнения в устах человека, поддерживающего войну.</p>
+      </div>
+    </div>
+
+    <div class="quote-pull">
+      «У меня нет вопросов к этим нацистским сволочам. Они нацисты. Сначала они лишают евреев таких, как я, собственности в Италии.»
+      <cite>— Владимир Соловьёв, эфир «Россия-1», 2023</cite>
+    </div>
+  </div>
+</div>
+
+<!-- QUOTES ABOUT HIM -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Что о нём говорят</h2>
+    </div>
+
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«Самый энергичный кремлёвский пропагандист.»</blockquote>
+        <div class="attribution">Государственный департамент США</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Очень одарённый от природы человек, много знает, память прекрасная. К сожалению, постепенно теряет берега. Раньше было интересно. Теперь — крик, нарочитое хамство.»</blockquote>
+        <div class="attribution">Читатель «Узнай всё», бывший зритель</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Хорошо оплачиваются только талантливая пропаганда и талантливая ложь. У Соловьёва к этому талант.»</blockquote>
+        <div class="attribution">Комментарий в деловой прессе, 2019</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Я ничего не готов возражать Владимиру Соловьёву, потому что не могу вступать в полемику со своим кумиром. В свободное время я конспектирую все его слова.»</blockquote>
+        <div class="attribution">Иван Ургант — саркастический ответ на конфликт с Соловьёвым</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Пропагандист.»</blockquote>
+        <div class="attribution">Ксения Собчак — во время предвыборных дебатов в прямом эфире</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Никто из семьи Соловьёва, включая пожилую маму, не имеет хоть сколько-нибудь сопоставимых доходов для приобретения, даже для содержания такого имущества.»</blockquote>
+        <div class="attribution">Команда Навального — расследование ФБК об итальянской недвижимости</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«То, что он делает на телевидении — это чудовищно.»</blockquote>
+        <div class="attribution">Борис Полетаев, PRagent.ru, 2009</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Соловьёв является частью российской пропаганды.»</blockquote>
+        <div class="attribution">Дмитрий Песков, пресс-секретарь Кремля — апрель 2025</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Он воспевает войну, а сам откосил от армии. Кричит, что Крым — лучший курорт, а сам отдыхает на озере Комо. Ругает ЕС, а сам — резидент Италии.»</blockquote>
+        <div class="attribution">ФБК — расследование о двойных стандартах, 2019</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTERVIEW TOPICS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Что спрашивали в интервью</h2>
+    </div>
+
+    <p class="intro-text">
+      На протяжении карьеры Соловьёв был как берущим, так и дающим интервью. Темы, поднимавшиеся журналистами и публикой, раз за разом возвращались к одним и тем же болевым точкам.
+    </p>
+
+    <div class="interview-list">
+      <div class="interview-row">
+        <span class="interview-num">01</span>
+        <div class="interview-topic">Недвижимость в Италии</div>
+        <div class="interview-desc">«Почему патриот России живёт на озере Комо?» Соловьёв объяснял: в Сочи не понравилось, в Крыму не был с 1982 года, на Байкал «лететь далеко». В Италии — выгоднее. Вид на жительство получил в 2009 году.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">02</span>
+        <div class="interview-topic">Похудение на 80 кг</div>
+        <div class="interview-desc">Одна из самых популярных тем ранних интервью. Соловьёв весил 140 кг в период работы с Гордоном. Написал книгу «Худеть или не худеть?», но на прямые вопросы о методах советовал обращаться к своему врачу.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">03</span>
+        <div class="interview-topic">Богатство и доходы</div>
+        <div class="interview-desc">«Я богатый человек, об этом кто-то не знал? Я занимался бизнесом в девяностые». Отвечал на обвинения в лицемерии открытым признанием состоятельности, отрицая какие-либо нарушения.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">04</span>
+        <div class="interview-topic">Путин и политическая позиция</div>
+        <div class="interview-desc">Регулярно отвечал на вопросы о своей близости к власти. Настаивал на независимости суждений. В интервью «Комсомольской правде» 2020 года рассуждал о геополитике и «коллективном Западе» в духе государственной риторики.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">05</span>
+        <div class="interview-topic">Еврейство и вера</div>
+        <div class="interview-desc">Подтверждал еврейское происхождение и иудейское вероисповедание. Объяснял, как антисемитизм СССР закрыл ему двери в престижные вузы. Позднее использовал эту идентичность в риторических атаках на западные санкции.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">06</span>
+        <div class="interview-topic">Конфликты с коллегами</div>
+        <div class="interview-desc">Интервью об эпизодах с Ургантом, Навальным, Уткиным, Собчак. В ответ на слова о «соловьином помёте» в эфире Урганта пообещал «объявить войну». Признавал конфликтность своего стиля как осознанную стратегию.</div>
+      </div>
+      <div class="interview-row">
+        <span class="interview-num">07</span>
+        <div class="interview-topic">Война на Украине (2022)</div>
+        <div class="interview-desc">После введения санкций заявил, что Запад должен «засунуть санкции в задницу». Угрожал Европе в прямом эфире. Обвинял ЕС в нацизме, сравнивая арест своей недвижимости с преследованием евреев.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROPERTY SCANDAL -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Скандал с собственностью</h2>
+    </div>
+
+    <p class="intro-text">
+      Расследования ФБК и «Важных историй» зафиксировали разрыв между публичным образом патриота и реальным образом жизни. Вся жилая недвижимость за рубежом — в «загнивающей» Италии.
+    </p>
+
+    <div class="properties-row">
+      <div class="property-card">
+        <div class="prop-val">5+</div>
+        <div class="prop-label">объектов недвижимости в Италии</div>
+      </div>
+      <div class="property-card">
+        <div class="prop-val">€8M</div>
+        <div class="prop-label">стоимость двух арестованных вилл на озере Комо</div>
+      </div>
+      <div class="property-card">
+        <div class="prop-val">2009</div>
+        <div class="prop-label">год получения вида на жительство в Италии</div>
+      </div>
+      <div class="property-card">
+        <div class="prop-val">2022</div>
+        <div class="prop-label">год ареста, поджога и акций протеста на виллах</div>
+      </div>
+    </div>
+
+    <div class="quote-pull" style="margin-top:48px">
+      «Почему я должен играться в человека, у которого ничего нет?»
+      <cite>— Владимир Соловьёв об обвинениях в лицемерии</cite>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Досье составлено на основе открытых источников</span>
+  <div class="footer-rule"></div>
+  <span>Владимир Соловьёв · 1963—</span>
+  <div class="footer-rule"></div>
+  <span>Все факты верифицированы публикациями СМИ</span>
+</div>
+
+</body>
+</html>

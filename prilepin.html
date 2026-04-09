@@ -67,11 +67,23 @@
     .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
     .stats-row { grid-template-columns: 1fr 1fr; }
   }
+
+  /* READING PROGRESS */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: #8b1a1a;
+    z-index: 9999;
+    transition: width 0.1s linear;
+  }
 </style>
 </head>
 <body>
+<div id="progress-bar"></div>
 
-<div class="nav-back"><a href="index.html">← Все досье</a></div>
+<div class="nav-back"><a href="index.html">← Все досье</a><a href="submit.html" style="margin-left:auto;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5c1111;text-decoration:none;border:1px solid #2a0a0a;padding:5px 12px;border-radius:2px;transition:all 0.2s" onmouseover="this.style.color='#8b1a1a';this.style.borderColor='#5c1111'" onmouseout="this.style.color='#5c1111';this.style.borderColor='#2a0a0a'">Сообщить</a></div>
 
 <div class="hero">
   <div class="hero-left">

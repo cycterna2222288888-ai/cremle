@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сообщить об источнике — Голоса Кремля</title>
+<meta name="description" content="Есть информация об одном из пропагандистов? Передайте её анонимно.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+    --card-bg: #0e0e0e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+  .topbar a { color: var(--red); text-decoration: none; }
+  .topbar a:hover { color: var(--paper); }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 64px 60px 48px;
+    text-align: center;
+  }
+  .masthead-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--paper);
+    margin-bottom: 20px;
+  }
+  .masthead p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--light-gray);
+    font-size: 15px;
+  }
+
+  .section {
+    border-bottom: 1px solid var(--rule);
+    padding: 60px;
+  }
+
+  .container { max-width: 720px; margin: 0 auto; }
+
+  .notice {
+    background: #0a1a0a;
+    border: 1px solid #1a3a1a;
+    border-left: 3px solid #2a6a2a;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    font-size: 13px;
+    color: #8ab88a;
+    border-radius: 2px;
+  }
+  .notice strong { display: block; margin-bottom: 6px; color: #aadaaa; letter-spacing: 0.05em; font-size: 11px; text-transform: uppercase; }
+
+  label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 8px;
+    margin-top: 28px;
+  }
+  label:first-of-type { margin-top: 0; }
+
+  select, input[type="text"], textarea {
+    width: 100%;
+    background: var(--card-bg);
+    border: 1px solid #2a2a2a;
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 12px 16px;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+    outline: none;
+    appearance: none;
+  }
+  select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23bab3a0' fill='none' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+  select option { background: #111; }
+  select:focus, input:focus, textarea:focus { border-color: var(--red); }
+  textarea { resize: vertical; min-height: 200px; }
+
+  .hint {
+    font-size: 12px;
+    color: #555;
+    margin-top: 6px;
+  }
+
+  .submit-btn {
+    margin-top: 36px;
+    background: var(--red);
+    color: var(--paper);
+    border: none;
+    padding: 14px 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s;
+    width: 100%;
+  }
+  .submit-btn:hover { background: #a02020; }
+  .submit-btn:disabled { background: #333; color: #666; cursor: not-allowed; }
+
+  .result {
+    margin-top: 24px;
+    padding: 16px 20px;
+    border-radius: 2px;
+    font-size: 14px;
+    display: none;
+  }
+  .result.ok  { background: #0a1a0a; border: 1px solid #2a6a2a; color: #8ab88a; }
+  .result.err { background: #1a0a0a; border: 1px solid #6a1a1a; color: #c88a8a; }
+
+  .footer {
+    padding: 40px 60px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #333;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    .topbar { padding: 14px 20px; }
+    .masthead { padding: 40px 20px 32px; }
+    .section { padding: 40px 20px; }
+    .footer { padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html">← Голоса Кремля</a>
+  <span>Анонимное сообщение</span>
+</nav>
+
+<div class="masthead">
+  <div class="masthead-label">Источники и информация</div>
+  <h1>Есть что рассказать?</h1>
+  <p>Если вы располагаете информацией об одном из фигурантов архива — передайте её анонимно. Мы изучим каждое сообщение.</p>
+</div>
+
+<div class="section">
+  <div class="container">
+
+    <div class="notice">
+      <strong>Конфиденциальность</strong>
+      Ваш IP-адрес хешируется и не хранится в читаемом виде. Не оставляйте личных данных, если не хотите быть идентифицированы. Для максимальной анонимности используйте Tor Browser или VPN.
+    </div>
+
+    <form id="tip-form">
+
+      <label for="subject">Кому касается</label>
+      <select id="subject" name="subject" required>
+        <option value="">— Выберите фигуранта —</option>
+        <option>Владимир Соловьёв</option>
+        <option>Ольга Скабеева</option>
+        <option>Маргарита Симоньян</option>
+        <option>Дмитрий Киселёв</option>
+        <option>Владимир Попов</option>
+        <option>Артём Шейнин</option>
+        <option>Пётр Толстой</option>
+        <option>Андрей Норкин</option>
+        <option>Тигран Кеосаян</option>
+        <option>Екатерина Андреева</option>
+        <option>Аркадий Мамонтов</option>
+        <option>Захар Прилепин</option>
+        <option>Михаил Леонтьев</option>
+        <option>Борис Корчевников</option>
+        <option>Владимир Мединский</option>
+        <option value="Общее">Общее / Несколько фигурантов</option>
+      </select>
+
+      <label for="body">Ваше сообщение</label>
+      <textarea id="body" name="body" placeholder="Опишите, что вам известно. Документы, связи, факты — всё важно." required maxlength="5000"></textarea>
+      <div class="hint">Максимум 5000 символов. Оставайтесь фактическими.</div>
+
+      <label for="contact">Способ связи <span style="color:#444;font-style:italic;text-transform:none;letter-spacing:0">(необязательно)</span></label>
+      <input type="text" id="contact" name="contact" placeholder="Email, Telegram, Signal — только если хотите обратной связи" maxlength="200">
+      <div class="hint">Оставьте пустым, если хотите сохранить полную анонимность.</div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">Отправить сообщение</button>
+
+      <div class="result ok"  id="result-ok"></div>
+      <div class="result err" id="result-err"></div>
+    </form>
+  </div>
+</div>
+
+<div class="footer">Голоса Кремля · Документальный архив</div>
+
+<script>
+document.getElementById('tip-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const ok  = document.getElementById('result-ok');
+  const err = document.getElementById('result-err');
+  ok.style.display = err.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Отправляю…';
+
+  const payload = {
+    subject: document.getElementById('subject').value,
+    body:    document.getElementById('body').value,
+    contact: document.getElementById('contact').value || undefined,
+  };
+
+  try {
+    const res  = await fetch('/api/tips', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (res.ok) {
+      ok.textContent = data.message;
+      ok.style.display = 'block';
+      document.getElementById('tip-form').reset();
+    } else {
+      err.textContent = data.error || 'Ошибка при отправке.';
+      err.style.display = 'block';
+    }
+  } catch {
+    err.textContent = 'Нет соединения с сервером.';
+    err.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Отправить сообщение';
+  }
+});
+</script>
+
+</body>
+</html>

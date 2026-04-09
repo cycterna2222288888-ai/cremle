@@ -1,0 +1,7 @@
+node_modules/
+data/tips.db
+data/tips.db-shm
+data/tips.db-wal
+.env
+*.env
+.DS_Store

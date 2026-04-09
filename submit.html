@@ -193,7 +193,9 @@
       Ваш IP-адрес хешируется и не хранится в читаемом виде. Не оставляйте личных данных, если не хотите быть идентифицированы. Для максимальной анонимности используйте Tor Browser или VPN.
     </div>
 
-    <form id="tip-form">
+    <form id="tip-form" name="tips" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="tips">
+      <p style="display:none"><input name="bot-field"></p>
 
       <label for="subject">Кому касается</label>
       <select id="subject" name="subject" required>
@@ -237,36 +239,30 @@
 <script>
 document.getElementById('tip-form').addEventListener('submit', async e => {
   e.preventDefault();
-  const btn = document.getElementById('submit-btn');
-  const ok  = document.getElementById('result-ok');
-  const err = document.getElementById('result-err');
+  const form = e.target;
+  const btn  = document.getElementById('submit-btn');
+  const ok   = document.getElementById('result-ok');
+  const err  = document.getElementById('result-err');
   ok.style.display = err.style.display = 'none';
   btn.disabled = true;
   btn.textContent = 'Отправляю…';
 
-  const payload = {
-    subject: document.getElementById('subject').value,
-    body:    document.getElementById('body').value,
-    contact: document.getElementById('contact').value || undefined,
-  };
-
   try {
-    const res  = await fetch('/api/tips', {
+    const res = await fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString(),
     });
-    const data = await res.json();
     if (res.ok) {
-      ok.textContent = data.message;
+      ok.textContent = 'Сообщение получено. Спасибо.';
       ok.style.display = 'block';
-      document.getElementById('tip-form').reset();
+      form.reset();
     } else {
-      err.textContent = data.error || 'Ошибка при отправке.';
+      err.textContent = 'Ошибка при отправке. Попробуйте позже.';
       err.style.display = 'block';
     }
   } catch {
-    err.textContent = 'Нет соединения с сервером.';
+    err.textContent = 'Нет соединения.';
     err.style.display = 'block';
   } finally {
     btn.disabled = false;

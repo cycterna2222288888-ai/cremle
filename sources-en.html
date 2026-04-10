@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sources · Kremlin Voices</title>
+<meta property="og:title" content="Sources · Kremlin Voices">
+<meta property="og:site_name" content="Kremlin Voices">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --red-dim:#5c1111; --light-gray:#bab3a0; --rule:#1c1c1c; --card-bg:#0e0e0e; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; line-height:1.75; overflow-x:hidden; }
+  .topbar { padding:14px 60px; border-bottom:1px solid var(--rule); background:var(--ink); position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
+  .topbar-left a { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); text-decoration:none; }
+  .topbar-left a:hover { opacity:0.6; }
+  .topbar-right { display:flex; align-items:center; gap:20px; }
+  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
+  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
+  .lang-switch a:hover { color:var(--paper); background:#111; }
+  .masthead { padding:80px 60px 64px; border-bottom:1px solid var(--rule); }
+  .masthead-eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--red); margin-bottom:20px; }
+  .masthead-title { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,72px); font-weight:700; color:var(--paper); margin-bottom:16px; line-height:1.05; }
+  .masthead-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(14px,1.8vw,20px); color:var(--light-gray); max-width:700px; }
+  .container { max-width:1200px; margin:0 auto; padding:0 60px; }
+  .section { padding:80px 0; border-bottom:1px solid var(--rule); }
+  .section-label { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--red); margin-bottom:40px; display:flex; align-items:center; gap:20px; }
+  .section-label::after { content:''; flex:1; height:1px; background:var(--rule); }
+  .footer { padding:48px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#333; border-top:1px solid var(--rule); }
+  .footer-logo { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--red); opacity:0.5; letter-spacing:normal; text-transform:none; }
+  @media(max-width:900px) { .topbar,.masthead,.container,.footer { padding-left:24px; padding-right:24px; } }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-left"><a href="index-en.html">← All dossiers</a></div>
+  <div class="topbar-right">
+    <div class="lang-switch">
+      <a href="sources.html">RU</a>
+      <a href="sources-en.html" class="active">EN</a>
+    </div>
+  </div>
+</div>
+<div class="masthead">
+  <div class="masthead-eyebrow">Methodology · Verification · Bibliography</div>
+  <h1 class="masthead-title">Sources</h1>
+  <p class="masthead-sub">All facts in this archive are tied to publicly verifiable sources. Here is where we look.</p>
+</div>
+
+<style>
+  .sources-section { padding:60px; border-bottom:1px solid var(--rule); }
+  .sources-section h2 { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--paper); margin-bottom:32px; }
+  .source-list { list-style:none; }
+  .source-list li { padding:16px 0; border-bottom:1px solid #111; display:flex; gap:24px; align-items:baseline; }
+  .source-list li:last-child { border-bottom:none; }
+  .source-tag { font-size:8px; letter-spacing:0.2em; text-transform:uppercase; background:#1a0000; border:1px solid var(--red-dim); color:var(--red); padding:3px 8px; white-space:nowrap; flex-shrink:0; }
+  .source-text { font-size:13px; color:var(--light-gray); line-height:1.7; }
+  .source-text strong { color:var(--paper); }
+  @media(max-width:900px) { .sources-section { padding:40px 24px; } }
+</style>
+<div class="sources-section">
+  <h2>Official Sanctions Lists</h2>
+  <ul class="source-list">
+    <li><span class="source-tag">EU</span><div class="source-text"><strong>European Union Council Regulations</strong> — Official Journal of the EU, L series. Regulations 269/2014 (Ukraine/Crimea), 833/2014 (sectoral), and subsequent amendments. All designations include identification data and statement of reasons. <em>eur-lex.europa.eu</em></div></li>
+    <li><span class="source-tag">USA</span><div class="source-text"><strong>US Treasury OFAC — SDN List</strong> — Office of Foreign Assets Control Specially Designated Nationals list. Includes EO 13685, EO 14024 designations and press releases. <em>home.treasury.gov/policy-issues/financial-sanctions</em></div></li>
+    <li><span class="source-tag">UK</span><div class="source-text"><strong>UK OFSI — Consolidated List</strong> — Office of Financial Sanctions Implementation. Russia (Sanctions) (EU Exit) Regulations 2019 and amendments. <em>gov.uk/government/publications/financial-sanctions-consolidated-list-of-targets</em></div></li>
+    <li><span class="source-tag">Canada</span><div class="source-text"><strong>Global Affairs Canada — Consolidated Canadian Autonomous Sanctions List</strong> — Special Economic Measures (Russia) Regulations. <em>international.gc.ca/world-monde/international_relations-relations_internationales/sanctions</em></div></li>
+  </ul>
+</div>
+<div class="sources-section">
+  <h2>Media Monitoring &amp; Research</h2>
+  <ul class="source-list">
+    <li><span class="source-tag">Monitor</span><div class="source-text"><strong>EU DisinfoLab</strong> — Independent research organization documenting disinformation operations linked to state actors. Reports on RT, Sputnik, and affiliated networks. <em>disinfo.eu</em></div></li>
+    <li><span class="source-tag">Monitor</span><div class="source-text"><strong>EU vs Disinfo (EUvsDisinfo)</strong> — The European External Action Service's database of Kremlin disinformation cases, documenting specific claims and refutations since 2015. <em>euvsdisinfo.eu</em></div></li>
+    <li><span class="source-tag">Research</span><div class="source-text"><strong>Meduza</strong> — Independent Russian-language investigative media outlet (based in Riga). Primary source for biographical data and domestic Russian media analysis. <em>meduza.io</em></div></li>
+    <li><span class="source-tag">Research</span><div class="source-text"><strong>Novaya Gazeta Europe</strong> — Independent outlet covering Russian politics, media, and the war. <em>novayagazeta.eu</em></div></li>
+    <li><span class="source-tag">Research</span><div class="source-text"><strong>The Insider (theins.ru)</strong> — Russian investigative journalism outlet, specializing in disinformation, intelligence operations, and propaganda. <em>theins.ru</em></div></li>
+  </ul>
+</div>
+<div class="sources-section">
+  <h2>Broadcast &amp; Transcript Sources</h2>
+  <ul class="source-list">
+    <li><span class="source-tag">Archive</span><div class="source-text"><strong>Internet Archive — Russian Television Recordings</strong> — Archive.org hosts recordings of Russian state television broadcasts including Russia-1, Channel One, NTV and RT, used for quote verification. <em>archive.org</em></div></li>
+    <li><span class="source-tag">Archive</span><div class="source-text"><strong>Julia Davis — Russian Media Monitor</strong> — Journalist and analyst who monitors and subtitles Russian state television for English-language audiences. Source for translated quotes. <em>@JuliaDavisNews</em></div></li>
+    <li><span class="source-tag">Transcript</span><div class="source-text"><strong>Kremlin.ru</strong> — Official transcript archive of Russian presidential speeches, decrees, and press conferences. Used for official statements and appointments. <em>kremlin.ru/eng</em></div></li>
+  </ul>
+</div>
+<div class="footer">
+  <div class="footer-logo">Kremlin Voices</div>
+  <span>Data from open sources</span>
+  <a href="index-en.html" style="color:inherit;text-decoration:none">All dossiers</a>
+</div>
+</body>
+</html>

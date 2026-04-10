@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About the Project · Kremlin Voices</title>
+<meta property="og:title" content="About the Project · Kremlin Voices">
+<meta property="og:site_name" content="Kremlin Voices">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --red-dim:#5c1111; --light-gray:#bab3a0; --rule:#1c1c1c; --card-bg:#0e0e0e; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; line-height:1.75; overflow-x:hidden; }
+  .topbar { padding:14px 60px; border-bottom:1px solid var(--rule); background:var(--ink); position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
+  .topbar-left a { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); text-decoration:none; }
+  .topbar-left a:hover { opacity:0.6; }
+  .topbar-right { display:flex; align-items:center; gap:20px; }
+  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
+  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
+  .lang-switch a:hover { color:var(--paper); background:#111; }
+  .masthead { padding:80px 60px 64px; border-bottom:1px solid var(--rule); }
+  .masthead-eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--red); margin-bottom:20px; }
+  .masthead-title { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,72px); font-weight:700; color:var(--paper); margin-bottom:16px; line-height:1.05; }
+  .masthead-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(14px,1.8vw,20px); color:var(--light-gray); max-width:700px; }
+  .container { max-width:1200px; margin:0 auto; padding:0 60px; }
+  .section { padding:80px 0; border-bottom:1px solid var(--rule); }
+  .section-label { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--red); margin-bottom:40px; display:flex; align-items:center; gap:20px; }
+  .section-label::after { content:''; flex:1; height:1px; background:var(--rule); }
+  .footer { padding:48px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#333; border-top:1px solid var(--rule); }
+  .footer-logo { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--red); opacity:0.5; letter-spacing:normal; text-transform:none; }
+  @media(max-width:900px) { .topbar,.masthead,.container,.footer { padding-left:24px; padding-right:24px; } }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-left"><a href="index-en.html">← All dossiers</a></div>
+  <div class="topbar-right">
+    <div class="lang-switch">
+      <a href="about.html">RU</a>
+      <a href="about-en.html" class="active">EN</a>
+    </div>
+  </div>
+</div>
+<div class="masthead">
+  <div class="masthead-eyebrow">Project · Methodology · Goals</div>
+  <h1 class="masthead-title">About the Project</h1>
+  <p class="masthead-sub">Why this archive exists, how it works, who it is for, and why it matters.</p>
+</div>
+
+<style>
+  .text-body { max-width:760px; }
+  .text-body p { font-size:15px; color:var(--light-gray); line-height:1.9; margin-bottom:20px; }
+  .text-body strong { color:var(--paper); font-weight:500; }
+  .pullquote { padding:60px; border-bottom:1px solid var(--rule); background:#050505; }
+  .pullquote-text { font-family:'Playfair Display',serif; font-size:clamp(20px,3vw,32px); font-style:italic; color:var(--paper); line-height:1.4; max-width:900px; }
+  .text-section { padding:60px; border-bottom:1px solid var(--rule); display:grid; grid-template-columns:200px 1fr; gap:60px; }
+  .text-section-label { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); padding-top:6px; }
+  .features { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:32px; }
+  .feature { background:var(--card-bg); padding:32px; }
+  .feature-icon { font-size:28px; margin-bottom:16px; }
+  .feature-title { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--paper); margin-bottom:12px; }
+  .feature-text { font-size:13px; color:var(--light-gray); line-height:1.75; }
+  @media(max-width:900px) { .text-section { grid-template-columns:1fr; } .features { grid-template-columns:1fr; } .pullquote,.text-section { padding:40px 24px; } }
+</style>
+<div class="pullquote">
+  <div class="pullquote-text">"The best defense against propaganda is knowing how it works, who produces it, and what stands behind every word."</div>
+</div>
+<div class="text-section">
+  <div class="text-section-label">Why this archive exists</div>
+  <div class="text-body">
+    <p>Russian state propaganda is not an accidental phenomenon. It is <strong>a system with specific people, specific budgets, and specific methods</strong>. Many people hear about "Russian propaganda" as an abstract threat — but few know how it works from the inside, or who is responsible.</p>
+    <p>This archive was created as a media literacy tool: a documentary cross-section of specific individuals who are the key executors of Russia's state information policy. Not an abstraction — but biographies, quotes, facts, and official sanctions language.</p>
+    <p>The archive is based <strong>exclusively on open, publicly verifiable data</strong>: official sanctions lists from the EU, USA and UK, television transcripts, official biographies, and reports from independent media outlets.</p>
+    <div class="features">
+      <div class="feature"><div class="feature-icon">📋</div><div class="feature-title">Dossiers</div><div class="feature-text">Dossiers on key propagandists with biographies and key facts.</div></div>
+      <div class="feature"><div class="feature-icon">🔗</div><div class="feature-title">Analysis</div><div class="feature-text">Sanctions, timeline, connections, media empire, quotes. Each section reveals a different angle.</div></div>
+      <div class="feature"><div class="feature-icon">🔍</div><div class="feature-title">Sources</div><div class="feature-text">Every fact is tied to a verifiable source. Nothing based on anonymous claims.</div></div>
+    </div>
+  </div>
+</div>
+<div class="text-section">
+  <div class="text-section-label">Who this is for</div>
+  <div class="text-body">
+    <p>The archive is designed for <strong>anyone who wants to understand how Russian state propaganda works</strong> — and who is responsible for it. Journalists, researchers, educators, students, activists, and curious people.</p>
+    <p>It is especially relevant for those in countries where Russian-language or Russian-funded media operates, and for those seeking to understand the structure behind the headlines.</p>
+  </div>
+</div>
+<div class="text-section">
+  <div class="text-section-label">What this is — and isn't</div>
+  <div class="text-body">
+    <p>This is: a documentary archive based on open sources. An instrument for understanding the structure of state propaganda. A dictionary of propaganda narratives and euphemisms.</p>
+    <p>This is not: a comprehensive list of all Russian propagandists. Political journalism or opinion. A source of classified information. Affiliated with any government or political organization.</p>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer-logo">Kremlin Voices</div>
+  <span>Data from open sources</span>
+  <a href="index-en.html" style="color:inherit;text-decoration:none">All dossiers</a>
+</div>
+</body>
+</html>

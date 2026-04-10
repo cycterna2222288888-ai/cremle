@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Сравнение досье · Голоса Кремля</title>
-<meta name="description" content="Сравните двух пропагандистов по биографии, санкциям, методам и цитатам.">
+<title>Compare Dossiers · Kremlin Voices</title>
+<meta name="description" content="Compare two propagandists by biography, sanctions, methods and quotes.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Сравнение · Голоса Кремля">
-<meta property="og:description" content="Выберите двух пропагандистов и сравните их досье бок о бок.">
-<meta property="og:site_name" content="Голоса Кремля">
+<meta property="og:title" content="Compare · Kremlin Voices">
+<meta property="og:description" content="Select two propagandists and compare their dossiers side by side.">
+<meta property="og:site_name" content="Kremlin Voices">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
@@ -208,84 +208,84 @@
 </head>
 <body>
 
-<div class="topbar"><div class="topbar-left"><a href="index.html">← Все досье</a></div><div class="topbar-right"><div class="lang-switch"><a href="compare.html" class="active">RU</a><a href="compare-en.html">EN</a></div></div></div>
+<div class="topbar"><div class="topbar-left"><a href="index-en.html">← All dossiers</a></div><div class="topbar-right"><div class="lang-switch"><a href="compare.html">RU</a><a href="compare-en.html" class="active">EN</a></div></div></div>
 
 <div class="masthead">
-  <div class="masthead-eyebrow">Аналитика · Сравнение</div>
-  <h1 class="masthead-title">Сравнение досье</h1>
-  <p class="masthead-sub">Выберите двух персонажей и сравните их биографии, санкции, методы и цитаты бок о бок.</p>
+  <div class="masthead-eyebrow">Analytics · Comparison</div>
+  <h1 class="masthead-title">Compare Dossiers</h1>
+  <p class="masthead-sub">Select two people and compare their biographies, sanctions, methods and quotes side by side.</p>
 </div>
 
 <div class="selector-wrap">
   <div>
-    <div class="selector-label">Персонаж А</div>
+    <div class="selector-label">Person A</div>
     <select id="person-a">
-      <option value="">— Выберите —</option>
-      <option value="solovyov">Владимир Соловьёв</option>
-      <option value="skabeeva">Ольга Скабеева</option>
-      <option value="kiselyov">Дмитрий Киселёв</option>
-      <option value="simonyan">Маргарита Симоньян</option>
-      <option value="popov">Евгений Попов</option>
-      <option value="sheynin">Артём Шейнин</option>
-      <option value="tolstoy">Пётр Толстой</option>
-      <option value="norkin">Андрей Норкин</option>
-      <option value="keosayan">Тигран Кеосаян</option>
-      <option value="andreyeva">Екатерина Андреева</option>
-      <option value="mamontov">Аркадий Мамонтов</option>
-      <option value="prilepin">Захар Прилепин</option>
-      <option value="leontyev">Михаил Леонтьев</option>
-      <option value="korchevnikov">Борис Корчевников</option>
-      <option value="medinsky">Владимир Мединский</option>
-      <option value="mikhalkov">Никита Михалков</option>
-      <option value="dugin">Александр Дугин</option>
-      <option value="krasovsky">Антон Красовский</option>
+      <option value="">— Select —</option>
+      <option value="solovyov">Vladimir Solovyov</option>
+      <option value="skabeeva">Olga Skabeeva</option>
+      <option value="kiselyov">Dmitry Kiselyov</option>
+      <option value="simonyan">Margarita Simonyan</option>
+      <option value="popov">Evgeny Popov</option>
+      <option value="sheynin">Artem Sheynin</option>
+      <option value="tolstoy">Pyotr Tolstoy</option>
+      <option value="norkin">Andrey Norkin</option>
+      <option value="keosayan">Tigran Keosayan</option>
+      <option value="andreyeva">Yekaterina Andreyeva</option>
+      <option value="mamontov">Arkady Mamontov</option>
+      <option value="prilepin">Zakhar Prilepin</option>
+      <option value="leontyev">Mikhail Leontyev</option>
+      <option value="korchevnikov">Boris Korchevnikov</option>
+      <option value="medinsky">Vladimir Medinsky</option>
+      <option value="mikhalkov">Nikita Mikhalkov</option>
+      <option value="dugin">Alexander Dugin</option>
+      <option value="krasovsky">Anton Krasovsky</option>
     </select>
   </div>
   <div class="vs-label">vs</div>
   <div>
-    <div class="selector-label">Персонаж Б</div>
+    <div class="selector-label">Person B</div>
     <select id="person-b">
-      <option value="">— Выберите —</option>
-      <option value="solovyov">Владимир Соловьёв</option>
-      <option value="skabeeva">Ольга Скабеева</option>
-      <option value="kiselyov">Дмитрий Киселёв</option>
-      <option value="simonyan">Маргарита Симоньян</option>
-      <option value="popov">Евгений Попов</option>
-      <option value="sheynin">Артём Шейнин</option>
-      <option value="tolstoy">Пётр Толстой</option>
-      <option value="norkin">Андрей Норкин</option>
-      <option value="keosayan">Тигран Кеосаян</option>
-      <option value="andreyeva">Екатерина Андреева</option>
-      <option value="mamontov">Аркадий Мамонтов</option>
-      <option value="prilepin">Захар Прилепин</option>
-      <option value="leontyev">Михаил Леонтьев</option>
-      <option value="korchevnikov">Борис Корчевников</option>
-      <option value="medinsky">Владимир Мединский</option>
-      <option value="mikhalkov">Никита Михалков</option>
-      <option value="dugin">Александр Дугин</option>
-      <option value="krasovsky">Антон Красовский</option>
+      <option value="">— Select —</option>
+      <option value="solovyov">Vladimir Solovyov</option>
+      <option value="skabeeva">Olga Skabeeva</option>
+      <option value="kiselyov">Dmitry Kiselyov</option>
+      <option value="simonyan">Margarita Simonyan</option>
+      <option value="popov">Evgeny Popov</option>
+      <option value="sheynin">Artem Sheynin</option>
+      <option value="tolstoy">Pyotr Tolstoy</option>
+      <option value="norkin">Andrey Norkin</option>
+      <option value="keosayan">Tigran Keosayan</option>
+      <option value="andreyeva">Yekaterina Andreyeva</option>
+      <option value="mamontov">Arkady Mamontov</option>
+      <option value="prilepin">Zakhar Prilepin</option>
+      <option value="leontyev">Mikhail Leontyev</option>
+      <option value="korchevnikov">Boris Korchevnikov</option>
+      <option value="medinsky">Vladimir Medinsky</option>
+      <option value="mikhalkov">Nikita Mikhalkov</option>
+      <option value="dugin">Alexander Dugin</option>
+      <option value="krasovsky">Anton Krasovsky</option>
     </select>
   </div>
-  <button class="compare-btn" onclick="compare()" style="grid-column:1/-1">Сравнить →</button>
+  <button class="compare-btn" onclick="compare()" style="grid-column:1/-1">Compare →</button>
 </div>
 
 <div id="empty-state" class="empty-state">
-  <div class="empty-state-title">Выберите двух персонажей выше</div>
-  <div class="empty-state-sub">Сравнение появится здесь</div>
+  <div class="empty-state-title">Select two people above</div>
+  <div class="empty-state-sub">Comparison will appear here</div>
 </div>
 
 <div id="result" style="display:none"></div>
 
 <div class="footer">
   <div class="footer-logo">Голоса Кремля</div>
-  <span>Данные из открытых источников</span>
+  <span>Data from open sources</span>
   <span>2024</span>
 </div>
 
 <script>
 var data = {
   solovyov: {
-    name: 'Владимир Соловьёв',
+    name: 'Vladimir Solovyov',
     born: '20 октября 1963, Москва',
     channel: 'Россия-1',
     show: '«Вечер с Соловьёвым», «Москва. Кремль. Путин»',
@@ -294,10 +294,10 @@ var data = {
     quote: '«Когда я слышу слово "мир", я хватаюсь за автомат. Этот мир будет только с нашей победой.»',
     year: '2022',
     property: 'Арест имущества в Италии на €8 млн. Виллы на озере Комо. Яхта.',
-    dosye: 'solovyov.html'
+    dosye: 'solovyov-en.html'
   },
   skabeeva: {
-    name: 'Ольга Скабеева',
+    name: 'Olga Skabeeva',
     born: '11 декабря 1984, Волжский',
     channel: 'Россия-1',
     show: '«60 минут» (с мужем Поповым)',
@@ -306,10 +306,10 @@ var data = {
     quote: '«Мы открыто воюем с НАТО. Назовём вещи своими именами: началась Третья мировая война.»',
     year: '2022',
     property: '—',
-    dosye: 'skabeeva.html'
+    dosye: 'skabeeva-en.html'
   },
   kiselyov: {
-    name: 'Дмитрий Киселёв',
+    name: 'Dmitry Kiselyov',
     born: '26 апреля 1954, Москва',
     channel: 'МИА «Россия сегодня»',
     show: '«Вести недели», гендиректор «России сегодня»',
@@ -318,10 +318,10 @@ var data = {
     quote: '«Россия — единственная в мире страна, которая реально способна превратить США в радиоактивный пепел.»',
     year: '2014',
     property: 'Счета заморожены в Швейцарии. Персона нон грата в Молдове.',
-    dosye: 'kiselyov.html'
+    dosye: 'kiselyov-en.html'
   },
   simonyan: {
-    name: 'Маргарита Симоньян',
+    name: 'Margarita Simonyan',
     born: '6 апреля 1980, Краснодар',
     channel: 'RT / МИА «Россия сегодня»',
     show: 'Главный редактор RT и МИА «Россия сегодня»',
@@ -330,10 +330,10 @@ var data = {
     quote: '«Либо мы победим — либо ядерная война. Третьего не дано. Ядерная война лучше, чем капитуляция.»',
     year: '2022',
     property: 'RT заблокирован в ЕС. Офисы закрыты в Лондоне и Берлине.',
-    dosye: 'simonyan.html'
+    dosye: 'simonyan-en.html'
   },
   popov: {
-    name: 'Евгений Попов',
+    name: 'Evgeny Popov',
     born: '25 июля 1971, Москва',
     channel: 'Россия-1',
     show: '«60 минут» (с женой Скабеевой), депутат Госдумы',
@@ -342,10 +342,10 @@ var data = {
     quote: '«Англосаксы хотят воевать с Россией до последнего украинца.»',
     year: '2022',
     property: '—',
-    dosye: 'popov.html'
+    dosye: 'popov-en.html'
   },
   sheynin: {
-    name: 'Артём Шейнин',
+    name: 'Artem Sheynin',
     born: '28 сентября 1966, Ленинград',
     channel: 'Первый канал',
     show: '«Время покажет»',
@@ -354,10 +354,10 @@ var data = {
     quote: '«Я был на войне. Настоящей войне. Это другой разговор.»',
     year: '2019',
     property: '—',
-    dosye: 'sheynin.html'
+    dosye: 'sheynin-en.html'
   },
   tolstoy: {
-    name: 'Пётр Толстой',
+    name: 'Pyotr Tolstoy',
     born: '20 августа 1969, Москва',
     channel: 'Первый канал / Госдума',
     show: 'Вице-спикер Госдумы, экс-Первый канал',
@@ -366,10 +366,10 @@ var data = {
     quote: '«Бандеровцы — это внуки и правнуки тех, кто резал наших дедов.»',
     year: '2018',
     property: 'Персона нон грата в Латвии и Эстонии.',
-    dosye: 'tolstoy.html'
+    dosye: 'tolstoy-en.html'
   },
   norkin: {
-    name: 'Андрей Норкин',
+    name: 'Andrey Norkin',
     born: '11 ноября 1966, Москва',
     channel: 'НТВ',
     show: '«Место встречи»',
@@ -378,10 +378,10 @@ var data = {
     quote: '«Украина — это не государство в классическом смысле. Это проект, который создали против России.»',
     year: '2023',
     property: '—',
-    dosye: 'norkin.html'
+    dosye: 'norkin-en.html'
   },
   keosayan: {
-    name: 'Тигран Кеосаян',
+    name: 'Tigran Keosayan',
     born: '3 декабря 1966, Москва',
     channel: 'RT',
     show: 'Режиссёр-документалист RT',
@@ -390,10 +390,10 @@ var data = {
     quote: '«Европа умирает. Она захлёбывается мигрантами и толерантностью. Это агония.»',
     year: '2021',
     property: '—',
-    dosye: 'keosayan.html'
+    dosye: 'keosayan-en.html'
   },
   andreyeva: {
-    name: 'Екатерина Андреева',
+    name: 'Yekaterina Andreyeva',
     born: '14 марта 1965, Москва',
     channel: 'Первый канал',
     show: 'Диктор новостей с 1991 года',
@@ -402,10 +402,10 @@ var data = {
     quote: '«Диктор, читающий ложь нейтральным голосом, опаснее того, кто кричит.» — о методе Андреевой',
     year: '2022',
     property: '—',
-    dosye: 'andreyeva.html'
+    dosye: 'andreyeva-en.html'
   },
   mamontov: {
-    name: 'Аркадий Мамонтов',
+    name: 'Arkady Mamontov',
     born: '3 ноября 1962, Омск',
     channel: 'Россия-1',
     show: '«Специальный корреспондент»',
@@ -414,10 +414,10 @@ var data = {
     quote: '«Гомосексуализм — это болезнь. Страшная, социально опасная.»',
     year: '2014',
     property: '—',
-    dosye: 'mamontov.html'
+    dosye: 'mamontov-en.html'
   },
   prilepin: {
-    name: 'Захар Прилепин',
+    name: 'Zakhar Prilepin',
     born: '7 июля 1975, Рязанская область',
     channel: 'Донбасс / Политика',
     show: 'Писатель, командир ДНР, сопредседатель «СР»',
@@ -426,10 +426,10 @@ var data = {
     quote: '«Я написал о войне. Потом пошёл на войну. Потому что одно без другого — либо трусость, либо ложь.»',
     year: '2017',
     property: 'Пережил покушение — взрыв автомобиля в 2023.',
-    dosye: 'prilepin.html'
+    dosye: 'prilepin-en.html'
   },
   leontyev: {
-    name: 'Михаил Леонтьев',
+    name: 'Mikhail Leontyev',
     born: '6 октября 1958, Москва',
     channel: 'Первый канал',
     show: '«Однако» с 1999, пресс-секретарь «Роснефти»',
@@ -438,10 +438,10 @@ var data = {
     quote: '«Запад — это не демократия, это клептократия. Они воруют у своих народов будущее.»',
     year: '2020',
     property: '—',
-    dosye: 'leontyev.html'
+    dosye: 'leontyev-en.html'
   },
   korchevnikov: {
-    name: 'Борис Корчевников',
+    name: 'Boris Korchevnikov',
     born: '3 декабря 1981, Москва',
     channel: 'Россия-1 / Спас',
     show: '«Судьба человека», гендиректор «Спас»',
@@ -450,10 +450,10 @@ var data = {
     quote: '«Эта война — священная. Мы воюем против сатанинского начала в современном мире.»',
     year: '2022',
     property: '—',
-    dosye: 'korchevnikov.html'
+    dosye: 'korchevnikov-en.html'
   },
   medinsky: {
-    name: 'Владимир Мединский',
+    name: 'Vladimir Medinsky',
     born: '18 июля 1970, Смела, Украина',
     channel: 'Власть / Кремль',
     show: 'Советник Путина, экс-министр культуры 2012–2020',
@@ -462,10 +462,10 @@ var data = {
     quote: '«История — это не то, что было, а то, что нужно народу.»',
     year: '2016',
     property: 'Родился на Украине. Вёл «мирные» переговоры с заведомо неприемлемыми условиями.',
-    dosye: 'medinsky.html'
+    dosye: 'medinsky-en.html'
   },
   mikhalkov: {
-    name: 'Никита Михалков',
+    name: 'Nikita Mikhalkov',
     born: '21 октября 1945, Москва',
     channel: 'Россия-1 / Россия-24',
     show: '«Бесогон TV», кинорежиссёр',
@@ -474,10 +474,10 @@ var data = {
     quote: '«Вакцина Pfizer содержит чип. Через укол они вводят тебе Билла Гейтса.»',
     year: '2021',
     property: 'Санкции ЕС и UK с 2022. Ведущий «Бесогона» на государственных каналах.',
-    dosye: 'mikhalkov.html'
+    dosye: 'mikhalkov-en.html'
   },
   dugin: {
-    name: 'Александр Дугин',
+    name: 'Alexander Dugin',
     born: '7 января 1962, Москва',
     channel: 'Идеология / Евразийство',
     show: 'Философ, идеолог «Евразийского движения»',
@@ -486,10 +486,10 @@ var data = {
     quote: '«Украина как государство не имеет права на существование. Украинцы — это русские, которых обманули.»',
     year: '2014',
     property: 'Дочь Дарья Дугина убита 20 августа 2022 — взрыв автомобиля.',
-    dosye: 'dugin.html'
+    dosye: 'dugin-en.html'
   },
   krasovsky: {
-    name: 'Антон Красовский',
+    name: 'Anton Krasovsky',
     born: '1978',
     channel: 'RT',
     show: 'Редактор RT, ведущий Solovyov Live',
@@ -498,7 +498,7 @@ var data = {
     quote: '«Их [украинских детей] надо было топить в реках прямо там.»',
     year: '2022',
     property: 'Тихо восстановлен в RT после скандала. Санкции ЕС с 2023.',
-    dosye: 'krasovsky.html'
+    dosye: 'krasovsky-en.html'
   }
 };
 
@@ -507,11 +507,11 @@ function compare() {
   var bKey = document.getElementById('person-b').value;
 
   if (!aKey || !bKey) {
-    alert('Выберите обоих персонажей');
+    alert('Please select both people');
     return;
   }
   if (aKey === bKey) {
-    alert('Выберите разных персонажей');
+    alert('Please select different people');
     return;
   }
 
@@ -534,22 +534,22 @@ function compare() {
   html += '<div class="compare-section"><div class="compare-section-title">Основные данные</div>';
   html += '<div class="compare-grid">';
   html += '<div class="cg-label"></div><a class="cg-head" href="' + a.dosye + '" style="text-decoration:none;color:var(--paper)">' + a.name + ' ↗</a><a class="cg-head" href="' + b.dosye + '" style="text-decoration:none;color:var(--paper)">' + b.name + ' ↗</a>';
-  html += row('Родился/лась', a.born, b.born, 'highlight');
-  html += row('Канал / платформа', a.channel, b.channel);
-  html += row('Программа / роль', a.show, b.show);
+  html += row('Born', a.born, b.born, 'highlight');
+  html += row('Channel / Platform', a.channel, b.channel);
+  html += row('Show / Role', a.show, b.show);
   html += '</div></div>';
 
   html += '<div class="compare-section"><div class="compare-section-title">Санкции</div>';
   html += '<div class="compare-grid">';
   html += '<div class="cg-label"></div><div class="cg-head">' + a.name + '</div><div class="cg-head">' + b.name + '</div>';
-  html += row('Введены', sanctions(a.sanctions), sanctions(b.sanctions));
-  html += row('Особые ограничения', a.property, b.property);
+  html += row('Imposed', sanctions(a.sanctions), sanctions(b.sanctions));
+  html += row('Special Restrictions', a.property, b.property);
   html += '</div></div>';
 
   html += '<div class="compare-section"><div class="compare-section-title">Метод и стиль</div>';
   html += '<div class="compare-grid">';
   html += '<div class="cg-label"></div><div class="cg-head">' + a.name + '</div><div class="cg-head">' + b.name + '</div>';
-  html += row('Метод', a.method, b.method);
+  html += row('Method', a.method, b.method);
   html += '</div></div>';
 
   html += '<div class="compare-section"><div class="compare-section-title">Характерные цитаты</div>';

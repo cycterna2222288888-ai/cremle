@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connections · Kremlin Voices</title>
+<meta property="og:title" content="Connections · Kremlin Voices">
+<meta property="og:site_name" content="Kremlin Voices">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --red-dim:#5c1111; --light-gray:#bab3a0; --rule:#1c1c1c; --card-bg:#0e0e0e; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; line-height:1.75; overflow-x:hidden; }
+  .topbar { padding:14px 60px; border-bottom:1px solid var(--rule); background:var(--ink); position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
+  .topbar-left a { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); text-decoration:none; }
+  .topbar-left a:hover { opacity:0.6; }
+  .topbar-right { display:flex; align-items:center; gap:20px; }
+  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
+  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
+  .lang-switch a:hover { color:var(--paper); background:#111; }
+  .masthead { padding:80px 60px 64px; border-bottom:1px solid var(--rule); }
+  .masthead-eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--red); margin-bottom:20px; }
+  .masthead-title { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,72px); font-weight:700; color:var(--paper); margin-bottom:16px; line-height:1.05; }
+  .masthead-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(14px,1.8vw,20px); color:var(--light-gray); max-width:700px; }
+  .container { max-width:1200px; margin:0 auto; padding:0 60px; }
+  .section { padding:80px 0; border-bottom:1px solid var(--rule); }
+  .section-label { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--red); margin-bottom:40px; display:flex; align-items:center; gap:20px; }
+  .section-label::after { content:''; flex:1; height:1px; background:var(--rule); }
+  .footer { padding:48px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#333; border-top:1px solid var(--rule); }
+  .footer-logo { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--red); opacity:0.5; letter-spacing:normal; text-transform:none; }
+  @media(max-width:900px) { .topbar,.masthead,.container,.footer { padding-left:24px; padding-right:24px; } }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-left"><a href="index-en.html">← All dossiers</a></div>
+  <div class="topbar-right">
+    <div class="lang-switch">
+      <a href="connections.html">RU</a>
+      <a href="connections-en.html" class="active">EN</a>
+    </div>
+  </div>
+</div>
+<div class="masthead">
+  <div class="masthead-eyebrow">Analytics · Open Sources</div>
+  <h1 class="masthead-title">Connections</h1>
+  <p class="masthead-sub">Family, professional and institutional ties between the archive's subjects. Who works with whom, who reports to whom, who is related.</p>
+</div>
+
+<style>
+  .conn-section { padding:60px; border-bottom:1px solid var(--rule); }
+  .intro-text { font-size:15px; color:var(--light-gray); max-width:760px; line-height:1.85; margin-bottom:48px; }
+  .conn-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+  .conn-card { background:var(--card-bg); padding:32px; }
+  .conn-pair { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+  .conn-person { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--paper); text-decoration:none; }
+  .conn-person:hover { color:var(--red); }
+  .conn-divider { color:#444; font-size:20px; }
+  .conn-type { display:inline-block; font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); border:1px solid var(--red-dim); padding:3px 8px; margin-bottom:16px; }
+  .conn-desc { font-size:13px; color:var(--light-gray); line-height:1.8; }
+  @media(max-width:900px) { .conn-grid { grid-template-columns:1fr; } .conn-section { padding:40px 24px; } }
+</style>
+<div class="conn-section">
+  <p class="intro-text">All figures in this archive are connected through institutional, professional, or personal ties. The system is not a collection of individual propagandists — it is a network, designed to amplify and reinforce. Here are the key connections.</p>
+  <div class="conn-grid">
+    <div class="conn-card"><div class="conn-pair"><a href="skabeeva-en.html" class="conn-person">Skabeeva</a><span class="conn-divider">+</span><a href="popov-en.html" class="conn-person">Popov</a></div><span class="conn-type">Family · Work tandem</span><p class="conn-desc">Husband and wife. Co-hosting "60 Minutes" together on Russia-1 since 2016. The only married couple to be simultaneously sanctioned by six jurisdictions for the same show. A family propaganda business funded by the state.</p></div>
+    <div class="conn-card"><div class="conn-pair"><a href="simonyan-en.html" class="conn-person">Simonyan</a><span class="conn-divider">+</span><a href="kiselyov-en.html" class="conn-person">Kiselyov</a></div><span class="conn-type">Institutional · MIA Rossiya Segodnya</span><p class="conn-desc">Simonyan is editor-in-chief of MIA Rossiya Segodnya; Kiselyov is director-general of the same structure. Both appointed by Putin in 2013–2014. Together they control Russia's largest state media holding.</p></div>
+    <div class="conn-card"><div class="conn-pair"><a href="simonyan-en.html" class="conn-person">Simonyan</a><span class="conn-divider">+</span><a href="keosayan-en.html" class="conn-person">Keosayan</a></div><span class="conn-type">Family · RT creative pair</span><p class="conn-desc">Married. Keosayan directs propaganda documentaries for RT; Simonyan runs RT. The Simonyan-Keosayan household functions as the command center of Russia's international information operations.</p></div>
+    <div class="conn-card"><div class="conn-pair"><a href="simonyan-en.html" class="conn-person">Simonyan</a><span class="conn-divider">↔</span><a href="krasovsky-en.html" class="conn-person">Krasovsky</a></div><span class="conn-type">Hierarchy · RT · Scandal</span><p class="conn-desc">Krasovsky is an RT editor under Simonyan. After his on-air calls to drown Ukrainian children, she publicly "suspended" him — then quietly reinstated him. The episode reveals RT's internal logic: limits are set by reputational convenience, not ethics.</p></div>
+    <div class="conn-card"><div class="conn-pair"><a href="tolstoy-en.html" class="conn-person">Tolstoy</a><span class="conn-divider">+</span><a href="popov-en.html" class="conn-person">Popov</a></div><span class="conn-type">Institutional · State Duma</span><p class="conn-desc">Both are State Duma deputies from United Russia. Tolstoy is deputy speaker; Popov is a deputy. Both combine a parliamentary mandate with daily prime-time broadcasting.</p></div>
+    <div class="conn-card"><div class="conn-pair"><a href="dugin-en.html" class="conn-person">Dugin</a><span class="conn-divider">↔</span><a href="medinsky-en.html" class="conn-person">Medinsky</a></div><span class="conn-type">Ideological · Eurasianism / History</span><p class="conn-desc">Both build the theoretical foundations for Russian imperialism. Dugin through Eurasianism and geopolitics; Medinsky through historical revisionism. "Foundations of Geopolitics" and Medinsky's historical rhetoric draw from the same source.</p></div>
+    <div class="conn-card"><div class="conn-pair"><a href="mikhalkov-en.html" class="conn-person">Mikhalkov</a><span class="conn-divider">↔</span><a href="korchevnikov-en.html" class="conn-person">Korchevnikov</a></div><span class="conn-type">Ideological · Orthodox / Culture</span><p class="conn-desc">Both legitimize the war through spiritual and cultural codes. Mikhalkov through cinema, "Besogon" and "Russian world" imagery. Korchevnikov through Orthodox Christianity and the Spas channel. Different instruments — one message.</p></div>
+    <div class="conn-card"><div class="conn-pair"><a href="solovyov-en.html" class="conn-person">Solovyov</a><span class="conn-divider">↔</span><a href="kiselyov-en.html" class="conn-person">Kiselyov</a></div><span class="conn-type">Ideological · Competition</span><p class="conn-desc">Both compete for the role of the Kremlin's chief voice. An unofficial rivalry for proximity to power. Both periodically escalate their rhetoric in response to the other.</p></div>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer-logo">Kremlin Voices</div>
+  <span>Data from open sources</span>
+  <a href="index-en.html" style="color:inherit;text-decoration:none">All dossiers</a>
+</div>
+</body>
+</html>

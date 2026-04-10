@@ -186,11 +186,20 @@
     .methodology { grid-template-columns: 1fr; gap: 32px; }
     .principles { grid-template-columns: 1fr; padding-left: 24px; padding-right: 24px; }
   }
+
+  .topbar { padding: 14px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .topbar-left a:hover { opacity: 0.6; }
+  .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .lang-switch { display: flex; border: 1px solid #333; overflow: hidden; }
+  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; padding: 6px 12px; transition: all 0.2s; }
+  .lang-switch a.active { color: var(--paper); background: #1c1c1c; }
+  .lang-switch a:hover { color: var(--paper); background: #111; }
 </style>
 </head>
 <body>
 
-<div class="nav-back"><a href="index.html">← Все досье</a></div>
+<div class="topbar"><div class="topbar-left"><a href="index.html">← Все досье</a></div><div class="topbar-right"><div class="lang-switch"><a href="sources.html" class="active">RU</a><a href="sources-en.html">EN</a></div></div></div>
 
 <div class="masthead">
   <div class="masthead-eyebrow">Методология · Библиография</div>

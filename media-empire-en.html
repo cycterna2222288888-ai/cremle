@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Empire · Kremlin Voices</title>
+<meta property="og:title" content="Media Empire · Kremlin Voices">
+<meta property="og:site_name" content="Kremlin Voices">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --red-dim:#5c1111; --light-gray:#bab3a0; --rule:#1c1c1c; --card-bg:#0e0e0e; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; line-height:1.75; overflow-x:hidden; }
+  .topbar { padding:14px 60px; border-bottom:1px solid var(--rule); background:var(--ink); position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
+  .topbar-left a { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); text-decoration:none; }
+  .topbar-left a:hover { opacity:0.6; }
+  .topbar-right { display:flex; align-items:center; gap:20px; }
+  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
+  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
+  .lang-switch a:hover { color:var(--paper); background:#111; }
+  .masthead { padding:80px 60px 64px; border-bottom:1px solid var(--rule); }
+  .masthead-eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--red); margin-bottom:20px; }
+  .masthead-title { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,72px); font-weight:700; color:var(--paper); margin-bottom:16px; line-height:1.05; }
+  .masthead-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(14px,1.8vw,20px); color:var(--light-gray); max-width:700px; }
+  .container { max-width:1200px; margin:0 auto; padding:0 60px; }
+  .section { padding:80px 0; border-bottom:1px solid var(--rule); }
+  .section-label { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--red); margin-bottom:40px; display:flex; align-items:center; gap:20px; }
+  .section-label::after { content:''; flex:1; height:1px; background:var(--rule); }
+  .footer { padding:48px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#333; border-top:1px solid var(--rule); }
+  .footer-logo { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--red); opacity:0.5; letter-spacing:normal; text-transform:none; }
+  @media(max-width:900px) { .topbar,.masthead,.container,.footer { padding-left:24px; padding-right:24px; } }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-left"><a href="index-en.html">← All dossiers</a></div>
+  <div class="topbar-right">
+    <div class="lang-switch">
+      <a href="media-empire.html">RU</a>
+      <a href="media-empire-en.html" class="active">EN</a>
+    </div>
+  </div>
+</div>
+<div class="masthead">
+  <div class="masthead-eyebrow">Structure · Funding · Reach</div>
+  <h1 class="masthead-title">Media Empire</h1>
+  <p class="masthead-sub">Russian state media: who controls what, where the money comes from, how many people watch. One system — many faces.</p>
+</div>
+
+<style>
+  .section-wrap { padding:60px; border-bottom:1px solid var(--rule); }
+  .empire-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; margin-top:32px; }
+  .empire-node { background:var(--card-bg); padding:32px; }
+  .empire-name { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--red); margin-bottom:8px; }
+  .empire-sub { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#444; margin-bottom:16px; }
+  .empire-body { font-size:13px; color:var(--light-gray); line-height:1.8; }
+  .empire-body a { color:var(--red); text-decoration:none; }
+  .empire-body a:hover { opacity:0.7; }
+  .stat-row-inline { display:flex; gap:32px; flex-wrap:wrap; margin-top:16px; }
+  .stat-item { }
+  .stat-num { font-family:'Playfair Display',serif; font-size:28px; color:var(--paper); }
+  .stat-lbl { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#444; }
+  .flow-grid { display:grid; grid-template-columns:1fr 60px 1fr; gap:0; align-items:center; margin-top:32px; }
+  .flow-box { background:#050505; border:1px solid var(--rule); padding:24px; }
+  .flow-arrow { text-align:center; font-size:24px; color:#333; }
+  .flow-label { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px; }
+  .flow-val { font-size:14px; color:var(--light-gray); }
+  @media(max-width:900px) { .empire-grid { grid-template-columns:1fr; } .section-wrap { padding:40px 24px; } .flow-grid { grid-template-columns:1fr; } .flow-arrow { display:none; } }
+</style>
+<div class="section-wrap">
+  <div class="section-label">The Three Pillars</div>
+  <div class="empire-grid">
+    <div class="empire-node">
+      <div class="empire-name">VGTRK / Russia-1</div>
+      <div class="empire-sub">State federal broadcaster</div>
+      <div class="empire-body">The largest state broadcaster in Russia. Wholly owned by the Russian government. Broadcasts Russia-1, Russia-24, Russia-Culture and 80+ regional channels. Annual budget: ~60 billion rubles (~$650M). Propagandists: <a href="solovyov-en.html">Solovyov</a>, <a href="skabeeva-en.html">Skabeeva</a>, <a href="popov-en.html">Popov</a>, <a href="mamontov-en.html">Mamontov</a>, <a href="korchevnikov-en.html">Korchevnikov</a>.</div>
+      <div class="stat-row-inline"><div class="stat-item"><div class="stat-num">40M+</div><div class="stat-lbl">Daily viewers</div></div><div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">State owned</div></div></div>
+    </div>
+    <div class="empire-node">
+      <div class="empire-name">MIA Rossiya Segodnya / RT</div>
+      <div class="empire-sub">International propaganda arm</div>
+      <div class="empire-body">Created by Putin decree in 2013. Director-General: <a href="kiselyov-en.html">Kiselyov</a>. Editor-in-Chief of RT: <a href="simonyan-en.html">Simonyan</a>. Operates RT in English, Arabic, Spanish, French, German. Budget: ~$300M/year from federal treasury. Banned in EU since 2022.</div>
+      <div class="stat-row-inline"><div class="stat-item"><div class="stat-num">100+</div><div class="stat-lbl">Countries</div></div><div class="stat-item"><div class="stat-num">2022</div><div class="stat-lbl">EU ban</div></div></div>
+    </div>
+    <div class="empire-node">
+      <div class="empire-name">Channel One (Pervy Kanal)</div>
+      <div class="empire-sub">State-controlled, formally mixed ownership</div>
+      <div class="empire-body">Formally 51% state-owned, but editorially directed by the Kremlin. Largest single audience in Russia. Propagandists: <a href="sheynin-en.html">Sheynin</a>, <a href="andreyeva-en.html">Andreyeva</a>, <a href="leontyev-en.html">Leontyev</a>, <a href="tolstoy-en.html">Tolstoy</a> (former).</div>
+      <div class="stat-row-inline"><div class="stat-item"><div class="stat-num">50M+</div><div class="stat-lbl">Reach</div></div><div class="stat-item"><div class="stat-num">51%</div><div class="stat-lbl">State share</div></div></div>
+    </div>
+  </div>
+</div>
+<div class="section-wrap">
+  <div class="section-label">Funding Structure</div>
+  <div class="flow-grid">
+    <div class="flow-box"><div class="flow-label">Source</div><div class="flow-val">Russian federal budget — annual allocations to state media. Approved by the Duma, signed by the President.</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box"><div class="flow-label">Destination</div><div class="flow-val">VGTRK (~60B RUB), RT/Rossiya Segodnya (~25B RUB), Channel One (indirect subsidy + state contracts). Total state media spending: ~100B+ RUB annually.</div></div>
+  </div>
+  <p style="margin-top:24px;font-size:12px;color:#444">Sources: Federal budget law, Rosstat, RT annual reports (pre-2022). Figures are estimates based on available public data.</p>
+</div>
+<div class="section-wrap">
+  <div class="section-label">Key Connections</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:0">
+    <div style="background:var(--card-bg);padding:32px"><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Family · Married couple</div><div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px"><a href="skabeeva-en.html" style="color:inherit;text-decoration:none">Skabeeva</a> + <a href="popov-en.html" style="color:inherit;text-decoration:none">Popov</a></div><div style="font-size:13px;color:var(--light-gray)">Husband and wife co-hosting "60 Minutes" on Russia-1. The only married couple simultaneously sanctioned by six jurisdictions for the same show.</div></div>
+    <div style="background:var(--card-bg);padding:32px"><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Family · Married couple</div><div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px"><a href="simonyan-en.html" style="color:inherit;text-decoration:none">Simonyan</a> + <a href="keosayan-en.html" style="color:inherit;text-decoration:none">Keosayan</a></div><div style="font-size:13px;color:var(--light-gray)">Simonyan (RT editor-in-chief) and Keosayan (RT documentary director) are married. Together they control Russia's primary international propaganda output.</div></div>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer-logo">Kremlin Voices</div>
+  <span>Data from open sources</span>
+  <a href="index-en.html" style="color:inherit;text-decoration:none">All dossiers</a>
+</div>
+</body>
+</html>

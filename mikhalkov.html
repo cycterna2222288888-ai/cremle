@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Никита Михалков — досье | Голоса Кремля</title>
+<meta name="description" content="Никита Михалков — лауреат «Оскара», режиссёр и ведущий «Бесогон TV». Культурный фасад кремлёвской пропаганды. Санкции ЕС и Великобритании.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Никита Михалков — Голоса Кремля">
+<meta property="og:description" content="Лауреат «Оскара», режиссёр и ведущий «Бесогон TV». Культурный фасад кремлёвской пропаганды.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Никита Михалков — Голоса Кремля">
+<meta name="twitter:description" content="Лауреат «Оскара», режиссёр и ведущий «Бесогон TV». Культурный фасад кремлёвской пропаганды.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink: #080808; --paper: #ede8dc; --red: #8b1a1a; --red-dim: #5c1111; --gray: #4a4a4a; --light-gray: #bab3a0; --rule: #1c1c1c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+  #progress-bar { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: #8b1a1a; z-index: 9999; transition: width 0.1s linear; }
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; align-items: center; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+  .hero-right { position: relative; overflow: hidden; background: #060606; }
+  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .tag { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .sanctions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); }
+  .sanction-item { background: var(--ink); padding: 32px; }
+  .sanction-item .s-flag { font-size: 28px; margin-bottom: 12px; }
+  .sanction-item .s-name { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .sanction-item .s-date { font-size: 13px; color: var(--paper); margin-bottom: 8px; }
+  .sanction-item .s-reason { font-size: 12px; color: var(--light-gray); line-height: 1.6; }
+  .intro-text { font-size: 16px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 56px; }
+  .footer-nav { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); }
+  .footer-nav span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; }
+  .footer-nav a { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 40vh; }
+    .nav-back { padding: 14px 20px; }
+    .hero-left { padding: 48px 20px; }
+    .section { padding: 60px 0; }
+    .container { padding: 0 20px; }
+    .four-grid, .meme-quotes, .sanctions-grid { grid-template-columns: 1fr; }
+    .footer-nav { padding: 32px 20px; flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div class="nav-back">
+  <a href="index.html">← Все досье</a>
+  <a href="submit.html" style="margin-left:auto;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5c1111;text-decoration:none;border:1px solid #2a0a0a;padding:5px 12px;border-radius:2px">Сообщить</a>
+</div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Культурная пропаганда · 2025</div>
+    <h1 class="hero-name">Никита<br>Михалков</h1>
+    <p class="hero-subtitle">Режиссёр. Лауреат «Оскара». Голос имперского реванша.</p>
+    <div class="hero-meta">
+      <div class="meta-item"><label>Дата рождения</label><span>21 октября 1945, Москва</span></div>
+      <div class="meta-item"><label>Программа</label><span>«Бесогон TV»</span></div>
+      <div class="meta-item"><label>Канал</label><span>Россия-1, Россия-24</span></div>
+      <div class="meta-item"><label>Санкции</label><span>ЕС, Великобритания</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Nikita_Mikhalkov_2019.jpg/800px-Nikita_Mikhalkov_2019.jpg" alt="Никита Михалков" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.4;mix-blend-mode:luminosity;">
+    <div class="hero-stamp">Иноагент культуры</div>
+  </div>
+</div>
+
+<!-- БИОГРАФИЯ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <p class="intro-text">Никита Михалков — один из самых известных российских кинорежиссёров. Его фильм «Утомлённые солнцем» получил «Оскар» в 1995 году. Он мог бы остаться в истории как великий художник. Вместо этого он стал главным культурным пропагандистом Кремля.</p>
+    <div class="timeline">
+      <div class="timeline-year">1945</div>
+      <div class="timeline-body"><h3>Рождение. Аристократия советского кино</h3><p>Родился в семье Сергея Михалкова — автора текста советского гимна. Брат — режиссёр Андрей Кончаловский. С детства погружён в культурную элиту СССР. Аристократическое происхождение в советском смысле — привилегированный доступ к власти через искусство.</p></div>
+      <div class="timeline-year">1974</div>
+      <div class="timeline-body"><h3>«Свой среди чужих». Начало большого кино</h3><p>Дебютный полнометражный фильм «Свой среди чужих, чужой среди своих» становится культовым. За ним следуют «Раба любви», «Неоконченная пьеса для механического пианино», «Несколько дней из жизни Обломова» — работы мирового уровня, признанные международными критиками.</p></div>
+      <div class="timeline-year">1995</div>
+      <div class="timeline-body"><h3>«Оскар». Вершина. Разворот</h3><p>«Утомлённые солнцем» получают «Оскар» за лучший иностранный фильм. Михалков на пике международного признания. Именно в это время начинается его постепенный дрейф в сторону государственного национализма. Успех становится не трамплином для художника, а основанием для политика.</p></div>
+      <div class="timeline-year">2000-е</div>
+      <div class="timeline-body"><h3>Союз кинематографистов. Государственный человек</h3><p>Михалков возглавляет Союз кинематографистов России, устанавливает контроль над крупнейшей профессиональной организацией. Начинает открыто выступать на стороне Путина. Кино отходит на второй план — на первый выходит политика. Снимает провальный сиквел «Утомлённых солнцем» за государственные деньги.</p></div>
+      <div class="timeline-year">2020</div>
+      <div class="timeline-body"><h3>«Бесогон TV». Конспирология как формат</h3><p>Программа «Бесогон TV» на «России-1» и «России-24» становится главной площадкой Михалкова. Здесь он продвигает теории заговора о Билле Гейтсе и микрочипах в вакцинах, атакует Сорос-фонды, называет западных лидеров агентами «мировой закулисы». Один из выпусков снимает с эфира сам Кремль — за излишне резкую критику правительства в разгар пандемии.</p></div>
+      <div class="timeline-year">2022</div>
+      <div class="timeline-body"><h3>Война. Санкции. Имперский манифест</h3><p>Михалков поддерживает вторжение в Украину и называет его «исторической необходимостью». ЕС и Великобритания вводят персональные санкции. В эфире «Бесогон TV» называет украинцев «заблудшими братьями», которых нужно «вернуть». Продолжает получать государственное финансирование на кинопроекты.</p></div>
+      <div class="timeline-year">2024</div>
+      <div class="timeline-body"><h3>Культура как фронт</h3><p>Михалков активно продвигает концепцию «культурного суверенитета» — полного отказа России от западного культурного влияния. В «Бесогон TV» атакует российских деятелей культуры, покинувших страну после начала войны, называя их «предателями» и «агентами влияния». Требует конфисковать их имущество. Его программа остаётся одной из немногих на государственном ТВ, где ведущий позволяет себе критиковать отдельных чиновников — в рамках, которые Кремль терпит.</p></div>
+      <div class="timeline-year">2025</div>
+      <div class="timeline-body"><h3>«Оскар» и война. Несовместимые биографии</h3><p>Михалков — единственный действующий лауреат «Оскара», открыто поддерживающий войну в Украине. Это делает его особенно ценным для кремлёвской пропаганды: международное признание как легитимизирующий фактор. Киноакадемия США не лишила его премии — регламент не предусматривает такого механизма. В 80 лет он остаётся символом того, как большой художник может стать инструментом государственного насилия.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Его слова</h2>
+    </div>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="tag">О Западе · «Бесогон TV»</div>
+        <p class="meme-text">«Билл Гейтс хочет вколоть всем чип, чтобы контролировать человечество. Это не конспирология — это факты.»</p>
+        <div class="meme-src">«Бесогон TV», 2020 — выпуск снят с эфира по требованию ВГТРК</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О войне · 2022</div>
+        <p class="meme-text">«Украина — это не другое государство. Это заблудшие братья, которых нужно вернуть домой. Силой, если нужно.»</p>
+        <div class="meme-src">«Бесогон TV», март 2022</div>
+      </div>
+    </div>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="tag">О деятелях культуры · эмиграция</div>
+        <p class="meme-text">«Те, кто уехал и льёт грязь на Россию — предатели. Их имущество должно быть конфисковано в пользу государства.»</p>
+        <div class="meme-src">«Бесогон TV», 2022</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О суверенитете · культурная война</div>
+        <p class="meme-text">«России не нужен Голливуд. России не нужен Сорос. России нужна Россия.»</p>
+        <div class="meme-src">Интервью ТАСС, 2023</div>
+      </div>
+    </div>
+    <div class="quote-pull">
+      «Я снял "Оскара" не для Запада. Я снял его для России. И Россия сегодня воюет за право быть собой.»
+      <cite>— «Бесогон TV», февраль 2023</cite>
+    </div>
+  </div>
+</div>
+
+<!-- МЕТОД -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Метод</h2>
+    </div>
+    <div class="four-grid">
+      <div class="grid-card"><h3>Легитимность через искусство</h3><p>«Оскар» 1995 года — главный капитал Михалкова. Он использует международное признание как доказательство того, что его взгляды заслуживают уважения. Художественный авторитет конвертируется в политическое доверие.</p></div>
+      <div class="grid-card"><h3>Конспирология как метод</h3><p>«Бесогон TV» построен на теориях заговора — мировая закулиса, чипирование через вакцины, Сорос как архитектор разрушения России. Конспирологический фрейм снимает необходимость доказывать: достаточно намекнуть.</p></div>
+      <div class="grid-card"><h3>Имперская ностальгия</h3><p>Михалков продаёт образ великой России, которую нужно восстановить. Его кино — «Сибирский цирюльник», «Утомлённые солнцем» — эстетизирует имперское прошлое. «Бесогон» делает то же самое, но напрямую.</p></div>
+      <div class="grid-card"><h3>Дозволенная фронда</h3><p>Михалков иногда критикует отдельных чиновников и политиков — это создаёт иллюзию независимости. На самом деле его критика всегда системна: он атакует «слабых» внутри системы, никогда не ставя под сомнение саму систему.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- САНКЦИИ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Санкции</h2>
+    </div>
+    <div class="sanctions-grid">
+      <div class="sanction-item"><div class="s-flag">🇪🇺</div><div class="s-name">Евросоюз</div><div class="s-date">2022</div><div class="s-reason">«Активная поддержка и продвижение российской политики агрессии против Украины через медиапространство»</div></div>
+      <div class="sanction-item"><div class="s-flag">🇬🇧</div><div class="s-name">Великобритания</div><div class="s-date">2022</div><div class="s-reason">«Распространение государственной пропаганды, поддерживающей военные действия России против Украины»</div></div>
+      <div class="sanction-item" style="background:#060606;border:none;"></div>
+      <div class="sanction-item" style="background:#060606;border:none;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-nav">
+  <a href="index.html">← Все досье</a>
+  <span>Никита Михалков · 1945—</span>
+  <a href="dugin.html">Александр Дугин →</a>
+</div>
+
+<script>
+(function() {
+  var bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', function() {
+    var doc = document.documentElement;
+    var scrolled = doc.scrollTop || document.body.scrollTop;
+    var total = doc.scrollHeight - doc.clientHeight;
+    bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

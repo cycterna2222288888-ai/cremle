@@ -172,10 +172,16 @@
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-    transition: background 0.2s;
+    transition: background 0.2s, opacity 0.5s ease, transform 0.5s ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .card.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .card:hover { background: #141414; }
@@ -580,6 +586,8 @@
   <button class="flt-btn" data-filter="rt">RT</button>
   <button class="flt-btn" data-filter="ntv">НТВ</button>
   <button class="flt-btn" data-filter="vlast">Власть / Политика</button>
+  <button class="flt-btn" data-filter="kultura">Культура</button>
+  <button class="flt-btn" data-filter="ideolog">Идеология</button>
   <div class="search-wrap">
     <input type="text" id="search-input" placeholder="Поиск по имени...">
   </div>
@@ -593,7 +601,7 @@
   </div>
   <script>
     (function(){
-      var pages = ['solovyov.html','skabeeva.html','kiselyov.html','simonyan.html','popov.html','sheynin.html','tolstoy.html','norkin.html','keosayan.html','andreyeva.html','mamontov.html','prilepin.html','leontyev.html','korchevnikov.html','medinsky.html'];
+      var pages = ['solovyov.html','skabeeva.html','kiselyov.html','simonyan.html','popov.html','sheynin.html','tolstoy.html','norkin.html','keosayan.html','andreyeva.html','mamontov.html','prilepin.html','leontyev.html','korchevnikov.html','medinsky.html','mikhalkov.html','dugin.html','krasovsky.html'];
       var btn = document.getElementById('random-btn');
       btn.addEventListener('click', function(e){ e.preventDefault(); window.location.href = pages[Math.floor(Math.random()*pages.length)]; });
     })();
@@ -962,6 +970,75 @@
       </div>
     </a>
 
+    <a class="card" data-channel="kultura" href="mikhalkov.html">
+      <div class="card-monogram">НМ</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 16</div>
+        <div class="card-name">Никита<br>Михалков</div>
+        <div class="card-title">«Оскар» на службе империи</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>21 октября 1945, Москва</span></li>
+          <li><span>Программа</span><span>«Бесогон TV», Россия-1 / Россия-24</span></li>
+          <li><span>Санкции</span><span>ЕС, Великобритания</span></li>
+          <li><span>Особое</span><span>Лауреат «Оскара» 1995 года. Поддерживает войну.</span></li>
+          <li><span>2022—</span><span>Называет украинцев «заблудшими братьями»</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Единственный действующий лауреат "Оскара", открыто поддерживающий войну против Украины.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <a class="card" data-channel="ideolog" href="dugin.html">
+      <div class="card-monogram">АД</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 17</div>
+        <div class="card-name">Александр<br>Дугин</div>
+        <div class="card-title">Идеолог. «Мозг Путина».</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>7 января 1962, Москва</span></li>
+          <li><span>Организация</span><span>Евразийское движение</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания, Канада</span></li>
+          <li><span>Особое</span><span>«Основы геополитики» — учебник в военных академиях РФ</span></li>
+          <li><span>2022</span><span>Погибла дочь Дарья Дугина — взрыв автомобиля</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Написал план войны в 1997-м. В 2022-м его начали выполнять.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <a class="card" data-channel="rt" href="krasovsky.html">
+      <div class="card-monogram">АК</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 18</div>
+        <div class="card-name">Антон<br>Красовский</div>
+        <div class="card-title">Призвал топить детей. Восстановлен.</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>1978</span></li>
+          <li><span>Должность</span><span>Редактор RT</span></li>
+          <li><span>Санкции</span><span>Евросоюз</span></li>
+          <li><span>Особое</span><span>В эфире призвал убивать украинских детей (октябрь 2022)</span></li>
+          <li><span>2023</span><span>Тихо восстановлен в должности без извинений</span></li>
+        </ul>
+      </div>
+      <div class="card-quote">
+        <blockquote>«Симоньян его "приостановила". Потом восстановила. Система показала: за это не увольняют.»</blockquote>
+      </div>
+      <div class="card-bottom">
+        <span class="card-cta">Открыть досье</span>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
   </div>
 </div>
 
@@ -1001,21 +1078,61 @@
 
   document.getElementById('search-input').addEventListener('input', applyFilters);
 
+  // Полнотекстовый поиск через search-index.json
+  var searchIndex = null;
+  fetch('data/search-index.json').then(function(r){ return r.json(); }).then(function(d){ searchIndex = d; }).catch(function(){});
+
+  function getMatchingFiles(q) {
+    if (!searchIndex || !q) return null;
+    var matches = new Set();
+    searchIndex.forEach(function(entry) {
+      var score = 0;
+      if (entry.name && entry.name.toLowerCase().includes(q)) score += 10;
+      if (entry.tags && entry.tags.some(function(t){ return t.toLowerCase().includes(q); })) score += 5;
+      if (entry.bio && entry.bio.toLowerCase().includes(q)) score += 2;
+      if (entry.quotes && entry.quotes.some(function(qt){ return qt.toLowerCase().includes(q); })) score += 3;
+      if (score > 0) matches.add(entry.file);
+    });
+    return matches;
+  }
+
   function applyFilters() {
     var q = document.getElementById('search-input').value.toLowerCase().trim();
+    var matchingFiles = q.length >= 2 ? getMatchingFiles(q) : null;
     var visible = 0;
     cards.forEach(function(card) {
       var ch = card.dataset.channel || '';
+      var href = (card.getAttribute('href') || '').replace('./', '');
       var nameEl = card.querySelector('.card-name');
       var name = nameEl ? nameEl.textContent.toLowerCase() : '';
       var channelOk = activeFilter === 'all' || ch === activeFilter;
-      var searchOk = !q || name.includes(q);
+      var searchOk = !q || name.includes(q) || (matchingFiles && matchingFiles.has(href));
       var show = channelOk && searchOk;
       card.style.display = show ? '' : 'none';
       if(show) visible++;
     });
     document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
   }
+})();
+
+// Анимация появления карточек при скролле
+(function() {
+  var cards = document.querySelectorAll('.card');
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach(function(c) { c.classList.add('visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function() {
+          entry.target.classList.add('visible');
+        }, (i % 3) * 80); // небольшая задержка по колонкам
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  cards.forEach(function(c) { observer.observe(c); });
 })();
 </script>
 

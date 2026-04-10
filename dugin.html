@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Александр Дугин — досье | Голоса Кремля</title>
+<meta name="description" content="Александр Дугин — философ, основатель евразийства, идеологический архитектор российского империализма. «Мозг Путина». Санкции ЕС, США, Великобритании.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Александр Дугин — Голоса Кремля">
+<meta property="og:description" content="Философ, основатель евразийства, идеологический архитектор российского империализма. «Мозг Путина».">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Александр Дугин — Голоса Кремля">
+<meta name="twitter:description" content="Философ, основатель евразийства, идеологический архитектор российского империализма.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink: #080808; --paper: #ede8dc; --red: #8b1a1a; --red-dim: #5c1111; --gray: #4a4a4a; --light-gray: #bab3a0; --rule: #1c1c1c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+  #progress-bar { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: #8b1a1a; z-index: 9999; transition: width 0.1s linear; }
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; align-items: center; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+  .hero-right { position: relative; overflow: hidden; background: #060606; }
+  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .tag { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .sanctions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); }
+  .sanction-item { background: var(--ink); padding: 32px; }
+  .sanction-item .s-flag { font-size: 28px; margin-bottom: 12px; }
+  .sanction-item .s-name { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .sanction-item .s-date { font-size: 13px; color: var(--paper); margin-bottom: 8px; }
+  .sanction-item .s-reason { font-size: 12px; color: var(--light-gray); line-height: 1.6; }
+  .intro-text { font-size: 16px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 56px; }
+  .footer-nav { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); }
+  .footer-nav span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; }
+  .footer-nav a { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 40vh; }
+    .nav-back, .hero-left { padding: 14px 20px; }
+    .hero-left { padding: 48px 20px; }
+    .section { padding: 60px 0; }
+    .container { padding: 0 20px; }
+    .four-grid, .meme-quotes, .sanctions-grid { grid-template-columns: 1fr; }
+    .footer-nav { padding: 32px 20px; flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div class="nav-back">
+  <a href="index.html">← Все досье</a>
+  <a href="submit.html" style="margin-left:auto;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5c1111;text-decoration:none;border:1px solid #2a0a0a;padding:5px 12px;border-radius:2px">Сообщить</a>
+</div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Идеология · 2025</div>
+    <h1 class="hero-name">Александр<br>Дугин</h1>
+    <p class="hero-subtitle">Философ. Основатель евразийства. Идеолог войны.</p>
+    <div class="hero-meta">
+      <div class="meta-item"><label>Дата рождения</label><span>7 января 1962, Москва</span></div>
+      <div class="meta-item"><label>Организация</label><span>Евразийское движение</span></div>
+      <div class="meta-item"><label>Известен как</label><span>«Мозг Путина»</span></div>
+      <div class="meta-item"><label>Санкции</label><span>ЕС, США, Великобритания, Канада</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Alexander_Dugin_2.jpg/800px-Alexander_Dugin_2.jpg" alt="Александр Дугин" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.4;mix-blend-mode:luminosity;">
+    <div class="hero-stamp">Архитектор агрессии</div>
+  </div>
+</div>
+
+<!-- БИОГРАФИЯ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <p class="intro-text">Александр Дугин не ведёт ток-шоу и не читает военные сводки. Он делает нечто более опасное — создаёт идеологическую основу, на которой стоит вся российская пропаганда войны. Его называют «мозгом Путина», хотя реальный масштаб его влияния на Кремль по-прежнему дискутируется.</p>
+    <div class="timeline">
+      <div class="timeline-year">1962</div>
+      <div class="timeline-body"><h3>Рождение. Семья офицера КГБ</h3><p>Родился в семье военного разведчика. С юности интересовался оккультизмом, традиционализмом и правым радикализмом. В советское время участвовал в подпольных кружках, изучавших запрещённую литературу — от Юлиуса Эволы до Рене Генона.</p></div>
+      <div class="timeline-year">1993</div>
+      <div class="timeline-body"><h3>Национал-большевизм. Партия с Лимоновым</h3><p>Вместе с писателем Эдуардом Лимоновым основывает Национал-большевистскую партию — гремучую смесь крайне левой и крайне правой идеологии. Символика партии намеренно провокационна: красно-чёрный флаг с белым кругом вместо свастики. Вскоре пути Дугина и Лимонова расходятся.</p></div>
+      <div class="timeline-year">1997</div>
+      <div class="timeline-body"><h3>«Основы геополитики». Учебник для военных</h3><p>Выходит главная книга Дугина — «Основы геополитики». Книга становится обязательным чтением в российских военных академиях и академии ФСБ. В ней детально описан план: дестабилизация Украины, раздел Европы, союз с Германией против атлантизма, контроль над «Хартлендом» по Маккиндеру. Многое из написанного в 1997 году стало политикой России в 2022-м.</p></div>
+      <div class="timeline-year">2001</div>
+      <div class="timeline-body"><h3>Евразийское движение. Доступ к власти</h3><p>Основывает Евразийскую партию (позже — Международное евразийское движение). Получает доступ к государственным медиа: выступает на Первом канале, «России-1», пишет колонки для государственных изданий. Евразийская идея — противопоставление «континентальной» России «морскому» Западу — проникает в официальный дискурс.</p></div>
+      <div class="timeline-year">2014</div>
+      <div class="timeline-body"><h3>Крым. Донбасс. Призыв к войне</h3><p>После аннексии Крыма Дугин публично призывает к вооружённому вторжению на Донбасс. В интервью украинскому телевидению заявляет: «Убивайте, убивайте, убивайте» — обращаясь к сепаратистам. Высказывание вызывает скандал; Дугин лишается должности в МГУ. США вводят персональные санкции.</p></div>
+      <div class="timeline-year">2022</div>
+      <div class="timeline-body"><h3>Война. Дочь. Теракт</h3><p>После начала полномасштабного вторжения Дугин становится одним из главных идеологических голосов войны. 20 августа 2022 года его дочь, журналист Дарья Дугина, погибла во взрыве автомобиля под Москвой — предположительно, в результате покушения, направленного против самого Дугина. Российские власти обвиняют Украину. Дугин использует гибель дочери для усиления риторики: «Наши сердца жаждут не просто мести, а победы».</p></div>
+      <div class="timeline-year">2024</div>
+      <div class="timeline-body"><h3>Глобальная аудитория. Правые сети Запада</h3><p>Дугин активно строит связи с европейскими и американскими ультраправыми движениями. Его идеи о «многополярном мире» как альтернативе «западному либерализму» находят аудиторию среди части американских консерваторов и европейских националистов. Выступает на конференциях, публикуется в правых изданиях, ведёт активный Telegram-канал.</p></div>
+      <div class="timeline-year">2025</div>
+      <div class="timeline-body"><h3>Переговоры как капитуляция идеи</h3><p>На фоне переговорного трека при Трампе Дугин занял однозначную позицию: любые территориальные уступки означают поражение «евразийской идеи». Публично критикует переговоры, призывает к продолжению войны до «окончательной победы». Его влияние на реальную политику Кремля по-прежнему остаётся неясным — но его идеи давно вышли за пределы академических дискуссий и стали языком, на котором война объясняет сама себя.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Его слова</h2>
+    </div>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="tag">О Украине · 2014</div>
+        <p class="meme-text">«Убивайте, убивайте, убивайте. Там нет других слов.»</p>
+        <div class="meme-src">Интервью украинскому телевидению, 2014 — стало причиной увольнения из МГУ</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О гибели дочери · 2022</div>
+        <p class="meme-text">«Наши сердца жаждут не просто мести. Наши сердца жаждут победы. Моя дочь отдала свою жизнь за победу.»</p>
+        <div class="meme-src">Заявление после гибели Дарьи Дугиной, август 2022</div>
+      </div>
+    </div>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="tag">О либерализме · философия</div>
+        <p class="meme-text">«Либерализм — это смерть. Он убивает народы, убивает идентичности, убивает историю. Россия — это альтернатива смерти.»</p>
+        <div class="meme-src">«Основы геополитики» и многочисленные интервью</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О многополярном мире</div>
+        <p class="meme-text">«Однополярный мир — это американская диктатура. Многополярный мир — это свобода для всех цивилизаций быть собой. Россия сражается не за себя — за всё человечество.»</p>
+        <div class="meme-src">Конференция «Евразийского движения», 2023</div>
+      </div>
+    </div>
+    <div class="quote-pull">
+      «Украина как государство не имеет геополитического смысла. Она либо часть России, либо антироссийский плацдарм. Третьего не дано.»
+      <cite>— «Основы геополитики», 1997 — написано за 25 лет до войны</cite>
+    </div>
+  </div>
+</div>
+
+<!-- МЕТОД -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Метод</h2>
+    </div>
+    <div class="four-grid">
+      <div class="grid-card"><h3>Философия как оружие</h3><p>Дугин создаёт интеллектуальный фасад для политики, которая иначе выглядела бы как голая агрессия. Ссылки на Хайдеггера, Юнгера, Эволу создают видимость академической серьёзности. Это делает его опасно убедительным для определённой аудитории.</p></div>
+      <div class="grid-card"><h3>Предсказание как программа</h3><p>«Основы геополитики» 1997 года детально описывают то, что Россия делает сейчас: дестабилизация Украины, раздел Европы, война с «атлантизмом». Это не пророчество — это программа, которая постепенно реализовывалась политическими инструментами.</p></div>
+      <div class="grid-card"><h3>Сети влияния на Западе</h3><p>Дугин активно строит связи с ультраправыми движениями Европы и США, продвигая идею «консервативного интернационала» против либерального Запада. Его идеи распространяются через правые медиа, конференции и академические сети.</p></div>
+      <div class="grid-card"><h3>Личная трагедия как пропаганда</h3><p>Гибель дочери Дарьи немедленно встроена в идеологический нарратив. Частное горе публично превращается в доказательство того, что «враг реален» и «жертвы необходимы». Цинизм этой операции не становится предметом общественного обсуждения внутри России.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- САНКЦИИ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Санкции</h2>
+    </div>
+    <div class="sanctions-grid">
+      <div class="sanction-item"><div class="s-flag">🇺🇸</div><div class="s-name">США</div><div class="s-date">2015</div><div class="s-reason">«Угрозы территориальной целостности Украины, распространение экстремистской идеологии, призывы к убийству»</div></div>
+      <div class="sanction-item"><div class="s-flag">🇪🇺</div><div class="s-name">Евросоюз</div><div class="s-date">2022</div><div class="s-reason">«Активная поддержка войны против Украины, распространение пропаганды, идеологическое обоснование агрессии»</div></div>
+      <div class="sanction-item"><div class="s-flag">🇬🇧</div><div class="s-name">Великобритания</div><div class="s-date">2022</div><div class="s-reason">«Идеологическая поддержка российской агрессии, дестабилизирующая деятельность»</div></div>
+      <div class="sanction-item"><div class="s-flag">🇨🇦</div><div class="s-name">Канада</div><div class="s-date">2022</div><div class="s-reason">«Поддержка нарушения суверенитета и территориальной целостности Украины»</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-nav">
+  <a href="mikhalkov.html">← Никита Михалков</a>
+  <span>Александр Дугин · 1962—</span>
+  <a href="krasovsky.html">Антон Красовский →</a>
+</div>
+
+<script>
+(function() {
+  var bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', function() {
+    var doc = document.documentElement;
+    var scrolled = doc.scrollTop || document.body.scrollTop;
+    var total = doc.scrollHeight - doc.clientHeight;
+    bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

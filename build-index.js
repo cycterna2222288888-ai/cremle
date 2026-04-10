@@ -19,6 +19,9 @@ const DOSYE = [
   { file: 'leontyev.html',    name: 'Михаил Леонтьев',      channel: 'Первый',   tags: ['Роснефть','геополитика','Однако'] },
   { file: 'korchevnikov.html',name: 'Борис Корчевников',    channel: 'Спас',     tags: ['православие','священная война','Спас'] },
   { file: 'medinsky.html',    name: 'Владимир Мединский',   channel: 'Власть',   tags: ['переговоры','история','культура','министр'] },
+  { file: 'mikhalkov.html',   name: 'Никита Михалков',      channel: 'Россия-1', tags: ['оскар','бесогон','культура','конспирология','режиссёр'] },
+  { file: 'dugin.html',       name: 'Александр Дугин',      channel: 'Идеология',tags: ['евразийство','философия','идеолог','дугина','геополитика'] },
+  { file: 'krasovsky.html',   name: 'Антон Красовский',     channel: 'RT',       tags: ['скандал','дети','восстановлен','rt'] },
 ];
 
 function extractText(html) {

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voices of the Kremlin — Propaganda Archive</title>
+<meta name="description" content="Documentary dossiers on 18 key propagandists of Russian state television. Biographies, quotes, sanctions, connections.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Voices of the Kremlin — Propaganda Archive">
+<meta property="og:description" content="Documentary dossiers on 18 key propagandists of Russian state television. Biographies, quotes, sanctions, connections.">
+<meta property="og:site_name" content="Voices of the Kremlin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Voices of the Kremlin — Propaganda Archive">
+<meta name="twitter:description" content="Documentary dossiers on 18 key propagandists of Russian state television.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #070707;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --light-gray: #b8b0a0;
+    --rule: #1a1a1a;
+    --card-bg: #0e0e0e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+  .topbar a { color: var(--red); text-decoration: none; }
+  .topbar a:hover { color: var(--paper); }
+
+  .lang-switch {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .lang-switch a { color: var(--light-gray); text-decoration: none; margin-left: 12px; }
+  .lang-switch a:hover { color: var(--paper); }
+  .lang-switch .active { color: var(--red); }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 80px 60px 64px;
+    text-align: center;
+    position: relative;
+  }
+
+  .masthead-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
+
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+
+  .masthead-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: var(--light-gray);
+    max-width: 700px;
+    margin: 24px auto 0;
+    line-height: 1.6;
+  }
+
+  .nav-pages {
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 60px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .nav-pages a {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    text-decoration: none;
+    padding: 8px 20px;
+    border-right: 1px solid var(--rule);
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+  .nav-pages a:first-child { padding-left: 0; }
+  .nav-pages a:hover { color: var(--paper); }
+  .nav-pages a.active { color: var(--red); }
+
+  .stats-row {
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .stat-cell {
+    padding: 32px 40px;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--red);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+
+  .filter-bar {
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 60px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .flt-btn {
+    background: none;
+    border: 1px solid #222;
+    color: var(--light-gray);
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .flt-btn:hover { border-color: var(--red-dim); color: var(--paper); }
+  .flt-btn.active { background: var(--red-dim); border-color: var(--red-dim); color: var(--paper); }
+  .search-wrap { margin-left: auto; }
+  .search-wrap input {
+    background: #0c0c0c;
+    border: 1px solid #222;
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    padding: 6px 14px;
+    width: 200px;
+    outline: none;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+  }
+  .search-wrap input:focus { border-color: var(--red-dim); }
+  .search-wrap input::placeholder { color: #444; }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    background: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s, opacity 0.5s ease, transform 0.5s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .card.visible { opacity: 1; transform: translateY(0); }
+  .card:hover { background: #141414; }
+
+  .card-monogram {
+    position: absolute;
+    top: -20px; right: -10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    font-weight: 700;
+    color: var(--red);
+    opacity: 0.06;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.2s;
+  }
+  .card:hover .card-monogram { opacity: 0.18; }
+
+  .card-top { padding: 40px 40px 0; flex: 1; }
+  .card-num { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .card-name { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; line-height: 1.1; margin-bottom: 8px; }
+  .card-title { font-size: 11px; letter-spacing: 0.1em; color: var(--light-gray); margin-bottom: 28px; font-style: italic; }
+  .card-facts { list-style: none; border-top: 1px solid var(--rule); padding-top: 20px; }
+  .card-facts li { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; padding: 6px 0; border-bottom: 1px solid #111; }
+  .card-facts li span:first-child { color: var(--red); text-transform: uppercase; letter-spacing: 0.1em; font-size: 9px; flex-shrink: 0; }
+  .card-facts li span:last-child { color: var(--light-gray); text-align: right; }
+
+  .card-quote { padding: 28px 40px; }
+  .card-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 13px; color: #666; line-height: 1.6; border-left: 2px solid var(--red-dim); padding-left: 16px; }
+
+  .card-bottom { padding: 20px 40px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; }
+  .card-cta { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); }
+  .card-arrow { font-size: 18px; color: var(--red); transition: transform 0.2s; }
+  .card:hover .card-arrow { transform: translate(4px, -4px); }
+
+  .no-results { display: none; padding: 80px; text-align: center; color: #444; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; grid-column: 1/-1; }
+
+  .quote-strip {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+    display: flex;
+    height: 56px;
+    align-items: center;
+  }
+  .strip-inner {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 40s linear infinite;
+  }
+  .strip-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--red);
+    padding: 0 48px;
+    flex-shrink: 0;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #333;
+  }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--red); letter-spacing: 0.05em; text-transform: none; }
+  .footer a { color: #444; text-decoration: none; }
+  .footer a:hover { color: var(--red); }
+
+  @media (max-width: 900px) {
+    .topbar, .nav-pages, .filter-bar, .masthead, .footer { padding-left: 20px; padding-right: 20px; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .card { border-right: none; }
+    .search-wrap { margin-left: 0; width: 100%; }
+    .search-wrap input { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>Voices of the Kremlin · Propaganda Archive</span>
+  <div class="lang-switch">
+    <a href="index.html">RU</a>
+    <a href="index-en.html" class="active">EN</a>
+  </div>
+</div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Documentary Archive · Open Sources · 2025</div>
+  <h1>Voices of the Kremlin</h1>
+  <p class="masthead-sub">Different biographies, different talents, different paths to the screen and to power. But one result: war presented as necessity, violence as virtue, lies as the language of the state.</p>
+</div>
+
+<nav class="nav-pages">
+  <a href="index-en.html" class="active">All Dossiers</a>
+  <a href="timeline.html">Timeline</a>
+  <a href="quotes.html">Quotes</a>
+  <a href="sanctions.html">Sanctions</a>
+  <a href="connections.html">Connections</a>
+  <a href="compare.html">Compare</a>
+  <a href="submit.html">Submit a tip</a>
+</nav>
+
+<div class="stats-row">
+  <div class="stat-cell"><div class="stat-num">18</div><div class="stat-label">Dossiers</div></div>
+  <div class="stat-cell"><div class="stat-num">6+</div><div class="stat-label">Sanctioning jurisdictions</div></div>
+  <div class="stat-cell"><div class="stat-num">2014</div><div class="stat-label">First sanctions</div></div>
+  <div class="stat-cell"><div class="stat-num">0</div><div class="stat-label">Times the word "war" was used</div></div>
+</div>
+
+<div class="filter-bar">
+  <button class="flt-btn active" data-filter="all">All</button>
+  <button class="flt-btn" data-filter="rossiya1">Russia-1</button>
+  <button class="flt-btn" data-filter="perviy">Channel One</button>
+  <button class="flt-btn" data-filter="rt">RT</button>
+  <button class="flt-btn" data-filter="ntv">NTV</button>
+  <button class="flt-btn" data-filter="vlast">Politics</button>
+  <button class="flt-btn" data-filter="kultura">Culture</button>
+  <button class="flt-btn" data-filter="ideolog">Ideology</button>
+  <div class="search-wrap">
+    <input type="text" id="search-input" placeholder="Search by name...">
+  </div>
+</div>
+
+<div class="cards-grid" id="cards-grid">
+  <div class="no-results" id="no-results">No results found.</div>
+
+  <a class="card" data-channel="rossiya1" href="solovyov.html">
+    <div class="card-monogram">ВС</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 1</div>
+      <div class="card-name">Vladimir Solovyov</div>
+      <div class="card-title">The Voice of War</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>Oct 20, 1963, Moscow</span></li>
+        <li><span>Show</span><span>Evening with Solovyov, Russia-1</span></li>
+        <li><span>Sanctions</span><span>EU, USA, UK, Canada, Australia, Japan</span></li>
+        <li><span>Notable</span><span>Villas in Italy seized. Nuclear rhetoric since 2014.</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«Russia does not start wars. Russia ends them.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="rossiya1" href="skabeeva.html">
+    <div class="card-monogram">ОС</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 2</div>
+      <div class="card-name">Olga Skabeeva</div>
+      <div class="card-title">"The Kremlin's Doll"</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>May 19, 1983, Krasnodar</span></li>
+        <li><span>Show</span><span>60 Minutes, Russia-1</span></li>
+        <li><span>Sanctions</span><span>EU, USA, UK, Canada</span></li>
+        <li><span>Notable</span><span>Husband Evgeny Popov is co-host and MP</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«We are already essentially fighting with NATO.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="rt" href="simonyan.html">
+    <div class="card-monogram">МС</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 3</div>
+      <div class="card-name">Margarita Simonyan</div>
+      <div class="card-title">Architect of Global Disinformation</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>Apr 6, 1980, Krasnodar</span></li>
+        <li><span>Role</span><span>Editor-in-Chief, RT</span></li>
+        <li><span>Sanctions</span><span>EU, USA, UK, Canada, Australia</span></li>
+        <li><span>Notable</span><span>US DOJ: $10M paid to US influencers via Tenet Media</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«Either we win — or nuclear war. There is no third option.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="rossiya1" href="kiselyov.html">
+    <div class="card-monogram">ДК</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 4</div>
+      <div class="card-name">Dmitry Kiselyov</div>
+      <div class="card-title">The Nuclear Threat Voice</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>Apr 26, 1954, Moscow</span></li>
+        <li><span>Show</span><span>Vesti Nedeli, Russia-1</span></li>
+        <li><span>Sanctions</span><span>EU (2014), USA, UK, Canada</span></li>
+        <li><span>Notable</span><span>First Russian journalist sanctioned by EU — in 2014</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«Russia is the only country capable of turning the USA into radioactive ash.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="rossiya1" href="popov.html">
+    <div class="card-monogram">ВП</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 5</div>
+      <div class="card-name">Yevgeny Popov</div>
+      <div class="card-title">Propagandist-Turned-MP</div>
+      <ul class="card-facts">
+        <li><span>Show</span><span>60 Minutes, Russia-1</span></li>
+        <li><span>Also</span><span>Member of State Duma</span></li>
+        <li><span>Sanctions</span><span>EU, USA, UK</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«We are a peaceful country forced to fight.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="perviy" href="sheynin.html">
+    <div class="card-monogram">АШ</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 6</div>
+      <div class="card-name">Artyom Sheynin</div>
+      <div class="card-title">The Hermetic Studio</div>
+      <ul class="card-facts">
+        <li><span>Show</span><span>Vremya Pokazhet, Channel One</span></li>
+        <li><span>Sanctions</span><span>EU, UK</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«The West wants Russia to disappear. We will not disappear.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="perviy" href="tolstoy.html">
+    <div class="card-monogram">ПТ</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 7</div>
+      <div class="card-name">Pyotr Tolstoy</div>
+      <div class="card-title">Great-great-grandson of Leo Tolstoy. Votes for war.</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>1969, Moscow</span></li>
+        <li><span>Role</span><span>Deputy Speaker, State Duma</span></li>
+        <li><span>Sanctions</span><span>EU, USA, UK, Canada</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«Leo Tolstoy wrote War and Peace. Pyotr Tolstoy votes for war.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="ntv" href="norkin.html">
+    <div class="card-monogram">АН</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 8</div>
+      <div class="card-name">Andrey Norkin</div>
+      <div class="card-title">From Independent TV to State Tribunal</div>
+      <ul class="card-facts">
+        <li><span>Show</span><span>Mesto Vstrechi, NTV</span></li>
+        <li><span>Sanctions</span><span>EU, UK</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«There is no such thing as Ukraine. It's a Western project against Russia.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="rt" href="keosayan.html">
+    <div class="card-monogram">ТК</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 9</div>
+      <div class="card-name">Tigran Keosayan</div>
+      <div class="card-title">Cinema as a Weapon</div>
+      <ul class="card-facts">
+        <li><span>Role</span><span>Director, RT presenter</span></li>
+        <li><span>Married to</span><span>Margarita Simonyan</span></li>
+        <li><span>Sanctions</span><span>EU, USA, UK</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«I make films about the truth. The West calls it propaganda.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="perviy" href="andreyeva.html">
+    <div class="card-monogram">ЕА</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 10</div>
+      <div class="card-name">Yekaterina Andreyeva</div>
+      <div class="card-title">The State's Voice</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>1965, Leningrad</span></li>
+        <li><span>Show</span><span>News, Channel One</span></li>
+        <li><span>Sanctions</span><span>EU, UK</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«We report only verified information.» [The same day Channel One aired the "crucified boy" story]</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="rossiya1" href="mamontov.html">
+    <div class="card-monogram">АМ</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 11</div>
+      <div class="card-name">Arkady Mamontov</div>
+      <div class="card-title">Chief War Documentarian</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>1962, Omsk</span></li>
+        <li><span>Show</span><span>Documentaries, Russia-1</span></li>
+        <li><span>Sanctions</span><span>EU, UK</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«I film what others are afraid to show.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="vlast" href="prilepin.html">
+    <div class="card-monogram">ЗП</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 12</div>
+      <div class="card-name">Zakhar Prilepin</div>
+      <div class="card-title">The Writer Who Took Up Arms</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>1975, Ryazan region</span></li>
+        <li><span>Fought</span><span>Donbas since 2014</span></li>
+        <li><span>Sanctions</span><span>EU, USA, UK</span></li>
+        <li><span>2023</span><span>Survived car bombing. Driver killed.</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«War is the highest form of the nation's self-expression.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="perviy" href="leontyev.html">
+    <div class="card-monogram">МЛ</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 13</div>
+      <div class="card-name">Mikhail Leontyev</div>
+      <div class="card-title">Oil Nationalism's Voice</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>1958, Moscow</span></li>
+        <li><span>Role</span><span>Rosneft PR, Channel One pundit</span></li>
+        <li><span>Sanctions</span><span>EU, UK</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«Sanctions against Russia are sanctions against the West's own economy.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="rossiya1" href="korchevnikov.html">
+    <div class="card-monogram">БК</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 14</div>
+      <div class="card-name">Boris Korchevnikov</div>
+      <div class="card-title">Holy War</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>1981, Moscow</span></li>
+        <li><span>Shows</span><span>Spas TV, Channel One</span></li>
+        <li><span>Sanctions</span><span>EU</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«This war is not political — it is spiritual. And in spiritual wars there are no compromises.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="vlast" href="medinsky.html">
+    <div class="card-monogram">ВМ</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 15</div>
+      <div class="card-name">Vladimir Medinsky</div>
+      <div class="card-title">Russia's Chief Negotiator</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>Jul 18, 1970, Smela, Ukraine</span></li>
+        <li><span>Role</span><span>Putin's adviser, former Culture Minister</span></li>
+        <li><span>Sanctions</span><span>EU, USA, UK, Canada</span></li>
+        <li><span>Notable</span><span>Born in Ukraine. Denies Ukraine's existence.</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«Russia has never lost wars it fought for its survival.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="kultura" href="mikhalkov.html">
+    <div class="card-monogram">НМ</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 16</div>
+      <div class="card-name">Nikita Mikhalkov</div>
+      <div class="card-title">An Oscar in Service of Empire</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>Oct 21, 1945, Moscow</span></li>
+        <li><span>Show</span><span>Besogon TV, Russia-1</span></li>
+        <li><span>Sanctions</span><span>EU, UK</span></li>
+        <li><span>Notable</span><span>Won Academy Award in 1995. Now supports the war.</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«The only active Oscar winner openly supporting Russia's war against Ukraine.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="ideolog" href="dugin.html">
+    <div class="card-monogram">АД</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 17</div>
+      <div class="card-name">Alexander Dugin</div>
+      <div class="card-title">The Ideologue. "Putin's Brain."</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>Jan 7, 1962, Moscow</span></li>
+        <li><span>Role</span><span>Philosopher, Eurasian Movement founder</span></li>
+        <li><span>Sanctions</span><span>EU, USA, UK, Canada</span></li>
+        <li><span>2022</span><span>Daughter Darya Dugina killed in car bombing near Moscow</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«Ukraine as a state has no geopolitical meaning. It is either part of Russia or an anti-Russian bridgehead.» — written in 1997</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+  <a class="card" data-channel="rt" href="krasovsky.html">
+    <div class="card-monogram">АК</div>
+    <div class="card-top">
+      <div class="card-num">Dossier № 18</div>
+      <div class="card-name">Anton Krasovsky</div>
+      <div class="card-title">Called for drowning Ukrainian children. Was reinstated.</div>
+      <ul class="card-facts">
+        <li><span>Born</span><span>1978</span></li>
+        <li><span>Role</span><span>RT editor</span></li>
+        <li><span>Sanctions</span><span>EU</span></li>
+        <li><span>Oct 2022</span><span>Live broadcast: said Ukrainian children should be drowned or burned</span></li>
+      </ul>
+    </div>
+    <div class="card-quote"><blockquote>«Simonyan "suspended" him. Then quietly reinstated him. The system showed: you don't get fired for this.»</blockquote></div>
+    <div class="card-bottom"><span class="card-cta">Open dossier</span><span class="card-arrow">↗</span></div>
+  </a>
+
+</div>
+
+<div class="quote-strip">
+  <div class="strip-inner">
+    <span class="strip-quote">«Russia does not start wars — Russia ends them.» — Solovyov</span>
+    <span class="strip-quote">«Either victory or nuclear war. There is no third option.» — Simonyan</span>
+    <span class="strip-quote">«Ukraine as a state has no geopolitical meaning.» — Dugin, 1997</span>
+    <span class="strip-quote">«Russia is the only country capable of turning the USA into radioactive ash.» — Kiselyov</span>
+    <span class="strip-quote">«This is not a war. This is a special military operation.» — all state channels</span>
+    <span class="strip-quote">«Russia does not start wars — Russia ends them.» — Solovyov</span>
+    <span class="strip-quote">«Either victory or nuclear war. There is no third option.» — Simonyan</span>
+    <span class="strip-quote">«Ukraine as a state has no geopolitical meaning.» — Dugin, 1997</span>
+    <span class="strip-quote">«Russia is the only country capable of turning the USA into radioactive ash.» — Kiselyov</span>
+    <span class="strip-quote">«This is not a war. This is a special military operation.» — all state channels</span>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-logo">Voices of the Kremlin</div>
+  <a href="index.html">На русском</a>
+  <span>All data from open sources</span>
+</div>
+
+<script>
+(function(){
+  var cards = Array.from(document.querySelectorAll('.card'));
+  var activeFilter = 'all';
+
+  document.querySelectorAll('.flt-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.flt-btn').forEach(function(b){ b.classList.remove('active'); });
+      this.classList.add('active');
+      activeFilter = this.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  document.getElementById('search-input').addEventListener('input', applyFilters);
+
+  function applyFilters() {
+    var q = document.getElementById('search-input').value.toLowerCase().trim();
+    var visible = 0;
+    cards.forEach(function(card) {
+      var ch = card.dataset.channel || '';
+      var nameEl = card.querySelector('.card-name');
+      var name = nameEl ? nameEl.textContent.toLowerCase() : '';
+      var channelOk = activeFilter === 'all' || ch === activeFilter;
+      var searchOk = !q || name.includes(q);
+      var show = channelOk && searchOk;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  }
+})();
+
+(function() {
+  var cards = document.querySelectorAll('.card');
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach(function(c) { c.classList.add('visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function() { entry.target.classList.add('visible'); }, (i % 3) * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  cards.forEach(function(c) { observer.observe(c); });
+})();
+</script>
+
+</body>
+</html>

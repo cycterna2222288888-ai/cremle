@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Антон Красовский — досье | Голоса Кремля</title>
+<meta name="description" content="Антон Красовский — редактор RT, призвавший в прямом эфире топить и сжигать украинских детей. Скандал, приостановка, тихое восстановление. Санкции ЕС.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Антон Красовский — Голоса Кремля">
+<meta property="og:description" content="Редактор RT, призвавший в эфире топить украинских детей. Скандал 2022 года — и тихое восстановление в должности.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Антон Красовский — Голоса Кремля">
+<meta name="twitter:description" content="Редактор RT, призвавший в эфире топить украинских детей. Скандал 2022 года — и тихое восстановление.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink: #080808; --paper: #ede8dc; --red: #8b1a1a; --red-dim: #5c1111; --gray: #4a4a4a; --light-gray: #bab3a0; --rule: #1c1c1c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+  #progress-bar { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: #8b1a1a; z-index: 9999; transition: width 0.1s linear; }
+  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; align-items: center; }
+  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .nav-back a:hover { opacity: 0.6; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+  .hero-right { position: relative; overflow: hidden; background: #060606; }
+  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .tag { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .warning-box { background: #1a0000; border: 1px solid #5c1111; border-left: 4px solid var(--red); padding: 24px 28px; margin-bottom: 40px; font-size: 13px; color: #c8a0a0; border-radius: 2px; }
+  .warning-box strong { display: block; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .sanctions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); }
+  .sanction-item { background: var(--ink); padding: 32px; }
+  .sanction-item .s-flag { font-size: 28px; margin-bottom: 12px; }
+  .sanction-item .s-name { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .sanction-item .s-date { font-size: 13px; color: var(--paper); margin-bottom: 8px; }
+  .sanction-item .s-reason { font-size: 12px; color: var(--light-gray); line-height: 1.6; }
+  .intro-text { font-size: 16px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 56px; }
+  .footer-nav { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); }
+  .footer-nav span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; }
+  .footer-nav a { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 40vh; }
+    .nav-back, .hero-left { padding: 14px 20px; }
+    .hero-left { padding: 48px 20px; }
+    .section { padding: 60px 0; }
+    .container { padding: 0 20px; }
+    .four-grid, .meme-quotes, .sanctions-grid { grid-template-columns: 1fr; }
+    .footer-nav { padding: 32px 20px; flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div class="nav-back">
+  <a href="index.html">← Все досье</a>
+  <a href="submit.html" style="margin-left:auto;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5c1111;text-decoration:none;border:1px solid #2a0a0a;padding:5px 12px;border-radius:2px">Сообщить</a>
+</div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · RT · 2025</div>
+    <h1 class="hero-name">Антон<br>Красовский</h1>
+    <p class="hero-subtitle">Редактор RT. Скандал. Тихое восстановление.</p>
+    <div class="hero-meta">
+      <div class="meta-item"><label>Год рождения</label><span>1978</span></div>
+      <div class="meta-item"><label>Должность</label><span>Редактор RT (русскоязычное вещание)</span></div>
+      <div class="meta-item"><label>Канал</label><span>RT / Solovyov Live</span></div>
+      <div class="meta-item"><label>Санкции</label><span>Евросоюз</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0a0000 0%,#1a0505 100%);"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.08;">
+      <span style="font-family:'Playfair Display',serif;font-size:200px;color:#8b1a1a;line-height:1">RT</span>
+    </div>
+    <div class="hero-stamp">Восстановлен в должности</div>
+  </div>
+</div>
+
+<!-- БИОГРАФИЯ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <p class="intro-text">История Красовского — это история о том, что в российских государственных медиа не существует черты, за которую нельзя зайти и остаться безнаказанным. В октябре 2022 года он призвал топить и сжигать украинских детей в прямом эфире. Его приостановили. Потом тихо восстановили.</p>
+
+    <div class="warning-box">
+      <strong>Документированное высказывание</strong>
+      22 октября 2022 года в эфире Solovyov Live Красовский сказал об украинских детях, которые верят в существование Украины как отдельного государства: «Таких детей нужно топить прямо в реке... Или сжигать их в горящих избах». Высказывание вызвало международный скандал. Симоньян публично приостановила его. Через несколько месяцев он был тихо восстановлен.
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-year">1978</div>
+      <div class="timeline-body"><h3>Рождение. Журналистика</h3><p>Начинал карьеру в российских медиа в 2000-е годы. Работал на различных телеканалах и в печатных изданиях. В 2012 году был уволен с Первого канала после того, как публично объявил себя геем — в России, где такое заявление ломало карьеры. Это сделало его нетипичной фигурой для государственного медиапространства.</p></div>
+      <div class="timeline-year">2013—</div>
+      <div class="timeline-body"><h3>RT. Перестройка позиции</h3><p>Перешёл на RT, где постепенно трансформировался из журналиста с либеральным прошлым в жёсткого провластного комментатора. Это типичный путь для части российских медийщиков после 2014 года: публичная смена позиции как условие профессионального выживания или карьерного роста.</p></div>
+      <div class="timeline-year">2022</div>
+      <div class="timeline-body"><h3>Скандал. Призыв к убийству детей</h3><p>22 октября 2022 года в эфире Solovyov Live, обсуждая украинских детей, которые «верят в сказки» о самостоятельной Украине, Красовский произнёс слова о том, что их нужно топить и сжигать. Скандал мгновенно вышел за пределы России. Маргарита Симоньян написала в Telegram: «Я приостанавливаю работу Красовского в RT». Формулировка «приостанавливаю» вместо «увольняю» оказалась значимой.</p></div>
+      <div class="timeline-year">2023</div>
+      <div class="timeline-body"><h3>Тихое восстановление</h3><p>Без официального объявления, без извинений перед аудиторией, без какого-либо публичного разбора произошедшего Красовский был восстановлен в работе на RT. Симоньян впоследствии объясняла, что он «раскаялся» в частном порядке. Это восстановление красноречивее любого заявления: система показала, что за призыв к убийству детей в ней не увольняют.</p></div>
+      <div class="timeline-year">2024</div>
+      <div class="timeline-body"><h3>Продолжение. Без последствий</h3><p>Красовский продолжает работать в российском медиапространстве. ЕС ввёл персональные санкции. Внутри России никаких правовых последствий скандал не имел — при том что российское законодательство формально запрещает «пропаганду жестокости». Закон применяется избирательно: против антивоенных высказываний, но не против призывов к насилию над украинцами.</p></div>
+      <div class="timeline-year">2025</div>
+      <div class="timeline-body"><h3>Символ безнаказанности</h3><p>История Красовского стала международным символом того, как работает система вседозволенности в российских государственных медиа. Граница дозволенного — не этическая, а политическая: можно говорить что угодно о «враге», нельзя критиковать «своих». Его случай цитируют в докладах ООН и Европарламента как пример системной безнаказанности пропагандистов.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Его слова</h2>
+    </div>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="tag">Скандал · Solovyov Live · октябрь 2022</div>
+        <p class="meme-text">«Таких детей нужно топить прямо в реке с их игрушками... Или сжигать их в горящих избах.»</p>
+        <div class="meme-src">Прямой эфир Solovyov Live, 22 октября 2022 — видео распространилось по всему миру</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">Симоньян · реакция</div>
+        <p class="meme-text">«Я приостанавливаю работу Красовского в RT. То, что он сказал — отвратительно.»</p>
+        <div class="meme-src">Маргарита Симоньян, Telegram, октябрь 2022 — и тихо восстановила его через несколько месяцев</div>
+      </div>
+    </div>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="tag">О войне · риторика RT</div>
+        <p class="meme-text">«Украина — это не страна. Это территория, которую Запад использует против России. Мы не воюем с украинцами — мы воюем с натовским проектом.»</p>
+        <div class="meme-src">RT, 2023 — стандартный нарратив после восстановления</div>
+      </div>
+      <div class="meme-card">
+        <div class="tag">О санкциях</div>
+        <p class="meme-text">«Европейские санкции — это орден. Значит, я делаю что-то правильно.»</p>
+        <div class="meme-src">Интервью, 2023</div>
+      </div>
+    </div>
+    <div class="quote-pull">
+      Симоньян «приостановила» его. Не уволила. Разница в одном слове — и в том, что за ней стоит.
+      <cite>— Ключевой факт дела Красовского</cite>
+    </div>
+  </div>
+</div>
+
+<!-- МЕТОД -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Что показывает это дело</h2>
+    </div>
+    <div class="four-grid">
+      <div class="grid-card"><h3>Дегуманизация как норма</h3><p>Призыв убивать детей — не оговорка и не эмоциональный срыв. Это логическое следствие многолетней дегуманизирующей риторики, в которой украинцы описываются как «нацисты», «марионетки» и «нелюди». Красовский просто сказал вслух то, что имплицитно содержится в десятках часов государственного эфира.</p></div>
+      <div class="grid-card"><h3>Избирательное правосудие</h3><p>Российский закон о «пропаганде жестокости» существует. Он применяется против антивоенных художников, музыкантов и журналистов. Против Красовского — нет. Закон — инструмент политики, а не права.</p></div>
+      <div class="grid-card"><h3>Восстановление как сигнал</h3><p>Тихое возвращение Красовского отправляет чёткий сигнал всей системе: говорить о насилии над украинцами — безопасно. Симоньян создала видимость реакции для международной аудитории, сохранив сотрудника для внутренней.</p></div>
+      <div class="grid-card"><h3>Трансформация личности</h3><p>Красовский, открыто объявивший о своей гомосексуальности в 2012-м и потерявший за это работу, к 2022-му стал одним из самых агрессивных голосов системы, которая его отвергала. Это не аномалия — это механизм: система ломает, затем использует сломанных.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- САНКЦИИ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Санкции</h2>
+    </div>
+    <div class="sanctions-grid">
+      <div class="sanction-item"><div class="s-flag">🇪🇺</div><div class="s-name">Евросоюз</div><div class="s-date">2023</div><div class="s-reason">«Распространение пропаганды, поддерживающей военную агрессию России против Украины, включая высказывания, призывающие к насилию»</div></div>
+      <div class="sanction-item" style="background:#060606"></div>
+      <div class="sanction-item" style="background:#060606"></div>
+      <div class="sanction-item" style="background:#060606"></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-nav">
+  <a href="dugin.html">← Александр Дугин</a>
+  <span>Антон Красовский · 1978—</span>
+  <a href="index.html">Все досье →</a>
+</div>
+
+<script>
+(function() {
+  var bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', function() {
+    var doc = document.documentElement;
+    var scrolled = doc.scrollTop || document.body.scrollTop;
+    var total = doc.scrollHeight - doc.clientHeight;
+    bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

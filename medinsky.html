@@ -13,7 +13,7 @@
   :root { --ink: #080808; --paper: #ede8dc; --red: #8b1a1a; --red-dim: #5c1111; --gray: #4a4a4a; --light-gray: #bab3a0; --rule: #1c1c1c; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
-  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .topbar-old { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
   .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
   .nav-back a:hover { opacity: 0.6; }
   .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
@@ -78,17 +78,22 @@
     transition: width 0.1s linear;
   }
 
-  .nav-back { display: flex; align-items: center; gap: 0; }
-  .nav-back .lang-switch { display: flex; gap: 0; margin-left: 20px; border: 1px solid #2a2a2a; overflow: hidden; }
-  .nav-back .lang-switch a { font-size: 9px !important; letter-spacing: 0.2em; text-transform: uppercase; color: #555 !important; text-decoration: none; padding: 5px 10px; border: none; transition: all 0.2s; font-weight: 400; }
-  .nav-back .lang-switch a.active { color: var(--paper) !important; background: #1a1a1a; }
-  .nav-back .lang-switch a:hover { color: var(--paper) !important; background: #111; opacity: 1 !important; }
+  .topbar { padding: 14px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .topbar-left a:hover { opacity: 0.6; }
+  .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .lang-switch { display: flex; border: 1px solid #333; overflow: hidden; }
+  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; padding: 6px 12px; transition: all 0.2s; }
+  .lang-switch a.active { color: var(--paper); background: #1c1c1c; }
+  .lang-switch a:hover { color: var(--paper); background: #111; }
+  .report-link { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #5c1111; text-decoration: none; border: 1px solid #2a0a0a; padding: 6px 14px; transition: all 0.2s; }
+  .report-link:hover { color: #8b1a1a; border-color: #5c1111; }
 </style>
 </head>
 <body>
 <div id="progress-bar"></div>
 
-<div class="nav-back"><a href="index.html">← Все досье</a><div class="lang-switch"><a href="medinsky.html" class="active">RU</a><a href="medinsky-en.html">EN</a></div><a href="submit.html" style="margin-left:auto;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5c1111;text-decoration:none;border:1px solid #2a0a0a;padding:5px 12px;border-radius:2px;transition:all 0.2s" onmouseover="this.style.color='#8b1a1a';this.style.borderColor='#5c1111'" onmouseout="this.style.color='#5c1111';this.style.borderColor='#2a0a0a'">Сообщить</a></div>
+<div class="topbar"><div class="topbar-left"><a href="index.html">← Все досье</a></div><div class="topbar-right"><div class="lang-switch"><a href="medinsky.html" class="active">RU</a><a href="medinsky-en.html">EN</a></div><a href="submit.html" class="report-link">Сообщить</a></div></div>
 
 <div class="hero">
   <div class="hero-left">

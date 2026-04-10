@@ -87,11 +87,11 @@
     transition: width 0.1s linear;
   }
 
-  .nav-back { display: flex; align-items: center; }
-  .lang-switch { display: flex; gap: 4px; margin-left: 24px; }
-  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray, #bab3a0); text-decoration: none; padding: 3px 8px; border: 1px solid transparent; transition: all 0.2s; }
-  .lang-switch a.active { color: var(--paper); border-color: #2a2a2a; }
-  .lang-switch a:hover { color: var(--paper); }
+  .nav-back { display: flex; align-items: center; gap: 0; }
+  .nav-back .lang-switch { display: flex; gap: 0; margin-left: 20px; border: 1px solid #2a2a2a; overflow: hidden; }
+  .nav-back .lang-switch a { font-size: 9px !important; letter-spacing: 0.2em; text-transform: uppercase; color: #555 !important; text-decoration: none; padding: 5px 10px; border: none; transition: all 0.2s; font-weight: 400; }
+  .nav-back .lang-switch a.active { color: var(--paper) !important; background: #1a1a1a; }
+  .nav-back .lang-switch a:hover { color: var(--paper) !important; background: #111; opacity: 1 !important; }
 </style>
 </head>
 <body>

@@ -402,11 +402,11 @@
     transition: width 0.1s linear;
   }
 
-  .nav-back { display: flex; align-items: center; }
-  .lang-switch { display: flex; gap: 4px; margin-left: 24px; }
-  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray, #bab3a0); text-decoration: none; padding: 3px 8px; border: 1px solid transparent; transition: all 0.2s; }
-  .lang-switch a.active { color: var(--paper); border-color: #2a2a2a; }
-  .lang-switch a:hover { color: var(--paper); }
+  .nav-back { display: flex; align-items: center; gap: 0; }
+  .nav-back .lang-switch { display: flex; gap: 0; margin-left: 20px; border: 1px solid #2a2a2a; overflow: hidden; }
+  .nav-back .lang-switch a { font-size: 9px !important; letter-spacing: 0.2em; text-transform: uppercase; color: #555 !important; text-decoration: none; padding: 5px 10px; border: none; transition: all 0.2s; font-weight: 400; }
+  .nav-back .lang-switch a.active { color: var(--paper) !important; background: #1a1a1a; }
+  .nav-back .lang-switch a:hover { color: var(--paper) !important; background: #111; opacity: 1 !important; }
 </style>
 </head>
 <body>
@@ -586,7 +586,7 @@
       </div>
       <div class="timeline-year">2025</div>
       <div class="timeline-body">
-        <h3>«60 минут» — девять лет в эфире. Риторика не меняется</h3>
+        <h3>«60 минут» — десять лет в эфире. Риторика не меняется</h3>
         <p>Продолжает вести программу с мужем Поповым. Три года войны не изменили ни формат, ни риторику. Международные исследователи дезинформации называют «60 минут» «наиболее последовательным примером ежедневной военной пропаганды в европейском эфире XXI века». Скабеева на это не реагирует — или использует как цитату для очередного эфира об «истеричном Западе».</p>
       </div>
     </div>

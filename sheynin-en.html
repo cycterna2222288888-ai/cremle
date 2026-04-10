@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artem Sheynin — Kremlin Voices</title>
+<meta name="description" content="Dossier on Artem Sheynin: biography, sanctions, quotes, and methods. An Afghan War veteran turned propaganda host.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Artem Sheynin — Kremlin Voices">
+<meta property="og:description" content="An Afghan War veteran turned propaganda host">
+<meta property="og:site_name" content="Kremlin Voices">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Artem Sheynin — Kremlin Voices">
+<meta name="twitter:description" content="An Afghan War veteran turned propaganda host">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --red-dim:#5c1111; --light-gray:#bab3a0; --rule:#1c1c1c; --card-bg:#0e0e0e; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; line-height:1.75; overflow-x:hidden; }
+  #progress-bar { position:fixed; top:0; left:0; height:2px; width:0%; background:#8b1a1a; z-index:9999; transition:width 0.1s linear; }
+  .topbar { padding:14px 60px; border-bottom:1px solid var(--rule); background:var(--ink); position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
+  .topbar-left a { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); text-decoration:none; }
+  .topbar-left a:hover { opacity:0.6; }
+  .topbar-right { display:flex; align-items:center; gap:20px; }
+  .lang-switch { display:flex; gap:6px; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; }
+  .lang-switch a { color:var(--light-gray); text-decoration:none; padding:4px 8px; border:1px solid transparent; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); border-color:var(--rule); }
+  .lang-switch a:hover { color:var(--paper); }
+  .report-link { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); text-decoration:none; border:1px solid var(--red-dim); padding:6px 14px; transition:background 0.2s; }
+  .report-link:hover { background:#0d0000; }
+  .masthead { padding:80px 60px 64px; border-bottom:1px solid var(--rule); display:grid; grid-template-columns:1fr 280px; gap:60px; align-items:end; }
+  .masthead-eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--red); margin-bottom:20px; }
+  .masthead-num { font-family:'Playfair Display',serif; font-size:11px; letter-spacing:0.3em; color:var(--light-gray); margin-bottom:8px; }
+  .masthead-name { font-family:'Playfair Display',serif; font-size:clamp(40px,5vw,80px); font-weight:700; color:var(--paper); line-height:1.0; margin-bottom:16px; }
+  .masthead-role { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(14px,1.8vw,20px); color:var(--light-gray); margin-bottom:24px; }
+  .masthead-born { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#444; }
+  .masthead-stats { display:flex; flex-direction:column; gap:2px; border-left:1px solid var(--rule); padding-left:40px; }
+  .stat-row { padding:20px 0; border-bottom:1px solid var(--rule); }
+  .stat-row:last-child { border-bottom:none; }
+  .stat-label { font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--red); margin-bottom:4px; }
+  .stat-val { font-family:'Playfair Display',serif; font-size:32px; font-weight:700; color:var(--paper); }
+  section { border-bottom:1px solid var(--rule); }
+  .section-inner { padding:80px 60px; }
+  .section-label { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--red); margin-bottom:48px; display:flex; align-items:center; gap:20px; }
+  .section-label::after { content:''; flex:1; height:1px; background:var(--rule); }
+  .bio-block { padding:32px 0; border-bottom:1px solid #111; display:grid; grid-template-columns:160px 1fr; gap:40px; }
+  .bio-block:last-child { border-bottom:none; }
+  .bio-year { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); padding-top:4px; }
+  .bio-title { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--paper); margin-bottom:12px; }
+  .bio-text { font-size:14px; color:var(--light-gray); line-height:1.85; }
+  .quotes-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+  .quote-block { background:var(--card-bg); padding:32px; border-left:3px solid var(--red-dim); }
+  .quote-text { font-family:'Playfair Display',serif; font-style:italic; font-size:17px; color:var(--paper); line-height:1.6; margin-bottom:16px; }
+  .quote-meta { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--light-gray); }
+  .method-body { font-size:15px; color:var(--light-gray); line-height:1.9; max-width:800px; }
+  .sanctions-grid { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
+  .sanction-tag { display:inline-block; background:#1a0000; border:1px solid var(--red-dim); color:var(--red); font-size:9px; letter-spacing:0.15em; text-transform:uppercase; padding:6px 12px; }
+  .warning-box { background:#1a0000; border:1px solid var(--red); padding:32px 40px; margin-top:32px; }
+  .warning-label { font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); margin-bottom:16px; }
+  .warning-text { font-family:'Playfair Display',serif; font-style:italic; font-size:16px; color:var(--paper); line-height:1.6; }
+  .footer { padding:48px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#333; }
+  .footer-logo { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--red); opacity:0.5; letter-spacing:normal; text-transform:none; }
+  @media(max-width:900px) {
+    .masthead { grid-template-columns:1fr; padding:40px 24px; }
+    .masthead-stats { border-left:none; border-top:1px solid var(--rule); padding-left:0; padding-top:32px; flex-direction:row; flex-wrap:wrap; gap:0; }
+    .stat-row { border-right:1px solid var(--rule); padding:16px 24px; border-bottom:none; }
+    .section-inner { padding:48px 24px; }
+    .bio-block { grid-template-columns:1fr; gap:8px; }
+    .quotes-grid { grid-template-columns:1fr; }
+    .topbar { padding:14px 24px; }
+    .footer { padding:32px 24px; flex-direction:column; gap:16px; text-align:center; }
+  }
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="index-en.html">← All dossiers</a>
+  </div>
+  <div class="topbar-right">
+    <div class="lang-switch">
+      <a href="sheynin.html">RU</a>
+      <a href="sheynin-en.html" class="active">EN</a>
+    </div>
+    <a href="submit.html" class="report-link">Submit a tip</a>
+  </div>
+</div>
+
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-eyebrow">Kremlin Voices Archive</div>
+    <div class="masthead-num">Dossier № 06</div>
+    <h1 class="masthead-name">Artem Sheynin</h1>
+    <div class="masthead-role">"Time Will Tell" (Vremya Pokazhet)</div>
+    <div class="masthead-born">Born: September 28, 1966 — Leningrad</div>
+  </div>
+  <div class="masthead-stats">
+    <div class="stat-row">
+      <div class="stat-label">Born</div>
+      <div class="stat-val">1966</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">Shows</div>
+      <div class="stat-val">1</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">Sanctions</div>
+      <div class="stat-val">3</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="section-label">Biography</div>
+    
+        <div class="bio-block">
+          <div class="bio-year">1966–1989</div>
+          <div class="bio-title">Military service</div>
+          <div class="bio-text">Born in Leningrad. Serves in the Soviet Army, including a tour in Afghanistan. The war experience becomes a permanent fixture of his public identity — moral authority through sacrifice.</div>
+        </div>
+        <div class="bio-block">
+          <div class="bio-year">1990–2010</div>
+          <div class="bio-title">Television career</div>
+          <div class="bio-text">Transitions to journalism after military service. Works as a correspondent and producer at Channel One. Covers conflicts in Chechnya and other post-Soviet wars.</div>
+        </div>
+        <div class="bio-block">
+          <div class="bio-year">2014</div>
+          <div class="bio-title">"Time Will Tell" launches</div>
+          <div class="bio-text">Becomes the face of "Vremya Pokazhet" on Channel One — a daily political talk show with a studio audience designed to simulate popular outrage. Guests who dissent are regularly silenced or have their microphones cut.</div>
+        </div>
+        <div class="bio-block">
+          <div class="bio-year">2022</div>
+          <div class="bio-title">Sanctioned</div>
+          <div class="bio-text">EU, USA and UK impose personal sanctions for systematic pro-war propaganda on state television. Sheynin does not moderate his position.</div>
+        </div>
+        <div class="bio-block">
+          <div class="bio-year">2024–2025</div>
+          <div class="bio-title">Still broadcasting</div>
+          <div class="bio-text">"Time Will Tell" continues its daily run on Channel One. Three years into the invasion, Sheynin's formula — veteran authority + manufactured rage — remains unchanged.</div>
+        </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-label">Documented Quotes</div>
+    <div class="quotes-grid">
+      
+          <div class="quote-block">
+            <div class="quote-text">"I was in a real war. An actual war. This is a different conversation entirely."</div>
+            <div class="quote-meta">2019</div>
+          </div>
+          <div class="quote-block">
+            <div class="quote-text">"These are not protesters — these are traitors. And traitors are dealt with accordingly."</div>
+            <div class="quote-meta">2022</div>
+          </div>
+          <div class="quote-block">
+            <div class="quote-text">"Zelensky is a clown who was given a country. He destroyed it."</div>
+            <div class="quote-meta">2022</div>
+          </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-label">The Method</div>
+    <div class="method-body">Afghan War veteran status as moral armor. Cuts microphones of dissenting guests. Aggression performed as righteous popular anger. "I was in a real war — this is a different conversation."</div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-label">Sanctions</div>
+    <div class="method-body">Sanctioned since 2022. All designations based on publicly available official sanctions lists.</div>
+    <div class="sanctions-grid">
+      <span class="sanction-tag">EU</span> <span class="sanction-tag">USA</span> <span class="sanction-tag">UK</span>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="footer-logo">Kremlin Voices</div>
+  <span>Data from open sources · Verified</span>
+  <span><a href="index-en.html" style="color:inherit;text-decoration:none">All dossiers</a></span>
+</div>
+
+<script>
+  var bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', function() {
+    var s = document.documentElement.scrollTop || document.body.scrollTop;
+    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    bar.style.width = (s / h * 100) + '%';
+  });
+</script>
+</body>
+</html>

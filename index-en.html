@@ -52,12 +52,9 @@
   .topbar a { color: var(--red); text-decoration: none; }
   .topbar a:hover { color: var(--paper); }
 
-  .lang-switch {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-  .lang-switch a { color: var(--light-gray); text-decoration: none; margin-left: 12px; }
+  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
+  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
   .lang-switch a:hover { color: var(--paper); }
   .lang-switch .active { color: var(--red); }
 

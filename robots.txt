@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /data/
 
-Sitemap: sitemap.xml
+Sitemap: https://cremle.netlify.app/sitemap.xml

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Сообщить об источнике — Голоса Кремля</title>
-<meta name="description" content="Есть информация об одном из пропагандистов? Передайте её анонимно.">
+<title>Submit a Tip — Voices of the Kremlin</title>
+<meta name="description" content="Do you have information about one of the propagandists? Submit it anonymously.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
@@ -180,64 +180,64 @@
 <body>
 
 <nav class="topbar">
-  <a href="index.html">← Голоса Кремля</a>
+  <a href="index-en.html">← Voices of the Kremlin</a>
   <div class="lang-switch">
-    <a href="submit.html" class="active">RU</a>
-    <a href="submit-en.html">EN</a>
+    <a href="submit.html">RU</a>
+    <a href="submit-en.html" class="active">EN</a>
   </div>
 </nav>
 
 <div class="masthead">
-  <div class="masthead-label">Источники и информация</div>
-  <h1>Есть что рассказать?</h1>
-  <p>Если вы располагаете информацией об одном из фигурантов архива — передайте её анонимно. Мы изучим каждое сообщение.</p>
+  <div class="masthead-label">Sources &amp; Information</div>
+  <h1>Have something to share?</h1>
+  <p>If you have information about one of the subjects in this archive — submit it anonymously. We review every submission.</p>
 </div>
 
 <div class="section">
   <div class="container">
 
     <div class="notice">
-      <strong>Конфиденциальность</strong>
-      Ваш IP-адрес хешируется и не хранится в читаемом виде. Не оставляйте личных данных, если не хотите быть идентифицированы. Для максимальной анонимности используйте Tor Browser или VPN.
+      <strong>Confidentiality</strong>
+      Your IP address is hashed and not stored in readable form. Do not include personal details if you wish to remain unidentified. For maximum anonymity, use Tor Browser or a VPN.
     </div>
 
-    <form id="tip-form" name="tips" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="tips">
+    <form id="tip-form" name="tips-en" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="tips-en">
       <p style="display:none"><input name="bot-field"></p>
 
-      <label for="subject">Кому касается</label>
+      <label for="subject">Concerning</label>
       <select id="subject" name="subject" required>
-        <option value="">— Выберите фигуранта —</option>
-        <option>Владимир Соловьёв</option>
-        <option>Ольга Скабеева</option>
-        <option>Маргарита Симоньян</option>
-        <option>Дмитрий Киселёв</option>
-        <option>Владимир Попов</option>
-        <option>Артём Шейнин</option>
-        <option>Пётр Толстой</option>
-        <option>Андрей Норкин</option>
-        <option>Тигран Кеосаян</option>
-        <option>Екатерина Андреева</option>
-        <option>Аркадий Мамонтов</option>
-        <option>Захар Прилепин</option>
-        <option>Михаил Леонтьев</option>
-        <option>Борис Корчевников</option>
-        <option>Владимир Мединский</option>
-        <option>Никита Михалков</option>
-        <option>Александр Дугин</option>
-        <option>Антон Красовский</option>
-        <option value="Общее">Общее / Несколько фигурантов</option>
+        <option value="">— Select a subject —</option>
+        <option>Vladimir Solovyov</option>
+        <option>Olga Skabeeva</option>
+        <option>Margarita Simonyan</option>
+        <option>Dmitry Kiselyov</option>
+        <option>Vladimir Popov</option>
+        <option>Artyom Sheynin</option>
+        <option>Pyotr Tolstoy</option>
+        <option>Andrey Norkin</option>
+        <option>Tigran Keosayan</option>
+        <option>Yekaterina Andreyeva</option>
+        <option>Arkady Mamontov</option>
+        <option>Zakhar Prilepin</option>
+        <option>Mikhail Leontyev</option>
+        <option>Boris Korchevnikov</option>
+        <option>Vladimir Medinsky</option>
+        <option>Nikita Mikhalkov</option>
+        <option>Alexander Dugin</option>
+        <option>Anton Krasovsky</option>
+        <option value="General">General / Multiple subjects</option>
       </select>
 
-      <label for="body">Ваше сообщение</label>
-      <textarea id="body" name="body" placeholder="Опишите, что вам известно. Документы, связи, факты — всё важно." required maxlength="5000"></textarea>
-      <div class="hint">Максимум 5000 символов. Оставайтесь фактическими.</div>
+      <label for="body">Your message</label>
+      <textarea id="body" name="body" placeholder="Describe what you know. Documents, connections, facts — everything matters." required maxlength="5000"></textarea>
+      <div class="hint">Maximum 5000 characters. Stick to facts.</div>
 
-      <label for="contact">Способ связи <span style="color:#444;font-style:italic;text-transform:none;letter-spacing:0">(необязательно)</span></label>
-      <input type="text" id="contact" name="contact" placeholder="Email, Telegram, Signal — только если хотите обратной связи" maxlength="200">
-      <div class="hint">Оставьте пустым, если хотите сохранить полную анонимность.</div>
+      <label for="contact">Contact <span style="color:#444;font-style:italic;text-transform:none;letter-spacing:0">(optional)</span></label>
+      <input type="text" id="contact" name="contact" placeholder="Email, Telegram, Signal — only if you want a response" maxlength="200">
+      <div class="hint">Leave blank to remain fully anonymous.</div>
 
-      <button type="submit" class="submit-btn" id="submit-btn">Отправить сообщение</button>
+      <button type="submit" class="submit-btn" id="submit-btn">Submit</button>
 
       <div class="result ok"  id="result-ok"></div>
       <div class="result err" id="result-err"></div>
@@ -245,7 +245,7 @@
   </div>
 </div>
 
-<div class="footer">Голоса Кремля · Документальный архив</div>
+<div class="footer">Voices of the Kremlin · Documentary Archive</div>
 
 <script>
 document.getElementById('tip-form').addEventListener('submit', async e => {
@@ -256,7 +256,7 @@ document.getElementById('tip-form').addEventListener('submit', async e => {
   const err  = document.getElementById('result-err');
   ok.style.display = err.style.display = 'none';
   btn.disabled = true;
-  btn.textContent = 'Отправляю…';
+  btn.textContent = 'Sending…';
 
   try {
     const res = await fetch('/', {
@@ -265,19 +265,19 @@ document.getElementById('tip-form').addEventListener('submit', async e => {
       body: new URLSearchParams(new FormData(form)).toString(),
     });
     if (res.ok) {
-      ok.textContent = 'Сообщение получено. Спасибо.';
+      ok.textContent = 'Message received. Thank you.';
       ok.style.display = 'block';
       form.reset();
     } else {
-      err.textContent = 'Ошибка при отправке. Попробуйте позже.';
+      err.textContent = 'Submission failed. Please try again later.';
       err.style.display = 'block';
     }
   } catch {
-    err.textContent = 'Нет соединения.';
+    err.textContent = 'No connection.';
     err.style.display = 'block';
   } finally {
     btn.disabled = false;
-    btn.textContent = 'Отправить сообщение';
+    btn.textContent = 'Submit';
   }
 });
 </script>

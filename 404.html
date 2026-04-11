@@ -9,20 +9,40 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
   :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --light-gray:#bab3a0; --rule:#1c1c1c; }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px; }
+  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; min-height:100vh; display:flex; flex-direction:column; }
+  .topbar { border-bottom:1px solid var(--rule); padding:16px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:var(--red); }
+  .topbar a { color:var(--red); text-decoration:none; }
+  .topbar a:hover { color:var(--paper); }
+  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
+  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
+  .body { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px; }
   .code { font-family:'Playfair Display',serif; font-size:clamp(6rem,20vw,12rem); color:#111; line-height:1; margin-bottom:8px; }
   .label { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); margin-bottom:24px; }
   h1 { font-family:'Playfair Display',serif; font-size:clamp(1.4rem,4vw,2.2rem); font-weight:400; margin-bottom:16px; }
   p { color:var(--light-gray); max-width:420px; font-size:15px; margin-bottom:40px; }
-  a { color:var(--paper); text-decoration:none; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; border-bottom:1px solid var(--red); padding-bottom:2px; }
-  a:hover { color:var(--red); }
+  .back { color:var(--paper); text-decoration:none; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; border-bottom:1px solid var(--red); padding-bottom:2px; }
+  .back:hover { color:var(--red); }
+  @media(max-width:768px) { .topbar { padding:14px 20px; } }
 </style>
 </head>
 <body>
+
+<nav class="topbar">
+  <a href="index.html">← Голоса Кремля</a>
+  <div class="lang-switch">
+    <a href="404.html" class="active">RU</a>
+    <a href="404.html">EN</a>
+  </div>
+</nav>
+
+<div class="body">
   <div class="code">404</div>
   <div class="label">Страница не найдена</div>
   <h1>Досье не существует</h1>
   <p>Страница, которую вы ищете, была удалена, переименована или никогда не существовала.</p>
-  <a href="index.html">← Вернуться в архив</a>
+  <a href="index.html" class="back">← Вернуться в архив</a>
+</div>
+
 </body>
 </html>

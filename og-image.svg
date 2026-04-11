@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#080808"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#8b1a1a"/>
+  <rect x="0" y="626" width="1200" height="4" fill="#8b1a1a"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="100" x2="1200" y2="100" stroke="#111" stroke-width="1"/>
+  <line x1="0" y1="530" x2="1200" y2="530" stroke="#111" stroke-width="1"/>
+
+  <!-- Eyebrow label -->
+  <text x="600" y="175" font-family="Georgia, serif" font-size="18" fill="#8b1a1a" text-anchor="middle" letter-spacing="8" font-weight="400">ДОКУМЕНТАЛЬНЫЙ АРХИВ · DOCUMENTARY ARCHIVE</text>
+
+  <!-- Main title RU -->
+  <text x="600" y="300" font-family="Georgia, serif" font-size="96" fill="#ede8dc" text-anchor="middle" font-weight="700">Голоса</text>
+  <text x="600" y="405" font-family="Georgia, serif" font-size="96" fill="#ede8dc" text-anchor="middle" font-weight="700">Кремля</text>
+
+  <!-- Subtitle EN -->
+  <text x="600" y="480" font-family="Georgia, serif" font-size="22" fill="#8b1a1a" text-anchor="middle" letter-spacing="4" font-style="italic">Voices of the Kremlin</text>
+
+  <!-- Bottom line -->
+  <text x="600" y="570" font-family="Arial, sans-serif" font-size="14" fill="#444" text-anchor="middle" letter-spacing="3">kremlin-voices.netlify.app</text>
+</svg>

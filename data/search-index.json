@@ -558,5 +558,176 @@
       "class=\"meme-text\">«Украина — это не страна. Это территория, которую Запад использует против России. Мы не воюем с украинцами — мы воюем с натовским проектом.»",
       "class=\"meme-text\">«Европейские санкции — это орден. Значит, я делаю что-то правильно.»"
     ]
+  },
+  {
+    "file": "medvedev.html",
+    "name": "Дмитрий Медведев",
+    "channel": "Совбез",
+    "tags": [
+      "медведев",
+      "ядерные угрозы",
+      "telegram",
+      "санкции",
+      "экс-президент"
+    ],
+    "bio": "Дмитрий Медведев — экс-президент России, заместитель председателя Совбеза. После 2022 года превратился в главного ядерного шантажиста Кремля в Telegram.",
+    "quotes": [
+      "«Я ненавижу их. Они ублюдки и выродки.»",
+      "«Либо мы побеждаем, либо ядерная война. Третьего не дано.»"
+    ]
+  },
+  {
+    "file": "medvedev-en.html",
+    "name": "Dmitry Medvedev",
+    "channel": "Security Council",
+    "tags": [
+      "medvedev",
+      "nuclear threats",
+      "telegram",
+      "sanctions",
+      "ex-president"
+    ],
+    "bio": "Dmitry Medvedev — ex-president of Russia, Deputy Chairman of the Security Council. After 2022, became the Kremlin's chief nuclear blackmailer on Telegram.",
+    "quotes": [
+      "«I hate them. They are bastards and degenerates.»",
+      "«Either victory or nuclear war. There is no third option.»"
+    ]
+  },
+  {
+    "file": "kadyrov.html",
+    "name": "Рамзан Кадыров",
+    "channel": "Чечня",
+    "tags": [
+      "кадыров",
+      "чечня",
+      "ахмат",
+      "санкции",
+      "угрозы"
+    ],
+    "bio": "Рамзан Кадыров — глава Чечни, отправил силы «Ахмат» на Украину. Публично угрожал оппонентам и иностранным лидерам.",
+    "quotes": [
+      "«Мы готовы выполнить любой приказ Верховного Главнокомандующего.»",
+      "«Трусы и предатели ответят за всё.»"
+    ]
+  },
+  {
+    "file": "kadyrov-en.html",
+    "name": "Ramzan Kadyrov",
+    "channel": "Chechnya",
+    "tags": [
+      "kadyrov",
+      "chechnya",
+      "akhmat",
+      "sanctions",
+      "threats"
+    ],
+    "bio": "Ramzan Kadyrov — head of Chechnya, sent \"Akhmat\" forces to Ukraine. Publicly threatened opponents and foreign leaders.",
+    "quotes": [
+      "«We are ready to carry out any order of the Supreme Commander.»",
+      "«Cowards and traitors will answer for everything.»"
+    ]
+  },
+  {
+    "file": "malofeev.html",
+    "name": "Константин Малофеев",
+    "channel": "Царьград",
+    "tags": [
+      "малофеев",
+      "царьград",
+      "православие",
+      "санкции",
+      "днр",
+      "лнр"
+    ],
+    "bio": "Константин Малофеев — православный олигарх, владелец Царьград ТВ. Финансировал сепаратистов ДНР/ЛНР в 2014 году.",
+    "quotes": [
+      "«Россия — это Третий Рим, и четвёртому не бывать.»",
+      "«Либерализм — это сатанизм.»"
+    ]
+  },
+  {
+    "file": "malofeev-en.html",
+    "name": "Konstantin Malofeev",
+    "channel": "Tsargrad",
+    "tags": [
+      "malofeev",
+      "tsargrad",
+      "orthodox",
+      "sanctions",
+      "separatism"
+    ],
+    "bio": "Konstantin Malofeev — \"Orthodox oligarch\", owner of Tsargrad TV. Financed DPR/LPR separatists in 2014.",
+    "quotes": [
+      "«Russia is the Third Rome, and there shall be no fourth.»",
+      "«Liberalism is Satanism.»"
+    ]
+  },
+  {
+    "file": "nikonov.html",
+    "name": "Вячеслав Никонов",
+    "channel": "Госдума",
+    "tags": [
+      "никонов",
+      "молотов",
+      "русский мир",
+      "санкции",
+      "политолог"
+    ],
+    "bio": "Вячеслав Никонов — депутат Госдумы, внук Молотова. Продвигает концепцию «русского мира» на телевидении.",
+    "quotes": [
+      "«Русский мир — это цивилизационный проект, а не агрессия.»",
+      "«Запад ведёт против России тотальную войну.»"
+    ]
+  },
+  {
+    "file": "nikonov-en.html",
+    "name": "Vyacheslav Nikonov",
+    "channel": "State Duma",
+    "tags": [
+      "nikonov",
+      "molotov",
+      "russian world",
+      "sanctions",
+      "political scientist"
+    ],
+    "bio": "Vyacheslav Nikonov — State Duma deputy, Molotov's grandson. Promotes the concept of the \"Russian World\" on television.",
+    "quotes": [
+      "«The Russian World is a civilizational project, not aggression.»",
+      "«The West is waging total war against Russia.»"
+    ]
+  },
+  {
+    "file": "poddubny.html",
+    "name": "Евгений Поддубный",
+    "channel": "ВГТРК",
+    "tags": [
+      "поддубный",
+      "военкор",
+      "вгтрк",
+      "россия 24",
+      "санкции"
+    ],
+    "bio": "Евгений Поддубный — военный корреспондент ВГТРК/Россия 24. Лицо военной пропаганды на российском ТВ.",
+    "quotes": [
+      "«Мы освобождаем людей, а не воюем с ними.»",
+      "«Правда о войне только здесь, на передовой.»"
+    ]
+  },
+  {
+    "file": "poddubny-en.html",
+    "name": "Evgeny Poddubny",
+    "channel": "VGTRK",
+    "tags": [
+      "poddubny",
+      "war correspondent",
+      "vgtrk",
+      "russia 24",
+      "sanctions"
+    ],
+    "bio": "Evgeny Poddubny — military correspondent for VGTRK/Russia 24. The face of military propaganda on Russian TV.",
+    "quotes": [
+      "«We are liberating people, not fighting them.»",
+      "«The truth about the war is only here, on the front line.»"
+    ]
   }
 ]

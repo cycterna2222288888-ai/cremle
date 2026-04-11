@@ -31,6 +31,30 @@
   .footer { padding:48px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#333; border-top:1px solid var(--rule); }
   .footer-logo { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--red); opacity:0.5; letter-spacing:normal; text-transform:none; }
   @media(max-width:900px) { .topbar,.masthead,.container,.footer { padding-left:24px; padding-right:24px; } }
+
+  .section-nav {
+    border-bottom: 1px solid var(--rule);
+    padding: 0 60px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .section-nav::-webkit-scrollbar { display: none; }
+  .section-nav a {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #555;
+    text-decoration: none;
+    padding: 14px 18px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .section-nav a:hover { color: var(--paper); }
+  .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
+  @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
 </style>
 <meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
 <meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">
@@ -49,6 +73,18 @@
     </div>
   </div>
 </div>
+<nav class="section-nav">
+  <a href="quotes-en.html">Quotes</a>
+  <a href="sanctions-en.html">Sanctions</a>
+  <a href="timeline-en.html">Timeline</a>
+  <a href="connections-en.html">Connections</a>
+  <a href="compare-en.html">Compare</a>
+  <a href="media-empire-en.html" class="active">Media Empire</a>
+  <a href="glossary-en.html">Glossary</a>
+  <a href="sources-en.html">Sources</a>
+  <a href="about-en.html">About</a>
+</nav>
+
 <div class="masthead">
   <div class="masthead-eyebrow">Structure · Funding · Reach</div>
   <h1 class="masthead-title">Media Empire</h1>

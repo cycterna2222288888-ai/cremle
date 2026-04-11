@@ -71,6 +71,31 @@
     .topbar { padding:14px 24px; }
     .footer { padding:32px 24px; flex-direction:column; gap:16px; text-align:center; }
   }
+
+  .next-dosye {
+    border-top: 1px solid var(--rule);
+    padding: 48px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: var(--paper);
+    transition: background 0.2s;
+  }
+  .next-dosye:hover { background: #0a0a0a; }
+  .next-dosye-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #444; margin-bottom: 8px; }
+  .next-dosye-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; }
+  .next-dosye-title { font-size: 13px; color: #666; margin-top: 4px; }
+  .next-dosye-arrow { font-size: 2rem; color: var(--red); }
+  .share-bar { border-top: 1px solid var(--rule); padding: 24px 60px; display: flex; align-items: center; gap: 16px; }
+  .share-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #444; }
+  .share-btn { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 8px 16px; border: 1px solid #222; color: #888; transition: all 0.2s; }
+  .share-btn:hover { border-color: #555; color: var(--paper); }
+  @media (max-width: 768px) {
+    .next-dosye { padding: 32px 20px; }
+    .next-dosye-name { font-size: 1.2rem; }
+    .share-bar { padding: 20px 20px; flex-wrap: wrap; gap: 10px; }
+  }
 </style>
 <link rel="canonical" href="https://cremle.netlify.app/skabeeva-en.html">
 <link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/skabeeva.html">
@@ -199,6 +224,24 @@
     </div>
   </div>
 </section>
+
+
+<!-- SHARE -->
+<div class="share-bar">
+  <span class="share-label">Share</span>
+  <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://cremle.netlify.app/skabeeva-en.html&text=Olga Skabeeva — The Iron Host" target="_blank" rel="noopener">Twitter / X</a>
+  <a class="share-btn" href="https://t.me/share/url?url=https://cremle.netlify.app/skabeeva-en.html&text=Olga Skabeeva — The Iron Host" target="_blank" rel="noopener">Telegram</a>
+</div>
+
+<!-- NEXT DOSSIER -->
+<a class="next-dosye" href="kiselyov-en.html">
+  <div>
+    <div class="next-dosye-label">Next dossier →</div>
+    <div class="next-dosye-name">Dmitry Kiselyov</div>
+    <div class="next-dosye-title">The Fear Merchant</div>
+  </div>
+  <div class="next-dosye-arrow">→</div>
+</a>
 
 <div class="footer">
   <div class="footer-logo">Kremlin Voices</div>

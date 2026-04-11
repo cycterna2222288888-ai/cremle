@@ -284,6 +284,22 @@
     .search-wrap { margin-left: 0; width: 100%; }
     .search-wrap input { width: 100%; }
   }
+
+  /* SCROLL ANIMATIONS */
+  .card, .stat-cell {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .card.visible, .stat-cell.visible { opacity: 1; transform: translateY(0); }
+  .card:nth-child(2) { transition-delay: 0.05s; }
+  .card:nth-child(3) { transition-delay: 0.10s; }
+  .card:nth-child(4) { transition-delay: 0.15s; }
+  .card:nth-child(5) { transition-delay: 0.20s; }
+  .card:nth-child(6) { transition-delay: 0.25s; }
+  @media (prefers-reduced-motion: reduce) {
+    .card, .stat-cell { opacity: 1; transform: none; transition: none; }
+  }
 </style>
 <meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
 <meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">

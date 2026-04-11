@@ -469,6 +469,25 @@
     .flt-btn { padding: 12px 16px; }
     .topbar { flex-wrap: wrap; gap: 4px; font-size: 9px; }
   }
+
+  /* SCROLL ANIMATIONS */
+  .card, .nav-page-link, .stat-cell {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .card.visible, .nav-page-link.visible, .stat-cell.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .card:nth-child(2) { transition-delay: 0.05s; }
+  .card:nth-child(3) { transition-delay: 0.10s; }
+  .card:nth-child(4) { transition-delay: 0.15s; }
+  .card:nth-child(5) { transition-delay: 0.20s; }
+  .card:nth-child(6) { transition-delay: 0.25s; }
+  @media (prefers-reduced-motion: reduce) {
+    .card, .nav-page-link, .stat-cell { opacity: 1; transform: none; transition: none; }
+  }
 </style>
 <meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
 <meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">
@@ -1202,6 +1221,30 @@
     });
   }, { threshold: 0.08 });
   cards.forEach(function(c) { observer.observe(c); });
+})();
+</script>
+
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  function observe() {
+    document.querySelectorAll('.card, .nav-page-link, .stat-cell').forEach(function(el) {
+      observer.observe(el);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observe);
+  } else {
+    observe();
+  }
 })();
 </script>
 

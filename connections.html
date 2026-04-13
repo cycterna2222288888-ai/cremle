@@ -91,6 +91,24 @@
   .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
   .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
 
+  /* INTERACTIVE GRAPH */
+  .graph-controls { display:flex; gap:2px; margin-bottom:14px; flex-wrap:wrap; background:var(--rule); }
+  .graph-btn { background:var(--ink); border:none; font-family:'Inter',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--light-gray); padding:11px 18px; cursor:pointer; transition:all 0.2s; white-space:nowrap; }
+  .graph-btn:hover { color:var(--paper); background:#111; }
+  .graph-btn.active { background:#0d0000; color:var(--red); }
+  .graph-btn[data-type="работа"].active { color:#c0392b; }
+  .graph-btn[data-type="влияние"].active { color:#e67e22; }
+  .graph-btn[data-type="семья"].active { color:#9b59b6; }
+  .graph-btn[data-type="финансы"].active { color:#27ae60; }
+  #graph-container { position:relative; width:100%; height:600px; background:#030303; border:1px solid var(--rule); overflow:hidden; }
+  #graph-svg { width:100%; height:100%; cursor:grab; }
+  #graph-svg:active { cursor:grabbing; }
+  #graph-tooltip { position:absolute; pointer-events:none; background:rgba(4,4,4,0.96); border:1px solid var(--red-dim); padding:10px 14px; font-size:12px; color:var(--paper); opacity:0; transition:opacity 0.12s; max-width:200px; z-index:10; line-height:1.5; }
+  .graph-legend { display:flex; gap:20px; margin-top:14px; flex-wrap:wrap; }
+  .legend-item { display:flex; align-items:center; gap:7px; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--light-gray); }
+  .legend-line { width:22px; height:2px; flex-shrink:0; }
+  .legend-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+
   @media (max-width: 900px) {
     .masthead, .container, .nav-back, .footer { padding-left: 24px; padding-right: 24px; }
     .conn-grid { grid-template-columns: 1fr; }
@@ -160,10 +178,43 @@
   <p class="masthead-sub">Семейные, профессиональные и институциональные связи между персонажами архива. Кто с кем работает, кто кому подчиняется, кто состоит в родстве.</p>
 </div>
 
+<!-- D3 GRAPH -->
 <div class="section">
   <div class="container">
     <div class="section-header">
       <span class="section-num">01</span>
+      <h2 class="section-title">Граф связей</h2>
+    </div>
+    <p class="intro-text">Интерактивный граф всех 23 персонажей и ключевых институтов. Клик по узлу — открывает досье. Перетаскивание — переупорядочивает граф. Zoom мышью или тачпадом.</p>
+
+    <div class="graph-controls">
+      <button class="graph-btn active" data-type="all">Все связи</button>
+      <button class="graph-btn" data-type="работа">● Работа / институт</button>
+      <button class="graph-btn" data-type="влияние">● Влияние / идеология</button>
+      <button class="graph-btn" data-type="семья">● Семья / личное</button>
+      <button class="graph-btn" data-type="финансы">● Финансы</button>
+    </div>
+
+    <div id="graph-container">
+      <svg id="graph-svg"></svg>
+      <div id="graph-tooltip"></div>
+    </div>
+
+    <div class="graph-legend">
+      <div class="legend-item"><div class="legend-line" style="background:#c0392b"></div>Работа / институт</div>
+      <div class="legend-item"><div class="legend-line" style="background:#e67e22"></div>Влияние / идеология</div>
+      <div class="legend-item"><div class="legend-line" style="background:#9b59b6"></div>Семья / личное</div>
+      <div class="legend-item"><div class="legend-line" style="background:#27ae60"></div>Финансы</div>
+      <div class="legend-item" style="margin-left:16px"><div class="legend-dot" style="background:#8b1a1a;border:1px solid #c0392b"></div>Институт</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#1a1a1a;border:1px solid #4a4540"></div>Персонаж</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
       <h2 class="section-title">Институциональная иерархия</h2>
     </div>
     <p class="intro-text">Все персонажи входят в единую пирамиду государственных медиа. На вершине — Кремль. Далее — структуры и каналы, связывающие персонажей между собой.</p>
@@ -253,7 +304,7 @@
 <div class="section">
   <div class="container">
     <div class="section-header">
-      <span class="section-num">02</span>
+      <span class="section-num">03</span>
       <h2 class="section-title">Ключевые связи между персонажами</h2>
     </div>
 
@@ -425,7 +476,7 @@
 <div class="section">
   <div class="container">
     <div class="section-header">
-      <span class="section-num">03</span>
+      <span class="section-num">04</span>
       <h2 class="section-title">Матрица связей</h2>
     </div>
     <p class="intro-text">Пересечения каналов, институций и ролей между персонажами архива.</p>
@@ -869,6 +920,185 @@
   <span>Аналитика на основе открытых источников · 2024</span>
   <span>Все факты верифицированы публикациями СМИ</span>
 </div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+(function() {
+  var nodes = [
+    {id:'kremlin',      label:'Кремль',        type:'org',    role:'Источник власти',            size:22, url:null},
+    {id:'rossiya1',     label:'Россия-1 / ВГТРК',type:'org', role:'Государственный холдинг',     size:16, url:null},
+    {id:'rt',           label:'RT / МИА',       type:'org',    role:'Международная пропаганда',   size:14, url:null},
+    {id:'perviy',       label:'Первый канал',   type:'org',    role:'Государственный канал',       size:13, url:null},
+    {id:'ntv',          label:'НТВ',            type:'org',    role:'Газпром-медиа',               size:11, url:null},
+    {id:'gosduma',      label:'Госдума',        type:'org',    role:'Законодательное собрание',    size:12, url:null},
+    {id:'tsargrad',     label:'Царьград TV',    type:'org',    role:'Православный канал',          size:11, url:null},
+    {id:'rosneft',      label:'Роснефть',       type:'org',    role:'Госкорпорация',               size:10, url:null},
+    {id:'solovyov',     label:'Соловьёв',       type:'person', role:'Россия-1',                   size:13, url:'solovyov.html'},
+    {id:'skabeeva',     label:'Скабеева',       type:'person', role:'Россия-1',                   size:11, url:'skabeeva.html'},
+    {id:'kiselyov',     label:'Киселёв',        type:'person', role:'МИА / ВГТРК',                size:12, url:'kiselyov.html'},
+    {id:'simonyan',     label:'Симоньян',       type:'person', role:'Гл. редактор RT',            size:13, url:'simonyan.html'},
+    {id:'popov',        label:'Попов',          type:'person', role:'Россия-1 / Госдума',         size:10, url:'popov.html'},
+    {id:'sheynin',      label:'Шейнин',         type:'person', role:'Первый канал',               size:9,  url:'sheynin.html'},
+    {id:'tolstoy',      label:'Толстой',        type:'person', role:'Первый / Госдума',           size:10, url:'tolstoy.html'},
+    {id:'norkin',       label:'Норкин',         type:'person', role:'НТВ',                        size:9,  url:'norkin.html'},
+    {id:'keosayan',     label:'Кеосаян',        type:'person', role:'RT / Режиссёр',              size:9,  url:'keosayan.html'},
+    {id:'andreyeva',    label:'Андреева',       type:'person', role:'Первый канал',               size:9,  url:'andreyeva.html'},
+    {id:'mamontov',     label:'Мамонтов',       type:'person', role:'Россия-1',                   size:9,  url:'mamontov.html'},
+    {id:'prilepin',     label:'Прилепин',       type:'person', role:'Соловьёв Live / ДНР',        size:10, url:'prilepin.html'},
+    {id:'leontyev',     label:'Леонтьев',       type:'person', role:'Первый / Роснефть',          size:9,  url:'leontyev.html'},
+    {id:'korchevnikov', label:'Корчевников',    type:'person', role:'Россия-1 / Спас',            size:8,  url:'korchevnikov.html'},
+    {id:'medinsky',     label:'Мединский',      type:'person', role:'Советник Кремля',            size:10, url:'medinsky.html'},
+    {id:'mikhalkov',    label:'Михалков',       type:'person', role:'Бесогон TV',                 size:10, url:'mikhalkov.html'},
+    {id:'dugin',        label:'Дугин',          type:'person', role:'Идеолог / Евразийство',      size:11, url:'dugin.html'},
+    {id:'krasovsky',    label:'Красовский',     type:'person', role:'RT',                         size:9,  url:'krasovsky.html'},
+    {id:'medvedev',     label:'Медведев',       type:'person', role:'Зам. пред. Совбеза',         size:13, url:'medvedev.html'},
+    {id:'kadyrov',      label:'Кадыров',        type:'person', role:'Глава Чечни',                size:12, url:'kadyrov.html'},
+    {id:'malofeev',     label:'Малофеев',       type:'person', role:'Царьград / Идеолог',         size:10, url:'malofeev.html'},
+    {id:'nikonov',      label:'Никонов',        type:'person', role:'Госдума / Политолог',        size:9,  url:'nikonov.html'},
+    {id:'poddubny',     label:'Поддубный',      type:'person', role:'ВГТРК / Россия-24',          size:9,  url:'poddubny.html'}
+  ];
+
+  var links = [
+    {source:'solovyov',     target:'rossiya1',  type:'работа',   w:3},
+    {source:'skabeeva',     target:'rossiya1',  type:'работа',   w:3},
+    {source:'popov',        target:'rossiya1',  type:'работа',   w:3},
+    {source:'mamontov',     target:'rossiya1',  type:'работа',   w:2},
+    {source:'korchevnikov', target:'rossiya1',  type:'работа',   w:2},
+    {source:'poddubny',     target:'rossiya1',  type:'работа',   w:3},
+    {source:'simonyan',     target:'rt',        type:'работа',   w:3},
+    {source:'kiselyov',     target:'rt',        type:'работа',   w:3},
+    {source:'krasovsky',    target:'rt',        type:'работа',   w:2},
+    {source:'keosayan',     target:'rt',        type:'работа',   w:2},
+    {source:'sheynin',      target:'perviy',    type:'работа',   w:3},
+    {source:'tolstoy',      target:'perviy',    type:'работа',   w:2},
+    {source:'andreyeva',    target:'perviy',    type:'работа',   w:3},
+    {source:'leontyev',     target:'perviy',    type:'работа',   w:2},
+    {source:'norkin',       target:'ntv',       type:'работа',   w:3},
+    {source:'tolstoy',      target:'gosduma',   type:'работа',   w:2},
+    {source:'popov',        target:'gosduma',   type:'работа',   w:2},
+    {source:'nikonov',      target:'gosduma',   type:'работа',   w:2},
+    {source:'medinsky',     target:'kremlin',   type:'работа',   w:3},
+    {source:'medvedev',     target:'kremlin',   type:'работа',   w:3},
+    {source:'kadyrov',      target:'kremlin',   type:'работа',   w:3},
+    {source:'leontyev',     target:'rosneft',   type:'работа',   w:2},
+    {source:'malofeev',     target:'tsargrad',  type:'работа',   w:3},
+    {source:'prilepin',     target:'kremlin',   type:'работа',   w:2},
+    {source:'solovyov',     target:'kremlin',   type:'влияние',  w:3},
+    {source:'simonyan',     target:'kremlin',   type:'влияние',  w:3},
+    {source:'kiselyov',     target:'kremlin',   type:'влияние',  w:3},
+    {source:'dugin',        target:'kremlin',   type:'влияние',  w:3},
+    {source:'mikhalkov',    target:'kremlin',   type:'влияние',  w:2},
+    {source:'malofeev',     target:'kremlin',   type:'влияние',  w:2},
+    {source:'nikonov',      target:'kremlin',   type:'влияние',  w:2},
+    {source:'medvedev',     target:'kremlin',   type:'влияние',  w:2},
+    {source:'kadyrov',      target:'kremlin',   type:'влияние',  w:2},
+    {source:'dugin',        target:'malofeev',  type:'влияние',  w:2},
+    {source:'skabeeva',     target:'popov',     type:'семья',    w:3},
+    {source:'simonyan',     target:'keosayan',  type:'семья',    w:3},
+    {source:'malofeev',     target:'kremlin',   type:'финансы',  w:2}
+  ];
+
+  var LINK_COLOR = {работа:'#c0392b', влияние:'#e67e22', семья:'#9b59b6', финансы:'#27ae60'};
+
+  var container = document.getElementById('graph-container');
+  var W = container.clientWidth || 900;
+  var H = 600;
+
+  var svg = d3.select('#graph-svg');
+  var g = svg.append('g');
+
+  svg.call(d3.zoom().scaleExtent([0.25, 4]).on('zoom', function(e) {
+    g.attr('transform', e.transform);
+  }));
+
+  var simulation = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(function(d){ return d.id; }).distance(function(d){ return d.type === 'семья' ? 70 : 120; }).strength(0.4))
+    .force('charge', d3.forceManyBody().strength(-320))
+    .force('center', d3.forceCenter(W / 2, H / 2))
+    .force('collide', d3.forceCollide().radius(function(d){ return d.size + 18; }));
+
+  var link = g.append('g').selectAll('line').data(links).join('line')
+    .attr('stroke', function(d){ return LINK_COLOR[d.type]; })
+    .attr('stroke-width', function(d){ return d.w * 0.9; })
+    .attr('stroke-opacity', 0.45);
+
+  var node = g.append('g').selectAll('g').data(nodes).join('g')
+    .style('cursor', function(d){ return d.url ? 'pointer' : 'default'; })
+    .call(d3.drag()
+      .on('start', function(e, d){ if (!e.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag',  function(e, d){ d.fx = e.x; d.fy = e.y; })
+      .on('end',   function(e, d){ if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }));
+
+  node.append('circle')
+    .attr('r', function(d){ return d.size; })
+    .attr('fill', function(d){ return d.type === 'org' ? '#1c0000' : '#111'; })
+    .attr('stroke', function(d){ return d.type === 'org' ? '#8b1a1a' : '#3a3530'; })
+    .attr('stroke-width', function(d){ return d.type === 'org' ? 1.5 : 1; });
+
+  node.append('text')
+    .text(function(d){ return d.label; })
+    .attr('text-anchor', 'middle')
+    .attr('dy', function(d){ return d.size + 13; })
+    .attr('font-family', 'Inter, sans-serif')
+    .attr('font-size', function(d){ return d.type === 'org' ? 10 : 9; })
+    .attr('fill', function(d){ return d.type === 'org' ? '#8b1a1a' : '#9a9080'; })
+    .attr('letter-spacing', '0.04em')
+    .style('pointer-events', 'none');
+
+  var tip = document.getElementById('graph-tooltip');
+
+  node.on('mouseenter', function(e, d){
+    tip.style.opacity = '1';
+    tip.innerHTML = '<strong style="font-family:\'Playfair Display\',serif;font-size:13px;color:#ede8dc">' + d.label + '</strong><br><span style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#8b1a1a">' + d.role + '</span>' + (d.url ? '<br><span style="font-size:9px;color:#555;margin-top:4px;display:block">Открыть досье →</span>' : '');
+    d3.select(this).select('circle').attr('stroke','#8b1a1a').attr('stroke-width', 2);
+  })
+  .on('mousemove', function(e){
+    var rect = container.getBoundingClientRect();
+    var x = e.clientX - rect.left + 14;
+    var y = e.clientY - rect.top + 14;
+    if (x + 210 > container.clientWidth) x -= 220;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+  })
+  .on('mouseleave', function(e, d){
+    tip.style.opacity = '0';
+    d3.select(this).select('circle')
+      .attr('stroke', d.type === 'org' ? '#8b1a1a' : '#3a3530')
+      .attr('stroke-width', d.type === 'org' ? 1.5 : 1);
+  })
+  .on('click', function(e, d){ if (d.url) window.location.href = d.url; });
+
+  simulation.on('tick', function(){
+    link.attr('x1', function(d){ return d.source.x; }).attr('y1', function(d){ return d.source.y; })
+        .attr('x2', function(d){ return d.target.x; }).attr('y2', function(d){ return d.target.y; });
+    node.attr('transform', function(d){ return 'translate(' + d.x + ',' + d.y + ')'; });
+  });
+
+  var activeFilter = 'all';
+  document.querySelectorAll('.graph-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.graph-btn').forEach(function(b){ b.classList.remove('active'); });
+      this.classList.add('active');
+      activeFilter = this.dataset.type;
+
+      var activeNodes = new Set();
+      if (activeFilter !== 'all') {
+        links.forEach(function(l){
+          if (l.type === activeFilter){
+            activeNodes.add(typeof l.source === 'object' ? l.source.id : l.source);
+            activeNodes.add(typeof l.target === 'object' ? l.target.id : l.target);
+          }
+        });
+      }
+
+      link.attr('stroke-opacity', function(d){ return activeFilter === 'all' || d.type === activeFilter ? 0.45 : 0.04; })
+          .attr('stroke-width',   function(d){ return activeFilter === 'all' || d.type === activeFilter ? d.w * 0.9 : 0.3; });
+      node.select('circle').attr('opacity', function(d){ return activeFilter === 'all' || activeNodes.has(d.id) ? 1 : 0.12; });
+      node.select('text').attr('opacity',   function(d){ return activeFilter === 'all' || activeNodes.has(d.id) ? 1 : 0.12; });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

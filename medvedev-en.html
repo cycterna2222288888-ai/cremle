@@ -117,6 +117,10 @@
     .quote-card { background:#f9f9f9 !important; border:1px solid #ddd !important; color:#000 !important; }
     @page { margin:2cm; }
   }
+  /* COPY QUOTE */
+  .copy-quote-btn { display:inline-block; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:#444; border:1px solid #222; padding:4px 10px; cursor:pointer; background:transparent; font-family:'Inter',sans-serif; margin-top:10px; transition:all 0.2s; }
+  .copy-quote-btn:hover { color:var(--paper); border-color:#555; }
+  .copy-quote-btn.copied { color:#4caf50; border-color:#1a4a1a; }
 </style>
 </head>
 <body>
@@ -325,6 +329,29 @@ window.addEventListener('scroll', function() {
   var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
   el.style.width = pct + '%';
 });
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.meme-card, .person-quote, .quote-card').forEach(function(card){
+    var bq = card.querySelector('blockquote, .meme-text, .quote-text');
+    if (!bq) return;
+    var btn = document.createElement('button');
+    btn.className = 'copy-quote-btn';
+    btn.textContent = 'Скопировать цитату';
+    btn.addEventListener('click', function(){
+      var text = bq.textContent.trim().replace(/\s+/g, ' ');
+      var url = window.location.href;
+      navigator.clipboard.writeText(text + '
+— kremlin.voices | ' + url).then(function(){
+        btn.textContent = 'Скопировано ✓';
+        btn.classList.add('copied');
+        setTimeout(function(){ btn.textContent = 'Скопировать цитату'; btn.classList.remove('copied'); }, 2000);
+      });
+    });
+    card.appendChild(btn);
+  });
+})();
 </script>
 </body>
 </html>

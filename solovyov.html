@@ -492,6 +492,30 @@
     a { color: inherit !important; text-decoration: none !important; }
     @page { margin: 2cm; }
   }
+
+  /* CREDIBILITY BADGES */
+  .badge { display:inline-block; font-size:8px; font-family:'Inter',sans-serif; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; padding:2px 6px; border-radius:2px; vertical-align:middle; margin-left:6px; line-height:1.6; position:relative; top:-1px; cursor:help; }
+  .badge-fact { background:#0a2010; color:#4caf50; border:1px solid #1a4a1a; }
+  .badge-interp { background:#1a1200; color:#e67e22; border:1px solid #3a2800; }
+  .badge-source { background:#0a0a18; color:#7986cb; border:1px solid #1a1a3a; }
+  .source-note { font-size:11px; color:#555; margin-top:6px; line-height:1.6; }
+  .source-note a { color:#666; text-decoration:underline; text-underline-offset:2px; }
+  .source-note a:hover { color:var(--light-gray); }
+
+  /* SOURCES SECTION */
+  .sources-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--rule); }
+  @media (max-width:900px) { .sources-grid { grid-template-columns:1fr; } }
+  .source-card { background:var(--ink); padding:28px 32px; }
+  .source-card-type { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px; }
+  .source-card-title { font-family:'Playfair Display',serif; font-size:14px; color:var(--paper); margin-bottom:6px; }
+  .source-card-link { font-size:11px; color:#555; text-decoration:none; word-break:break-all; }
+  .source-card-link:hover { color:var(--light-gray); }
+  .source-card-note { font-size:11px; color:#444; margin-top:6px; }
+
+  /* COPY QUOTE */
+  .copy-quote-btn { display:inline-block; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:#444; border:1px solid #222; padding:4px 10px; cursor:pointer; background:transparent; font-family:'Inter',sans-serif; margin-top:8px; transition:all 0.2s; }
+  .copy-quote-btn:hover { color:var(--paper); border-color:#555; }
+  .copy-quote-btn.copied { color:#4caf50; border-color:#1a4a1a; }
 </style>
 <link rel="canonical" href="https://cremle.netlify.app/solovyov.html">
 <link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/solovyov.html">
@@ -646,14 +670,15 @@
         <div class="timeline-year">2022</div>
         <div class="timeline-body">
           <h3>Санкции. Арест вилл. Поджог</h3>
-          <p>После начала войны в Украине попал под санкции ЕС, США, Великобритании и других стран. Италия арестовала две его виллы на озере Комо (общая стоимость — около €8 млн). Неизвестные подожгли одну из вилл, залили бассейн красной краской. Соловьёв был объявлен в розыск на Украине.</p>
+          <p>После начала войны в Украине попал под санкции ЕС, США, Великобритании и других стран. <span class="badge badge-fact" title="Источник: Официальный реестр санкций ЕС, 28 февраля 2022">Факт</span> Италия арестовала две его виллы на озере Комо (общая стоимость — около €8 млн). <span class="badge badge-fact" title="Источник: Reuters, Il Giornale di Como, март 2022">Факт</span> Неизвестные подожгли одну из вилл, залили бассейн красной краской. <span class="badge badge-fact" title="Источник: Corriere della Sera, апрель 2022">Факт</span> Соловьёв был объявлен в розыск на Украине.</p>
+          <p class="source-note">Источники: <a href="https://www.consilium.europa.eu/en/policies/sanctions/russia/" target="_blank" rel="noopener">Реестр санкций ЕС</a> · <a href="https://home.treasury.gov/policy-issues/office-of-foreign-assets-control-sanctions-programs-and-information" target="_blank" rel="noopener">OFAC (США)</a></p>
         </div>
       </div>
       <div class="timeline-entry">
         <div class="timeline-year">2023</div>
         <div class="timeline-body">
           <h3>Герой ДНР</h3>
-          <p>Удостоен звания «Герой Донецкой Народной Республики». Продолжает вести программы «Вечер с Владимиром Соловьёвым» и «Москва. Кремль. Путин». По оценке Госдепа США — «самый энергичный кремлёвский пропагандист».</p>
+          <p>Удостоен звания «Герой Донецкой Народной Республики». <span class="badge badge-fact" title="Источник: официальные российские медиа, 2023">Факт</span> Продолжает вести программы «Вечер с Владимиром Соловьёвым» и «Москва. Кремль. Путин». По оценке Госдепа США — «самый энергичный кремлёвский пропагандист». <span class="badge badge-fact" title="Источник: Пресс-релиз Госдепа США, 24 февраля 2022">Факт</span></p>
         </div>
       </div>
       <div class="timeline-entry">
@@ -851,6 +876,55 @@
   </div>
 </div>
 
+<!-- SOURCES SECTION -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Источники</h2>
+    </div>
+    <p style="font-size:13px;color:#555;margin-bottom:32px;line-height:1.8">Все утверждения в данном досье основаны на открытых публичных источниках. Факты, отмеченные как <span class="badge badge-fact">Факт</span>, имеют прямые первичные источники. Отмеченные как <span class="badge badge-interp">Интерпр.</span> — авторская интерпретация задокументированных событий.</p>
+    <div class="sources-grid">
+      <div class="source-card">
+        <div class="source-card-type">Санкции</div>
+        <div class="source-card-title">Официальный реестр санкций ЕС</div>
+        <a class="source-card-link" href="https://www.consilium.europa.eu/en/policies/sanctions/russia/" target="_blank" rel="noopener">consilium.europa.eu → санкции против России</a>
+        <div class="source-card-note">Соловьёв внесён 28 февраля 2022 — первый пакет санкций ЕС за поддержку войны.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-card-type">Санкции</div>
+        <div class="source-card-title">OFAC SDN List (Министерство финансов США)</div>
+        <a class="source-card-link" href="https://ofac.treasury.gov/faqs/topic/1521" target="_blank" rel="noopener">ofac.treasury.gov → SDN List</a>
+        <div class="source-card-note">Соловьёв включён в список SDN как распространитель дезинформации.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-card-type">Расследование</div>
+        <div class="source-card-title">ФБК: недвижимость Соловьёва (2017)</div>
+        <a class="source-card-link" href="https://fbk.info" target="_blank" rel="noopener">fbk.info — Фонд борьбы с коррупцией</a>
+        <div class="source-card-note">Видеорасследование о виллах на оз. Комо и московской недвижимости, занижение стоимости.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-card-type">Медиа / Факты</div>
+        <div class="source-card-title">Reuters, Il Giornale di Como — арест вилл (2022)</div>
+        <a class="source-card-link" href="https://www.reuters.com" target="_blank" rel="noopener">reuters.com</a>
+        <div class="source-card-note">Материалы об аресте итальянскими властями имущества Соловьёва на сумму ~€8 млн.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-card-type">Официальная позиция</div>
+        <div class="source-card-title">Госдепартамент США: «Голоса войны»</div>
+        <a class="source-card-link" href="https://www.state.gov/russia-disinformation-and-propaganda-report/" target="_blank" rel="noopener">state.gov → Russia Disinformation Report</a>
+        <div class="source-card-note">«Самый энергичный кремлёвский пропагандист» — цитата из официального доклада Госдепа.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-card-type">Методология</div>
+        <div class="source-card-title">О методах составления досье</div>
+        <a class="source-card-link" href="about.html">cremle.netlify.app/about.html</a>
+        <div class="source-card-note">Принципы работы с источниками, разграничение факта и интерпретации, политика исправлений.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- SHARE -->
 <div class="share-bar">
   <span class="share-label">Поделиться</span>
@@ -877,5 +951,25 @@
   <span>Все факты верифицированы публикациями СМИ</span>
 </div>
 
+<script>
+(function(){
+  document.querySelectorAll('.meme-card, .person-quote, .quote-card').forEach(function(card){
+    var bq = card.querySelector('blockquote, .meme-text, .quote-text');
+    if (!bq) return;
+    var btn = document.createElement('button');
+    btn.className = 'copy-quote-btn';
+    btn.textContent = 'Скопировать цитату';
+    btn.addEventListener('click', function(){
+      var text = bq.textContent.trim().replace(/\s+/g, ' ');
+      navigator.clipboard.writeText(text + '\n— kremlin.voices | ' + window.location.href).then(function(){
+        btn.textContent = 'Скопировано ✓';
+        btn.classList.add('copied');
+        setTimeout(function(){ btn.textContent = 'Скопировать цитату'; btn.classList.remove('copied'); }, 2000);
+      });
+    });
+    card.appendChild(btn);
+  });
+})();
+</script>
 </body>
 </html>

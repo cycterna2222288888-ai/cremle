@@ -148,6 +148,18 @@
   .copy-quote-btn { display:inline-block; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:#444; border:1px solid #222; padding:4px 10px; cursor:pointer; background:transparent; font-family:'Inter',sans-serif; margin-top:10px; transition:all 0.2s; }
   .copy-quote-btn:hover { color:var(--paper); border-color:#555; }
   .copy-quote-btn.copied { color:#4caf50; border-color:#1a4a1a; }
+
+  /* CREDIBILITY BADGES */
+  .badge { display:inline-block; font-size:8px; font-family:'Inter',sans-serif; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; padding:2px 6px; border-radius:2px; vertical-align:middle; margin-left:6px; line-height:1.6; position:relative; top:-1px; cursor:help; }
+  .badge-fact { background:#0a2010; color:#4caf50; border:1px solid #1a4a1a; }
+  .badge-interp { background:#1a1200; color:#e67e22; border:1px solid #3a2800; }
+  /* SOURCES GRID */
+  .sources-grid-dosye { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--rule); }
+  @media (max-width:900px) { .sources-grid-dosye { grid-template-columns:1fr; } }
+  .source-card-d { background:var(--ink); padding:24px 28px; }
+  .source-card-d .sc-type { font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:6px; }
+  .source-card-d .sc-title { font-family:'Playfair Display',serif; font-size:13px; color:var(--paper); margin-bottom:5px; }
+  .source-card-d .sc-note { font-size:11px; color:#555; line-height:1.5; }
 </style>
 <link rel="canonical" href="https://cremle.netlify.app/andreyeva.html">
 <link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/andreyeva.html">
@@ -264,7 +276,7 @@
       <div class="timeline-year">2022</div>
       <div class="timeline-body">
         <h3>Санкции ЕС и Великобритании</h3>
-        <p>После вторжения России в Украину 24 февраля Андреева читает военные сводки в эфире Первого. ЕС и Великобритания вводят персональные санкции — как против человека, чей голос является инструментом государственной дезинформации.</p>
+        <p>После вторжения России в Украину 24 февраля Андреева читает военные сводки в эфире Первого. ЕС и Великобритания вводят персональные санкции — как против человека, чей голос является инструментом государственной дезинформации. <span class="badge badge-fact" title="Источник: официальный санкционный реестр">Факт</span></p>
       </div>
       <div class="timeline-year">2024</div>
       <div class="timeline-body">
@@ -386,6 +398,44 @@
 </div>
 
 
+
+<!-- SOURCES -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Источники</h2>
+    </div>
+    <p style="font-size:13px;color:#555;margin-bottom:28px;line-height:1.8">Все утверждения в данном досье основаны на открытых публичных источниках. Факты, отмеченные <span class="badge badge-fact">Факт</span>, имеют прямые первичные источники. Отмеченные <span class="badge badge-interp">Интерпр.</span> — авторская интерпретация задокументированных событий.</p>
+    <div class="sources-grid-dosye">
+      <div class="source-card-d">
+        <div class="sc-type">Санкции · ЕС</div>
+        <div class="sc-title">EUR-Lex — Официальный реестр санкций Европейского союза</div>
+        <div class="sc-note">Решение о внесении Екатерина Андреева в санкционный список: февраль 2022.<br>eur-lex.europa.eu — публичный бесплатный доступ.</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Санкции · Великобритания</div>
+        <div class="sc-title">FCDO · UK Sanctions List</div>
+        <div class="sc-note">Санкции Министерства иностранных дел Великобритании: 2022.<br>gov.uk/government/collections/uk-sanctions</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Биография</div>
+        <div class="sc-title">Wikipedia · Wikimedia Commons</div>
+        <div class="sc-note">Биографические данные, даты, факты карьеры. Фотографии — Wikimedia Commons (лицензия CC).<br>ru.wikipedia.org/wiki/Андреева,_Екатерина_Витальевна</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Расследования</div>
+        <div class="sc-title">Расследование о «распятом мальчике» — как Первый канал транслировал ложь</div>
+        <div class="sc-note">Meduza · meduza.io</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Методология</div>
+        <div class="sc-title">Принципы архива «Голоса Кремля»</div>
+        <div class="sc-note">Только открытые источники. Дословные цитаты. Факт / интерпретация — маркируются явно.<br><a href="sources.html" style="color:#555">sources.html — полный список источников</a></div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- SHARE -->
 <div class="share-bar">
   <span class="share-label">Поделиться</span>

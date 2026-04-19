@@ -143,6 +143,18 @@
   .copy-quote-btn { display:inline-block; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:#444; border:1px solid #222; padding:4px 10px; cursor:pointer; background:transparent; font-family:'Inter',sans-serif; margin-top:10px; transition:all 0.2s; }
   .copy-quote-btn:hover { color:var(--paper); border-color:#555; }
   .copy-quote-btn.copied { color:#4caf50; border-color:#1a4a1a; }
+
+  /* CREDIBILITY BADGES */
+  .badge { display:inline-block; font-size:8px; font-family:'Inter',sans-serif; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; padding:2px 6px; border-radius:2px; vertical-align:middle; margin-left:6px; line-height:1.6; position:relative; top:-1px; cursor:help; }
+  .badge-fact { background:#0a2010; color:#4caf50; border:1px solid #1a4a1a; }
+  .badge-interp { background:#1a1200; color:#e67e22; border:1px solid #3a2800; }
+  /* SOURCES GRID */
+  .sources-grid-dosye { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--rule); }
+  @media (max-width:900px) { .sources-grid-dosye { grid-template-columns:1fr; } }
+  .source-card-d { background:var(--ink); padding:24px 28px; }
+  .source-card-d .sc-type { font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:6px; }
+  .source-card-d .sc-title { font-family:'Playfair Display',serif; font-size:13px; color:var(--paper); margin-bottom:5px; }
+  .source-card-d .sc-note { font-size:11px; color:#555; line-height:1.5; }
 </style>
 <link rel="canonical" href="https://cremle.netlify.app/dugin.html">
 <link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/dugin.html">
@@ -207,7 +219,7 @@
       <div class="timeline-year">2001</div>
       <div class="timeline-body"><h3>Евразийское движение. Доступ к власти</h3><p>Основывает Евразийскую партию (позже — Международное евразийское движение). Получает доступ к государственным медиа: выступает на Первом канале, «России-1», пишет колонки для государственных изданий. Евразийская идея — противопоставление «континентальной» России «морскому» Западу — проникает в официальный дискурс.</p></div>
       <div class="timeline-year">2014</div>
-      <div class="timeline-body"><h3>Крым. Донбасс. Призыв к войне</h3><p>После аннексии Крыма Дугин публично призывает к вооружённому вторжению на Донбасс. В интервью украинскому телевидению заявляет: «Убивайте, убивайте, убивайте» — обращаясь к сепаратистам. Высказывание вызывает скандал; Дугин лишается должности в МГУ. США вводят персональные санкции.</p></div>
+      <div class="timeline-body"><h3>Крым. Донбасс. Призыв к войне</h3><p>После аннексии Крыма Дугин публично призывает к вооружённому вторжению на Донбасс. В интервью украинскому телевидению заявляет: «Убивайте, убивайте, убивайте» — обращаясь к сепаратистам. Высказывание вызывает скандал; Дугин лишается должности в МГУ. США вводят персональные санкции. <span class="badge badge-fact" title="Источник: официальный санкционный реестр">Факт</span></p></div>
       <div class="timeline-year">2022</div>
       <div class="timeline-body"><h3>Война. Дочь. Теракт</h3><p>После начала полномасштабного вторжения Дугин становится одним из главных идеологических голосов войны. 20 августа 2022 года его дочь, журналист Дарья Дугина, погибла во взрыве автомобиля под Москвой — предположительно, в результате покушения, направленного против самого Дугина. Российские власти обвиняют Украину. Дугин использует гибель дочери для усиления риторики: «Наши сердца жаждут не просто мести, а победы».</p></div>
       <div class="timeline-year">2024</div>
@@ -289,6 +301,49 @@
 </div>
 
 
+
+<!-- SOURCES -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Источники</h2>
+    </div>
+    <p style="font-size:13px;color:#555;margin-bottom:28px;line-height:1.8">Все утверждения в данном досье основаны на открытых публичных источниках. Факты, отмеченные <span class="badge badge-fact">Факт</span>, имеют прямые первичные источники. Отмеченные <span class="badge badge-interp">Интерпр.</span> — авторская интерпретация задокументированных событий.</p>
+    <div class="sources-grid-dosye">
+      <div class="source-card-d">
+        <div class="sc-type">Санкции · ЕС</div>
+        <div class="sc-title">EUR-Lex — Официальный реестр санкций Европейского союза</div>
+        <div class="sc-note">Решение о внесении Александр Дугин в санкционный список: 2022.<br>eur-lex.europa.eu — публичный бесплатный доступ.</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Санкции · США</div>
+        <div class="sc-title">OFAC SDN List — Министерство финансов США</div>
+        <div class="sc-note">Внесён 2015. Office of Foreign Assets Control — Specially Designated Nationals.<br>ofac.treas.gov — публичный реестр.</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Санкции · Великобритания</div>
+        <div class="sc-title">FCDO · UK Sanctions List</div>
+        <div class="sc-note">Санкции Министерства иностранных дел Великобритании: 2022.<br>gov.uk/government/collections/uk-sanctions</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Биография</div>
+        <div class="sc-title">Wikipedia · Wikimedia Commons</div>
+        <div class="sc-note">Биографические данные, даты, факты карьеры. Фотографии — Wikimedia Commons (лицензия CC).<br>ru.wikipedia.org/wiki/Дугин,_Александр_Гельевич</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Расследования</div>
+        <div class="sc-title">«Основы геополитики» как учебник в военных академиях</div>
+        <div class="sc-note">Carnegie Endowment · carnegieendowment.org</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Методология</div>
+        <div class="sc-title">Принципы архива «Голоса Кремля»</div>
+        <div class="sc-note">Только открытые источники. Дословные цитаты. Факт / интерпретация — маркируются явно.<br><a href="sources.html" style="color:#555">sources.html — полный список источников</a></div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- SHARE -->
 <div class="share-bar">
   <span class="share-label">Поделиться</span>

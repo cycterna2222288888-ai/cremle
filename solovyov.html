@@ -516,6 +516,30 @@
   .copy-quote-btn { display:inline-block; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:#444; border:1px solid #222; padding:4px 10px; cursor:pointer; background:transparent; font-family:'Inter',sans-serif; margin-top:8px; transition:all 0.2s; }
   .copy-quote-btn:hover { color:var(--paper); border-color:#555; }
   .copy-quote-btn.copied { color:#4caf50; border-color:#1a4a1a; }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 44px;
+    height: 44px;
+    background: var(--red);
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 500;
+  }
+  .back-to-top.visible { opacity: 1; visibility: visible; }
+  .back-to-top:hover { background: #6e1414; }
+  @media (max-width: 768px) { .back-to-top { bottom: 20px; right: 16px; } }
+
 </style>
 <link rel="canonical" href="https://cremle.netlify.app/solovyov.html">
 <link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/solovyov.html">
@@ -970,6 +994,20 @@
       });
     });
     card.appendChild(btn);
+  });
+})();
+</script>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('back-to-top');
+  if (!btn) return;
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 300) { btn.classList.add('visible'); }
+    else { btn.classList.remove('visible'); }
+  }, { passive: true });
+  btn.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
 </script>

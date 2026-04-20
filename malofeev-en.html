@@ -121,6 +121,41 @@
   .copy-quote-btn { display:inline-block; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:#444; border:1px solid #222; padding:4px 10px; cursor:pointer; background:transparent; font-family:'Inter',sans-serif; margin-top:10px; transition:all 0.2s; }
   .copy-quote-btn:hover { color:var(--paper); border-color:#555; }
   .copy-quote-btn.copied { color:#4caf50; border-color:#1a4a1a; }
+
+  .sources-section { padding: 60px 0; border-bottom: 1px solid var(--rule); }
+  .sources-grid-en { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-top: 32px; }
+  .source-card-en { background: var(--ink); padding: 28px 32px; }
+  .sc-type-en { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .sc-title-en { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--paper); margin-bottom: 6px; }
+  .sc-note-en { font-size: 11px; color: #555; line-height: 1.7; margin-top: 4px; }
+  .sc-note-en a { color: #555; }
+  .sc-note-en a:hover { color: var(--light-gray); }
+  @media (max-width: 900px) { .sources-grid-en { grid-template-columns: 1fr; } .sources-section { padding: 40px 0; } }
+
+
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 44px;
+    height: 44px;
+    background: var(--red);
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 500;
+  }
+  .back-to-top.visible { opacity: 1; visibility: visible; }
+  .back-to-top:hover { background: #6e1414; }
+  @media (max-width: 768px) { .back-to-top { bottom: 20px; right: 16px; } }
+
 </style>
 </head>
 <body>
@@ -295,6 +330,43 @@
   </div>
 </div>
 
+
+<div class="sources-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Sources</h2>
+    </div>
+    <p style="font-size:13px;color:#555;margin-bottom:0;line-height:1.8">All claims in this dossier are based on open public sources. Facts marked <span class="badge badge-fact" style="font-size:9px">Fact</span> have direct primary sources. Marked <span class="badge badge-interp" style="font-size:9px">Interp.</span> are editorial assessments of documented events.</p>
+  </div>
+  <div class="sources-grid-en">
+      <div class="source-card-en">
+        <div class="sc-type-en">Sanctions · EU</div>
+        <div class="sc-title-en">EUR-Lex — Official EU Sanctions Register</div>
+        <div class="sc-note-en">2014 — for financing separatist forces in Donbas. Extended 2022.<br>eur-lex.europa.eu — free public access.</div>
+      </div>
+      <div class="source-card-en">
+        <div class="sc-type-en">Sanctions · USA</div>
+        <div class="sc-title-en">OFAC SDN List — U.S. Treasury Department</div>
+        <div class="sc-note-en">2014 — OFAC designation for destabilizing Ukraine.<br>ofac.treas.gov — public registry.</div>
+      </div>
+      <div class="source-card-en">
+        <div class="sc-type-en">Sanctions · UK</div>
+        <div class="sc-title-en">FCDO · UK Sanctions List</div>
+        <div class="sc-note-en">2022 — FCDO designation.<br>gov.uk/government/collections/uk-sanctions</div>
+      </div>
+      <div class="source-card-en">
+        <div class="sc-type-en">Biography</div>
+        <div class="sc-title-en">Wikipedia · Wikimedia Commons</div>
+        <div class="sc-note-en">Biographical facts, dates, career history. Photos from Wikimedia Commons (CC license).<br>ru.wikipedia.org/wiki/Малофеев,_Константин_Валерьевич</div>
+      </div>
+      <div class="source-card-en">
+        <div class="sc-type-en">Investigation</div>
+        <div class="sc-title-en">Open Sources &amp; Investigative Reports</div>
+        <div class="sc-note-en">Canada also designated him in 2022. Linked to Igor Girkin (Strelkov) through Donbas operations.</div>
+      </div>
+  </div>
+</div>
 <div class="share-bar">
   <span class="share-label">Share</span>
   <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://cremle.netlify.app/malofeev-en.html&text=Konstantin%20Malofeev%20%E2%80%94%20%22The%20Orthodox%20Oligarch%22%20%E2%80%94%20financier%20of%20separatism%20and%20creator%20of%20ideological%20TV" target="_blank" rel="noopener">Twitter / X</a>
@@ -346,6 +418,20 @@ window.addEventListener('scroll', function() {
       });
     });
     card.appendChild(btn);
+  });
+})();
+</script>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('back-to-top');
+  if (!btn) return;
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 300) { btn.classList.add('visible'); }
+    else { btn.classList.remove('visible'); }
+  }, { passive: true });
+  btn.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
 </script>

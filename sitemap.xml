@@ -9,6 +9,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/index-en.html"/>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
+      <lastmod>2026-04-20</lastmod>
   </url>
   <url>
     <loc>https://cremle.netlify.app/index-en.html</loc>
@@ -16,78 +17,143 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/index-en.html"/>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
+      <lastmod>2026-04-20</lastmod>
   </url>
 
   <!-- Досье RU -->
-  <url><loc>https://cremle.netlify.app/solovyov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/solovyov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/solovyov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/skabeeva.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/skabeeva.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/skabeeva-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/kiselyov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/kiselyov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/kiselyov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/simonyan.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/simonyan.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/simonyan-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/popov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/popov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/popov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/sheynin.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sheynin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sheynin-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/tolstoy.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/tolstoy.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/tolstoy-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/norkin.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/norkin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/norkin-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/keosayan.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/keosayan.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/keosayan-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/andreyeva.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/andreyeva.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/andreyeva-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/mamontov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/mamontov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/mamontov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/prilepin.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/prilepin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/prilepin-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/leontyev.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/leontyev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/leontyev-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/korchevnikov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/korchevnikov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/korchevnikov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/medinsky.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/medinsky.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/medinsky-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/mikhalkov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/mikhalkov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/mikhalkov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/dugin.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/dugin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/dugin-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/krasovsky.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/krasovsky.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/krasovsky-en.html"/><priority>0.9</priority></url>
+  <url><loc>https://cremle.netlify.app/solovyov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/solovyov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/solovyov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/skabeeva.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/skabeeva.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/skabeeva-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/kiselyov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/kiselyov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/kiselyov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/simonyan.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/simonyan.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/simonyan-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/popov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/popov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/popov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/sheynin.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sheynin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sheynin-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/tolstoy.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/tolstoy.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/tolstoy-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/norkin.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/norkin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/norkin-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/keosayan.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/keosayan.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/keosayan-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/andreyeva.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/andreyeva.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/andreyeva-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/mamontov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/mamontov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/mamontov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/prilepin.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/prilepin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/prilepin-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/leontyev.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/leontyev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/leontyev-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/korchevnikov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/korchevnikov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/korchevnikov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/medinsky.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/medinsky.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/medinsky-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/mikhalkov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/mikhalkov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/mikhalkov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/dugin.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/dugin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/dugin-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/krasovsky.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/krasovsky.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/krasovsky-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
 
   <!-- Досье EN -->
-  <url><loc>https://cremle.netlify.app/solovyov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/solovyov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/solovyov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/skabeeva-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/skabeeva.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/skabeeva-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/kiselyov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/kiselyov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/kiselyov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/simonyan-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/simonyan.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/simonyan-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/popov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/popov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/popov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/sheynin-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sheynin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sheynin-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/tolstoy-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/tolstoy.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/tolstoy-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/norkin-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/norkin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/norkin-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/keosayan-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/keosayan.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/keosayan-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/andreyeva-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/andreyeva.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/andreyeva-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/mamontov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/mamontov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/mamontov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/prilepin-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/prilepin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/prilepin-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/leontyev-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/leontyev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/leontyev-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/korchevnikov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/korchevnikov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/korchevnikov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/medinsky-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/medinsky.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/medinsky-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/mikhalkov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/mikhalkov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/mikhalkov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/dugin-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/dugin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/dugin-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/krasovsky-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/krasovsky.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/krasovsky-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/medvedev.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/medvedev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/medvedev-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/medvedev-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/medvedev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/medvedev-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/kadyrov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/kadyrov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/kadyrov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/kadyrov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/kadyrov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/kadyrov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/malofeev.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/malofeev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/malofeev-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/malofeev-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/malofeev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/malofeev-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/nikonov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/nikonov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/nikonov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/nikonov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/nikonov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/nikonov-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/poddubny.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/poddubny.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/poddubny-en.html"/><priority>0.9</priority></url>
-  <url><loc>https://cremle.netlify.app/poddubny-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/poddubny.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/poddubny-en.html"/><priority>0.9</priority></url>
+  <url><loc>https://cremle.netlify.app/solovyov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/solovyov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/solovyov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/skabeeva-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/skabeeva.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/skabeeva-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/kiselyov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/kiselyov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/kiselyov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/simonyan-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/simonyan.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/simonyan-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/popov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/popov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/popov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/sheynin-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sheynin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sheynin-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/tolstoy-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/tolstoy.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/tolstoy-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/norkin-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/norkin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/norkin-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/keosayan-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/keosayan.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/keosayan-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/andreyeva-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/andreyeva.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/andreyeva-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/mamontov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/mamontov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/mamontov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/prilepin-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/prilepin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/prilepin-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/leontyev-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/leontyev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/leontyev-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/korchevnikov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/korchevnikov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/korchevnikov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/medinsky-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/medinsky.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/medinsky-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/mikhalkov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/mikhalkov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/mikhalkov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/dugin-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/dugin.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/dugin-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/krasovsky-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/krasovsky.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/krasovsky-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/medvedev.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/medvedev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/medvedev-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/medvedev-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/medvedev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/medvedev-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/kadyrov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/kadyrov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/kadyrov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/kadyrov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/kadyrov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/kadyrov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/malofeev.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/malofeev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/malofeev-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/malofeev-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/malofeev.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/malofeev-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/nikonov.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/nikonov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/nikonov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/nikonov-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/nikonov.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/nikonov-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/poddubny.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/poddubny.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/poddubny-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/poddubny-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/poddubny.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/poddubny-en.html"/><priority>0.9</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
 
   <!-- Разделы RU -->
-  <url><loc>https://cremle.netlify.app/quotes.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/quotes.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/quotes-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/sanctions.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sanctions.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sanctions-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/timeline.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/timeline.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/timeline-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/connections.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/connections.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/connections-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/compare.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/compare.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/compare-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/media-empire.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/media-empire.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/media-empire-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/glossary.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/glossary.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/glossary-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/sources.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sources.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sources-en.html"/><priority>0.7</priority></url>
-  <url><loc>https://cremle.netlify.app/about.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/about.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/about-en.html"/><priority>0.7</priority></url>
+  <url><loc>https://cremle.netlify.app/quotes.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/quotes.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/quotes-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/sanctions.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sanctions.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sanctions-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/timeline.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/timeline.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/timeline-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/connections.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/connections.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/connections-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/compare.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/compare.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/compare-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/media-empire.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/media-empire.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/media-empire-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/glossary.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/glossary.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/glossary-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/sources.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sources.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sources-en.html"/><priority>0.7</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/about.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/about.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/about-en.html"/><priority>0.7</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
 
   <!-- Разделы EN -->
-  <url><loc>https://cremle.netlify.app/quotes-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/quotes.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/quotes-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/sanctions-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sanctions.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sanctions-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/timeline-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/timeline.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/timeline-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/connections-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/connections.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/connections-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/compare-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/compare.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/compare-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/media-empire-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/media-empire.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/media-empire-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/glossary-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/glossary.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/glossary-en.html"/><priority>0.8</priority></url>
-  <url><loc>https://cremle.netlify.app/sources-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sources.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sources-en.html"/><priority>0.7</priority></url>
-  <url><loc>https://cremle.netlify.app/about-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/about.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/about-en.html"/><priority>0.7</priority></url>
+  <url><loc>https://cremle.netlify.app/quotes-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/quotes.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/quotes-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/sanctions-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sanctions.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sanctions-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/timeline-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/timeline.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/timeline-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/connections-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/connections.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/connections-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/compare-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/compare.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/compare-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/media-empire-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/media-empire.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/media-empire-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/glossary-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/glossary.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/glossary-en.html"/><priority>0.8</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/sources-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/sources.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/sources-en.html"/><priority>0.7</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url><loc>https://cremle.netlify.app/about-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/about.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/about-en.html"/><priority>0.7</priority>    <lastmod>2026-04-20</lastmod>
+  </url>
 
 </urlset>

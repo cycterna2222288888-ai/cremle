@@ -1000,5 +1000,19 @@
   });
 })();
 </script>
+<script>
+(function(){
+  var pages = ["solovyov", "skabeeva", "simonyan", "kiselyov", "popov", "sheynin", "tolstoy", "norkin", "keosayan", "andreyeva", "leontyev", "mamontov", "medinsky", "prilepin", "dugin", "mikhalkov", "korchevnikov", "krasovsky", "medvedev", "kadyrov", "malofeev", "nikonov", "poddubny", "zakharova", "kovalchuk", "turchak", "navka"];
+  var cur = window.location.pathname.split('/').pop().replace('.html','');
+  var idx = pages.indexOf(cur);
+  if (idx < 0) return;
+  document.addEventListener('keydown', function(e){
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'ArrowRight' && idx < pages.length-1) window.location.href = pages[idx+1]+'.html';
+    if (e.key === 'ArrowLeft' && idx > 0) window.location.href = pages[idx-1]+'.html';
+  });
+})();
+</script>
 </body>
 </html>

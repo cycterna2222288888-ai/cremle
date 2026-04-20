@@ -156,4 +156,69 @@
   <url><loc>https://cremle.netlify.app/about-en.html</loc><xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/about.html"/><xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/about-en.html"/><priority>0.7</priority>    <lastmod>2026-04-20</lastmod>
   </url>
 
+
+  <url>
+    <loc>https://cremle.netlify.app/zakharova.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/zakharova.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/zakharova-en.html"/>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/zakharova-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/zakharova.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/zakharova-en.html"/>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/kovalchuk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/kovalchuk.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/kovalchuk-en.html"/>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/kovalchuk-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/kovalchuk.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/kovalchuk-en.html"/>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/turchak.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/turchak.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/turchak-en.html"/>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/turchak-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/turchak.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/turchak-en.html"/>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/navka.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/navka.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/navka-en.html"/>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/navka-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/navka.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cremle.netlify.app/navka-en.html"/>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

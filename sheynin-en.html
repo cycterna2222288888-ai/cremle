@@ -282,7 +282,7 @@
       <span class="section-num">03</span>
       <h2 class="section-title">The Method</h2>
     </div>
-    <p class="method-text">Afghan War veteran status as moral armor. Cuts microphones of dissenting guests. Aggression performed as righteous popular anger. "I was in a real war — this is a different conversation."</p>
+    <p class="method-text">Afghan War veteran status as moral armor. Cuts microphones of dissenting guests. Aggression performed as righteous popular anger. "I was in a real war — this is a different conversation." <span class="badge badge-interp" title="Editorial assessment of documented events">Interp.</span></p>
   </div>
 </div>
 
@@ -386,6 +386,28 @@ window.addEventListener('scroll', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
+</script>
+<script>
+(function(){
+  var pages = ["solovyov-en", "skabeeva-en", "simonyan-en", "kiselyov-en", "popov-en", "sheynin-en", "tolstoy-en", "norkin-en", "keosayan-en", "andreyeva-en", "leontyev-en", "mamontov-en", "medinsky-en", "prilepin-en", "dugin-en", "mikhalkov-en", "korchevnikov-en", "krasovsky-en", "medvedev-en", "kadyrov-en", "malofeev-en", "nikonov-en", "poddubny-en", "zakharova-en", "kovalchuk-en", "turchak-en", "navka-en"];
+  var cur = window.location.pathname.split('/').pop().replace('.html','');
+  var idx = pages.indexOf(cur);
+  if (idx < 0) return;
+  document.addEventListener('keydown', function(e){
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'ArrowRight' && idx < pages.length-1) window.location.href = pages[idx+1]+'.html';
+    if (e.key === 'ArrowLeft' && idx > 0) window.location.href = pages[idx-1]+'.html';
+  });
+})();
+</script>
+<script>
+(function(){{
+  var words = document.body.innerText.split(/\s+/).length;
+  var mins = Math.max(1, Math.round(words / 200));
+  var meta = document.querySelector('.eyebrow');
+  if (meta) meta.textContent += ' · ' + mins + ' min read';
+}})();
 </script>
 </body>
 </html>

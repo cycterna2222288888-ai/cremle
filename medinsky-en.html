@@ -5,128 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vladimir Medinsky — Kremlin Voices</title>
 <meta name="description" content="Dossier on Vladimir Medinsky: biography, sanctions, quotes, and methods. The man who rewrote history — then negotiated surrender terms.">
-<meta property="og:type" content="article">
+<meta property="og:type" content="profile">
 <meta property="og:title" content="Vladimir Medinsky — Kremlin Voices">
 <meta property="og:description" content="The man who rewrote history — then negotiated surrender terms">
-<meta property="og:site_name" content="Kremlin Voices">
+<meta property="og:site_name" content="Voices of the Kremlin">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vladimir Medinsky — Kremlin Voices">
-<meta name="twitter:description" content="The man who rewrote history — then negotiated surrender terms">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
-  :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --red-dim:#5c1111; --light-gray:#bab3a0; --rule:#1c1c1c; --card-bg:#0e0e0e; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; line-height:1.75; overflow-x:hidden; }
-  #progress-bar { position:fixed; top:0; left:0; height:2px; width:0%; background:#8b1a1a; z-index:9999; transition:width 0.1s linear; }
-  .topbar { padding:14px 60px; border-bottom:1px solid var(--rule); background:var(--ink); position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
-  .topbar-left a { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); text-decoration:none; }
-  .topbar-left a:hover { opacity:0.6; }
-  .topbar-right { display:flex; align-items:center; gap:20px; }
-  .lang-switch { display:flex; gap:6px; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; }
-  .lang-switch a { color:var(--light-gray); text-decoration:none; padding:4px 8px; border:1px solid transparent; transition:all 0.2s; }
-  .lang-switch a.active { color:var(--paper); border-color:var(--rule); }
-  .lang-switch a:hover { color:var(--paper); }
-  .report-link { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); text-decoration:none; border:1px solid var(--red-dim); padding:6px 14px; transition:background 0.2s; }
-  .report-link:hover { background:#0d0000; }
-  .masthead { padding:80px 60px 64px; border-bottom:1px solid var(--rule); display:grid; grid-template-columns:1fr 280px; gap:60px; align-items:end; }
-  .masthead-eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--red); margin-bottom:20px; }
-  .masthead-num { font-family:'Playfair Display',serif; font-size:11px; letter-spacing:0.3em; color:var(--light-gray); margin-bottom:8px; }
-  .masthead-name { font-family:'Playfair Display',serif; font-size:clamp(40px,5vw,80px); font-weight:700; color:var(--paper); line-height:1.0; margin-bottom:16px; }
-  .masthead-role { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(14px,1.8vw,20px); color:var(--light-gray); margin-bottom:24px; }
-  .masthead-born { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#444; }
-  .masthead-stats { display:flex; flex-direction:column; gap:2px; border-left:1px solid var(--rule); padding-left:40px; }
-  .stat-row { padding:20px 0; border-bottom:1px solid var(--rule); }
-  .stat-row:last-child { border-bottom:none; }
-  .stat-label { font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--red); margin-bottom:4px; }
-  .stat-val { font-family:'Playfair Display',serif; font-size:32px; font-weight:700; color:var(--paper); }
-  section { border-bottom:1px solid var(--rule); }
-  .section-inner { padding:80px 60px; }
-  .section-label { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--red); margin-bottom:48px; display:flex; align-items:center; gap:20px; }
-  .section-label::after { content:''; flex:1; height:1px; background:var(--rule); }
-  .bio-block { padding:32px 0; border-bottom:1px solid #111; display:grid; grid-template-columns:160px 1fr; gap:40px; }
-  .bio-block:last-child { border-bottom:none; }
-  .bio-year { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); padding-top:4px; }
-  .bio-title { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--paper); margin-bottom:12px; }
-  .bio-text { font-size:14px; color:var(--light-gray); line-height:1.85; }
-  .quotes-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
-  .quote-block { background:var(--card-bg); padding:32px; border-left:3px solid var(--red-dim); }
-  .quote-text { font-family:'Playfair Display',serif; font-style:italic; font-size:17px; color:var(--paper); line-height:1.6; margin-bottom:16px; }
-  .quote-meta { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--light-gray); }
-  .method-body { font-size:15px; color:var(--light-gray); line-height:1.9; max-width:800px; }
-  .sanctions-grid { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
-  .sanction-tag { display:inline-block; background:#1a0000; border:1px solid var(--red-dim); color:var(--red); font-size:9px; letter-spacing:0.15em; text-transform:uppercase; padding:6px 12px; }
-  .warning-box { background:#1a0000; border:1px solid var(--red); padding:32px 40px; margin-top:32px; }
-  .warning-label { font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); margin-bottom:16px; }
-  .warning-text { font-family:'Playfair Display',serif; font-style:italic; font-size:16px; color:var(--paper); line-height:1.6; }
-  .footer { padding:48px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#333; }
-  .footer-logo { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--red); opacity:0.5; letter-spacing:normal; text-transform:none; }
-  @media(max-width:900px) {
-    .masthead { grid-template-columns:1fr; padding:40px 24px; }
-    .masthead-stats { border-left:none; border-top:1px solid var(--rule); padding-left:0; padding-top:32px; flex-direction:row; flex-wrap:wrap; gap:0; }
-    .stat-row { border-right:1px solid var(--rule); padding:16px 24px; border-bottom:none; }
-    .section-inner { padding:48px 24px; }
-    .bio-block { grid-template-columns:1fr; gap:8px; }
-    .quotes-grid { grid-template-columns:1fr; }
-    .topbar { padding:14px 24px; }
-    .footer { padding:32px 24px; flex-direction:column; gap:16px; text-align:center; }
-  }
-
-  .next-dosye {
-    border-top: 1px solid var(--rule);
-    padding: 48px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
-    color: var(--paper);
-    transition: background 0.2s;
-  }
-  .next-dosye:hover { background: #0a0a0a; }
-  .next-dosye-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #444; margin-bottom: 8px; }
-  .next-dosye-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; }
-  .next-dosye-title { font-size: 13px; color: #666; margin-top: 4px; }
-  .next-dosye-arrow { font-size: 2rem; color: var(--red); }
-  .share-bar { border-top: 1px solid var(--rule); padding: 24px 60px; display: flex; align-items: center; gap: 16px; }
-  .share-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #444; }
-  .share-btn { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 8px 16px; border: 1px solid #222; color: #888; transition: all 0.2s; }
-  .share-btn:hover { border-color: #555; color: var(--paper); }
-  @media (max-width: 768px) {
-    .next-dosye { padding: 32px 20px; }
-    .next-dosye-name { font-size: 1.2rem; }
-    .share-bar { padding: 20px 20px; flex-wrap: wrap; gap: 10px; }
-  }
-
-  @media print {
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { background: #fff !important; color: #000 !important; font-size: 11pt; }
-    .topbar, #progress-bar, .share-bar, .next-dosye, .report-link, .lang-switch { display: none !important; }
-    .hero { grid-template-columns: 1fr 280px !important; page-break-inside: avoid; }
-    .hero-right { height: 280px !important; }
-    .hero-left { background: #f5f5f5 !important; padding: 32px !important; }
-    .hero-name { color: #000 !important; font-size: 28pt !important; }
-    .hero-title { color: #8b1a1a !important; }
-    .hero-meta li { color: #333 !important; border-color: #ccc !important; }
-    .container { padding: 0 !important; }
-    .section { border-color: #ddd !important; padding: 24px 0 !important; page-break-inside: avoid; }
-    .section-title { color: #000 !important; }
-    .section-title::after { background: #ccc !important; }
-    .quote-card, .roots-item, .property-item { background: #f9f9f9 !important; border-color: #ddd !important; color: #000 !important; }
-    .quote-text { color: #000 !important; }
-    .quote-source { color: #555 !important; }
-    .sanction-tag { background: #8b1a1a !important; color: #fff !important; }
-    .footer { color: #555 !important; border-color: #ddd !important; }
-    .footer-rule { background: #ddd !important; }
-    a { color: inherit !important; text-decoration: none !important; }
-    @page { margin: 2cm; }
-  }
-  /* COPY QUOTE */
-  .copy-quote-btn { display:inline-block; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:#444; border:1px solid #222; padding:4px 10px; cursor:pointer; background:transparent; font-family:'Inter',sans-serif; margin-top:10px; transition:all 0.2s; }
-  .copy-quote-btn:hover { color:var(--paper); border-color:#555; }
-  .copy-quote-btn.copied { color:#4caf50; border-color:#1a4a1a; }
-</style>
+<meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
+<meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">
 <link rel="canonical" href="https://cremle.netlify.app/medinsky-en.html">
 <link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/medinsky.html">
 <link rel="alternate" hreflang="en" href="https://cremle.netlify.app/medinsky-en.html">
@@ -146,128 +34,242 @@
 </script>
 <!-- Analytics (Umami, no cookies) -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="REPLACE_WITH_YOUR_ID"></script>
-<meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
-<meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --red-dim:#5c1111; --light-gray:#bab3a0; --rule:#1c1c1c; --card-bg:#0e0e0e; --gray:#4a4a4a; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; line-height:1.75; overflow-x:hidden; min-height:100vh; }
+  #progress-bar { position:fixed; top:0; left:0; height:2px; width:0%; background:var(--red); z-index:999; transition:width 0.1s; }
+  .topbar { padding:14px 60px; border-bottom:1px solid var(--rule); background:var(--ink); position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
+  .topbar-left a { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); text-decoration:none; }
+  .topbar-left a:hover { opacity:0.6; }
+  .topbar-right { display:flex; align-items:center; gap:20px; }
+  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
+  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
+  .lang-switch a:hover { color:var(--paper); background:#111; }
+  .report-link { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#5c1111; text-decoration:none; border:1px solid #2a0a0a; padding:6px 14px; transition:all 0.2s; }
+  .report-link:hover { color:#8b1a1a; border-color:#5c1111; }
+  .hero { display:grid; grid-template-columns:1fr 420px; min-height:80vh; border-bottom:1px solid var(--rule); }
+  .hero-left { padding:80px 60px; display:flex; flex-direction:column; justify-content:center; border-right:1px solid var(--rule); }
+  .eyebrow { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); margin-bottom:32px; }
+  .hero-name { font-family:'Playfair Display',serif; font-size:clamp(2.5rem,5vw,4.5rem); font-weight:400; line-height:1.05; margin-bottom:20px; }
+  .hero-subtitle { font-size:14px; color:var(--light-gray); letter-spacing:0.05em; margin-bottom:40px; font-style:italic; }
+  .hero-meta { display:flex; flex-direction:column; gap:0; border-top:1px solid var(--rule); }
+  .meta-item { display:grid; grid-template-columns:140px 1fr; gap:16px; padding:12px 0; border-bottom:1px solid #111; }
+  .meta-item label { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#555; }
+  .meta-item span { font-size:13px; color:var(--light-gray); }
+  .hero-right { position:relative; overflow:hidden; background:#050505; }
+  .hero-stamp { position:absolute; bottom:24px; left:24px; font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); border:1px solid var(--red-dim); padding:6px 12px; background:rgba(0,0,0,0.7); }
+  .section { border-bottom:1px solid var(--rule); padding:80px 0; }
+  .container { max-width:760px; margin:0 auto; padding:0 60px; }
+  .section-header { display:flex; align-items:center; gap:20px; margin-bottom:48px; }
+  .section-num { font-size:11px; letter-spacing:0.3em; color:#333; }
+  .section-title { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:400; flex:1; }
+  .section-title::after { content:''; display:block; height:1px; background:var(--rule); margin-top:8px; }
+  .intro-text { font-size:16px; line-height:1.9; color:var(--light-gray); margin-bottom:48px; }
+  .timeline { display:flex; flex-direction:column; gap:0; }
+  .timeline-entry { display:grid; grid-template-columns:80px 1fr; gap:24px; padding:28px 0; border-bottom:1px solid #0f0f0f; }
+  .timeline-year { font-size:11px; letter-spacing:0.2em; color:var(--red); padding-top:4px; }
+  .timeline-body h3 { font-size:14px; letter-spacing:0.05em; margin-bottom:10px; color:var(--paper); }
+  .timeline-body p { font-size:14px; color:#888; line-height:1.8; }
+  .quotes-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); }
+  .quote-card { background:var(--card-bg); padding:32px; }
+  .quote-text { font-family:'Playfair Display',serif; font-size:15px; font-style:italic; line-height:1.7; margin-bottom:16px; color:var(--paper); }
+  .quote-source { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#444; }
+  .method-text { font-size:15px; line-height:1.9; color:var(--light-gray); }
+  .sanctions-block { background:var(--card-bg); border:1px solid #1a0000; border-left:3px solid var(--red); padding:28px 32px; }
+  .sanctions-block p { font-size:14px; color:var(--light-gray); line-height:1.8; }
+  .footer { padding:48px 60px; display:flex; justify-content:space-between; align-items:center; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#333; }
+  .footer-rule { width:1px; height:40px; background:var(--rule); }
+  .next-dosye { border-top:1px solid var(--rule); padding:48px 60px; display:flex; justify-content:space-between; align-items:center; text-decoration:none; color:var(--paper); transition:background 0.2s; }
+  .next-dosye:hover { background:#0a0a0a; }
+  .next-dosye-label { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:#444; margin-bottom:8px; }
+  .next-dosye-name { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:400; }
+  .next-dosye-title { font-size:13px; color:#666; margin-top:4px; }
+  .next-dosye-arrow { font-size:2rem; color:var(--red); }
+  .share-bar { border-top:1px solid var(--rule); padding:24px 60px; display:flex; align-items:center; gap:16px; }
+  .share-label { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#444; }
+  .share-btn { font-size:10px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none; padding:8px 16px; border:1px solid #222; color:#888; transition:all 0.2s; }
+  .share-btn:hover { border-color:#555; color:var(--paper); }
+  @media (max-width: 768px) {
+    .hero { grid-template-columns:1fr; }
+    .hero-right { height:300px; }
+    .hero-left { padding:48px 24px; }
+    .container { padding:0 24px; }
+    .quotes-grid { grid-template-columns:1fr; }
+    .topbar { padding:12px 20px; }
+    .topbar-right { gap:10px; }
+    .report-link { display:none; }
+    .footer { padding:32px 24px; flex-direction:column; gap:12px; text-align:center; }
+    .next-dosye { padding:32px 20px; }
+    .next-dosye-name { font-size:1.2rem; }
+    .share-bar { padding:20px 20px; flex-wrap:wrap; gap:10px; }
+  }
+  @media print {
+    * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    body { background:#fff !important; color:#000 !important; font-size:11pt; }
+    .topbar,#progress-bar,.share-bar,.next-dosye,.report-link,.lang-switch { display:none !important; }
+    .hero { grid-template-columns:1fr 280px !important; page-break-inside:avoid; }
+    .hero-right { height:280px !important; }
+    .hero-left { background:#f5f5f5 !important; padding:32px !important; }
+    .hero-name { color:#000 !important; font-size:28pt !important; }
+    .section { border-color:#ddd !important; padding:24px 0 !important; page-break-inside:avoid; }
+    .quote-card { background:#f9f9f9 !important; border:1px solid #ddd !important; color:#000 !important; }
+    @page { margin:2cm; }
+  }
+  .copy-quote-btn { display:inline-block; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:#444; border:1px solid #222; padding:4px 10px; cursor:pointer; background:transparent; font-family:'Inter',sans-serif; margin-top:10px; transition:all 0.2s; }
+  .copy-quote-btn:hover { color:var(--paper); border-color:#555; }
+  .copy-quote-btn.copied { color:#4caf50; border-color:#1a4a1a; }
+</style>
 </head>
 <body>
 <div id="progress-bar"></div>
-
 <div class="topbar">
-  <div class="topbar-left">
-    <a href="index-en.html">← All dossiers</a>
-  </div>
+  <div class="topbar-left"><a href="index-en.html">← All dossiers</a></div>
   <div class="topbar-right">
     <div class="lang-switch">
       <a href="medinsky.html">RU</a>
       <a href="medinsky-en.html" class="active">EN</a>
     </div>
-    <a href="submit.html" class="report-link">Submit a tip</a>
+    <a href="submit-en.html" class="report-link">Submit a tip</a>
   </div>
 </div>
 
-<div class="masthead">
-  <div class="masthead-left">
-    <div class="masthead-eyebrow">Kremlin Voices Archive</div>
-    <div class="masthead-num">Dossier № 15</div>
-    <h1 class="masthead-name">Vladimir Medinsky</h1>
-    <div class="masthead-role">Presidential adviser, ex-Minister of Culture 2012–2020, chief "peace" negotiator</div>
-    <div class="masthead-born">Born: July 18, 1970 — Smela, Ukraine</div>
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Dossier · Archival material · 2025</div>
+    <h1 class="hero-name">Vladimir Medinsky</h1>
+    <p class="hero-subtitle">Presidential adviser, ex-Minister of Culture 2012–2020, chief "peace" negotiator</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Born</label>
+        <span>July 18, 1970, Smela, Ukraine</span>
+      </div>
+      <div class="meta-item">
+        <label>Sanctions</label>
+        <span>EU, USA, UK, Canada</span>
+      </div>
+    </div>
   </div>
-  <div class="masthead-stats">
-    <div class="stat-row">
-      <div class="stat-label">Born</div>
-      <div class="stat-val">1970</div>
+  <div class="hero-right">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <radialGradient id="rg" cx="50%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#1a0000" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#000" stop-opacity="1"/>
+        </radialGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#rg)"/>
+      <line x1="50%" y1="20%" x2="50%" y2="80%" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="20%" y1="50%" x2="80%" y2="50%" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="50%" cy="38%" r="80" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="50%" cy="38%" r="140" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.12"/>
+      <text x="50%" y="42%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia,serif" font-size="140" fill="#8b1a1a" opacity="0.12" font-weight="700">VM</text>
+    </svg>
+    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Vladimir_Medinsky_2025-06-05_%28cropped%29.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.45;mix-blend-mode:luminosity;" onerror="this.style.display='none'">
+    <div class="hero-stamp">Культура · История · Ревизионизм</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Biography</h2>
     </div>
-    <div class="stat-row">
-      <div class="stat-label">Shows</div>
-      <div class="stat-val">—</div>
-    </div>
-    <div class="stat-row">
-      <div class="stat-label">Sanctions</div>
-      <div class="stat-val">4</div>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <div class="timeline-year">1970–1998</div>
+        <div class="timeline-body">
+          <h3>Kyiv origins</h3>
+          <p>Born in Smela, Ukrainian SSR. Grows up in Moscow. Studies at MGIMO (Moscow State Institute of International Relations). Later completes a doctorate in history — subsequently found by academic councils to contain systematic fabrications.</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">1998–2012</div>
+        <div class="timeline-body">
+          <h3>Political career</h3>
+          <p>Works in public relations and enters politics through United Russia. Becomes a Duma deputy. Develops a public profile as an author of nationalist historical revisionism ("Myths About Russia" series).</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">2012</div>
+        <div class="timeline-body">
+          <h3>Minister of Culture</h3>
+          <p>Appointed Minister of Culture by Putin. Over eight years, transforms cultural policy into an instrument of state ideology: film subsidies tied to patriotic narratives, monuments to Soviet figures, suppression of independent cultural institutions.</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-body">
+          <h3>Lead negotiator</h3>
+          <p>Heads the Russian delegation at the Belarus and Istanbul "peace" talks in February–March 2022. The terms Russia presents — Ukrainian disarmament, NATO ban, regime change — are publicly stated to be non-negotiable. The talks collapse. Sanctioned by EU, USA, UK and Canada.</p>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">2024–2025</div>
+        <div class="timeline-body">
+          <h3>Trump-era negotiations</h3>
+          <p>Returns to the negotiating table in the context of Trump's pressure for a settlement. Continues to represent positions incompatible with Ukrainian sovereignty.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<section>
-  <div class="section-inner">
-    <div class="section-label">Biography</div>
-    
-        <div class="bio-block">
-          <div class="bio-year">1970–1998</div>
-          <div class="bio-title">Kyiv origins</div>
-          <div class="bio-text">Born in Smela, Ukrainian SSR. Grows up in Moscow. Studies at MGIMO (Moscow State Institute of International Relations). Later completes a doctorate in history — subsequently found by academic councils to contain systematic fabrications.</div>
-        </div>
-        <div class="bio-block">
-          <div class="bio-year">1998–2012</div>
-          <div class="bio-title">Political career</div>
-          <div class="bio-text">Works in public relations and enters politics through United Russia. Becomes a Duma deputy. Develops a public profile as an author of nationalist historical revisionism ("Myths About Russia" series).</div>
-        </div>
-        <div class="bio-block">
-          <div class="bio-year">2012</div>
-          <div class="bio-title">Minister of Culture</div>
-          <div class="bio-text">Appointed Minister of Culture by Putin. Over eight years, transforms cultural policy into an instrument of state ideology: film subsidies tied to patriotic narratives, monuments to Soviet figures, suppression of independent cultural institutions.</div>
-        </div>
-        <div class="bio-block">
-          <div class="bio-year">2022</div>
-          <div class="bio-title">Lead negotiator</div>
-          <div class="bio-text">Heads the Russian delegation at the Belarus and Istanbul "peace" talks in February–March 2022. The terms Russia presents — Ukrainian disarmament, NATO ban, regime change — are publicly stated to be non-negotiable. The talks collapse. Sanctioned by EU, USA, UK and Canada.</div>
-        </div>
-        <div class="bio-block">
-          <div class="bio-year">2024–2025</div>
-          <div class="bio-title">Trump-era negotiations</div>
-          <div class="bio-text">Returns to the negotiating table in the context of Trump's pressure for a settlement. Continues to represent positions incompatible with Ukrainian sovereignty.</div>
-        </div>
-  </div>
-</section>
-
-<section>
-  <div class="section-inner">
-    <div class="section-label">Documented Quotes</div>
-    <div class="quotes-grid">
-      
-          <div class="quote-block">
-            <div class="quote-text">"History is not what happened — it is what the people need."</div>
-            <div class="quote-meta">2016</div>
-          </div>
-          <div class="quote-block">
-            <div class="quote-text">"Ukraine was always part of Russia. The separation was an accident of Soviet bureaucracy."</div>
-            <div class="quote-meta">2022</div>
-          </div>
-          <div class="quote-block">
-            <div class="quote-text">"We are not at war with Ukraine. We are liberating Russia's historical territory."</div>
-            <div class="quote-meta">2022</div>
-          </div>
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Documented Quotes</h2>
     </div>
   </div>
-</section>
-
-<section>
-  <div class="section-inner">
-    <div class="section-label">The Method</div>
-    <div class="method-body">Rewriting history as a state project. Culture as a weapon. His doctoral dissertation was found to contain fabrications — yet he led Russia's cultural policy for eight years. Born in Ukraine. Led the 2022 "peace" talks with terms designed to be rejected.</div>
-  </div>
-</section>
-
-<section>
-  <div class="section-inner">
-    <div class="section-label">Sanctions</div>
-    <div class="method-body">Sanctioned since 2022. All designations based on publicly available official sanctions lists.</div>
-    <div class="sanctions-grid">
-      <span class="sanction-tag">EU</span> <span class="sanction-tag">USA</span> <span class="sanction-tag">UK</span> <span class="sanction-tag">Canada</span>
+  <div class="quotes-grid">
+    <div class="quote-card">
+      <div class="quote-text">"History is not what happened — it is what the people need."</div>
+      <div class="quote-source">2016</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">"Ukraine was always part of Russia. The separation was an accident of Soviet bureaucracy."</div>
+      <div class="quote-source">2022</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">"We are not at war with Ukraine. We are liberating Russia's historical territory."</div>
+      <div class="quote-source">2022</div>
     </div>
   </div>
-</section>
+</div>
 
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">The Method</h2>
+    </div>
+    <p class="method-text">Rewriting history as a state project. Culture as a weapon. His doctoral dissertation was found to contain fabrications — yet he led Russia's cultural policy for eight years. Born in Ukraine. Led the 2022 "peace" talks with terms designed to be rejected.</p>
+  </div>
+</div>
 
-<!-- SHARE -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Sanctions</h2>
+    </div>
+    <div class="sanctions-block">
+      <p>Sanctioned since 2022. All designations based on publicly available official sanctions lists.</p>
+    </div>
+  </div>
+</div>
+
 <div class="share-bar">
   <span class="share-label">Share</span>
   <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://cremle.netlify.app/medinsky-en.html&text=Vladimir Medinsky — Historian of Power" target="_blank" rel="noopener">Twitter / X</a>
   <a class="share-btn" href="https://t.me/share/url?url=https://cremle.netlify.app/medinsky-en.html&text=Vladimir Medinsky — Historian of Power" target="_blank" rel="noopener">Telegram</a>
 </div>
 
-<!-- NEXT DOSSIER -->
 <a class="next-dosye" href="mikhalkov-en.html">
   <div>
     <div class="next-dosye-label">Next dossier →</div>
@@ -278,18 +280,20 @@
 </a>
 
 <div class="footer">
-  <div class="footer-logo">Kremlin Voices</div>
-  <span>Data from open sources · Verified</span>
-  <span><a href="index-en.html" style="color:inherit;text-decoration:none">All dossiers</a></span>
+  <span>Compiled from open sources</span>
+  <div class="footer-rule"></div>
+  <span>Vladimir Medinsky</span>
+  <div class="footer-rule"></div>
+  <span>All facts verified by published media reports</span>
 </div>
 
 <script>
-  var bar = document.getElementById('progress-bar');
-  window.addEventListener('scroll', function() {
-    var s = document.documentElement.scrollTop || document.body.scrollTop;
-    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    bar.style.width = (s / h * 100) + '%';
-  });
+window.addEventListener('scroll', function() {
+  var el = document.getElementById('progress-bar');
+  var h = document.documentElement;
+  var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  el.style.width = pct + '%';
+});
 </script>
 
 <script>
@@ -299,15 +303,14 @@
     if (!bq) return;
     var btn = document.createElement('button');
     btn.className = 'copy-quote-btn';
-    btn.textContent = 'Скопировать цитату';
+    btn.textContent = 'Copy quote';
     btn.addEventListener('click', function(){
       var text = bq.textContent.trim().replace(/\s+/g, ' ');
       var url = window.location.href;
-      navigator.clipboard.writeText(text + '
-— kremlin.voices | ' + url).then(function(){
-        btn.textContent = 'Скопировано ✓';
+      navigator.clipboard.writeText(text + '\n— voices-of-the-kremlin | ' + url).then(function(){
+        btn.textContent = 'Copied ✓';
         btn.classList.add('copied');
-        setTimeout(function(){ btn.textContent = 'Скопировать цитату'; btn.classList.remove('copied'); }, 2000);
+        setTimeout(function(){ btn.textContent = 'Copy quote'; btn.classList.remove('copied'); }, 2000);
       });
     });
     card.appendChild(btn);

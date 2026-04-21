@@ -208,7 +208,11 @@
     {id:'kadyrov',      label:'Kadyrov',           type:'person', role:'Head of Chechnya',            size:12, url:'kadyrov-en.html'},
     {id:'malofeev',     label:'Malofeev',          type:'person', role:'Tsargrad / Ideologist',       size:10, url:'malofeev-en.html'},
     {id:'nikonov',      label:'Nikonov',           type:'person', role:'State Duma / Political analyst',size:9, url:'nikonov-en.html'},
-    {id:'poddubny',     label:'Poddubny',          type:'person', role:'VGTRK / Russia-24',           size:9,  url:'poddubny-en.html'}
+    {id:'poddubny',     label:'Poddubny',          type:'person', role:'VGTRK / Russia-24',           size:9,  url:'poddubny-en.html'},
+    {id:'zakharova',    label:'Zakharova',         type:'person', role:'MFA Spokesperson',             size:11, url:'zakharova-en.html'},
+    {id:'kovalchuk',    label:'Kovalchuk',         type:'person', role:'National Media Group',         size:12, url:'kovalchuk-en.html'},
+    {id:'turchak',      label:'Turchak',           type:'person', role:'United Russia',                size:10, url:'turchak-en.html'},
+    {id:'navka',        label:'Navka',             type:'person', role:'Channel One / Peskov wife',    size:9,  url:'navka-en.html'}
   ];
 
   var links = [
@@ -248,7 +252,14 @@
     {source:'dugin',        target:'malofeev',  type:'влияние',  w:2},
     {source:'skabeeva',     target:'popov',     type:'семья',    w:3},
     {source:'simonyan',     target:'keosayan',  type:'семья',    w:3},
-    {source:'malofeev',     target:'kremlin',   type:'финансы',  w:2}
+    {source:'malofeev',     target:'kremlin',   type:'финансы',  w:2},
+    {source:'zakharova',    target:'kremlin',   type:'работа',   w:3},
+    {source:'turchak',      target:'kremlin',   type:'влияние',  w:2},
+    {source:'turchak',      target:'gosduma',   type:'работа',   w:2},
+    {source:'kovalchuk',    target:'perviy',    type:'финансы',  w:3},
+    {source:'kovalchuk',    target:'kremlin',   type:'влияние',  w:3},
+    {source:'navka',        target:'perviy',    type:'работа',   w:2},
+    {source:'navka',        target:'zakharova', type:'влияние',  w:1}
   ];
 
   var LINK_COLOR = {работа:'#c0392b', влияние:'#e67e22', семья:'#9b59b6', финансы:'#27ae60'};

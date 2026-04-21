@@ -184,6 +184,16 @@
   .back-to-top:hover { background: #6e1414; }
   @media (max-width: 768px) { .back-to-top { bottom: 20px; right: 16px; } }
 
+
+  .related-section { border-top: 1px solid var(--rule); padding: 60px; }
+  .related-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+  .related-card { background: var(--card-bg); padding: 28px; text-decoration: none; color: var(--paper); display: block; transition: background 0.2s; }
+  .related-card:hover { background: #141414; }
+  .related-card-name { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 8px; }
+  .related-card-arrow { font-size: 12px; color: var(--red); margin-top: 12px; letter-spacing: 0.15em; text-transform: uppercase; }
+  @media (max-width: 768px) { .related-section { padding: 40px 20px; } .related-grid { grid-template-columns: 1fr; } }
+
 </style>
 <link rel="canonical" href="https://cremle.netlify.app/andreyeva.html">
 <link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/andreyeva.html">
@@ -204,8 +214,8 @@
 </script>
 <!-- Analytics (Umami, no cookies) -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="REPLACE_WITH_YOUR_ID"></script>
-<meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
-<meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">
+<meta property="og:image" content="https://cremle.netlify.app/og-andreyeva.svg">
+<meta name="twitter:image" content="https://cremle.netlify.app/og-andreyeva.svg">
 </head>
 <body>
 <div id="progress-bar"></div>
@@ -461,6 +471,7 @@
   </div>
 </div>
 <!-- SHARE -->
+<div class="related-section"><div class="related-label">Похожие досье</div><div class="related-grid"><a class="related-card" href="sheynin.html"><div class="related-card-name">Артём Шейнин</div><div class="related-card-arrow">Читать досье →</div></a><a class="related-card" href="leontyev.html"><div class="related-card-name">Михаил Леонтьев</div><div class="related-card-arrow">Читать досье →</div></a><a class="related-card" href="tolstoy.html"><div class="related-card-name">Пётр Толстой</div><div class="related-card-arrow">Читать досье →</div></a></div></div>
 <div class="share-bar">
   <span class="share-label">Поделиться</span>
   <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://cremle.netlify.app/andreyeva.html&text=Екатерина Андреева — Голос Первого" target="_blank" rel="noopener">Twitter / X</a>

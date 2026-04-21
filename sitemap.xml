@@ -221,4 +221,41 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
+
+  <url>
+    <loc>https://cremle.netlify.app/peskov.html</loc>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/peskov-en.html</loc>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/lavrov.html</loc>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/lavrov-en.html</loc>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/mizulina.html</loc>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://cremle.netlify.app/mizulina-en.html</loc>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

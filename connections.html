@@ -955,7 +955,14 @@
     {id:'kadyrov',      label:'Кадыров',        type:'person', role:'Глава Чечни',                size:12, url:'kadyrov.html'},
     {id:'malofeev',     label:'Малофеев',       type:'person', role:'Царьград / Идеолог',         size:10, url:'malofeev.html'},
     {id:'nikonov',      label:'Никонов',        type:'person', role:'Госдума / Политолог',        size:9,  url:'nikonov.html'},
-    {id:'poddubny',     label:'Поддубный',      type:'person', role:'ВГТРК / Россия-24',          size:9,  url:'poddubny.html'}
+    {id:'poddubny',     label:'Поддубный',      type:'person', role:'ВГТРК / Россия-24',          size:9,  url:'poddubny.html'},
+    {id:'zakharova',    label:'Захарова',        type:'person', role:'МИД России',                  size:11, url:'zakharova.html'},
+    {id:'kovalchuk',    label:'Ковальчук',       type:'person', role:'National Media Group',         size:12, url:'kovalchuk.html'},
+    {id:'turchak',      label:'Турчак',          type:'person', role:'Единая Россия',                size:10, url:'turchak.html'},
+    {id:'navka',        label:'Навка',           type:'person', role:'Первый канал / жена Пескова',  size:9,  url:'navka.html'},
+    {id:'peskov',       label:'Песков',          type:'person', role:'Пресс-секретарь Путина',       size:13, url:'peskov.html'},
+    {id:'lavrov',       label:'Лавров',          type:'person', role:'МИД России',                  size:14, url:'lavrov.html'},
+    {id:'mizulina',     label:'Мизулина',        type:'person', role:'Совет Федерации / цензура',    size:10, url:'mizulina.html'}
   ];
 
   var links = [
@@ -995,7 +1002,17 @@
     {source:'dugin',        target:'malofeev',  type:'влияние',  w:2},
     {source:'skabeeva',     target:'popov',     type:'семья',    w:3},
     {source:'simonyan',     target:'keosayan',  type:'семья',    w:3},
-    {source:'malofeev',     target:'kremlin',   type:'финансы',  w:2}
+    {source:'malofeev',     target:'kremlin',   type:'финансы',  w:2},
+    {source:'zakharova',    target:'kremlin',   type:'работа',   w:3},
+    {source:'kovalchuk',    target:'kremlin',   type:'влияние',  w:3},
+    {source:'turchak',      target:'kremlin',   type:'работа',   w:3},
+    {source:'navka',        target:'kremlin',   type:'влияние',  w:2},
+    {source:'kovalchuk',    target:'perviy',    type:'финансы',  w:3},
+    {source:'navka',        target:'perviy',    type:'работа',   w:2},
+    {source:'peskov',       target:'kremlin',   type:'работа',   w:4},
+    {source:'lavrov',       target:'kremlin',   type:'работа',   w:4},
+    {source:'mizulina',     target:'kremlin',   type:'работа',   w:3},
+    {source:'peskov',       target:'navka',     type:'семья',    w:2}
   ];
 
   var LINK_COLOR = {работа:'#c0392b', влияние:'#e67e22', семья:'#9b59b6', финансы:'#27ae60'};

@@ -212,7 +212,10 @@
     {id:'zakharova',    label:'Zakharova',         type:'person', role:'MFA Spokesperson',             size:11, url:'zakharova-en.html'},
     {id:'kovalchuk',    label:'Kovalchuk',         type:'person', role:'National Media Group',         size:12, url:'kovalchuk-en.html'},
     {id:'turchak',      label:'Turchak',           type:'person', role:'United Russia',                size:10, url:'turchak-en.html'},
-    {id:'navka',        label:'Navka',             type:'person', role:'Channel One / Peskov wife',    size:9,  url:'navka-en.html'}
+    {id:'navka',        label:'Navka',             type:'person', role:'Channel One / Peskov wife',    size:9,  url:'navka-en.html'},
+    {id:'peskov',       label:'Peskov',            type:'person', role:'Presidential Press Secretary',  size:13, url:'peskov-en.html'},
+    {id:'lavrov',       label:'Lavrov',            type:'person', role:'Foreign Minister',              size:14, url:'lavrov-en.html'},
+    {id:'mizulina',     label:'Mizulina',          type:'person', role:'Federation Council / Censorship',size:10, url:'mizulina-en.html'}
   ];
 
   var links = [
@@ -259,7 +262,12 @@
     {source:'kovalchuk',    target:'perviy',    type:'финансы',  w:3},
     {source:'kovalchuk',    target:'kremlin',   type:'влияние',  w:3},
     {source:'navka',        target:'perviy',    type:'работа',   w:2},
-    {source:'navka',        target:'zakharova', type:'влияние',  w:1}
+    {source:'navka',        target:'zakharova', type:'влияние',  w:1},
+    {source:'peskov',       target:'kremlin',   type:'работа',   w:4},
+    {source:'lavrov',       target:'kremlin',   type:'работа',   w:4},
+    {source:'mizulina',     target:'kremlin',   type:'работа',   w:3},
+    {source:'peskov',       target:'navka',     type:'семья',    w:2},
+    {source:'lavrov',       target:'zakharova', type:'работа',   w:2}
   ];
 
   var LINK_COLOR = {работа:'#c0392b', влияние:'#e67e22', семья:'#9b59b6', финансы:'#27ae60'};

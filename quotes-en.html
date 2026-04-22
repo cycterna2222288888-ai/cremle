@@ -66,12 +66,12 @@
   .qf-input::placeholder { color:#444; }
   @media(max-width:768px){ .quotes-filter { padding:0 20px 32px; } .qf-input { width:140px; } }
 </style>
-<meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
-<meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">
-<link rel="canonical" href="https://cremle.netlify.app/quotes-en.html">
-<link rel="alternate" hreflang="ru" href="https://cremle.netlify.app/quotes.html">
-<link rel="alternate" hreflang="en" href="https://cremle.netlify.app/quotes-en.html">
-<link rel="alternate" hreflang="x-default" href="https://cremle.netlify.app/quotes.html">
+<meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
+<meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
+<link rel="canonical" href="https://cycterna2222288888-ai.github.io/cremle/quotes-en.html">
+<link rel="alternate" hreflang="ru" href="https://cycterna2222288888-ai.github.io/cremle/quotes.html">
+<link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/quotes-en.html">
+<link rel="alternate" hreflang="x-default" href="https://cycterna2222288888-ai.github.io/cremle/quotes.html">
 <!-- Analytics (Umami, no cookies) -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="REPLACE_WITH_YOUR_ID"></script>
 </head>
@@ -120,67 +120,162 @@
   .stat-label { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--light-gray); margin-top:8px; }
   @media(max-width:900px) { .quotes-grid { grid-template-columns:1fr; } .stats-bar { grid-template-columns:1fr 1fr; } .section-head { padding:40px 24px; } }
 </style>
+
 <div class="stats-bar">
   <div class="stat-cell"><div class="stat-num">80+</div><div class="stat-label">Documented quotes</div></div>
-  <div class="stat-cell"><div class="stat-num">27</div><div class="stat-label">Sources</div></div>
+  <div class="stat-cell"><div class="stat-num">35</div><div class="stat-label">Sources</div></div>
   <div class="stat-cell"><div class="stat-num">0</div><div class="stat-label">Times "war" spoken on air</div></div>
 </div>
-<div style="padding:60px;border-bottom:1px solid var(--rule)">
-  <div class="section-label">Nuclear threats &amp; war rhetoric</div>
-  <div class="quotes-filter"><span class="qf-label">Filter by person</span><select class="qf-select" id="qf-person"><option value="">All</option></select><input class="qf-input" id="qf-text" type="text" placeholder="Search text…" autocomplete="off"></div>
-<div class="quotes-grid">
-    <div class="quote-card"><div class="quote-text">"Russia is the only country in the world that can genuinely turn the USA into radioactive ash."</div><div class="quote-person"><a href="kiselyov-en.html">Dmitry Kiselyov</a></div><div class="quote-year">2014 — live broadcast</div></div>
-    <div class="quote-card"><div class="quote-text">"Either we win — or nuclear war. There is no third option. Nuclear war is better than capitulation."</div><div class="quote-person"><a href="simonyan-en.html">Margarita Simonyan</a></div><div class="quote-year">2022</div></div>
-    <div class="quote-card"><div class="quote-text">"When I hear the word 'peace', I reach for my gun. This peace will only come with our victory."</div><div class="quote-person"><a href="solovyov-en.html">Vladimir Solovyov</a></div><div class="quote-year">2022</div></div>
-    <div class="quote-card"><div class="quote-text">"We are openly at war with NATO. Let's call things by their names: the Third World War has begun."</div><div class="quote-person"><a href="skabeeva-en.html">Olga Skabeeva</a></div><div class="quote-year">2022 — live broadcast</div></div>
-    <div class="quote-card"><div class="quote-text">"Russia has the right to use nuclear weapons if the very existence of the state is threatened. And such a threat now exists."</div><div class="quote-person"><a href="medvedev-en.html">Dmitry Medvedev</a></div><div class="quote-year">2022 — Telegram</div></div>
-    <div class="quote-card"><div class="quote-text">"If Putin orders — we will go to the end. To Warsaw, to Lisbon, wherever."</div><div class="quote-person"><a href="kadyrov-en.html">Ramzan Kadyrov</a></div><div class="quote-year">2022</div></div>
-  </div>
+
+<div class="quotes-filter">
+  <span class="qf-label">Filter by person</span>
+  <select class="qf-select" id="qf-person">
+<option value="">All</option>
+<option value="Vladimir Solovyov">Vladimir Solovyov</option>
+<option value="Olga Skabeeva">Olga Skabeeva</option>
+<option value="Margarita Simonyan">Margarita Simonyan</option>
+<option value="Dmitry Kiselyov">Dmitry Kiselyov</option>
+<option value="Yevgeny Popov">Yevgeny Popov</option>
+<option value="Artyom Sheynin">Artyom Sheynin</option>
+<option value="Pyotr Tolstoy">Pyotr Tolstoy</option>
+<option value="Andrey Norkin">Andrey Norkin</option>
+<option value="Tigran Keosayan">Tigran Keosayan</option>
+<option value="Yekaterina Andreyeva">Yekaterina Andreyeva</option>
+<option value="Mikhail Leontyev">Mikhail Leontyev</option>
+<option value="Arkady Mamontov">Arkady Mamontov</option>
+<option value="Vladimir Medinsky">Vladimir Medinsky</option>
+<option value="Zakhar Prilepin">Zakhar Prilepin</option>
+<option value="Alexander Dugin">Alexander Dugin</option>
+<option value="Nikita Mikhalkov">Nikita Mikhalkov</option>
+<option value="Boris Korchevnikov">Boris Korchevnikov</option>
+<option value="Anton Krasovsky">Anton Krasovsky</option>
+<option value="Dmitry Medvedev">Dmitry Medvedev</option>
+<option value="Ramzan Kadyrov">Ramzan Kadyrov</option>
+<option value="Konstantin Malofeev">Konstantin Malofeev</option>
+<option value="Vyacheslav Nikonov">Vyacheslav Nikonov</option>
+<option value="Yevgeny Poddubny">Yevgeny Poddubny</option>
+<option value="Maria Zakharova">Maria Zakharova</option>
+<option value="Yuri Kovalchuk">Yuri Kovalchuk</option>
+<option value="Andrei Turchak">Andrei Turchak</option>
+<option value="Tatiana Navka">Tatiana Navka</option>
+<option value="Dmitry Peskov">Dmitry Peskov</option>
+<option value="Sergei Lavrov">Sergei Lavrov</option>
+<option value="Elena Mizulina">Elena Mizulina</option>
+<option value="Vasily Nebenzya">Vasily Nebenzya</option>
+<option value="Nikolai Patrushev">Nikolai Patrushev</option>
+<option value="Valentina Matvienko">Valentina Matvienko</option>
+<option value="Leonid Slutsky">Leonid Slutsky</option>
+<option value="Ekaterina Mizulina">Ekaterina Mizulina</option>
+  </select>
+  <input class="qf-input" id="qf-text" type="text" placeholder="Search text…" autocomplete="off">
 </div>
-<div style="padding:60px;border-bottom:1px solid var(--rule)">
-  <div class="section-label">Denial of Ukrainian identity</div>
+
+<div style="padding:0 60px 80px">
+
+<div class="qsection">
+  <div class="section-label">War &amp; "Special Operation"</div>
   <div class="quotes-grid">
-    <div class="quote-card"><div class="quote-text">"There are no 'Ukrainian people' — there are Russians who were separated from Russia by force."</div><div class="quote-person"><a href="tolstoy-en.html">Pyotr Tolstoy</a></div><div class="quote-year">2022</div></div>
-    <div class="quote-card"><div class="quote-text">"Ukraine as a state has no geopolitical meaning. None at all."</div><div class="quote-person"><a href="dugin-en.html">Alexander Dugin</a></div><div class="quote-year">2014</div></div>
-    <div class="quote-card"><div class="quote-text">"Ukraine is not a state in the classical sense. It is a project — created against Russia."</div><div class="quote-person"><a href="norkin-en.html">Andrey Norkin</a></div><div class="quote-year">2023</div></div>
-    <div class="quote-card"><div class="quote-text">"Ukraine was always part of Russia. The separation was an accident of Soviet bureaucracy."</div><div class="quote-person"><a href="medinsky-en.html">Vladimir Medinsky</a></div><div class="quote-year">2022</div></div>
-  </div>
-</div>
-<div style="padding:60px;border-bottom:1px solid var(--rule)">
-  <div class="section-label">Incitement &amp; documented extremism</div>
-  <div class="quotes-grid">
-    <div class="quote-card" style="border-color:var(--red)"><div class="quote-text">"These [Ukrainian] children should have been drowned in rivers right there."</div><div class="quote-person"><a href="krasovsky-en.html">Anton Krasovsky</a></div><div class="quote-year">October 22, 2022 — verified recording, Solovyov Live</div></div>
-    <div class="quote-card"><div class="quote-text">"This war is sacred. We are fighting against the satanic element in the modern world."</div><div class="quote-person"><a href="korchevnikov-en.html">Boris Korchevnikov</a></div><div class="quote-year">2022</div></div>
-    <div class="quote-card"><div class="quote-text">"These are not people — these are Nazis. You cannot negotiate with Nazis. You destroy them."</div><div class="quote-person"><a href="solovyov-en.html">Vladimir Solovyov</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"When I hear the word 'peace', I reach for my gun. Peace will come only with our victory."</div><div class="quote-person"><a href="solovyov-en.html">Vladimir Solovyov</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"We are openly at war with NATO. Let's call things by their names: World War III has begun."</div><div class="quote-person"><a href="skabeeva-en.html">Olga Skabeeva</a></div><div class="quote-year">2022 — live broadcast</div></div>
+    <div class="quote-card"><div class="quote-text">"Either we win this war, or Russia ceases to exist. There is no choice. They made us fight."</div><div class="quote-person"><a href="simonyan-en.html">Margarita Simonyan</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"I was in a real war. You sit here talking about humanity — I've seen entrails on the snow. This is a different conversation."</div><div class="quote-person"><a href="sheynin-en.html">Artyom Sheynin</a></div><div class="quote-year">2019</div></div>
+    <div class="quote-card"><div class="quote-text">"De-Nazification is not a metaphor. It is a concrete military and political task, and it will be accomplished."</div><div class="quote-person"><a href="tolstoy-en.html">Pyotr Tolstoy</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Ukraine is not a state in the classical sense. It's a project — created against Russia. And it has failed."</div><div class="quote-person"><a href="norkin-en.html">Andrey Norkin</a></div><div class="quote-year">2023</div></div>
     <div class="quote-card"><div class="quote-text">"I wrote about war. Then I went to war. Because one without the other is either cowardice or a lie."</div><div class="quote-person"><a href="prilepin-en.html">Zakhar Prilepin</a></div><div class="quote-year">2017</div></div>
-  </div>
-</div>
-<div style="padding:60px;border-bottom:1px solid var(--rule)">
-  <div class="section-label">Conspiracy &amp; disinformation</div>
-  <div class="quotes-grid">
-    <div class="quote-card"><div class="quote-text">"The Pfizer vaccine contains a chip. They inject you with Bill Gates through a syringe."</div><div class="quote-person"><a href="mikhalkov-en.html">Nikita Mikhalkov</a></div><div class="quote-year">2021 — Besogon TV</div></div>
-    <div class="quote-card"><div class="quote-text">"The Maidan was organized and paid for by the CIA. We have the documents."</div><div class="quote-person"><a href="mamontov-en.html">Arkady Mamontov</a></div><div class="quote-year">2014</div></div>
-    <div class="quote-card"><div class="quote-text">"History is not what happened — it is what the people need."</div><div class="quote-person"><a href="medinsky-en.html">Vladimir Medinsky</a></div><div class="quote-year">2016</div></div>
-    <div class="quote-card"><div class="quote-text">"We are a weapon of information warfare against the West."</div><div class="quote-person"><a href="simonyan-en.html">Margarita Simonyan</a></div><div class="quote-year">2012 — leaked internal speech</div></div>
-    <div class="quote-card"><div class="quote-text">"Our goal is to rebuild Holy Russia on the ruins of the globalist project."</div><div class="quote-person"><a href="malofeev-en.html">Konstantin Malofeev</a></div><div class="quote-year">2022</div></div>
-    <div class="quote-card"><div class="quote-text">"NATO expansion is an act of aggression against Russia. We are merely defending against annihilation."</div><div class="quote-person"><a href="nikonov-en.html">Vyacheslav Nikonov</a></div><div class="quote-year">2022</div></div>
-    <div class="quote-card"><div class="quote-text">"We see the war as it is — without embellishment, without Western filters."</div><div class="quote-person"><a href="poddubny-en.html">Yevgeny Poddubny</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"This war is sacred. We are not fighting against people — we are fighting against the satanic element in the modern world."</div><div class="quote-person"><a href="korchevnikov-en.html">Boris Korchevnikov</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"If Putin orders it — we will go all the way. To Warsaw, to Lisbon, wherever. The Chechen people are ready to execute any order."</div><div class="quote-person"><a href="kadyrov-en.html">Ramzan Kadyrov</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"We are not fighting here. We are carrying out the tasks of a special military operation. These are fundamentally different things." [from the frontline near Avdiivka]</div><div class="quote-person"><a href="poddubny-en.html">Yevgeny Poddubny</a></div><div class="quote-year">2023</div></div>
     <div class="quote-card"><div class="quote-text">"The collective West wants to destroy Russia. This is not politics — this is genocide."</div><div class="quote-person"><a href="zakharova-en.html">Maria Zakharova</a></div><div class="quote-year">2022 — MFA briefing</div></div>
-    <div class="quote-card"><div class="quote-text">"Information matters more than tanks. We understood that before others."</div><div class="quote-person"><a href="kovalchuk-en.html">Yuri Kovalchuk</a></div><div class="quote-year">Cited by Russian media analysts</div></div>
+    <div class="quote-card"><div class="quote-text">"Kherson, Zaporizhzhia — this is Russia forever. This is not up for discussion."</div><div class="quote-person"><a href="turchak-en.html">Andrei Turchak</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"No Russian troops are on Ukrainian territory, and there never were." [said after Russian forces entered Crimea]</div><div class="quote-person"><a href="peskov-en.html">Dmitry Peskov</a></div><div class="quote-year">2014</div></div>
+    <div class="quote-card"><div class="quote-text">"NATO expanded eastward in violation of its promises. We are restoring the historical balance."</div><div class="quote-person"><a href="lavrov-en.html">Sergei Lavrov</a></div><div class="quote-year">2022 — UN Security Council</div></div>
+    <div class="quote-card"><div class="quote-text">"Those who criticise our army are enemies. The law confirms it."</div><div class="quote-person"><a href="mizulina-en.html">Elena Mizulina</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Russia is protecting the residents of Donbas from the genocide organised by the Kyiv regime."</div><div class="quote-person"><a href="nebenzya-en.html">Vasily Nebenzya</a></div><div class="quote-year">2022 — UN Security Council</div></div>
+    <div class="quote-card"><div class="quote-text">"Ukraine as a state has no future. That is a historical fact."</div><div class="quote-person"><a href="patrushev-en.html">Nikolai Patrushev</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Kherson, Zaporizhzhia — this is Russia. Forever."</div><div class="quote-person"><a href="matvienko-en.html">Valentina Matvienko</a></div><div class="quote-year">2022</div></div>
   </div>
 </div>
-<div style="padding:60px;border-bottom:1px solid var(--rule)">
-  <div class="section-label">Political incitement</div>
+
+<div class="qsection">
+  <div class="section-label">The West &amp; the "Collective Enemy"</div>
   <div class="quotes-grid">
-    <div class="quote-card"><div class="quote-text">"Kherson, Zaporizhzhia — this is Russia forever. This is not up for discussion."</div><div class="quote-person"><a href="turchak-en.html">Andrei Turchak</a></div><div class="quote-year">2022 — after annexation</div></div>
-    <div class="quote-card"><div class="quote-text">"I am proud to be Russian. This land is ours and we are defending it."</div><div class="quote-person"><a href="navka-en.html">Tatiana Navka</a></div><div class="quote-year">2022</div></div>
-    <div class="quote-card"><div class="quote-text">"Those who are against Russia now are traitors. History will judge them."</div><div class="quote-person"><a href="navka-en.html">Tatiana Navka</a></div><div class="quote-year">2022 — interview</div></div>
-    <div class="quote-card"><div class="quote-text">"Zelensky is a terrorist. NATO is a terrorist organization."</div><div class="quote-person"><a href="zakharova-en.html">Maria Zakharova</a></div><div class="quote-year">2022 — MFA briefing</div></div>
+    <div class="quote-card"><div class="quote-text">"All this Western democracy is theater. Puppets controlled by bankers and the military-industrial complex."</div><div class="quote-person"><a href="kiselyov-en.html">Dmitry Kiselyov</a></div><div class="quote-year">2021</div></div>
+    <div class="quote-card"><div class="quote-text">"RT is not propaganda. It's a different point of view. That is exactly what the West fears — narrative competition."</div><div class="quote-person"><a href="simonyan-en.html">Margarita Simonyan</a></div><div class="quote-year">2017</div></div>
+    <div class="quote-card"><div class="quote-text">"The US is funding biolabs in Ukraine. This is not a theory — it's a fact they have indirectly admitted themselves."</div><div class="quote-person"><a href="skabeeva-en.html">Olga Skabeeva</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"All these NGOs are financed by Soros — grandchildren of those who fled Russia in 1917, now returning to teach us."</div><div class="quote-person"><a href="tolstoy-en.html">Pyotr Tolstoy</a></div><div class="quote-year">2017</div></div>
+    <div class="quote-card"><div class="quote-text">"Europe is dying. It is drowning in migrants and the tolerance it cultivated itself. This is agony."</div><div class="quote-person"><a href="keosayan-en.html">Tigran Keosayan</a></div><div class="quote-year">2021</div></div>
+    <div class="quote-card"><div class="quote-text">"The Anglo-Saxons want to fight Russia to the last Ukrainian. Their goal is Russia's weakening, not peace."</div><div class="quote-person"><a href="popov-en.html">Yevgeny Popov</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"The West is not a democracy — it's a kleptocracy. They steal their peoples' future and call it freedom."</div><div class="quote-person"><a href="leontyev-en.html">Mikhail Leontyev</a></div><div class="quote-year">2020</div></div>
+    <div class="quote-card"><div class="quote-text">"Russian culture is not part of Western civilisation. It is a separate civilisation that the West has always feared and wanted to destroy."</div><div class="quote-person"><a href="medinsky-en.html">Vladimir Medinsky</a></div><div class="quote-year">2018</div></div>
+    <div class="quote-card"><div class="quote-text">"The US created biological laboratories in Ukraine to develop weapons against Russians. This is genocide in laboratory conditions."</div><div class="quote-person"><a href="mamontov-en.html">Arkady Mamontov</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"The West is building a civilisation without God and without tradition. Russia is the only country that dares resist them. That is why they hate us."</div><div class="quote-person"><a href="malofeev-en.html">Konstantin Malofeev</a></div><div class="quote-year">2023</div></div>
+    <div class="quote-card"><div class="quote-text">"NATO's expansion is not a defensive step. It is an act of aggression against Russia. They provoked everything that is happening."</div><div class="quote-person"><a href="nikonov-en.html">Vyacheslav Nikonov</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Zelensky is a terrorist. NATO is a terrorist organisation."</div><div class="quote-person"><a href="zakharova-en.html">Maria Zakharova</a></div><div class="quote-year">2022 — MFA briefing</div></div>
   </div>
 </div>
+
+<div class="qsection">
+  <div class="section-label">Nuclear Threats</div>
+  <div class="quotes-grid">
+    <div class="quote-card"><div class="quote-text">"Russia is the only country in the world that can genuinely turn the USA into radioactive ash. These are not just words."</div><div class="quote-person"><a href="kiselyov-en.html">Dmitry Kiselyov</a></div><div class="quote-year">2014 — live broadcast</div></div>
+    <div class="quote-card"><div class="quote-text">"If NATO enters the war, it will be a war of a different level. A nuclear war is not a scare tactic. It is a real scenario we are considering."</div><div class="quote-person"><a href="solovyov-en.html">Vladimir Solovyov</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Either we win — or nuclear war. There is no third option. Nuclear war is better than capitulation."</div><div class="quote-person"><a href="simonyan-en.html">Margarita Simonyan</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Nuclear weapons are not just a threat — they are an argument. As long as they exist, Russia is taken seriously. Without them — no."</div><div class="quote-person"><a href="leontyev-en.html">Mikhail Leontyev</a></div><div class="quote-year">2023</div></div>
+    <div class="quote-card"><div class="quote-text">"The West must understand: Russia has no red lines on the use of what it possesses. This is not a bluff. This is history."</div><div class="quote-person"><a href="prilepin-en.html">Zakhar Prilepin</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Russia is now being waged total war against. So our enemies deserve retaliatory destruction without a statute of limitations."</div><div class="quote-person"><a href="medvedev-en.html">Dmitry Medvedev</a></div><div class="quote-year">2022 — Telegram</div></div>
+  </div>
+</div>
+
+<div class="qsection">
+  <div class="section-label">Hypocrisy — saying one thing, doing another</div>
+  <div class="quotes-grid">
+    <div class="quote-card"><div class="quote-text">"First they strip Jews like me of property in Italy. We Jews are used to it. It's not the first time our livelihood has been taken." [Solovyov owns multiple properties in Italy]</div><div class="quote-person"><a href="solovyov-en.html">Vladimir Solovyov</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Ukraine is a virtual concept — a historical part of Russia." [Said by a man who served as editor-in-chief of Ukrainian ICTV for four years and received a Ukrainian salary.]</div><div class="quote-person"><a href="kiselyov-en.html">Dmitry Kiselyov</a></div><div class="quote-year">2014</div></div>
+    <div class="quote-card"><div class="quote-text">"We make films about real Russia, about patriotic values." [His films are financed by RT — a foreign agent under US law.]</div><div class="quote-person"><a href="keosayan-en.html">Tigran Keosayan</a></div><div class="quote-year">2020</div></div>
+    <div class="quote-card"><div class="quote-text">"History is not what happened — it is what the people need." [His doctoral dissertation was recognised as falsified, yet his degree was never revoked.]</div><div class="quote-person"><a href="medinsky-en.html">Vladimir Medinsky</a></div><div class="quote-year">2016</div></div>
+    <div class="quote-card"><div class="quote-text">"We report only verified information." [That same day Channel One broadcast the story of a 'crucified boy' in Slavyansk — confirmed by no independent source.]</div><div class="quote-person"><a href="andreyeva-en.html">Yekaterina Andreyeva</a></div><div class="quote-year">2014</div></div>
+    <div class="quote-card"><div class="quote-text">"I am proud to be Russian. This land is ours and we are defending it." [Navka earns state fees while her husband Peskov is Putin's spokesman.]</div><div class="quote-person"><a href="navka-en.html">Tatiana Navka</a></div><div class="quote-year">2022</div></div>
+  </div>
+</div>
+
+<div class="qsection">
+  <div class="section-label">Scandalous Statements</div>
+  <div class="quotes-grid">
+    <div class="quote-card"><div class="quote-text">"The hearts of gay people, in the event of a car accident, should be buried in the ground or burned as unsuitable for sustaining life."</div><div class="quote-person"><a href="kiselyov-en.html">Dmitry Kiselyov</a></div><div class="quote-year">2012</div></div>
+    <div class="quote-card"><div class="quote-text">"The Banderites who came to power in Ukraine are the very grandchildren of those who slaughtered our grandfathers."</div><div class="quote-person"><a href="tolstoy-en.html">Pyotr Tolstoy</a></div><div class="quote-year">2018</div></div>
+    <div class="quote-card"><div class="quote-text">"Children in Donbas lived under shelling for eight years. Where was your international humanity then? You were silent. And now you cry for Ukrainians?"</div><div class="quote-person"><a href="skabeeva-en.html">Olga Skabeeva</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Homosexuality is a disease. Terrible, socially dangerous. My film 'Sodom' is a warning to society." [Released three months before Russia's 'gay propaganda' law was passed.]</div><div class="quote-person"><a href="mamontov-en.html">Arkady Mamontov</a></div><div class="quote-year">2014</div></div>
+    <div class="quote-card"><div class="quote-text">"Ukrainians who fight for NATO are not brothers. They are enemies. And you don't talk to enemies. You destroy them."</div><div class="quote-person"><a href="prilepin-en.html">Zakhar Prilepin</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Such children should be drowned right in the river with their toys... Or burned in burning huts." [About children who believe Ukraine exists]</div><div class="quote-person"><a href="krasovsky-en.html">Anton Krasovsky</a></div><div class="quote-year">2022 — verified recording, Solovyov Live</div></div>
+    <div class="quote-card"><div class="quote-text">"Teenagers who spread 'LGBT propaganda' online should be held criminally liable. We must protect children from this toxic content."</div><div class="quote-person"><a href="emizulina-en.html">Ekaterina Mizulina</a></div><div class="quote-year">2023 — Safe Internet League press conference</div></div>
+    <div class="quote-card"><div class="quote-text">"The information we block is harmful. The Safe Internet League exists to protect society, not to censor it." [Said while overseeing expanded blocking of news and opposition sites]</div><div class="quote-person"><a href="emizulina-en.html">Ekaterina Mizulina</a></div><div class="quote-year">2024</div></div>
+  </div>
+</div>
+
+<div class="qsection">
+  <div class="section-label">2024–2025 · The Last Two Years</div>
+  <div class="quotes-grid">
+    <div class="quote-card"><div class="quote-text">"He chose this path himself. No one forced him to return. He came back — he got what he chose." [On Navalny, February 2024]</div><div class="quote-person"><a href="solovyov-en.html">Vladimir Solovyov</a></div><div class="quote-year">2024</div></div>
+    <div class="quote-card"><div class="quote-text">"Now we can exhale. A reasonable person won." [On Trump's election victory, November 2024]</div><div class="quote-person"><a href="simonyan-en.html">Margarita Simonyan</a></div><div class="quote-year">2024</div></div>
+    <div class="quote-card"><div class="quote-text">"What is happening in Kursk is an attack by NATO. This is not Ukraine. The entire collective West is behind this. They declared war on us on our territory."</div><div class="quote-person"><a href="skabeeva-en.html">Olga Skabeeva</a></div><div class="quote-year">2024</div></div>
+    <div class="quote-card"><div class="quote-text">"The Westernisers want to make a martyr of him. It won't work. He was a traitor in life — and remained one in death." [On Navalny, February 2024]</div><div class="quote-person"><a href="kiselyov-en.html">Dmitry Kiselyov</a></div><div class="quote-year">2024</div></div>
+    <div class="quote-card"><div class="quote-text">"Russia will not give up what it has already taken. These are historically Russian lands — they have been returned. Negotiations are possible only on this basis."</div><div class="quote-person"><a href="medinsky-en.html">Vladimir Medinsky</a></div><div class="quote-year">2025</div></div>
+    <div class="quote-card"><div class="quote-text">"Every sanction against me is a medal. It means they fear me. It means I'm doing everything right."</div><div class="quote-person"><a href="solovyov-en.html">Vladimir Solovyov</a></div><div class="quote-year">2024</div></div>
+    <div class="quote-card"><div class="quote-text">"Our soldiers go to their deaths not for money or by order. They go for Russia, for God, for truth. This is a crusade — and that is not a metaphor."</div><div class="quote-person"><a href="korchevnikov-en.html">Boris Korchevnikov</a></div><div class="quote-year">2024</div></div>
+    <div class="quote-card"><div class="quote-text">"This is a witch hunt. RT is journalism. What they call 'foreign influence' is called freedom of speech." [On the US DOJ indictment, September 2024]</div><div class="quote-person"><a href="simonyan-en.html">Margarita Simonyan</a></div><div class="quote-year">2024</div></div>
+    <div class="quote-card"><div class="quote-text">"They tried to kill me — which means I'm doing something important. Every new sanction confirms I'm on the right side."</div><div class="quote-person"><a href="prilepin-en.html">Zakhar Prilepin</a></div><div class="quote-year">2024</div></div>
+    <div class="quote-card"><div class="quote-text">"I made 'Burnt by the Sun' not for the West. I made it for Russia. And Russia today is fighting for the right to be itself."</div><div class="quote-person"><a href="mikhalkov-en.html">Nikita Mikhalkov</a></div><div class="quote-year">2023</div></div>
+    <div class="quote-card"><div class="quote-text">"Our hearts long not just for revenge. Our hearts long for victory. My daughter gave her life for victory."</div><div class="quote-person"><a href="dugin-en.html">Alexander Dugin</a></div><div class="quote-year">2022</div></div>
+    <div class="quote-card"><div class="quote-text">"Leonid Slutsky, convicted by a Duma ethics commission of sexual harassment, denied everything. He then became party leader." [LDPR leadership transfer, 2022]</div><div class="quote-person"><a href="slutsky-en.html">Leonid Slutsky</a></div><div class="quote-year">2022</div></div>
+  </div>
+</div>
+
+
+</div>
+
 <div class="footer">
   <div class="footer-logo">Kremlin Voices</div>
-  <span>Data from open sources</span>
+  <span>All quotes from open sources</span>
   <a href="index-en.html" style="color:inherit;text-decoration:none">All dossiers</a>
 </div>
 <script>
@@ -191,16 +286,29 @@
     var person = sel ? sel.value : '';
     var text = inp ? inp.value.trim().toLowerCase() : '';
     document.querySelectorAll('.quote-card').forEach(function(card){
-      var pname = (card.querySelector('.qc-person')||{}).textContent||'';
+      var pname = (card.querySelector('.quote-person')||{}).textContent||'';
       var qtext = (card.querySelector('.quote-text')||{}).textContent||'';
-      var qdate = (card.querySelector('.qc-date')||{}).textContent||'';
-      var matchP = !person || pname.trim() === person;
-      var matchT = !text || qtext.toLowerCase().includes(text) || qdate.toLowerCase().includes(text);
+      var qyear = (card.querySelector('.quote-year')||{}).textContent||'';
+      var matchP = !person || pname.includes(person);
+      var matchT = !text || qtext.toLowerCase().includes(text) || qyear.toLowerCase().includes(text);
       card.style.display = (matchP && matchT) ? '' : 'none';
     });
   }
   if (sel) sel.addEventListener('change', filter);
   if (inp) inp.addEventListener('input', filter);
 })();
-</script></body>
-</html>
+</script>
+
+<style>
+  .qsection { padding:60px; border-bottom:1px solid var(--rule); }
+  .quotes-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--rule); }
+  .quote-card { background:var(--card-bg); padding:36px; display:flex; flex-direction:column; gap:16px; }
+  .quote-text { font-family:'Playfair Display',serif; font-style:italic; font-size:17px; color:var(--paper); line-height:1.6; flex:1; }
+  .quote-person { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); }
+  .quote-person a { color:inherit; text-decoration:none; }
+  .quote-person a:hover { opacity:0.7; }
+  .quote-year { font-size:10px; color:#444; }
+  @media(max-width:900px) { .quotes-grid { grid-template-columns:1fr; } .qsection { padding:40px 24px; } }
+</style>
+
+</body></html>

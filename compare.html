@@ -297,6 +297,11 @@
       <option value="peskov">Дмитрий Песков</option>
       <option value="lavrov">Сергей Лавров</option>
       <option value="mizulina">Елена Мизулина</option>
+      <option value="nebenzya">Василий Небензя</option>
+      <option value="patrushev">Николай Патрушев</option>
+      <option value="matvienko">Валентина Матвиенко</option>
+      <option value="slutsky">Леонид Слуцкий</option>
+      <option value="emizulina">Екатерина Мизулина</option>
     </select>
   </div>
   <div class="vs-label">vs</div>
@@ -334,6 +339,11 @@
       <option value="peskov">Дмитрий Песков</option>
       <option value="lavrov">Сергей Лавров</option>
       <option value="mizulina">Елена Мизулина</option>
+      <option value="nebenzya">Василий Небензя</option>
+      <option value="patrushev">Николай Патрушев</option>
+      <option value="matvienko">Валентина Матвиенко</option>
+      <option value="slutsky">Леонид Слуцкий</option>
+      <option value="emizulina">Екатерина Мизулина</option>
     </select>
   </div>
   <button class="compare-btn" onclick="compare()" style="grid-column:1/-1">Сравнить →</button>
@@ -692,7 +702,12 @@ var data = {
     quote: '«Кто критикует нашу армию — тот враг. Закон это подтверждает.»',
     year: '2022', property: 'Санкции ЕС и Великобритании с 2022 года.',
     dosye: 'mizulina.html'
-  }
+  },
+  nebenzya: { name:'Василий Небензя', born:'12 июля 1962, Москва', channel:'ООН', show:'Постпред России при ООН (с 2017)', sanctions:['ЕС (2022)','Великобритания (2022)'], method:'Вето как оружие. ООН как трибуна пропаганды.', quote:'«Россия защищает жителей Донбасса от геноцида.»', year:'2022', property:'Санкции ЕС и UK.', dosye:'nebenzya.html' },
+  patrushev: { name:'Николай Патрушев', born:'11 июля 1951, Ленинград', channel:'Совбез / Кремль', show:'Секретарь Совбеза (2008–2023), советник Путина', sanctions:['ЕС (2022)','США (2022)','Великобритания (2022)'], method:'Идеологическая доктрина «осаждённой крепости».', quote:'«Украина как государство не имеет будущего.»', year:'2022', property:'Санкции ЕС, США, UK.', dosye:'patrushev.html' },
+  matvienko: { name:'Валентина Матвиенко', born:'7 апреля 1949, Украина', channel:'Совет Федерации', show:'Председатель Совета Федерации (с 2011)', sanctions:['ЕС (2022)','США (2022)','Великобритания (2022)','Канада (2022)'], method:'Ратификация аннексии. Конституционное прикрытие войны.', quote:'«Херсон, Запорожье — это Россия. Навсегда.»', year:'2022', property:'Санкции ЕС, США, UK, Канады.', dosye:'matvienko.html' },
+  slutsky: { name:'Леонид Слуцкий', born:'4 января 1968, Москва', channel:'ЛДПР / ГД', show:'Лидер ЛДПР (с 2022)', sanctions:['ЕС (2022)','США (2022)','Великобритания (2022)'], method:'Фиктивные переговоры как дипломатический фасад.', quote:'«Переговоры возможны только на наших условиях.»', year:'2022', property:'Санкции ЕС, США, UK.', dosye:'slutsky.html' },
+  emizulina: { name:'Екатерина Мизулина', born:'—', channel:'ЛБИ', show:'Руководитель Лиги Безопасного Интернета', sanctions:[], method:'Интернет-цензура через НКО. Блокировки, жалобы, давление.', quote:'«YouTube распространяет антироссийскую пропаганду.»', year:'2022', property:'Нет персональных санкций.', dosye:'emizulina.html' }
 };
 
 function compare() {

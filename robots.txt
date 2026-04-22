@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /data/
 
-Sitemap: https://cremle.netlify.app/sitemap.xml
+Sitemap: https://cycterna2222288888-ai.github.io/cremle/sitemap.xml

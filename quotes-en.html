@@ -57,6 +57,14 @@
   .section-nav a:hover { color: var(--paper); }
   .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
   @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
+
+  .quotes-filter { padding:0 60px 40px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .qf-label { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:#444; }
+  .qf-select { background:#0e0e0e; border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:11px; font-weight:300; padding:8px 14px; outline:none; cursor:pointer; }
+  .qf-select:focus { border-color:#555; }
+  .qf-input { background:#0e0e0e; border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:11px; padding:8px 14px; outline:none; width:200px; }
+  .qf-input::placeholder { color:#444; }
+  @media(max-width:768px){ .quotes-filter { padding:0 20px 32px; } .qf-input { width:140px; } }
 </style>
 <meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
 <meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">
@@ -119,7 +127,8 @@
 </div>
 <div style="padding:60px;border-bottom:1px solid var(--rule)">
   <div class="section-label">Nuclear threats &amp; war rhetoric</div>
-  <div class="quotes-grid">
+  <div class="quotes-filter"><span class="qf-label">Filter by person</span><select class="qf-select" id="qf-person"><option value="">All</option></select><input class="qf-input" id="qf-text" type="text" placeholder="Search text…" autocomplete="off"></div>
+<div class="quotes-grid">
     <div class="quote-card"><div class="quote-text">"Russia is the only country in the world that can genuinely turn the USA into radioactive ash."</div><div class="quote-person"><a href="kiselyov-en.html">Dmitry Kiselyov</a></div><div class="quote-year">2014 — live broadcast</div></div>
     <div class="quote-card"><div class="quote-text">"Either we win — or nuclear war. There is no third option. Nuclear war is better than capitulation."</div><div class="quote-person"><a href="simonyan-en.html">Margarita Simonyan</a></div><div class="quote-year">2022</div></div>
     <div class="quote-card"><div class="quote-text">"When I hear the word 'peace', I reach for my gun. This peace will only come with our victory."</div><div class="quote-person"><a href="solovyov-en.html">Vladimir Solovyov</a></div><div class="quote-year">2022</div></div>
@@ -174,5 +183,24 @@
   <span>Data from open sources</span>
   <a href="index-en.html" style="color:inherit;text-decoration:none">All dossiers</a>
 </div>
-</body>
+<script>
+(function(){
+  var sel = document.getElementById('qf-person');
+  var inp = document.getElementById('qf-text');
+  function filter(){
+    var person = sel ? sel.value : '';
+    var text = inp ? inp.value.trim().toLowerCase() : '';
+    document.querySelectorAll('.quote-card').forEach(function(card){
+      var pname = (card.querySelector('.qc-person')||{}).textContent||'';
+      var qtext = (card.querySelector('.quote-text')||{}).textContent||'';
+      var qdate = (card.querySelector('.qc-date')||{}).textContent||'';
+      var matchP = !person || pname.trim() === person;
+      var matchT = !text || qtext.toLowerCase().includes(text) || qdate.toLowerCase().includes(text);
+      card.style.display = (matchP && matchT) ? '' : 'none';
+    });
+  }
+  if (sel) sel.addEventListener('change', filter);
+  if (inp) inp.addEventListener('input', filter);
+})();
+</script></body>
 </html>

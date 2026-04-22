@@ -962,7 +962,12 @@
     {id:'navka',        label:'Навка',           type:'person', role:'Первый канал / жена Пескова',  size:9,  url:'navka.html'},
     {id:'peskov',       label:'Песков',          type:'person', role:'Пресс-секретарь Путина',       size:13, url:'peskov.html'},
     {id:'lavrov',       label:'Лавров',          type:'person', role:'МИД России',                  size:14, url:'lavrov.html'},
-    {id:'mizulina',     label:'Мизулина',        type:'person', role:'Совет Федерации / цензура',    size:10, url:'mizulina.html'}
+    {id:'mizulina',     label:'Мизулина',        type:'person', role:'Совет Федерации / цензура',    size:10, url:'mizulina.html'},
+    {id:'nebenzya',     label:'Небензя',         type:'person', role:'ООН / Совет Безопасности',      size:12, url:'nebenzya.html'},
+    {id:'patrushev',    label:'Патрушев',        type:'person', role:'ФСБ / Совбез / Советник',        size:13, url:'patrushev.html'},
+    {id:'matvienko',    label:'Матвиенко',       type:'person', role:'Совет Федерации',                size:11, url:'matvienko.html'},
+    {id:'slutsky',      label:'Слуцкий',         type:'person', role:'ЛДПР / ГД МИД',                  size:10, url:'slutsky.html'},
+    {id:'emizulina',    label:'Е.Мизулина',      type:'person', role:'Лига Безопасного Интернета',     size:9,  url:'emizulina.html'}
   ];
 
   var links = [
@@ -1012,7 +1017,13 @@
     {source:'peskov',       target:'kremlin',   type:'работа',   w:4},
     {source:'lavrov',       target:'kremlin',   type:'работа',   w:4},
     {source:'mizulina',     target:'kremlin',   type:'работа',   w:3},
-    {source:'peskov',       target:'navka',     type:'семья',    w:2}
+    {source:'peskov',       target:'navka',     type:'семья',    w:2},
+    {source:'nebenzya',     target:'kremlin',   type:'работа',   w:4},
+    {source:'patrushev',    target:'kremlin',   type:'работа',   w:4},
+    {source:'matvienko',    target:'kremlin',   type:'работа',   w:3},
+    {source:'slutsky',      target:'kremlin',   type:'работа',   w:2},
+    {source:'emizulina',    target:'kremlin',   type:'работа',   w:2},
+    {source:'emizulina',    target:'mizulina',  type:'семья',    w:3}
   ];
 
   var LINK_COLOR = {работа:'#c0392b', влияние:'#e67e22', семья:'#9b59b6', финансы:'#27ae60'};

@@ -396,5 +396,18 @@ window.addEventListener('scroll', function() {
   });
 })();
 </script>
-</body>
+<script>
+(function(){
+  var pages = ['solovyov.html','skabeeva.html','simonyan.html','kiselyov.html','popov.html','sheynin.html','tolstoy.html','norkin.html','keosayan.html','andreyeva.html','leontyev.html','mamontov.html','medinsky.html','prilepin.html','dugin.html','mikhalkov.html','korchevnikov.html','krasovsky.html','medvedev.html','kadyrov.html','malofeev.html','nikonov.html','poddubny.html','zakharova.html','kovalchuk.html','turchak.html','navka.html','peskov.html','lavrov.html','mizulina.html'];
+  var cur = window.location.pathname.split('/').pop();
+  var idx = pages.indexOf(cur);
+  if (idx < 0) return;
+  document.addEventListener('keydown', function(e){
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    if (e.target && (e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')) return;
+    if (e.key==='ArrowRight' && idx < pages.length-1) location.href = pages[idx+1];
+    if (e.key==='ArrowLeft'  && idx > 0)             location.href = pages[idx-1];
+  });
+})();
+</script></body>
 </html>

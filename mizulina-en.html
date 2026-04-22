@@ -397,5 +397,18 @@ window.addEventListener('scroll', function() {
   });
 })();
 </script>
-</body>
+<script>
+(function(){
+  var pages = ['solovyov-en.html','skabeeva-en.html','simonyan-en.html','kiselyov-en.html','popov-en.html','sheynin-en.html','tolstoy-en.html','norkin-en.html','keosayan-en.html','andreyeva-en.html','leontyev-en.html','mamontov-en.html','medinsky-en.html','prilepin-en.html','dugin-en.html','mikhalkov-en.html','korchevnikov-en.html','krasovsky-en.html','medvedev-en.html','kadyrov-en.html','malofeev-en.html','nikonov-en.html','poddubny-en.html','zakharova-en.html','kovalchuk-en.html','turchak-en.html','navka-en.html','peskov-en.html','lavrov-en.html','mizulina-en.html'];
+  var cur = window.location.pathname.split('/').pop();
+  var idx = pages.indexOf(cur);
+  if (idx < 0) return;
+  document.addEventListener('keydown', function(e){
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    if (e.target && (e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')) return;
+    if (e.key==='ArrowRight' && idx < pages.length-1) location.href = pages[idx+1];
+    if (e.key==='ArrowLeft'  && idx > 0)             location.href = pages[idx-1];
+  });
+})();
+</script></body>
 </html>

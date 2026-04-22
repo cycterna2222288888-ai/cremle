@@ -148,6 +148,17 @@
   .section-nav a:hover { color: var(--paper); }
   .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
   @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
+
+  .sanction-stats { padding:40px 60px; border-bottom:1px solid var(--rule); }
+  .ss-title { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); margin-bottom:28px; }
+  .ss-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+  .ss-cell { background:var(--card-bg); padding:24px 20px; }
+  .ss-country { font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:#555; margin-bottom:8px; }
+  .ss-count { font-family:'Playfair Display',serif; font-size:2rem; color:var(--paper); line-height:1; margin-bottom:10px; }
+  .ss-bar-bg { background:#111; height:3px; margin-bottom:6px; }
+  .ss-bar { height:3px; background:var(--red); transition:width 0.6s; }
+  .ss-pct { font-size:10px; color:#444; }
+  @media(max-width:768px){ .sanction-stats { padding:32px 20px; } .ss-grid { grid-template-columns:repeat(2,1fr); } }
 </style>
 <meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
 <meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">

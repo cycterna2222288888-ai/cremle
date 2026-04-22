@@ -271,6 +271,14 @@
   .section-nav a:hover { color: var(--paper); }
   .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
   @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
+
+  .quotes-filter { padding:0 60px 40px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .qf-label { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:#444; }
+  .qf-select { background:#0e0e0e; border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:11px; font-weight:300; padding:8px 14px; outline:none; cursor:pointer; }
+  .qf-select:focus { border-color:#555; }
+  .qf-input { background:#0e0e0e; border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:11px; padding:8px 14px; outline:none; width:200px; }
+  .qf-input::placeholder { color:#444; }
+  @media(max-width:768px){ .quotes-filter { padding:0 20px 32px; } .qf-input { width:140px; } }
 </style>
 <meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
 <meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">
@@ -324,7 +332,8 @@
   <!-- ВОЙНА -->
   <div class="theme-section">
     <div class="theme-label">Война и «спецоперация»</div>
-    <div class="quotes-grid">
+    <div class="quotes-filter"><span class="qf-label">Фильтр по персоне</span><select class="qf-select" id="qf-person"><option value="">Все</option><option value="Александр Дугин">Александр Дугин</option><option value="Андрей Норкин">Андрей Норкин</option><option value="Андрей Турчак">Андрей Турчак</option><option value="Антон Красовский">Антон Красовский</option><option value="Аркадий Мамонтов">Аркадий Мамонтов</option><option value="Артём Шейнин">Артём Шейнин</option><option value="Борис Корчевников">Борис Корчевников</option><option value="Владимир Мединский">Владимир Мединский</option><option value="Владимир Соловьёв">Владимир Соловьёв</option><option value="Вячеслав Никонов">Вячеслав Никонов</option><option value="Дмитрий Киселёв">Дмитрий Киселёв</option><option value="Дмитрий Медведев">Дмитрий Медведев</option><option value="Дмитрий Песков">Дмитрий Песков</option><option value="Евгений Поддубный">Евгений Поддубный</option><option value="Евгений Попов">Евгений Попов</option><option value="Екатерина Андреева">Екатерина Андреева</option><option value="Елена Мизулина">Елена Мизулина</option><option value="Захар Прилепин">Захар Прилепин</option><option value="Константин Малофеев">Константин Малофеев</option><option value="Маргарита Симоньян">Маргарита Симоньян</option><option value="Мария Захарова">Мария Захарова</option><option value="Михаил Леонтьев">Михаил Леонтьев</option><option value="Никита Михалков">Никита Михалков</option><option value="Ольга Скабеева">Ольга Скабеева</option><option value="Пётр Толстой">Пётр Толстой</option><option value="Рамзан Кадыров">Рамзан Кадыров</option><option value="Сергей Лавров">Сергей Лавров</option><option value="Татьяна Навка">Татьяна Навка</option><option value="Тигран Кеосаян">Тигран Кеосаян</option><option value="Юрий Ковальчук">Юрий Ковальчук</option></select><input class="qf-input" id="qf-text" type="text" placeholder="Поиск по тексту…" autocomplete="off"></div>
+<div class="quotes-grid">
       <div class="quote-card">
         <div class="qc-person"><a href="solovyov.html">Владимир Соловьёв</a></div>
         <div class="qc-text">«Когда я слышу слово "мир", я хватаюсь за автомат. Этот мир будет только с нашей победой.»</div>
@@ -432,6 +441,12 @@
         <div class="quote-card">
           <div class="quote-text">«Кто критикует нашу армию — тот враг. Закон это подтверждает.»</div>
           <div class="qc-person"><a href="mizulina.html">Елена Мизулина</a></div>
+        </div>
+        <div class="quote-card"><div class="quote-text">«Россия защищает жителей Донбасса от геноцида, который устроил киевский режим.»</div><div class="qc-person"><a href="nebenzya.html">Василий Небензя</a></div><div class="qc-date">2022 — Совет Безопасности ООН</div>
+        </div>
+        <div class="quote-card"><div class="quote-text">«Украина как государство не имеет будущего. Это исторический факт.»</div><div class="qc-person"><a href="patrushev.html">Николай Патрушев</a></div><div class="qc-date">2022
+        </div>
+        <div class="quote-card"><div class="quote-text">«Херсон, Запорожье — это Россия. Навсегда.»</div><div class="qc-person"><a href="matvienko.html">Валентина Матвиенко</a></div><div class="qc-date">2022
           <div class="qc-date">2022
           <div class="qc-date">2022
         <div class="qc-text">«Мы здесь не воюем. Мы выполняем задачи специальной военной операции. Это принципиально разные вещи.» [С линии фронта под Авдеевкой]</div>
@@ -820,5 +835,24 @@
   <span>2024</span>
 </div>
 
-</body>
+<script>
+(function(){
+  var sel = document.getElementById('qf-person');
+  var inp = document.getElementById('qf-text');
+  function filter(){
+    var person = sel ? sel.value : '';
+    var text = inp ? inp.value.trim().toLowerCase() : '';
+    document.querySelectorAll('.quote-card').forEach(function(card){
+      var pname = (card.querySelector('.qc-person')||{}).textContent||'';
+      var qtext = (card.querySelector('.quote-text')||{}).textContent||'';
+      var qdate = (card.querySelector('.qc-date')||{}).textContent||'';
+      var matchP = !person || pname.trim() === person;
+      var matchT = !text || qtext.toLowerCase().includes(text) || qdate.toLowerCase().includes(text);
+      card.style.display = (matchP && matchT) ? '' : 'none';
+    });
+  }
+  if (sel) sel.addEventListener('change', filter);
+  if (inp) inp.addEventListener('input', filter);
+})();
+</script></body>
 </html>

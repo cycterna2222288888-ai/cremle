@@ -468,6 +468,13 @@
   @media (prefers-reduced-motion: reduce) {
     .card, .nav-page-link, .stat-cell { opacity: 1; transform: none; transition: none; }
   }
+
+  .search-bar { padding:20px 60px 0; }
+  .search-input { width:100%; max-width:500px; background:#0e0e0e; border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:13px; font-weight:300; padding:12px 18px; outline:none; transition:border 0.2s; }
+  .search-input::placeholder { color:#444; }
+  .search-input:focus { border-color:#555; }
+  .search-empty { display:none; padding:60px; font-size:13px; color:#444; letter-spacing:0.1em; }
+  @media(max-width:768px){ .search-bar { padding:16px 20px 0; } }
 </style>
 <meta property="og:image" content="https://cremle.netlify.app/og-image.svg">
 <meta name="twitter:image" content="https://cremle.netlify.app/og-image.svg">
@@ -541,7 +548,7 @@
 <!-- STATS BAR -->
 <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--rule);border-bottom:1px solid var(--rule)">
   <div style="background:var(--ink);padding:28px 32px;text-align:center;border-right:1px solid var(--rule)">
-    <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--red);line-height:1">30</div>
+    <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--red);line-height:1">35</div>
     <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--light-gray);margin-top:8px">досье</div>
   </div>
   <div style="background:var(--ink);padding:28px 32px;text-align:center;border-right:1px solid var(--rule)">
@@ -661,7 +668,7 @@
     })();
   </script>
 
-  <div class="cards">
+  <div class="search-bar"><input class="search-input" id="card-search" type="text" placeholder="Поиск по имени или описанию…" autocomplete="off"></div><div id="search-empty" class="search-empty">Ничего не найдено</div><div class="cards">
 
     <!-- SOLOVYOV -->
     <a class="card" data-channel="rossiya1" href="solovyov.html">
@@ -1368,6 +1375,86 @@
         <span class="card-arrow">↗</span>
       </div>
     </a>
+    <a class="card" data-channel="vlast" href="nebenzya.html">
+      <div class="card-monogram">ВН</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 31</div>
+        <div class="card-name">Василий<br>Небензя</div>
+        <div class="card-title">Постпред при ООН. Вето как оружие.</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>1962</span></li>
+          <li><span>Должность</span><span>Постоянный представитель России при ООН</span></li>
+          <li><span>Санкции</span><span>ЕС, Великобритания</span></li>
+          <li><span>Метод</span><span>17+ ветированных резолюций по Украине</span></li>
+        </ul>
+      </div>
+      <div class="card-quote"><blockquote>«Россия защищает жителей Донбасса от геноцида.»</blockquote></div>
+      <div class="card-bottom"><span class="card-cta">Открыть досье</span><span class="card-arrow">↗</span></div>
+    </a>
+    <a class="card" data-channel="vlast" href="patrushev.html">
+      <div class="card-monogram">НП</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 32</div>
+        <div class="card-name">Николай<br>Патрушев</div>
+        <div class="card-title">Серый кардинал. Архитектор силовой политики.</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>1951</span></li>
+          <li><span>Должность</span><span>Советник Президента (экс-директор ФСБ)</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания</span></li>
+          <li><span>Метод</span><span>Идеологическая доктрина «осаждённой крепости»</span></li>
+        </ul>
+      </div>
+      <div class="card-quote"><blockquote>«Украина как государство не имеет будущего. Это исторический факт.»</blockquote></div>
+      <div class="card-bottom"><span class="card-cta">Открыть досье</span><span class="card-arrow">↗</span></div>
+    </a>
+    <a class="card" data-channel="vlast" href="matvienko.html">
+      <div class="card-monogram">ВМ</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 33</div>
+        <div class="card-name">Валентина<br>Матвиенко</div>
+        <div class="card-title">Рождена в Украине. Голосует за её ликвидацию.</div>
+        <ul class="card-facts">
+          <li><span>Родилась</span><span>1949, Украина</span></li>
+          <li><span>Должность</span><span>Председатель Совета Федерации</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания, Канада</span></li>
+          <li><span>Метод</span><span>Ратификация аннексии украинских территорий</span></li>
+        </ul>
+      </div>
+      <div class="card-quote"><blockquote>«Херсон, Запорожье — это Россия. Навсегда.»</blockquote></div>
+      <div class="card-bottom"><span class="card-cta">Открыть досье</span><span class="card-arrow">↗</span></div>
+    </a>
+    <a class="card" data-channel="vlast" href="slutsky.html">
+      <div class="card-monogram">ЛС</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 34</div>
+        <div class="card-name">Леонид<br>Слуцкий</div>
+        <div class="card-title">Лидер ЛДПР. Дипломатия как ширма.</div>
+        <ul class="card-facts">
+          <li><span>Родился</span><span>1968</span></li>
+          <li><span>Должность</span><span>Лидер ЛДПР, комитет по МД ГД</span></li>
+          <li><span>Санкции</span><span>ЕС, США, Великобритания</span></li>
+          <li><span>Метод</span><span>Фиктивные переговоры о мире</span></li>
+        </ul>
+      </div>
+      <div class="card-quote"><blockquote>«Переговоры возможны только на наших условиях.»</blockquote></div>
+      <div class="card-bottom"><span class="card-cta">Открыть досье</span><span class="card-arrow">↗</span></div>
+    </a>
+    <a class="card" data-channel="vlast" href="emizulina.html">
+      <div class="card-monogram">КМ</div>
+      <div class="card-top">
+        <div class="card-num">Досье № 35</div>
+        <div class="card-name">Екатерина<br>Мизулина</div>
+        <div class="card-title">Лига Безопасного Интернета. Цензура как семейный бизнес.</div>
+        <ul class="card-facts">
+          <li><span>Должность</span><span>Глава Лиги Безопасного Интернета</span></li>
+          <li><span>Мать</span><span>Елена Мизулина — сенатор, автор законов о цензуре</span></li>
+          <li><span>Санкции</span><span>Нет персональных</span></li>
+          <li><span>Метод</span><span>Блокировки, жалобы, давление на платформы</span></li>
+        </ul>
+      </div>
+      <div class="card-quote"><blockquote>«YouTube распространяет антироссийскую пропаганду. Пора заблокировать.»</blockquote></div>
+      <div class="card-bottom"><span class="card-cta">Открыть досье</span><span class="card-arrow">↗</span></div>
+    </a>
 
   </div>
 </div>
@@ -1497,5 +1584,24 @@
   <span>Факты верифицированы публикациями СМИ</span>
 </div>
 
-</body>
+<script>
+(function(){
+  var inp = document.getElementById('card-search');
+  if (!inp) return;
+  var empty = document.getElementById('search-empty');
+  inp.addEventListener('input', function(){
+    var q = this.value.trim().toLowerCase();
+    var cards = document.querySelectorAll('.card');
+    var visible = 0;
+    cards.forEach(function(c){
+      var name = (c.querySelector('.card-name')||{}).textContent||'';
+      var role = (c.querySelector('.card-title')||{}).textContent||'';
+      var match = !q || name.toLowerCase().includes(q) || role.toLowerCase().includes(q);
+      c.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+  });
+})();
+</script></body>
 </html>

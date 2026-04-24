@@ -277,23 +277,36 @@
   <a href="index-en.html" style="color:inherit;text-decoration:none">All dossiers</a>
 </div>
 <script>
+var _activeYear = '';
+function setYear(btn, yr) {
+  _activeYear = yr;
+  document.querySelectorAll('#year-filter-bar button').forEach(function(b){
+    b.style.background='transparent';b.style.color='#555';b.style.borderColor='transparent';b.style.borderBottom='1px solid transparent';
+  });
+  btn.style.background='#0d0000';btn.style.color='var(--red)';btn.style.borderColor='#2a0000';btn.style.borderBottom='2px solid var(--red)';
+  applyFilters();
+}
 (function(){
   var sel = document.getElementById('qf-person');
   var inp = document.getElementById('qf-text');
-  function filter(){
+  window.applyFilters = function(){
     var person = sel ? sel.value : '';
     var text = inp ? inp.value.trim().toLowerCase() : '';
     document.querySelectorAll('.quote-card').forEach(function(card){
       var pname = (card.querySelector('.quote-person')||{}).textContent||'';
       var qtext = (card.querySelector('.quote-text')||{}).textContent||'';
       var qyear = (card.querySelector('.quote-year')||{}).textContent||'';
+      var yr = parseInt(qyear)||0;
       var matchP = !person || pname.includes(person);
       var matchT = !text || qtext.toLowerCase().includes(text) || qyear.toLowerCase().includes(text);
-      card.style.display = (matchP && matchT) ? '' : 'none';
+      var matchY = true;
+      if (_activeYear==='pre') matchY = yr>0 && yr<2022;
+      else if (_activeYear) matchY = yr===parseInt(_activeYear);
+      card.style.display = (matchP && matchT && matchY) ? '' : 'none';
     });
-  }
-  if (sel) sel.addEventListener('change', filter);
-  if (inp) inp.addEventListener('input', filter);
+  };
+  if (sel) sel.addEventListener('change', applyFilters);
+  if (inp) inp.addEventListener('input', applyFilters);
 })();
 </script>
 

@@ -1,119 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Media Empire · Kremlin Voices</title>
-<meta property="og:title" content="Media Empire · Kremlin Voices">
-<meta property="og:site_name" content="Kremlin Voices">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
-  :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --red-dim:#5c1111; --light-gray:#bab3a0; --rule:#1c1c1c; --card-bg:#0e0e0e; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; line-height:1.75; overflow-x:hidden; }
-  .topbar { padding:14px 60px; border-bottom:1px solid var(--rule); background:var(--ink); position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
-  .topbar-left a { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); text-decoration:none; }
-  .topbar-left a:hover { opacity:0.6; }
-  .topbar-right { display:flex; align-items:center; gap:20px; }
-  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
-  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
-  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
-  .lang-switch a:hover { color:var(--paper); background:#111; }
-  .masthead { padding:80px 60px 64px; border-bottom:1px solid var(--rule); }
-  .masthead-eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--red); margin-bottom:20px; }
-  .masthead-title { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,72px); font-weight:700; color:var(--paper); margin-bottom:16px; line-height:1.05; }
-  .masthead-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(14px,1.8vw,20px); color:var(--light-gray); max-width:700px; }
-  .container { max-width:1200px; margin:0 auto; padding:0 60px; }
-  .section { padding:80px 0; border-bottom:1px solid var(--rule); }
-  .section-label { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--red); margin-bottom:40px; display:flex; align-items:center; gap:20px; }
-  .section-label::after { content:''; flex:1; height:1px; background:var(--rule); }
-  .footer { padding:48px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#333; border-top:1px solid var(--rule); }
-  .footer-logo { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--red); opacity:0.5; letter-spacing:normal; text-transform:none; }
-  @media(max-width:900px) { .topbar,.masthead,.container,.footer { padding-left:24px; padding-right:24px; } }
+#!/usr/bin/env python3
+"""Fix2: glossary-en, media-empire-en, 404.html, quotes year filter, sanctions stats."""
+import re, os
 
-  .section-nav {
-    border-bottom: 1px solid var(--rule);
-    padding: 0 60px;
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .section-nav::-webkit-scrollbar { display: none; }
-  .section-nav a {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #555;
-    text-decoration: none;
-    padding: 14px 18px;
-    white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .section-nav a:hover { color: var(--paper); }
-  .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
-  @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
-</style>
-<meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
-<meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
-<link rel="canonical" href="https://cycterna2222288888-ai.github.io/cremle/media-empire-en.html">
-<link rel="alternate" hreflang="ru" href="https://cycterna2222288888-ai.github.io/cremle/media-empire.html">
-<link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/media-empire-en.html">
-<link rel="alternate" hreflang="x-default" href="https://cycterna2222288888-ai.github.io/cremle/media-empire.html">
-</head>
-<body>
-<div class="topbar">
-  <div class="topbar-left"><a href="index-en.html">← All dossiers</a></div>
-  <div class="topbar-right">
-    <div class="lang-switch">
-      <a href="media-empire.html">RU</a>
-      <a href="media-empire-en.html" class="active">EN</a>
+BASE = '/Users/petrdracev/Desktop/proj/cremle/'
+
+# ─────────────────────────────────────────────
+# 1. GLOSSARY-EN: add 11 missing terms + section 2
+# ─────────────────────────────────────────────
+NEW_TERMS = """
+    <div class="term-card"><div class="term">Forced Measures</div><div class="term-ru">Вынужденные меры</div><div class="definition">Any Russian military or repressive action framed as a response to external threat, removing Russia's agency and responsibility: "we didn't want this, but we were forced." Applied to describe the invasion, nuclear threats, and domestic repressions. Norkin's standard formula on "Mesto Vstrechi."</div></div>
+    <div class="term-card"><div class="term">Demilitarization</div><div class="term-ru">Демилитаризация</div><div class="definition">The second stated goal of the invasion alongside "denazification" — destruction of Ukraine's military potential: army, equipment, infrastructure. In practice also includes strikes on civilian infrastructure (power plants, bridges, residential areas) described on state TV as "strikes on military infrastructure."</div></div>
+    <div class="term-card"><div class="term">Information Warfare</div><div class="term-ru">Информационная война</div><div class="definition">Any Western reporting on Russia that contradicts the Kremlin narrative. The term allows any fact to be dismissed: "this isn't truth, this is an information attack." Paradoxically deployed by channels that are themselves instruments of information warfare — RT, Rossiya Segodnya. Also used to justify internal censorship.</div></div>
+    <div class="term-card"><div class="term">Multipolar World</div><div class="term-ru">Многополярный мир</div><div class="definition">A world without US/Western dominance — in practice, a world where authoritarian regimes (Russia, China, Iran) maintain spheres of influence without international oversight of human rights. "Multipolarity" is used as the antonym of "unipolar Western diktat" but really means the absence of international mechanisms protecting against aggression.</div></div>
+    <div class="term-card"><div class="term">Nazis / Nazi Regime</div><div class="term-ru">Нацисты / нацистский режим</div><div class="definition">The designation for the Ukrainian government and armed forces. Used systematically to dehumanize the enemy and embed the war in the "anti-fascism" narrative. Ukrainian president Zelensky is Jewish and was democratically elected with 73% of votes. Ukraine is a parliamentary democracy. The term has no factual basis.</div></div>
+    <div class="term-card"><div class="term">Ours / Our Guys</div><div class="term-ru">Наши</div><div class="definition">Russian military forces. The term creates emotional identification between viewer and army, depersonalizing the enemy. "Ours" are always heroes; the other side always aggressors. Journalistic standards require neutral designations for conflict parties — "ours" is a marker of propaganda, not reporting.</div></div>
+    <div class="term-card"><div class="term">Provocation</div><div class="term-ru">Провокация</div><div class="definition">Any Ukrainian or Western action framed as the cause of Russian actions, removing Russia's responsibility and casting it as victim. Strikes on Ukrainian cities are explained by "provocations"; arms deliveries to Ukraine are "provoking war." Russia always "responds," never "initiates." Used by Skabeeva and Popov constantly on "60 Minutes."</div></div>
+    <div class="term-card"><div class="term">Russian World</div><div class="term-ru">Русский мир / Russkiy Mir</div><div class="definition">An ideological concept uniting all Russian-speakers and "spiritually connected" peoples under Moscow's patronage into an extraterritorial community. Used to justify Russian interference in other states (Ukraine, Georgia, Moldova, Baltic states) under the pretext of "protecting" this community. The concept denies the sovereignty of other states over their own citizens.</div></div>
+    <div class="term-card"><div class="term">Sovereignty / Non-interference</div><div class="term-ru">Суверенитет и невмешательство</div><div class="definition">A principle Russia invokes when facing criticism of its domestic policy (human rights, elections). The same principle is ignored when Russia intervenes in Ukraine, Georgia, Moldova, Belarus. The double standard is a conscious rhetorical instrument — invoked selectively based on whether Russia is the subject or object of international pressure.</div></div>
+    <div class="term-card"><div class="term">Traditional Values</div><div class="term-ru">Традиционные ценности</div><div class="definition">Russian "traditions" (restrictions on LGBTQ+ rights, gender inequality, state control of religion) contrasted with "Western decadence." Used to construct an ideological alternative to Western liberal values and mobilize conservative constituencies both domestically and internationally. Kiselyov's standard frame after his 2013 gay propaganda comments.</div></div>
+    <div class="term-card"><div class="term">Junta</div><div class="term-ru">Хунта</div><div class="definition">The designation for the Ukrainian government that came to power after Maidan 2014. "Junta" means a military dictatorship that seized power illegally — the word deliberately evokes Latin American dictatorships. Ignores that Zelensky won presidential elections in 2019 with 73% of votes. Solovyov's standard term since 2014.</div></div>
+    <div class="term-card"><div class="term">Escalation</div><div class="term-ru">Эскалация</div><div class="definition">Any Ukrainian or allied defensive action is declared "escalation" rather than defense. The term inverts logic: the aggressor threatens "escalation" in response to the victim's resistance. Used to pressure Western governments to limit military aid to Ukraine, with nuclear rhetoric as the implicit or explicit threat behind the warning.</div></div>"""
+
+SECTION2 = """
+<div class="container" style="padding-top:80px; padding-bottom:80px; border-top:1px solid var(--rule)">
+  <div style="font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:var(--red);margin-bottom:40px;display:flex;align-items:center;gap:20px">How to Recognize Propaganda <span style="flex:1;height:1px;background:var(--rule);display:block"></span></div>
+  <p style="font-size:15px;color:var(--light-gray);line-height:1.9;max-width:720px;margin-bottom:48px">Several markers that identify a propaganda text or statement — regardless of the source.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule)">
+    <div style="background:var(--ink);padding:40px">
+      <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Signal 1</div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Dehumanizing the Enemy</div>
+      <p style="font-size:13px;color:var(--light-gray);line-height:1.8">The opponent is referred to through group labels ("Nazis," "junta," "the West") rather than specific names and roles. This strips them of individual human characteristics and simplifies demonization.</p>
+    </div>
+    <div style="background:var(--ink);padding:40px">
+      <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Signal 2</div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Victimhood Rhetoric</div>
+      <p style="font-size:13px;color:var(--light-gray);line-height:1.8">The aggressor presents itself as victim ("forced measures," "response to provocation"). This removes moral responsibility and reframes aggression as self-defense. Russia never initiates — it only "responds."</p>
+    </div>
+    <div style="background:var(--ink);padding:40px">
+      <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Signal 3</div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Language Substitution</div>
+      <p style="font-size:13px;color:var(--light-gray);line-height:1.8">War → "special operation." Occupation → "liberation." Killing civilians → "strike on military infrastructure." Renaming changes the perception of reality without changing reality itself — the core technique of state euphemism.</p>
+    </div>
+    <div style="background:var(--ink);padding:40px">
+      <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Signal 4</div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">False Binary</div>
+      <p style="font-size:13px;color:var(--light-gray);line-height:1.8">"Either with us or against us." Complex political situations are reduced to binary choice. A neutral position is declared impossible or treasonous. Any criticism is framed as support for the enemy — eliminating the space for nuance.</p>
+    </div>
+    <div style="background:var(--ink);padding:40px">
+      <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Signal 5</div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Historical Appeal</div>
+      <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Current events are embedded in a historical narrative ("like 1941," "centuries-long war against Russia"). Historical analogies grant moral authority without requiring proof of their applicability to the current situation.</p>
+    </div>
+    <div style="background:var(--ink);padding:40px">
+      <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Signal 6</div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Emotion Over Argument</div>
+      <p style="font-size:13px;color:var(--light-gray);line-height:1.8">High emotional intensity, shouting, personal attacks — replace factual argumentation. Audiences perceive intensity as persuasiveness. Sheynin and Solovyov have mastered this technique. The louder the delivery, the weaker the underlying evidence.</p>
     </div>
   </div>
-</div>
-<nav class="section-nav">
-  <a href="quotes-en.html">Quotes</a>
-  <a href="sanctions-en.html">Sanctions</a>
-  <a href="timeline-en.html">Timeline</a>
-  <a href="connections-en.html">Connections</a>
-  <a href="compare-en.html">Compare</a>
-  <a href="media-empire-en.html" class="active">Media Empire</a>
-  <a href="glossary-en.html">Glossary</a>
-  <a href="sources-en.html">Sources</a>
-  <a href="about-en.html">About</a>
-</nav>
+</div>"""
 
-<div class="masthead">
-  <div class="masthead-eyebrow">Structure · Funding · Reach</div>
-  <h1 class="masthead-title">Media Empire</h1>
-  <p class="masthead-sub">Russian state media: who controls what, where the money comes from, how many people watch. One system — many faces.</p>
-</div>
+path = BASE + 'glossary-en.html'
+with open(path) as f: h = f.read()
 
-<style>
-  .section-wrap { padding:60px; border-bottom:1px solid var(--rule); }
-  .empire-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; margin-top:32px; }
-  .empire-node { background:var(--card-bg); padding:32px; }
-  .empire-name { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--red); margin-bottom:8px; }
-  .empire-sub { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#444; margin-bottom:16px; }
-  .empire-body { font-size:13px; color:var(--light-gray); line-height:1.8; }
-  .empire-body a { color:var(--red); text-decoration:none; }
-  .empire-body a:hover { opacity:0.7; }
-  .stat-row-inline { display:flex; gap:32px; flex-wrap:wrap; margin-top:16px; }
-  .stat-item { }
-  .stat-num { font-family:'Playfair Display',serif; font-size:28px; color:var(--paper); }
-  .stat-lbl { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#444; }
-  .flow-grid { display:grid; grid-template-columns:1fr 60px 1fr; gap:0; align-items:center; margin-top:32px; }
-  .flow-box { background:#050505; border:1px solid var(--rule); padding:24px; }
-  .flow-arrow { text-align:center; font-size:24px; color:#333; }
-  .flow-label { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px; }
-  .flow-val { font-size:14px; color:var(--light-gray); }
-  @media(max-width:900px) { .empire-grid { grid-template-columns:1fr; } .section-wrap { padding:40px 24px; } .flow-grid { grid-template-columns:1fr; } .flow-arrow { display:none; } }
-</style>
-<div class="section-wrap" style="padding:60px;border-bottom:1px solid var(--rule)">
+# Insert new terms before closing </div> of glossary-grid
+h = h.replace(
+    '    <div class="term-card"><div class="term">Whataboutism</div>',
+    NEW_TERMS + '\n    <div class="term-card"><div class="term">Whataboutism</div>'
+)
+# Insert section 2 before footer
+h = h.replace('<div class="footer">', SECTION2 + '\n<div class="footer">')
+
+with open(path, 'w') as f: f.write(h)
+print('✓ glossary-en.html: 11 terms + section 2 added')
+
+
+# ─────────────────────────────────────────────
+# 2. MEDIA-EMPIRE-EN: full expansion
+# ─────────────────────────────────────────────
+HIER_SECTION = """<div class="section-wrap" style="padding:60px;border-bottom:1px solid var(--rule)">
   <div class="section-label" style="font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:var(--red);margin-bottom:32px">01 · Power Hierarchy</div>
   <div style="background:var(--card-bg);border:1px solid var(--rule);padding:48px">
     <div style="text-align:center;margin-bottom:0">
@@ -154,8 +118,9 @@
       </div>
     </div>
   </div>
-</div>
-<div class="section-wrap" style="padding:60px;border-bottom:1px solid var(--rule)">
+</div>"""
+
+CHANNELS_SECTION = """<div class="section-wrap" style="padding:60px;border-bottom:1px solid var(--rule)">
   <div class="section-label" style="font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:var(--red);margin-bottom:32px">02 · Channels &amp; Programs</div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--rule)">
     <div style="background:var(--card-bg);padding:0">
@@ -252,31 +217,9 @@
       </div>
     </div>
   </div>
-</div>
-<div class="section-wrap">
-  <div class="section-label">The Three Pillars</div>
-  <div class="empire-grid">
-    <div class="empire-node">
-      <div class="empire-name">VGTRK / Russia-1</div>
-      <div class="empire-sub">State federal broadcaster</div>
-      <div class="empire-body">The largest state broadcaster in Russia. Wholly owned by the Russian government. Broadcasts Russia-1, Russia-24, Russia-Culture and 80+ regional channels. Annual budget: ~60 billion rubles (~$650M). Propagandists: <a href="solovyov-en.html">Solovyov</a>, <a href="skabeeva-en.html">Skabeeva</a>, <a href="popov-en.html">Popov</a>, <a href="mamontov-en.html">Mamontov</a>, <a href="korchevnikov-en.html">Korchevnikov</a>.</div>
-      <div class="stat-row-inline"><div class="stat-item"><div class="stat-num">40M+</div><div class="stat-lbl">Daily viewers</div></div><div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">State owned</div></div></div>
-    </div>
-    <div class="empire-node">
-      <div class="empire-name">MIA Rossiya Segodnya / RT</div>
-      <div class="empire-sub">International propaganda arm</div>
-      <div class="empire-body">Created by Putin decree in 2013. Director-General: <a href="kiselyov-en.html">Kiselyov</a>. Editor-in-Chief of RT: <a href="simonyan-en.html">Simonyan</a>. Operates RT in English, Arabic, Spanish, French, German. Budget: ~$300M/year from federal treasury. Banned in EU since 2022.</div>
-      <div class="stat-row-inline"><div class="stat-item"><div class="stat-num">100+</div><div class="stat-lbl">Countries</div></div><div class="stat-item"><div class="stat-num">2022</div><div class="stat-lbl">EU ban</div></div></div>
-    </div>
-    <div class="empire-node">
-      <div class="empire-name">Channel One (Pervy Kanal)</div>
-      <div class="empire-sub">State-controlled, formally mixed ownership</div>
-      <div class="empire-body">Formally 51% state-owned, but editorially directed by the Kremlin. Largest single audience in Russia. Propagandists: <a href="sheynin-en.html">Sheynin</a>, <a href="andreyeva-en.html">Andreyeva</a>, <a href="leontyev-en.html">Leontyev</a>, <a href="tolstoy-en.html">Tolstoy</a> (former).</div>
-      <div class="stat-row-inline"><div class="stat-item"><div class="stat-num">50M+</div><div class="stat-lbl">Reach</div></div><div class="stat-item"><div class="stat-num">51%</div><div class="stat-lbl">State share</div></div></div>
-    </div>
-  </div>
-</div>
-<div class="section-wrap" style="padding:60px;border-bottom:1px solid var(--rule)">
+</div>"""
+
+FUNDING_SECTION = """<div class="section-wrap" style="padding:60px;border-bottom:1px solid var(--rule)">
   <div class="section-label" style="font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:var(--red);margin-bottom:32px">03 · Funding</div>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule)">
     <div style="background:var(--card-bg);padding:32px;position:relative">
@@ -305,8 +248,9 @@
     </div>
   </div>
   <p style="margin-top:20px;font-size:12px;color:#444">Sources: Federal budget law, Rosstat, RT annual reports (pre-2022). Figures are estimates based on available public data.</p>
-</div>
-<div class="section-wrap" style="padding:60px;border-bottom:1px solid var(--rule)">
+</div>"""
+
+REACH_SECTION = """<div class="section-wrap" style="padding:60px;border-bottom:1px solid var(--rule)">
   <div class="section-label" style="font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:var(--red);margin-bottom:32px">04 · Reach &amp; Audience</div>
   <table style="width:100%;border-collapse:collapse;background:var(--rule);gap:2px">
     <thead>
@@ -356,8 +300,9 @@
       </tr>
     </tbody>
   </table>
-</div>
-<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--rule);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+</div>"""
+
+STATS_BAR = """<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--rule);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
   <div style="background:var(--card-bg);padding:32px 24px;text-align:center;border-left:1px solid var(--rule)">
     <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--red);line-height:1">$400<span style="font-size:20px">M</span></div>
     <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray);margin-top:10px">RT state funding / year</div>
@@ -378,27 +323,255 @@
     <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--red);line-height:1">35</div>
     <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray);margin-top:10px">individuals in this archive</div>
   </div>
-</div>
-<div class="section-wrap" style="display:none">
-  <div class="section-label">Funding Structure</div>
-  <div class="flow-grid">
-    <div class="flow-box"><div class="flow-label">Source</div><div class="flow-val">Russian federal budget — annual allocations to state media. Approved by the Duma, signed by the President.</div></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-box"><div class="flow-label">Destination</div><div class="flow-val">VGTRK (~60B RUB), RT/Rossiya Segodnya (~25B RUB), Channel One (indirect subsidy + state contracts). Total state media spending: ~100B+ RUB annually.</div></div>
+</div>"""
+
+path = BASE + 'media-empire-en.html'
+with open(path) as f: h = f.read()
+
+# Insert hierarchy + channels before existing "The Three Pillars"
+h = h.replace(
+    '<div class="section-wrap">\n  <div class="section-label">The Three Pillars</div>',
+    HIER_SECTION + '\n' + CHANNELS_SECTION + '\n<div class="section-wrap">\n  <div class="section-label">The Three Pillars</div>'
+)
+# Replace simple funding section with rich one + reach + stats
+h = h.replace(
+    '<div class="section-wrap">\n  <div class="section-label">Funding Structure</div>\n  <div class="flow-grid">',
+    FUNDING_SECTION + '\n' + REACH_SECTION + '\n' + STATS_BAR + '\n<div class="section-wrap" style="display:none">\n  <div class="section-label">Funding Structure</div>\n  <div class="flow-grid">'
+)
+
+with open(path, 'w') as f: f.write(h)
+print('✓ media-empire-en.html: hierarchy + channels + funding + reach + stats added')
+
+
+# ─────────────────────────────────────────────
+# 3. 404.html — Russian version
+# ─────────────────────────────────────────────
+HTML_404 = '''<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Голоса Кремля</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --light-gray:#bab3a0; --rule:#1c1c1c; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--ink); color:var(--paper); font-family:\'Inter\',sans-serif; font-weight:300; min-height:100vh; display:flex; flex-direction:column; }
+  .topbar { border-bottom:1px solid var(--rule); padding:16px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:var(--red); }
+  .topbar a { color:var(--red); text-decoration:none; }
+  .topbar a:hover { color:var(--paper); }
+  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
+  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
+  .body { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px; }
+  .code { font-family:\'Playfair Display\',serif; font-size:clamp(6rem,20vw,12rem); color:#111; line-height:1; margin-bottom:8px; }
+  .label { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); margin-bottom:24px; }
+  h1 { font-family:\'Playfair Display\',serif; font-size:clamp(1.4rem,4vw,2.2rem); font-weight:400; margin-bottom:16px; }
+  p { color:var(--light-gray); max-width:420px; font-size:15px; margin-bottom:40px; }
+  .back { color:var(--paper); text-decoration:none; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; border-bottom:1px solid var(--red); padding-bottom:2px; }
+  .back:hover { color:var(--red); }
+  @media(max-width:768px) { .topbar { padding:14px 20px; } }
+</style>
+<meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
+<meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
+<link rel="alternate" hreflang="ru" href="https://cycterna2222288888-ai.github.io/cremle/404.html">
+<link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/404-en.html">
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html">← Голоса Кремля</a>
+  <div class="lang-switch">
+    <a href="404.html" class="active">RU</a>
+    <a href="404-en.html">EN</a>
   </div>
-  <p style="margin-top:24px;font-size:12px;color:#444">Sources: Federal budget law, Rosstat, RT annual reports (pre-2022). Figures are estimates based on available public data.</p>
+</nav>
+
+<div class="body">
+  <div class="code">404</div>
+  <div class="label">Страница не найдена</div>
+  <h1>Этого досье не существует</h1>
+  <p>Страница удалена, переименована или никогда не существовала.</p>
+  <a href="index.html" class="back">← В архив</a>
 </div>
-<div class="section-wrap">
-  <div class="section-label">Key Connections</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:0">
-    <div style="background:var(--card-bg);padding:32px"><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Family · Married couple</div><div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px"><a href="skabeeva-en.html" style="color:inherit;text-decoration:none">Skabeeva</a> + <a href="popov-en.html" style="color:inherit;text-decoration:none">Popov</a></div><div style="font-size:13px;color:var(--light-gray)">Husband and wife co-hosting "60 Minutes" on Russia-1. The only married couple simultaneously sanctioned by six jurisdictions for the same show.</div></div>
-    <div style="background:var(--card-bg);padding:32px"><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Family · Married couple</div><div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px"><a href="simonyan-en.html" style="color:inherit;text-decoration:none">Simonyan</a> + <a href="keosayan-en.html" style="color:inherit;text-decoration:none">Keosayan</a></div><div style="font-size:13px;color:var(--light-gray)">Simonyan (RT editor-in-chief) and Keosayan (RT documentary director) are married. Together they control Russia's primary international propaganda output.</div></div>
-  </div>
-</div>
-<div class="footer">
-  <div class="footer-logo">Kremlin Voices</div>
-  <span>Data from open sources</span>
-  <a href="index-en.html" style="color:inherit;text-decoration:none">All dossiers</a>
-</div>
+
 </body>
 </html>
+'''
+with open(BASE + '404.html', 'w') as f: f.write(HTML_404)
+print('✓ 404.html: создан')
+
+
+# ─────────────────────────────────────────────
+# 4. QUOTES.HTML — add year filter
+# ─────────────────────────────────────────────
+path = BASE + 'quotes.html'
+with open(path) as f: h = f.read()
+
+YEAR_FILTER = """<div class="filter-bar" id="year-filter-bar" style="border-top:1px solid var(--rule)">
+  <button class="filter-btn active" data-year="">Все годы</button>
+  <button class="filter-btn" data-year="pre">До 2022</button>
+  <button class="filter-btn" data-year="2022">2022</button>
+  <button class="filter-btn" data-year="2023">2023</button>
+  <button class="filter-btn" data-year="2024">2024</button>
+  <button class="filter-btn" data-year="2025">2025</button>
+</div>"""
+
+# Insert year filter after the existing topic filter bar
+h = h.replace(
+    '<div class="filter-bar">\n  <button class="filter-btn active">Все темы</button>',
+    '<div class="filter-bar" id="topic-filter-bar">\n  <button class="filter-btn active">Все темы</button>'
+)
+# Add year filter bar after closing filter-bar div
+topic_close = '</div>\n<div class="quotes-wrap">'
+h = h.replace(
+    '<div class="quotes-wrap">',
+    YEAR_FILTER + '\n<div class="quotes-wrap">',
+    1  # first occurrence only
+)
+
+# Update filter JS to include year filter
+OLD_JS = '''<script>
+(function(){
+  var sel = document.getElementById('qf-person');
+  var inp = document.getElementById('qf-text');
+  function filter(){
+    var person = sel ? sel.value : '';
+    var text = inp ? inp.value.trim().toLowerCase() : '';
+    document.querySelectorAll('.quote-card').forEach(function(card){
+      var pname = (card.querySelector('.qc-person')||{}).textContent||'';
+      var qtext = (card.querySelector('.quote-text')||{}).textContent||'';
+      var qdate = (card.querySelector('.qc-date')||{}).textContent||'';
+      var matchP = !person || pname.trim() === person;
+      var matchT = !text || qtext.toLowerCase().includes(text) || qdate.toLowerCase().includes(text);
+      card.style.display = (matchP && matchT) ? '' : 'none';
+    });
+  }
+  if (sel) sel.addEventListener('change', filter);
+  if (inp) inp.addEventListener('input', filter);
+})();
+</script>'''
+
+NEW_JS = '''<script>
+(function(){
+  var sel = document.getElementById('qf-person');
+  var inp = document.getElementById('qf-text');
+  var activeTopic = '';
+  var activeYear = '';
+
+  // topic filter
+  document.querySelectorAll('#topic-filter-bar .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#topic-filter-bar .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeTopic = btn.textContent.trim() === 'Все темы' ? '' : btn.textContent.trim();
+      applyFilter();
+    });
+  });
+
+  // year filter
+  document.querySelectorAll('#year-filter-bar .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#year-filter-bar .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeYear = btn.dataset.year || '';
+      applyFilter();
+    });
+  });
+
+  function applyFilter(){
+    var person = sel ? sel.value : '';
+    var text = inp ? inp.value.trim().toLowerCase() : '';
+    document.querySelectorAll('.quote-card').forEach(function(card){
+      var pname = (card.querySelector('.qc-person')||{}).textContent||'';
+      var qtext = (card.querySelector('.quote-text')||{}).textContent||'';
+      var qdate = (card.querySelector('.qc-date')||{}).textContent||'';
+      var yr = parseInt((card.querySelector('.qc-year')||{}).textContent||'0');
+      var matchP = !person || pname.trim() === person;
+      var matchT = !text || qtext.toLowerCase().includes(text) || qdate.toLowerCase().includes(text);
+      var matchTopic = !activeTopic || (card.dataset.topic && card.dataset.topic.includes(activeTopic));
+      var matchYear = true;
+      if (activeYear === 'pre') matchYear = yr > 0 && yr < 2022;
+      else if (activeYear) matchYear = yr === parseInt(activeYear);
+      card.style.display = (matchP && matchT && matchTopic && matchYear) ? '' : 'none';
+    });
+    // hide empty sections
+    document.querySelectorAll('.quotes-section').forEach(function(sec){
+      var visible = Array.from(sec.querySelectorAll('.quote-card')).some(function(c){ return c.style.display !== 'none'; });
+      sec.style.display = visible ? '' : 'none';
+    });
+  }
+
+  if (sel) sel.addEventListener('change', applyFilter);
+  if (inp) inp.addEventListener('input', applyFilter);
+})();
+</script>'''
+
+h = h.replace(OLD_JS, NEW_JS)
+
+with open(path, 'w') as f: f.write(h)
+print('✓ quotes.html: year filter added')
+
+
+# ─────────────────────────────────────────────
+# 5. SANCTIONS.HTML — fix count + per-country stats
+# ─────────────────────────────────────────────
+SANCTION_STATS = """<div class="sanction-stats">
+  <div class="ss-title">Санкции по юрисдикциям · 35 персон в архиве</div>
+  <div class="ss-grid" style="display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:var(--rule)">
+    <div class="ss-cell">
+      <div class="ss-country">Европейский союз</div>
+      <div class="ss-count">23</div>
+      <div class="ss-bar-bg"><div class="ss-bar" style="width:66%"></div></div>
+      <div class="ss-pct">66% · с 2014</div>
+    </div>
+    <div class="ss-cell">
+      <div class="ss-country">Великобритания</div>
+      <div class="ss-count">19</div>
+      <div class="ss-bar-bg"><div class="ss-bar" style="width:54%"></div></div>
+      <div class="ss-pct">54% · с 2022</div>
+    </div>
+    <div class="ss-cell">
+      <div class="ss-country">США</div>
+      <div class="ss-count">13</div>
+      <div class="ss-bar-bg"><div class="ss-bar" style="width:37%"></div></div>
+      <div class="ss-pct">37% · с 2017</div>
+    </div>
+    <div class="ss-cell">
+      <div class="ss-country">Канада</div>
+      <div class="ss-count">10</div>
+      <div class="ss-bar-bg"><div class="ss-bar" style="width:29%"></div></div>
+      <div class="ss-pct">29%</div>
+    </div>
+    <div class="ss-cell">
+      <div class="ss-country">Австралия</div>
+      <div class="ss-count">5</div>
+      <div class="ss-bar-bg"><div class="ss-bar" style="width:14%"></div></div>
+      <div class="ss-pct">14%</div>
+    </div>
+    <div class="ss-cell">
+      <div class="ss-country">Япония</div>
+      <div class="ss-count">5</div>
+      <div class="ss-bar-bg"><div class="ss-bar" style="width:14%"></div></div>
+      <div class="ss-pct">14%</div>
+    </div>
+  </div>
+</div>"""
+
+path = BASE + 'sanctions.html'
+with open(path) as f: h = f.read()
+
+# Fix the 23 persons count to 35
+h = h.replace('<div class="stat-val">23</div>\n        <div class="stat-label">персон в архиве</div>', '<div class="stat-val">35</div>\n        <div class="stat-label">персон в архиве</div>')
+
+# Insert stats section before the table
+h = h.replace('<table class="sanctions-table">', SANCTION_STATS + '\n    <table class="sanctions-table">', 1)
+
+with open(path, 'w') as f: f.write(h)
+print('✓ sanctions.html: count fixed (23→35), per-country stats added')
+
+
+print('\n✓ Всё готово.')

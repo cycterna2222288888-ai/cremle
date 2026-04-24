@@ -309,7 +309,7 @@
   <p class="masthead-sub">Избранные высказывания пропагандистов — дословно, с источниками. Война, ядерные угрозы, ненависть, лицемерие.</p>
 </div>
 
-<div class="filter-bar">
+<div class="filter-bar" id="topic-filter-bar">
   <button class="filter-btn active">Все темы</button>
   <button class="filter-btn">Война</button>
   <button class="filter-btn">Запад</button>
@@ -325,6 +325,14 @@
   <div class="fq-cite">Дмитрий Киселёв · «Вести недели» · 16 марта 2014</div>
 </div>
 
+<div class="filter-bar" id="year-filter-bar" style="border-top:1px solid var(--rule)">
+  <button class="filter-btn active" data-year="">Все годы</button>
+  <button class="filter-btn" data-year="pre">До 2022</button>
+  <button class="filter-btn" data-year="2022">2022</button>
+  <button class="filter-btn" data-year="2023">2023</button>
+  <button class="filter-btn" data-year="2024">2024</button>
+  <button class="filter-btn" data-year="2025">2025</button>
+</div>
 <div class="quotes-wrap">
 
   <!-- ВОЙНА -->
@@ -837,20 +845,54 @@
 (function(){
   var sel = document.getElementById('qf-person');
   var inp = document.getElementById('qf-text');
-  function filter(){
+  var activeTopic = '';
+  var activeYear = '';
+
+  // topic filter
+  document.querySelectorAll('#topic-filter-bar .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#topic-filter-bar .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeTopic = btn.textContent.trim() === 'Все темы' ? '' : btn.textContent.trim();
+      applyFilter();
+    });
+  });
+
+  // year filter
+  document.querySelectorAll('#year-filter-bar .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#year-filter-bar .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeYear = btn.dataset.year || '';
+      applyFilter();
+    });
+  });
+
+  function applyFilter(){
     var person = sel ? sel.value : '';
     var text = inp ? inp.value.trim().toLowerCase() : '';
     document.querySelectorAll('.quote-card').forEach(function(card){
       var pname = (card.querySelector('.qc-person')||{}).textContent||'';
       var qtext = (card.querySelector('.quote-text')||{}).textContent||'';
       var qdate = (card.querySelector('.qc-date')||{}).textContent||'';
+      var yr = parseInt((card.querySelector('.qc-year')||{}).textContent||'0');
       var matchP = !person || pname.trim() === person;
       var matchT = !text || qtext.toLowerCase().includes(text) || qdate.toLowerCase().includes(text);
-      card.style.display = (matchP && matchT) ? '' : 'none';
+      var matchTopic = !activeTopic || (card.dataset.topic && card.dataset.topic.includes(activeTopic));
+      var matchYear = true;
+      if (activeYear === 'pre') matchYear = yr > 0 && yr < 2022;
+      else if (activeYear) matchYear = yr === parseInt(activeYear);
+      card.style.display = (matchP && matchT && matchTopic && matchYear) ? '' : 'none';
+    });
+    // hide empty sections
+    document.querySelectorAll('.quotes-section').forEach(function(sec){
+      var visible = Array.from(sec.querySelectorAll('.quote-card')).some(function(c){ return c.style.display !== 'none'; });
+      sec.style.display = visible ? '' : 'none';
     });
   }
-  if (sel) sel.addEventListener('change', filter);
-  if (inp) inp.addEventListener('input', filter);
+
+  if (sel) sel.addEventListener('change', applyFilter);
+  if (inp) inp.addEventListener('input', applyFilter);
 })();
 </script></body>
 </html>

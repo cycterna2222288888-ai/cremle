@@ -182,8 +182,6 @@
 <link rel="alternate" hreflang="ru" href="https://cycterna2222288888-ai.github.io/cremle/submit.html">
 <link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/submit-en.html">
 <link rel="alternate" hreflang="x-default" href="https://cycterna2222288888-ai.github.io/cremle/submit.html">
-<!-- Analytics (Umami, no cookies) -->
-<script defer src="https://cloud.umami.is/script.js" data-website-id="REPLACE_WITH_YOUR_ID"></script>
 </head>
 <body>
 
@@ -209,10 +207,9 @@
       Your IP address is hashed and not stored in readable form. Do not include personal details if you wish to remain unidentified. For maximum anonymity, use Tor Browser or a VPN.
     </div>
 
-    <form id="tip-form" name="tips-en" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+    <form id="tip-form" name="tips-en" method="POST">
       <input type="hidden" name="form-name" value="tips-en">
-      <p style="display:none"><input name="bot-field"></p>
-
+      
       <label for="subject">Concerning</label>
       <select id="subject" name="subject" required>
         <option value="">— Select a subject —</option>
@@ -272,10 +269,10 @@ document.getElementById('tip-form').addEventListener('submit', async e => {
   btn.textContent = 'Sending…';
 
   try {
-    const res = await fetch('/', {
+    const res = await fetch(form.action, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString(),
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form),
     });
     if (res.ok) {
       ok.textContent = 'Message received. Thank you.';

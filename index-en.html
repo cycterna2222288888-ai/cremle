@@ -14,6 +14,7 @@
 <meta name="twitter:description" content="Documentary dossiers on 23 key propagandists of Russian state television.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
@@ -325,8 +326,6 @@
   "inLanguage": ["en", "ru"]
 }
 </script>
-<!-- Analytics (Umami, no cookies) -->
-<script defer src="https://cloud.umami.is/script.js" data-website-id="REPLACE_WITH_YOUR_ID"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -349,6 +348,7 @@
   }
 }
 </script>
+<link rel="alternate" type="application/rss+xml" title="Kremlin Voices — RSS" href="rss.xml">
 </head>
 <body>
 
@@ -392,6 +392,7 @@
   <button class="flt-btn" data-filter="vlast">Politics</button>
   <button class="flt-btn" data-filter="kultura">Culture</button>
   <button class="flt-btn" data-filter="ideolog">Ideology</button>
+  <button class="flt-btn" id="btn-random" onclick="goRandom()" title="Open a random dossier">&#x2685; Random</button>
   <div class="search-wrap">
     <input type="text" id="search-input" placeholder="Search by name...">
   </div>
@@ -999,5 +1000,13 @@
     if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
   });
 })();
-</script></body>
+</script><script>
+function goRandom(){
+  var cards=document.querySelectorAll('.card:not([style*="none"])');
+  if(!cards.length) cards=document.querySelectorAll('.card');
+  var c=cards[Math.floor(Math.random()*cards.length)];
+  if(c) window.location.href=c.getAttribute('href');
+}
+</script>
+</body>
 </html>

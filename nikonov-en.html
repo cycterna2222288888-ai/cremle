@@ -31,8 +31,6 @@
   "sameAs": "https://cycterna2222288888-ai.github.io/cremle/nikonov.html"
 }
 </script>
-<!-- Analytics (Umami, no cookies) -->
-<script defer src="https://cloud.umami.is/script.js" data-website-id="REPLACE_WITH_YOUR_ID"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
   :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --red-dim:#5c1111; --light-gray:#bab3a0; --rule:#1c1c1c; --card-bg:#0e0e0e; --gray:#4a4a4a; }
@@ -166,6 +164,23 @@
   .related-card-arrow { font-size: 12px; color: var(--red); margin-top: 12px; letter-spacing: 0.15em; text-transform: uppercase; }
   @media (max-width: 768px) { .related-section { padding: 40px 20px; } .related-grid { grid-template-columns: 1fr; } }
 
+</style>
+<style>
+.updated-stamp{padding:12px 60px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#2a2a2a;border-top:1px solid #111;text-align:right;}
+@media(max-width:768px){.updated-stamp{padding:10px 24px;}}
+</style><style media="print">
+  .topbar,.section-nav,.nav-back,.filter-bar,.share-bar,.related-section,
+  .scroll-top,.reading-time,footer,.footer,.updated-stamp,
+  [class*="btn"],[class*="nav-pages"]{display:none!important;}
+  body{background:#fff!important;color:#000!important;font-size:11pt;}
+  a{color:#000;text-decoration:none;}
+  .hero{padding:20pt 0 12pt;}
+  .badge-fact,.badge-interp,.badge{border:1px solid #999;background:none!important;color:#000!important;}
+  .quote-card,.qc-text,.fq-text{color:#000!important;}
+  .qc-year{color:#666!important;}
+  h1,h2,h3{page-break-after:avoid;}
+  .timeline-item,.quote-card{page-break-inside:avoid;}
+  @page{margin:2cm;}
 </style>
 </head>
 <body>
@@ -388,6 +403,8 @@
   <div class="next-dosye-arrow">→</div>
 </a>
 
+
+<div class="updated-stamp">Dossier updated: April 2026</div>
 <div class="footer">
   <span>Compiled from open sources</span>
   <div class="footer-rule"></div>

@@ -1,0 +1,19 @@
+{
+  "name": "Голоса Кремля",
+  "short_name": "Кремль",
+  "description": "Независимый архив кремлёвской пропаганды",
+  "start_url": "/cremle/",
+  "scope": "/cremle/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#8b1a1a",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

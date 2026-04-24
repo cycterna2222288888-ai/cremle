@@ -182,8 +182,6 @@
 <link rel="alternate" hreflang="ru" href="https://cycterna2222288888-ai.github.io/cremle/submit.html">
 <link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/submit-en.html">
 <link rel="alternate" hreflang="x-default" href="https://cycterna2222288888-ai.github.io/cremle/submit.html">
-<!-- Analytics (Umami, no cookies) -->
-<script defer src="https://cloud.umami.is/script.js" data-website-id="REPLACE_WITH_YOUR_ID"></script>
 </head>
 <body>
 
@@ -209,10 +207,9 @@
       Ваш IP-адрес хешируется и не хранится в читаемом виде. Не оставляйте личных данных, если не хотите быть идентифицированы. Для максимальной анонимности используйте Tor Browser или VPN.
     </div>
 
-    <form id="tip-form" name="tips" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="tips">
-      <p style="display:none"><input name="bot-field"></p>
-
+    <!-- To activate: create free account at formspree.io and replace FORMSPREE_ID -->
+    <form id="tip-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
+            
       <label for="subject">Кому касается</label>
       <select id="subject" name="subject" required>
         <option value="">— Выберите фигуранта —</option>
@@ -272,10 +269,10 @@ document.getElementById('tip-form').addEventListener('submit', async e => {
   btn.textContent = 'Отправляю…';
 
   try {
-    const res = await fetch('/', {
+    const res = await fetch(form.action, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString(),
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form),
     });
     if (res.ok) {
       ok.textContent = 'Сообщение получено. Спасибо.';

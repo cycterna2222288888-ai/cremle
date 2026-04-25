@@ -182,8 +182,13 @@
 <link rel="alternate" hreflang="ru" href="https://cycterna2222288888-ai.github.io/cremle/submit.html">
 <link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/submit-en.html">
 <link rel="alternate" hreflang="x-default" href="https://cycterna2222288888-ai.github.io/cremle/submit.html">
+<style>
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;padding:8px 16px;background:var(--red);color:var(--paper);font-size:13px;z-index:9999;text-decoration:none;outline:2px solid var(--paper)}
+</style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Перейти к содержимому</a>
 
 <nav class="topbar">
   <a href="index.html">← Голоса Кремля</a>
@@ -200,7 +205,8 @@
 </div>
 
 <div class="section">
-  <div class="container">
+  <main id="main-content">
+<div class="container">
 
     <div class="notice">
       <strong>Конфиденциальность</strong>
@@ -213,30 +219,42 @@
       <label for="subject">Кому касается</label>
       <select id="subject" name="subject" required>
         <option value="">— Выберите фигуранта —</option>
-        <option>Владимир Соловьёв</option>
-        <option>Ольга Скабеева</option>
-        <option>Маргарита Симоньян</option>
-        <option>Дмитрий Киселёв</option>
-        <option>Владимир Попов</option>
-        <option>Артём Шейнин</option>
-        <option>Пётр Толстой</option>
-        <option>Андрей Норкин</option>
-        <option>Тигран Кеосаян</option>
-        <option>Екатерина Андреева</option>
-        <option>Аркадий Мамонтов</option>
-        <option>Захар Прилепин</option>
-        <option>Михаил Леонтьев</option>
-        <option>Борис Корчевников</option>
-        <option>Владимир Мединский</option>
-        <option>Никита Михалков</option>
-        <option>Александр Дугин</option>
-        <option>Антон Красовский</option>
-        <option>Дмитрий Медведев</option>
-        <option>Рамзан Кадыров</option>
-        <option>Константин Малофеев</option>
-        <option>Вячеслав Никонов</option>
-        <option>Евгений Поддубный</option>
-        <option value="Общее">Общее / Несколько фигурантов</option>
+        <option value="solovyov">Владимир Соловьёв</option>
+        <option value="skabeeva">Ольга Скабеева</option>
+        <option value="kiselyov">Дмитрий Киселёв</option>
+        <option value="simonyan">Маргарита Симоньян</option>
+        <option value="popov">Евгений Попов</option>
+        <option value="sheynin">Артём Шейнин</option>
+        <option value="tolstoy">Пётр Толстой</option>
+        <option value="norkin">Андрей Норкин</option>
+        <option value="keosayan">Тигран Кеосаян</option>
+        <option value="andreyeva">Екатерина Андреева</option>
+        <option value="mamontov">Аркадий Мамонтов</option>
+        <option value="prilepin">Захар Прилепин</option>
+        <option value="leontyev">Михаил Леонтьев</option>
+        <option value="korchevnikov">Борис Корчевников</option>
+        <option value="medinsky">Владимир Мединский</option>
+        <option value="mikhalkov">Никита Михалков</option>
+        <option value="dugin">Александр Дугин</option>
+        <option value="krasovsky">Антон Красовский</option>
+        <option value="medvedev">Дмитрий Медведев</option>
+        <option value="kadyrov">Рамзан Кадыров</option>
+        <option value="malofeev">Константин Малофеев</option>
+        <option value="nikonov">Вячеслав Никонов</option>
+        <option value="poddubny">Евгений Поддубный</option>
+        <option value="zakharova">Мария Захарова</option>
+        <option value="kovalchuk">Юрий Ковальчук</option>
+        <option value="turchak">Андрей Турчак</option>
+        <option value="navka">Татьяна Навка</option>
+        <option value="peskov">Дмитрий Песков</option>
+        <option value="lavrov">Сергей Лавров</option>
+        <option value="mizulina">Елена Мизулина</option>
+        <option value="nebenzya">Василий Небензя</option>
+        <option value="patrushev">Николай Патрушев</option>
+        <option value="matvienko">Валентина Матвиенко</option>
+        <option value="slutsky">Леонид Слуцкий</option>
+        <option value="emizulina">Екатерина Мизулина</option>
+        <option value="general">Общее / Несколько фигурантов</option>
       </select>
 
       <label for="body">Ваше сообщение</label>
@@ -292,5 +310,20 @@ document.getElementById('tip-form').addEventListener('submit', async e => {
 });
 </script>
 
+<script>
+(function(){
+  var form = document.getElementById('tip-form');
+  if (!form) return;
+  if (form.action && form.action.includes('FORMSPREE_ID')) {
+    var btn = document.getElementById('submit-btn');
+    if (btn) { btn.disabled = true; btn.title = 'Form not yet configured'; }
+    var notice = document.createElement('div');
+    notice.style.cssText = 'margin:16px 0;padding:12px 16px;background:#1a0a00;border-left:3px solid #8b1a1a;color:#bab3a0;font-size:13px';
+    notice.textContent = '⚠ Форма не активирована. Зарегистрируйтесь на formspree.io и замените FORMSPREE_ID в коде.';
+    form.insertBefore(notice, form.firstChild);
+  }
+})();
+</script>
+</main>
 </body>
 </html>

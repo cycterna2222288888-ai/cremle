@@ -6,8 +6,11 @@
 <title>About — Kremlin Voices</title>
 <meta name="description" content="Kremlin Voices: methodology, sources, about the project.">
 <meta property="og:title" content="About — Kremlin Voices">
+<meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <meta property="og:description" content="An independent propaganda archive: methodology, sources, editorial principles.">
 <link rel="manifest" href="manifest.json">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,8 +53,14 @@
   .footer { padding:48px 60px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#333; }
   @media(max-width:768px){ .topbar { padding:12px 20px; } .footer { padding:32px 20px; flex-direction:column; gap:12px; } }
 </style>
+<style>
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;padding:8px 16px;background:var(--red);color:var(--paper);font-size:13px;z-index:9999;text-decoration:none;outline:2px solid var(--paper)}
+</style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content">
 <div class="topbar">
   <div class="topbar-left"><a href="index-en.html">← All dossiers</a></div>
   <div class="topbar-right">
@@ -125,5 +134,6 @@
   <span>Kremlin Voices · 2025</span>
   <span>Independent Archive · Open Sources</span>
 </div>
+</main>
 </body>
 </html>

@@ -476,6 +476,17 @@
   .search-input:focus { border-color:#555; }
   .search-empty { display:none; padding:60px; font-size:13px; color:#444; letter-spacing:0.1em; }
   @media(max-width:768px){ .search-bar { padding:16px 20px 0; } }
+
+  @media (max-width: 480px) {
+    .masthead { padding: 40px 20px 28px; }
+    .masthead h1 { font-size: clamp(2rem, 8vw, 3rem); }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .nav-pages { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+    .flt-btn { white-space: nowrap; flex-shrink: 0; }
+    .card-num { font-size: 9px; }
+    .card-name { font-size: 1rem; }
+    .topbar a { font-size: 9px; }
+  }
 </style>
 <meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">

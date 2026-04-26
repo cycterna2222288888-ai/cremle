@@ -179,12 +179,44 @@
   .timeline-item,.quote-card{page-break-inside:avoid;}
   @page{margin:2cm;}
 </style>
+
+<style id="light-mode-css" media="(prefers-color-scheme:light)">
+  /* Injected by theme toggle — applied when data-theme="light" */
+</style>
+<style>
+[data-theme="light"] {
+  --ink: #f2ede3;
+  --paper: #111;
+  --light-gray: #4a4a4a;
+  --rule: #ccc5b5;
+  --card-bg: #e8e3d8;
+}
+[data-theme="light"] body { background: #f2ede3; color: #111; }
+[data-theme="light"] .topbar { background: #f2ede3; border-color: #ccc5b5; }
+[data-theme="light"] .card { background: #e8e3d8; border-color: #ccc5b5; }
+[data-theme="light"] .card-name { color: #111; }
+[data-theme="light"] .card-role { color: #4a4a4a; }
+[data-theme="light"] .quote-card { background: #e8e3d8; border-color: #ccc5b5; }
+[data-theme="light"] .quote-text { color: #111; }
+[data-theme="light"] .section { border-color: #ccc5b5; }
+[data-theme="light"] .masthead { border-color: #ccc5b5; }
+[data-theme="light"] .timeline-year { border-color: #ccc5b5; }
+[data-theme="light"] .hero-left { background: #f2ede3; }
+[data-theme="light"] .hero-right { background: #d8d3c8; }
+[data-theme="light"] .sanctions-table th { background: #e0dbd0; }
+[data-theme="light"] .sanctions-table td { border-color: #ccc5b5; }
+[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
+[data-theme="light"] .source-card { background: #e8e3d8; border-color: #ccc5b5; }
+[data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
+[data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
+[data-theme="light"] #progress-bar { background: #8b1a1a; }
+</style>
 </head>
 <body>
 <div id="progress-bar"></div>
 <div class="topbar">
   <div class="topbar-left"><a href="index.html">← Все досье</a></div>
-  <div class="topbar-right">
+  <div class="topbar-right"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button>
     <div class="lang-switch">
       <a href="kovalchuk.html" class="active">RU</a>
       <a href="kovalchuk-en.html">EN</a>
@@ -447,6 +479,14 @@ document.addEventListener('keydown',function(e){
   var meta = document.querySelector('.eyebrow');
   if (meta) meta.textContent += ' · ' + mins + ' мин';
 }})();
+</script>
+<script>
+(function(){
+  var t=localStorage.getItem('theme')||'dark';
+  document.documentElement.dataset.theme=t;
+  var btn=document.getElementById('theme-toggle');
+  if(btn){btn.textContent=t==='light'?'☽ Dark':'☀ Light';btn.title=t==='light'?'Switch to dark':'Switch to light';}
+})();
 </script>
 </body>
 </html>

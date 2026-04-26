@@ -1,13 +1,12 @@
 {
-  "name": "Голоса Кремля",
-  "short_name": "Кремль",
-  "description": "Независимый архив кремлёвской пропаганды",
+  "name": "Kremlin Voices / Голоса Кремля",
+  "short_name": "Kremlin Voices",
+  "description": "Documentary archive of Kremlin propaganda voices",
   "start_url": "/cremle/",
   "scope": "/cremle/",
   "display": "standalone",
   "background_color": "#080808",
   "theme_color": "#8b1a1a",
-  "lang": "ru",
   "icons": [
     {
       "src": "favicon.svg",

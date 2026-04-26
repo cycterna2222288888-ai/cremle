@@ -196,12 +196,44 @@
   .timeline-item,.quote-card{page-break-inside:avoid;}
   @page{margin:2cm;}
 </style>
+
+<style id="light-mode-css" media="(prefers-color-scheme:light)">
+  /* Injected by theme toggle — applied when data-theme="light" */
+</style>
+<style>
+[data-theme="light"] {
+  --ink: #f2ede3;
+  --paper: #111;
+  --light-gray: #4a4a4a;
+  --rule: #ccc5b5;
+  --card-bg: #e8e3d8;
+}
+[data-theme="light"] body { background: #f2ede3; color: #111; }
+[data-theme="light"] .topbar { background: #f2ede3; border-color: #ccc5b5; }
+[data-theme="light"] .card { background: #e8e3d8; border-color: #ccc5b5; }
+[data-theme="light"] .card-name { color: #111; }
+[data-theme="light"] .card-role { color: #4a4a4a; }
+[data-theme="light"] .quote-card { background: #e8e3d8; border-color: #ccc5b5; }
+[data-theme="light"] .quote-text { color: #111; }
+[data-theme="light"] .section { border-color: #ccc5b5; }
+[data-theme="light"] .masthead { border-color: #ccc5b5; }
+[data-theme="light"] .timeline-year { border-color: #ccc5b5; }
+[data-theme="light"] .hero-left { background: #f2ede3; }
+[data-theme="light"] .hero-right { background: #d8d3c8; }
+[data-theme="light"] .sanctions-table th { background: #e0dbd0; }
+[data-theme="light"] .sanctions-table td { border-color: #ccc5b5; }
+[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
+[data-theme="light"] .source-card { background: #e8e3d8; border-color: #ccc5b5; }
+[data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
+[data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
+[data-theme="light"] #progress-bar { background: #8b1a1a; }
+</style>
 </head>
 <body>
 <div id="progress-bar"></div>
 <div class="topbar">
   <div class="topbar-left"><a href="index.html">← Все досье</a></div>
-  <div class="topbar-right">
+  <div class="topbar-right"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button>
     <div class="lang-switch">
       <a href="medvedev.html" class="active">RU</a>
       <a href="medvedev-en.html">EN</a>
@@ -239,6 +271,7 @@
     </div>
   </div>
   <div class="hero-right">
+    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/7/75/Dmitry_Medvedev_%282026-02-06%29.jpg" alt="Дмитрий Медведев" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.88;" onerror="this.style.display='none'">
     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
       <defs>
         <radialGradient id="rg" cx="50%" cy="35%" r="60%">
@@ -264,9 +297,7 @@
       </g>
       <text x="50%" y="42%" text-anchor="middle" dominant-baseline="middle"
         font-family="Georgia,serif" font-size="140" fill="#8b1a1a" opacity="0.15" font-weight="700">ДМ</text>
-    </svg>
-    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/7/75/Dmitry_Medvedev_%282026-02-06%29.jpg" alt="Дмитрий Медведев" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.45;mix-blend-mode:luminosity;" onerror="this.style.display='none'">
-    <div class="hero-stamp">Ядерная риторика</div>
+    </svg>    <div class="hero-stamp">Ядерная риторика</div>
   </div>
 </div>
 
@@ -500,6 +531,14 @@ document.addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'&&idx<pages.length-1)location.href=pages[idx+1];
   if(e.key==='ArrowLeft'&&idx>0)location.href=pages[idx-1];
 });
+})();
+</script>
+<script>
+(function(){
+  var t=localStorage.getItem('theme')||'dark';
+  document.documentElement.dataset.theme=t;
+  var btn=document.getElementById('theme-toggle');
+  if(btn){btn.textContent=t==='light'?'☽ Dark':'☀ Light';btn.title=t==='light'?'Switch to dark':'Switch to light';}
 })();
 </script>
 </body>

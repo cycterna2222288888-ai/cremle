@@ -997,6 +997,8 @@
     {id:'patrushev',    label:'Патрушев',        type:'person', role:'ФСБ / Совбез / Советник',        size:13, url:'patrushev.html'},
     {id:'matvienko',    label:'Матвиенко',       type:'person', role:'Совет Федерации',                size:11, url:'matvienko.html'},
     {id:'slutsky',      label:'Слуцкий',         type:'person', role:'ЛДПР / ГД МИД',                  size:10, url:'slutsky.html'},
+    
+    {id:'kirill', label:'Патриарх Кирилл', type:'person', role:'РПЦ / Патриарх Московский', size:14, url:'kirill.html'},
     {id:'emizulina',    label:'Е.Мизулина',      type:'person', role:'Лига Безопасного Интернета',     size:9,  url:'emizulina.html'}
   ];
 
@@ -1053,6 +1055,9 @@
     {source:'matvienko',    target:'kremlin',   type:'работа',   w:3},
     {source:'slutsky',      target:'kremlin',   type:'работа',   w:2},
     {source:'emizulina',    target:'kremlin',   type:'работа',   w:2},
+    
+    {source:'kirill', target:'kremlin', type:'влияние', w:4},
+    {source:'kirill', target:'korchevnikov', type:'влияние', w:2},
     {source:'emizulina',    target:'mizulina',  type:'семья',    w:3},
     {source:'patrushev',    target:'medvedev',  type:'влияние',  w:2},
     {source:'matvienko',    target:'medvedev',  type:'влияние',  w:2},

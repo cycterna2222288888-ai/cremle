@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#080808"/>
+  <rect x="0" y="0" width="4" height="630" fill="#8b1a1a"/>
+  <text x="60" y="80" font-family="serif" font-size="13" fill="#8b1a1a" letter-spacing="6" text-transform="uppercase">ГОЛОСА КРЕМЛЯ · ДОСЬЕ</text>
+  <text x="60" y="200" font-family="serif" font-size="82" fill="#ede8dc" font-weight="700">Патриарх</text>
+  <text x="60" y="300" font-family="serif" font-size="82" fill="#ede8dc" font-weight="700">Кирилл</text>
+  <text x="60" y="380" font-family="serif" font-size="22" fill="#bab3a0" font-style="italic">Глава РПЦ · Идеолог «священной войны»</text>
+  <line x1="60" y1="420" x2="600" y2="420" stroke="#8b1a1a" stroke-width="1"/>
+  <text x="60" y="460" font-family="sans-serif" font-size="13" fill="#555" letter-spacing="3">САНКЦИИ UK · CA · AU · CH</text>
+</svg>

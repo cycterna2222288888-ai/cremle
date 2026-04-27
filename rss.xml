@@ -3,9 +3,9 @@
   <channel>
     <title>Голоса Кремля — архив досье</title>
     <link>https://cycterna2222288888-ai.github.io/cremle/</link>
-    <description>Независимый архив биографий и методов российских пропагандистов. 35 досье, открытые источники.</description>
+    <description>Независимый архив биографий и методов российских пропагандистов. 36 досье, открытые источники.</description>
     <language>ru</language>
-    <lastBuildDate>Wed, 22 Apr 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cycterna2222288888-ai.github.io/cremle/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://cycterna2222288888-ai.github.io/cremle/og-image.svg</url>
@@ -258,11 +258,11 @@
     <pubDate>Wed, 22 Apr 2026 12:00:00 +0000</pubDate>
   </item>
     <item>
-    <title>Патриарх Кирилл — Голоса Кремля</title>
+    <title>Досье: Патриарх Кирилл</title>
     <link>https://cycterna2222288888-ai.github.io/cremle/kirill.html</link>
     <description>Патриарх Московский и всея Руси: назвал войну «метафизической борьбой», под санкциями UK, CA, AU, CH.</description>
-    <pubDate>Sun, 27 Apr 2026 00:00:00 +0000</pubDate>
-    <guid>https://cycterna2222288888-ai.github.io/cremle/kirill.html</guid>
+    <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
+    <guid isPermaLink="true">https://cycterna2222288888-ai.github.io/cremle/kirill.html</guid>
   </item>
 </channel>
 </rss>

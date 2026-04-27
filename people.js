@@ -1,4 +1,4 @@
-/* people.js — единый каталог 35 фигурантов / canonical 35-person catalog
+/* people.js — единый каталог 36 фигурантов / canonical 36-person catalog
    Kremlin Voices · https://cycterna2222288888-ai.github.io/cremle/
    Используется: навигация, random, submit-dropdown, build-index, RSS, sitemap */
 var PEOPLE = [
@@ -36,7 +36,8 @@ var PEOPLE = [
   {slug:"patrushev",nameRU:"Николай Патрушев",nameEN:"Nikolai Patrushev",channel:"vlast"},
   {slug:"matvienko",nameRU:"Валентина Матвиенко",nameEN:"Valentina Matvienko",channel:"vlast"},
   {slug:"slutsky",nameRU:"Леонид Слуцкий",nameEN:"Leonid Slutsky",channel:"vlast"},
-  {slug:"emizulina",nameRU:"Екатерина Мизулина",nameEN:"Yekaterina Mizulina",channel:"vlast"}
+  {slug:"emizulina",nameRU:"Екатерина Мизулина",nameEN:"Yekaterina Mizulina",channel:"vlast"},
+  {slug:"kirill",nameRU:"Патриарх Кирилл",nameEN:"Patriarch Kirill",channel:"ideolog"}
 ];
 /* helpers */
 var SLUGS_RU = PEOPLE.map(function(p){return p.slug+'.html';});

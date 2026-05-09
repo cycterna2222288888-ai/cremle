@@ -38,8 +38,8 @@
   .lang-switch a:hover { color:var(--paper); background:#111; }
   .report-link { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#5c1111; text-decoration:none; border:1px solid #2a0a0a; padding:6px 14px; transition:all 0.2s; }
   .report-link:hover { color:#8b1a1a; border-color:#5c1111; }
-  .hero { display:grid; grid-template-columns:1fr 420px; min-height:80vh; border-bottom:1px solid var(--rule); }
-  .hero-left { padding:80px 60px; display:flex; flex-direction:column; justify-content:center; border-right:1px solid var(--rule); }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); position: relative; }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
   .eyebrow { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); margin-bottom:32px; }
   .hero-name { font-family:'Playfair Display',serif; font-size:clamp(2.5rem,5vw,4.5rem); font-weight:400; line-height:1.05; margin-bottom:20px; }
   .hero-subtitle { font-size:14px; color:var(--light-gray); letter-spacing:0.05em; margin-bottom:40px; font-style:italic; }
@@ -224,25 +224,33 @@
       <div class="meta-item"><label>Languages</label><span>Russian, English, French</span></div></div>
   </div>
   <div class="hero-right">
-    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Vasily_Nebenzya_%282020-02-03%29.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.88;" onerror="this.style.display='none'">
-    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
-      <defs><radialGradient id="rg" cx="50%" cy="35%" r="60%">
-        <stop offset="0%" stop-color="#1a0000" stop-opacity="0.25"/>
-        <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
-      </radialGradient></defs>
-      <rect width="100%" height="100%" fill="url(#rg)"/>
+    <img loading="lazy" src="templates/nebenzya.jpg" alt="nebenzya" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.55;z-index:0;" onerror="this.style.display='none'">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;z-index:1;">
+      <defs>
+        <radialGradient id="rg_nebenzya" cx="50%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#1a0000" stop-opacity="0.1"/>
+          <stop offset="100%" stop-color="#000" stop-opacity="0.4"/>
+        </radialGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#rg_nebenzya)"/>
       <line x1="50%" y1="20%" x2="50%" y2="80%" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
       <line x1="20%" y1="50%" x2="80%" y2="50%" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
       <circle cx="50%" cy="38%" r="80" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="50%" cy="38%" r="140" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.12"/>
       <g opacity="0.06">
+        <line x1="0" y1="10%" x2="100%" y2="10%" stroke="#c8c0b0" stroke-width="1"/>
         <line x1="0" y1="20%" x2="100%" y2="20%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#c8c0b0" stroke-width="1"/>
         <line x1="0" y1="40%" x2="100%" y2="40%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#c8c0b0" stroke-width="1"/>
         <line x1="0" y1="60%" x2="100%" y2="60%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#c8c0b0" stroke-width="1"/>
         <line x1="0" y1="80%" x2="100%" y2="80%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="90%" x2="100%" y2="90%" stroke="#c8c0b0" stroke-width="1"/>
       </g>
-      <text x="50%" y="42%" font-family="serif" font-size="120" fill="#8b1a1a" opacity="0.12" text-anchor="middle" dominant-baseline="middle" font-weight="700">ВН</text>
+      <text x="50%" y="46%" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="160" fill="#8b1a1a" opacity="0.15" font-weight="700">VN</text>
     </svg>
-    <div class="hero-stamp">UN · EU/UK Sanctions 2022</div>
+    <div class="hero-stamp" style="z-index:2;">UN · EU/UK Sanctions 2022</div>
   </div>
 </div>
 

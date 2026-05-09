@@ -18,7 +18,7 @@
   .topbar-old { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
   .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
   .nav-back a:hover { opacity: 0.6; }
-  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); position: relative; }
   .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
   .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
   .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
@@ -316,7 +316,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Arkady_Mamontov_%28cropped%29.jpg" alt="Аркадий Мамонтов" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.88;" onerror="this.style.display='none'">
+    <img loading="lazy" src="templates/mamontov.png" alt="Аркадий Мамонтов" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.55;" onerror="this.style.display='none'">
     <svg width="100%" height="100%" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <rect width="800" height="900" fill="#060606"/>
       <!-- Film strip perforations -->
@@ -370,9 +370,9 @@
       <text x="400" y="480" font-family="Georgia, serif" font-size="260" font-weight="700" fill="#8b1a1a" opacity="0.06" text-anchor="middle" dominant-baseline="middle">АМ</text>
       <text x="400" y="840" font-family="Georgia, serif" font-size="11" fill="#8b1a1a" opacity="0.7" letter-spacing="4" text-anchor="middle">РОССИЯ-1 · ДОКУМЕНТАЛИСТ</text>
     </svg>
-    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Arkady_Mamontov_%28cropped%29.jpg"
+    <img loading="lazy" src="templates/mamontov.png"
          alt="Аркадий Мамонтов"
-         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;mix-blend-mode:luminosity;opacity:0.45;filter:grayscale(30%)">
+         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.55;">
     <div class="hero-stamp">Документалист · Россия-1 · Пропаганда</div>
   </div>
 </div>

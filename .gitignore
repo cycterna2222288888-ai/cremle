@@ -5,3 +5,4 @@ data/tips.db-wal
 .env
 *.env
 .DS_Store
+venv/

@@ -71,7 +71,7 @@
   .empire-col-header {
     padding: 28px 32px;
     border-bottom: 3px solid var(--red);
-    background: #050505;
+    background: var(--card-bg);
   }
 
   .empire-col-title {
@@ -200,7 +200,7 @@
     color: var(--red);
     padding: 12px 20px;
     border-bottom: 1px solid var(--rule);
-    background: #050505;
+    background: var(--card-bg);
   }
 
   .reach-table td {
@@ -247,7 +247,7 @@
     display: inline-block;
     border: 1px solid var(--red-dim);
     padding: 16px 32px;
-    background: #050505;
+    background: var(--card-bg);
   }
 
   .hier-box-title {
@@ -416,6 +416,17 @@
 [data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
 [data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
 [data-theme="light"] #progress-bar { background: #8b1a1a; }
+</style>
+<style>
+/* Light mode text readability fixes */
+[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
+[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
+[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
+[data-theme="light"] .card:hover { background: #d8d3c8; }
+[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
+[data-theme="light"] .related-card:hover { background: #d8d3c8; }
+[data-theme="light"] .person-quote { background: #e8e3d8; }
+[data-theme="light"] .meme-card { background: #e8e3d8; }
 </style>
 </head>
 <body>

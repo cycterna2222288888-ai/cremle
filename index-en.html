@@ -303,7 +303,7 @@
   }
 
   .search-bar { padding:20px 60px 0; }
-  .search-input { width:100%; max-width:500px; background:#0e0e0e; border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:13px; font-weight:300; padding:12px 18px; outline:none; transition:border 0.2s; }
+  .search-input { width:100%; max-width:500px; background: var(--card-bg); border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:13px; font-weight:300; padding:12px 18px; outline:none; transition:border 0.2s; }
   .search-input::placeholder { color:#444; }
   .search-input:focus { border-color:#555; }
   .search-empty { display:none; padding:60px; font-size:13px; color:#444; letter-spacing:0.1em; }
@@ -395,6 +395,17 @@
 [data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
 [data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
 [data-theme="light"] #progress-bar { background: #8b1a1a; }
+</style>
+<style>
+/* Light mode text readability fixes */
+[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
+[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
+[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
+[data-theme="light"] .card:hover { background: #d8d3c8; }
+[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
+[data-theme="light"] .related-card:hover { background: #d8d3c8; }
+[data-theme="light"] .person-quote { background: #e8e3d8; }
+[data-theme="light"] .meme-card { background: #e8e3d8; }
 </style>
 </head>
 <body>

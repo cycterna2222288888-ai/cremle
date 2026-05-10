@@ -45,7 +45,7 @@
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; flex: 1; }
 
   /* NETWORK DIAGRAM */
-  .network-wrap { position: relative; width: 100%; aspect-ratio: 16/9; max-height: 560px; background: #040404; border: 1px solid var(--rule); overflow: hidden; }
+  .network-wrap { position: relative; width: 100%; aspect-ratio: 16/9; max-height: 560px; background: var(--ink); border: 1px solid var(--rule); overflow: hidden; }
 
   .network-wrap svg { width: 100%; height: 100%; }
 
@@ -53,9 +53,9 @@
   .matrix-wrap { overflow-x: auto; }
   .matrix { border-collapse: collapse; width: 100%; background: var(--rule); }
   .matrix th, .matrix td { padding: 0; border: 1px solid var(--rule); }
-  .matrix th { background: #0d0d0d; }
+  .matrix th { background: var(--card-bg); }
   .matrix-head { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); padding: 14px 12px; text-align: center; writing-mode: vertical-rl; transform: rotate(180deg); min-width: 50px; }
-  .matrix-row-head { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--paper); padding: 16px 20px; background: #0d0d0d; white-space: nowrap; font-weight: 700; min-width: 180px; }
+  .matrix-row-head { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--paper); padding: 16px 20px; background: var(--card-bg); white-space: nowrap; font-weight: 700; min-width: 180px; }
   .matrix-row-head a { color: var(--paper); text-decoration: none; }
   .matrix-row-head a:hover { color: var(--red); }
   .matrix-cell { background: var(--ink); padding: 12px 8px; text-align: center; font-size: 11px; }
@@ -100,7 +100,7 @@
   .graph-btn[data-type="влияние"].active { color:#e67e22; }
   .graph-btn[data-type="семья"].active { color:#9b59b6; }
   .graph-btn[data-type="финансы"].active { color:#27ae60; }
-  #graph-container { position:relative; width:100%; height:600px; background:#030303; border:1px solid var(--rule); overflow:hidden; }
+  #graph-container { position:relative; width:100%; height:600px; background: var(--ink); border:1px solid var(--rule); overflow:hidden; }
   #graph-svg { width:100%; height:100%; cursor:grab; }
   #graph-svg:active { cursor:grabbing; }
   #graph-tooltip { position:absolute; pointer-events:none; background:rgba(4,4,4,0.96); border:1px solid var(--red-dim); padding:10px 14px; font-size:12px; color:var(--paper); opacity:0; transition:opacity 0.12s; max-width:200px; z-index:10; line-height:1.5; }
@@ -184,6 +184,21 @@
 [data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
 [data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
 [data-theme="light"] #progress-bar { background: #8b1a1a; }
+
+[data-theme="light"] .conn-self { background: #e8d3d3; color: #8b1a1a; }
+[data-theme="light"] .hier-node.top { background: #e8d3d3; }
+[data-theme="light"] .graph-btn.active { background: #e8d3d3; }
+</style>
+<style>
+/* Light mode text readability fixes */
+[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
+[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
+[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
+[data-theme="light"] .card:hover { background: #d8d3c8; }
+[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
+[data-theme="light"] .related-card:hover { background: #d8d3c8; }
+[data-theme="light"] .person-quote { background: #e8e3d8; }
+[data-theme="light"] .meme-card { background: #e8e3d8; }
 </style>
 </head>
 <body>
@@ -511,7 +526,7 @@
     </div>
     <p class="intro-text">Пересечения каналов, институций и ролей между персонажами архива.</p>
 
-    <div style="display:flex;gap:32px;flex-wrap:wrap;margin-bottom:32px;padding:20px 24px;background:#050505;border:1px solid var(--rule)">
+    <div style="display:flex;gap:32px;flex-wrap:wrap;margin-bottom:32px;padding:20px 24px;background: var(--card-bg);border:1px solid var(--rule)">
       <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray);align-self:center">Обозначения:</div>
       <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:var(--red);font-size:16px">★</span> Семейная / личная связь</div>
       <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:var(--red);font-size:16px">●</span> Профессиональная / идеологическая связь</div>
@@ -523,7 +538,7 @@
       <table class="matrix">
         <thead>
           <tr>
-            <th style="background:#0d0d0d;padding:12px;min-width:180px"></th>
+            <th style="background: var(--card-bg);padding:12px;min-width:180px"></th>
             <th><div class="matrix-head">Соловьёв</div></th>
             <th><div class="matrix-head">Скабеева</div></th>
             <th><div class="matrix-head">Киселёв</div></th>

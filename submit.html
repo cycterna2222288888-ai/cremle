@@ -85,7 +85,7 @@
   .container { max-width: 720px; margin: 0 auto; }
 
   .notice {
-    background: #0a1a0a;
+    background: #e0f2e0;
     border: 1px solid #1a3a1a;
     border-left: 3px solid #2a6a2a;
     padding: 20px 24px;
@@ -157,8 +157,8 @@
     font-size: 14px;
     display: none;
   }
-  .result.ok  { background: #0a1a0a; border: 1px solid #2a6a2a; color: #8ab88a; }
-  .result.err { background: #1a0a0a; border: 1px solid #6a1a1a; color: #c88a8a; }
+  .result.ok  { background: #e0f2e0; border: 1px solid #2a6a2a; color: #8ab88a; }
+  .result.err { background: #f2e0e0; border: 1px solid #6a1a1a; color: #c88a8a; }
 
   .footer {
     padding: 40px 60px;
@@ -217,6 +217,20 @@
 [data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
 [data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
 [data-theme="light"] #progress-bar { background: #8b1a1a; }
+
+[data-theme="light"] .result.ok { background: #e0f2e0; border-color: #a0d8a0; color: #2a6a2a; }
+[data-theme="light"] .result.err { background: #f2e0e0; border-color: #d8a0a0; color: #8a2a2a; }
+</style>
+<style>
+/* Light mode text readability fixes */
+[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
+[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
+[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
+[data-theme="light"] .card:hover { background: #d8d3c8; }
+[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
+[data-theme="light"] .related-card:hover { background: #d8d3c8; }
+[data-theme="light"] .person-quote { background: #e8e3d8; }
+[data-theme="light"] .meme-card { background: #e8e3d8; }
 </style>
 </head>
 <body>

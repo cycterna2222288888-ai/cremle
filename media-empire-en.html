@@ -96,6 +96,17 @@
 [data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
 [data-theme="light"] #progress-bar { background: #8b1a1a; }
 </style>
+<style>
+/* Light mode text readability fixes */
+[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
+[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
+[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
+[data-theme="light"] .card:hover { background: #d8d3c8; }
+[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
+[data-theme="light"] .related-card:hover { background: #d8d3c8; }
+[data-theme="light"] .person-quote { background: #e8e3d8; }
+[data-theme="light"] .meme-card { background: #e8e3d8; }
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -139,7 +150,7 @@
   .stat-num { font-family:'Playfair Display',serif; font-size:28px; color:var(--paper); }
   .stat-lbl { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#444; }
   .flow-grid { display:grid; grid-template-columns:1fr 60px 1fr; gap:0; align-items:center; margin-top:32px; }
-  .flow-box { background:#050505; border:1px solid var(--rule); padding:24px; }
+  .flow-box { background: var(--card-bg); border:1px solid var(--rule); padding:24px; }
   .flow-arrow { text-align:center; font-size:24px; color:#333; }
   .flow-label { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px; }
   .flow-val { font-size:14px; color:var(--light-gray); }
@@ -149,7 +160,7 @@
   <div class="section-label" style="font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:var(--red);margin-bottom:32px">01 · Power Hierarchy</div>
   <div style="background:var(--card-bg);border:1px solid var(--rule);padding:48px">
     <div style="text-align:center;margin-bottom:0">
-      <div style="display:inline-block;border:1px solid var(--red-dim);padding:16px 32px;background:#050505">
+      <div style="display:inline-block;border:1px solid var(--red-dim);padding:16px 32px;background: var(--card-bg)">
         <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--paper)">Kremlin · Presidential Administration</div>
         <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-top:4px">Media Policy · Editorial Lines · Funding</div>
       </div>
@@ -343,11 +354,11 @@
   <table style="width:100%;border-collapse:collapse;background:var(--rule);gap:2px">
     <thead>
       <tr>
-        <th style="text-align:left;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);padding:12px 20px;border-bottom:1px solid var(--rule);background:#050505">Outlet</th>
-        <th style="text-align:left;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);padding:12px 20px;border-bottom:1px solid var(--rule);background:#050505">Audience</th>
-        <th style="text-align:left;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);padding:12px 20px;border-bottom:1px solid var(--rule);background:#050505">Reach</th>
-        <th style="text-align:left;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);padding:12px 20px;border-bottom:1px solid var(--rule);background:#050505">International Status</th>
-        <th style="text-align:left;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);padding:12px 20px;border-bottom:1px solid var(--rule);background:#050505">Archive Link</th>
+        <th style="text-align:left;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);padding:12px 20px;border-bottom:1px solid var(--rule);background: var(--card-bg)">Outlet</th>
+        <th style="text-align:left;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);padding:12px 20px;border-bottom:1px solid var(--rule);background: var(--card-bg)">Audience</th>
+        <th style="text-align:left;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);padding:12px 20px;border-bottom:1px solid var(--rule);background: var(--card-bg)">Reach</th>
+        <th style="text-align:left;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);padding:12px 20px;border-bottom:1px solid var(--rule);background: var(--card-bg)">International Status</th>
+        <th style="text-align:left;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);padding:12px 20px;border-bottom:1px solid var(--rule);background: var(--card-bg)">Archive Link</th>
       </tr>
     </thead>
     <tbody>

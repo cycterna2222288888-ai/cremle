@@ -95,6 +95,21 @@
 [data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
 [data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
 [data-theme="light"] #progress-bar { background: #8b1a1a; }
+
+[data-theme="light"] .conn-self { background: #e8d3d3; color: #8b1a1a; }
+[data-theme="light"] .hier-node.top { background: #e8d3d3; }
+[data-theme="light"] .graph-btn.active { background: #e8d3d3; }
+</style>
+<style>
+/* Light mode text readability fixes */
+[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
+[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
+[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
+[data-theme="light"] .card:hover { background: #d8d3c8; }
+[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
+[data-theme="light"] .related-card:hover { background: #d8d3c8; }
+[data-theme="light"] .person-quote { background: #e8e3d8; }
+[data-theme="light"] .meme-card { background: #e8e3d8; }
 </style>
 </head>
 <body>
@@ -147,7 +162,7 @@
   .graph-btn[data-type="влияние"].active { color:#e67e22; }
   .graph-btn[data-type="семья"].active { color:#9b59b6; }
   .graph-btn[data-type="финансы"].active { color:#27ae60; }
-  #graph-container { position:relative; width:100%; height:600px; background:#030303; border:1px solid var(--rule); overflow:hidden; }
+  #graph-container { position:relative; width:100%; height:600px; background: var(--ink); border:1px solid var(--rule); overflow:hidden; }
   #graph-svg { width:100%; height:100%; cursor:grab; }
   #graph-svg:active { cursor:grabbing; }
   #graph-tooltip { position:absolute; pointer-events:none; background:rgba(4,4,4,0.96); border:1px solid var(--red-dim); padding:10px 14px; font-size:12px; color:var(--paper); opacity:0; transition:opacity 0.12s; max-width:200px; z-index:10; line-height:1.5; }

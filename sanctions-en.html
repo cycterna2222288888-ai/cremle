@@ -21,7 +21,7 @@
   .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
   .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
   .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
-  .lang-switch a:hover { color:var(--paper); background:#111; }
+  .lang-switch a:hover { color:var(--paper); background: var(--rule); }
   .masthead { padding:80px 60px 64px; border-bottom:1px solid var(--rule); }
   .masthead-eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--red); margin-bottom:20px; }
   .masthead-title { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,72px); font-weight:700; color:var(--paper); margin-bottom:16px; line-height:1.05; }
@@ -64,7 +64,7 @@
   .ss-cell { background:var(--card-bg); padding:24px 20px; }
   .ss-country { font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:#555; margin-bottom:8px; }
   .ss-count { font-family:'Playfair Display',serif; font-size:2rem; color:var(--paper); line-height:1; margin-bottom:10px; }
-  .ss-bar-bg { background:#111; height:3px; margin-bottom:6px; }
+  .ss-bar-bg { background: var(--rule); height:3px; margin-bottom:6px; }
   .ss-bar { height:3px; background:var(--red); transition:width 0.6s; }
   .ss-pct { font-size:10px; color:#444; }
   @media(max-width:768px){ .sanction-stats { padding:32px 20px; } .ss-grid { grid-template-columns:repeat(2,1fr); } }
@@ -106,14 +106,27 @@
 [data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
 [data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
 [data-theme="light"] #progress-bar { background: #8b1a1a; }
+
+[data-theme="light"] .sanctions-search input { background: var(--card-bg); border-color: var(--rule); }
 </style>
 
 <style>
 .sanctions-search { padding:16px 0 0; display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:24px; }
-.sanctions-search input { background:#0e0e0e; border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:13px; font-weight:300; padding:10px 16px; outline:none; width:280px; transition:border 0.2s; }
+.sanctions-search input { background: var(--card-bg); border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:13px; font-weight:300; padding:10px 16px; outline:none; width:280px; transition:border 0.2s; }
 .sanctions-search input:focus { border-color:#555; }
 .sanctions-search input::placeholder { color:#444; }
 [data-theme="light"] .sanctions-search input { background:#e8e3d8; border-color:#ccc5b5; }
+</style>
+<style>
+/* Light mode text readability fixes */
+[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
+[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
+[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
+[data-theme="light"] .card:hover { background: #d8d3c8; }
+[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
+[data-theme="light"] .related-card:hover { background: #d8d3c8; }
+[data-theme="light"] .person-quote { background: #e8e3d8; }
+[data-theme="light"] .meme-card { background: #e8e3d8; }
 </style>
 </head>
 <body>
@@ -152,9 +165,9 @@
   .stat-num { font-family:'Playfair Display',serif; font-size:48px; font-weight:700; color:var(--red); }
   .stat-label { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--light-gray); margin-top:8px; }
   .sanctions-table { width:100%; border-collapse:collapse; }
-  .sanctions-table th { background:#0d0d0d; padding:16px 20px; text-align:left; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); border-bottom:2px solid var(--red-dim); }
+  .sanctions-table th { background: var(--card-bg); padding:16px 20px; text-align:left; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); border-bottom:2px solid var(--red-dim); }
   .sanctions-table td { padding:16px 20px; border-bottom:1px solid #111; font-size:13px; color:var(--light-gray); vertical-align:top; }
-  .sanctions-table tr:hover td { background:#0a0a0a; }
+  .sanctions-table tr:hover td { background: var(--card-bg); }
   .person-name { color:var(--paper); font-weight:500; text-decoration:none; }
   .person-name:hover { color:var(--red); }
   .tag { display:inline-block; background:#1a0000; border:1px solid var(--red-dim); color:var(--red); font-size:8px; letter-spacing:0.1em; text-transform:uppercase; padding:3px 7px; margin:2px; white-space:nowrap; }
@@ -174,37 +187,37 @@
     <div class="ss-cell" style="background:var(--card-bg);padding:24px 20px">
       <div class="ss-country">European Union</div>
       <div class="ss-count">23</div>
-      <div class="ss-bar-bg" style="background:#111;height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:66%"></div></div>
+      <div class="ss-bar-bg" style="background: var(--rule);height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:66%"></div></div>
       <div class="ss-pct" style="font-size:10px;color:#444">66% · since 2014</div>
     </div>
     <div class="ss-cell" style="background:var(--card-bg);padding:24px 20px">
       <div class="ss-country">United Kingdom</div>
       <div class="ss-count">19</div>
-      <div class="ss-bar-bg" style="background:#111;height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:54%"></div></div>
+      <div class="ss-bar-bg" style="background: var(--rule);height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:54%"></div></div>
       <div class="ss-pct" style="font-size:10px;color:#444">54% · since 2022</div>
     </div>
     <div class="ss-cell" style="background:var(--card-bg);padding:24px 20px">
       <div class="ss-country">United States</div>
       <div class="ss-count">13</div>
-      <div class="ss-bar-bg" style="background:#111;height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:37%"></div></div>
+      <div class="ss-bar-bg" style="background: var(--rule);height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:37%"></div></div>
       <div class="ss-pct" style="font-size:10px;color:#444">37% · since 2017</div>
     </div>
     <div class="ss-cell" style="background:var(--card-bg);padding:24px 20px">
       <div class="ss-country">Canada</div>
       <div class="ss-count">10</div>
-      <div class="ss-bar-bg" style="background:#111;height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:29%"></div></div>
+      <div class="ss-bar-bg" style="background: var(--rule);height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:29%"></div></div>
       <div class="ss-pct" style="font-size:10px;color:#444">29%</div>
     </div>
     <div class="ss-cell" style="background:var(--card-bg);padding:24px 20px">
       <div class="ss-country">Australia</div>
       <div class="ss-count">5</div>
-      <div class="ss-bar-bg" style="background:#111;height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:14%"></div></div>
+      <div class="ss-bar-bg" style="background: var(--rule);height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:14%"></div></div>
       <div class="ss-pct" style="font-size:10px;color:#444">14%</div>
     </div>
     <div class="ss-cell" style="background:var(--card-bg);padding:24px 20px">
       <div class="ss-country">Japan</div>
       <div class="ss-count">5</div>
-      <div class="ss-bar-bg" style="background:#111;height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:14%"></div></div>
+      <div class="ss-bar-bg" style="background: var(--rule);height:3px;margin-bottom:6px"><div class="ss-bar" style="height:3px;background:var(--red);width:14%"></div></div>
       <div class="ss-pct" style="font-size:10px;color:#444">14%</div>
     </div>
   </div>

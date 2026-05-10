@@ -49,7 +49,7 @@
   .sanctions-table { width: 100%; border-collapse: collapse; background: var(--rule); gap: 2px; }
 
   .sanctions-table th {
-    background: #0d0d0d;
+    background: var(--card-bg);
     padding: 16px 20px;
     text-align: left;
     font-size: 9px;
@@ -123,7 +123,7 @@
   .lang-switch { display: flex; border: 1px solid #333; overflow: hidden; }
   .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; padding: 6px 12px; transition: all 0.2s; }
   .lang-switch a.active { color: var(--paper); background: #1c1c1c; }
-  .lang-switch a:hover { color: var(--paper); background: #111; }
+  .lang-switch a:hover { color: var(--paper); background: var(--rule); }
 
   .section-nav {
     border-bottom: 1px solid var(--rule);
@@ -155,7 +155,7 @@
   .ss-cell { background:var(--card-bg); padding:24px 20px; }
   .ss-country { font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:#555; margin-bottom:8px; }
   .ss-count { font-family:'Playfair Display',serif; font-size:2rem; color:var(--paper); line-height:1; margin-bottom:10px; }
-  .ss-bar-bg { background:#111; height:3px; margin-bottom:6px; }
+  .ss-bar-bg { background: var(--rule); height:3px; margin-bottom:6px; }
   .ss-bar { height:3px; background:var(--red); transition:width 0.6s; }
   .ss-pct { font-size:10px; color:#444; }
   @media(max-width:768px){ .sanction-stats { padding:32px 20px; } .ss-grid { grid-template-columns:repeat(2,1fr); } }
@@ -197,14 +197,27 @@
 [data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
 [data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
 [data-theme="light"] #progress-bar { background: #8b1a1a; }
+
+[data-theme="light"] .sanctions-search input { background: var(--card-bg); border-color: var(--rule); }
 </style>
 
 <style>
 .sanctions-search { padding:16px 0 0; display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:24px; }
-.sanctions-search input { background:#0e0e0e; border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:13px; font-weight:300; padding:10px 16px; outline:none; width:280px; transition:border 0.2s; }
+.sanctions-search input { background: var(--card-bg); border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:13px; font-weight:300; padding:10px 16px; outline:none; width:280px; transition:border 0.2s; }
 .sanctions-search input:focus { border-color:#555; }
 .sanctions-search input::placeholder { color:#444; }
 [data-theme="light"] .sanctions-search input { background:#e8e3d8; border-color:#ccc5b5; }
+</style>
+<style>
+/* Light mode text readability fixes */
+[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
+[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
+[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
+[data-theme="light"] .card:hover { background: #d8d3c8; }
+[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
+[data-theme="light"] .related-card:hover { background: #d8d3c8; }
+[data-theme="light"] .person-quote { background: #e8e3d8; }
+[data-theme="light"] .meme-card { background: #e8e3d8; }
 </style>
 </head>
 <body>

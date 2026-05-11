@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Финансовый след — Активы и имущество · Голоса Кремля</title>
+<meta name="description" content="База данных зарубежной недвижимости, активов и офшорных компаний ключевых лиц российской пропаганды.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Финансовый след · Голоса Кремля">
+<meta property="og:description" content="Зарубежная недвижимость, активы и компании лиц российской пропаганды.">
+<meta property="og:site_name" content="Голоса Кремля">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+    --card-bg: #0e0e0e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .topbar { padding: 14px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .topbar-right { display: flex; align-items: center; gap: 24px; }
+  .lang-switch { display: flex; border: 1px solid var(--rule); overflow: hidden; }
+  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; padding: 6px 12px; transition: all 0.2s; }
+  .lang-switch a.active { color: var(--paper); background: var(--rule); }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+  .section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; flex: 1; }
+
+  /* DATA GRID */
+  .assets-grid { display: grid; gap: 2px; background: var(--rule); }
+  .asset-card { background: var(--card-bg); padding: 32px; display: grid; grid-template-columns: 200px 1fr 200px; gap: 40px; align-items: start; }
+  
+  .person-info { border-right: 1px solid var(--rule); padding-right: 20px; }
+  .person-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--paper); text-decoration: none; display: block; margin-bottom: 6px; line-height: 1.2; }
+  .person-name:hover { color: var(--red); }
+  .person-role { font-size: 11px; color: var(--light-gray); }
+
+  .asset-details { }
+  .asset-title { font-size: 16px; color: var(--paper); font-weight: 500; margin-bottom: 12px; }
+  .asset-desc { font-size: 13px; color: var(--light-gray); line-height: 1.6; margin-bottom: 16px; }
+  
+  .tag-group { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: var(--ink); border: 1px solid var(--rule); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light-gray); }
+  .tag-red { color: var(--red); border-color: var(--red-dim); }
+
+  .asset-value { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--red); font-weight: 700; }
+  .value-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #555; margin-top: 4px; }
+  
+  .source-link { display: inline-block; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red-dim); padding-bottom: 2px; margin-top: auto; }
+  .source-link:hover { color: var(--paper); border-color: var(--paper); }
+
+  /* OVERVIEW STATS */
+  .overview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--rule); border-bottom: 1px solid var(--rule); }
+  .ov-card { background: var(--ink); padding: 40px 60px; text-align: center; }
+  .ov-num { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--red); line-height: 1; margin-bottom: 12px; font-weight: 700; }
+  .ov-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); }
+
+  @media (max-width: 900px) {
+    .masthead, .container, .topbar, .overview .ov-card { padding-left: 24px; padding-right: 24px; }
+    .asset-card { grid-template-columns: 1fr; gap: 24px; }
+    .person-info { border-right: none; border-bottom: 1px solid var(--rule); padding-right: 0; padding-bottom: 16px; }
+    .overview { grid-template-columns: 1fr; }
+  }
+
+  [data-theme="light"] {
+    --ink: #f2ede3;
+    --paper: #111;
+    --light-gray: #4a4a4a;
+    --rule: #ccc5b5;
+    --card-bg: #e8e3d8;
+  }
+</style>
+<style id="light-mode-hovers">
+[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
+[data-theme="light"] .source-link:hover { color: #111; border-color: #111; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left"><a href="index.html">← В архив</a></div>
+  <div class="topbar-right">
+    <div class="lang-switch">
+      <a href="assets.html" class="active">RU</a>
+      <a href="assets-en.html">EN</a>
+    </div>
+    <button id="theme-toggle" onclick="toggleTheme()" title="Сменить тему" style="background:none;border:1px solid var(--rule);color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;">☀ Light</button>
+  </div>
+</div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">База данных ОСИНТ</div>
+  <h1 class="masthead-title">Финансовый<br>след</h1>
+  <p class="masthead-sub">Зарубежная недвижимость, активы и бизнес-интересы ключевых рупоров государственного телевидения.</p>
+</div>
+
+<div class="overview">
+  <div class="ov-card">
+    <div class="ov-num">> €50M</div>
+    <div class="ov-label">Общая оценка активов</div>
+  </div>
+  <div class="ov-card">
+    <div class="ov-num">12</div>
+    <div class="ov-label">Европейских юрисдикций</div>
+  </div>
+  <div class="ov-card">
+    <div class="ov-num">8</div>
+    <div class="ov-label">Арестованных вилл</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title">Верифицированные активы</div>
+    </div>
+
+    <div class="assets-grid">
+      
+      <!-- Solovyov -->
+      <div class="asset-card">
+        <div class="person-info">
+          <a href="solovyov.html" class="person-name">Владимир Соловьёв</a>
+          <div class="person-role">Ведущий ВГТРК</div>
+        </div>
+        <div class="asset-details">
+          <div class="asset-title">Виллы на озере Комо</div>
+          <div class="tag-group">
+            <span class="tag">🌍 Италия</span>
+            <span class="tag tag-red">🔒 Арестовано</span>
+            <span class="tag">🏠 Недвижимость</span>
+          </div>
+          <div class="asset-desc">Две роскошные виллы на озере Комо в Италии, зарегистрированные на самого ведущего. После начала полномасштабного вторжения в 2022 году активы были заморожены финансовой гвардией Италии в рамках санкций ЕС.</div>
+          <a href="https://fbk.info/investigations" target="_blank" class="source-link">Источник: ФБК / Reuters ↗</a>
+        </div>
+        <div>
+          <div class="asset-value">€8.0M</div>
+          <div class="value-label">Оценочная стоимость</div>
+        </div>
+      </div>
+
+      <!-- Kiselyov -->
+      <div class="asset-card">
+        <div class="person-info">
+          <a href="kiselyov.html" class="person-name">Дмитрий Киселёв</a>
+          <div class="person-role">Гендиректор МИА «Россия сегодня»</div>
+        </div>
+        <div class="asset-details">
+          <div class="asset-title">Винодельческое хозяйство Cock t'est belle</div>
+          <div class="tag-group">
+            <span class="tag">🌍 Крым (оккуп.)</span>
+            <span class="tag">💼 Бизнес</span>
+          </div>
+          <div class="asset-desc">Доля в элитном винодельческом хозяйстве в Коктебеле. Несмотря на жесткую антизападную риторику, для производства закупалось европейское оборудование, а дизайн и позиционирование бренда были ориентированы на западные рынки.</div>
+          <a href="https://novayagazeta.ru" target="_blank" class="source-link">Источник: Новая Газета ↗</a>
+        </div>
+        <div>
+          <div class="asset-value">₽ ХХХ млн</div>
+          <div class="value-label">Не публично</div>
+        </div>
+      </div>
+
+      <!-- Skabeeva & Popov -->
+      <div class="asset-card">
+        <div class="person-info">
+          <a href="skabeeva.html" class="person-name">Ольга Скабеева</a>
+          <div class="person-role">Ведущая ВГТРК</div>
+          <div style="margin-top:12px">
+            <a href="popov.html" class="person-name">Евгений Попов</a>
+            <div class="person-role">Депутат ГД, Ведущий</div>
+          </div>
+        </div>
+        <div class="asset-details">
+          <div class="asset-title">Элитная недвижимость в Москве</div>
+          <div class="tag-group">
+            <span class="tag">🌍 Россия</span>
+            <span class="tag">🏠 Недвижимость</span>
+          </div>
+          <div class="asset-desc">Семейная пара владеет элитными квартирами в ЖК «ВТБ Арена Парк» и другой дорогой недвижимостью в Москве. Официальные доходы телеведущих и депутата вызывают вопросы у независимых исследователей-расследователей.</div>
+          <a href="https://navalny.com" target="_blank" class="source-link">Источник: Расследование ФБК ↗</a>
+        </div>
+        <div>
+          <div class="asset-value">₽300M+</div>
+          <div class="value-label">Оценочная стоимость</div>
+        </div>
+      </div>
+
+      <!-- Medinsky -->
+      <div class="asset-card">
+        <div class="person-info">
+          <a href="medinsky.html" class="person-name">Владимир Мединский</a>
+          <div class="person-role">Помощник Президента</div>
+        </div>
+        <div class="asset-details">
+          <div class="asset-title">Пентхаус в Москве</div>
+          <div class="tag-group">
+            <span class="tag">🌍 Россия</span>
+            <span class="tag">🏠 Недвижимость</span>
+          </div>
+          <div class="asset-desc">Двухуровневый пентхаус в элитном жилом комплексе, приобретенный супругой чиновника. Расследователи отмечали несоответствие стоимости объекта официальным докладам о доходах госслужащего.</div>
+          <a href="https://navalny.com" target="_blank" class="source-link">Источник: Расследование ФБК ↗</a>
+        </div>
+        <div>
+          <div class="asset-value">₽200M</div>
+          <div class="value-label">Оценочная стоимость</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleTheme() {
+    var doc = document.documentElement;
+    var t = doc.dataset.theme === 'light' ? 'dark' : 'light';
+    doc.dataset.theme = t;
+    localStorage.setItem('theme', t);
+    var btn = document.getElementById('theme-toggle');
+    if (btn) btn.textContent = t === 'light' ? '☽ Dark' : '☀ Light';
+  }
+  (function(){
+    var t = localStorage.getItem('theme') || 'dark';
+    document.documentElement.dataset.theme = t;
+    var btn = document.getElementById('theme-toggle');
+    if (btn) btn.textContent = t === 'light' ? '☽ Dark' : '☀ Light';
+  })();
+</script>
+</body>
+</html>

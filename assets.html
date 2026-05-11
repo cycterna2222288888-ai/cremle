@@ -116,7 +116,26 @@
     .source-card { padding: 24px !important; }
   }
 </style>
+
+<style id="topbar-mobile-fix">
+  @media (max-width: 480px) {
+    .topbar { 
+      flex-wrap: nowrap !important; 
+      gap: 6px !important; 
+      padding: 10px 16px !important; 
+      overflow-x: hidden !important;
+    }
+    .topbar-left a { font-size: 0 !important; }
+    .topbar-left a::after { content: "←"; font-size: 16px !important; display: inline-block; padding: 2px 4px; }
+    .topbar-right { gap: 6px !important; }
+    .report-link { display: none !important; }
+    #theme-toggle { padding: 4px 6px !important; font-size: 8px !important; letter-spacing: 0.1em !important; }
+    .lang-switch a { padding: 4px 8px !important; font-size: 8px !important; }
+    .topbar > span { display: none !important; }
+  }
+</style>
 </head>
+
 
 <body>
 

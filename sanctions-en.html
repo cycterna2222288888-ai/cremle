@@ -141,7 +141,32 @@
 [data-theme="light"] .graph-btn:hover { background: #ccc5b5; color: #111; }
 [data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
 </style>
+
+<style id="mobile-fixes">
+  @media (max-width: 480px) {
+    .masthead { padding: 40px 20px 28px !important; }
+    .masthead-title { font-size: clamp(2rem, 8vw, 3rem) !important; }
+    .container, .selector-wrap, .compare-section, .nav-back, .footer { padding-left: 20px !important; padding-right: 20px !important; }
+    .topbar { padding-left: 16px !important; padding-right: 16px !important; flex-wrap: wrap !important; gap: 10px !important; }
+    .section { padding: 40px 0 !important; }
+    .overview .ov-card { padding: 24px 20px !important; }
+    .cg-label { display: block !important; margin-top: 16px; font-weight: 700; background: transparent !important; padding: 10px 0 4px !important; border-bottom: 1px solid var(--red); color: var(--red) !important; }
+    .cg-head { display: block !important; padding: 16px 20px !important; }
+    .compare-grid { gap: 12px !important; }
+    .cg-cell { padding: 12px 20px !important; }
+    .nav-pages { padding: 24px 20px !important; }
+    .quote-strip { padding: 40px 20px !important; }
+    .assets-grid { gap: 16px !important; background: transparent !important; }
+    .asset-card { padding: 24px !important; }
+    .person-info { padding-bottom: 12px !important; }
+    .timeline-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
+    .timeline-event { padding: 24px !important; }
+    .source-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
+    .source-card { padding: 24px !important; }
+  }
+</style>
 </head>
+
 <body>
 <div class="topbar">
   <div class="topbar-left"><a href="index-en.html">← All dossiers</a></div>

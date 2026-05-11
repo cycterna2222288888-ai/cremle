@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How the TV got into your parents' brains · Kremlin Voices</title>
+<meta name="description" content="Analysis of the mechanisms of propaganda based on Maxim Katz's video. How to communicate with loved ones whose views have changed under the influence of TV.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How the TV got into your parents' brains · Kremlin Voices">
+<meta property="og:description" content="Analysis of the mechanisms of propaganda based on Maxim Katz's video.">
+<meta property="og:site_name" content="Kremlin Voices">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --gray: #4a4a4a;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .topbar { border-bottom: 1px solid var(--rule); padding: 16px 60px; display: flex; justify-content: space-between; align-items: center; background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; transition: opacity 0.2s; }
+  .topbar-left a:hover { opacity: 0.6; }
+  .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
+  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); text-align: center; }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 800px; margin: 0 auto; }
+
+  .container { max-width: 800px; margin: 0 auto; padding: 60px; }
+  .content-block { margin-bottom: 48px; }
+  .content-block h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; margin-bottom: 24px; }
+  .content-block h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--paper); margin-bottom: 16px; margin-top: 32px; }
+  .content-block p { font-size: 16px; color: var(--light-gray); line-height: 1.9; margin-bottom: 16px; }
+  .content-block ul { margin-bottom: 16px; padding-left: 20px; color: var(--light-gray); font-size: 16px; line-height: 1.9; }
+  .content-block li { margin-bottom: 12px; }
+  .content-block li strong { color: var(--paper); font-weight: 500; }
+  
+  .note-box { background: #0e0e0e; border: 1px solid #1a0000; border-left: 3px solid var(--red); padding: 24px; margin-bottom: 32px; }
+  .note-box p { margin-bottom: 0; font-size: 15px; }
+  .note-box a { color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red-dim); transition: all 0.2s; }
+  .note-box a:hover { color: var(--paper); border-color: var(--paper); }
+
+  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
+
+  @media (max-width: 768px) {
+    .container { padding: 40px 20px; }
+    .topbar { padding: 12px 20px; }
+    .masthead { padding: 60px 20px; }
+  }
+</style>
+<style>
+[data-theme="light"] { --ink:#f2ede3; --paper:#111; --light-gray:#4a4a4a; --rule:#ccc5b5; }
+[data-theme="light"] body { background:#f2ede3; color:#111; }
+[data-theme="light"] .topbar { background:#f2ede3; border-color:#ccc5b5; }
+[data-theme="light"] .note-box { background:#e8e3d8; border-color:#ccc5b5; }
+[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left"><a href="index-en.html">← Home</a></div>
+  <div class="topbar-right">
+    <button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);})()" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;">☀ Light</button>
+    <div class="lang-switch">
+      <a href="tv-propaganda.html">RU</a>
+      <a href="tv-propaganda-en.html" class="active">EN</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead-eyebrow">Analysis</div>
+  <h1 class="masthead-title">How the TV got into your parents' brains</h1>
+  <p class="masthead-sub">A detailed analysis of the psychological and biological mechanisms of propaganda, based on the video by Maxim Katz.</p>
+</header>
+
+<main class="container">
+  
+  <div class="note-box">
+    <p>The material on this page is based on a video from Maxim Katz's YouTube channel titled <strong>"How the TV got into your parents' brains"</strong>.<br><br>
+    🔗 <strong>Video link:</strong> <a href="https://www.youtube.com/watch?v=jyNK2zFwUuQ" target="_blank" rel="noopener">watch on YouTube</a></p>
+  </div>
+
+  <div class="content-block">
+    <h2>Introduction to the problem</h2>
+    <p>The author raises a painful question for many: why do relatives and friends, who in ordinary life are kind and taught their children to resolve conflicts peacefully, suddenly change beyond recognition. When the topic of the war in Ukraine comes up, such people often begin to answer with television clichés, justifying cruelty and aggression toward the civilian population.</p>
+  </div>
+
+  <div class="content-block">
+    <h2>Psychological and biological brain vulnerabilities</h2>
+    <p>Propaganda works successfully not because people are "somehow wrong", but because it exploits the biological characteristics of our brain:</p>
+    <ul>
+      <li><strong>Emotions turn off logic:</strong> The human psyche is designed in such a way that we cannot simultaneously deeply analyze information and experience strong emotions. It is always easier and faster to reach emotional perception than to build logical arguments.</li>
+      <li><strong>Energy saving:</strong> The areas of the brain responsible for critical analysis and logic require huge amounts of energy. The body tries to conserve resources by relying on simpler reactions — emotions ("it pleases — therefore it is good") or recognition ("familiar — therefore safe").</li>
+      <li><strong>Fatigue and poverty:</strong> People working multiple jobs or overtime physically do not have the energy to analyze the socio-political situation. Exhaustion from everyday problems generates the position "I am not interested in politics", which makes a person an easy prey for television propaganda.</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h2>Three main tools of propaganda</h2>
+    <ul>
+      <li><strong>Emotional intensity:</strong> Propaganda deliberately uses horrific stories to cause shock and strong emotions. The more terrifying the invention, the less likely the viewer is to check the facts. At the same time, real internal problems of the country are presented as dryly as possible, in bureaucratic language with zero emotional coloring.</li>
+      <li><strong>The recognition effect:</strong> What is familiar to us seems good and trustworthy. Propaganda repeatedly reiterates the same talking points across all channels. When a person comes across them once again, the brain perceives this as familiar information ("I've heard this before"), and critical thinking simply does not turn on.</li>
+      <li><strong>The desire to maintain the status quo:</strong> This is an evolutionary trap. If a person is not threatened with immediate mortal danger, the psyche inclines them to inaction. Propaganda convinces that everything is going on as usual, suppressing the desire to protest. To enhance this effect, television subtly exploits Soviet aesthetics and nostalgia.</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h2>Information bubble and normalization of hatred</h2>
+    <ul>
+      <li><strong>Clearing the media landscape:</strong> In Russia, independent media have been strangled for years, and with the outbreak of the war, the information field was completely cleared.</li>
+      <li><strong>Habits of the older generation:</strong> While young people are moving away from television, older people remain its active viewers. Even when surfing the internet without a VPN, they see a pro-government picture of the world on the starting pages of news aggregators.</li>
+      <li><strong>Contagiousness of aggression:</strong> Viewers of federal channels have been accustomed to "hate speech" for years. Studies show that verbal aggression acts like a virus: constant exposure to such an environment causes even peaceful people to lower the bar of what is acceptable, which opens the way to justifying cruel actions.</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h2>How to talk to relatives (Practical advice)</h2>
+    <p>Fighting the TV for the minds of loved ones is a difficult task, taking a lot of energy and often causing a feeling of complete powerlessness. It is difficult to convince ardent supporters of the government, but there are a few working techniques for communicating with those who doubt:</p>
+    <ul>
+      <li><strong>Ask ambiguous questions:</strong> Try to gently push the interlocutor to reflect, rather than demand an immediate answer from them, which will force them to go on the defensive.</li>
+      <li><strong>Use "I-messages":</strong> Instead of accusatory phrases, talk about your feelings. For example: "It hurts me when I see people being killed." This will help to find an emotional point of convergence.</li>
+      <li><strong>Bring in personal context:</strong> Abstract arguments work poorly. Give examples of specific people you know who, for example, are forced to save on basic foods due to rising prices.</li>
+      <li><strong>Appeal to emotions and authorities:</strong> Logic and rational arguments are often powerless. Try referring to authorities that your loved ones understand.</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h2>Concluding thought</h2>
+    <p>As the video emphasizes, we have no other Homeland and no other parents. The process of returning compatriots to normal ideas about morality will be very long and fragmented. We have to not judge them, but persuade and learn to live with them in peace and harmony.</p>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div>Kremlin Voices · Propaganda Archive</div>
+  <div>2024</div>
+</footer>
+
+<script>
+  if(localStorage.getItem('theme')==='light') {
+    document.documentElement.dataset.theme='light';
+  }
+</script>
+</body>
+</html>

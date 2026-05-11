@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как телевизор залез в мозг вашим родителям · Голоса Кремля</title>
+<meta name="description" content="Разбор механизмов пропаганды по видео Максима Каца. Как общаться с близкими, чьи взгляды изменились под влиянием телевизора.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Как телевизор залез в мозг вашим родителям · Голоса Кремля">
+<meta property="og:description" content="Разбор механизмов пропаганды по видео Максима Каца.">
+<meta property="og:site_name" content="Голоса Кремля">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #080808;
+    --paper: #ede8dc;
+    --red: #8b1a1a;
+    --red-dim: #5c1111;
+    --gray: #4a4a4a;
+    --light-gray: #bab3a0;
+    --rule: #1c1c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+  .topbar { border-bottom: 1px solid var(--rule); padding: 16px 60px; display: flex; justify-content: space-between; align-items: center; background: var(--ink); position: sticky; top: 0; z-index: 100; }
+  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; transition: opacity 0.2s; }
+  .topbar-left a:hover { opacity: 0.6; }
+  .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
+  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
+  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
+
+  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); text-align: center; }
+  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
+  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 800px; margin: 0 auto; }
+
+  .container { max-width: 800px; margin: 0 auto; padding: 60px; }
+  .content-block { margin-bottom: 48px; }
+  .content-block h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; margin-bottom: 24px; }
+  .content-block h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--paper); margin-bottom: 16px; margin-top: 32px; }
+  .content-block p { font-size: 16px; color: var(--light-gray); line-height: 1.9; margin-bottom: 16px; }
+  .content-block ul { margin-bottom: 16px; padding-left: 20px; color: var(--light-gray); font-size: 16px; line-height: 1.9; }
+  .content-block li { margin-bottom: 12px; }
+  .content-block li strong { color: var(--paper); font-weight: 500; }
+  
+  .note-box { background: #0e0e0e; border: 1px solid #1a0000; border-left: 3px solid var(--red); padding: 24px; margin-bottom: 32px; }
+  .note-box p { margin-bottom: 0; font-size: 15px; }
+  .note-box a { color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red-dim); transition: all 0.2s; }
+  .note-box a:hover { color: var(--paper); border-color: var(--paper); }
+
+  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
+
+  @media (max-width: 768px) {
+    .container { padding: 40px 20px; }
+    .topbar { padding: 12px 20px; }
+    .masthead { padding: 60px 20px; }
+  }
+</style>
+<style>
+[data-theme="light"] { --ink:#f2ede3; --paper:#111; --light-gray:#4a4a4a; --rule:#ccc5b5; }
+[data-theme="light"] body { background:#f2ede3; color:#111; }
+[data-theme="light"] .topbar { background:#f2ede3; border-color:#ccc5b5; }
+[data-theme="light"] .note-box { background:#e8e3d8; border-color:#ccc5b5; }
+[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left"><a href="index.html">← На главную</a></div>
+  <div class="topbar-right">
+    <button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);})()" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;">☀ Light</button>
+    <div class="lang-switch">
+      <a href="tv-propaganda.html" class="active">RU</a>
+      <a href="tv-propaganda-en.html">EN</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead-eyebrow">Аналитика</div>
+  <h1 class="masthead-title">Как телевизор залез в мозг вашим родителям</h1>
+  <p class="masthead-sub">Подробный разбор психологических и биологических механизмов пропаганды, основанный на материале Максима Каца.</p>
+</header>
+
+<main class="container">
+  
+  <div class="note-box">
+    <p>Материал на этой странице основан на видеоролике с YouTube-канала Максима Каца <strong>«Как телевизор залез в мозг вашим родителям»</strong>.<br><br>
+    🔗 <strong>Ссылка на видео:</strong> <a href="https://www.youtube.com/watch?v=jyNK2zFwUuQ" target="_blank" rel="noopener">смотреть на YouTube</a></p>
+  </div>
+
+  <div class="content-block">
+    <h2>Введение в проблему</h2>
+    <p>Поднимается болезненный для многих вопрос: почему родные и близкие люди, которые в обычной жизни отличаются добротой и учили детей решать конфликты мирно, внезапно меняются до неузнаваемости. Поднимая тему войны в Украине, такие люди часто начинают отвечать штампами из телевизора, оправдывая жестокость и агрессию по отношению к мирному населению.</p>
+  </div>
+
+  <div class="content-block">
+    <h2>Психологические и биологические уязвимости мозга</h2>
+    <p>Пропаганда успешно работает не потому, что люди «какие-то неправильные», а потому, что она эксплуатирует биологические особенности нашего мозга:</p>
+    <ul>
+      <li><strong>Эмоции отключают логику:</strong> Психика человека устроена так, что мы не можем одновременно глубоко анализировать информацию и переживать сильные эмоции. Достучаться до эмоционального восприятия всегда проще и быстрее, чем выстраивать логические аргументы.</li>
+      <li><strong>Экономия энергии:</strong> Зоны мозга, отвечающие за критический анализ и логику, требуют огромных затрат энергии. Организм старается экономить ресурсы, опираясь на более простые реакции — эмоции («радует — значит хорошо») или узнавание («знакомое — значит безопасное»).</li>
+      <li><strong>Усталость и бедность:</strong> У людей, работающих на нескольких работах или сверхурочно, физически не остается сил на анализ общественно-политической ситуации. Измотанность бытовыми проблемами порождает позицию «я политикой не интересуюсь», что делает человека легкой добычей для телевизионной пропаганды.</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h2>Три главных инструмента пропаганды</h2>
+    <ul>
+      <li><strong>Эмоциональный накал:</strong> Пропаганда целенаправленно использует жуткие истории, чтобы вызвать шок и сильные эмоции. Чем страшнее выдумка, тем меньше вероятность, что зритель будет проверять факты. При этом реальные внутренние проблемы страны подаются максимально сухо, бюрократическим языком с нулевой эмоциональной окраской.</li>
+      <li><strong>Эффект узнавания:</strong> То, что нам знакомо, кажется нам хорошим и заслуживающим доверия. Пропаганда многократно повторяет одни и те же тезисы по всем каналам. Когда человек натыкается на них в очередной раз, мозг воспринимает это как знакомую информацию («я это уже слышал»), и критическое мышление просто не включается.</li>
+      <li><strong>Стремление сохранить статус-кво:</strong> Это эволюционная ловушка. Если человеку не угрожает немедленная смертельная опасность, психика склоняет его к бездействию. Пропаганда убеждает, что все идет своим чередом, подавляя желание протестовать. Для усиления этого эффекта телевизор тонко эксплуатирует советскую эстетику и ностальгию.</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h2>Информационный пузырь и нормализация ненависти</h2>
+    <ul>
+      <li><strong>Зачистка медиаполя:</strong> В России годами душили независимые СМИ, а с началом войны информационная поляна была зачищена полностью.</li>
+      <li><strong>Привычки старшего поколения:</strong> В то время как молодежь уходит от телевизора, люди старшего возраста остаются его активными зрителями. Даже заходя в интернет без VPN, они видят провластную картину мира на стартовых страницах агрегаторов новостей.</li>
+      <li><strong>Заразительность агрессии:</strong> Зрителей федеральных каналов годами приучали к «языку ненависти». Исследования показывают, что словесная агрессия действует как вирус: постоянное нахождение в такой среде заставляет даже миролюбивых людей опускать планку допустимого, что открывает путь к оправданию жестоких действий.</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h2>Как разговаривать с родственниками (Практические советы)</h2>
+    <p>Бороться с телевизором за умы близких — дело тяжелое, отнимающее массу сил и часто вызывающее чувство полного бессилия. Переубедить ярых сторонников власти сложно, но для общения с сомневающимися есть несколько рабочих приемов:</p>
+    <ul>
+      <li><strong>Задавайте неоднозначные вопросы:</strong> Старайтесь мягко подталкивать собеседника к размышлениям, а не требовать от него немедленного ответа, который заставит его уйти в глухую защиту.</li>
+      <li><strong>Используйте «Я-сообщения»:</strong> Вместо обвинительных фраз говорите о своих чувствах. Например: «Мне плохо и больно, когда я вижу, как убивают людей». Это поможет нащупать эмоциональную точку сближения.</li>
+      <li><strong>Привносите личный контекст:</strong> Абстрактные аргументы работают плохо. Приводите в пример конкретных знакомых людей, которые, например, вынуждены экономить на базовых продуктах из-за роста цен.</li>
+      <li><strong>Апеллируйте к эмоциям и авторитетам:</strong> Логика и рациональные доводы часто бессильны. Попробуйте сослаться на авторитеты, понятные вашим близким.</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h2>Заключительная мысль</h2>
+    <p>Как подчеркивается в видео, у нас нет другой Родины и других родителей. Процесс возвращения соотечественников к нормальным представлениям о морали будет очень долгим и фрагментарным. Нам предстоит не судить их, а убеждать и учиться жить с ними в мире и согласии.</p>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div>Голоса Кремля · Архив пропаганды</div>
+  <div>2024</div>
+</footer>
+
+<script>
+  if(localStorage.getItem('theme')==='light') {
+    document.documentElement.dataset.theme='light';
+  }
+</script>
+</body>
+</html>

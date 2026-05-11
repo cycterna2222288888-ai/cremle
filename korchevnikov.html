@@ -301,21 +301,16 @@
 [data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
 </style>
 
-<style id="topbar-mobile-fix">
+<style id="topbar-clean-fix">
   @media (max-width: 480px) {
-    .topbar { 
-      flex-wrap: nowrap !important; 
-      gap: 6px !important; 
-      padding: 10px 16px !important; 
-      overflow-x: hidden !important;
-    }
-    .topbar-left a { font-size: 0 !important; }
-    .topbar-left a::after { content: "←"; font-size: 16px !important; display: inline-block; padding: 2px 4px; }
-    .topbar-right { gap: 6px !important; }
+    .topbar { flex-wrap: nowrap !important; gap: 8px !important; overflow-x: auto !important; padding: 10px 16px !important; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .topbar::-webkit-scrollbar { display: none; }
+    .topbar-left { flex-shrink: 0; }
+    .topbar-right { flex-shrink: 0; gap: 8px !important; }
+    .hide-on-mobile { display: none !important; }
+    #theme-toggle { padding: 6px 8px !important; font-size: 9px !important; border: 1px solid var(--rule) !important; }
+    .lang-switch a { padding: 6px 8px !important; font-size: 9px !important; }
     .report-link { display: none !important; }
-    #theme-toggle { padding: 4px 6px !important; font-size: 8px !important; letter-spacing: 0.1em !important; }
-    .lang-switch a { padding: 4px 8px !important; font-size: 8px !important; }
-    .topbar > span { display: none !important; }
   }
 </style>
 </head>
@@ -323,7 +318,7 @@
 <body>
 <div id="progress-bar"></div>
 
-<div class="topbar"><div class="topbar-left"><a href="index.html">← Все досье</a></div><div class="topbar-right"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button><div class="lang-switch"><a href="korchevnikov.html" class="active">RU</a><a href="korchevnikov-en.html">EN</a></div><a href="submit.html" class="report-link">Сообщить</a></div></div>
+<div class="topbar"><div class="topbar-left"><a href="index.html">← <span class="hide-on-mobile">Все досье</span></a></div><div class="topbar-right"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button><div class="lang-switch"><a href="korchevnikov.html" class="active">RU</a><a href="korchevnikov-en.html">EN</a></div><a href="submit.html" class="report-link">Сообщить</a></div></div>
 
 <div class="hero">
   <div class="hero-left">

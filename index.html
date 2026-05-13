@@ -114,7 +114,7 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: var(--rule);
+    /* background: var(--rule); */
   }
 
   .masthead-rule span {
@@ -123,6 +123,20 @@
     text-transform: uppercase;
     color: var(--light-gray);
     flex-shrink: 0;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    /* background: var(--rule); */
+    border-bottom: 1px solid var(--rule);
+  }
+  .stats-row > div {
+    background: var(--ink) !important;
+    padding: 28px 32px !important;
+    text-align: center !important;
+    border-right: none !important;
   }
 
   /* INTRO */
@@ -163,14 +177,14 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: var(--rule);
+    /* background: var(--rule); */
   }
 
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
-    background: var(--rule);
+    /* background: var(--rule); */
   }
 
   .card {
@@ -308,7 +322,7 @@
     border-bottom: 1px solid var(--rule);
     display: flex;
     gap: 2px;
-    background: var(--rule);
+    /* background: var(--rule); */
   }
 
   .nav-page-link {
@@ -321,7 +335,7 @@
     flex-direction: column;
     gap: 10px;
     transition: background 0.2s;
-  }
+   border-right: 1px solid var(--rule); }
 
   .nav-page-link:hover { background: #141414; }
 
@@ -343,7 +357,7 @@
     align-items: start;
   }
 
-  .strip-divider { background: var(--rule); height: 100%; min-height: 80px; }
+  .strip-divider { /* background: var(--rule); */ height: 100%; min-height: 80px; }
 
   .strip-quote {
     font-family: 'Playfair Display', serif;
@@ -389,7 +403,7 @@
   /* FILTER BAR */
   .filter-bar {
     border-bottom: 1px solid var(--rule);
-    background: var(--rule);
+    /* background: var(--rule); */
     display: flex;
     gap: 2px;
     flex-wrap: wrap;
@@ -442,6 +456,7 @@
   }
 
   @media (max-width: 900px) {
+    .stats-row { grid-template-columns: repeat(3, 1fr); }
     .topbar, .masthead, .intro, .grid-section, .quote-strip, .footer { padding-left: 24px; padding-right: 24px; }
     .cards { grid-template-columns: 1fr; }
     .quote-strip { grid-template-columns: 1fr; gap: 32px; }
@@ -480,13 +495,22 @@
   @media (max-width: 480px) {
     .masthead { padding: 40px 20px 28px; }
     .masthead h1 { font-size: clamp(2rem, 8vw, 3rem); }
-    .stats-bar { grid-template-columns: 1fr 1fr; }
-    .nav-pages { overflow-x: auto; flex-wrap: nowrap; flex-direction: row; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .nav-pages { overflow-x: auto; flex-wrap: nowrap; flex-direction: row; padding: 24px 20px; gap: 12px; background: transparent; border-bottom: none; -webkit-overflow-scrolling: touch; }
+    .nav-page-link { flex: 0 0 280px; border: 1px solid var(--rule); padding: 24px; border-radius: 4px;  border-right: 1px solid var(--rule); }
     .flt-btn { white-space: nowrap; flex-shrink: 0; }
     .card-num { font-size: 9px; }
-    .card-name { font-size: 1rem; }
+    /* .card-name { font-size: 1rem; } */
     .topbar a { font-size: 9px; }
   }
+
+  @media (max-width: 768px) {
+    .card-top { padding: 24px 20px 0; }
+    .card-quote { padding: 0 20px; }
+    .card-bottom { padding: 20px; }
+    .nav-pages { background: transparent !important; }
+  }
+
 </style>
 <meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
@@ -631,7 +655,7 @@
 </div>
 
 <!-- STATS BAR -->
-<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--rule);border-bottom:1px solid var(--rule)">
+<div class="stats-row">
   <div style="background:var(--ink);padding:28px 32px;text-align:center;border-right:1px solid var(--rule)">
     <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--red);line-height:1">36</div>
     <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--light-gray);margin-top:8px">досье</div>

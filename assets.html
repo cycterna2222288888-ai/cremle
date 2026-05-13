@@ -87,6 +87,31 @@
     --rule: #ccc5b5;
     --card-bg: #e8e3d8;
   }
+  .section-nav {
+    border-bottom: 1px solid var(--rule);
+    padding: 0 60px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    background: var(--ink);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .section-nav::-webkit-scrollbar { display: none; }
+  .section-nav a {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    text-decoration: none;
+    padding: 16px 20px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .section-nav a:hover { color: var(--paper); }
+  .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
+  @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
 </style>
 <style id="light-mode-hovers">
 [data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
@@ -136,6 +161,19 @@
 
 <div class="topbar">
   <div class="topbar-left"><a href="index.html">← <span class="hide-on-mobile">В архив</span></a></div>
+
+<nav class="section-nav">
+  <a href="quotes.html">Цитатник</a>
+  <a href="sanctions.html">Санкции</a>
+  <a href="timeline.html">Хронология</a>
+  <a href="connections.html">Связи</a>
+  <a href="compare.html">Сравнить</a>
+  <a href="media-empire.html">Медиаимперия</a>
+  <a href="assets.html" class="active">Владения</a>
+  <a href="glossary.html">Глоссарий</a>
+  <a href="sources.html">Источники</a>
+  <a href="about.html">О проекте</a>
+</nav>
   <div class="topbar-right">
     <div class="lang-switch">
       <a href="assets.html" class="active">RU</a>

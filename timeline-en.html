@@ -39,6 +39,31 @@
   .tl-content p { font-size:14px; color:#666; line-height:1.9; }
   .footer { padding:48px 60px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#333; }
   @media(max-width:768px){ .topbar { padding:12px 20px; } .tl-hero, .tl-body { padding:48px 20px; } .tl-entry { grid-template-columns:70px 1fr; gap:16px; } .footer { padding:32px 20px; flex-direction:column; gap:12px; } }
+  .section-nav {
+    border-bottom: 1px solid var(--rule);
+    padding: 0 60px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    background: var(--ink);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .section-nav::-webkit-scrollbar { display: none; }
+  .section-nav a {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    text-decoration: none;
+    padding: 16px 20px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .section-nav a:hover { color: var(--paper); }
+  .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
+  @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
 </style>
 <style>
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
@@ -144,9 +169,22 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
 <div class="topbar">
   <div class="topbar-left"><a href="index-en.html">← <span class="hide-on-mobile">All dossiers</span></a></div>
+
+<nav class="section-nav">
+  <a href="quotes-en.html">Quotes</a>
+  <a href="sanctions-en.html">Sanctions</a>
+  <a href="timeline-en.html" class="active">Timeline</a>
+  <a href="connections-en.html">Connections</a>
+  <a href="compare-en.html">Compare</a>
+  <a href="media-empire-en.html">Media Empire</a>
+  <a href="assets-en.html">Assets</a>
+  <a href="glossary-en.html">Glossary</a>
+  <a href="sources-en.html">Sources</a>
+  <a href="about-en.html">About</a>
+</nav>
   <div class="topbar-right"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button>
     <a href="timeline.html">RU</a>
-    <a href="timeline-en.html"><strong>EN</strong></a>
+    <a href="timeline-en.html" class="active"><strong>EN</strong></a>
   </div>
 </div>
 

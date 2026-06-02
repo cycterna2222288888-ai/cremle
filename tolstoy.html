@@ -352,6 +352,26 @@
     .report-link { display: none !important; }
   }
 </style>
+<style id="mobile-final-fix">
+@media (max-width: 768px) {
+  .footer { padding: 24px 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+  .footer-rule { display: none !important; }
+  .grid-card { padding: 24px 20px !important; }
+  .meme-card { padding: 28px 20px !important; }
+  .person-quote { padding: 20px !important; }
+  .quote-pull { padding: 16px 0 16px 20px !important; margin: 32px 0 !important; }
+  .source-card-d { padding: 18px 20px !important; }
+  .topbar-left a { font-size: 22px !important; }
+}
+@media (max-width: 480px) {
+  .meme-card::before { font-size: 70px !important; top: 5px !important; left: 12px !important; }
+  .stat-card { padding: 18px 10px !important; }
+  .stat-card .stat-val { font-size: 24px !important; }
+  .stat-card .stat-label { font-size: 9px !important; letter-spacing: 0.1em !important; }
+  .timeline-body { padding-left: 20px !important; }
+  .section-header { gap: 12px !important; }
+}
+</style>
 </head>
 
 <body>

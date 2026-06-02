@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Геннадий Зюганов — досье</title>
+<meta name="description" content="Досье на Геннадия Зюганова — бессменного лидера КПРФ, символа системной оппозиции, которая никогда не угрожает власти.">
+<meta property="og:title" content="Геннадий Зюганов — досье · Голоса Кремля">
+<meta property="og:site_name" content="Голоса Кремля">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+  :root { --ink: #080808; --paper: #ede8dc; --red: #8b1a1a; --red-dim: #5c1111; --gray: #4a4a4a; --light-gray: #bab3a0; --rule: #1c1c1c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { overflow-x: hidden; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+  .topbar { padding: 14px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+  .topbar-left a:hover { opacity: 0.6; }
+  .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .lang-switch { display: flex; border: 1px solid #333; overflow: hidden; }
+  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; padding: 6px 12px; transition: all 0.2s; }
+  .lang-switch a.active { color: var(--paper); background: #1c1c1c; }
+  .lang-switch a:hover { color: var(--paper); background: #111; }
+  .report-link { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #5c1111; text-decoration: none; border: 1px solid #2a0a0a; padding: 6px 14px; transition: all 0.2s; }
+  .report-link:hover { color: #8b1a1a; border-color: #5c1111; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); position: relative; }
+  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .meta-item span { font-size: 13px; color: var(--light-gray); }
+  .hero-right { position: relative; overflow: hidden; background: #060606; }
+  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
+  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
+  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
+  .timeline { display: grid; grid-template-columns: 100px 1fr; }
+  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
+  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
+  .timeline-body { padding: 0 0 48px 32px; }
+  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
+  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
+  .grid-card { background: var(--ink); padding: 40px; }
+  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
+  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
+  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
+  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
+  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
+  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
+  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
+  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
+  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .quotes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--rule); }
+  .person-quote { background: #0d0d0d; padding: 36px; }
+  .person-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--paper); line-height: 1.7; margin-bottom: 20px; }
+  .person-quote .attribution { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
+  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
+  .stat-card .stat-val { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--red); font-weight: 700; }
+  .stat-card .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
+  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
+  .footer { padding: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
+  .badge { display:inline-block; font-size:8px; font-family:'Inter',sans-serif; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; padding:2px 6px; border-radius:2px; vertical-align:middle; margin-left:6px; line-height:1.6; position:relative; top:-1px; cursor:help; }
+  .badge-fact { background:#0a2010; color:#4caf50; border:1px solid #1a4a1a; }
+  .badge-interp { background:#1a1200; color:#e67e22; border:1px solid #3a2800; }
+  .sources-grid-dosye { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--rule); }
+  .source-card-d { background:var(--ink); padding:24px 28px; }
+  .source-card-d .sc-type { font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:6px; }
+  .source-card-d .sc-title { font-family:'Playfair Display',serif; font-size:13px; color:var(--paper); margin-bottom:5px; }
+  .source-card-d .sc-note { font-size:11px; color:#555; line-height:1.5; }
+  .copy-quote-btn { display:inline-block; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:#444; border:1px solid #222; padding:4px 10px; cursor:pointer; background:transparent; font-family:'Inter',sans-serif; margin-top:10px; transition:all 0.2s; }
+  .copy-quote-btn:hover { color:var(--paper); border-color:#555; }
+  .copy-quote-btn.copied { color:#4caf50; border-color:#1a4a1a; }
+  .next-dosye { border-top: 1px solid var(--rule); padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: var(--paper); transition: background 0.2s; }
+  .next-dosye:hover { background: #0a0a0a; }
+  .next-dosye-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #444; margin-bottom: 8px; }
+  .next-dosye-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; }
+  .next-dosye-title { font-size: 13px; color: #666; margin-top: 4px; }
+  .next-dosye-arrow { font-size: 2rem; color: var(--red); }
+  .share-bar { border-top: 1px solid var(--rule); padding: 24px 60px; display: flex; align-items: center; gap: 16px; }
+  .share-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #444; }
+  .share-btn { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 8px 16px; border: 1px solid #222; color: #888; transition: all 0.2s; }
+  .share-btn:hover { border-color: #555; color: var(--paper); }
+  .related-section { border-top: 1px solid var(--rule); padding: 60px; }
+  .related-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+  .related-card { background: var(--card-bg); padding: 28px; text-decoration: none; color: var(--paper); display: block; transition: background 0.2s; }
+  .related-card:hover { background: #141414; }
+  .related-card-name { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 8px; }
+  .related-card-arrow { font-size: 12px; color: var(--red); margin-top: 12px; letter-spacing: 0.15em; text-transform: uppercase; }
+  .back-to-top { position: fixed; bottom: 32px; right: 32px; width: 44px; height: 44px; background: var(--red); color: var(--paper); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; z-index: 500; }
+  .back-to-top.visible { opacity: 1; visibility: visible; }
+  .back-to-top:hover { background: #6e1414; }
+  #progress-bar { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: #8b1a1a; z-index: 9999; transition: width 0.1s linear; }
+  .updated-stamp { padding:12px 60px; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#2a2a2a; border-top:1px solid #111; text-align:right; }
+  [data-theme="light"] { --ink: #f2ede3; --paper: #111; --light-gray: #4a4a4a; --rule: #ccc5b5; }
+  [data-theme="light"] body { background: #f2ede3; color: #111; }
+  [data-theme="light"] .topbar { background: #f2ede3; border-color: #ccc5b5; }
+  [data-theme="light"] .person-quote { background: #e8e3d8; }
+  [data-theme="light"] .meme-card { background: #e8e3d8; }
+  [data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
+  [data-theme="light"] .related-card:hover { background: #d8d3c8; }
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 280px; }
+    .hero-left { padding: 60px 30px; }
+    .container { padding: 0 30px; }
+    .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .section { padding: 60px 0; }
+    .timeline { grid-template-columns: 72px 1fr; }
+    .related-section { padding: 40px 20px; }
+    .related-grid { grid-template-columns: 1fr; }
+    .next-dosye { padding: 32px 20px; }
+    .next-dosye-name { font-size: 1.2rem; }
+    .share-bar { padding: 20px 20px; flex-wrap: wrap; gap: 10px; }
+    .back-to-top { bottom: 20px; right: 16px; }
+    .updated-stamp { padding: 10px 24px; }
+  }
+  @media (max-width: 768px) {
+    .footer { padding: 24px 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+    .footer-rule { display: none !important; }
+    .grid-card { padding: 24px 20px !important; }
+    .meme-card { padding: 28px 20px !important; }
+    .person-quote { padding: 20px !important; }
+    .quote-pull { padding: 16px 0 16px 20px !important; margin: 32px 0 !important; }
+    .source-card-d { padding: 18px 20px !important; }
+    .topbar-left a { font-size: 22px !important; }
+  }
+  @media (max-width: 480px) {
+    .meme-card::before { font-size: 70px !important; top: 5px !important; left: 12px !important; }
+    .stat-card { padding: 18px 10px !important; }
+    .stat-card .stat-val { font-size: 24px !important; }
+    .stat-card .stat-label { font-size: 9px !important; letter-spacing: 0.1em !important; }
+    .timeline-body { padding-left: 20px !important; }
+    .section-header { gap: 12px !important; }
+  }
+  @media (max-width: 900px) { .sources-grid-dosye { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) {
+    .topbar { flex-wrap: nowrap !important; gap: 8px !important; overflow-x: auto !important; padding: 10px 16px !important; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .topbar::-webkit-scrollbar { display: none; }
+    .topbar-left { flex-shrink: 0; }
+    .topbar-right { flex-shrink: 0; gap: 8px !important; }
+    .hide-on-mobile { display: none !important; }
+    .lang-switch a { padding: 6px 8px !important; font-size: 9px !important; }
+    .report-link { display: none !important; }
+  }
+</style>
+<link rel="canonical" href="https://cycterna2222288888-ai.github.io/cremle/zyuganov.html">
+<link rel="alternate" hreflang="ru" href="https://cycterna2222288888-ai.github.io/cremle/zyuganov.html">
+<link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/zyuganov-en.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Геннадий Зюганов",
+  "jobTitle": "Председатель КПРФ",
+  "nationality": "Russian",
+  "birthDate": "1944-06-26",
+  "url": "https://cycterna2222288888-ai.github.io/cremle/zyuganov.html"
+}
+</script>
+</head>
+
+<body>
+<div id="progress-bar"></div>
+
+<div class="topbar">
+  <div class="topbar-left"><a href="index.html">← <span class="hide-on-mobile">Все досье</span></a></div>
+  <div class="topbar-right">
+    <button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button>
+    <div class="lang-switch"><a href="zyuganov.html" class="active">RU</a><a href="zyuganov-en.html">EN</a></div>
+    <a href="submit.html" class="report-link">Сообщить</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Досье · Архивный материал · 2024</div>
+    <h1 class="hero-name">Геннадий<br>Зюганов</h1>
+    <p class="hero-subtitle">Председатель КПРФ с 1993 года.<br>Оппозиция, которая никогда не оппонирует.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <label>Дата рождения</label>
+        <span>26 июня 1944, Мымрино, Орловская обл.</span>
+      </div>
+      <div class="meta-item">
+        <label>Партия</label>
+        <span>КПРФ — Председатель</span>
+      </div>
+      <div class="meta-item">
+        <label>В руководстве КПРФ</label>
+        <span>С 1993 года — более 30 лет</span>
+      </div>
+      <div class="meta-item">
+        <label>Санкции</label>
+        <span>Нет — особый случай</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;z-index:1;">
+      <defs>
+        <radialGradient id="rg_zyug" cx="50%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#1a0000" stop-opacity="0.1"/>
+          <stop offset="100%" stop-color="#000" stop-opacity="0.4"/>
+        </radialGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#rg_zyug)"/>
+      <line x1="50%" y1="20%" x2="50%" y2="80%" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="20%" y1="50%" x2="80%" y2="50%" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="50%" cy="38%" r="80" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="50%" cy="38%" r="140" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.12"/>
+      <g opacity="0.06">
+        <line x1="0" y1="10%" x2="100%" y2="10%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="20%" x2="100%" y2="20%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="40%" x2="100%" y2="40%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="60%" x2="100%" y2="60%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="80%" x2="100%" y2="80%" stroke="#c8c0b0" stroke-width="1"/>
+        <line x1="0" y1="90%" x2="100%" y2="90%" stroke="#c8c0b0" stroke-width="1"/>
+      </g>
+      <text x="50%" y="46%" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="160" fill="#8b1a1a" opacity="0.15" font-weight="700">ГЗ</text>
+    </svg>
+    <div class="hero-stamp" style="z-index:2;">КПРФ · Системность · Декор</div>
+  </div>
+</div>
+
+<!-- БИОГРАФИЯ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Биография</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-year">1944</div>
+      <div class="timeline-body">
+        <h3>Родился в деревне</h3>
+        <p>26 июня 1944 года в деревне Мымрино Орловской области. Военное детство, колхозный уклад, советская школа. Отличник, комсомолец. Окончил педагогический институт, затем аспирантуру. Путь типичного советского карьериста через партию.</p>
+      </div>
+      <div class="timeline-year">1967</div>
+      <div class="timeline-body">
+        <h3>Вступление в КПСС</h3>
+        <p>Вступает в Коммунистическую партию Советского Союза. Последовательно строит карьеру: комсомол, партийная работа в Орле, переезд в Москву. К концу 80-х — уже в аппарате ЦК КПСС. Зюганов — убеждённый коммунист, это отличает его от большинства кремлёвских чиновников.</p>
+      </div>
+      <div class="timeline-year">1991</div>
+      <div class="timeline-body">
+        <h3>Крах СССР — и шанс</h3>
+        <p>Распад Советского Союза уничтожает КПСС. Зюганов участвует в создании новых левых движений. В 1993 году становится лидером возрождённой КПРФ — Коммунистической партии Российской Федерации. В стране хаос и тоска по стабильности. КПРФ набирает миллионы голосов.</p>
+      </div>
+      <div class="timeline-year">1995–1996</div>
+      <div class="timeline-body">
+        <h3>Выборы 1996: победа, которой не было</h3>
+        <p>КПРФ на парламентских выборах 1995 года — первая партия в Думе. На президентских выборах 1996 года Зюганов выходит во второй тур против Ельцина. Многие аналитики считают, что реально Зюганов выиграл — но результат был сфальсифицирован при поддержке олигархов и западных советников. Зюганов признал поражение. Это решение осталось с ним навсегда. <span class="badge badge-interp" title="Версия ряда исследователей, не имеет прямых доказательств">Интерпр.</span></p>
+      </div>
+      <div class="timeline-year">2000</div>
+      <div class="timeline-body">
+        <h3>Начало эпохи Путина</h3>
+        <p>На президентских выборах 2000 года КПРФ снова участвует — и снова проигрывает. Зюганов постепенно принимает роль системного игрока: партия критикует власть риторически, но не угрожает ей реально. КПРФ голосует за ключевые законы Кремля, когда это нужно. <span class="badge badge-fact" title="Статистика голосований в Думе — открытые данные">Факт</span></p>
+      </div>
+      <div class="timeline-year">2014</div>
+      <div class="timeline-body">
+        <h3>Аннексия Крыма: «Правильное решение»</h3>
+        <p>Зюганов публично поддерживает аннексию Крыма. «Возвращение Крыма — историческая справедливость», — говорит он. КПРФ голосует за все соответствующие законы в Думе. Коммунист-националист — это не противоречие в логике Зюганова: СССР = великая держава, её территории должны быть возвращены.</p>
+      </div>
+      <div class="timeline-year">2022</div>
+      <div class="timeline-body">
+        <h3>Война: «Вынужденная мера»</h3>
+        <p>После 24 февраля Зюганов называет вторжение в Украину «вынужденной мерой» в ответ на агрессию НАТО. КПРФ не голосует против военных законов. Несмотря на это — никаких западных санкций. Это само по себе характеристика: система не считает Зюганова достаточно опасным, чтобы наказывать. <span class="badge badge-fact" title="Данные голосований Госдумы">Факт</span></p>
+      </div>
+      <div class="timeline-year">2024</div>
+      <div class="timeline-body">
+        <h3>Восемьдесят лет. Тридцать лет во главе партии</h3>
+        <p>В 2024 году Зюганову исполнилось 80 лет. Он по-прежнему руководит КПРФ. Ни одной реальной угрозы власти за три десятилетия. КПРФ — крупнейшая оппозиционная партия, которая не является оппозицией. Зюганов — главный символ того, чем является «системная оппозиция» в России. <span class="badge badge-interp" title="Оценочное суждение">Интерпр.</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Слова Зюганова</h2>
+    </div>
+    <p class="intro-text">Зюганов говорит много — и предсказуемо. Его риторика — смесь советской ностальгии, антизападничества и государственного патриотизма. Эта смесь идеально вписывается в кремлёвский нарратив.</p>
+    <div class="meme-quotes">
+      <div class="meme-card">
+        <div class="meme-text">«НАТО приближалось к нашим границам 30 лет. Россия была вынуждена ответить. Это не война — это защита.»</div>
+        <div class="meme-src">Геннадий Зюганов · О вторжении в Украину · 2022</div>
+      </div>
+      <div class="meme-card">
+        <div class="meme-text">«Возвращение Крыма — это торжество исторической справедливости. Русский мир восстанавливает себя.»</div>
+        <div class="meme-src">Геннадий Зюганов · Об аннексии Крыма · 2014</div>
+      </div>
+    </div>
+    <div class="quote-pull">
+      «Советский Союз был величайшей державой в истории человечества. Его разрушение — величайшая геополитическая катастрофа XX века.»
+      <cite>Геннадий Зюганов · Многократно повторял на протяжении лет</cite>
+    </div>
+  </div>
+</div>
+
+<!-- МЕТОД -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Феномен системной оппозиции</h2>
+    </div>
+    <div class="four-grid">
+      <div class="grid-card">
+        <h3>Критика без угрозы</h3>
+        <p>КПРФ критикует власть — за коррупцию, за бедность, за западное влияние. Но никогда не ставит под сомнение сам режим. Это позволяет системе иметь «оппозицию» для видимости и одновременно сохранять монополию на власть.</p>
+      </div>
+      <div class="grid-card">
+        <h3>Голосования в Думе</h3>
+        <p>На ключевых голосованиях — войны, репрессивные законы, конституционные изменения — КПРФ либо поддерживает власть, либо воздерживается. Реального блокирования не было ни разу. Партия является функциональной частью парламентского большинства.</p>
+      </div>
+      <div class="grid-card">
+        <h3>Электоральный буфер</h3>
+        <p>Зюганов принимает голоса избирателей, которые недовольны властью, но ещё не готовы голосовать за реальную оппозицию. Эти голоса «утилизируются» в безопасном для Кремля канале. КПРФ фактически обезвреживает протестный электорат.</p>
+      </div>
+      <div class="grid-card">
+        <h3>Личная выгода</h3>
+        <p>За 30 лет Зюганов сохранил пост, парламентские привилегии, государственное финансирование партии и доступ к федеральному телевидению. Реальная оппозиция в России теряет всё это — и свободу. Выбор Зюганова очевиден и последователен.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ВНЕШНИЕ ЦИТАТЫ -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">О нём говорят</h2>
+    </div>
+    <div class="quotes-grid">
+      <div class="person-quote">
+        <blockquote>«КПРФ — это не оппозиция. Это декорация. Зюганов позволяет системе говорить: смотрите, у нас есть коммунисты, у нас есть плюрализм. При этом они никогда ничего не меняют.»</blockquote>
+        <div class="attribution">Политолог · Исследователь российской партийной системы</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«В 1996 году он, возможно, выиграл президентские выборы — и не взял власть. С тех пор он стал украшением системы, которая, судя по всему, ему и нравится.»</blockquote>
+        <div class="attribution">Историк · О феномене Зюганова</div>
+      </div>
+      <div class="person-quote">
+        <blockquote>«Показательно, что против Зюганова нет западных санкций. Запад тоже понимает: он не угроза. Он часть системы, которая воюет против Украины, — но безопасная её часть.»</blockquote>
+        <div class="attribution">Журналист · Об отсутствии санкций против КПРФ</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">В цифрах</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val">30+</div>
+        <div class="stat-label">лет во главе КПРФ</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">4</div>
+        <div class="stat-label">проигранных президентских кампании</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">0</div>
+        <div class="stat-label">западных санкций</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">80</div>
+        <div class="stat-label">лет в 2024 году</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Источники</h2>
+    </div>
+    <p style="font-size:13px;color:#555;margin-bottom:28px;line-height:1.8">Все утверждения основаны на открытых публичных источниках. <span class="badge badge-fact">Факт</span> — прямые первичные источники. <span class="badge badge-interp">Интерпр.</span> — авторская интерпретация.</p>
+    <div class="sources-grid-dosye">
+      <div class="source-card-d">
+        <div class="sc-type">Голосования</div>
+        <div class="sc-title">Государственная Дума РФ — открытые данные голосований</div>
+        <div class="sc-note">duma.gov.ru — статистика голосований фракции КПРФ по ключевым законам.</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Биография</div>
+        <div class="sc-title">Wikipedia · «Геннадий Зюганов»</div>
+        <div class="sc-note">ru.wikipedia.org/wiki/Зюганов,_Геннадий_Андреевич</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Выборы 1996</div>
+        <div class="sc-title">Исследования о президентских выборах 1996 года</div>
+        <div class="sc-note">Многочисленные академические работы о возможных фальсификациях. Peter Reddaway, Dmitri Glinski — «The Tragedy of Russia's Reforms».</div>
+      </div>
+      <div class="source-card-d">
+        <div class="sc-type">Заявления 2022</div>
+        <div class="sc-title">Официальный сайт КПРФ — пресс-релизы 2022 года</div>
+        <div class="sc-note">kprf.ru — позиция партии по «специальной военной операции».</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="related-section">
+  <div class="related-label">Похожие досье</div>
+  <div class="related-grid">
+    <a class="related-card" href="medvedev.html"><div class="related-card-name">Дмитрий Медведев</div><div class="related-card-arrow">Читать досье →</div></a>
+    <a class="related-card" href="matvienko.html"><div class="related-card-name">Валентина Матвиенко</div><div class="related-card-arrow">Читать досье →</div></a>
+    <a class="related-card" href="slutsky.html"><div class="related-card-name">Леонид Слуцкий</div><div class="related-card-arrow">Читать досье →</div></a>
+  </div>
+</div>
+
+<div class="share-bar">
+  <span class="share-label">Поделиться</span>
+  <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://cycterna2222288888-ai.github.io/cremle/zyuganov.html&text=Геннадий Зюганов — досье · Голоса Кремля" target="_blank" rel="noopener">Twitter / X</a>
+  <a class="share-btn" href="https://t.me/share/url?url=https://cycterna2222288888-ai.github.io/cremle/zyuganov.html&text=Геннадий Зюганов — 30 лет «оппозиции»" target="_blank" rel="noopener">Telegram</a>
+</div>
+
+<a class="next-dosye" href="kandelaki.html">
+  <div>
+    <div class="next-dosye-label">Следующее досье →</div>
+    <div class="next-dosye-name">Тина Канделаки</div>
+    <div class="next-dosye-title">Голос Match TV</div>
+  </div>
+  <div class="next-dosye-arrow">→</div>
+</a>
+
+<div class="updated-stamp">Досье обновлено: июнь 2026</div>
+<div class="footer">
+  <span>Голоса Кремля</span>
+  <div class="footer-rule"></div>
+  <span>Досье № 39</span>
+  <div class="footer-rule"></div>
+  <a href="index.html" style="color:var(--red);text-decoration:none">← Все досье</a>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.meme-card, .person-quote').forEach(function(card){
+    var bq=card.querySelector('blockquote, .meme-text');
+    if(!bq)return;
+    var btn=document.createElement('button');
+    btn.className='copy-quote-btn';
+    btn.textContent='Скопировать цитату';
+    btn.addEventListener('click',function(){
+      var text=bq.textContent.trim().replace(/\s+/g,' ');
+      navigator.clipboard.writeText(text+'\n— kremlin.voices | '+window.location.href).then(function(){
+        btn.textContent='Скопировано ✓';btn.classList.add('copied');
+        setTimeout(function(){btn.textContent='Скопировать цитату';btn.classList.remove('copied');},2000);
+      });
+    });
+    card.appendChild(btn);
+  });
+})();
+</script>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+<script>
+(function(){
+  var bar=document.getElementById('progress-bar');
+  var btn=document.getElementById('back-to-top');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    if(bar)bar.style.width=(h>0?(window.scrollY/h*100):0)+'%';
+    if(btn){if(window.scrollY>300)btn.classList.add('visible');else btn.classList.remove('visible');}
+  },{passive:true});
+  if(btn)btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+<script>
+(function(){
+  var pages=['solovyov.html','skabeeva.html','simonyan.html','kiselyov.html','popov.html','sheynin.html','tolstoy.html','norkin.html','keosayan.html','andreyeva.html','leontyev.html','mamontov.html','medinsky.html','prilepin.html','dugin.html','mikhalkov.html','korchevnikov.html','krasovsky.html','medvedev.html','kadyrov.html','malofeev.html','nikonov.html','poddubny.html','zakharova.html','kovalchuk.html','turchak.html','navka.html','peskov.html','lavrov.html','mizulina.html','nebenzya.html','patrushev.html','matvienko.html','slutsky.html','emizulina.html','kirill.html','ernst.html','surkov.html','zyuganov.html','kandelaki.html'];
+  var cur=window.location.pathname.split('/').pop();
+  var idx=pages.indexOf(cur);
+  if(idx<0)return;
+  document.addEventListener('keydown',function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;
+    if(e.target&&(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA'))return;
+    if(e.key==='ArrowRight'&&idx<pages.length-1)location.href=pages[idx+1];
+    if(e.key==='ArrowLeft'&&idx>0)location.href=pages[idx-1];
+  });
+})();
+</script>
+<script>
+(function(){
+  var words=document.body.innerText.split(/\s+/).length;
+  var mins=Math.max(1,Math.round(words/200));
+  var meta=document.querySelector('.eyebrow');
+  if(meta)meta.textContent+=' · '+mins+' мин';
+})();
+</script>
+<script>
+(function(){
+  var t=localStorage.getItem('theme')||'dark';
+  document.documentElement.dataset.theme=t;
+  var btn=document.getElementById('theme-toggle');
+  if(btn){btn.textContent=t==='light'?'☽ Dark':'☀ Light';btn.title=t==='light'?'Switch to dark':'Switch to light';}
+})();
+</script>
+</body>
+</html>

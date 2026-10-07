@@ -161,7 +161,12 @@
       </div>
       <div class="quote-card">
         <div class="qc-person"><a href="poddubny.html">Евгений Поддубный</a></div>
+        <div class="qc-text">«Мы здесь не воюем. Мы выполняем задачи специальной военной операции. Это принципиально разные вещи.» [С линии фронта под Авдеевкой]</div>
+        <div class="qc-meta">
+          <div class="qc-year">2023</div>
+          <div class="qc-tags"><span class="qc-tag">Война</span><span class="qc-tag">Нарратив</span></div>
         </div>
+      </div>
         <div class="quote-card">
           <div class="quote-text">«Коллективный Запад хочет уничтожить Россию. Это не политика — это геноцид.»</div>
           <div class="qc-person"><a href="zakharova.html">Мария Захарова</a></div>
@@ -197,17 +202,9 @@
         </div>
         <div class="quote-card"><div class="quote-text">«Россия защищает жителей Донбасса от геноцида, который устроил киевский режим.»</div><div class="qc-person"><a href="nebenzya.html">Василий Небензя</a></div><div class="qc-date">2022 — Совет Безопасности ООН</div>
         </div>
-        <div class="quote-card"><div class="quote-text">«Украина как государство не имеет будущего. Это исторический факт.»</div><div class="qc-person"><a href="patrushev.html">Николай Патрушев</a></div><div class="qc-date">2022
+        <div class="quote-card"><div class="quote-text">«Украина как государство не имеет будущего. Это исторический факт.»</div><div class="qc-person"><a href="patrushev.html">Николай Патрушев</a></div><div class="qc-date">2022</div>
         </div>
-        <div class="quote-card"><div class="quote-text">«Херсон, Запорожье — это Россия. Навсегда.»</div><div class="qc-person"><a href="matvienko.html">Валентина Матвиенко</a></div><div class="qc-date">2022
-          <div class="qc-date">2022
-          <div class="qc-date">2022
-        <div class="qc-text">«Мы здесь не воюем. Мы выполняем задачи специальной военной операции. Это принципиально разные вещи.» [С линии фронта под Авдеевкой]</div>
-        <div class="qc-meta">
-          <div class="qc-year">2023</div>
-          <div class="qc-tags"><span class="qc-tag">Война</span><span class="qc-tag">Нарратив</span></div>
-        </div>
-      </div>
+        <div class="quote-card"><div class="quote-text">«Херсон, Запорожье — это Россия. Навсегда.»</div><div class="qc-person"><a href="matvienko.html">Валентина Матвиенко</a></div><div class="qc-date">2022</div></div>
     </div>
   </div>
 
@@ -455,7 +452,6 @@
     </div>
   </div>
 
-</div>
 
   <!-- 2024-2025 -->
   <div class="theme-section">
@@ -579,6 +575,10 @@
   <div class="stat-cell">
     <div class="stat-num">0</div>
     <div class="stat-label">раз сказано «война»</div>
+  </div>
+</div>
+<div class="quotes-wrap">
+<div class="quotes-grid">
           <div class="quote-card"><div class="quote-text">«Россия не ведёт войну. Россия проводит специальную военную операцию по защите мирных жителей Донбасса от восьми лет геноцида.»</div><div class="qc-person"><a href="patrushev.html">Николай Патрушев</a></div><div class="qc-date">2022 — заявление Совета безопасности РФ</div></div>
         <div class="quote-card"><div class="quote-text">«Мы не можем допустить появления враждебного России государства на нашей исторической территории. Это вопрос выживания.»</div><div class="qc-person"><a href="matvienko.html">Валентина Матвиенко</a></div><div class="qc-date">2022 — интервью RT</div></div>
         <div class="quote-card"><div class="quote-text">«Те, кто распространяют "ЛГБТ-пропаганду" в интернете среди несовершеннолетних, должны нести уголовную ответственность. Это не цензура — это защита детей.»</div><div class="qc-person"><a href="emizulina.html">Екатерина Мизулина</a></div><div class="qc-date">2023 — пресс-конференция ЛБИ</div></div>
@@ -631,19 +631,22 @@
     var text = inp ? inp.value.trim().toLowerCase() : '';
     document.querySelectorAll('.quote-card').forEach(function(card){
       var pname = (card.querySelector('.qc-person')||{}).textContent||'';
-      var qtext = (card.querySelector('.quote-text')||{}).textContent||'';
+      var qtext = (card.querySelector('.quote-text, .qc-text')||{}).textContent||'';
       var qdate = (card.querySelector('.qc-date')||{}).textContent||'';
       var yr = parseInt((card.querySelector('.qc-year')||{}).textContent||'0');
       var matchP = !person || pname.trim() === person;
       var matchT = !text || qtext.toLowerCase().includes(text) || qdate.toLowerCase().includes(text);
-      var matchTopic = !activeTopic || (card.dataset.topic && card.dataset.topic.includes(activeTopic));
+      var tags = Array.prototype.map.call(card.querySelectorAll('.qc-tag'), function(t){ return t.textContent.trim(); });
+      var sec = card.closest('.theme-section');
+      var theme = sec ? ((sec.querySelector('.theme-label')||{}).textContent||'') : '';
+      var matchTopic = !activeTopic || tags.indexOf(activeTopic) >= 0 || theme.indexOf(activeTopic) >= 0;
       var matchYear = true;
       if (activeYear === 'pre') matchYear = yr > 0 && yr < 2022;
       else if (activeYear) matchYear = yr === parseInt(activeYear);
       card.style.display = (matchP && matchT && matchTopic && matchYear) ? '' : 'none';
     });
     // hide empty sections
-    document.querySelectorAll('.quotes-section').forEach(function(sec){
+    document.querySelectorAll('.quotes-section, .theme-section').forEach(function(sec){
       var visible = Array.from(sec.querySelectorAll('.quote-card')).some(function(c){ return c.style.display !== 'none'; });
       sec.style.display = visible ? '' : 'none';
     });

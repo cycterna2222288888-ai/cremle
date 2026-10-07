@@ -373,3 +373,15 @@ a.source-card:hover .source-card-title, a.source-card-d:hover .sc-title { color:
   .source-card-en, .source-card-d, .source-card { grid-column: 1 / -1; }
   .stat-val { font-size: 56px; }
 }
+
+/* timelines written without .timeline-entry wrappers: year + body sit directly on the grid */
+.timeline { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); }
+.timeline > .timeline-entry { grid-column: 1 / -1; }
+.timeline > .timeline-year { grid-column: 1 / span 3; border-top: 1px solid var(--rule); padding: 22px 0 30px; }
+.timeline > .timeline-body { grid-column: 4 / -1; border-top: 1px solid var(--rule); padding: 22px 0 30px; }
+.timeline > .timeline-body > * { max-width: 62ch; }
+@media (max-width: 900px) {
+  .timeline > .timeline-year { grid-column: 1 / -1; padding-bottom: 10px; }
+  .timeline > .timeline-body { grid-column: 2 / -1; border-top: 0; padding-top: 0; }
+  .quote-text, .person-quote blockquote, .quote-pull { text-indent: 0; }
+}

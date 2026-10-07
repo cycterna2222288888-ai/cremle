@@ -20,7 +20,7 @@ This project was built with a strict focus on **performance, accessibility, and 
 - **High-Performance Static Architecture:** Fully vanilla HTML/CSS/JS frontend. Zero render-blocking requests, resulting in perfect Core Web Vitals and a 100/100 Lighthouse performance score.
 - **Bilingual by Design (i18n):** Every single dossier and informational page is fully available in both English and Russian, expanding global reach.
 - **OSINT Data Structuring:** Complex relational data (e.g., sanction timelines, inter-personal connections) is mapped out using semantic HTML and custom CSS Grids.
-- **Advanced CSS Visuals:** Uses native SVG masking, radial gradients, CSS grid layouts, and typography (`Playfair Display` + `Inter`) to create a serious, editorial "investigative" UI—no Tailwind or Bootstrap required.
+- **Editorial design system:** A shared, framework-free design system (`css/kv.css`) — Cormorant Garamond for display, IBM Plex Sans / Mono for text and metadata, a 12-column asymmetric grid, one accent colour, sharp containers and thin rules. Dossiers (`css/dossier.css`), section pages (`css/pages.css`) and the homepage (`css/home.css`) build on it; `js/kv.js` adds the theme toggle, index sheet, scroll reveals and parallax.
 - **Automated Generation Pipeline:** Python scripting is utilized to parse data arrays, inject localized text, and programmatically generate over 70+ HTML pages, ensuring consistency across the platform.
 - **SEO & Social Ready:** Fully integrated Schema.org microdata, OpenGraph tags, dynamic XML sitemaps, and RSS feeds for optimal search engine indexing.
 
@@ -43,6 +43,9 @@ The project relies on a static generation approach, where Python scripts act as 
 ├── index.html, index-en.html        # Main catalog / landing pages
 ├── sanctions.html, quotes.html      # Data aggregation views
 ├── [person].html, [person]-en.html  # 70+ Individual bilingual dossiers
+├── css/                             # Design system: kv.css (core), dossier.css, pages.css, home.css
+├── js/kv.js                         # Shared interactions (theme, header, reveals, parallax)
+├── tools/                           # build-home.js (homepage), redesign.js (page migration)
 ├── templates/                       # Localized, optimized media assets
 └── scripts/                         # Python automation & generation scripts
 ```

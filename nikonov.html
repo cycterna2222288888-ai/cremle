@@ -280,8 +280,7 @@ window.addEventListener('scroll', function() {
     btn.addEventListener('click', function(){
       var text = bq.textContent.trim().replace(/\s+/g, ' ');
       var url = window.location.href;
-      navigator.clipboard.writeText(text + '
-— kremlin.voices | ' + url).then(function(){
+      navigator.clipboard.writeText(text + '\n— kremlin.voices | ' + url).then(function(){
         btn.textContent = 'Скопировано ✓';
         btn.classList.add('copied');
         setTimeout(function(){ btn.textContent = 'Скопировать цитату'; btn.classList.remove('copied'); }, 2000);

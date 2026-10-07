@@ -13,141 +13,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
-
-  :root {
-    --ink: #080808;
-    --paper: #ede8dc;
-    --red: #8b1a1a;
-    --red-dim: #5c1111;
-    --gray: #4a4a4a;
-    --light-gray: #bab3a0;
-    --rule: #1c1c1c;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { overflow-x: hidden; }
-  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
-
-  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
-  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .nav-back a:hover { opacity: 0.6; }
-
-  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
-  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
-  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
-  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
-
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
-  .section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
-  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px; }
-  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; flex: 1; }
-
-  /* NETWORK DIAGRAM */
-  .network-wrap { position: relative; width: 100%; aspect-ratio: 16/9; max-height: 560px; background: var(--ink); border: 1px solid var(--rule); overflow: hidden; }
-
-  .network-wrap svg { width: 100%; height: 100%; }
-
-  /* MATRIX */
-  .matrix-wrap { overflow-x: auto; }
-  .matrix { border-collapse: collapse; width: 100%; background: var(--rule); }
-  .matrix th, .matrix td { padding: 0; border: 1px solid var(--rule); }
-  .matrix th { background: var(--card-bg); }
-  .matrix-head { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); padding: 14px 12px; text-align: center; writing-mode: vertical-rl; transform: rotate(180deg); min-width: 50px; }
-  .matrix-row-head { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--paper); padding: 16px 20px; background: var(--card-bg); white-space: nowrap; font-weight: 700; min-width: 180px; }
-  .matrix-row-head a { color: var(--paper); text-decoration: none; }
-  .matrix-row-head a:hover { color: var(--red); }
-  .matrix-cell { background: var(--ink); padding: 12px 8px; text-align: center; font-size: 11px; }
-  .conn-yes { color: var(--red); font-weight: 500; }
-  .conn-label { font-size: 9px; color: var(--light-gray); display: block; margin-top: 2px; letter-spacing: 0.05em; }
-  .conn-self { background: #0c0000; }
-
-  /* CONNECTIONS LIST */
-  .conn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
-  .conn-card { background: var(--ink); padding: 36px 40px; }
-  .conn-pair { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
-  .conn-person { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--paper); text-decoration: none; }
-  .conn-person:hover { color: var(--red); }
-  .conn-divider { color: var(--red); opacity: 0.5; font-size: 20px; }
-  .conn-type { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); border: 1px solid var(--red-dim); padding: 3px 8px; display: inline-block; margin-bottom: 12px; }
-  .conn-desc { font-size: 13px; color: var(--light-gray); line-height: 1.8; }
-
-  /* HIERARCHY */
-  .hierarchy { position: relative; padding: 40px 0; }
-  .hier-row { display: flex; align-items: flex-start; gap: 0; margin-bottom: 2px; }
-  .hier-node { background: var(--ink); border: 1px solid var(--rule); border-top: 3px solid var(--red); padding: 20px 24px; flex: 1; }
-  .hier-node.top { border-top-color: var(--red); background: #0d0000; }
-  .hier-sep { width: 2px; background: var(--rule); }
-  .hier-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
-  .hier-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--paper); }
-  .hier-name a { color: var(--paper); text-decoration: none; }
-  .hier-name a:hover { color: var(--red); }
-  .hier-role { font-size: 11px; color: var(--light-gray); margin-top: 4px; }
-  .hier-arrow { text-align: center; padding: 8px; color: var(--red); opacity: 0.4; font-size: 20px; }
-
-  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
-
-  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
-  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
-
-  /* INTERACTIVE GRAPH */
-  .graph-controls { display:flex; gap:2px; margin-bottom:14px; flex-wrap:wrap; /* background:var(--rule); */ }
-  .graph-btn { background:var(--ink); border:1px solid var(--rule); font-family:'Inter',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--light-gray); padding:11px 18px; cursor:pointer; transition:all 0.2s; white-space:nowrap; }
-  .graph-btn:hover { color:var(--paper); background:#111; }
-  .graph-btn.active { background:#0d0000; color:var(--red); }
-  .graph-btn[data-type="работа"].active { color:#c0392b; }
-  .graph-btn[data-type="влияние"].active { color:#e67e22; }
-  .graph-btn[data-type="семья"].active { color:#9b59b6; }
-  .graph-btn[data-type="финансы"].active { color:#27ae60; }
-  #graph-container { position:relative; width:100%; height:600px; background: var(--ink); border:1px solid var(--rule); overflow:hidden; }
-  #graph-svg { width:100%; height:100%; cursor:grab; }
-  #graph-svg:active { cursor:grabbing; }
-  #graph-tooltip { position:absolute; pointer-events:none; background:rgba(4,4,4,0.96); border:1px solid var(--red-dim); padding:10px 14px; font-size:12px; color:var(--paper); opacity:0; transition:opacity 0.12s; max-width:200px; z-index:10; line-height:1.5; }
-  .graph-legend { display:flex; gap:20px; margin-top:14px; flex-wrap:wrap; }
-  .legend-item { display:flex; align-items:center; gap:7px; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--light-gray); }
-  .legend-line { width:22px; height:2px; flex-shrink:0; }
-  .legend-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
-
-  @media (max-width: 900px) {
-    .masthead, .container, .nav-back, .footer { padding-left: 24px; padding-right: 24px; }
-    .conn-grid { grid-template-columns: 1fr; }
-  }
-
-  .topbar { padding: 14px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .topbar-left a:hover { opacity: 0.6; }
-  .topbar-right { display: flex; align-items: center; gap: 20px; }
-  .lang-switch { display: flex; border: 1px solid #333; overflow: hidden; }
-  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; padding: 6px 12px; transition: all 0.2s; }
-  .lang-switch a.active { color: var(--paper); background: #1c1c1c; }
-  .lang-switch a:hover { color: var(--paper); background: #111; }
-
-  .section-nav {
-    border-bottom: 1px solid var(--rule);
-    padding: 0 60px;
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .section-nav::-webkit-scrollbar { display: none; }
-  .section-nav a {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #555;
-    text-decoration: none;
-    padding: 14px 18px;
-    white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .section-nav a:hover { color: var(--paper); }
-  .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
-  @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
-</style>
 <meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <link rel="canonical" href="https://cycterna2222288888-ai.github.io/cremle/connections.html">
@@ -155,124 +20,33 @@
 <link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/connections-en.html">
 <link rel="alternate" hreflang="x-default" href="https://cycterna2222288888-ai.github.io/cremle/connections.html">
 
-<style id="light-mode-css" media="(prefers-color-scheme:light)">
-  /* Injected by theme toggle — applied when data-theme="light" */
-</style>
-<style>
-[data-theme="light"] {
-  --ink: #f2ede3;
-  --paper: #111;
-  --light-gray: #4a4a4a;
-  --rule: #ccc5b5;
-  --card-bg: #e8e3d8;
-}
-[data-theme="light"] body { background: #f2ede3; color: #111; }
-[data-theme="light"] .topbar { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] .card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .card-name { color: #111; }
-[data-theme="light"] .card-role { color: #4a4a4a; }
-[data-theme="light"] .quote-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .quote-text { color: #111; }
-[data-theme="light"] .section { border-color: #ccc5b5; }
-[data-theme="light"] .masthead { border-color: #ccc5b5; }
-[data-theme="light"] .timeline-year { border-color: #ccc5b5; }
-[data-theme="light"] .hero-left { background: #f2ede3; }
-[data-theme="light"] .hero-right { background: #d8d3c8; }
-[data-theme="light"] .sanctions-table th { background: #e0dbd0; }
-[data-theme="light"] .sanctions-table td { border-color: #ccc5b5; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-[data-theme="light"] .source-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
-[data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] #progress-bar { background: #8b1a1a; }
-
-[data-theme="light"] .conn-self { background: #e8d3d3; color: #8b1a1a; }
-[data-theme="light"] .hier-node.top { background: #e8d3d3; }
-[data-theme="light"] .graph-btn.active { background: #e8d3d3; }
-</style>
-<style>
-/* Light mode text readability fixes */
-[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
-[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
-[data-theme="light"] .card:hover { background: #d8d3c8; }
-[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
-[data-theme="light"] .related-card:hover { background: #d8d3c8; }
-[data-theme="light"] .person-quote { background: #e8e3d8; }
-[data-theme="light"] .meme-card { background: #e8e3d8; }
-</style>
-
-<style id="light-mode-hovers">
-/* Additional light mode hover fixes */
-
-[data-theme="light"] .nav-page-link:hover { background: #d8d3c8; color: #111; }
-[data-theme="light"] .flt-btn:hover, [data-theme="light"] .flt-btn.active { background: #e8d3d3; color: #8b1a1a; }
-[data-theme="light"] .share-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .copy-quote-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .back-to-top { color: #f2ede3; }
-[data-theme="light"] .back-to-top:hover { color: #fff; background: #6e1414; }
-[data-theme="light"] .graph-btn:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-</style>
-
-<style id="mobile-fixes">
-  @media (max-width: 480px) {
-    .graph-controls { background: transparent !important; gap: 6px !important; flex-wrap: nowrap !important; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
-    .graph-btn { flex-shrink: 0; border: 1px solid var(--rule) !important; border-radius: 4px; }
-    .masthead { padding: 40px 20px 28px !important; }
-    .masthead-title { font-size: clamp(2rem, 8vw, 3rem) !important; }
-    .container, .selector-wrap, .compare-section, .nav-back, .footer { padding-left: 20px !important; padding-right: 20px !important; }
-    .topbar { padding-left: 16px !important; padding-right: 16px !important; flex-wrap: nowrap !important; gap: 6px !important; overflow-x: auto !important; }
-    .section { padding: 40px 0 !important; }
-    .overview .ov-card { padding: 24px 20px !important; }
-    .cg-label { display: block !important; margin-top: 16px; font-weight: 700; background: transparent !important; padding: 10px 0 4px !important; border-bottom: 1px solid var(--red); color: var(--red) !important; }
-    .cg-head { display: block !important; padding: 16px 20px !important; }
-    .compare-grid { gap: 12px !important; }
-    .cg-cell { padding: 12px 20px !important; }
-    .nav-pages { padding: 24px 20px !important; }
-    .quote-strip { padding: 40px 20px !important; }
-    .assets-grid { gap: 16px !important; background: transparent !important; }
-    .asset-card { padding: 24px !important; }
-    .person-info { padding-bottom: 12px !important; }
-    .timeline-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .timeline-event { padding: 24px !important; }
-    .source-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .source-card { padding: 24px !important; }
-  }
-</style>
-
-<style id="topbar-clean-fix">
-  @media (max-width: 480px) {
-    .topbar { flex-wrap: nowrap !important; gap: 8px !important; overflow-x: auto !important; padding: 10px 16px !important; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .topbar::-webkit-scrollbar { display: none; }
-    .topbar-left { flex-shrink: 0; }
-    .topbar-right { flex-shrink: 0; gap: 8px !important; }
-    .hide-on-mobile { display: none !important; }
-    #theme-toggle { padding: 6px 8px !important; font-size: 9px !important; border: 1px solid var(--rule) !important; }
-    .lang-switch a { padding: 6px 8px !important; font-size: 9px !important; }
-    .report-link { display: none !important; }
-  }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="css/kv.css">
+<link rel="stylesheet" href="css/pages.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}</script>
+<script src="js/kv.js" defer></script>
 </head>
 
 
-<body>
+<body class="page-connections">
 
-<div class="topbar"><div class="topbar-left"><a href="index.html">← <span class="hide-on-mobile">Все досье</span></a></div><div class="topbar-right"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button><div class="lang-switch"><a href="connections.html" class="active">RU</a><a href="connections-en.html">EN</a></div></div></div>
+<header class="site-head">
+  <a class="brand" href="index.html"><span class="brand-mark">Голоса <i>Кремля</i></span><span class="brand-sub">Документальный архив</span></a>
+  <nav class="site-nav" aria-label="Разделы архива"><a href="index.html#catalogue">Досье</a><a href="quotes.html">Цитатник</a><a href="sanctions.html">Санкции</a><a href="timeline.html">Хронология</a><a href="connections.html" class="is-on">Связи</a><button type="button" class="menu-link" data-menu-open aria-controls="menu" aria-expanded="false">Указатель +</button></nav>
+  <div class="site-tools">
+    <a class="tip-link" href="submit.html">Сообщить</a>
+    <div class="lang"><a href="connections.html" hreflang="ru" class="is-on" aria-current="true">RU</a><a href="connections-en.html" hreflang="en">EN</a></div>
+    <button type="button" id="theme-toggle"></button>
+    <button type="button" class="menu-btn" data-menu-open aria-controls="menu" aria-expanded="false">Указатель<span class="bars"></span></button>
+  </div>
+</header>
+<div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Разделы архива">
+  <div class="ms-top"><span class="brand-mark">Голоса <i>Кремля</i></span><button type="button" class="ms-close" data-menu-close>Закрыть ✕</button></div>
+  <ol><li><a href="index.html"><span>00</span>Главная</a></li><li><a href="quotes.html"><span>01</span>Цитатник</a></li><li><a href="sanctions.html"><span>02</span>Санкции</a></li><li><a href="timeline.html"><span>03</span>Хронология</a></li><li><a href="connections.html" class="is-on"><span>04</span>Связи</a></li><li><a href="compare.html"><span>05</span>Сравнить</a></li><li><a href="tv-propaganda.html"><span>06</span>Пропаганда</a></li><li><a href="media-empire.html"><span>07</span>Медиаимперия</a></li><li><a href="assets.html"><span>08</span>Владения</a></li><li><a href="glossary.html"><span>09</span>Глоссарий</a></li><li><a href="sources.html"><span>10</span>Источники</a></li><li><a href="about.html"><span>11</span>О проекте</a></li></ol>
+  <div class="ms-foot label"><a href="index.html#catalogue">Досье →</a><a href="submit.html">Сообщить →</a><span><a href="connections.html">RU</a> / <a href="connections-en.html">EN</a></span></div>
+</div>
 
-<nav class="section-nav">
-  <a href="quotes.html">Цитатник</a>
-  <a href="sanctions.html">Санкции</a>
-  <a href="timeline.html">Хронология</a>
-  <a href="connections.html" class="active">Связи</a>
-  <a href="compare.html">Сравнить</a>
-  <a href="tv-propaganda.html">Пропаганда</a>
-  <a href="media-empire.html">Медиаимперия</a>
-  <a href="assets.html">Владения</a>
-  <a href="glossary.html">Глоссарий</a>
-  <a href="sources.html">Источники</a>
-  <a href="about.html">О проекте</a>
-</nav>
+
 
 <div class="masthead">
   <div class="masthead-eyebrow">Аналитика · Открытые источники</div>
@@ -303,12 +77,12 @@
     </div>
 
     <div class="graph-legend">
-      <div class="legend-item"><div class="legend-line" style="background:#c0392b"></div>Работа / институт</div>
-      <div class="legend-item"><div class="legend-line" style="background:#e67e22"></div>Влияние / идеология</div>
-      <div class="legend-item"><div class="legend-line" style="background:#9b59b6"></div>Семья / личное</div>
-      <div class="legend-item"><div class="legend-line" style="background:#27ae60"></div>Финансы</div>
-      <div class="legend-item" style="margin-left:16px"><div class="legend-dot" style="background:#8b1a1a;border:1px solid #c0392b"></div>Институт</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#1a1a1a;border:1px solid #4a4540"></div>Персонаж</div>
+      <div class="legend-item"><div class="legend-line" style="background:var(--accent)"></div>Работа / институт</div>
+      <div class="legend-item"><div class="legend-line" style="background:var(--fg-2)"></div>Влияние / идеология</div>
+      <div class="legend-item"><div class="legend-line" style="background:repeating-linear-gradient(90deg,var(--accent) 0 2px,transparent 2px 7px)"></div>Семья / личное</div>
+      <div class="legend-item"><div class="legend-line" style="background:repeating-linear-gradient(90deg,var(--fg-2) 0 7px,transparent 7px 11px)"></div>Финансы</div>
+      <div class="legend-item" style="margin-left:16px"><div class="legend-dot" style="background:var(--bg);border:1px solid var(--accent)"></div>Институт</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--rule);border:1px solid var(--fg-2)"></div>Персонаж</div>
     </div>
   </div>
 </div>
@@ -588,7 +362,7 @@
       <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:var(--red);font-size:16px">★</span> Семейная / личная связь</div>
       <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:var(--red);font-size:16px">●</span> Профессиональная / идеологическая связь</div>
       <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:var(--red);font-size:16px">◆</span> Институциональная / иерархическая связь</div>
-      <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:#222;font-size:16px">—</span> Нет прямой связи</div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light-gray)"><span style="color:var(--rule);font-size:16px">—</span> Нет прямой связи</div>
     </div>
 
     <div class="matrix-wrap">
@@ -1017,11 +791,17 @@
   </div>
 </div>
 
-<div class="footer">
-  <div class="footer-logo">Голоса Кремля</div>
+<footer class="site-foot">
+  <div class="sf-grid">
+    <p class="sf-note"><span class="label">Независимый архив</span>Все материалы составлены на основе открытых источников. Факты верифицированы публикациями СМИ.</p>
+    <ul class="sf-links"><li><a href="quotes.html">Цитатник</a></li><li><a href="sanctions.html">Санкции</a></li><li><a href="timeline.html">Хронология</a></li><li><a href="connections.html">Связи</a></li><li><a href="compare.html">Сравнить</a></li><li><a href="tv-propaganda.html">Пропаганда</a></li><li><a href="media-empire.html">Медиаимперия</a></li><li><a href="assets.html">Владения</a></li><li><a href="glossary.html">Глоссарий</a></li><li><a href="sources.html">Источники</a></li><li><a href="about.html">О проекте</a></li></ul>
+    <div class="sf-meta"><a href="submit.html">Сообщить</a><a href="rss.xml">RSS</a><a href="index-en.html">English version</a></div>
+  </div>
+  <div class="sf-colophon"><div class="footer-logo">Голоса Кремля</div>
   <span>Аналитика на основе открытых источников · 2024</span>
-  <span>Все факты верифицированы публикациями СМИ</span>
-</div>
+  <span>Все факты верифицированы публикациями СМИ</span></div>
+  <span class="sf-word" aria-hidden="true">Голоса <i>Кремля</i></span>
+</footer>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
@@ -1136,7 +916,8 @@
     {source:'slutsky',      target:'gosduma',   type:'работа',   w:3},
   ];
 
-  var LINK_COLOR = {работа:'#c0392b', влияние:'#e67e22', семья:'#9b59b6', финансы:'#27ae60'};
+  var LINK_COLOR = {работа:'var(--accent)', влияние:'var(--fg-2)', семья:'var(--accent)', финансы:'var(--fg-2)'};
+  var LINK_DASH = {работа:null, влияние:null, семья:'2 5', финансы:'7 4'};
 
   var container = document.getElementById('graph-container');
   var W = container.clientWidth || 900;
@@ -1156,9 +937,10 @@
     .force('collide', d3.forceCollide().radius(function(d){ return d.size + 18; }));
 
   var link = g.append('g').selectAll('line').data(links).join('line')
-    .attr('stroke', function(d){ return LINK_COLOR[d.type]; })
+    .style('stroke', function(d){ return LINK_COLOR[d.type]; })
+    .attr('stroke-dasharray', function(d){ return LINK_DASH[d.type]; })
     .attr('stroke-width', function(d){ return d.w * 0.9; })
-    .attr('stroke-opacity', 0.45);
+    .attr('stroke-opacity', 0.6);
 
   var node = g.append('g').selectAll('g').data(nodes).join('g')
     .style('cursor', function(d){ return d.url ? 'pointer' : 'default'; })
@@ -1169,17 +951,17 @@
 
   node.append('circle')
     .attr('r', function(d){ return d.size; })
-    .attr('fill', function(d){ return d.type === 'org' ? '#1c0000' : '#111'; })
-    .attr('stroke', function(d){ return d.type === 'org' ? '#8b1a1a' : '#3a3530'; })
+    .style('fill', function(d){ return d.type === 'org' ? 'var(--bg)' : 'var(--bg-3)'; })
+    .style('stroke', function(d){ return d.type === 'org' ? 'var(--accent)' : 'var(--fg-3)'; })
     .attr('stroke-width', function(d){ return d.type === 'org' ? 1.5 : 1; });
 
   node.append('text')
     .text(function(d){ return d.label; })
     .attr('text-anchor', 'middle')
     .attr('dy', function(d){ return d.size + 13; })
-    .attr('font-family', 'Inter, sans-serif')
+    .attr('font-family', 'IBM Plex Mono, monospace')
     .attr('font-size', function(d){ return d.type === 'org' ? 10 : 9; })
-    .attr('fill', function(d){ return d.type === 'org' ? '#8b1a1a' : '#9a9080'; })
+    .style('fill', function(d){ return d.type === 'org' ? 'var(--accent)' : 'var(--fg-2)'; })
     .attr('letter-spacing', '0.04em')
     .style('pointer-events', 'none');
 
@@ -1187,8 +969,8 @@
 
   node.on('mouseenter', function(e, d){
     tip.style.opacity = '1';
-    tip.innerHTML = '<strong style="font-family:\'Playfair Display\',serif;font-size:13px;color:#ede8dc">' + d.label + '</strong><br><span style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#8b1a1a">' + d.role + '</span>' + (d.url ? '<br><span style="font-size:9px;color:#555;margin-top:4px;display:block">Открыть досье →</span>' : '');
-    d3.select(this).select('circle').attr('stroke','#8b1a1a').attr('stroke-width', 2);
+    tip.innerHTML = '<strong style="font-family:var(--serif);font-size:13px;color:var(--fg)">' + d.label + '</strong><br><span style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent)">' + d.role + '</span>' + (d.url ? '<br><span style="font-size:9px;color:var(--fg-3);margin-top:4px;display:block">Открыть досье →</span>' : '');
+    d3.select(this).select('circle').style('stroke','var(--accent)').attr('stroke-width', 2);
   })
   .on('mousemove', function(e){
     var rect = container.getBoundingClientRect();
@@ -1201,7 +983,7 @@
   .on('mouseleave', function(e, d){
     tip.style.opacity = '0';
     d3.select(this).select('circle')
-      .attr('stroke', d.type === 'org' ? '#8b1a1a' : '#3a3530')
+      .style('stroke', d.type === 'org' ? 'var(--accent)' : 'var(--fg-3)')
       .attr('stroke-width', d.type === 'org' ? 1.5 : 1);
   })
   .on('click', function(e, d){ if (d.url) window.location.href = d.url; });
@@ -1238,13 +1020,5 @@
 })();
 </script>
 
-<script>
-(function(){
-  var t=localStorage.getItem('theme')||'dark';
-  document.documentElement.dataset.theme=t;
-  var btn=document.getElementById('theme-toggle');
-  if(btn){btn.textContent=t==='light'?'☽ Dark':'☀ Light';btn.title=t==='light'?'Switch to dark':'Switch to light';}
-})();
-</script>
 </body>
 </html>

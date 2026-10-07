@@ -13,155 +13,30 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
-
-  :root {
-    --ink: #080808;
-    --paper: #ede8dc;
-    --red: #8b1a1a;
-    --red-dim: #5c1111;
-    --gray: #4a4a4a;
-    --light-gray: #bab3a0;
-    --rule: #1c1c1c;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { overflow-x: hidden; }
-  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
-
-  .topbar { border-bottom: 1px solid var(--rule); padding: 16px 60px; display: flex; justify-content: space-between; align-items: center; background: var(--ink); position: sticky; top: 0; z-index: 100; }
-  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; transition: opacity 0.2s; }
-  .topbar-left a:hover { opacity: 0.6; }
-  .topbar-right { display: flex; align-items: center; gap: 20px; }
-  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
-  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
-  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
-
-  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); text-align: center; }
-  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
-  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
-  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 800px; margin: 0 auto; }
-
-  .container { max-width: 800px; margin: 0 auto; padding: 60px; }
-  .content-block { margin-bottom: 48px; }
-  .content-block h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; margin-bottom: 24px; }
-  .content-block h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--paper); margin-bottom: 16px; margin-top: 32px; }
-  .content-block p { font-size: 16px; color: var(--light-gray); line-height: 1.9; margin-bottom: 16px; }
-  .content-block ul { margin-bottom: 16px; padding-left: 20px; color: var(--light-gray); font-size: 16px; line-height: 1.9; }
-  .content-block li { margin-bottom: 12px; }
-  .content-block li strong { color: var(--paper); font-weight: 500; }
-  
-  .note-box { background: #0e0e0e; border: 1px solid #1a0000; border-left: 3px solid var(--red); padding: 24px; margin-bottom: 32px; }
-  .note-box p { margin-bottom: 0; font-size: 15px; }
-  .note-box a { color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red-dim); transition: all 0.2s; }
-  .note-box a:hover { color: var(--paper); border-color: var(--paper); }
-
-  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
-
-  @media (max-width: 768px) {
-    .container { padding: 40px 20px; }
-    .topbar { padding: 12px 20px; }
-    .masthead { padding: 60px 20px; }
-  }
-  .section-nav {
-    border-bottom: 1px solid var(--rule);
-    padding: 0 60px;
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
-    background: var(--ink);
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .section-nav::-webkit-scrollbar { display: none; }
-  .section-nav a {
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--light-gray);
-    text-decoration: none;
-    padding: 16px 20px;
-    white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .section-nav a:hover { color: var(--paper); }
-  .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
-  @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
-</style>
-<style>
-[data-theme="light"] { --ink:#f2ede3; --paper:#111; --light-gray:#4a4a4a; --rule:#ccc5b5; }
-[data-theme="light"] body { background:#f2ede3; color:#111; }
-[data-theme="light"] .topbar { background:#f2ede3; border-color:#ccc5b5; }
-[data-theme="light"] .note-box { background:#e8e3d8; border-color:#ccc5b5; }
-[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
-</style>
-
-<style id="mobile-fixes">
-  @media (max-width: 480px) {
-    .masthead { padding: 40px 20px 28px !important; }
-    .masthead-title { font-size: clamp(2rem, 8vw, 3rem) !important; }
-    .container, .selector-wrap, .compare-section, .nav-back, .footer { padding-left: 20px !important; padding-right: 20px !important; }
-    .topbar { padding-left: 16px !important; padding-right: 16px !important; flex-wrap: nowrap !important; gap: 6px !important; overflow-x: auto !important; }
-    .section { padding: 40px 0 !important; }
-    .overview .ov-card { padding: 24px 20px !important; }
-    .cg-label { display: block !important; margin-top: 16px; font-weight: 700; background: transparent !important; padding: 10px 0 4px !important; border-bottom: 1px solid var(--red); color: var(--red) !important; }
-    .cg-head { display: block !important; padding: 16px 20px !important; }
-    .compare-grid { gap: 12px !important; }
-    .cg-cell { padding: 12px 20px !important; }
-    .nav-pages { padding: 24px 20px !important; }
-    .quote-strip { padding: 40px 20px !important; }
-    .assets-grid { gap: 16px !important; background: transparent !important; }
-    .asset-card { padding: 24px !important; }
-    .person-info { padding-bottom: 12px !important; }
-    .timeline-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .timeline-event { padding: 24px !important; }
-    .source-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .source-card { padding: 24px !important; }
-  }
-</style>
-
-<style id="topbar-clean-fix">
-  @media (max-width: 480px) {
-    .topbar { flex-wrap: nowrap !important; gap: 8px !important; overflow-x: auto !important; padding: 10px 16px !important; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .topbar::-webkit-scrollbar { display: none; }
-    .topbar-left { flex-shrink: 0; }
-    .topbar-right { flex-shrink: 0; gap: 8px !important; }
-    .hide-on-mobile { display: none !important; }
-    #theme-toggle { padding: 6px 8px !important; font-size: 9px !important; border: 1px solid var(--rule) !important; }
-    .lang-switch a { padding: 6px 8px !important; font-size: 9px !important; }
-    .report-link { display: none !important; }
-  }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="css/kv.css">
+<link rel="stylesheet" href="css/pages.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}</script>
+<script src="js/kv.js" defer></script>
 </head>
 
 
-<body>
+<body class="page-tv-propaganda">
 
-<div class="topbar">
-  <div class="topbar-left"><a href="index-en.html">← <span class="hide-on-mobile">Home</span></a></div>
-
-<nav class="section-nav">
-  <a href="quotes-en.html">Quotes</a>
-  <a href="sanctions-en.html">Sanctions</a>
-  <a href="timeline-en.html">Timeline</a>
-  <a href="connections-en.html">Connections</a>
-  <a href="compare-en.html">Compare</a>
-  <a href="tv-propaganda-en.html" class="active">Propaganda</a>
-  <a href="media-empire-en.html">Media Empire</a>
-  <a href="assets-en.html">Assets</a>
-  <a href="glossary-en.html">Glossary</a>
-  <a href="sources-en.html">Sources</a>
-  <a href="about-en.html">About</a>
-</nav>
-  <div class="topbar-right">
-    <button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);})()" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;">☀ Light</button>
-    <div class="lang-switch">
-      <a href="tv-propaganda.html">RU</a>
-      <a href="tv-propaganda-en.html" class="active">EN</a>
-    </div>
+<header class="site-head">
+  <a class="brand" href="index-en.html"><span class="brand-mark">Kremlin <i>Voices</i></span><span class="brand-sub">Documentary archive</span></a>
+  <nav class="site-nav" aria-label="Archive sections"><a href="index-en.html#catalogue">Dossiers</a><a href="quotes-en.html">Quotes</a><a href="sanctions-en.html">Sanctions</a><a href="timeline-en.html">Timeline</a><a href="connections-en.html">Connections</a><button type="button" class="menu-link" data-menu-open aria-controls="menu" aria-expanded="false">Index +</button></nav>
+  <div class="site-tools">
+    <a class="tip-link" href="submit-en.html">Submit a tip</a>
+    <div class="lang"><a href="tv-propaganda.html" hreflang="ru">RU</a><a href="tv-propaganda-en.html" hreflang="en" class="is-on" aria-current="true">EN</a></div>
+    <button type="button" id="theme-toggle"></button>
+    <button type="button" class="menu-btn" data-menu-open aria-controls="menu" aria-expanded="false">Index<span class="bars"></span></button>
   </div>
+</header>
+<div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Archive sections">
+  <div class="ms-top"><span class="brand-mark">Kremlin <i>Voices</i></span><button type="button" class="ms-close" data-menu-close>Close ✕</button></div>
+  <ol><li><a href="index-en.html"><span>00</span>Home</a></li><li><a href="quotes-en.html"><span>01</span>Quotes</a></li><li><a href="sanctions-en.html"><span>02</span>Sanctions</a></li><li><a href="timeline-en.html"><span>03</span>Timeline</a></li><li><a href="connections-en.html"><span>04</span>Connections</a></li><li><a href="compare-en.html"><span>05</span>Compare</a></li><li><a href="tv-propaganda-en.html" class="is-on"><span>06</span>Propaganda</a></li><li><a href="media-empire-en.html"><span>07</span>Media Empire</a></li><li><a href="assets-en.html"><span>08</span>Assets</a></li><li><a href="glossary-en.html"><span>09</span>Glossary</a></li><li><a href="sources-en.html"><span>10</span>Sources</a></li><li><a href="about-en.html"><span>11</span>About</a></li></ol>
+  <div class="ms-foot label"><a href="index-en.html#catalogue">Dossiers →</a><a href="submit-en.html">Submit a tip →</a><span><a href="tv-propaganda.html">RU</a> / <a href="tv-propaganda-en.html">EN</a></span></div>
 </div>
 
 <header class="masthead">
@@ -228,9 +103,15 @@
 
 </main>
 
-<footer class="footer">
-  <div>Kremlin Voices · Propaganda Archive</div>
-  <div>2024</div>
+<footer class="site-foot">
+  <div class="sf-grid">
+    <p class="sf-note"><span class="label">Independent archive</span>Compiled from open sources. All facts verified by published media reports.</p>
+    <ul class="sf-links"><li><a href="quotes-en.html">Quotes</a></li><li><a href="sanctions-en.html">Sanctions</a></li><li><a href="timeline-en.html">Timeline</a></li><li><a href="connections-en.html">Connections</a></li><li><a href="compare-en.html">Compare</a></li><li><a href="tv-propaganda-en.html">Propaganda</a></li><li><a href="media-empire-en.html">Media Empire</a></li><li><a href="assets-en.html">Assets</a></li><li><a href="glossary-en.html">Glossary</a></li><li><a href="sources-en.html">Sources</a></li><li><a href="about-en.html">About</a></li></ul>
+    <div class="sf-meta"><a href="submit-en.html">Submit a tip</a><a href="rss-en.xml">RSS</a><a href="index.html">Русская версия</a></div>
+  </div>
+  <div class="sf-colophon"><div>Kremlin Voices · Propaganda Archive</div>
+  <div>2024</div></div>
+  <span class="sf-word" aria-hidden="true">Kremlin <i>Voices</i></span>
 </footer>
 
 <script>

@@ -15,272 +15,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
-
-  :root {
-    --ink: #080808;
-    --paper: #ede8dc;
-    --red: #8b1a1a;
-    --red-dim: #5c1111;
-    --light-gray: #bab3a0;
-    --rule: #1c1c1c;
-    --card-bg: #0e0e0e;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { overflow-x: hidden; }
-  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
-
-  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
-  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .nav-back a:hover { opacity: 0.6; }
-
-  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
-  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
-  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
-  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
-
-  /* FILTER BAR */
-  .filter-bar {
-    padding: 0 60px;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    gap: 0;
-    flex-wrap: wrap;
-    background: var(--rule);
-  }
-
-  .filter-btn {
-    background: var(--card-bg);
-    border: none;
-    padding: 14px 22px;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--light-gray);
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    transition: background 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
-
-  .filter-btn:hover, .filter-btn.active { background: #0d0000; color: var(--red); }
-
-  /* QUOTES GRID */
-  .quotes-wrap { padding: 60px; }
-
-  .theme-section { margin-bottom: 80px; }
-
-  .theme-label {
-    font-size: 10px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .theme-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-  }
-
-  .quotes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: var(--rule);
-  }
-
-  .quote-card {
-    background: var(--card-bg);
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .quote-card::before {
-    content: '\201C';
-    position: absolute;
-    top: -10px;
-    right: 20px;
-    font-family: 'Playfair Display', serif;
-    font-size: 160px;
-    color: var(--red);
-    opacity: 0.05;
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .qc-person {
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--red);
-  }
-
-  .qc-person a { color: var(--red); text-decoration: none; }
-  .qc-person a:hover { opacity: 0.7; }
-
-  .qc-text {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: clamp(15px, 1.5vw, 19px);
-    color: var(--paper);
-    line-height: 1.6;
-    flex: 1;
-  }
-
-  .qc-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 12px;
-    border-top: 1px solid var(--rule);
-    padding-top: 16px;
-    margin-top: auto;
-  }
-
-  .qc-year {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: #111;
-    line-height: 1;
-  }
-
-  .qc-tags {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-
-  .qc-tag {
-    font-size: 8px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border: 1px solid var(--red-dim);
-    color: var(--red);
-    padding: 3px 7px;
-  }
-
-  /* FEATURED QUOTE */
-  .featured-quote {
-    border-left: 4px solid var(--red);
-    padding: 48px 60px;
-    background: var(--card-bg);
-    margin-bottom: 2px;
-  }
-
-  .fq-text {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: clamp(22px, 3vw, 36px);
-    color: var(--paper);
-    line-height: 1.5;
-    margin-bottom: 24px;
-  }
-
-  .fq-cite {
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--red);
-  }
-
-  /* STATS */
-  .stats-bar {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    background: var(--rule);
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .stat-cell {
-    background: var(--card-bg);
-    padding: 32px 40px;
-    text-align: center;
-  }
-
-  .stat-cell + .stat-cell { border-left: 1px solid var(--rule); }
-
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 44px;
-    font-weight: 700;
-    color: var(--red);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--light-gray);
-    margin-top: 10px;
-  }
-
-  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
-  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
-
-  @media (max-width: 900px) {
-    .masthead, .filter-bar, .quotes-wrap, .featured-quote, .stats-bar, .footer, .nav-back { padding-left: 24px; padding-right: 24px; }
-    .quotes-grid { grid-template-columns: 1fr; }
-    .stats-bar { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  .topbar { padding: 14px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .topbar-left a:hover { opacity: 0.6; }
-  .topbar-right { display: flex; align-items: center; gap: 20px; }
-  .lang-switch { display: flex; border: 1px solid #333; overflow: hidden; }
-  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; padding: 6px 12px; transition: all 0.2s; }
-  .lang-switch a.active { color: var(--paper); background: #1c1c1c; }
-  .lang-switch a:hover { color: var(--paper); background: var(--rule); }
-
-  .section-nav {
-    border-bottom: 1px solid var(--rule);
-    padding: 0 60px;
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .section-nav::-webkit-scrollbar { display: none; }
-  .section-nav a {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #555;
-    text-decoration: none;
-    padding: 14px 18px;
-    white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .section-nav a:hover { color: var(--paper); }
-  .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
-  @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
-
-  .quotes-filter { padding:0 60px 40px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
-  .qf-label { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:#444; }
-  .qf-select { background: var(--card-bg); border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:11px; font-weight:300; padding:8px 14px; outline:none; cursor:pointer; }
-  .qf-select:focus { border-color:#555; }
-  .qf-input { background: var(--card-bg); border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:11px; padding:8px 14px; outline:none; width:200px; }
-  .qf-input::placeholder { color:#444; }
-  @media(max-width:768px){ .quotes-filter { padding:0 20px 32px; } .qf-input { width:140px; } }
-</style>
 <meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <link rel="canonical" href="https://cycterna2222288888-ai.github.io/cremle/quotes.html">
@@ -288,127 +22,33 @@
 <link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/quotes-en.html">
 <link rel="alternate" hreflang="x-default" href="https://cycterna2222288888-ai.github.io/cremle/quotes.html">
 
-<style id="light-mode-css" media="(prefers-color-scheme:light)">
-  /* Injected by theme toggle — applied when data-theme="light" */
-</style>
-<style>
-[data-theme="light"] {
-  --ink: #f2ede3;
-  --paper: #111;
-  --light-gray: #4a4a4a;
-  --rule: #ccc5b5;
-  --card-bg: #e8e3d8;
-}
-[data-theme="light"] body { background: #f2ede3; color: #111; }
-[data-theme="light"] .topbar { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] .card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .card-name { color: #111; }
-[data-theme="light"] .card-role { color: #4a4a4a; }
-[data-theme="light"] .quote-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .quote-text { color: #111; }
-[data-theme="light"] .section { border-color: #ccc5b5; }
-[data-theme="light"] .masthead { border-color: #ccc5b5; }
-[data-theme="light"] .timeline-year { border-color: #ccc5b5; }
-[data-theme="light"] .hero-left { background: #f2ede3; }
-[data-theme="light"] .hero-right { background: #d8d3c8; }
-[data-theme="light"] .sanctions-table th { background: #e0dbd0; }
-[data-theme="light"] .sanctions-table td { border-color: #ccc5b5; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-[data-theme="light"] .source-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
-[data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] #progress-bar { background: #8b1a1a; }
-
-[data-theme="light"] .filter-btn:hover, [data-theme="light"] .filter-btn.active { background: #e8d3d3; }
-[data-theme="light"] .qf-select, [data-theme="light"] .qf-input { background: var(--ink); border-color: var(--rule); }
-</style>
-<style>
-/* Light mode text readability fixes */
-[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
-[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
-[data-theme="light"] .card:hover { background: #d8d3c8; }
-[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
-[data-theme="light"] .related-card:hover { background: #d8d3c8; }
-[data-theme="light"] .person-quote { background: #e8e3d8; }
-[data-theme="light"] .meme-card { background: #e8e3d8; }
-</style>
-
-<style id="light-mode-hovers">
-/* Additional light mode hover fixes */
-
-[data-theme="light"] .nav-page-link:hover { background: #d8d3c8; color: #111; }
-[data-theme="light"] .flt-btn:hover, [data-theme="light"] .flt-btn.active { background: #e8d3d3; color: #8b1a1a; }
-[data-theme="light"] .share-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .copy-quote-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .back-to-top { color: #f2ede3; }
-[data-theme="light"] .back-to-top:hover { color: #fff; background: #6e1414; }
-[data-theme="light"] .graph-btn:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-</style>
-
-<style id="mobile-fixes">
-  @media (max-width: 480px) {
-    .masthead { padding: 40px 20px 28px !important; }
-    .masthead-title { font-size: clamp(2rem, 8vw, 3rem) !important; }
-    .container, .selector-wrap, .compare-section, .nav-back, .footer { padding-left: 20px !important; padding-right: 20px !important; }
-    .topbar { padding-left: 16px !important; padding-right: 16px !important; flex-wrap: nowrap !important; gap: 6px !important; overflow-x: auto !important; }
-    .section { padding: 40px 0 !important; }
-    .overview .ov-card { padding: 24px 20px !important; }
-    .cg-label { display: block !important; margin-top: 16px; font-weight: 700; background: transparent !important; padding: 10px 0 4px !important; border-bottom: 1px solid var(--red); color: var(--red) !important; }
-    .cg-head { display: block !important; padding: 16px 20px !important; }
-    .compare-grid { gap: 12px !important; }
-    .cg-cell { padding: 12px 20px !important; }
-    .nav-pages { padding: 24px 20px !important; }
-    .quote-strip { padding: 40px 20px !important; }
-    .assets-grid { gap: 16px !important; background: transparent !important; }
-    .asset-card { padding: 24px !important; }
-    .person-info { padding-bottom: 12px !important; }
-    .timeline-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .timeline-event { padding: 24px !important; }
-    .source-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .source-card { padding: 24px !important; }
-    .quote-card { padding: 20px !important; }
-    .quote-text { font-size: 18px !important; line-height: 1.5 !important; }
-    .qc-date { font-size: 14px !important; }
-    .fq-text { font-size: 20px !important; line-height: 1.5 !important; }
-    .filter-bar { padding-left: 16px !important; padding-right: 16px !important; flex-wrap: nowrap !important; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
-    .filter-btn { flex-shrink: 0; white-space: nowrap; }
-  }
-</style>
-
-<style id="topbar-clean-fix">
-  @media (max-width: 480px) {
-    .topbar { flex-wrap: nowrap !important; gap: 8px !important; overflow-x: auto !important; padding: 10px 16px !important; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .topbar::-webkit-scrollbar { display: none; }
-    .topbar-left { flex-shrink: 0; }
-    .topbar-right { flex-shrink: 0; gap: 8px !important; }
-    .hide-on-mobile { display: none !important; }
-    #theme-toggle { padding: 6px 8px !important; font-size: 9px !important; border: 1px solid var(--rule) !important; }
-    .lang-switch a { padding: 6px 8px !important; font-size: 9px !important; }
-    .report-link { display: none !important; }
-  }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="css/kv.css">
+<link rel="stylesheet" href="css/pages.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}</script>
+<script src="js/kv.js" defer></script>
 </head>
 
 
-<body>
+<body class="page-quotes">
 
-<div class="topbar"><div class="topbar-left"><a href="index.html">← <span class="hide-on-mobile">Все досье</span></a></div><div class="topbar-right"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button><div class="lang-switch"><a href="quotes.html" class="active">RU</a><a href="quotes-en.html">EN</a></div></div></div>
+<header class="site-head">
+  <a class="brand" href="index.html"><span class="brand-mark">Голоса <i>Кремля</i></span><span class="brand-sub">Документальный архив</span></a>
+  <nav class="site-nav" aria-label="Разделы архива"><a href="index.html#catalogue">Досье</a><a href="quotes.html" class="is-on">Цитатник</a><a href="sanctions.html">Санкции</a><a href="timeline.html">Хронология</a><a href="connections.html">Связи</a><button type="button" class="menu-link" data-menu-open aria-controls="menu" aria-expanded="false">Указатель +</button></nav>
+  <div class="site-tools">
+    <a class="tip-link" href="submit.html">Сообщить</a>
+    <div class="lang"><a href="quotes.html" hreflang="ru" class="is-on" aria-current="true">RU</a><a href="quotes-en.html" hreflang="en">EN</a></div>
+    <button type="button" id="theme-toggle"></button>
+    <button type="button" class="menu-btn" data-menu-open aria-controls="menu" aria-expanded="false">Указатель<span class="bars"></span></button>
+  </div>
+</header>
+<div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Разделы архива">
+  <div class="ms-top"><span class="brand-mark">Голоса <i>Кремля</i></span><button type="button" class="ms-close" data-menu-close>Закрыть ✕</button></div>
+  <ol><li><a href="index.html"><span>00</span>Главная</a></li><li><a href="quotes.html" class="is-on"><span>01</span>Цитатник</a></li><li><a href="sanctions.html"><span>02</span>Санкции</a></li><li><a href="timeline.html"><span>03</span>Хронология</a></li><li><a href="connections.html"><span>04</span>Связи</a></li><li><a href="compare.html"><span>05</span>Сравнить</a></li><li><a href="tv-propaganda.html"><span>06</span>Пропаганда</a></li><li><a href="media-empire.html"><span>07</span>Медиаимперия</a></li><li><a href="assets.html"><span>08</span>Владения</a></li><li><a href="glossary.html"><span>09</span>Глоссарий</a></li><li><a href="sources.html"><span>10</span>Источники</a></li><li><a href="about.html"><span>11</span>О проекте</a></li></ol>
+  <div class="ms-foot label"><a href="index.html#catalogue">Досье →</a><a href="submit.html">Сообщить →</a><span><a href="quotes.html">RU</a> / <a href="quotes-en.html">EN</a></span></div>
+</div>
 
-<nav class="section-nav">
-  <a href="quotes.html" class="active">Цитатник</a>
-  <a href="sanctions.html">Санкции</a>
-  <a href="timeline.html">Хронология</a>
-  <a href="connections.html">Связи</a>
-  <a href="compare.html">Сравнить</a>
-  <a href="tv-propaganda.html">Пропаганда</a>
-  <a href="media-empire.html">Медиаимперия</a>
-  <a href="assets.html">Владения</a>
-  <a href="glossary.html">Глоссарий</a>
-  <a href="sources.html">Источники</a>
-  <a href="about.html">О проекте</a>
-</nav>
+
 
 <div class="masthead">
   <div class="masthead-eyebrow">Цитатник · Открытые источники</div>
@@ -521,7 +161,12 @@
       </div>
       <div class="quote-card">
         <div class="qc-person"><a href="poddubny.html">Евгений Поддубный</a></div>
+        <div class="qc-text">«Мы здесь не воюем. Мы выполняем задачи специальной военной операции. Это принципиально разные вещи.» [С линии фронта под Авдеевкой]</div>
+        <div class="qc-meta">
+          <div class="qc-year">2023</div>
+          <div class="qc-tags"><span class="qc-tag">Война</span><span class="qc-tag">Нарратив</span></div>
         </div>
+      </div>
         <div class="quote-card">
           <div class="quote-text">«Коллективный Запад хочет уничтожить Россию. Это не политика — это геноцид.»</div>
           <div class="qc-person"><a href="zakharova.html">Мария Захарова</a></div>
@@ -557,17 +202,9 @@
         </div>
         <div class="quote-card"><div class="quote-text">«Россия защищает жителей Донбасса от геноцида, который устроил киевский режим.»</div><div class="qc-person"><a href="nebenzya.html">Василий Небензя</a></div><div class="qc-date">2022 — Совет Безопасности ООН</div>
         </div>
-        <div class="quote-card"><div class="quote-text">«Украина как государство не имеет будущего. Это исторический факт.»</div><div class="qc-person"><a href="patrushev.html">Николай Патрушев</a></div><div class="qc-date">2022
+        <div class="quote-card"><div class="quote-text">«Украина как государство не имеет будущего. Это исторический факт.»</div><div class="qc-person"><a href="patrushev.html">Николай Патрушев</a></div><div class="qc-date">2022</div>
         </div>
-        <div class="quote-card"><div class="quote-text">«Херсон, Запорожье — это Россия. Навсегда.»</div><div class="qc-person"><a href="matvienko.html">Валентина Матвиенко</a></div><div class="qc-date">2022
-          <div class="qc-date">2022
-          <div class="qc-date">2022
-        <div class="qc-text">«Мы здесь не воюем. Мы выполняем задачи специальной военной операции. Это принципиально разные вещи.» [С линии фронта под Авдеевкой]</div>
-        <div class="qc-meta">
-          <div class="qc-year">2023</div>
-          <div class="qc-tags"><span class="qc-tag">Война</span><span class="qc-tag">Нарратив</span></div>
-        </div>
-      </div>
+        <div class="quote-card"><div class="quote-text">«Херсон, Запорожье — это Россия. Навсегда.»</div><div class="qc-person"><a href="matvienko.html">Валентина Матвиенко</a></div><div class="qc-date">2022</div></div>
     </div>
   </div>
 
@@ -815,7 +452,6 @@
     </div>
   </div>
 
-</div>
 
   <!-- 2024-2025 -->
   <div class="theme-section">
@@ -939,6 +575,10 @@
   <div class="stat-cell">
     <div class="stat-num">0</div>
     <div class="stat-label">раз сказано «война»</div>
+  </div>
+</div>
+<div class="quotes-wrap">
+<div class="quotes-grid">
           <div class="quote-card"><div class="quote-text">«Россия не ведёт войну. Россия проводит специальную военную операцию по защите мирных жителей Донбасса от восьми лет геноцида.»</div><div class="qc-person"><a href="patrushev.html">Николай Патрушев</a></div><div class="qc-date">2022 — заявление Совета безопасности РФ</div></div>
         <div class="quote-card"><div class="quote-text">«Мы не можем допустить появления враждебного России государства на нашей исторической территории. Это вопрос выживания.»</div><div class="qc-person"><a href="matvienko.html">Валентина Матвиенко</a></div><div class="qc-date">2022 — интервью RT</div></div>
         <div class="quote-card"><div class="quote-text">«Те, кто распространяют "ЛГБТ-пропаганду" в интернете среди несовершеннолетних, должны нести уголовную ответственность. Это не цензура — это защита детей.»</div><div class="qc-person"><a href="emizulina.html">Екатерина Мизулина</a></div><div class="qc-date">2023 — пресс-конференция ЛБИ</div></div>
@@ -947,11 +587,17 @@
 </div>
 </div>
 
-<div class="footer">
-  <div class="footer-logo">Голоса Кремля</div>
+<footer class="site-foot">
+  <div class="sf-grid">
+    <p class="sf-note"><span class="label">Независимый архив</span>Все материалы составлены на основе открытых источников. Факты верифицированы публикациями СМИ.</p>
+    <ul class="sf-links"><li><a href="quotes.html">Цитатник</a></li><li><a href="sanctions.html">Санкции</a></li><li><a href="timeline.html">Хронология</a></li><li><a href="connections.html">Связи</a></li><li><a href="compare.html">Сравнить</a></li><li><a href="tv-propaganda.html">Пропаганда</a></li><li><a href="media-empire.html">Медиаимперия</a></li><li><a href="assets.html">Владения</a></li><li><a href="glossary.html">Глоссарий</a></li><li><a href="sources.html">Источники</a></li><li><a href="about.html">О проекте</a></li></ul>
+    <div class="sf-meta"><a href="submit.html">Сообщить</a><a href="rss.xml">RSS</a><a href="index-en.html">English version</a></div>
+  </div>
+  <div class="sf-colophon"><div class="footer-logo">Голоса Кремля</div>
   <span>Все цитаты — из открытых источников</span>
-  <span>2024</span>
-</div>
+  <span>2024</span></div>
+  <span class="sf-word" aria-hidden="true">Голоса <i>Кремля</i></span>
+</footer>
 
 <script>
 (function(){
@@ -985,19 +631,22 @@
     var text = inp ? inp.value.trim().toLowerCase() : '';
     document.querySelectorAll('.quote-card').forEach(function(card){
       var pname = (card.querySelector('.qc-person')||{}).textContent||'';
-      var qtext = (card.querySelector('.quote-text')||{}).textContent||'';
+      var qtext = (card.querySelector('.quote-text, .qc-text')||{}).textContent||'';
       var qdate = (card.querySelector('.qc-date')||{}).textContent||'';
       var yr = parseInt((card.querySelector('.qc-year')||{}).textContent||'0');
       var matchP = !person || pname.trim() === person;
       var matchT = !text || qtext.toLowerCase().includes(text) || qdate.toLowerCase().includes(text);
-      var matchTopic = !activeTopic || (card.dataset.topic && card.dataset.topic.includes(activeTopic));
+      var tags = Array.prototype.map.call(card.querySelectorAll('.qc-tag'), function(t){ return t.textContent.trim(); });
+      var sec = card.closest('.theme-section');
+      var theme = sec ? ((sec.querySelector('.theme-label')||{}).textContent||'') : '';
+      var matchTopic = !activeTopic || tags.indexOf(activeTopic) >= 0 || theme.indexOf(activeTopic) >= 0;
       var matchYear = true;
       if (activeYear === 'pre') matchYear = yr > 0 && yr < 2022;
       else if (activeYear) matchYear = yr === parseInt(activeYear);
       card.style.display = (matchP && matchT && matchTopic && matchYear) ? '' : 'none';
     });
     // hide empty sections
-    document.querySelectorAll('.quotes-section').forEach(function(sec){
+    document.querySelectorAll('.quotes-section, .theme-section').forEach(function(sec){
       var visible = Array.from(sec.querySelectorAll('.quote-card')).some(function(c){ return c.style.display !== 'none'; });
       sec.style.display = visible ? '' : 'none';
     });
@@ -1006,13 +655,5 @@
   if (sel) sel.addEventListener('change', applyFilter);
   if (inp) inp.addEventListener('input', applyFilter);
 })();
-</script><script>
-(function(){
-  var t=localStorage.getItem('theme')||'dark';
-  document.documentElement.dataset.theme=t;
-  var btn=document.getElementById('theme-toggle');
-  if(btn){btn.textContent=t==='light'?'☽ Dark':'☀ Light';btn.title=t==='light'?'Switch to dark':'Switch to light';}
-})();
-</script>
-</body>
+</script></body>
 </html>

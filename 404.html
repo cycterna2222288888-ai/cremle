@@ -7,135 +7,36 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
-  :root { --ink:#080808; --paper:#ede8dc; --red:#8b1a1a; --light-gray:#bab3a0; --rule:#1c1c1c; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; font-weight:300; min-height:100vh; display:flex; flex-direction:column; }
-  .topbar { border-bottom:1px solid var(--rule); padding:16px 60px; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:var(--red); }
-  .topbar a { color:var(--red); text-decoration:none; }
-  .topbar a:hover { color:var(--paper); }
-  .lang-switch { display:flex; border:1px solid #333; overflow:hidden; }
-  .lang-switch a { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; padding:6px 12px; transition:all 0.2s; }
-  .lang-switch a.active { color:var(--paper); background:#1c1c1c; }
-  .body { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px; }
-  .code { font-family:'Playfair Display',serif; font-size:clamp(6rem,20vw,12rem); color:#111; line-height:1; margin-bottom:8px; }
-  .label { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); margin-bottom:24px; }
-  h1 { font-family:'Playfair Display',serif; font-size:clamp(1.4rem,4vw,2.2rem); font-weight:400; margin-bottom:16px; }
-  p { color:var(--light-gray); max-width:420px; font-size:15px; margin-bottom:40px; }
-  .back { color:var(--paper); text-decoration:none; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; border-bottom:1px solid var(--red); padding-bottom:2px; }
-  .back:hover { color:var(--red); }
-  @media(max-width:768px) { .topbar { padding:14px 20px; } }
-</style>
 <meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <link rel="alternate" hreflang="ru" href="https://cycterna2222288888-ai.github.io/cremle/404.html">
 <link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/404-en.html">
 
-<style id="light-mode-css" media="(prefers-color-scheme:light)">
-  /* Injected by theme toggle — applied when data-theme="light" */
-</style>
-<style>
-[data-theme="light"] {
-  --ink: #f2ede3;
-  --paper: #111;
-  --light-gray: #4a4a4a;
-  --rule: #ccc5b5;
-  --card-bg: #e8e3d8;
-}
-[data-theme="light"] body { background: #f2ede3; color: #111; }
-[data-theme="light"] .topbar { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] .card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .card-name { color: #111; }
-[data-theme="light"] .card-role { color: #4a4a4a; }
-[data-theme="light"] .quote-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .quote-text { color: #111; }
-[data-theme="light"] .section { border-color: #ccc5b5; }
-[data-theme="light"] .masthead { border-color: #ccc5b5; }
-[data-theme="light"] .timeline-year { border-color: #ccc5b5; }
-[data-theme="light"] .hero-left { background: #f2ede3; }
-[data-theme="light"] .hero-right { background: #d8d3c8; }
-[data-theme="light"] .sanctions-table th { background: #e0dbd0; }
-[data-theme="light"] .sanctions-table td { border-color: #ccc5b5; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-[data-theme="light"] .source-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
-[data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] #progress-bar { background: #8b1a1a; }
-</style>
-<style>
-/* Light mode text readability fixes */
-[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
-[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
-[data-theme="light"] .card:hover { background: #d8d3c8; }
-[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
-[data-theme="light"] .related-card:hover { background: #d8d3c8; }
-[data-theme="light"] .person-quote { background: #e8e3d8; }
-[data-theme="light"] .meme-card { background: #e8e3d8; }
-</style>
-
-<style id="light-mode-hovers">
-/* Additional light mode hover fixes */
-
-[data-theme="light"] .nav-page-link:hover { background: #d8d3c8; color: #111; }
-[data-theme="light"] .flt-btn:hover, [data-theme="light"] .flt-btn.active { background: #e8d3d3; color: #8b1a1a; }
-[data-theme="light"] .share-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .copy-quote-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .back-to-top { color: #f2ede3; }
-[data-theme="light"] .back-to-top:hover { color: #fff; background: #6e1414; }
-[data-theme="light"] .graph-btn:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-</style>
-
-<style id="mobile-fixes">
-  @media (max-width: 480px) {
-    .masthead { padding: 40px 20px 28px !important; }
-    .masthead-title { font-size: clamp(2rem, 8vw, 3rem) !important; }
-    .container, .selector-wrap, .compare-section, .nav-back, .footer { padding-left: 20px !important; padding-right: 20px !important; }
-    .topbar { padding-left: 16px !important; padding-right: 16px !important; flex-wrap: nowrap !important; gap: 6px !important; overflow-x: auto !important; }
-    .section { padding: 40px 0 !important; }
-    .overview .ov-card { padding: 24px 20px !important; }
-    .cg-label { display: block !important; margin-top: 16px; font-weight: 700; background: transparent !important; padding: 10px 0 4px !important; border-bottom: 1px solid var(--red); color: var(--red) !important; }
-    .cg-head { display: block !important; padding: 16px 20px !important; }
-    .compare-grid { gap: 12px !important; }
-    .cg-cell { padding: 12px 20px !important; }
-    .nav-pages { padding: 24px 20px !important; }
-    .quote-strip { padding: 40px 20px !important; }
-    .assets-grid { gap: 16px !important; background: transparent !important; }
-    .asset-card { padding: 24px !important; }
-    .person-info { padding-bottom: 12px !important; }
-    .timeline-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .timeline-event { padding: 24px !important; }
-    .source-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .source-card { padding: 24px !important; }
-  }
-</style>
-
-<style id="topbar-clean-fix">
-  @media (max-width: 480px) {
-    .topbar { flex-wrap: nowrap !important; gap: 8px !important; overflow-x: auto !important; padding: 10px 16px !important; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .topbar::-webkit-scrollbar { display: none; }
-    .topbar-left { flex-shrink: 0; }
-    .topbar-right { flex-shrink: 0; gap: 8px !important; }
-    .hide-on-mobile { display: none !important; }
-    #theme-toggle { padding: 6px 8px !important; font-size: 9px !important; border: 1px solid var(--rule) !important; }
-    .lang-switch a { padding: 6px 8px !important; font-size: 9px !important; }
-    .report-link { display: none !important; }
-  }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="css/kv.css">
+<link rel="stylesheet" href="css/pages.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}</script>
+<script src="js/kv.js" defer></script>
 </head>
 
 
-<body>
+<body class="page-404">
 
-<nav class="topbar"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button>
-  <a href="index.html">← Голоса Кремля</a>
-  <div class="lang-switch">
-    <a href="404.html" class="active">RU</a>
-    <a href="404-en.html">EN</a>
+<header class="site-head">
+  <a class="brand" href="index.html"><span class="brand-mark">Голоса <i>Кремля</i></span><span class="brand-sub">Документальный архив</span></a>
+  <nav class="site-nav" aria-label="Разделы архива"><a href="index.html#catalogue">Досье</a><a href="quotes.html">Цитатник</a><a href="sanctions.html">Санкции</a><a href="timeline.html">Хронология</a><a href="connections.html">Связи</a><button type="button" class="menu-link" data-menu-open aria-controls="menu" aria-expanded="false">Указатель +</button></nav>
+  <div class="site-tools">
+    <a class="tip-link" href="submit.html">Сообщить</a>
+    <div class="lang"><a href="404.html" hreflang="ru" class="is-on" aria-current="true">RU</a><a href="404-en.html" hreflang="en">EN</a></div>
+    <button type="button" id="theme-toggle"></button>
+    <button type="button" class="menu-btn" data-menu-open aria-controls="menu" aria-expanded="false">Указатель<span class="bars"></span></button>
   </div>
-</nav>
+</header>
+<div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Разделы архива">
+  <div class="ms-top"><span class="brand-mark">Голоса <i>Кремля</i></span><button type="button" class="ms-close" data-menu-close>Закрыть ✕</button></div>
+  <ol><li><a href="index.html"><span>00</span>Главная</a></li><li><a href="quotes.html"><span>01</span>Цитатник</a></li><li><a href="sanctions.html"><span>02</span>Санкции</a></li><li><a href="timeline.html"><span>03</span>Хронология</a></li><li><a href="connections.html"><span>04</span>Связи</a></li><li><a href="compare.html"><span>05</span>Сравнить</a></li><li><a href="tv-propaganda.html"><span>06</span>Пропаганда</a></li><li><a href="media-empire.html"><span>07</span>Медиаимперия</a></li><li><a href="assets.html"><span>08</span>Владения</a></li><li><a href="glossary.html"><span>09</span>Глоссарий</a></li><li><a href="sources.html"><span>10</span>Источники</a></li><li><a href="about.html"><span>11</span>О проекте</a></li></ol>
+  <div class="ms-foot label"><a href="index.html#catalogue">Досье →</a><a href="submit.html">Сообщить →</a><span><a href="404.html">RU</a> / <a href="404-en.html">EN</a></span></div>
+</div>
 
 <div class="body">
   <div class="code">404</div>
@@ -145,13 +46,14 @@
   <a href="index.html" class="back">← В архив</a>
 </div>
 
-<script>
-(function(){
-  var t=localStorage.getItem('theme')||'dark';
-  document.documentElement.dataset.theme=t;
-  var btn=document.getElementById('theme-toggle');
-  if(btn){btn.textContent=t==='light'?'☽ Dark':'☀ Light';btn.title=t==='light'?'Switch to dark':'Switch to light';}
-})();
-</script>
+<footer class="site-foot">
+  <div class="sf-grid">
+    <p class="sf-note"><span class="label">Независимый архив</span>Все материалы составлены на основе открытых источников. Факты верифицированы публикациями СМИ.</p>
+    <ul class="sf-links"><li><a href="quotes.html">Цитатник</a></li><li><a href="sanctions.html">Санкции</a></li><li><a href="timeline.html">Хронология</a></li><li><a href="connections.html">Связи</a></li><li><a href="compare.html">Сравнить</a></li><li><a href="tv-propaganda.html">Пропаганда</a></li><li><a href="media-empire.html">Медиаимперия</a></li><li><a href="assets.html">Владения</a></li><li><a href="glossary.html">Глоссарий</a></li><li><a href="sources.html">Источники</a></li><li><a href="about.html">О проекте</a></li></ul>
+    <div class="sf-meta"><a href="submit.html">Сообщить</a><a href="rss.xml">RSS</a><a href="index-en.html">English version</a></div>
+  </div>
+  <div class="sf-colophon"></div>
+  <span class="sf-word" aria-hidden="true">Голоса <i>Кремля</i></span>
+</footer>
 </body>
 </html>

@@ -15,239 +15,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
-
-  :root {
-    --ink: #080808;
-    --paper: #ede8dc;
-    --red: #8b1a1a;
-    --red-dim: #5c1111;
-    --gray: #4a4a4a;
-    --light-gray: #bab3a0;
-    --rule: #1c1c1c;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { overflow-x: hidden; }
-  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
-
-  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); position: relative; }
-  .hero-left { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
-  .eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
-  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.05; color: var(--paper); margin-bottom: 8px; }
-  .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.7vw, 20px); color: var(--light-gray); margin-bottom: 48px; line-height: 1.4; }
-  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-top: 40px; }
-  .meta-item label { display: block; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
-  .meta-item span { font-size: 13px; color: var(--light-gray); }
-  .hero-right { position: relative; overflow: hidden; background: #080808; }
-  .hero-stamp { position: absolute; bottom: 40px; right: 40px; border: 2px solid var(--red); color: var(--red); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 16px; opacity: 0.85; transform: rotate(2deg); }
-
-  .section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
-  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 64px; }
-  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 12px; flex: 1; }
-
-  .timeline { display: grid; grid-template-columns: 100px 1fr; }
-  .timeline-year { padding: 0 24px 48px 0; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--red); font-weight: 700; border-right: 1px solid var(--rule); text-align: right; position: relative; }
-  .timeline-year::after { content: ''; position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; background: var(--red); border-radius: 50%; }
-  .timeline-body { padding: 0 0 48px 32px; }
-  .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 8px; font-weight: 700; }
-  .timeline-body p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
-
-  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); }
-  .grid-card { background: var(--ink); padding: 40px; }
-  .grid-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--paper); margin-bottom: 14px; }
-  .grid-card p { font-size: 14px; color: var(--light-gray); line-height: 1.85; }
-
-  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 26px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
-  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 16px; }
-
-  .meme-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 2px; }
-  .meme-card { background: #0c0000; padding: 48px 40px; position: relative; }
-  .meme-card::before { content: '«'; font-family: 'Playfair Display', serif; font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: 10px; left: 20px; line-height: 1; }
-  .meme-card .meme-text { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); color: var(--paper); line-height: 1.5; margin-bottom: 20px; position: relative; }
-  .meme-card .meme-src { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
-
-  .quotes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--rule); }
-  .person-quote { background: #0d0d0d; padding: 36px; }
-  .person-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--paper); line-height: 1.7; margin-bottom: 20px; }
-  .person-quote .attribution { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
-
-  .interview-list { display: grid; gap: 0; }
-  .interview-row { display: grid; grid-template-columns: 60px 1fr 2fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--rule); align-items: start; }
-  .interview-row:first-child { border-top: 1px solid var(--rule); }
-  .interview-num { font-size: 11px; color: var(--red); letter-spacing: 0.15em; }
-  .interview-topic { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--paper); font-weight: 700; }
-  .interview-desc { font-size: 13px; color: var(--light-gray); line-height: 1.8; }
-
-  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
-  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
-  .stat-card .stat-val { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--red); font-weight: 700; }
-  .stat-card .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
-
-  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
-  .tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); border: 1px solid var(--red-dim); padding: 3px 8px; margin-bottom: 10px; }
-
-  .footer { padding: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
-  .footer-rule { width: 1px; height: 40px; background: var(--rule); }
-
-  @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { height: 280px; }
-    .hero-left { padding: 60px 30px; }
-    .container { padding: 0 30px; }
-    .four-grid, .quotes-grid, .meme-quotes { grid-template-columns: 1fr; }
-    .stats-row { grid-template-columns: 1fr 1fr; }
-    .interview-row { grid-template-columns: 40px 1fr; }
-    .interview-desc { display: none; }
-    .topbar { padding: 12px 20px; }
-    .topbar-right { gap: 10px; }
-    .report-link { display: none; }
-    .section { padding: 60px 0; }
-    .timeline { grid-template-columns: 72px 1fr; }
-  }
-
-  .topbar-old { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
-  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .nav-back a:hover { opacity: 0.6; }
-
-  /* READING PROGRESS */
-  #progress-bar {
-    position: fixed;
-    top: 0; left: 0;
-    height: 2px;
-    width: 0%;
-    background: #8b1a1a;
-    z-index: 9999;
-    transition: width 0.1s linear;
-  }
-
-  .topbar { padding: 14px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .topbar-left a:hover { opacity: 0.6; }
-  .topbar-right { display: flex; align-items: center; gap: 20px; }
-  .lang-switch { display: flex; border: 1px solid #333; overflow: hidden; }
-  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; padding: 6px 12px; transition: all 0.2s; }
-  .lang-switch a.active { color: var(--paper); background: #1c1c1c; }
-  .lang-switch a:hover { color: var(--paper); background: #111; }
-  .report-link { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #5c1111; text-decoration: none; border: 1px solid #2a0a0a; padding: 6px 14px; transition: all 0.2s; }
-  .report-link:hover { color: #8b1a1a; border-color: #5c1111; }
-
-  .next-dosye {
-    border-top: 1px solid var(--rule);
-    padding: 48px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
-    color: var(--paper);
-    transition: background 0.2s;
-  }
-  .next-dosye:hover { background: #0a0a0a; }
-  .next-dosye-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #444; margin-bottom: 8px; }
-  .next-dosye-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; }
-  .next-dosye-title { font-size: 13px; color: #666; margin-top: 4px; }
-  .next-dosye-arrow { font-size: 2rem; color: var(--red); }
-  .share-bar { border-top: 1px solid var(--rule); padding: 24px 60px; display: flex; align-items: center; gap: 16px; }
-  .share-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #444; }
-  .share-btn { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 8px 16px; border: 1px solid #222; color: #888; transition: all 0.2s; }
-  .share-btn:hover { border-color: #555; color: var(--paper); }
-  @media (max-width: 768px) {
-    .next-dosye { padding: 32px 20px; }
-    .next-dosye-name { font-size: 1.2rem; }
-    .share-bar { padding: 20px 20px; flex-wrap: wrap; gap: 10px; }
-  }
-
-  @media print {
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { background: #fff !important; color: #000 !important; font-size: 11pt; }
-    .topbar, #progress-bar, .share-bar, .next-dosye, .report-link, .lang-switch { display: none !important; }
-    .hero { grid-template-columns: 1fr 280px !important; page-break-inside: avoid; }
-    .hero-right { height: 280px !important; }
-    .hero-left { background: #f5f5f5 !important; padding: 32px !important; }
-    .hero-name { color: #000 !important; font-size: 28pt !important; }
-    .hero-title { color: #8b1a1a !important; }
-    .hero-meta li { color: #333 !important; border-color: #ccc !important; }
-    .container { padding: 0 !important; }
-    .section { border-color: #ddd !important; padding: 24px 0 !important; page-break-inside: avoid; }
-    .section-title { color: #000 !important; }
-    .section-title::after { background: #ccc !important; }
-    .quote-card, .roots-item, .property-item { background: #f9f9f9 !important; border-color: #ddd !important; color: #000 !important; }
-    .quote-text { color: #000 !important; }
-    .quote-source { color: #555 !important; }
-    .sanction-tag { background: #8b1a1a !important; color: #fff !important; }
-    .footer { color: #555 !important; border-color: #ddd !important; }
-    .footer-rule { background: #ddd !important; }
-    a { color: inherit !important; text-decoration: none !important; }
-    @page { margin: 2cm; }
-  }
-  /* COPY QUOTE */
-  .copy-quote-btn { display:inline-block; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:#444; border:1px solid #222; padding:4px 10px; cursor:pointer; background:transparent; font-family:'Inter',sans-serif; margin-top:10px; transition:all 0.2s; }
-  .copy-quote-btn:hover { color:var(--paper); border-color:#555; }
-  .copy-quote-btn.copied { color:#4caf50; border-color:#1a4a1a; }
-
-  /* CREDIBILITY BADGES */
-  .badge { display:inline-block; font-size:8px; font-family:'Inter',sans-serif; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; padding:2px 6px; border-radius:2px; vertical-align:middle; margin-left:6px; line-height:1.6; position:relative; top:-1px; cursor:help; }
-  .badge-fact { background:#0a2010; color:#4caf50; border:1px solid #1a4a1a; }
-  .badge-interp { background:#1a1200; color:#e67e22; border:1px solid #3a2800; }
-  /* SOURCES GRID */
-  .sources-grid-dosye { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--rule); }
-  @media (max-width:900px) { .sources-grid-dosye { grid-template-columns:1fr; } }
-  .source-card-d { background:var(--ink); padding:24px 28px; }
-  .source-card-d .sc-type { font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:6px; }
-  .source-card-d .sc-title { font-family:'Playfair Display',serif; font-size:13px; color:var(--paper); margin-bottom:5px; }
-  .source-card-d .sc-note { font-size:11px; color:#555; line-height:1.5; }
-
-  .back-to-top {
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    width: 44px;
-    height: 44px;
-    background: var(--red);
-    color: var(--paper);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    z-index: 500;
-  }
-  .back-to-top.visible { opacity: 1; visibility: visible; }
-  .back-to-top:hover { background: #6e1414; }
-  @media (max-width: 768px) { .back-to-top { bottom: 20px; right: 16px; } }
-
-
-  .related-section { border-top: 1px solid var(--rule); padding: 60px; }
-  .related-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
-  .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
-  .related-card { background: var(--card-bg); padding: 28px; text-decoration: none; color: var(--paper); display: block; transition: background 0.2s; }
-  .related-card:hover { background: #141414; }
-  .related-card-name { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 8px; }
-  .related-card-arrow { font-size: 12px; color: var(--red); margin-top: 12px; letter-spacing: 0.15em; text-transform: uppercase; }
-  @media (max-width: 768px) { .related-section { padding: 40px 20px; } .related-grid { grid-template-columns: 1fr; } }
-
-
-  @media (max-width: 480px) {
-    .hero-left { padding: 36px 20px; }
-    .hero-left h1 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
-    .container { padding: 0 20px; }
-    .section { padding: 60px 0; }
-    .section-header { margin-bottom: 36px; }
-    .properties-row { grid-template-columns: 1fr; }
-    .stamp { font-size: 9px; letter-spacing: 0.15em; }
-    .quote-text { font-size: 15px; }
-    .timeline-year { font-size: 11px; min-width: 52px; }
-    .topbar-left a { font-size: 9px; }
-  }
-</style>
 <link rel="canonical" href="https://cycterna2222288888-ai.github.io/cremle/keosayan.html">
 <link rel="alternate" hreflang="ru" href="https://cycterna2222288888-ai.github.io/cremle/keosayan.html">
 <link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/keosayan-en.html">
@@ -267,118 +34,31 @@
 </script>
 <meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-keosayan.svg">
 <meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-keosayan.svg">
-<style>
-.updated-stamp{padding:12px 60px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#2a2a2a;border-top:1px solid #111;text-align:right;}
-@media(max-width:768px){.updated-stamp{padding:10px 24px;}}
-</style><style media="print">
-  .topbar,.section-nav,.nav-back,.filter-bar,.share-bar,.related-section,
-  .scroll-top,.reading-time,footer,.footer,.updated-stamp,
-  [class*="btn"],[class*="nav-pages"]{display:none!important;}
-  body{background:#fff!important;color:#000!important;font-size:11pt;}
-  a{color:#000;text-decoration:none;}
-  .hero{padding:20pt 0 12pt;}
-  .badge-fact,.badge-interp,.badge{border:1px solid #999;background:none!important;color:#000!important;}
-  .quote-card,.qc-text,.fq-text{color:#000!important;}
-  .qc-year{color:#666!important;}
-  h1,h2,h3{page-break-after:avoid;}
-  .timeline-item,.quote-card{page-break-inside:avoid;}
-  @page{margin:2cm;}
-</style>
-
-<style id="light-mode-css" media="(prefers-color-scheme:light)">
-  /* Injected by theme toggle — applied when data-theme="light" */
-</style>
-<style>
-[data-theme="light"] {
-  --ink: #f2ede3;
-  --paper: #111;
-  --light-gray: #4a4a4a;
-  --rule: #ccc5b5;
-  --card-bg: #e8e3d8;
-}
-[data-theme="light"] body { background: #f2ede3; color: #111; }
-[data-theme="light"] .topbar { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] .card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .card-name { color: #111; }
-[data-theme="light"] .card-role { color: #4a4a4a; }
-[data-theme="light"] .quote-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .quote-text { color: #111; }
-[data-theme="light"] .section { border-color: #ccc5b5; }
-[data-theme="light"] .masthead { border-color: #ccc5b5; }
-[data-theme="light"] .timeline-year { border-color: #ccc5b5; }
-[data-theme="light"] .hero-left { background: #f2ede3; }
-[data-theme="light"] .hero-right { background: #d8d3c8; }
-[data-theme="light"] .sanctions-table th { background: #e0dbd0; }
-[data-theme="light"] .sanctions-table td { border-color: #ccc5b5; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-[data-theme="light"] .source-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
-[data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] #progress-bar { background: #8b1a1a; }
-</style>
-<style>
-/* Light mode text readability fixes */
-[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
-[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
-[data-theme="light"] .card:hover { background: #d8d3c8; }
-[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
-[data-theme="light"] .related-card:hover { background: #d8d3c8; }
-[data-theme="light"] .person-quote { background: #e8e3d8; }
-[data-theme="light"] .meme-card { background: #e8e3d8; }
-</style>
-
-<style id="light-mode-hovers">
-/* Additional light mode hover fixes */
-
-[data-theme="light"] .nav-page-link:hover { background: #d8d3c8; color: #111; }
-[data-theme="light"] .flt-btn:hover, [data-theme="light"] .flt-btn.active { background: #e8d3d3; color: #8b1a1a; }
-[data-theme="light"] .share-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .copy-quote-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .back-to-top { color: #f2ede3; }
-[data-theme="light"] .back-to-top:hover { color: #fff; background: #6e1414; }
-[data-theme="light"] .graph-btn:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-</style>
-
-<style id="topbar-clean-fix">
-  @media (max-width: 480px) {
-    .topbar { flex-wrap: nowrap !important; gap: 8px !important; overflow-x: auto !important; padding: 10px 16px !important; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .topbar::-webkit-scrollbar { display: none; }
-    .topbar-left { flex-shrink: 0; }
-    .topbar-right { flex-shrink: 0; gap: 8px !important; }
-    .hide-on-mobile { display: none !important; }
-    #theme-toggle { padding: 6px 8px !important; font-size: 9px !important; border: 1px solid var(--rule) !important; }
-    .lang-switch a { padding: 6px 8px !important; font-size: 9px !important; }
-    .report-link { display: none !important; }
-  }
-</style>
-<style id="mobile-final-fix">
-@media (max-width: 768px) {
-  .footer { padding: 24px 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
-  .footer-rule { display: none !important; }
-  .grid-card { padding: 24px 20px !important; }
-  .meme-card { padding: 28px 20px !important; }
-  .person-quote { padding: 20px !important; }
-  .quote-pull { padding: 16px 0 16px 20px !important; margin: 32px 0 !important; }
-  .source-card-d { padding: 18px 20px !important; }
-  .topbar-left a { font-size: 22px !important; }
-}
-@media (max-width: 480px) {
-  .meme-card::before { font-size: 70px !important; top: 5px !important; left: 12px !important; }
-  .stat-card { padding: 18px 10px !important; }
-  .stat-card .stat-val { font-size: 24px !important; }
-  .stat-card .stat-label { font-size: 9px !important; letter-spacing: 0.1em !important; }
-  .timeline-body { padding-left: 20px !important; }
-  .section-header { gap: 12px !important; }
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="css/kv.css">
+<link rel="stylesheet" href="css/dossier.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}</script>
+<script src="js/kv.js" defer></script>
 </head>
 
-<body>
+<body class="page-dossier">
 <div id="progress-bar"></div>
 
-<div class="topbar"><div class="topbar-left"><a href="index.html">← <span class="hide-on-mobile">Все досье</span></a></div><div class="topbar-right"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button><div class="lang-switch"><a href="keosayan.html" class="active">RU</a><a href="keosayan-en.html">EN</a></div><a href="submit.html" class="report-link">Сообщить</a></div></div>
+<header class="site-head">
+  <a class="brand" href="index.html"><span class="brand-mark">Голоса <i>Кремля</i></span><span class="brand-sub">Документальный архив</span></a>
+  <nav class="site-nav" aria-label="Разделы архива"><a href="index.html#catalogue" class="is-on">Досье</a><a href="quotes.html">Цитатник</a><a href="sanctions.html">Санкции</a><a href="timeline.html">Хронология</a><a href="connections.html">Связи</a><button type="button" class="menu-link" data-menu-open aria-controls="menu" aria-expanded="false">Указатель +</button></nav>
+  <div class="site-tools">
+    <a class="tip-link" href="submit.html">Сообщить</a>
+    <div class="lang"><a href="keosayan.html" hreflang="ru" class="is-on" aria-current="true">RU</a><a href="keosayan-en.html" hreflang="en">EN</a></div>
+    <button type="button" id="theme-toggle"></button>
+    <button type="button" class="menu-btn" data-menu-open aria-controls="menu" aria-expanded="false">Указатель<span class="bars"></span></button>
+  </div>
+</header>
+<div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Разделы архива">
+  <div class="ms-top"><span class="brand-mark">Голоса <i>Кремля</i></span><button type="button" class="ms-close" data-menu-close>Закрыть ✕</button></div>
+  <ol><li><a href="index.html"><span>00</span>Главная</a></li><li><a href="quotes.html"><span>01</span>Цитатник</a></li><li><a href="sanctions.html"><span>02</span>Санкции</a></li><li><a href="timeline.html"><span>03</span>Хронология</a></li><li><a href="connections.html"><span>04</span>Связи</a></li><li><a href="compare.html"><span>05</span>Сравнить</a></li><li><a href="tv-propaganda.html"><span>06</span>Пропаганда</a></li><li><a href="media-empire.html"><span>07</span>Медиаимперия</a></li><li><a href="assets.html"><span>08</span>Владения</a></li><li><a href="glossary.html"><span>09</span>Глоссарий</a></li><li><a href="sources.html"><span>10</span>Источники</a></li><li><a href="about.html"><span>11</span>О проекте</a></li></ol>
+  <div class="ms-foot label"><a href="index.html#catalogue">Досье →</a><a href="submit.html">Сообщить →</a><span><a href="keosayan.html">RU</a> / <a href="keosayan-en.html">EN</a></span></div>
+</div>
 
 <div class="hero">
   <div class="hero-left">
@@ -413,34 +93,9 @@
     </div>
   </div>
 
-  <div class="hero-right">
-    <img loading="lazy" src="templates/keosayan.jpg" alt="keosayan" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0.55;z-index:0;" onerror="this.style.display='none'">
-    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;z-index:1;">
-      <defs>
-        <radialGradient id="rg_keosayan" cx="50%" cy="35%" r="60%">
-          <stop offset="0%" stop-color="#1a0000" stop-opacity="0.1"/>
-          <stop offset="100%" stop-color="#000" stop-opacity="0.4"/>
-        </radialGradient>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#rg_keosayan)"/>
-      <line x1="50%" y1="20%" x2="50%" y2="80%" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
-      <line x1="20%" y1="50%" x2="80%" y2="50%" stroke="#8b1a1a" stroke-width="0.5" opacity="0.4"/>
-      <circle cx="50%" cy="38%" r="80" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.3"/>
-      <circle cx="50%" cy="38%" r="140" fill="none" stroke="#8b1a1a" stroke-width="0.5" opacity="0.12"/>
-      <g opacity="0.06">
-        <line x1="0" y1="10%" x2="100%" y2="10%" stroke="#c8c0b0" stroke-width="1"/>
-        <line x1="0" y1="20%" x2="100%" y2="20%" stroke="#c8c0b0" stroke-width="1"/>
-        <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#c8c0b0" stroke-width="1"/>
-        <line x1="0" y1="40%" x2="100%" y2="40%" stroke="#c8c0b0" stroke-width="1"/>
-        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#c8c0b0" stroke-width="1"/>
-        <line x1="0" y1="60%" x2="100%" y2="60%" stroke="#c8c0b0" stroke-width="1"/>
-        <line x1="0" y1="70%" x2="100%" y2="70%" stroke="#c8c0b0" stroke-width="1"/>
-        <line x1="0" y1="80%" x2="100%" y2="80%" stroke="#c8c0b0" stroke-width="1"/>
-        <line x1="0" y1="90%" x2="100%" y2="90%" stroke="#c8c0b0" stroke-width="1"/>
-      </g>
-      <text x="50%" y="46%" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="160" fill="#8b1a1a" opacity="0.15" font-weight="700">ТК</text>
-    </svg>
-    <div class="hero-stamp" style="z-index:2;">Режиссёр · Пропагандист · RT</div>
+  <div class="hero-right rv-img">
+    <img data-parallax="0.06" fetchpriority="high" src="templates/keosayan.jpg" alt="keosayan" onerror="this.style.display='none'">
+    <div class="hero-stamp">Режиссёр · Пропагандист · RT</div>
   </div>
 </div>
 
@@ -654,7 +309,7 @@
       <span class="section-num">07</span>
       <h2 class="section-title">Источники</h2>
     </div>
-    <p style="font-size:13px;color:#555;margin-bottom:28px;line-height:1.8">Все утверждения в данном досье основаны на открытых публичных источниках. Факты, отмеченные <span class="badge badge-fact">Факт</span>, имеют прямые первичные источники. Отмеченные <span class="badge badge-interp">Интерпр.</span> — авторская интерпретация задокументированных событий.</p>
+    <p style="font-size:13px;color:var(--fg-3);margin-bottom:28px;line-height:1.8">Все утверждения в данном досье основаны на открытых публичных источниках. Факты, отмеченные <span class="badge badge-fact">Факт</span>, имеют прямые первичные источники. Отмеченные <span class="badge badge-interp">Интерпр.</span> — авторская интерпретация задокументированных событий.</p>
     <div class="sources-grid-dosye">
       <div class="source-card-d">
         <div class="sc-type">Санкции · ЕС</div>
@@ -684,7 +339,7 @@
       <div class="source-card-d">
         <div class="sc-type">Методология</div>
         <div class="sc-title">Принципы архива «Голоса Кремля»</div>
-        <div class="sc-note">Только открытые источники. Дословные цитаты. Факт / интерпретация — маркируются явно.<br><a href="sources.html" style="color:#555">sources.html — полный список источников</a></div>
+        <div class="sc-note">Только открытые источники. Дословные цитаты. Факт / интерпретация — маркируются явно.<br><a href="sources.html" style="color:var(--fg-3)">sources.html — полный список источников</a></div>
       </div>
     </div>
   </div>
@@ -709,13 +364,19 @@
 
 
 <div class="updated-stamp">Досье обновлено: апрель 2026</div>
-<div class="footer">
-  <span>Досье составлено на основе открытых источников</span>
+<footer class="site-foot">
+  <div class="sf-grid">
+    <p class="sf-note"><span class="label">Независимый архив</span>Все материалы составлены на основе открытых источников. Факты верифицированы публикациями СМИ.</p>
+    <ul class="sf-links"><li><a href="quotes.html">Цитатник</a></li><li><a href="sanctions.html">Санкции</a></li><li><a href="timeline.html">Хронология</a></li><li><a href="connections.html">Связи</a></li><li><a href="compare.html">Сравнить</a></li><li><a href="tv-propaganda.html">Пропаганда</a></li><li><a href="media-empire.html">Медиаимперия</a></li><li><a href="assets.html">Владения</a></li><li><a href="glossary.html">Глоссарий</a></li><li><a href="sources.html">Источники</a></li><li><a href="about.html">О проекте</a></li></ul>
+    <div class="sf-meta"><a href="submit.html">Сообщить</a><a href="rss.xml">RSS</a><a href="index-en.html">English version</a></div>
+  </div>
+  <div class="sf-colophon"><span>Досье составлено на основе открытых источников</span>
   <div class="footer-rule"></div>
   <span>Тигран Кеосаян · 1966—</span>
   <div class="footer-rule"></div>
-  <span>Все факты верифицированы публикациями СМИ</span>
-</div>
+  <span>Все факты верифицированы публикациями СМИ</span></div>
+  <span class="sf-word" aria-hidden="true">Голоса <i>Кремля</i></span>
+</footer>
 
 
 <script>
@@ -766,14 +427,6 @@ document.addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'&&idx<pages.length-1)location.href=pages[idx+1];
   if(e.key==='ArrowLeft'&&idx>0)location.href=pages[idx-1];
 });
-})();
-</script>
-<script>
-(function(){
-  var t=localStorage.getItem('theme')||'dark';
-  document.documentElement.dataset.theme=t;
-  var btn=document.getElementById('theme-toggle');
-  if(btn){btn.textContent=t==='light'?'☽ Dark':'☀ Light';btn.title=t==='light'?'Switch to dark':'Switch to light';}
 })();
 </script>
 </body>

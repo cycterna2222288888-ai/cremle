@@ -13,182 +13,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
-
-  :root {
-    --ink: #080808;
-    --paper: #ede8dc;
-    --red: #8b1a1a;
-    --red-dim: #5c1111;
-    --gray: #4a4a4a;
-    --light-gray: #bab3a0;
-    --rule: #1c1c1c;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { overflow-x: hidden; }
-  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
-
-  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
-  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .nav-back a:hover { opacity: 0.6; }
-
-  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
-  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
-  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
-  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
-
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
-  .section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
-  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px; }
-  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; flex: 1; }
-
-  .intro-text { font-size: 15px; color: var(--light-gray); line-height: 1.9; max-width: 720px; margin-bottom: 48px; }
-
-  /* ALPHABET NAV */
-  .alpha-nav { display: flex; gap: 2px; flex-wrap: wrap; margin-bottom: 48px; background: var(--rule); }
-  .alpha-btn { background: var(--ink); padding: 10px 16px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--light-gray); text-decoration: none; transition: background 0.15s, color 0.15s; }
-  .alpha-btn:hover { background: #0d0000; color: var(--red); }
-
-  /* TERM ENTRIES */
-  .term-list { display: grid; gap: 0; }
-
-  .term-entry {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 40px;
-    padding: 40px 0;
-    border-bottom: 1px solid var(--rule);
-    align-items: start;
-  }
-
-  .term-entry:first-child { border-top: 1px solid var(--rule); }
-
-  .term-left {}
-
-  .term-word {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(20px, 2.5vw, 28px);
-    font-weight: 700;
-    color: var(--paper);
-    line-height: 1.1;
-    margin-bottom: 8px;
-  }
-
-  .term-transliteration {
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 12px;
-  }
-
-  .term-official {
-    font-size: 11px;
-    color: #333;
-    font-style: italic;
-    line-height: 1.6;
-    border-left: 2px solid #1c1c1c;
-    padding-left: 12px;
-  }
-
-  .term-right {}
-
-  .term-real {
-    font-size: 14px;
-    color: var(--light-gray);
-    line-height: 1.85;
-    margin-bottom: 16px;
-  }
-
-  .term-example {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: var(--paper);
-    border-left: 2px solid var(--red-dim);
-    padding-left: 16px;
-    opacity: 0.8;
-    line-height: 1.6;
-  }
-
-  .term-example cite {
-    display: block;
-    font-style: normal;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-top: 8px;
-  }
-
-  .term-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
-  .term-tag { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); border: 1px solid var(--red-dim); padding: 3px 7px; }
-
-  /* LETTER DIVIDER */
-  .letter-divider {
-    padding: 32px 0 16px;
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 700;
-    color: #111;
-    line-height: 1;
-    border-top: 2px solid var(--rule);
-    margin-top: 8px;
-  }
-
-  .quote-pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 24px); color: var(--paper); border-left: 3px solid var(--red); padding: 24px 0 24px 32px; margin: 48px 0; line-height: 1.5; }
-  .quote-pull cite { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-style: normal; margin-top: 14px; }
-
-  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-bottom: 64px; }
-  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
-  .stat-val { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--red); font-weight: 700; }
-  .stat-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
-
-  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
-  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
-
-  @media (max-width: 900px) {
-    .masthead, .container, .nav-back, .footer { padding-left: 24px; padding-right: 24px; }
-    .term-entry { grid-template-columns: 1fr; gap: 20px; }
-    .stats-row { grid-template-columns: 1fr 1fr; }
-  }
-
-  .topbar { padding: 14px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .topbar-left a:hover { opacity: 0.6; }
-  .topbar-right { display: flex; align-items: center; gap: 20px; }
-  .lang-switch { display: flex; border: 1px solid #333; overflow: hidden; }
-  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; padding: 6px 12px; transition: all 0.2s; }
-  .lang-switch a.active { color: var(--paper); background: #1c1c1c; }
-  .lang-switch a:hover { color: var(--paper); background: #111; }
-
-  .section-nav {
-    border-bottom: 1px solid var(--rule);
-    padding: 0 60px;
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .section-nav::-webkit-scrollbar { display: none; }
-  .section-nav a {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #555;
-    text-decoration: none;
-    padding: 14px 18px;
-    white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .section-nav a:hover { color: var(--paper); }
-  .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
-  @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
-</style>
 <meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <link rel="canonical" href="https://cycterna2222288888-ai.github.io/cremle/glossary.html">
@@ -196,123 +20,33 @@
 <link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/glossary-en.html">
 <link rel="alternate" hreflang="x-default" href="https://cycterna2222288888-ai.github.io/cremle/glossary.html">
 
-<style id="light-mode-css" media="(prefers-color-scheme:light)">
-  /* Injected by theme toggle — applied when data-theme="light" */
-</style>
-<style>
-[data-theme="light"] {
-  --ink: #f2ede3;
-  --paper: #111;
-  --light-gray: #4a4a4a;
-  --rule: #ccc5b5;
-  --card-bg: #e8e3d8;
-}
-[data-theme="light"] body { background: #f2ede3; color: #111; }
-[data-theme="light"] .topbar { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] .card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .card-name { color: #111; }
-[data-theme="light"] .card-role { color: #4a4a4a; }
-[data-theme="light"] .quote-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .quote-text { color: #111; }
-[data-theme="light"] .section { border-color: #ccc5b5; }
-[data-theme="light"] .masthead { border-color: #ccc5b5; }
-[data-theme="light"] .timeline-year { border-color: #ccc5b5; }
-[data-theme="light"] .hero-left { background: #f2ede3; }
-[data-theme="light"] .hero-right { background: #d8d3c8; }
-[data-theme="light"] .sanctions-table th { background: #e0dbd0; }
-[data-theme="light"] .sanctions-table td { border-color: #ccc5b5; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-[data-theme="light"] .source-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
-[data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] #progress-bar { background: #8b1a1a; }
-
-[data-theme="light"] .alpha-btn:hover { background: #e8d3d3; }
-</style>
-<style>
-/* Light mode text readability fixes */
-[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
-[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
-[data-theme="light"] .card:hover { background: #d8d3c8; }
-[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
-[data-theme="light"] .related-card:hover { background: #d8d3c8; }
-[data-theme="light"] .person-quote { background: #e8e3d8; }
-[data-theme="light"] .meme-card { background: #e8e3d8; }
-</style>
-
-<style id="light-mode-hovers">
-/* Additional light mode hover fixes */
-
-[data-theme="light"] .nav-page-link:hover { background: #d8d3c8; color: #111; }
-[data-theme="light"] .flt-btn:hover, [data-theme="light"] .flt-btn.active { background: #e8d3d3; color: #8b1a1a; }
-[data-theme="light"] .share-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .copy-quote-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .back-to-top { color: #f2ede3; }
-[data-theme="light"] .back-to-top:hover { color: #fff; background: #6e1414; }
-[data-theme="light"] .graph-btn:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-</style>
-
-<style id="mobile-fixes">
-  @media (max-width: 480px) {
-    .term-entry { padding: 24px 20px !important; gap: 12px !important; }
-    .masthead { padding: 40px 20px 28px !important; }
-    .masthead-title { font-size: clamp(2rem, 8vw, 3rem) !important; }
-    .container, .selector-wrap, .compare-section, .nav-back, .footer { padding-left: 20px !important; padding-right: 20px !important; }
-    .topbar { padding-left: 16px !important; padding-right: 16px !important; flex-wrap: nowrap !important; gap: 6px !important; overflow-x: auto !important; }
-    .section { padding: 40px 0 !important; }
-    .overview .ov-card { padding: 24px 20px !important; }
-    .cg-label { display: block !important; margin-top: 16px; font-weight: 700; background: transparent !important; padding: 10px 0 4px !important; border-bottom: 1px solid var(--red); color: var(--red) !important; }
-    .cg-head { display: block !important; padding: 16px 20px !important; }
-    .compare-grid { gap: 12px !important; }
-    .cg-cell { padding: 12px 20px !important; }
-    .nav-pages { padding: 24px 20px !important; }
-    .quote-strip { padding: 40px 20px !important; }
-    .assets-grid { gap: 16px !important; background: transparent !important; }
-    .asset-card { padding: 24px !important; }
-    .person-info { padding-bottom: 12px !important; }
-    .timeline-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .timeline-event { padding: 24px !important; }
-    .source-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .source-card { padding: 24px !important; }
-    .alpha-nav { background: transparent !important; gap: 6px !important; }
-    .alpha-btn { border: 1px solid var(--rule); border-radius: 4px; flex-shrink: 0; }
-  }
-</style>
-
-<style id="topbar-clean-fix">
-  @media (max-width: 480px) {
-    .topbar { flex-wrap: nowrap !important; gap: 8px !important; overflow-x: auto !important; padding: 10px 16px !important; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .topbar::-webkit-scrollbar { display: none; }
-    .topbar-left { flex-shrink: 0; }
-    .topbar-right { flex-shrink: 0; gap: 8px !important; }
-    .hide-on-mobile { display: none !important; }
-    #theme-toggle { padding: 6px 8px !important; font-size: 9px !important; border: 1px solid var(--rule) !important; }
-    .lang-switch a { padding: 6px 8px !important; font-size: 9px !important; }
-    .report-link { display: none !important; }
-  }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="css/kv.css">
+<link rel="stylesheet" href="css/pages.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}</script>
+<script src="js/kv.js" defer></script>
 </head>
 
 
-<body>
+<body class="page-glossary">
 
-<div class="topbar"><div class="topbar-left"><a href="index.html">← <span class="hide-on-mobile">Все досье</span></a></div><div class="topbar-right"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button><div class="lang-switch"><a href="glossary.html" class="active">RU</a><a href="glossary-en.html">EN</a></div></div></div>
+<header class="site-head">
+  <a class="brand" href="index.html"><span class="brand-mark">Голоса <i>Кремля</i></span><span class="brand-sub">Документальный архив</span></a>
+  <nav class="site-nav" aria-label="Разделы архива"><a href="index.html#catalogue">Досье</a><a href="quotes.html">Цитатник</a><a href="sanctions.html">Санкции</a><a href="timeline.html">Хронология</a><a href="connections.html">Связи</a><button type="button" class="menu-link" data-menu-open aria-controls="menu" aria-expanded="false">Указатель +</button></nav>
+  <div class="site-tools">
+    <a class="tip-link" href="submit.html">Сообщить</a>
+    <div class="lang"><a href="glossary.html" hreflang="ru" class="is-on" aria-current="true">RU</a><a href="glossary-en.html" hreflang="en">EN</a></div>
+    <button type="button" id="theme-toggle"></button>
+    <button type="button" class="menu-btn" data-menu-open aria-controls="menu" aria-expanded="false">Указатель<span class="bars"></span></button>
+  </div>
+</header>
+<div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Разделы архива">
+  <div class="ms-top"><span class="brand-mark">Голоса <i>Кремля</i></span><button type="button" class="ms-close" data-menu-close>Закрыть ✕</button></div>
+  <ol><li><a href="index.html"><span>00</span>Главная</a></li><li><a href="quotes.html"><span>01</span>Цитатник</a></li><li><a href="sanctions.html"><span>02</span>Санкции</a></li><li><a href="timeline.html"><span>03</span>Хронология</a></li><li><a href="connections.html"><span>04</span>Связи</a></li><li><a href="compare.html"><span>05</span>Сравнить</a></li><li><a href="tv-propaganda.html"><span>06</span>Пропаганда</a></li><li><a href="media-empire.html"><span>07</span>Медиаимперия</a></li><li><a href="assets.html"><span>08</span>Владения</a></li><li><a href="glossary.html" class="is-on"><span>09</span>Глоссарий</a></li><li><a href="sources.html"><span>10</span>Источники</a></li><li><a href="about.html"><span>11</span>О проекте</a></li></ol>
+  <div class="ms-foot label"><a href="index.html#catalogue">Досье →</a><a href="submit.html">Сообщить →</a><span><a href="glossary.html">RU</a> / <a href="glossary-en.html">EN</a></span></div>
+</div>
 
-<nav class="section-nav">
-  <a href="quotes.html">Цитатник</a>
-  <a href="sanctions.html">Санкции</a>
-  <a href="timeline.html">Хронология</a>
-  <a href="connections.html">Связи</a>
-  <a href="compare.html">Сравнить</a>
-  <a href="tv-propaganda.html">Пропаганда</a>
-  <a href="media-empire.html">Медиаимперия</a>
-  <a href="assets.html">Владения</a>
-  <a href="glossary.html" class="active">Глоссарий</a>
-  <a href="sources.html">Источники</a>
-  <a href="about.html">О проекте</a>
-</nav>
+
 
 <div class="masthead">
   <div class="masthead-eyebrow">Аналитика · Медиаграмотность</div>
@@ -670,51 +404,49 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule)">
       <div style="background:var(--ink);padding:40px">
         <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 1</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Обезличивание противника</div>
+        <div style="font-family:var(--serif);font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Обезличивание противника</div>
         <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Противник обозначается через групповые ярлыки («нацисты», «хунта», «Запад»), а не конкретные имена и должности. Это лишает его человеческих черт и облегчает его демонизацию.</p>
       </div>
       <div style="background:var(--ink);padding:40px">
         <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 2</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Риторика жертвы</div>
+        <div style="font-family:var(--serif);font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Риторика жертвы</div>
         <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Агрессор представляет себя жертвой («вынужденные меры», «ответ на провокацию»). Это снимает с него моральную ответственность и представляет агрессию как самозащиту.</p>
       </div>
       <div style="background:var(--ink);padding:40px">
         <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 3</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Замещение языка</div>
+        <div style="font-family:var(--serif);font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Замещение языка</div>
         <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Война → «специальная операция». Оккупация → «освобождение». Убийство мирных жителей → «удар по военной инфраструктуре». Переименование меняет восприятие реальности, не меняя самой реальности.</p>
       </div>
       <div style="background:var(--ink);padding:40px">
         <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 4</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Ложная альтернатива</div>
+        <div style="font-family:var(--serif);font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Ложная альтернатива</div>
         <p style="font-size:13px;color:var(--light-gray);line-height:1.8">«Или с нами, или против нас». Сложные политические ситуации сводятся к бинарному выбору. Нейтральная позиция объявляется невозможной или предательской. Любая критика — это поддержка врага.</p>
       </div>
       <div style="background:var(--ink);padding:40px">
         <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 5</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Апелляция к истории</div>
+        <div style="font-family:var(--serif);font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Апелляция к истории</div>
         <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Текущие события встраиваются в исторический нарратив («как в 1941-м», «вековая война против России»). Исторические аналогии дают моральный авторитет без необходимости доказывать его применимость к текущей ситуации.</p>
       </div>
       <div style="background:var(--ink);padding:40px">
         <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Признак 6</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Эмоция вместо аргумента</div>
+        <div style="font-family:var(--serif);font-size:18px;color:var(--paper);margin-bottom:12px;font-weight:700">Эмоция вместо аргумента</div>
         <p style="font-size:13px;color:var(--light-gray);line-height:1.8">Высокая эмоциональность, крик, личные нападки — заменяют фактическую аргументацию. Аудитория воспринимает интенсивность как убедительность. Шейнин и Соловьёв — мастера этой техники.</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="footer">
-  <div class="footer-logo">Голоса Кремля</div>
+<footer class="site-foot">
+  <div class="sf-grid">
+    <p class="sf-note"><span class="label">Независимый архив</span>Все материалы составлены на основе открытых источников. Факты верифицированы публикациями СМИ.</p>
+    <ul class="sf-links"><li><a href="quotes.html">Цитатник</a></li><li><a href="sanctions.html">Санкции</a></li><li><a href="timeline.html">Хронология</a></li><li><a href="connections.html">Связи</a></li><li><a href="compare.html">Сравнить</a></li><li><a href="tv-propaganda.html">Пропаганда</a></li><li><a href="media-empire.html">Медиаимперия</a></li><li><a href="assets.html">Владения</a></li><li><a href="glossary.html">Глоссарий</a></li><li><a href="sources.html">Источники</a></li><li><a href="about.html">О проекте</a></li></ul>
+    <div class="sf-meta"><a href="submit.html">Сообщить</a><a href="rss.xml">RSS</a><a href="index-en.html">English version</a></div>
+  </div>
+  <div class="sf-colophon"><div class="footer-logo">Голоса Кремля</div>
   <span>Медиаграмотность · Открытые источники · 2024</span>
-  <span>Словарь составлен на основе анализа публичных высказываний</span>
-</div>
+  <span>Словарь составлен на основе анализа публичных высказываний</span></div>
+  <span class="sf-word" aria-hidden="true">Голоса <i>Кремля</i></span>
+</footer>
 
-<script>
-(function(){
-  var t=localStorage.getItem('theme')||'dark';
-  document.documentElement.dataset.theme=t;
-  var btn=document.getElementById('theme-toggle');
-  if(btn){btn.textContent=t==='light'?'☽ Dark':'☀ Light';btn.title=t==='light'?'Switch to dark':'Switch to light';}
-})();
-</script>
 </body>
 </html>

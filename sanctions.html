@@ -13,154 +13,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
-
-  :root {
-    --ink: #080808;
-    --paper: #ede8dc;
-    --red: #8b1a1a;
-    --red-dim: #5c1111;
-    --green: #1a4a1a;
-    --gray: #4a4a4a;
-    --light-gray: #bab3a0;
-    --rule: #1c1c1c;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { overflow-x: hidden; }
-  body { background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
-
-  .nav-back { padding: 18px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; }
-  .nav-back a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .nav-back a:hover { opacity: 0.6; }
-
-  .masthead { padding: 80px 60px 64px; border-bottom: 1px solid var(--rule); }
-  .masthead-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
-  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: var(--paper); margin-bottom: 16px; line-height: 1.05; }
-  .masthead-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(14px, 1.8vw, 20px); color: var(--light-gray); max-width: 700px; }
-
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
-  .section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
-  .section-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px; }
-  .section-num { font-size: 11px; letter-spacing: 0.2em; color: var(--red); flex-shrink: 0; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: var(--paper); border-bottom: 2px solid var(--red); padding-bottom: 10px; flex: 1; }
-
-  /* MAIN TABLE */
-  .sanctions-table { width: 100%; border-collapse: collapse; background: var(--rule); gap: 2px; }
-
-  .sanctions-table th {
-    background: var(--card-bg);
-    padding: 16px 20px;
-    text-align: left;
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--red);
-    font-weight: 400;
-    border-bottom: 2px solid var(--red-dim);
-  }
-
-  .sanctions-table td {
-    background: var(--ink);
-    padding: 20px;
-    border-bottom: 1px solid var(--rule);
-    border-right: 1px solid var(--rule);
-    vertical-align: top;
-  }
-
-  .sanctions-table tr:last-child td { border-bottom: none; }
-
-  .person-cell { display: flex; align-items: flex-start; gap: 16px; }
-  .person-num { font-size: 10px; color: var(--red); letter-spacing: 0.2em; flex-shrink: 0; margin-top: 3px; }
-  .person-name-link { text-decoration: none; }
-  .person-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--paper); line-height: 1.1; }
-  .person-role { font-size: 11px; color: var(--light-gray); margin-top: 4px; }
-
-  .sanction-yes {
-    display: inline-block;
-    background: #1a0000;
-    border: 1px solid var(--red-dim);
-    color: var(--red);
-    font-size: 9px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 4px 8px;
-    white-space: nowrap;
-  }
-
-  .sanction-no {
-    display: inline-block;
-    color: #333;
-    font-size: 11px;
-  }
-
-  .sanction-date { display: block; font-size: 9px; color: var(--light-gray); margin-top: 4px; letter-spacing: 0.1em; }
-
-  .basis-text { font-size: 12px; color: var(--light-gray); line-height: 1.7; font-style: italic; }
-
-  /* SUMMARY STATS */
-  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-top: 48px; }
-  .stat-card { background: var(--ink); padding: 32px 24px; text-align: center; }
-  .stat-val { font-family: 'Playfair Display', serif; font-size: 40px; color: var(--red); font-weight: 700; }
-  .stat-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray); margin-top: 8px; }
-
-  .legend { display: flex; gap: 32px; margin-bottom: 32px; align-items: center; flex-wrap: wrap; }
-  .legend-item { display: flex; align-items: center; gap: 10px; font-size: 11px; color: var(--light-gray); }
-
-  .footer { padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #333; border-top: 1px solid var(--rule); }
-  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--red); opacity: 0.5; letter-spacing: normal; text-transform: none; }
-
-  @media (max-width: 900px) {
-    .masthead, .container, .nav-back, .footer { padding-left: 24px; padding-right: 24px; }
-    .sanctions-table { font-size: 12px; }
-    .stats-grid { grid-template-columns: 1fr 1fr; }
-  }
-
-  .topbar { padding: 14px 60px; border-bottom: 1px solid var(--rule); background: var(--ink); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-  .topbar-left a { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-  .topbar-left a:hover { opacity: 0.6; }
-  .topbar-right { display: flex; align-items: center; gap: 20px; }
-  .lang-switch { display: flex; border: 1px solid #333; overflow: hidden; }
-  .lang-switch a { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; padding: 6px 12px; transition: all 0.2s; }
-  .lang-switch a.active { color: var(--paper); background: #1c1c1c; }
-  .lang-switch a:hover { color: var(--paper); background: var(--rule); }
-
-  .section-nav {
-    border-bottom: 1px solid var(--rule);
-    padding: 0 60px;
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .section-nav::-webkit-scrollbar { display: none; }
-  .section-nav a {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #555;
-    text-decoration: none;
-    padding: 14px 18px;
-    white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .section-nav a:hover { color: var(--paper); }
-  .section-nav a.active { color: var(--paper); border-bottom-color: var(--red); }
-  @media (max-width: 768px) { .section-nav { padding: 0 16px; } .section-nav a { padding: 12px 12px; font-size: 9px; } }
-
-  .sanction-stats { padding:40px 60px; border-bottom:1px solid var(--rule); }
-  .ss-title { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:var(--red); margin-bottom:28px; }
-  .ss-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
-  .ss-cell { background:var(--card-bg); padding:24px 20px; }
-  .ss-country { font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:#555; margin-bottom:8px; }
-  .ss-count { font-family:'Playfair Display',serif; font-size:2rem; color:var(--paper); line-height:1; margin-bottom:10px; }
-  .ss-bar-bg { background: var(--rule); height:3px; margin-bottom:6px; }
-  .ss-bar { height:3px; background:var(--red); transition:width 0.6s; }
-  .ss-pct { font-size:10px; color:#444; }
-  @media(max-width:768px){ .sanction-stats { padding:32px 20px; } .ss-grid { grid-template-columns:repeat(2,1fr); } }
-</style>
 <meta property="og:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <meta name="twitter:image" content="https://cycterna2222288888-ai.github.io/cremle/og-image.svg">
 <link rel="canonical" href="https://cycterna2222288888-ai.github.io/cremle/sanctions.html">
@@ -168,136 +20,33 @@
 <link rel="alternate" hreflang="en" href="https://cycterna2222288888-ai.github.io/cremle/sanctions-en.html">
 <link rel="alternate" hreflang="x-default" href="https://cycterna2222288888-ai.github.io/cremle/sanctions.html">
 
-<style id="light-mode-css" media="(prefers-color-scheme:light)">
-  /* Injected by theme toggle — applied when data-theme="light" */
-</style>
-<style>
-[data-theme="light"] {
-  --ink: #f2ede3;
-  --paper: #111;
-  --light-gray: #4a4a4a;
-  --rule: #ccc5b5;
-  --card-bg: #e8e3d8;
-}
-[data-theme="light"] body { background: #f2ede3; color: #111; }
-[data-theme="light"] .topbar { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] .card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .card-name { color: #111; }
-[data-theme="light"] .card-role { color: #4a4a4a; }
-[data-theme="light"] .quote-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .quote-text { color: #111; }
-[data-theme="light"] .section { border-color: #ccc5b5; }
-[data-theme="light"] .masthead { border-color: #ccc5b5; }
-[data-theme="light"] .timeline-year { border-color: #ccc5b5; }
-[data-theme="light"] .hero-left { background: #f2ede3; }
-[data-theme="light"] .hero-right { background: #d8d3c8; }
-[data-theme="light"] .sanctions-table th { background: #e0dbd0; }
-[data-theme="light"] .sanctions-table td { border-color: #ccc5b5; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-[data-theme="light"] .source-card { background: #e8e3d8; border-color: #ccc5b5; }
-[data-theme="light"] .footer { border-color: #ccc5b5; color: #888; }
-[data-theme="light"] .nav-back { background: #f2ede3; border-color: #ccc5b5; }
-[data-theme="light"] #progress-bar { background: #8b1a1a; }
-
-[data-theme="light"] .sanctions-search input { background: var(--card-bg); border-color: var(--rule); }
-</style>
-
-<style>
-.sanctions-search { padding:16px 0 0; display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:24px; }
-.sanctions-search input { background: var(--card-bg); border:1px solid #222; color:var(--paper); font-family:'Inter',sans-serif; font-size:13px; font-weight:300; padding:10px 16px; outline:none; width:280px; transition:border 0.2s; }
-.sanctions-search input:focus { border-color:#555; }
-.sanctions-search input::placeholder { color:#444; }
-[data-theme="light"] .sanctions-search input { background:#e8e3d8; border-color:#ccc5b5; }
-</style>
-<style>
-/* Light mode text readability fixes */
-[data-theme="light"] .lang-switch a.active { background: #d8d3c8; color: #111; }
-[data-theme="light"] .lang-switch a:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .search-wrap input { background: #fff; border-color: #ccc5b5; color: #111; }
-[data-theme="light"] .card:hover { background: #d8d3c8; }
-[data-theme="light"] .next-dosye:hover { background: #e8e3d8; }
-[data-theme="light"] .related-card:hover { background: #d8d3c8; }
-[data-theme="light"] .person-quote { background: #e8e3d8; }
-[data-theme="light"] .meme-card { background: #e8e3d8; }
-</style>
-
-<style id="light-mode-hovers">
-/* Additional light mode hover fixes */
-
-[data-theme="light"] .nav-page-link:hover { background: #d8d3c8; color: #111; }
-[data-theme="light"] .flt-btn:hover, [data-theme="light"] .flt-btn.active { background: #e8d3d3; color: #8b1a1a; }
-[data-theme="light"] .share-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .copy-quote-btn:hover { background: #e8e3d8; color: #111; border-color: #ccc5b5; }
-[data-theme="light"] .back-to-top { color: #f2ede3; }
-[data-theme="light"] .back-to-top:hover { color: #fff; background: #6e1414; }
-[data-theme="light"] .graph-btn:hover { background: #ccc5b5; color: #111; }
-[data-theme="light"] .sanctions-table tr:hover td { background: #e8e3d8; }
-</style>
-
-<style id="mobile-fixes">
-  @media (max-width: 480px) {
-    .stat-card { padding: 24px 16px !important; }
-    .stat-val { font-size: 32px !important; }
-    .masthead { padding: 40px 20px 28px !important; }
-    .masthead-title { font-size: clamp(2rem, 8vw, 3rem) !important; }
-    .container, .selector-wrap, .compare-section, .nav-back, .footer { padding-left: 20px !important; padding-right: 20px !important; }
-    .topbar { padding-left: 16px !important; padding-right: 16px !important; flex-wrap: nowrap !important; gap: 6px !important; overflow-x: auto !important; }
-    .section { padding: 40px 0 !important; }
-    .overview .ov-card { padding: 24px 20px !important; }
-    .cg-label { display: block !important; margin-top: 16px; font-weight: 700; background: transparent !important; padding: 10px 0 4px !important; border-bottom: 1px solid var(--red); color: var(--red) !important; }
-    .cg-head { display: block !important; padding: 16px 20px !important; }
-    .compare-grid { gap: 12px !important; }
-    .cg-cell { padding: 12px 20px !important; }
-    .nav-pages { padding: 24px 20px !important; }
-    .quote-strip { padding: 40px 20px !important; }
-    .assets-grid { gap: 16px !important; background: transparent !important; }
-    .asset-card { padding: 24px !important; }
-    .person-info { padding-bottom: 12px !important; }
-    .timeline-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .timeline-event { padding: 24px !important; }
-    .source-grid { grid-template-columns: 1fr !important; gap: 16px !important; background: transparent !important; }
-    .source-card { padding: 24px !important; }
-    .sanctions-table { display: block !important; overflow-x: auto !important; white-space: nowrap; -webkit-overflow-scrolling: touch; font-size: 11px !important; padding-bottom: 8px; border: none !important; }
-    .sanctions-table th { padding: 12px 16px !important; font-size: 9px !important; }
-    .sanctions-table td { padding: 16px !important; }
-    .sanction-stats { padding: 32px 20px !important; }
-    .ss-grid { grid-template-columns: 1fr 1fr !important; gap: 4px !important; }
-    .ss-cell { padding: 16px !important; }
-  }
-</style>
-
-<style id="topbar-clean-fix">
-  @media (max-width: 480px) {
-    .topbar { flex-wrap: nowrap !important; gap: 8px !important; overflow-x: auto !important; padding: 10px 16px !important; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .topbar::-webkit-scrollbar { display: none; }
-    .topbar-left { flex-shrink: 0; }
-    .topbar-right { flex-shrink: 0; gap: 8px !important; }
-    .hide-on-mobile { display: none !important; }
-    #theme-toggle { padding: 6px 8px !important; font-size: 9px !important; border: 1px solid var(--rule) !important; }
-    .lang-switch a { padding: 6px 8px !important; font-size: 9px !important; }
-    .report-link { display: none !important; }
-  }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="css/kv.css">
+<link rel="stylesheet" href="css/pages.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}</script>
+<script src="js/kv.js" defer></script>
 </head>
 
 
-<body>
+<body class="page-sanctions">
 
-<div class="topbar"><div class="topbar-left"><a href="index.html">← <span class="hide-on-mobile">Все досье</span></a></div><div class="topbar-right"><button id="theme-toggle" onclick="(function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);document.getElementById('theme-toggle').title=t==='light'?'Switch to dark':'Switch to light';})()" title="Switch to light" style="background:none;border:1px solid #333;color:#888;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s" onmouseover="this.style.color='var(--paper)'" onmouseout="this.style.color='#888'">☀ Light</button><div class="lang-switch"><a href="sanctions.html" class="active">RU</a><a href="sanctions-en.html">EN</a></div></div></div>
+<header class="site-head">
+  <a class="brand" href="index.html"><span class="brand-mark">Голоса <i>Кремля</i></span><span class="brand-sub">Документальный архив</span></a>
+  <nav class="site-nav" aria-label="Разделы архива"><a href="index.html#catalogue">Досье</a><a href="quotes.html">Цитатник</a><a href="sanctions.html" class="is-on">Санкции</a><a href="timeline.html">Хронология</a><a href="connections.html">Связи</a><button type="button" class="menu-link" data-menu-open aria-controls="menu" aria-expanded="false">Указатель +</button></nav>
+  <div class="site-tools">
+    <a class="tip-link" href="submit.html">Сообщить</a>
+    <div class="lang"><a href="sanctions.html" hreflang="ru" class="is-on" aria-current="true">RU</a><a href="sanctions-en.html" hreflang="en">EN</a></div>
+    <button type="button" id="theme-toggle"></button>
+    <button type="button" class="menu-btn" data-menu-open aria-controls="menu" aria-expanded="false">Указатель<span class="bars"></span></button>
+  </div>
+</header>
+<div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Разделы архива">
+  <div class="ms-top"><span class="brand-mark">Голоса <i>Кремля</i></span><button type="button" class="ms-close" data-menu-close>Закрыть ✕</button></div>
+  <ol><li><a href="index.html"><span>00</span>Главная</a></li><li><a href="quotes.html"><span>01</span>Цитатник</a></li><li><a href="sanctions.html" class="is-on"><span>02</span>Санкции</a></li><li><a href="timeline.html"><span>03</span>Хронология</a></li><li><a href="connections.html"><span>04</span>Связи</a></li><li><a href="compare.html"><span>05</span>Сравнить</a></li><li><a href="tv-propaganda.html"><span>06</span>Пропаганда</a></li><li><a href="media-empire.html"><span>07</span>Медиаимперия</a></li><li><a href="assets.html"><span>08</span>Владения</a></li><li><a href="glossary.html"><span>09</span>Глоссарий</a></li><li><a href="sources.html"><span>10</span>Источники</a></li><li><a href="about.html"><span>11</span>О проекте</a></li></ol>
+  <div class="ms-foot label"><a href="index.html#catalogue">Досье →</a><a href="submit.html">Сообщить →</a><span><a href="sanctions.html">RU</a> / <a href="sanctions-en.html">EN</a></span></div>
+</div>
 
-<nav class="section-nav">
-  <a href="quotes.html">Цитатник</a>
-  <a href="sanctions.html" class="active">Санкции</a>
-  <a href="timeline.html">Хронология</a>
-  <a href="connections.html">Связи</a>
-  <a href="compare.html">Сравнить</a>
-  <a href="tv-propaganda.html">Пропаганда</a>
-  <a href="media-empire.html">Медиаимперия</a>
-  <a href="assets.html">Владения</a>
-  <a href="glossary.html">Глоссарий</a>
-  <a href="sources.html">Источники</a>
-  <a href="about.html">О проекте</a>
-</nav>
+
 
 <div class="masthead">
   <div class="masthead-eyebrow">Аналитика · Открытые источники</div>
@@ -818,77 +567,77 @@
       </thead>
       <tbody>
         <tr>
-          <td><a href="kiselyov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Киселёв</a></td>
+          <td><a href="kiselyov.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Киселёв</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, март 2014</td>
           <td><p class="basis-text">«Центральная фигура государственной пропаганды, поддерживающей развёртывание российских войск на Украине и дестабилизацию страны.»</p></td>
         </tr>
         <tr>
-          <td><a href="solovyov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Соловьёв</a></td>
+          <td><a href="solovyov.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Соловьёв</a></td>
           <td style="font-size:12px;color:var(--light-gray)">Госдеп США, 2022</td>
           <td><p class="basis-text">«Самый энергичный кремлёвский пропагандист, систематически распространяющий ложные нарративы об Украине и Западе.»</p></td>
         </tr>
         <tr>
-          <td><a href="skabeeva.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Скабеева</a></td>
+          <td><a href="skabeeva.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Скабеева</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, 2022</td>
           <td><p class="basis-text">«Осознаёт свою циничную роль в российской пропагандистской машине совместно со своим супругом; активно поддерживает действия против Украины.»</p></td>
         </tr>
         <tr>
-          <td><a href="popov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Попов</a></td>
+          <td><a href="popov.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Попов</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, 2022</td>
           <td><p class="basis-text">«Активно поддерживает действия, подрывающие территориальную целостность, суверенитет и независимость Украины; распространяет ложь и пропаганду.»</p></td>
         </tr>
         <tr>
-          <td><a href="simonyan.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Симоньян</a></td>
+          <td><a href="simonyan.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Симоньян</a></td>
           <td style="font-size:12px;color:var(--light-gray)">МИД Великобритании, 2022</td>
           <td><p class="basis-text">«RT является инструментом информационной войны российского правительства. Симоньян — её главный архитектор и исполнитель.»</p></td>
         </tr>
         <tr>
-          <td><a href="tolstoy.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Толстой</a></td>
+          <td><a href="tolstoy.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Толстой</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, 2022</td>
           <td><p class="basis-text">«Ответственен за систематическое распространение государственной пропаганды и поддержку действий, подрывающих суверенитет и территориальную целостность Украины.»</p></td>
         </tr>
         <tr>
-          <td><a href="sheynin.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Шейнин</a></td>
+          <td><a href="sheynin.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Шейнин</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, 2022</td>
           <td><p class="basis-text">«Систематически продвигает государственную пропаганду и дезинформацию, оправдывающую и поддерживающую вооружённую агрессию против Украины.»</p></td>
         </tr>
         <tr>
-          <td><a href="norkin.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Норкин</a></td>
+          <td><a href="norkin.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Норкин</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, UK — 2022</td>
           <td><p class="basis-text">«Систематически распространяет дезинформацию и государственную пропаганду, обосновывая незаконную военную агрессию России против Украины через формат "Места встречи" на НТВ.»</p></td>
         </tr>
         <tr>
-          <td><a href="keosayan.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Кеосаян</a></td>
+          <td><a href="keosayan.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Кеосаян</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, США, UK — 2022</td>
           <td><p class="basis-text">«Использует художественные кинематографические приёмы для создания и распространения российской государственной пропаганды, направленной против западных демократий и оправдывающей агрессию против Украины.»</p></td>
         </tr>
         <tr>
-          <td><a href="andreyeva.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Андреева</a></td>
+          <td><a href="andreyeva.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Андреева</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, UK — 2022</td>
           <td><p class="basis-text">«Является лицом государственного телевидения, читающим государственную пропаганду в эфире Первого канала, в том числе оправдывающую незаконное вторжение России в Украину.»</p></td>
         </tr>
         <tr>
-          <td><a href="mamontov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Мамонтов</a></td>
+          <td><a href="mamontov.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Мамонтов</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, UK — 2022</td>
           <td><p class="basis-text">«Создаёт псевдодокументальные фильмы, систематически распространяющие дезинформацию и пропаганду, направленную против ЛГБТ-сообщества, украинских граждан и западных демократий.»</p></td>
         </tr>
         <tr>
-          <td><a href="prilepin.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Прилепин</a></td>
+          <td><a href="prilepin.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Прилепин</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, США, UK — 2022</td>
           <td><p class="basis-text">«Командовал батальоном в составе сепаратистских сил ДНР на востоке Украины; активно поддерживает и продвигает действия, подрывающие суверенитет и территориальную целостность Украины.»</p></td>
         </tr>
         <tr>
-          <td><a href="leontyev.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Леонтьев</a></td>
+          <td><a href="leontyev.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Леонтьев</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, UK — 2022</td>
           <td><p class="basis-text">«Систематически распространяет через «Однако» на Первом канале антизападную пропаганду и дезинформацию, оправдывающую агрессию России против Украины.»</p></td>
         </tr>
         <tr>
-          <td><a href="korchevnikov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Корчевников</a></td>
+          <td><a href="korchevnikov.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Корчевников</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС — 2022</td>
           <td><p class="basis-text">«Пропагандирует российскую агрессию против Украины через программу «Судьба человека» и управляемый им православный телеканал «Спас», используя религиозную риторику для легитимизации войны.»</p></td>
         </tr>
         <tr>
-          <td><a href="medinsky.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Мединский</a></td>
+          <td><a href="medinsky.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Мединский</a></td>
           <td style="font-size:12px;color:var(--light-gray)">ЕС, США, UK, Канада — 2022</td>
           <td><p class="basis-text">«Как советник Путина и глава делегации на мирных переговорах ответственен за поддержание условий, несовместимых с суверенитетом Украины; систематически переписывает историю для оправдания агрессии.»</p></td>
         </tr>
@@ -914,22 +663,22 @@
       </thead>
       <tbody>
         <tr>
-          <td><a href="kiselyov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Киселёв</a></td>
+          <td><a href="kiselyov.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Киселёв</a></td>
           <td style="font-size:12px;color:var(--light-gray)">Персона нон грата</td>
           <td><p class="basis-text">Объявлен персоной нон грата в Молдове. Лишён государственной награды Литвы — медали Памяти. Банковские счета заморожены в Швейцарии.</p></td>
         </tr>
         <tr>
-          <td><a href="solovyov.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Соловьёв</a></td>
+          <td><a href="solovyov.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Соловьёв</a></td>
           <td style="font-size:12px;color:var(--light-gray)">Арест имущества</td>
           <td><p class="basis-text">Арестовано имущество в Италии на сумму около €8 млн: 5+ объектов недвижимости на озере Комо, яхта. В 2022 году часть имущества сожжена неизвестными.</p></td>
         </tr>
         <tr>
-          <td><a href="tolstoy.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Толстой</a></td>
+          <td><a href="tolstoy.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Толстой</a></td>
           <td style="font-size:12px;color:var(--light-gray)">Персона нон грата</td>
           <td><p class="basis-text">Объявлен персоной нон грата в Латвии и Эстонии. Исключён из делегации ПАСЕ после исключения России из Совета Европы в марте 2022 года.</p></td>
         </tr>
         <tr>
-          <td><a href="simonyan.html" style="color:var(--paper);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700">Симоньян / RT</a></td>
+          <td><a href="simonyan.html" style="color:var(--paper);text-decoration:none;font-family:var(--serif);font-weight:700">Симоньян / RT</a></td>
           <td style="font-size:12px;color:var(--light-gray)">Блокировка СМИ</td>
           <td><p class="basis-text">RT заблокирован в большинстве стран ЕС, закрыты офисы в Лондоне и Берлине. RT America зарегистрирован как иностранный агент в США. Банковские счета RT заморожены в Европе.</p></td>
         </tr>
@@ -938,20 +687,18 @@
   </div>
 </div>
 
-<div class="footer">
-  <div class="footer-logo">Голоса Кремля</div>
+<footer class="site-foot">
+  <div class="sf-grid">
+    <p class="sf-note"><span class="label">Независимый архив</span>Все материалы составлены на основе открытых источников. Факты верифицированы публикациями СМИ.</p>
+    <ul class="sf-links"><li><a href="quotes.html">Цитатник</a></li><li><a href="sanctions.html">Санкции</a></li><li><a href="timeline.html">Хронология</a></li><li><a href="connections.html">Связи</a></li><li><a href="compare.html">Сравнить</a></li><li><a href="tv-propaganda.html">Пропаганда</a></li><li><a href="media-empire.html">Медиаимперия</a></li><li><a href="assets.html">Владения</a></li><li><a href="glossary.html">Глоссарий</a></li><li><a href="sources.html">Источники</a></li><li><a href="about.html">О проекте</a></li></ul>
+    <div class="sf-meta"><a href="submit.html">Сообщить</a><a href="rss.xml">RSS</a><a href="index-en.html">English version</a></div>
+  </div>
+  <div class="sf-colophon"><div class="footer-logo">Голоса Кремля</div>
   <span>Данные из официальных санкционных реестров · 2024</span>
-  <span>Все факты верифицированы публикациями СМИ</span>
-</div>
+  <span>Все факты верифицированы публикациями СМИ</span></div>
+  <span class="sf-word" aria-hidden="true">Голоса <i>Кремля</i></span>
+</footer>
 
-<script>
-(function(){
-  var t=localStorage.getItem('theme')||'dark';
-  document.documentElement.dataset.theme=t;
-  var btn=document.getElementById('theme-toggle');
-  if(btn){btn.textContent=t==='light'?'☽ Dark':'☀ Light';btn.title=t==='light'?'Switch to dark':'Switch to light';}
-})();
-</script>
 <script>
 function filterSanctions(q){
   q=q.toLowerCase();

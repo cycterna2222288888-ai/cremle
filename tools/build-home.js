@@ -66,7 +66,7 @@ const C = {
     title: '<span class="l1">Голоса</span><span class="l2">Кремля</span>',
     sub: 'Досье на лица государственной пропаганды России',
     cue: 'К архиву досье',
-    faces: 'В кадре', pause: 'Пауза', play: 'Дальше', dossierNo: 'Досье №', facesLabel: 'Портреты из архива',
+    pause: 'Пауза', play: 'Дальше', dossierNo: 'Досье №', facesLabel: 'Портреты из архива',
     big: ['40', 'досье'],
     intro: [
       'Перед вами архив досье на ключевых пропагандистов российского государственного телевидения. Каждое досье составлено на основе открытых источников: биография, ключевые скандалы, цитаты о них их же коллег, руководителей, западных правительств.',
@@ -94,7 +94,7 @@ const C = {
     title: '<span class="l1">Voices</span><span class="l0">of the</span><span class="l2">Kremlin</span>',
     sub: '',
     cue: 'To the dossiers',
-    faces: 'In frame', pause: 'Pause', play: 'Resume', dossierNo: 'Dossier №', facesLabel: 'Portraits from the archive',
+    pause: 'Pause', play: 'Resume', dossierNo: 'Dossier №', facesLabel: 'Portraits from the archive',
     big: ['36', 'Dossiers'],
     intro: ['Different biographies, different talents, different paths to the screen and to power. But one result: war presented as necessity, violence as virtue, lies as the language of the state.'],
     stats: [['6+', 'Sanctioning jurisdictions'], ['2014', 'First sanctions'], ['0', 'Times the word "war" was used']],
@@ -141,7 +141,6 @@ function build(lang) {
   const pad = (n) => String(n).padStart(2, '0');
 
   const featured = FEATURED.map((slug) => cards.find((k) => k.slug === slug)).filter(Boolean);
-  const last = (k) => strip0(k.name.split(/<br\s*\/?>/).pop()).split(' ').pop();
   const faces = featured.map((k, i) => `
       <a class="hf-item${i === 0 ? ' is-on' : ''}" href="${k.href}"${i ? ' aria-hidden="true" tabindex="-1"' : ''}>
         <img src="${crop(k.img, 'hero-')}" alt="${esc(strip0(k.name))}"${i ? ' loading="lazy"' : ' fetchpriority="high"'}>
@@ -152,7 +151,7 @@ function build(lang) {
         </span>
       </a>`).join('');
   const faceIndex = featured.map((k, i) => `
-      <li><a class="hi-link${i === 0 ? ' is-on' : ''}" href="${k.href}" data-i="${i}"><span class="hi-n">${pad(k.num)}</span><span class="hi-name">${last(k)}</span><span class="hi-bar" aria-hidden="true"></span></a></li>`).join('');
+      <li><a class="hi-link${i === 0 ? ' is-on' : ''}" href="${k.href}" data-i="${i}" title="${esc(strip0(k.name))}" aria-label="${c.dossierNo} ${pad(k.num)} · ${esc(strip0(k.name))}">${pad(k.num)}<span class="hi-bar" aria-hidden="true"></span></a></li>`).join('');
 
   const index = SECTIONS.map((s, i) => `
       <li><a href="${en ? s[0] + '-en' : s[0]}.html">
@@ -196,20 +195,20 @@ ${header}
 
 <main id="main-content">
 
-<!-- A · masthead: headline left, one large portrait right, an index of faces that drives it -->
+<!-- A · masthead: headline left, one portrait right; the dossier numbers on the portrait drive it -->
 <section class="h-hero">
   <div class="h-meta label"><span class="dot"></span>${c.meta[0]}<br><span class="muted">${c.meta[1]}</span></div>
   <h1 class="h-title">${c.title}</h1>
   ${c.sub ? `<p class="h-sub">${c.sub}</p>` : ''}
   <a class="h-cue label" href="#catalogue"><span class="h-cue-n">${c.big[0]}</span> ${c.cue} <span aria-hidden="true">↓</span></a>
-  <nav class="hf-index" aria-label="${c.facesLabel}">
-    <div class="hi-head label"><span>${c.faces}</span><button type="button" class="hi-pause" aria-pressed="false" data-pause="${c.pause}" data-play="${c.play}">${c.pause}</button></div>
-    <ol>${faceIndex}
-    </ol>
-  </nav>
   <figure class="h-face" aria-label="${c.facesLabel}">
     <div class="hf-frame">${faces}
-      <span class="hf-count" aria-hidden="true"><b>01</b> / ${pad(featured.length)}</span>
+      <nav class="hf-index" aria-label="${c.facesLabel}">
+        <ol>${faceIndex}
+        </ol>
+        <span class="hf-count" aria-hidden="true"><b>01</b> / ${pad(featured.length)}</span>
+        <button type="button" class="hi-pause" aria-pressed="false" data-pause="${c.pause}" data-play="${c.play}">${c.pause}</button>
+      </nav>
     </div>
   </figure>
 </section>
@@ -308,7 +307,7 @@ ${footer}
     if (bar) bar.addEventListener('animationend', function(){ if (i === cur) show(cur + 1); });
   });
   function hold(on) { hero.classList.toggle('is-held', on || held); }
-  [document.querySelector('.h-face'), document.querySelector('.hf-index')].forEach(function(z){
+  [document.querySelector('.h-face')].forEach(function(z){
     if (!z) return;
     z.addEventListener('mouseenter', function(){ hold(true); });
     z.addEventListener('mouseleave', function(){ hold(false); });
@@ -389,3 +388,6 @@ for (const lang of ['ru', 'en']) {
   fs.writeFileSync(path.join(ROOT, C[lang].file), build(lang));
   console.log('wrote', C[lang].file);
 }
+
+// keep asset URLs versioned so a deploy never serves new markup with a cached stylesheet
+require('./stamp-assets.js');

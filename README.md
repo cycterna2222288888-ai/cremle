@@ -45,7 +45,8 @@ The project relies on a static generation approach, where Python scripts act as 
 ├── [person].html, [person]-en.html  # 70+ Individual bilingual dossiers
 ├── css/                             # Design system: kv.css (core), dossier.css, pages.css, home.css
 ├── js/kv.js                         # Shared interactions (theme, header, reveals, parallax)
-├── tools/                           # build-home.js (homepage), redesign.js (page migration), portraits.py (face-aligned crops)
+├── tools/                           # build-home.js (homepage), redesign.js (page migration), portraits.py (face-aligned crops),
+│                                    # stamp-assets.js (versions css/js URLs — run after editing css/ or js/)
 ├── templates/                       # Localized, optimized media assets (portraits/ = generated crops)
 └── scripts/                         # Python automation & generation scripts
 ```

@@ -57,10 +57,10 @@
 </script>
 <link rel="alternate" type="application/rss+xml" title="Kremlin Voices — RSS" href="rss.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap">
-<link rel="stylesheet" href="css/kv.css">
-<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/kv.css?v=890c6901">
+<link rel="stylesheet" href="css/home.css?v=0364272b">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}</script>
-<script src="js/kv.js" defer></script>
+<script src="js/kv.js?v=b1565fd6" defer></script>
 </head>
 
 <body class="page-home">
@@ -83,23 +83,12 @@
 
 <main id="main-content">
 
-<!-- A · masthead: headline left, one large portrait right, an index of faces that drives it -->
+<!-- A · masthead: headline left, one portrait right; the dossier numbers on the portrait drive it -->
 <section class="h-hero">
   <div class="h-meta label"><span class="dot"></span>Documentary Archive · Open Sources · 2025<br><span class="muted">Thirty-six figures · One system</span></div>
   <h1 class="h-title"><span class="l1">Voices</span><span class="l0">of the</span><span class="l2">Kremlin</span></h1>
   
   <a class="h-cue label" href="#catalogue"><span class="h-cue-n">36</span> To the dossiers <span aria-hidden="true">↓</span></a>
-  <nav class="hf-index" aria-label="Portraits from the archive">
-    <div class="hi-head label"><span>In frame</span><button type="button" class="hi-pause" aria-pressed="false" data-pause="Pause" data-play="Resume">Pause</button></div>
-    <ol>
-      <li><a class="hi-link is-on" href="keosayan-en.html" data-i="0"><span class="hi-n">09</span><span class="hi-name">Keosayan</span><span class="hi-bar" aria-hidden="true"></span></a></li>
-      <li><a class="hi-link" href="dugin-en.html" data-i="1"><span class="hi-n">17</span><span class="hi-name">Dugin</span><span class="hi-bar" aria-hidden="true"></span></a></li>
-      <li><a class="hi-link" href="krasovsky-en.html" data-i="2"><span class="hi-n">18</span><span class="hi-name">Krasovsky</span><span class="hi-bar" aria-hidden="true"></span></a></li>
-      <li><a class="hi-link" href="medvedev-en.html" data-i="3"><span class="hi-n">19</span><span class="hi-name">Medvedev</span><span class="hi-bar" aria-hidden="true"></span></a></li>
-      <li><a class="hi-link" href="kovalchuk-en.html" data-i="4"><span class="hi-n">25</span><span class="hi-name">Kovalchuk</span><span class="hi-bar" aria-hidden="true"></span></a></li>
-      <li><a class="hi-link" href="patrushev-en.html" data-i="5"><span class="hi-n">32</span><span class="hi-name">Patrushev</span><span class="hi-bar" aria-hidden="true"></span></a></li>
-    </ol>
-  </nav>
   <figure class="h-face" aria-label="Portraits from the archive">
     <div class="hf-frame">
       <a class="hf-item is-on" href="keosayan-en.html">
@@ -150,7 +139,18 @@
           <span class="hf-title">The Grey Cardinal of the Kremlin.</span>
         </span>
       </a>
-      <span class="hf-count" aria-hidden="true"><b>01</b> / 06</span>
+      <nav class="hf-index" aria-label="Portraits from the archive">
+        <ol>
+      <li><a class="hi-link is-on" href="keosayan-en.html" data-i="0" title="Tigran Keosayan" aria-label="Dossier № 09 · Tigran Keosayan">09<span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="dugin-en.html" data-i="1" title="Alexander Dugin" aria-label="Dossier № 17 · Alexander Dugin">17<span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="krasovsky-en.html" data-i="2" title="Anton Krasovsky" aria-label="Dossier № 18 · Anton Krasovsky">18<span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="medvedev-en.html" data-i="3" title="Dmitry Medvedev" aria-label="Dossier № 19 · Dmitry Medvedev">19<span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="kovalchuk-en.html" data-i="4" title="Yuri Kovalchuk" aria-label="Dossier № 25 · Yuri Kovalchuk">25<span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="patrushev-en.html" data-i="5" title="Nikolai Patrushev" aria-label="Dossier № 32 · Nikolai Patrushev">32<span class="hi-bar" aria-hidden="true"></span></a></li>
+        </ol>
+        <span class="hf-count" aria-hidden="true"><b>01</b> / 06</span>
+        <button type="button" class="hi-pause" aria-pressed="false" data-pause="Pause" data-play="Resume">Pause</button>
+      </nav>
     </div>
   </figure>
 </section>
@@ -642,7 +642,7 @@
     if (bar) bar.addEventListener('animationend', function(){ if (i === cur) show(cur + 1); });
   });
   function hold(on) { hero.classList.toggle('is-held', on || held); }
-  [document.querySelector('.h-face'), document.querySelector('.hf-index')].forEach(function(z){
+  [document.querySelector('.h-face')].forEach(function(z){
     if (!z) return;
     z.addEventListener('mouseenter', function(){ hold(true); });
     z.addEventListener('mouseleave', function(){ hold(false); });

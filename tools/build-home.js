@@ -21,6 +21,16 @@ function portrait(slug) {
   return m ? m[1] : '';
 }
 
+// normalised crops from tools/portraits.py (fall back to the raw photo)
+function crop(img, prefix) {
+  if (!img) return '';
+  const out = `templates/portraits/${prefix}${path.basename(img).replace(/\.[a-z]+$/i, '')}.jpg`;
+  return fs.existsSync(path.join(ROOT, out)) ? out : img;
+}
+
+// masthead portraits: chosen because their photos share one framing (see tools/portraits.py)
+const FEATURED = ['keosayan', 'dugin', 'krasovsky', 'medvedev', 'kovalchuk', 'patrushev'];
+
 function parseCards(html) {
   const cards = [];
   const re = /<a class="card" data-channel="([^"]*)" href="([^"]+)">([\s\S]*?)<\/a>/g;
@@ -56,6 +66,7 @@ const C = {
     title: '<span class="l1">Голоса</span><span class="l2">Кремля</span>',
     sub: 'Досье на лица государственной пропаганды России',
     cue: 'К архиву досье',
+    faces: 'В кадре', pause: 'Пауза', play: 'Дальше', dossierNo: 'Досье №', facesLabel: 'Портреты из архива',
     big: ['40', 'досье'],
     intro: [
       'Перед вами архив досье на ключевых пропагандистов российского государственного телевидения. Каждое досье составлено на основе открытых источников: биография, ключевые скандалы, цитаты о них их же коллег, руководителей, западных правительств.',
@@ -83,6 +94,7 @@ const C = {
     title: '<span class="l1">Voices</span><span class="l0">of the</span><span class="l2">Kremlin</span>',
     sub: '',
     cue: 'To the dossiers',
+    faces: 'In frame', pause: 'Pause', play: 'Resume', dossierNo: 'Dossier №', facesLabel: 'Portraits from the archive',
     big: ['36', 'Dossiers'],
     intro: ['Different biographies, different talents, different paths to the screen and to power. But one result: war presented as necessity, violence as virtue, lies as the language of the state.'],
     stats: [['6+', 'Sanctioning jurisdictions'], ['2014', 'First sanctions'], ['0', 'Times the word "war" was used']],
@@ -128,11 +140,19 @@ function build(lang) {
   const en = lang === 'en';
   const pad = (n) => String(n).padStart(2, '0');
 
-  const strip = cards.slice(0, 6).map((k, i) => `
-      <a class="strip-item" href="${k.href}" style="--i:${i}">
-        <img src="${k.img}" alt="${esc(strip0(k.name))}"${i > 2 ? ' loading="lazy"' : ''}>
-        <span class="strip-cap"><b>${pad(k.num)}</b>${strip0(k.name)}</span>
+  const featured = FEATURED.map((slug) => cards.find((k) => k.slug === slug)).filter(Boolean);
+  const last = (k) => strip0(k.name.split(/<br\s*\/?>/).pop()).split(' ').pop();
+  const faces = featured.map((k, i) => `
+      <a class="hf-item${i === 0 ? ' is-on' : ''}" href="${k.href}"${i ? ' aria-hidden="true" tabindex="-1"' : ''}>
+        <img src="${crop(k.img, 'hero-')}" alt="${esc(strip0(k.name))}"${i ? ' loading="lazy"' : ' fetchpriority="high"'}>
+        <span class="hf-cap">
+          <span class="hf-num">${c.dossierNo} ${pad(k.num)}</span>
+          <span class="hf-name">${strip0(k.name)}</span>
+          <span class="hf-title">${k.title}</span>
+        </span>
       </a>`).join('');
+  const faceIndex = featured.map((k, i) => `
+      <li><a class="hi-link${i === 0 ? ' is-on' : ''}" href="${k.href}" data-i="${i}"><span class="hi-n">${pad(k.num)}</span><span class="hi-name">${last(k)}</span><span class="hi-bar" aria-hidden="true"></span></a></li>`).join('');
 
   const index = SECTIONS.map((s, i) => `
       <li><a href="${en ? s[0] + '-en' : s[0]}.html">
@@ -144,9 +164,9 @@ function build(lang) {
       </a></li>`).join('');
 
   const rows = cards.map((k) => `
-    <a class="card entry" data-channel="${k.channel}" href="${k.href}" data-img="${k.img}">
+    <a class="card entry" data-channel="${k.channel}" href="${k.href}" data-img="${crop(k.img, '')}">
       <span class="e-num">${pad(k.num)}</span>
-      <span class="e-ph" aria-hidden="true"><img src="${k.img}" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="${crop(k.img, '')}" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">${k.name}</span><span class="card-title">${k.title}</span></span>
       <span class="e-facts">${k.facts.map(([a, b]) => `<span class="e-fact"><span class="e-k">${a}</span><span class="e-v">${b}</span></span>`).join('')}</span>
       ${k.quote ? `<span class="e-quote">${k.quote}</span>` : ''}
@@ -176,14 +196,22 @@ ${header}
 
 <main id="main-content">
 
-<!-- A · masthead: headline left, portrait strip right, metadata on its own line -->
+<!-- A · masthead: headline left, one large portrait right, an index of faces that drives it -->
 <section class="h-hero">
   <div class="h-meta label"><span class="dot"></span>${c.meta[0]}<br><span class="muted">${c.meta[1]}</span></div>
   <h1 class="h-title">${c.title}</h1>
   ${c.sub ? `<p class="h-sub">${c.sub}</p>` : ''}
   <a class="h-cue label" href="#catalogue"><span class="h-cue-n">${c.big[0]}</span> ${c.cue} <span aria-hidden="true">↓</span></a>
-  <div class="h-strip">${strip}
-  </div>
+  <nav class="hf-index" aria-label="${c.facesLabel}">
+    <div class="hi-head label"><span>${c.faces}</span><button type="button" class="hi-pause" aria-pressed="false" data-pause="${c.pause}" data-play="${c.play}">${c.pause}</button></div>
+    <ol>${faceIndex}
+    </ol>
+  </nav>
+  <figure class="h-face" aria-label="${c.facesLabel}">
+    <div class="hf-frame">${faces}
+      <span class="hf-count" aria-hidden="true"><b>01</b> / ${pad(featured.length)}</span>
+    </div>
+  </figure>
 </section>
 
 <!-- B · one big number + a narrow column -->
@@ -247,6 +275,56 @@ ${footer}
 
 <div class="hover-preview" id="hover-preview" aria-hidden="true"><img alt=""></div>
 
+<script>
+(function(){
+  // masthead: index of faces drives the portrait; slow auto-advance, paused on hover/focus or by the button
+  var hero = document.querySelector('.h-hero');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.hf-item'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.hi-link'));
+  var count = document.querySelector('.hf-count b');
+  var btn = document.querySelector('.hi-pause');
+  if (!hero || !items.length) return;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = 0, held = false;
+  if (still) hero.classList.add('is-still');
+  function show(n) {
+    if (n === cur) return;
+    cur = (n + items.length) % items.length;
+    items.forEach(function(el, i){
+      var on = i === cur;
+      el.classList.toggle('is-on', on);
+      if (on) { el.removeAttribute('aria-hidden'); el.removeAttribute('tabindex'); }
+      else { el.setAttribute('aria-hidden', 'true'); el.setAttribute('tabindex', '-1'); }
+      var img = el.querySelector('img');
+      if (on && img.loading === 'lazy') img.loading = 'eager';
+    });
+    links.forEach(function(a, i){ a.classList.remove('is-on'); if (i === cur) { void a.offsetWidth; a.classList.add('is-on'); } });
+    if (count) count.textContent = String(cur + 1).padStart(2, '0');
+  }
+  links.forEach(function(a, i){
+    a.addEventListener('mouseenter', function(){ show(i); });
+    a.addEventListener('focus', function(){ show(i); });
+    var bar = a.querySelector('.hi-bar');
+    if (bar) bar.addEventListener('animationend', function(){ if (i === cur) show(cur + 1); });
+  });
+  function hold(on) { hero.classList.toggle('is-held', on || held); }
+  [document.querySelector('.h-face'), document.querySelector('.hf-index')].forEach(function(z){
+    if (!z) return;
+    z.addEventListener('mouseenter', function(){ hold(true); });
+    z.addEventListener('mouseleave', function(){ hold(false); });
+    z.addEventListener('focusin', function(){ hold(true); });
+    z.addEventListener('focusout', function(){ hold(false); });
+  });
+  if (btn) btn.addEventListener('click', function(){
+    held = !held;
+    btn.setAttribute('aria-pressed', String(held));
+    btn.textContent = held ? btn.dataset.play : btn.dataset.pause;
+    hold(held);
+  });
+  // warm the cache for the next portraits once the page has settled
+  window.addEventListener('load', function(){ items.forEach(function(el){ var img = el.querySelector('img'); if (img.loading === 'lazy') img.loading = 'eager'; }); });
+})();
+</script>
 <script>
 (function(){
   var cards = Array.prototype.slice.call(document.querySelectorAll('.entry'));

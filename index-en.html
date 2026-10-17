@@ -83,38 +83,76 @@
 
 <main id="main-content">
 
-<!-- A · masthead: headline left, portrait strip right, metadata on its own line -->
+<!-- A · masthead: headline left, one large portrait right, an index of faces that drives it -->
 <section class="h-hero">
   <div class="h-meta label"><span class="dot"></span>Documentary Archive · Open Sources · 2025<br><span class="muted">Thirty-six figures · One system</span></div>
   <h1 class="h-title"><span class="l1">Voices</span><span class="l0">of the</span><span class="l2">Kremlin</span></h1>
   
   <a class="h-cue label" href="#catalogue"><span class="h-cue-n">36</span> To the dossiers <span aria-hidden="true">↓</span></a>
-  <div class="h-strip">
-      <a class="strip-item" href="solovyov-en.html" style="--i:0">
-        <img src="templates/soloviev.jpg" alt="Vladimir Solovyov">
-        <span class="strip-cap"><b>01</b>Vladimir Solovyov</span>
+  <nav class="hf-index" aria-label="Portraits from the archive">
+    <div class="hi-head label"><span>In frame</span><button type="button" class="hi-pause" aria-pressed="false" data-pause="Pause" data-play="Resume">Pause</button></div>
+    <ol>
+      <li><a class="hi-link is-on" href="keosayan-en.html" data-i="0"><span class="hi-n">09</span><span class="hi-name">Keosayan</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="dugin-en.html" data-i="1"><span class="hi-n">17</span><span class="hi-name">Dugin</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="krasovsky-en.html" data-i="2"><span class="hi-n">18</span><span class="hi-name">Krasovsky</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="medvedev-en.html" data-i="3"><span class="hi-n">19</span><span class="hi-name">Medvedev</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="kovalchuk-en.html" data-i="4"><span class="hi-n">25</span><span class="hi-name">Kovalchuk</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="patrushev-en.html" data-i="5"><span class="hi-n">32</span><span class="hi-name">Patrushev</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+    </ol>
+  </nav>
+  <figure class="h-face" aria-label="Portraits from the archive">
+    <div class="hf-frame">
+      <a class="hf-item is-on" href="keosayan-en.html">
+        <img src="templates/portraits/hero-keosayan.jpg" alt="Tigran Keosayan" fetchpriority="high">
+        <span class="hf-cap">
+          <span class="hf-num">Dossier № 09</span>
+          <span class="hf-name">Tigran Keosayan</span>
+          <span class="hf-title">Cinema as a Weapon</span>
+        </span>
       </a>
-      <a class="strip-item" href="skabeeva-en.html" style="--i:1">
-        <img src="templates/skabeeva.jpg" alt="Olga Skabeeva">
-        <span class="strip-cap"><b>02</b>Olga Skabeeva</span>
+      <a class="hf-item" href="dugin-en.html" aria-hidden="true" tabindex="-1">
+        <img src="templates/portraits/hero-dugin.jpg" alt="Alexander Dugin" loading="lazy">
+        <span class="hf-cap">
+          <span class="hf-num">Dossier № 17</span>
+          <span class="hf-name">Alexander Dugin</span>
+          <span class="hf-title">The Ideologue. "Putin's Brain."</span>
+        </span>
       </a>
-      <a class="strip-item" href="simonyan-en.html" style="--i:2">
-        <img src="templates/simonyan.jpg" alt="Margarita Simonyan">
-        <span class="strip-cap"><b>03</b>Margarita Simonyan</span>
+      <a class="hf-item" href="krasovsky-en.html" aria-hidden="true" tabindex="-1">
+        <img src="templates/portraits/hero-krasovsky.jpg" alt="Anton Krasovsky" loading="lazy">
+        <span class="hf-cap">
+          <span class="hf-num">Dossier № 18</span>
+          <span class="hf-name">Anton Krasovsky</span>
+          <span class="hf-title">Called for drowning Ukrainian children. Was reinstated.</span>
+        </span>
       </a>
-      <a class="strip-item" href="kiselyov-en.html" style="--i:3">
-        <img src="templates/kiselev.jpeg" alt="Dmitry Kiselyov" loading="lazy">
-        <span class="strip-cap"><b>04</b>Dmitry Kiselyov</span>
+      <a class="hf-item" href="medvedev-en.html" aria-hidden="true" tabindex="-1">
+        <img src="templates/portraits/hero-medvedev.jpg" alt="Dmitry Medvedev" loading="lazy">
+        <span class="hf-cap">
+          <span class="hf-num">Dossier № 19</span>
+          <span class="hf-name">Dmitry Medvedev</span>
+          <span class="hf-title">Ex-president. Kremlin's chief nuclear threatener.</span>
+        </span>
       </a>
-      <a class="strip-item" href="popov-en.html" style="--i:4">
-        <img src="templates/popov.jpg" alt="Yevgeny Popov" loading="lazy">
-        <span class="strip-cap"><b>05</b>Yevgeny Popov</span>
+      <a class="hf-item" href="kovalchuk-en.html" aria-hidden="true" tabindex="-1">
+        <img src="templates/portraits/hero-kovalchuk.jpg" alt="Yuri Kovalchuk" loading="lazy">
+        <span class="hf-cap">
+          <span class="hf-num">Dossier № 25</span>
+          <span class="hf-name">Yuri Kovalchuk</span>
+          <span class="hf-title">The Media Tsar. The invisible architect.</span>
+        </span>
       </a>
-      <a class="strip-item" href="sheynin-en.html" style="--i:5">
-        <img src="templates/sheinin.jpg" alt="Artyom Sheynin" loading="lazy">
-        <span class="strip-cap"><b>06</b>Artyom Sheynin</span>
+      <a class="hf-item" href="patrushev-en.html" aria-hidden="true" tabindex="-1">
+        <img src="templates/portraits/hero-patrushev.jpg" alt="Nikolai Patrushev" loading="lazy">
+        <span class="hf-cap">
+          <span class="hf-num">Dossier № 32</span>
+          <span class="hf-name">Nikolai Patrushev</span>
+          <span class="hf-title">The Grey Cardinal of the Kremlin.</span>
+        </span>
       </a>
-  </div>
+      <span class="hf-count" aria-hidden="true"><b>01</b> / 06</span>
+    </div>
+  </figure>
 </section>
 
 <!-- B · one big number + a narrow column -->
@@ -226,289 +264,289 @@
     <button type="button" class="rnd" id="btn-random" title="Open a random dossier">Random dossier <span aria-hidden="true">⇄</span></button>
   </div>
   <div class="entries">
-    <a class="card entry" data-channel="rossiya1" href="solovyov-en.html" data-img="templates/soloviev.jpg">
+    <a class="card entry" data-channel="rossiya1" href="solovyov-en.html" data-img="templates/portraits/soloviev.jpg">
       <span class="e-num">01</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/soloviev.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/soloviev.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Vladimir Solovyov</span><span class="card-title">The Voice of War</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">Oct 20, 1963, Moscow</span></span><span class="e-fact"><span class="e-k">Show</span><span class="e-v">Evening with Solovyov, Russia-1</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK, Canada, Australia, Japan</span></span><span class="e-fact"><span class="e-k">Notable</span><span class="e-v">Villas in Italy seized. Nuclear rhetoric since 2014.</span></span></span>
       <span class="e-quote">«Russia does not start wars. Russia ends them.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rossiya1" href="skabeeva-en.html" data-img="templates/skabeeva.jpg">
+    <a class="card entry" data-channel="rossiya1" href="skabeeva-en.html" data-img="templates/portraits/skabeeva.jpg">
       <span class="e-num">02</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/skabeeva.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/skabeeva.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Olga Skabeeva</span><span class="card-title">"The Kremlin's Doll"</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">May 19, 1983, Krasnodar</span></span><span class="e-fact"><span class="e-k">Show</span><span class="e-v">60 Minutes, Russia-1</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK, Canada</span></span><span class="e-fact"><span class="e-k">Notable</span><span class="e-v">Husband Evgeny Popov is co-host and MP</span></span></span>
       <span class="e-quote">«We are already essentially fighting with NATO.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rt" href="simonyan-en.html" data-img="templates/simonyan.jpg">
+    <a class="card entry" data-channel="rt" href="simonyan-en.html" data-img="templates/portraits/simonyan.jpg">
       <span class="e-num">03</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/simonyan.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/simonyan.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Margarita Simonyan</span><span class="card-title">Architect of Global Disinformation</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">Apr 6, 1980, Krasnodar</span></span><span class="e-fact"><span class="e-k">Role</span><span class="e-v">Editor-in-Chief, RT</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK, Canada, Australia</span></span><span class="e-fact"><span class="e-k">Notable</span><span class="e-v">US DOJ: $10M paid to US influencers via Tenet Media</span></span></span>
       <span class="e-quote">«Either we win — or nuclear war. There is no third option.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rossiya1" href="kiselyov-en.html" data-img="templates/kiselev.jpeg">
+    <a class="card entry" data-channel="rossiya1" href="kiselyov-en.html" data-img="templates/portraits/kiselev.jpg">
       <span class="e-num">04</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/kiselev.jpeg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/kiselev.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Dmitry Kiselyov</span><span class="card-title">The Nuclear Threat Voice</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">Apr 26, 1954, Moscow</span></span><span class="e-fact"><span class="e-k">Show</span><span class="e-v">Vesti Nedeli, Russia-1</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU (2014), USA, UK, Canada</span></span><span class="e-fact"><span class="e-k">Notable</span><span class="e-v">First Russian journalist sanctioned by EU — in 2014</span></span></span>
       <span class="e-quote">«Russia is the only country capable of turning the USA into radioactive ash.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rossiya1" href="popov-en.html" data-img="templates/popov.jpg">
+    <a class="card entry" data-channel="rossiya1" href="popov-en.html" data-img="templates/portraits/popov.jpg">
       <span class="e-num">05</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/popov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/popov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Yevgeny Popov</span><span class="card-title">Propagandist-Turned-MP</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Show</span><span class="e-v">60 Minutes, Russia-1</span></span><span class="e-fact"><span class="e-k">Also</span><span class="e-v">Member of State Duma</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK</span></span></span>
       <span class="e-quote">«We are a peaceful country forced to fight.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="perviy" href="sheynin-en.html" data-img="templates/sheinin.jpg">
+    <a class="card entry" data-channel="perviy" href="sheynin-en.html" data-img="templates/portraits/sheinin.jpg">
       <span class="e-num">06</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/sheinin.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/sheinin.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Artyom Sheynin</span><span class="card-title">The Hermetic Studio</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Show</span><span class="e-v">Vremya Pokazhet, Channel One</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK</span></span></span>
       <span class="e-quote">«The West wants Russia to disappear. We will not disappear.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="perviy" href="tolstoy-en.html" data-img="templates/tolstoy.jpeg">
+    <a class="card entry" data-channel="perviy" href="tolstoy-en.html" data-img="templates/portraits/tolstoy.jpg">
       <span class="e-num">07</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/tolstoy.jpeg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/tolstoy.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Pyotr Tolstoy</span><span class="card-title">Great-great-grandson of Leo Tolstoy. Votes for war.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1969, Moscow</span></span><span class="e-fact"><span class="e-k">Role</span><span class="e-v">Deputy Speaker, State Duma</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK, Canada</span></span></span>
       <span class="e-quote">«Leo Tolstoy wrote War and Peace. Pyotr Tolstoy votes for war.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="ntv" href="norkin-en.html" data-img="templates/norkin.jpg">
+    <a class="card entry" data-channel="ntv" href="norkin-en.html" data-img="templates/portraits/norkin.jpg">
       <span class="e-num">08</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/norkin.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/norkin.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Andrey Norkin</span><span class="card-title">From Independent TV to State Tribunal</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Show</span><span class="e-v">Mesto Vstrechi, NTV</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK</span></span></span>
       <span class="e-quote">«There is no such thing as Ukraine. It's a Western project against Russia.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rt" href="keosayan-en.html" data-img="templates/keosayan.jpg">
+    <a class="card entry" data-channel="rt" href="keosayan-en.html" data-img="templates/portraits/keosayan.jpg">
       <span class="e-num">09</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/keosayan.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/keosayan.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Tigran Keosayan</span><span class="card-title">Cinema as a Weapon</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Role</span><span class="e-v">Director, RT presenter</span></span><span class="e-fact"><span class="e-k">Married to</span><span class="e-v">Margarita Simonyan</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK</span></span></span>
       <span class="e-quote">«I make films about the truth. The West calls it propaganda.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="perviy" href="andreyeva-en.html" data-img="templates/andreeva.webp">
+    <a class="card entry" data-channel="perviy" href="andreyeva-en.html" data-img="templates/portraits/andreeva.jpg">
       <span class="e-num">10</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/andreeva.webp" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/andreeva.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Yekaterina Andreyeva</span><span class="card-title">The State's Voice</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1965, Leningrad</span></span><span class="e-fact"><span class="e-k">Show</span><span class="e-v">News, Channel One</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK</span></span></span>
       <span class="e-quote">«We report only verified information.» [The same day Channel One aired the "crucified boy" story]</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rossiya1" href="mamontov-en.html" data-img="templates/mamontov.png">
+    <a class="card entry" data-channel="rossiya1" href="mamontov-en.html" data-img="templates/portraits/mamontov.jpg">
       <span class="e-num">11</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/mamontov.png" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/mamontov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Arkady Mamontov</span><span class="card-title">Chief War Documentarian</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1962, Omsk</span></span><span class="e-fact"><span class="e-k">Show</span><span class="e-v">Documentaries, Russia-1</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK</span></span></span>
       <span class="e-quote">«I film what others are afraid to show.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="prilepin-en.html" data-img="templates/prilepin.jpg">
+    <a class="card entry" data-channel="vlast" href="prilepin-en.html" data-img="templates/portraits/prilepin.jpg">
       <span class="e-num">12</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/prilepin.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/prilepin.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Zakhar Prilepin</span><span class="card-title">The Writer Who Took Up Arms</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1975, Ryazan region</span></span><span class="e-fact"><span class="e-k">Fought</span><span class="e-v">Donbas since 2014</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK</span></span><span class="e-fact"><span class="e-k">2023</span><span class="e-v">Survived car bombing. Driver killed.</span></span></span>
       <span class="e-quote">«War is the highest form of the nation's self-expression.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="perviy" href="leontyev-en.html" data-img="templates/mihail-leontyev-foto.jpg">
+    <a class="card entry" data-channel="perviy" href="leontyev-en.html" data-img="templates/portraits/mihail-leontyev-foto.jpg">
       <span class="e-num">13</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/mihail-leontyev-foto.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/mihail-leontyev-foto.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Mikhail Leontyev</span><span class="card-title">Oil Nationalism's Voice</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1958, Moscow</span></span><span class="e-fact"><span class="e-k">Role</span><span class="e-v">Rosneft PR, Channel One pundit</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK</span></span></span>
       <span class="e-quote">«Sanctions against Russia are sanctions against the West's own economy.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rossiya1" href="korchevnikov-en.html" data-img="templates/korchevnikov.jpg">
+    <a class="card entry" data-channel="rossiya1" href="korchevnikov-en.html" data-img="templates/portraits/korchevnikov.jpg">
       <span class="e-num">14</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/korchevnikov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/korchevnikov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Boris Korchevnikov</span><span class="card-title">Holy War</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1981, Moscow</span></span><span class="e-fact"><span class="e-k">Shows</span><span class="e-v">Spas TV, Channel One</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU</span></span></span>
       <span class="e-quote">«This war is not political — it is spiritual. And in spiritual wars there are no compromises.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="medinsky-en.html" data-img="templates/medinskiy.jpg">
+    <a class="card entry" data-channel="vlast" href="medinsky-en.html" data-img="templates/portraits/medinskiy.jpg">
       <span class="e-num">15</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/medinskiy.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/medinskiy.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Vladimir Medinsky</span><span class="card-title">Russia's Chief Negotiator</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">Jul 18, 1970, Smela, Ukraine</span></span><span class="e-fact"><span class="e-k">Role</span><span class="e-v">Putin's adviser, former Culture Minister</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK, Canada</span></span><span class="e-fact"><span class="e-k">Notable</span><span class="e-v">Born in Ukraine. Denies Ukraine's existence.</span></span></span>
       <span class="e-quote">«Russia has never lost wars it fought for its survival.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="kultura" href="mikhalkov-en.html" data-img="templates/mihalkov.jpg">
+    <a class="card entry" data-channel="kultura" href="mikhalkov-en.html" data-img="templates/portraits/mihalkov.jpg">
       <span class="e-num">16</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/mihalkov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/mihalkov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Nikita Mikhalkov</span><span class="card-title">An Oscar in Service of Empire</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">Oct 21, 1945, Moscow</span></span><span class="e-fact"><span class="e-k">Show</span><span class="e-v">Besogon TV, Russia-1</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK</span></span><span class="e-fact"><span class="e-k">Notable</span><span class="e-v">Won Academy Award in 1995. Now supports the war.</span></span></span>
       <span class="e-quote">«The only active Oscar winner openly supporting Russia's war against Ukraine.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="ideolog" href="dugin-en.html" data-img="templates/dugin.jpg">
+    <a class="card entry" data-channel="ideolog" href="dugin-en.html" data-img="templates/portraits/dugin.jpg">
       <span class="e-num">17</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/dugin.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/dugin.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Alexander Dugin</span><span class="card-title">The Ideologue. "Putin's Brain."</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">Jan 7, 1962, Moscow</span></span><span class="e-fact"><span class="e-k">Role</span><span class="e-v">Philosopher, Eurasian Movement founder</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK, Canada</span></span><span class="e-fact"><span class="e-k">2022</span><span class="e-v">Daughter Darya Dugina killed in car bombing near Moscow</span></span></span>
       <span class="e-quote">«Ukraine as a state has no geopolitical meaning. It is either part of Russia or an anti-Russian bridgehead.» — written in 1997</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rt" href="krasovsky-en.html" data-img="templates/krasovsky.png">
+    <a class="card entry" data-channel="rt" href="krasovsky-en.html" data-img="templates/portraits/krasovsky.jpg">
       <span class="e-num">18</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/krasovsky.png" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/krasovsky.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Anton Krasovsky</span><span class="card-title">Called for drowning Ukrainian children. Was reinstated.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1978</span></span><span class="e-fact"><span class="e-k">Role</span><span class="e-v">RT editor</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU</span></span><span class="e-fact"><span class="e-k">Oct 2022</span><span class="e-v">Live broadcast: said Ukrainian children should be drowned or burned</span></span></span>
       <span class="e-quote">«Simonyan "suspended" him. Then quietly reinstated him. The system showed: you don't get fired for this.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="medvedev-en.html" data-img="templates/medvedev.jpg">
+    <a class="card entry" data-channel="vlast" href="medvedev-en.html" data-img="templates/portraits/medvedev.jpg">
       <span class="e-num">19</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/medvedev.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/medvedev.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Dmitry Medvedev</span><span class="card-title">Ex-president. Kremlin's chief nuclear threatener.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1965</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Deputy Chairman of the Security Council</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">USA, EU, UK</span></span><span class="e-fact"><span class="e-k">Special</span><span class="e-v">Threatens nuclear strikes in Telegram posts</span></span><span class="e-fact"><span class="e-k">2022–2024</span><span class="e-v">Hundreds of threats against foreign leaders on social media</span></span></span>
       <span class="e-quote">«From "liberal president" to the Kremlin's chief nuclear blackmailer.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="kadyrov-en.html" data-img="templates/kadyrov.webp">
+    <a class="card entry" data-channel="vlast" href="kadyrov-en.html" data-img="templates/portraits/kadyrov.jpg">
       <span class="e-num">20</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/kadyrov.webp" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/kadyrov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Ramzan Kadyrov</span><span class="card-title">Head of Chechnya. His own army in the war.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1976</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Head of Chechnya, Colonel-General</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">USA, EU, UK, Canada</span></span><span class="e-fact"><span class="e-k">Special</span><span class="e-v">Sent "Akhmat" forces to Ukraine, threatened opponents</span></span><span class="e-fact"><span class="e-k">2022–2024</span><span class="e-v">Publicly threatened Ukrainian and Western leaders</span></span></span>
       <span class="e-quote">«Putin's loyal enforcer — or an independent threat? Holds nuclear loyalty at gunpoint.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="ideolog" href="malofeev-en.html" data-img="templates/malofeev.jpg">
+    <a class="card entry" data-channel="ideolog" href="malofeev-en.html" data-img="templates/portraits/malofeev.jpg">
       <span class="e-num">21</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/malofeev.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/malofeev.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Konstantin Malofeev</span><span class="card-title">"Orthodox oligarch." Sponsor of separatism.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1974</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Owner of Tsargrad TV</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">USA, EU, UK</span></span><span class="e-fact"><span class="e-k">Special</span><span class="e-v">Financed DPR/LPR in 2014</span></span><span class="e-fact"><span class="e-k">2022–2024</span><span class="e-v">Tsargrad broadcasts ultra-nationalist propaganda</span></span></span>
       <span class="e-quote">«Building an Orthodox monarchy on live TV — with money whose origins are in question.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="nikonov-en.html" data-img="templates/nikonov.jpg">
+    <a class="card entry" data-channel="vlast" href="nikonov-en.html" data-img="templates/portraits/nikonov.jpg">
       <span class="e-num">22</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/nikonov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/nikonov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Vyacheslav Nikonov</span><span class="card-title">Deputy-propagandist. Apologist of "Russian World."</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1956</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">State Duma deputy, political scientist, TV host</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">USA, EU, UK</span></span><span class="e-fact"><span class="e-k">Special</span><span class="e-v">Molotov's grandson; promotes "Russian World" on TV</span></span><span class="e-fact"><span class="e-k">2022–2024</span><span class="e-v">Regular talk-show guest justifying the war</span></span></span>
       <span class="e-quote">«An academic veneer for the Kremlin's crudest narratives.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rt" href="poddubny-en.html" data-img="templates/poddybny.jpeg">
+    <a class="card entry" data-channel="rt" href="poddubny-en.html" data-img="templates/portraits/poddybny.jpg">
       <span class="e-num">23</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/poddybny.jpeg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/poddybny.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Evgeny Poddubny</span><span class="card-title">VGTRK war correspondent. The face of war on screen.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1983</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Military correspondent VGTRK/Russia 24</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK</span></span><span class="e-fact"><span class="e-k">Special</span><span class="e-v">Films from the front line, glorifying the invasion</span></span><span class="e-fact"><span class="e-k">2022–2024</span><span class="e-v">Became a symbol of military propaganda on TV</span></span></span>
       <span class="e-quote">«Frontline reports — pretty pictures for a war the Kremlin won't call a war.»</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="zakharova-en.html" data-img="templates/zaharova.jpg">
+    <a class="card entry" data-channel="vlast" href="zakharova-en.html" data-img="templates/portraits/zaharova.jpg">
       <span class="e-num">24</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/zaharova.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/zaharova.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Maria Zakharova</span><span class="card-title">MFA Spokesperson. Diplomacy as theater.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1975</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">MFA Official Spokesperson (since 2015)</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK, Canada, Australia</span></span><span class="e-fact"><span class="e-k">Method</span><span class="e-v">Briefings as propaganda stage</span></span><span class="e-fact"><span class="e-k">Telegram</span><span class="e-v">1M+ subscribers</span></span></span>
       <span class="e-quote">"The collective West wants to destroy Russia. This is genocide."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="kovalchuk-en.html" data-img="templates/kovalchuk.jpg">
+    <a class="card entry" data-channel="vlast" href="kovalchuk-en.html" data-img="templates/portraits/kovalchuk.jpg">
       <span class="e-num">25</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/kovalchuk.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/kovalchuk.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Yuri Kovalchuk</span><span class="card-title">The Media Tsar. The invisible architect.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1951</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Shareholder, National Media Group</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK, Canada</span></span><span class="e-fact"><span class="e-k">Assets</span><span class="e-v">Channel One, REN TV, Channel Five</span></span><span class="e-fact"><span class="e-k">Connections</span><span class="e-v">Ozero Cooperative — Putin's inner circle</span></span></span>
       <span class="e-quote">"Information matters more than tanks. We understood that before others."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="turchak-en.html" data-img="templates/turchak.jpg">
+    <a class="card entry" data-channel="vlast" href="turchak-en.html" data-img="templates/portraits/turchak.jpg">
       <span class="e-num">26</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/turchak.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/turchak.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Andrei Turchak</span><span class="card-title">United Russia General. The party as war.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1975</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Secretary General, United Russia (since 2017)</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK</span></span><span class="e-fact"><span class="e-k">Method</span><span class="e-v">Party machine as mobilization tool</span></span><span class="e-fact"><span class="e-k">2022</span><span class="e-v">Personally visits the front, organizes convoys</span></span></span>
       <span class="e-quote">"Kherson, Zaporizhzhia — this is Russia forever. This is not up for discussion."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="kultura" href="navka-en.html" data-img="templates/navka.jpg">
+    <a class="card entry" data-channel="kultura" href="navka-en.html" data-img="templates/portraits/navka.jpg">
       <span class="e-num">27</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/navka.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/navka.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Tatiana Navka</span><span class="card-title">Ice and War. Soft power through culture.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1975, Dnipropetrovsk</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">TV host, Peskov's wife</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU (2022)</span></span><span class="e-fact"><span class="e-k">Method</span><span class="e-v">Audiences unreachable by talk shows</span></span><span class="e-fact"><span class="e-k">Show</span><span class="e-v">"Ice Age" on Channel One</span></span></span>
       <span class="e-quote">"I am proud to be Russian. This land we are defending."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="peskov-en.html" data-img="templates/peskov.jpg">
+    <a class="card entry" data-channel="vlast" href="peskov-en.html" data-img="templates/portraits/peskov.jpg">
       <span class="e-num">28</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/peskov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/peskov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Dmitry Peskov</span><span class="card-title">The President's voice. Denial as a state function.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1967</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Putin's Press Secretary (since 2012)</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK, Canada, Australia</span></span><span class="e-fact"><span class="e-k">Method</span><span class="e-v">Systemic denial of documented facts</span></span><span class="e-fact"><span class="e-k">Family</span><span class="e-v">Married to Tatiana Navka</span></span></span>
       <span class="e-quote">"There are no Russian troops in Ukraine, and there never were."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="lavrov-en.html" data-img="templates/lavrov.jpg">
+    <a class="card entry" data-channel="vlast" href="lavrov-en.html" data-img="templates/portraits/lavrov.jpg">
       <span class="e-num">29</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/lavrov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/lavrov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Sergei Lavrov</span><span class="card-title">Diplomacy as a weapon. Twenty years of deception.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1950</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Foreign Minister (since 2004)</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK, Canada, Australia</span></span><span class="e-fact"><span class="e-k">Method</span><span class="e-v">Denial diplomacy, redefinition of reality</span></span><span class="e-fact"><span class="e-k">Previously</span><span class="e-v">UN Permanent Representative (1994–2004)</span></span></span>
       <span class="e-quote">"Ukraine is not a state. It is a project created by the West against Russia."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="mizulina-en.html" data-img="templates/elena_mizulina.jpg">
+    <a class="card entry" data-channel="vlast" href="mizulina-en.html" data-img="templates/portraits/elena_mizulina.jpg">
       <span class="e-num">30</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/elena_mizulina.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/elena_mizulina.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Elena Mizulina</span><span class="card-title">The Censorship Architect. Laws as instruments of repression.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1954</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Senator, Federation Council</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK</span></span><span class="e-fact"><span class="e-k">Method</span><span class="e-v">Criminalizing dissent through legislation</span></span><span class="e-fact"><span class="e-k">2013</span><span class="e-v">Author of the anti-LGBT propaganda law</span></span></span>
       <span class="e-quote">"Whoever criticizes our army is an enemy. The law confirms it."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="nebenzya-en.html" data-img="templates/nebenzya.jpg">
+    <a class="card entry" data-channel="vlast" href="nebenzya-en.html" data-img="templates/portraits/nebenzya.jpg">
       <span class="e-num">31</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/nebenzya.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/nebenzya.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Vasily Nebenzya</span><span class="card-title">Russia's UN envoy. The veto as a weapon.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1962, Moscow</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Russia's UN Permanent Representative</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, UK</span></span><span class="e-fact"><span class="e-k">Since</span><span class="e-v">2017</span></span><span class="e-fact"><span class="e-k">Vetoes</span><span class="e-v">20+ UN Security Council resolutions blocked</span></span></span>
       <span class="e-quote">"Russia is protecting Donbas residents from the genocide organised by the Kyiv regime."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="patrushev-en.html" data-img="templates/patrushev.jpg">
+    <a class="card entry" data-channel="vlast" href="patrushev-en.html" data-img="templates/portraits/patrushev.jpg">
       <span class="e-num">32</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/patrushev.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/patrushev.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Nikolai Patrushev</span><span class="card-title">The Grey Cardinal of the Kremlin.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1951, Leningrad</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Presidential Adviser; former Security Council Secretary</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK</span></span><span class="e-fact"><span class="e-k">FSB director</span><span class="e-v">1999–2008</span></span><span class="e-fact"><span class="e-k">2021</span><span class="e-v">Published article denying Ukrainian statehood</span></span></span>
       <span class="e-quote">"Ukraine as a state has no future."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="matvienko-en.html" data-img="templates/matvienko.jpg">
+    <a class="card entry" data-channel="vlast" href="matvienko-en.html" data-img="templates/portraits/matvienko.jpg">
       <span class="e-num">33</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/matvienko.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/matvienko.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Valentina Matvienko</span><span class="card-title">Born in Ukraine. Voted for its invasion.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1949, Shepetivka, Ukraine</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Speaker, Federation Council</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK, Canada, Australia</span></span><span class="e-fact"><span class="e-k">22 Feb 2022</span><span class="e-v">Authorized use of armed forces in Ukraine</span></span><span class="e-fact"><span class="e-k">Oct 2022</span><span class="e-v">Ratified annexation of 4 regions</span></span></span>
       <span class="e-quote">"The residents of Donbas have chosen Russia. We have taken them in — forever."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="slutsky-en.html" data-img="templates/slutsky.jpg">
+    <a class="card entry" data-channel="vlast" href="slutsky-en.html" data-img="templates/portraits/slutsky.jpg">
       <span class="e-num">34</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/slutsky.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/slutsky.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Leonid Slutsky</span><span class="card-title">LDPR leader. Diplomacy as cover.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1968, Moscow</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">LDPR leader; Duma International Affairs Committee chair</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU, USA, UK</span></span><span class="e-fact"><span class="e-k">Feb–Mar 2022</span><span class="e-v">Led Russia's "peace talks" delegation</span></span><span class="e-fact"><span class="e-k">2018</span><span class="e-v">Cleared by Duma ethics committee after harassment reports</span></span></span>
       <span class="e-quote">"We have reached significant progress in the negotiations."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="emizulina-en.html" data-img="templates/mizulina.jpg">
+    <a class="card entry" data-channel="vlast" href="emizulina-en.html" data-img="templates/portraits/mizulina.jpg">
       <span class="e-num">35</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/mizulina.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/mizulina.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Yekaterina Mizulina</span><span class="card-title">League of Safe Internet. Censorship as a family business.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Born</span><span class="e-v">1985</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Director, League of Safe Internet</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">EU (2024)</span></span><span class="e-fact"><span class="e-k">Founded LBI</span><span class="e-v">2011</span></span><span class="e-fact"><span class="e-k">Method</span><span class="e-v">Crowdsourced censorship via Telegram (500k+ followers)</span></span></span>
       <span class="e-quote">"Safe internet means Russian internet."</span>
       <span class="e-open">Open dossier <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="ideolog" href="kirill-en.html" data-img="templates/patriarh_kirill.jpg">
+    <a class="card entry" data-channel="ideolog" href="kirill-en.html" data-img="templates/portraits/patriarh_kirill.jpg">
       <span class="e-num">36</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/patriarh_kirill.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/patriarh_kirill.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Patriarch Kirill</span><span class="card-title">Patriarch of Moscow. The Russian Orthodox Church as a voice of war.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Name</span><span class="e-v">Vladimir Mikhailovich Gundyayev</span></span><span class="e-fact"><span class="e-k">Position</span><span class="e-v">Patriarch of Moscow and all Rus' (since 2009)</span></span><span class="e-fact"><span class="e-k">Organization</span><span class="e-v">Russian Orthodox Church</span></span><span class="e-fact"><span class="e-k">Sanctions</span><span class="e-v">United Kingdom, Canada, Australia, Switzerland</span></span><span class="e-fact"><span class="e-k">Method</span><span class="e-v">Religious legitimation of war and the "Russian world" doctrine</span></span></span>
       <span class="e-quote">"Today a struggle is taking place that has not a physical but a metaphysical significance."</span>
@@ -571,6 +609,56 @@
 
 <div class="hover-preview" id="hover-preview" aria-hidden="true"><img alt=""></div>
 
+<script>
+(function(){
+  // masthead: index of faces drives the portrait; slow auto-advance, paused on hover/focus or by the button
+  var hero = document.querySelector('.h-hero');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.hf-item'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.hi-link'));
+  var count = document.querySelector('.hf-count b');
+  var btn = document.querySelector('.hi-pause');
+  if (!hero || !items.length) return;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = 0, held = false;
+  if (still) hero.classList.add('is-still');
+  function show(n) {
+    if (n === cur) return;
+    cur = (n + items.length) % items.length;
+    items.forEach(function(el, i){
+      var on = i === cur;
+      el.classList.toggle('is-on', on);
+      if (on) { el.removeAttribute('aria-hidden'); el.removeAttribute('tabindex'); }
+      else { el.setAttribute('aria-hidden', 'true'); el.setAttribute('tabindex', '-1'); }
+      var img = el.querySelector('img');
+      if (on && img.loading === 'lazy') img.loading = 'eager';
+    });
+    links.forEach(function(a, i){ a.classList.remove('is-on'); if (i === cur) { void a.offsetWidth; a.classList.add('is-on'); } });
+    if (count) count.textContent = String(cur + 1).padStart(2, '0');
+  }
+  links.forEach(function(a, i){
+    a.addEventListener('mouseenter', function(){ show(i); });
+    a.addEventListener('focus', function(){ show(i); });
+    var bar = a.querySelector('.hi-bar');
+    if (bar) bar.addEventListener('animationend', function(){ if (i === cur) show(cur + 1); });
+  });
+  function hold(on) { hero.classList.toggle('is-held', on || held); }
+  [document.querySelector('.h-face'), document.querySelector('.hf-index')].forEach(function(z){
+    if (!z) return;
+    z.addEventListener('mouseenter', function(){ hold(true); });
+    z.addEventListener('mouseleave', function(){ hold(false); });
+    z.addEventListener('focusin', function(){ hold(true); });
+    z.addEventListener('focusout', function(){ hold(false); });
+  });
+  if (btn) btn.addEventListener('click', function(){
+    held = !held;
+    btn.setAttribute('aria-pressed', String(held));
+    btn.textContent = held ? btn.dataset.play : btn.dataset.pause;
+    hold(held);
+  });
+  // warm the cache for the next portraits once the page has settled
+  window.addEventListener('load', function(){ items.forEach(function(el){ var img = el.querySelector('img'); if (img.loading === 'lazy') img.loading = 'eager'; }); });
+})();
+</script>
 <script>
 (function(){
   var cards = Array.prototype.slice.call(document.querySelectorAll('.entry'));

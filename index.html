@@ -89,38 +89,76 @@
 
 <main id="main-content">
 
-<!-- A · masthead: headline left, portrait strip right, metadata on its own line -->
+<!-- A · masthead: headline left, one large portrait right, an index of faces that drives it -->
 <section class="h-hero">
   <div class="h-meta label"><span class="dot"></span>Документальный архив<br><span class="muted">Тридцать шесть персонажей · Одна система</span></div>
   <h1 class="h-title"><span class="l1">Голоса</span><span class="l2">Кремля</span></h1>
   <p class="h-sub">Досье на лица государственной пропаганды России</p>
   <a class="h-cue label" href="#catalogue"><span class="h-cue-n">40</span> К архиву досье <span aria-hidden="true">↓</span></a>
-  <div class="h-strip">
-      <a class="strip-item" href="solovyov.html" style="--i:0">
-        <img src="templates/soloviev.jpg" alt="Владимир Соловьёв">
-        <span class="strip-cap"><b>01</b>Владимир Соловьёв</span>
+  <nav class="hf-index" aria-label="Портреты из архива">
+    <div class="hi-head label"><span>В кадре</span><button type="button" class="hi-pause" aria-pressed="false" data-pause="Пауза" data-play="Дальше">Пауза</button></div>
+    <ol>
+      <li><a class="hi-link is-on" href="keosayan.html" data-i="0"><span class="hi-n">09</span><span class="hi-name">Кеосаян</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="dugin.html" data-i="1"><span class="hi-n">17</span><span class="hi-name">Дугин</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="krasovsky.html" data-i="2"><span class="hi-n">18</span><span class="hi-name">Красовский</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="medvedev.html" data-i="3"><span class="hi-n">19</span><span class="hi-name">Медведев</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="kovalchuk.html" data-i="4"><span class="hi-n">25</span><span class="hi-name">Ковальчук</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+      <li><a class="hi-link" href="patrushev.html" data-i="5"><span class="hi-n">32</span><span class="hi-name">Патрушев</span><span class="hi-bar" aria-hidden="true"></span></a></li>
+    </ol>
+  </nav>
+  <figure class="h-face" aria-label="Портреты из архива">
+    <div class="hf-frame">
+      <a class="hf-item is-on" href="keosayan.html">
+        <img src="templates/portraits/hero-keosayan.jpg" alt="Тигран Кеосаян" fetchpriority="high">
+        <span class="hf-cap">
+          <span class="hf-num">Досье № 09</span>
+          <span class="hf-name">Тигран Кеосаян</span>
+          <span class="hf-title">«Голливудские техники — советские цели»</span>
+        </span>
       </a>
-      <a class="strip-item" href="skabeeva.html" style="--i:1">
-        <img src="templates/skabeeva.jpg" alt="Ольга Скабеева">
-        <span class="strip-cap"><b>02</b>Ольга Скабеева</span>
+      <a class="hf-item" href="dugin.html" aria-hidden="true" tabindex="-1">
+        <img src="templates/portraits/hero-dugin.jpg" alt="Александр Дугин" loading="lazy">
+        <span class="hf-cap">
+          <span class="hf-num">Досье № 17</span>
+          <span class="hf-name">Александр Дугин</span>
+          <span class="hf-title">Идеолог. «Мозг Путина».</span>
+        </span>
       </a>
-      <a class="strip-item" href="kiselyov.html" style="--i:2">
-        <img src="templates/kiselev.jpeg" alt="Дмитрий Киселёв">
-        <span class="strip-cap"><b>03</b>Дмитрий Киселёв</span>
+      <a class="hf-item" href="krasovsky.html" aria-hidden="true" tabindex="-1">
+        <img src="templates/portraits/hero-krasovsky.jpg" alt="Антон Красовский" loading="lazy">
+        <span class="hf-cap">
+          <span class="hf-num">Досье № 18</span>
+          <span class="hf-name">Антон Красовский</span>
+          <span class="hf-title">Призвал топить детей. Восстановлен.</span>
+        </span>
       </a>
-      <a class="strip-item" href="simonyan.html" style="--i:3">
-        <img src="templates/simonyan.jpg" alt="Маргарита Симоньян" loading="lazy">
-        <span class="strip-cap"><b>04</b>Маргарита Симоньян</span>
+      <a class="hf-item" href="medvedev.html" aria-hidden="true" tabindex="-1">
+        <img src="templates/portraits/hero-medvedev.jpg" alt="Дмитрий Медведев" loading="lazy">
+        <span class="hf-cap">
+          <span class="hf-num">Досье № 19</span>
+          <span class="hf-name">Дмитрий Медведев</span>
+          <span class="hf-title">Экс-президент. Главный телеграм-агрессор.</span>
+        </span>
       </a>
-      <a class="strip-item" href="popov.html" style="--i:4">
-        <img src="templates/popov.jpg" alt="Евгений Попов" loading="lazy">
-        <span class="strip-cap"><b>05</b>Евгений Попов</span>
+      <a class="hf-item" href="kovalchuk.html" aria-hidden="true" tabindex="-1">
+        <img src="templates/portraits/hero-kovalchuk.jpg" alt="Юрий Ковальчук" loading="lazy">
+        <span class="hf-cap">
+          <span class="hf-num">Досье № 25</span>
+          <span class="hf-name">Юрий Ковальчук</span>
+          <span class="hf-title">Медиа-царь. Невидимый архитектор пространства.</span>
+        </span>
       </a>
-      <a class="strip-item" href="sheynin.html" style="--i:5">
-        <img src="templates/sheinin.jpg" alt="Артём Шейнин" loading="lazy">
-        <span class="strip-cap"><b>06</b>Артём Шейнин</span>
+      <a class="hf-item" href="patrushev.html" aria-hidden="true" tabindex="-1">
+        <img src="templates/portraits/hero-patrushev.jpg" alt="Николай Патрушев" loading="lazy">
+        <span class="hf-cap">
+          <span class="hf-num">Досье № 32</span>
+          <span class="hf-name">Николай Патрушев</span>
+          <span class="hf-title">Серый кардинал. Архитектор силовой политики.</span>
+        </span>
       </a>
-  </div>
+      <span class="hf-count" aria-hidden="true"><b>01</b> / 06</span>
+    </div>
+  </figure>
 </section>
 
 <!-- B · one big number + a narrow column -->
@@ -234,321 +272,321 @@
     <button type="button" class="rnd" id="btn-random" title="Открыть случайное досье">Случайное досье <span aria-hidden="true">⇄</span></button>
   </div>
   <div class="entries">
-    <a class="card entry" data-channel="rossiya1" href="solovyov.html" data-img="templates/soloviev.jpg">
+    <a class="card entry" data-channel="rossiya1" href="solovyov.html" data-img="templates/portraits/soloviev.jpg">
       <span class="e-num">01</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/soloviev.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/soloviev.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Владимир<br>Соловьёв</span><span class="card-title">«Самый энергичный кремлёвский пропагандист»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">20 октября 1963, Москва</span></span><span class="e-fact"><span class="e-k">Программы</span><span class="e-v">«Вечер с Владимиром Соловьёвым», «Москва. Кремль. Путин»</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания и ещё 6 стран</span></span><span class="e-fact"><span class="e-k">Виллы в Италии</span><span class="e-v">5+ объектов на озере Комо, арест €8 млн, поджог</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Еврейские корни, иудаизм, «нам евреям не привыкать»</span></span></span>
       <span class="e-quote">«Сначала они лишают евреев таких, как я, собственности в Италии. Нам, евреям, не привыкать.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rossiya1" href="skabeeva.html" data-img="templates/skabeeva.jpg">
+    <a class="card entry" data-channel="rossiya1" href="skabeeva.html" data-img="templates/portraits/skabeeva.jpg">
       <span class="e-num">02</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/skabeeva.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/skabeeva.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Ольга<br>Скабеева</span><span class="card-title">«Железная кукла путинского ТВ»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родилась</span><span class="e-v">11 декабря 1984, Волжский</span></span><span class="e-fact"><span class="e-k">Программа</span><span class="e-v">«60 минут», Россия-1 (с 2016, с мужем Поповым)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания, Канада, Австралия, Япония</span></span><span class="e-fact"><span class="e-k">Скандалы</span><span class="e-v">Инструктаж экспертов, изгнана из номера Зеппельтом</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Училась в российско-американской школе. Ненавидит Америку.</span></span></span>
       <span class="e-quote">«Она осознаёт свою циничную роль в российской пропагандистской машине.» — Официальный журнал ЕС</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rt" href="kiselyov.html" data-img="templates/kiselev.jpeg">
+    <a class="card entry" data-channel="rt" href="kiselyov.html" data-img="templates/portraits/kiselev.jpg">
       <span class="e-num">03</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/kiselev.jpeg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/kiselev.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Дмитрий<br>Киселёв</span><span class="card-title">«Центральная фигура государственной пропаганды»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">26 апреля 1954, Москва</span></span><span class="e-fact"><span class="e-k">Должности</span><span class="e-v">Гендиректор «России сегодня», зам. гендиректора ВГТРК</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС (2014), Швейцария, Канада; персона нон грата в Молдове</span></span><span class="e-fact"><span class="e-k">Мемы</span><span class="e-v">«Радиоактивный пепел», «Сердца геев», 7 браков</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Работал на украинском ТВ. Брат живёт в США. Получал гранты ЕС.</span></span></span>
       <span class="e-quote">«Россия — единственная страна в мире, способная превратить США в радиоактивный пепел.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rt" href="simonyan.html" data-img="templates/simonyan.jpg">
+    <a class="card entry" data-channel="rt" href="simonyan.html" data-img="templates/portraits/simonyan.jpg">
       <span class="e-num">04</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/simonyan.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/simonyan.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Маргарита<br>Симоньян</span><span class="card-title">«Главный редактор международной дезинформации»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родилась</span><span class="e-v">6 апреля 1980, Краснодар</span></span><span class="e-fact"><span class="e-k">Должности</span><span class="e-v">Главред RT (с 2005), главред МИА «Россия сегодня»</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания, Канада, Австралия, Япония</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Назначена на RT в 25 лет по решению Кремля</span></span><span class="e-fact"><span class="e-k">Нарратив</span><span class="e-v">Внешняя пропаганда под видом «альтернативной журналистики»</span></span></span>
       <span class="e-quote">«RT — инструмент информационной войны. Симоньян — её главнокомандующий.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rossiya1" href="popov.html" data-img="templates/popov.jpg">
+    <a class="card entry" data-channel="rossiya1" href="popov.html" data-img="templates/portraits/popov.jpg">
       <span class="e-num">05</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/popov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/popov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Евгений<br>Попов</span><span class="card-title">«Телеведущий и депутат в одном мегафоне»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">25 июля 1971, Москва</span></span><span class="e-fact"><span class="e-k">Позиции</span><span class="e-v">Соведущий «60 минут», депутат Госдумы</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания, Канада, Австралия, Япония</span></span><span class="e-fact"><span class="e-k">Семья</span><span class="e-v">Супруг Ольги Скабеевой, совместный медиа-дуэт</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Телестудия и парламентская трибуна как единый канал агитации</span></span></span>
       <span class="e-quote">«60 минут» — это не ток-шоу. Это ежедневный митинг с микрофонами.</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="perviy" href="sheynin.html" data-img="templates/sheinin.jpg">
+    <a class="card entry" data-channel="perviy" href="sheynin.html" data-img="templates/portraits/sheinin.jpg">
       <span class="e-num">06</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/sheinin.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/sheinin.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Артём<br>Шейнин</span><span class="card-title">«Ведущий, который выключает чужой голос»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">28 сентября 1966, Ленинград</span></span><span class="e-fact"><span class="e-k">Программа</span><span class="e-v">«Время покажет», Первый канал</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания</span></span><span class="e-fact"><span class="e-k">Скандалы</span><span class="e-v">Отключения микрофонов, конфликтные инциденты в эфире</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Ветеранский статус используется как риторический щит</span></span></span>
       <span class="e-quote">«Ему не нужны аргументы. У него есть микрофон — и кнопка выключения чужого.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="tolstoy.html" data-img="templates/tolstoy.jpeg">
+    <a class="card entry" data-channel="vlast" href="tolstoy.html" data-img="templates/portraits/tolstoy.jpg">
       <span class="e-num">07</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/tolstoy.jpeg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/tolstoy.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Пётр<br>Толстой</span><span class="card-title">«Историческая фамилия в роли политического оружия»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">20 августа 1969, Москва</span></span><span class="e-fact"><span class="e-k">Должности</span><span class="e-v">Вице-спикер Госдумы, экс-топ менеджер Первого канала</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания, Канада</span></span><span class="e-fact"><span class="e-k">Скандалы</span><span class="e-v">Резонансные ксенофобные и антисемитские высказывания</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Праправнук Л. Н. Толстого при противоположной риторике</span></span></span>
       <span class="e-quote">«Пётр Толстой — пример того, как историческое имя превращается в инструмент легитимизации авторитаризма.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="ntv" href="norkin.html" data-img="templates/norkin.jpg">
+    <a class="card entry" data-channel="ntv" href="norkin.html" data-img="templates/portraits/norkin.jpg">
       <span class="e-num">08</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/norkin.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/norkin.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Андрей<br>Норкин</span><span class="card-title">«Трибунал с микрофоном вместо молотка»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">11 ноября 1966, Москва</span></span><span class="e-fact"><span class="e-k">Программа</span><span class="e-v">«Место встречи», НТВ</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">История</span><span class="e-v">Начинал как либеральный журналист на РБК</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">«Судебный» стиль: гость всегда в роли обвиняемого</span></span></span>
       <span class="e-quote">«Он задаёт вопросы. Просто ответы на них уже написаны в Кремле.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rt" href="keosayan.html" data-img="templates/keosayan.jpg">
+    <a class="card entry" data-channel="rt" href="keosayan.html" data-img="templates/portraits/keosayan.jpg">
       <span class="e-num">09</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/keosayan.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/keosayan.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Тигран<br>Кеосаян</span><span class="card-title">«Голливудские техники — советские цели»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">3 декабря 1966, Москва</span></span><span class="e-fact"><span class="e-k">Деятельность</span><span class="e-v">Режиссёр-документалист RT</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания</span></span><span class="e-fact"><span class="e-k">Семья</span><span class="e-v">Муж Маргариты Симоньян (главред RT)</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Сын советского режиссёра; кино как оружие пропаганды</span></span></span>
       <span class="e-quote">«Он режиссёр. Поэтому его пропаганда выглядит как кино. Именно это её делает опасной.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="perviy" href="andreyeva.html" data-img="templates/andreeva.webp">
+    <a class="card entry" data-channel="perviy" href="andreyeva.html" data-img="templates/portraits/andreeva.jpg">
       <span class="e-num">10</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/andreeva.webp" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/andreeva.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Екатерина<br>Андреева</span><span class="card-title">«Голос государственных новостей с 1991 года»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родилась</span><span class="e-v">14 марта 1965, Москва</span></span><span class="e-fact"><span class="e-k">Программа</span><span class="e-v">Новости, Первый канал</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">Стаж</span><span class="e-v">30+ лет в эфире — при трёх президентах</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Нейтральный голос как инструмент легитимизации лжи</span></span></span>
       <span class="e-quote">«Диктор, читающий ложь нейтральным голосом, опаснее того, кто кричит.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rossiya1" href="mamontov.html" data-img="templates/mamontov.png">
+    <a class="card entry" data-channel="rossiya1" href="mamontov.html" data-img="templates/portraits/mamontov.jpg">
       <span class="e-num">11</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/mamontov.png" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/mamontov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Аркадий<br>Мамонтов</span><span class="card-title">«Документальная ложь в киноформате»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">3 ноября 1962, Омск</span></span><span class="e-fact"><span class="e-k">Программа</span><span class="e-v">«Специальный корреспондент», Россия-1</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">Фильмы</span><span class="e-v">«Содом» (2014), «Провокаторы» (2004) и 20+ других</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Заказные документалки предшествуют репрессивным законам</span></span></span>
       <span class="e-quote">«"Специальный корреспондент" — оперативная работа КГБ, упакованная в телеформат.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="prilepin.html" data-img="templates/prilepin.jpg">
+    <a class="card entry" data-channel="vlast" href="prilepin.html" data-img="templates/portraits/prilepin.jpg">
       <span class="e-num">12</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/prilepin.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/prilepin.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Захар<br>Прилепин</span><span class="card-title">«Писатель с автоматом»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">7 июля 1975, Рязанская область</span></span><span class="e-fact"><span class="e-k">Роли</span><span class="e-v">Писатель, боец ДНР, сопредседатель «СР»</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Настоящее имя — Евгений. Воевал с 2014 года.</span></span><span class="e-fact"><span class="e-k">2023</span><span class="e-v">Пережил покушение (взрыв автомобиля)</span></span></span>
       <span class="e-quote">«Прилепин легитимизирует войну перед образованной аудиторией — инструмент, недоступный телеведущим.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="perviy" href="leontyev.html" data-img="templates/mihail-leontyev-foto.jpg">
+    <a class="card entry" data-channel="perviy" href="leontyev.html" data-img="templates/portraits/mihail-leontyev-foto.jpg">
       <span class="e-num">13</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/mihail-leontyev-foto.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/mihail-leontyev-foto.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Михаил<br>Леонтьев</span><span class="card-title">«Умная пропаганда. "Однако."»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">6 октября 1958, Москва</span></span><span class="e-fact"><span class="e-k">Программа</span><span class="e-v">«Однако», Первый канал (с 1999)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">Также</span><span class="e-v">Пресс-секретарь «Роснефти» с 2013</span></span><span class="e-fact"><span class="e-k">Стаж</span><span class="e-v">5000+ выпусков «Однако» за 25 лет</span></span></span>
       <span class="e-quote">«Самый интеллектуальный из путинских пропагандистов. Он не орёт — он объясняет. И именно поэтому опаснее.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rossiya1" href="korchevnikov.html" data-img="templates/korchevnikov.jpg">
+    <a class="card entry" data-channel="rossiya1" href="korchevnikov.html" data-img="templates/portraits/korchevnikov.jpg">
       <span class="e-num">14</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/korchevnikov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/korchevnikov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Борис<br>Корчевников</span><span class="card-title">«Православие как государственная идеология»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">3 декабря 1981, Москва</span></span><span class="e-fact"><span class="e-k">Программа</span><span class="e-v">«Судьба человека», Россия-1</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС</span></span><span class="e-fact"><span class="e-k">Также</span><span class="e-v">Гендиректор православного канала «Спас»</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Сакрализация войны. «Священная война» с Западом.</span></span></span>
       <span class="e-quote">«"Спас" под Корчевниковым — подразделение государственной пропаганды с православной символикой.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="medinsky.html" data-img="templates/medinskiy.jpg">
+    <a class="card entry" data-channel="vlast" href="medinsky.html" data-img="templates/portraits/medinskiy.jpg">
       <span class="e-num">15</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/medinskiy.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/medinskiy.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Владимир<br>Мединский</span><span class="card-title">«Архитектор исторической лжи»</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">18 июля 1970, Смела, Украина</span></span><span class="e-fact"><span class="e-k">Должности</span><span class="e-v">Министр культуры 2012–20, советник Путина</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания, Канада</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Родился на Украине. Отрицает существование Украины.</span></span><span class="e-fact"><span class="e-k">2022</span><span class="e-v">Возглавлял переговорную делегацию с Украиной</span></span></span>
       <span class="e-quote">«Вторжение 2022-го имеет готовую историческую упаковку — её строил Мединский 8 лет.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="kultura" href="mikhalkov.html" data-img="templates/mihalkov.jpg">
+    <a class="card entry" data-channel="kultura" href="mikhalkov.html" data-img="templates/portraits/mihalkov.jpg">
       <span class="e-num">16</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/mihalkov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/mihalkov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Никита<br>Михалков</span><span class="card-title">«Оскар» на службе империи</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">21 октября 1945, Москва</span></span><span class="e-fact"><span class="e-k">Программа</span><span class="e-v">«Бесогон TV», Россия-1 / Россия-24</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Лауреат «Оскара» 1995 года. Поддерживает войну.</span></span><span class="e-fact"><span class="e-k">2022—</span><span class="e-v">Называет украинцев «заблудшими братьями»</span></span></span>
       <span class="e-quote">«Единственный действующий лауреат "Оскара", открыто поддерживающий войну против Украины.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="ideolog" href="dugin.html" data-img="templates/dugin.jpg">
+    <a class="card entry" data-channel="ideolog" href="dugin.html" data-img="templates/portraits/dugin.jpg">
       <span class="e-num">17</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/dugin.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/dugin.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Александр<br>Дугин</span><span class="card-title">Идеолог. «Мозг Путина».</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">7 января 1962, Москва</span></span><span class="e-fact"><span class="e-k">Организация</span><span class="e-v">Евразийское движение</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания, Канада</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">«Основы геополитики» — учебник в военных академиях РФ</span></span><span class="e-fact"><span class="e-k">2022</span><span class="e-v">Погибла дочь Дарья Дугина — взрыв автомобиля</span></span></span>
       <span class="e-quote">«Написал план войны в 1997-м. В 2022-м его начали выполнять.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rt" href="krasovsky.html" data-img="templates/krasovsky.png">
+    <a class="card entry" data-channel="rt" href="krasovsky.html" data-img="templates/portraits/krasovsky.jpg">
       <span class="e-num">18</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/krasovsky.png" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/krasovsky.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Антон<br>Красовский</span><span class="card-title">Призвал топить детей. Восстановлен.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1978</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Редактор RT</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">Евросоюз</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">В эфире призвал убивать украинских детей (октябрь 2022)</span></span><span class="e-fact"><span class="e-k">2023</span><span class="e-v">Тихо восстановлен в должности без извинений</span></span></span>
       <span class="e-quote">«Симоньян его "приостановила". Потом восстановила. Система показала: за это не увольняют.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="medvedev.html" data-img="templates/medvedev.jpg">
+    <a class="card entry" data-channel="vlast" href="medvedev.html" data-img="templates/portraits/medvedev.jpg">
       <span class="e-num">19</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/medvedev.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/medvedev.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Дмитрий<br>Медведев</span><span class="card-title">Экс-президент. Главный телеграм-агрессор.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1965</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Зам. председателя Совбеза</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">США, ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Угрожает ядерным ударом в Telegram</span></span><span class="e-fact"><span class="e-k">2022–2024</span><span class="e-v">Сотни угроз иностранным лидерам в соцсетях</span></span></span>
       <span class="e-quote">«Из "либерального президента" превратился в главного ядерного шантажиста Кремля.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="kadyrov.html" data-img="templates/kadyrov.webp">
+    <a class="card entry" data-channel="vlast" href="kadyrov.html" data-img="templates/portraits/kadyrov.jpg">
       <span class="e-num">20</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/kadyrov.webp" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/kadyrov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Рамзан<br>Кадыров</span><span class="card-title">Глава Чечни. Собственная армия в войне.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1976</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Глава Чечни, генерал-полковник</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">США, ЕС, Великобритания, Канада</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Отправил «Ахмат» на Украину, угрожал оппонентам</span></span><span class="e-fact"><span class="e-k">2022–2024</span><span class="e-v">Публично угрожал украинским и западным лидерам</span></span></span>
       <span class="e-quote">«Верный пёс Путина — или самостоятельная угроза? Держит ядерную лояльность под прицелом.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="ideolog" href="malofeev.html" data-img="templates/malofeev.jpg">
+    <a class="card entry" data-channel="ideolog" href="malofeev.html" data-img="templates/portraits/malofeev.jpg">
       <span class="e-num">21</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/malofeev.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/malofeev.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Константин<br>Малофеев</span><span class="card-title">«Православный олигарх». Спонсор сепаратизма.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1974</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Владелец Царьград ТВ</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">США, ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Финансировал ДНР/ЛНР в 2014 году</span></span><span class="e-fact"><span class="e-k">2022–2024</span><span class="e-v">Царьград транслирует ультранационалистическую пропаганду</span></span></span>
       <span class="e-quote">«Строит православную монархию в прямом эфире — на деньги, происхождение которых под вопросом.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="nikonov.html" data-img="templates/nikonov.jpg">
+    <a class="card entry" data-channel="vlast" href="nikonov.html" data-img="templates/portraits/nikonov.jpg">
       <span class="e-num">22</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/nikonov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/nikonov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Вячеслав<br>Никонов</span><span class="card-title">Депутат-пропагандист. Апологет «русского мира».</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1956</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Депутат ГД, политолог, телеведущий</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">США, ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Внук Молотова; продвигает «русский мир» на ТВ</span></span><span class="e-fact"><span class="e-k">2022–2024</span><span class="e-v">Регулярный гость ток-шоу, оправдывает войну</span></span></span>
       <span class="e-quote">«Академический фасад для самых грубых нарративов Кремля.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="rt" href="poddubny.html" data-img="templates/poddybny.jpeg">
+    <a class="card entry" data-channel="rt" href="poddubny.html" data-img="templates/portraits/poddybny.jpg">
       <span class="e-num">23</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/poddybny.jpeg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/poddybny.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Евгений<br>Поддубный</span><span class="card-title">Военкор ВГТРК. Лицо войны на экране.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1983</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Военный корреспондент ВГТРК/Россия 24</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">Особое</span><span class="e-v">Снимает репортажи с передовой, героизирует вторжение</span></span><span class="e-fact"><span class="e-k">2022–2024</span><span class="e-v">Стал символом военной пропаганды на ТВ</span></span></span>
       <span class="e-quote">«Репортажи из окопов — красивая картинка для войны, которую Кремль не называет войной.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="zakharova.html" data-img="templates/zaharova.jpg">
+    <a class="card entry" data-channel="vlast" href="zakharova.html" data-img="templates/portraits/zaharova.jpg">
       <span class="e-num">24</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/zaharova.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/zaharova.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Мария<br>Захарова</span><span class="card-title">Официальный представитель МИД. Дипломатия как спектакль.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родилась</span><span class="e-v">1975</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Пресс-секретарь МИД России (с 2015)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания, Канада, Австралия</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Брифинги как пропагандистская трибуна</span></span><span class="e-fact"><span class="e-k">Telegram</span><span class="e-v">1+ млн подписчиков</span></span></span>
       <span class="e-quote">«Коллективный Запад хочет уничтожить Россию. Это геноцид.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="kovalchuk.html" data-img="templates/kovalchuk.jpg">
+    <a class="card entry" data-channel="vlast" href="kovalchuk.html" data-img="templates/portraits/kovalchuk.jpg">
       <span class="e-num">25</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/kovalchuk.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/kovalchuk.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Юрий<br>Ковальчук</span><span class="card-title">Медиа-царь. Невидимый архитектор пространства.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1951</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Акционер National Media Group</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания, Канада</span></span><span class="e-fact"><span class="e-k">Активы</span><span class="e-v">Первый канал, РЕН ТВ, Пятый канал</span></span><span class="e-fact"><span class="e-k">Связи</span><span class="e-v">Кооператив «Озеро» — ближний круг Путина</span></span></span>
       <span class="e-quote">«Информация важнее танков. Мы это поняли раньше других.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="turchak.html" data-img="templates/turchak.jpg">
+    <a class="card entry" data-channel="vlast" href="turchak.html" data-img="templates/portraits/turchak.jpg">
       <span class="e-num">26</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/turchak.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/turchak.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Андрей<br>Турчак</span><span class="card-title">Генерал «Единой России». Партия как война.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1975</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Генсекретарь «Единой России» (с 2017)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Партийная машина как инструмент мобилизации</span></span><span class="e-fact"><span class="e-k">2022</span><span class="e-v">Лично посещает фронт, организует конвои</span></span></span>
       <span class="e-quote">«Херсон, Запорожье — это Россия навсегда. Это не обсуждается.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="kultura" href="navka.html" data-img="templates/navka.jpg">
+    <a class="card entry" data-channel="kultura" href="navka.html" data-img="templates/portraits/navka.jpg">
       <span class="e-num">27</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/navka.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/navka.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Татьяна<br>Навка</span><span class="card-title">Лёд и война. Мягкая сила через культуру.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родилась</span><span class="e-v">1975, Днепропетровск</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Телеведущая, жена Пескова</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС (2022)</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Аудитория, недоступная для ток-шоу</span></span><span class="e-fact"><span class="e-k">Шоу</span><span class="e-v">«Ледниковый период» на Первом канале</span></span></span>
       <span class="e-quote">«Горжусь тем, что я русская. Эту землю мы защищаем.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="peskov.html" data-img="templates/peskov.jpg">
+    <a class="card entry" data-channel="vlast" href="peskov.html" data-img="templates/portraits/peskov.jpg">
       <span class="e-num">28</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/peskov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/peskov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Дмитрий<br>Песков</span><span class="card-title">Голос президента. Ложь как государственная функция.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1967</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Пресс-секретарь Путина (с 2012)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания, Канада, Австралия</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Системное отрицание задокументированных фактов</span></span><span class="e-fact"><span class="e-k">Семья</span><span class="e-v">Женат на Татьяне Навке</span></span></span>
       <span class="e-quote">«Никаких российских войск на Украине нет и не было.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="lavrov.html" data-img="templates/lavrov.jpg">
+    <a class="card entry" data-channel="vlast" href="lavrov.html" data-img="templates/portraits/lavrov.jpg">
       <span class="e-num">29</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/lavrov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/lavrov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Сергей<br>Лавров</span><span class="card-title">Дипломатия как оружие. Двадцать лет лжи.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1950</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Министр иностранных дел РФ (с 2004)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания, Канада, Австралия</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Дипломатия отрицания и переопределения реальности</span></span><span class="e-fact"><span class="e-k">Ранее</span><span class="e-v">Постпред России при ООН (1994–2004)</span></span></span>
       <span class="e-quote">«Украина — это не государство. Это проект, созданный Западом против России.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="mizulina.html" data-img="templates/elena_mizulina.jpg">
+    <a class="card entry" data-channel="vlast" href="mizulina.html" data-img="templates/portraits/elena_mizulina.jpg">
       <span class="e-num">30</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/elena_mizulina.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/elena_mizulina.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Елена<br>Мизулина</span><span class="card-title">Архитектор цензуры. Законы как инструмент репрессий.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родилась</span><span class="e-v">1954</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Сенатор Совета Федерации</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Криминализация инакомыслия через законодательство</span></span><span class="e-fact"><span class="e-k">2013</span><span class="e-v">Автор закона о «ЛГБТ-пропаганде»</span></span></span>
       <span class="e-quote">«Кто критикует нашу армию — тот враг. Закон это подтверждает.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="nebenzya.html" data-img="templates/nebenzya.jpg">
+    <a class="card entry" data-channel="vlast" href="nebenzya.html" data-img="templates/portraits/nebenzya.jpg">
       <span class="e-num">31</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/nebenzya.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/nebenzya.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Василий<br>Небензя</span><span class="card-title">Постпред при ООН. Вето как оружие.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1962</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Постоянный представитель России при ООН</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">17+ ветированных резолюций по Украине</span></span></span>
       <span class="e-quote">«Россия защищает жителей Донбасса от геноцида.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="patrushev.html" data-img="templates/patrushev.jpg">
+    <a class="card entry" data-channel="vlast" href="patrushev.html" data-img="templates/portraits/patrushev.jpg">
       <span class="e-num">32</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/patrushev.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/patrushev.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Николай<br>Патрушев</span><span class="card-title">Серый кардинал. Архитектор силовой политики.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1951</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Советник Президента (экс-директор ФСБ)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Идеологическая доктрина «осаждённой крепости»</span></span></span>
       <span class="e-quote">«Украина как государство не имеет будущего. Это исторический факт.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="matvienko.html" data-img="templates/matvienko.jpg">
+    <a class="card entry" data-channel="vlast" href="matvienko.html" data-img="templates/portraits/matvienko.jpg">
       <span class="e-num">33</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/matvienko.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/matvienko.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Валентина<br>Матвиенко</span><span class="card-title">Рождена в Украине. Голосует за её ликвидацию.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родилась</span><span class="e-v">1949, Украина</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Председатель Совета Федерации</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания, Канада</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Ратификация аннексии украинских территорий</span></span></span>
       <span class="e-quote">«Херсон, Запорожье — это Россия. Навсегда.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="slutsky.html" data-img="templates/slutsky.jpg">
+    <a class="card entry" data-channel="vlast" href="slutsky.html" data-img="templates/portraits/slutsky.jpg">
       <span class="e-num">34</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/slutsky.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/slutsky.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Леонид<br>Слуцкий</span><span class="card-title">Лидер ЛДПР. Дипломатия как ширма.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Родился</span><span class="e-v">1968</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Лидер ЛДПР, комитет по МД ГД</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Фиктивные переговоры о мире</span></span></span>
       <span class="e-quote">«Переговоры возможны только на наших условиях.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="emizulina.html" data-img="templates/mizulina.jpg">
+    <a class="card entry" data-channel="vlast" href="emizulina.html" data-img="templates/portraits/mizulina.jpg">
       <span class="e-num">35</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/mizulina.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/mizulina.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Екатерина<br>Мизулина</span><span class="card-title">Лига Безопасного Интернета. Цензура как семейный бизнес.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Глава Лиги Безопасного Интернета</span></span><span class="e-fact"><span class="e-k">Мать</span><span class="e-v">Елена Мизулина — сенатор, автор законов о цензуре</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">Нет персональных</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Блокировки, жалобы, давление на платформы</span></span></span>
       <span class="e-quote">«YouTube распространяет антироссийскую пропаганду. Пора заблокировать.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="ideolog" href="kirill.html" data-img="templates/patriarh_kirill.jpg">
+    <a class="card entry" data-channel="ideolog" href="kirill.html" data-img="templates/portraits/patriarh_kirill.jpg">
       <span class="e-num">36</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/patriarh_kirill.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/patriarh_kirill.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Патриарх<br>Кирилл</span><span class="card-title">Патриарх Московский и всея Руси. РПЦ как голос войны.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Имя</span><span class="e-v">Владимир Михайлович Гундяев</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Патриарх Московский и всея Руси (с 2009)</span></span><span class="e-fact"><span class="e-k">Организация</span><span class="e-v">Русская Православная Церковь</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">Великобритания, Канада, Австралия, Швейцария</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Религиозная легитимизация войны и концепция «Русского мира»</span></span></span>
       <span class="e-quote">«Сегодня происходит борьба, которая имеет не физическое, а метафизическое значение.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="tv" href="ernst.html" data-img="templates/ernst.jpg">
+    <a class="card entry" data-channel="tv" href="ernst.html" data-img="templates/portraits/ernst.jpg">
       <span class="e-num">37</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/ernst.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/ernst.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Константин<br>Эрнст</span><span class="card-title">Гендиректор Первого канала. Архитектор кремлёвского телевидения с 1995 года.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Дата рождения</span><span class="e-v">6 февраля 1961, Москва</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Гендиректор Первого канала (с 1995)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, Великобритания (2022)</span></span><span class="e-fact"><span class="e-k">Аудитория</span><span class="e-v">35+ млн зрителей ежедневно</span></span><span class="e-fact"><span class="e-k">Метод</span><span class="e-v">Качественное производство как обёртка для пропаганды</span></span></span>
       <span class="e-quote">«Телевидение — это не зеркало общества. Это инструмент формирования общества.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="ideolog" href="surkov.html" data-img="templates/surkov.jpg">
+    <a class="card entry" data-channel="ideolog" href="surkov.html" data-img="templates/portraits/surkov.jpg">
       <span class="e-num">38</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/surkov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/surkov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Владислав<br>Сурков</span><span class="card-title">Серый кардинал Кремля. Изобретатель «суверенной демократии».</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Дата рождения</span><span class="e-v">21 сентября 1964</span></span><span class="e-fact"><span class="e-k">Роль</span><span class="e-v">Политический технолог, советник Путина (1999–2020)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС, США, Великобритания (с 2014)</span></span><span class="e-fact"><span class="e-k">Концепция</span><span class="e-v">«Суверенная демократия», управляемая оппозиция</span></span><span class="e-fact"><span class="e-k">Псевдоним</span><span class="e-v">«Натан Дубовицкий» — политический роман «Околоноля»</span></span></span>
       <span class="e-quote">«Путин — это навсегда. По крайней мере, на очень долгое время.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="vlast" href="zyuganov.html" data-img="templates/zuganov.jpg">
+    <a class="card entry" data-channel="vlast" href="zyuganov.html" data-img="templates/portraits/zuganov.jpg">
       <span class="e-num">39</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/zuganov.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/zuganov.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Геннадий<br>Зюганов</span><span class="card-title">Председатель КПРФ с 1993 года. Оппозиция, которая никогда не оппонирует.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Дата рождения</span><span class="e-v">26 июня 1944, Орловская обл.</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Председатель КПРФ (более 30 лет)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">Нет — показательно</span></span><span class="e-fact"><span class="e-k">1996</span><span class="e-v">Проиграл Ельцину президентские выборы (возм. фальсификация)</span></span><span class="e-fact"><span class="e-k">2022</span><span class="e-v">Назвал вторжение в Украину «вынужденной мерой»</span></span></span>
       <span class="e-quote">«Советский Союз был величайшей державой. Его разрушение — величайшая геополитическая катастрофа.»</span>
       <span class="e-open">Открыть досье <span aria-hidden="true">↗</span></span>
     </a>
-    <a class="card entry" data-channel="tv" href="kandelaki.html" data-img="templates/kandelaki.jpg">
+    <a class="card entry" data-channel="tv" href="kandelaki.html" data-img="templates/portraits/kandelaki.jpg">
       <span class="e-num">40</span>
-      <span class="e-ph" aria-hidden="true"><img src="templates/kandelaki.jpg" alt="" loading="lazy"></span>
+      <span class="e-ph" aria-hidden="true"><img src="templates/portraits/kandelaki.jpg" alt="" loading="lazy"></span>
       <span class="e-head"><span class="card-name">Тина<br>Канделаки</span><span class="card-title">Гендиректор Match TV. Рождена в Тбилиси — голос Москвы.</span></span>
       <span class="e-facts"><span class="e-fact"><span class="e-k">Дата рождения</span><span class="e-v">10 ноября 1975, Тбилиси, Грузинская ССР</span></span><span class="e-fact"><span class="e-k">Должность</span><span class="e-v">Гендиректор Match TV, Газпром-Медиа (с 2015)</span></span><span class="e-fact"><span class="e-k">Санкции</span><span class="e-v">ЕС (2022)</span></span><span class="e-fact"><span class="e-k">Telegram</span><span class="e-v">1 млн+ подписчиков, активная провоенная позиция</span></span><span class="e-fact"><span class="e-k">Парадокс</span><span class="e-v">Поддержала обе войны России — против Грузии и Украины</span></span></span>
       <span class="e-quote">«Санкции против меня? Значит, я делаю что-то правильно.»</span>
@@ -603,6 +641,56 @@
 
 <div class="hover-preview" id="hover-preview" aria-hidden="true"><img alt=""></div>
 
+<script>
+(function(){
+  // masthead: index of faces drives the portrait; slow auto-advance, paused on hover/focus or by the button
+  var hero = document.querySelector('.h-hero');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.hf-item'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.hi-link'));
+  var count = document.querySelector('.hf-count b');
+  var btn = document.querySelector('.hi-pause');
+  if (!hero || !items.length) return;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = 0, held = false;
+  if (still) hero.classList.add('is-still');
+  function show(n) {
+    if (n === cur) return;
+    cur = (n + items.length) % items.length;
+    items.forEach(function(el, i){
+      var on = i === cur;
+      el.classList.toggle('is-on', on);
+      if (on) { el.removeAttribute('aria-hidden'); el.removeAttribute('tabindex'); }
+      else { el.setAttribute('aria-hidden', 'true'); el.setAttribute('tabindex', '-1'); }
+      var img = el.querySelector('img');
+      if (on && img.loading === 'lazy') img.loading = 'eager';
+    });
+    links.forEach(function(a, i){ a.classList.remove('is-on'); if (i === cur) { void a.offsetWidth; a.classList.add('is-on'); } });
+    if (count) count.textContent = String(cur + 1).padStart(2, '0');
+  }
+  links.forEach(function(a, i){
+    a.addEventListener('mouseenter', function(){ show(i); });
+    a.addEventListener('focus', function(){ show(i); });
+    var bar = a.querySelector('.hi-bar');
+    if (bar) bar.addEventListener('animationend', function(){ if (i === cur) show(cur + 1); });
+  });
+  function hold(on) { hero.classList.toggle('is-held', on || held); }
+  [document.querySelector('.h-face'), document.querySelector('.hf-index')].forEach(function(z){
+    if (!z) return;
+    z.addEventListener('mouseenter', function(){ hold(true); });
+    z.addEventListener('mouseleave', function(){ hold(false); });
+    z.addEventListener('focusin', function(){ hold(true); });
+    z.addEventListener('focusout', function(){ hold(false); });
+  });
+  if (btn) btn.addEventListener('click', function(){
+    held = !held;
+    btn.setAttribute('aria-pressed', String(held));
+    btn.textContent = held ? btn.dataset.play : btn.dataset.pause;
+    hold(held);
+  });
+  // warm the cache for the next portraits once the page has settled
+  window.addEventListener('load', function(){ items.forEach(function(el){ var img = el.querySelector('img'); if (img.loading === 'lazy') img.loading = 'eager'; }); });
+})();
+</script>
 <script>
 (function(){
   var cards = Array.prototype.slice.call(document.querySelectorAll('.entry'));
